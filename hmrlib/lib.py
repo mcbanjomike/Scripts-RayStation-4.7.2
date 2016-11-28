@@ -742,3 +742,33 @@ def print_screenshot(printer_name='CutePDF Writer'):
     # To popup print dialog
     # if print_diag.ShowDialog() == DialogResult.OK:
     #     print_doc.Print()
+
+    
+#Simple function to convert user ID into user name    
+def get_user_name(user_ID):
+    d = dict(hmr0434 = 'Kathleen Ratelle',
+             hmr0502 = 'Caroline Duchesne',
+             hmr0624 = 'Brigitte Trudea',
+             hmr0853 = 'Anne-Mario Locat',
+             hmr1078 = 'Laurent Tantôt',
+             hmr1575 = 'Marie Boisvert',
+             hmr1627 = 'Patrice Munger',
+             hmr2176 = 'Richard Plourde',
+             hmr2282 = 'Isabelle Blanchette',
+             hmr2605 = 'Étienne Roussin',
+             hmr3483 = 'Dominique Martin',
+             hmr3992 = 'Geneviève Jarry',
+             hmr4182 = 'Julie St-Pierre',
+             hmr5552 = 'Matthieu Lemire',
+             hmr6320 = 'Maxime Lachance',
+             hmr7191 = 'Stéphane Généreux',
+             hmr30489 = 'Michael Ayles',
+             hmr30507 = 'Christophe Furstoss',
+             hmr33707 = 'Rafael Khatchadourian',
+             laurie = 'Laurie Archambault',
+             vleduc = 'Vincent Leduc')
+
+    try:
+        return d[user_ID]
+    except:
+        return "Aucun usager avec ce numéro d'identification"
