@@ -1261,7 +1261,7 @@ def test_MA():
     
     #ui.TabControl_ToolBar.ToolBarGroup['TREAT AND PROTECT'].Button_ConformBeamMLC.Click()
    
-    launcher.premiere_verif()
+    launcher.verif_finale()
     #verification.verify_beams()
     #optim.essai_autre_technique()
     #message.message_window('essai')
