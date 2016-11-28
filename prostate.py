@@ -31,18 +31,18 @@ from hmrlib.HMR_RS_LoggerAdapter import HMR_RS_LoggerAdapter
 
 
 # Temporary stuff to get rid of after testing GUI
-import launcher
-import poumon
-import crane
-import foie
+#import launcher
+#import poumon
+#import crane
+#import foie
 import message
-import verification
+#import verification
 
-import crane2ptv
+#import crane2ptv
 
 # Stuff to potentially allow for UI manipulation
 #from connect import *
-import statetree
+#import statetree
 #import clr
 #import System
 #import connect
@@ -526,7 +526,7 @@ def create_prostate_plan_A2():
                 rx_dose_A2 = float(name[8:])
                 nb_fx_A2 = rx_dose_A2 / 2
     else:
-        launcher.debug_window(input="The number of fractions in the first beamset must be 14, 22, 27 or 33.")
+        message.message_window(input="The number of fractions in the first beamset must be 14, 22, 27 or 33.")
         #nb_fx_A2 = 11
         return
                 
@@ -1232,41 +1232,6 @@ def prostate_A1_create_isodose_lines(plan_data):
     eval.add_isodose_line_rgb(dose=108.75, r=255, g=0, b=255, alpha=255)
  
 
-    
-    
-    
-    
-    #Place pour tester des nouveaux fonctions
-def test_MA():
-    #plan = lib.get_current_plan()
-    #beamset = lib.get_current_beamset()
-    #exam = lib.get_current_examination()
-    #patient = lib.get_current_patient()
-    #qa.shift_plans_QA(print_results=True)
-    #qa.create_ac_qa_plans(plan=None, phantom_name='QAVMAT ARCCHECK_2016', iso_name='ISO AC')
-    
-    #statetree.CreateUiStateTreeWindow().ShowDialog() 
-    
-    #crane.optimize_collimator_angles()
-    """
-    ui = get_current("ui")
-    ui.Workspace.TabControl['Beams'].RayDataGrid.DataGridRow['1'].Select()
-    ui.Workspace.TabControl['Beams'].BeamCommands.Button_Edit.Click()
-    ui = get_current("ui")
-    ui.BeamDialogAngles.TextBox_CollimatorAngle.Text = '99'
-    ui.Button_OK.Click()
-    ui = get_current("ui")
-    """
-    #ui.Workspace.TabControl['Beams'].RayDataGrid.DataGridRow['1'].TextBlock_BeamAnglesPO_CollimatorAngle.Text = "45.0"
-    
-    #ui.TabControl_ToolBar.ToolBarGroup['TREAT AND PROTECT'].Button_ConformBeamMLC.Click()
-   
-    launcher.verif_finale()
-    #verification.verify_beams()
-    #optim.essai_autre_technique()
-    #message.message_window('essai')
-    #import report
-    #report.create_verif1_report()
 
     
 
