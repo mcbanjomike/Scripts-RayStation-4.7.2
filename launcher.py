@@ -5180,14 +5180,17 @@ def premiere_verif():
             self.Controls.Add(self.OKbuttonPanel)
             
             #Create the dictionary that will be used to pass the verification info to the print function
-            self.d = dict(patient_name = patient.PatientName,
+            self.d = dict(patient_name = patient.PatientName.replace('^', ', '),
                      plan_name = plan.Name,
                      beamset_name = beamset.DicomPlanLabel,
-                     ext_text = "Pas vérifié",
-                     iso_text = "Pas vérifié",
-                     beam_text = "Pas vérifié",
-                     presc_text = "Pas vérifié",
-                     opt_text = "Pas vérifié",
+                     patient_number = patient.PatientID,
+                     planned_by_name = lib.get_user_name(patient.ModificationInfo.UserName.Split('\\')[1]),
+                     verified_by_name = lib.get_user_name(os.getenv('USERNAME')),
+                     ext_text = "Script pas roulé",
+                     iso_text = "Script pas roulé",
+                     beam_text = "Script pas roulé",
+                     presc_text = "Script pas roulé",
+                     opt_text = "Script pas roulé",
                      check_bonscan = "Pas vérifié",
                      check_scanOK = "Pas vérifié",
                      check_ext = "Pas vérifié",
@@ -5419,8 +5422,8 @@ def premiere_verif():
             self.label_results.Text = self.d['presc_text']
             self.message.Text = "Vérification des faisceaux en cours"
             a,b,c = verification.verify_beams()
-            self.d['beam_text'] = "Faisceaux:\n" + a + "\n\n" + c  
-            self.label_results.Text += "\n\n" + self.d['beam_text']
+            self.d['beam_text'] = a + "\n\n" + c  
+            self.label_results.Text += "\n\nFaisceaux:\n" + self.d['beam_text']
             #self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 80 + 15*b)
             self.message.Text = ""
 
@@ -5541,3 +5544,5 @@ def premiere_verif():
         
     form = Verif1Window()
     Application.Run(form)   
+    
+    

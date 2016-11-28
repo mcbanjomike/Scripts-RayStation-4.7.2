@@ -63,17 +63,15 @@ def create_verif1_report(data):
     #image.Width = "10cm"    
     
     #Add patient information
-    patient_num = "1979"
-    #if "à" in data['presc_text']:
     presc_text_temp = data['presc_text'].split("à")[0]
-    #else:
-    #    presc_text_temp = data['presc_text']
-    paragraph = sec.AddParagraph("Nom du patient: "+data['patient_name'],"Normal")
-    paragraph.AddText("\n\nNuméro du dossier: "+patient_num)
-    paragraph.AddText("\n\nPlan: "+data['plan_name'])
-    paragraph.AddText("\n\nBeamset: "+data['beamset_name'])
-    paragraph.AddText("\n\nPrescription: "+presc_text_temp)
-    paragraph.AddText("\n\nVérifié par: ")
+
+    paragraph = sec.AddParagraph("Nom du patient: " + data['patient_name'],"Normal")
+    paragraph.AddText("\n\nNuméro du dossier: " + data['patient_number'])
+    paragraph.AddText("\n\nPlan: " + data['plan_name'])
+    paragraph.AddText("\n\nBeamset: " + data['beamset_name'])
+    paragraph.AddText("\n\nPrescription: " + presc_text_temp)
+    paragraph.AddText("\n\nPlanifié par: " + data['planned_by_name'])
+    paragraph.AddText("\n\nVérifié par: " + data['verified_by_name'])
     
     #Creat a table to hold the statistics
     paragraph = sec.AddParagraph()
@@ -106,52 +104,86 @@ def create_verif1_report(data):
     row = table.AddRow()
     row.Cells[0].AddParagraph('Scan')
     row.Cells[1].AddParagraph(data['check_scanOK'])
+    if data['check_scanOK'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red
     row.Cells[2].AddParagraph('-')
 
     row = table.AddRow()
     row.Cells[0].AddParagraph('Contour External et override')
     row.Cells[1].AddParagraph(data['check_ext'])
+    if data['check_ext'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red    
     row.Cells[2].AddParagraph(data['ext_text'])
+    if data['ext_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red      
 
     row = table.AddRow()
     row.Cells[0].AddParagraph("Position de l'isocentre")
     row.Cells[1].AddParagraph(data['check_isoOK'])
-    row.Cells[2].AddParagraph(data['iso_text'])    
+    if data['check_isoOK'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red    
+    row.Cells[2].AddParagraph(data['iso_text'])  
+    if data['iso_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red      
     
     row = table.AddRow()
     row.Cells[0].AddParagraph('Champs')    
     row.Cells[1].AddParagraph(data['check_beams_Rx'])
+    if data['check_beams_Rx'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red    
     row.Cells[2].AddParagraph(data['beam_text'])
+    if data['beam_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red      
     
     row = table.AddRow()
     row.Cells[0].AddParagraph('Prescription')    
     row.Cells[1].AddParagraph(data['check_beams_Rx'])
+    if data['check_beams_Rx'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red        
     row.Cells[2].AddParagraph(data['presc_text'])
+    if data['presc_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red  
 
     row = table.AddRow()
     row.Cells[0].AddParagraph('Contours')    
     row.Cells[1].AddParagraph(data['check_contours'])
+    if data['check_contours'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red        
     row.Cells[2].AddParagraph('-')
     
     row = table.AddRow()
     row.Cells[0].AddParagraph("Paramètres d'optimisation et objectifs")    
     row.Cells[1].AddParagraph(data['check_optimisation'])
+    if data['check_optimisation'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red        
     row.Cells[2].AddParagraph(data['opt_text'])
+    if data['opt_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red      
 
     row = table.AddRow()
     row.Cells[0].AddParagraph('DVH')        
     row.Cells[1].AddParagraph(data['check_distribution_dose'])
+    if data['check_distribution_dose'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red        
     row.Cells[2].AddParagraph('-')
     
     row = table.AddRow()
     row.Cells[0].AddParagraph('Distribution de dose')        
     row.Cells[1].AddParagraph(data['check_distribution_dose'])
+    if data['check_distribution_dose'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red       
     row.Cells[2].AddParagraph('-')
     
-    #TEST - Format cells
-    for i,row in enumerate(table.Rows):
-        if i % 2 == 0:
-            row.Shading.Color = Colors.LightBlue
+    #TEST - Format cells (this one works!)
+    #for i, row in enumerate(table.Rows):
+    #    if i % 2 == 0:
+    #        row.Shading.Color = Colors.LightBlue
+            
+    #This also works
+    #for i in range(5):
+    #    for j in range (2):
+            #if table.Rows[i].Cells[j] == 'Pas vérifié':
+            #table.Rows[i].Cells[j].Shading.Color = Colors.Red     
     
     #Add table to the document
     sec.Add(table)

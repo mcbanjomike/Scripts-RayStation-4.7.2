@@ -1247,7 +1247,7 @@ def test_MA():
     
     #statetree.CreateUiStateTreeWindow().ShowDialog() 
     
-    crane.optimize_collimator_angles()
+    #crane.optimize_collimator_angles()
     """
     ui = get_current("ui")
     ui.Workspace.TabControl['Beams'].RayDataGrid.DataGridRow['1'].Select()
@@ -1261,7 +1261,7 @@ def test_MA():
     
     #ui.TabControl_ToolBar.ToolBarGroup['TREAT AND PROTECT'].Button_ConformBeamMLC.Click()
    
-    #launcher.premiere_verif()
+    launcher.premiere_verif()
     #verification.verify_beams()
     #optim.essai_autre_technique()
     #message.message_window('essai')
