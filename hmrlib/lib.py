@@ -767,6 +767,7 @@ def get_user_name(user_ID):
              hmr33707 = 'Rafael Khatchadourian',
              laurie = 'Laurie Archambault',
              vleduc = 'Vincent Leduc')
+             #Add other users here as needed
 
     try:
         return d[user_ID]
