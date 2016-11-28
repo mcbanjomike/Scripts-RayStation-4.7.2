@@ -5551,6 +5551,7 @@ def verif_finale():
 
     class Verif1Window(Form):
         def __init__(self):
+            self.Text = "Vérification finale"
 
             self.Width = 535
             self.Height = 1000
