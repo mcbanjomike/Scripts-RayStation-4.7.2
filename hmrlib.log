@@ -28,3 +28,17 @@
 2016-11-28 17:06:28,421 - hmrlib - INFO - [hmr30489 - PICARD^ELISE (1208465) - CT 1 - Stereo Vertebre/Stereo] ================================================================================
 2016-11-28 17:06:28,546 - hmrlib - INFO - [hmr30489 - PICARD^ELISE (1208465) - CT 1 - Stereo Vertebre/Stereo] End of script testMA_NePasUtiliser.py [execution time = 0:01:50.871000]
 2016-11-28 17:06:28,667 - hmrlib - INFO - [hmr30489 - PICARD^ELISE (1208465) - CT 1 - Stereo Vertebre/Stereo] ================================================================================
+2016-11-29 10:10:03,991 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2016-11-29 10:10:04,116 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2016-11-29 10:10:04,122 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2016-11-29 10:10:04,406 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Invalid objectHandle.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\lib.py", line 510, in get_current_patient
+    return get_current('Patient')
+  File "C:\Program Files\RaySearch Laboratories\RayStation 4.7.2\ScriptClient\connect.py", line 21, in get_current
+    return ScriptClient.ScriptObject(ScriptClient.RayScriptService.Instance, ScriptClient.RayScriptService.Instance.Client.GetCurrent(objectType))
+SystemError: Invalid objectHandle.
+2016-11-29 10:10:04,433 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Could not get current patient.  No patient is currently selected ?
+2016-11-29 10:10:07,629 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2016-11-29 10:10:07,636 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:03.833000]
+2016-11-29 10:10:07,644 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
