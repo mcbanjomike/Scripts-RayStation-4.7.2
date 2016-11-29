@@ -1,11 +1,5 @@
 # Scripts-RayStation-4.7.2
 
-Voici le répertoire github pour nos scripts RayStation!
-
-def my_function():
-  here = 'a string'
-  here += ' is a thing'
-  return here
-  
-now = my_function():
-print now
+These scripts come with no guarantees or warranty, use them at your own risk!
+Be sure to validate any scripts before using them clinically, as we are not
+responsible for any errors that may occur.
