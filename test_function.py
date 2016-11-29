@@ -103,7 +103,7 @@ def test_MA():
     
 def test_DM():
     #launcher.verif_finale()
-    temp_string = 'Hello Dominique!'
+    temp_string = 'blablabla'
     
 
     
