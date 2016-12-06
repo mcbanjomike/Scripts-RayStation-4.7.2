@@ -27,7 +27,9 @@ from connect import *
 
 def create_verif1_report(data):
     
-    filename = r'\\radonc.hmr\Departements\Dosimétristes\STEREO FOIE\Calculs NTCP\test.pdf'
+    #filename = r'\\radonc.hmr\Departements\Dosimétristes\STEREO FOIE\Calculs NTCP\test.pdf'
+    filename = r'\\Mosaiqclsql\mosaiq_app\escan\vérif1_' + data['patient_name'] + '_' + data['patient_number'] + '.pdf'
+    
     doc = Document()
     
     #Add styles   
@@ -63,7 +65,7 @@ def create_verif1_report(data):
     #image.Width = "10cm"    
     
     #Add patient information
-    presc_text_temp = data['presc_text'].split("à")[0]
+    presc_text_temp = data['presc_text'].replace(" à "," au ").split(" au ")[0]
 
     paragraph = sec.AddParagraph("Nom du patient: " + data['patient_name'],"Normal")
     paragraph.AddText("\n\nNuméro du dossier: " + data['patient_number'])
@@ -109,7 +111,7 @@ def create_verif1_report(data):
     row.Cells[2].AddParagraph('-')
 
     row = table.AddRow()
-    row.Cells[0].AddParagraph('Contour External et override')
+    row.Cells[0].AddParagraph('Contour External et overrides')
     row.Cells[1].AddParagraph(data['check_ext'])
     if data['check_ext'] == 'Pas vérifié':
         row.Cells[1].Shading.Color = Colors.Red    
@@ -197,8 +199,187 @@ def create_verif1_report(data):
     process.StartInfo.FileName = filename
     process.Start()
     process.WaitForExit()
+   
 
+def create_verif2_report(data):
+    
+    #filename = r'\\radonc.hmr\Departements\Dosimétristes\STEREO FOIE\Calculs NTCP\test.pdf'
+    filename = r'\\Mosaiqclsql\mosaiq_app\escan\vérif2_' + data['patient_name'] + '_' + data['patient_number'] + '.pdf'
+    doc = Document()
+    
+    #Add styles   
+    style = doc.Styles["Heading1"]
+    style.Font.Size = 20
+    style.Font.Bold = True
+    style.Font.Name = "Verdana"
+    style.ParagraphFormat.Alignment = ParagraphAlignment.Center
+    style.ParagraphFormat.SpaceAfter = 20
+    
+    style = doc.Styles.AddStyle("TableHeader", "Normal");
+    style.Font.Name = "Arial"
+    style.ParagraphFormat.SpaceAfter = 4
+    style.ParagraphFormat.SpaceBefore = 4    
+    
+    style = doc.Styles.AddStyle("TableText", "Normal");
+    style.Font.Name = "Arial"
+    style.Font.Size = 8
+    style.ParagraphFormat.SpaceAfter = 4
+    style.ParagraphFormat.SpaceBefore = 4
+    
+    #Add a section and set landscape orientation
+    sec = doc.AddSection()
+    pagesetup = doc.DefaultPageSetup.Clone()
+    pagesetup.Orientation = Orientation.Portrait
+    sec.PageSetup = pagesetup
+    
+    #Add a title
+    sec.AddParagraph("Vérification finale", "Heading1")    
+    
+    # Add an image?
+    #image = sec.AddImage('//radonc.hmr/Physiciens/Admin/Logo CIUSSS/Logo Ciusss couleur.png')
+    #image.Width = "10cm"    
+    
+    #Add patient information
+    presc_text_temp = data['presc_text'].replace(" à "," au ").split(" au ")[0]
 
+    paragraph = sec.AddParagraph("Nom du patient: " + data['patient_name'],"Normal")
+    paragraph.AddText("\n\nNuméro du dossier: " + data['patient_number'])
+    paragraph.AddText("\n\nPlan: " + data['plan_name'])
+    paragraph.AddText("\n\nBeamset: " + data['beamset_name'])
+    paragraph.AddText("\n\nPrescription: " + presc_text_temp)
+    paragraph.AddText("\n\nPlanifié par: " + data['planned_by_name'])
+    paragraph.AddText("\n\nVérifié par: " + data['verified_by_name'])
+    
+    #Creat a table to hold the statistics
+    paragraph = sec.AddParagraph()
+    table = Table()
+    table.Style = "TableText"
+    table.Borders.Width = 0.75
+    col = table.AddColumn(Unit.FromCentimeter(3.5))
+    col.Format.Alignment = ParagraphAlignment.Left
+    col = table.AddColumn(Unit.FromCentimeter(3))
+    col.Format.Alignment = ParagraphAlignment.Left
+    col = table.AddColumn(Unit.FromCentimeter(11))
+    col.Format.Alignment = ParagraphAlignment.Left
+            
+    #Add header row
+    header_row = table.AddRow()
+    header_row.Style = "TableHeader"
+    header_row.Shading.Color = Colors.LightBlue
+    header_row.Cells[0].AddParagraph('ITEM')
+    header_row.Cells[1].AddParagraph('VERIFICATION')    
+    header_row.Cells[2].AddParagraph('DESCRIPTION')
+    
+    #Add a row for each verification
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('Scan')
+    row.Cells[1].AddParagraph(data['check_scanOK'])
+    if data['check_scanOK'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red
+    row.Cells[2].AddParagraph('-')
+
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('Contour External et overrides')
+    row.Cells[1].AddParagraph(data['check_ext'])
+    if data['check_ext'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red    
+    row.Cells[2].AddParagraph(data['ext_text'])
+    if data['ext_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red      
+
+    row = table.AddRow()
+    row.Cells[0].AddParagraph("Position de l'isocentre")
+    row.Cells[1].AddParagraph(data['check_isoOK'])
+    if data['check_isoOK'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red    
+    row.Cells[2].AddParagraph(data['iso_text'])  
+    if data['iso_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red      
+    
+    row = table.AddRow()
+    row.Cells[0].AddParagraph("Grille de dose")
+    row.Cells[1].AddParagraph(data['check_grid'])
+    if data['check_grid'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red    
+    row.Cells[2].AddParagraph(data['grid_text']+"\n"+data['DSP_text'])  
+    if data['grid_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red          
+    
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('Champs')    
+    row.Cells[1].AddParagraph(data['check_beams_Rx'])
+    if data['check_beams_Rx'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red    
+    row.Cells[2].AddParagraph(data['beam_text'])
+    if data['beam_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red      
+    
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('Prescription')    
+    row.Cells[1].AddParagraph(data['check_beams_Rx'])
+    if data['check_beams_Rx'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red        
+    row.Cells[2].AddParagraph(data['presc_text'])
+    if data['presc_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red  
+
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('Segments et flash')    
+    row.Cells[1].AddParagraph(data['check_segments'])
+    if data['check_segments'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red        
+    row.Cells[2].AddParagraph(data['segments_text'])
+    if data['segments_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red  
+
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('DVH')        
+    row.Cells[1].AddParagraph(data['check_distribution_dose'])
+    if data['check_distribution_dose'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red        
+    row.Cells[2].AddParagraph('-')
+    
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('Distribution de dose')        
+    row.Cells[1].AddParagraph(data['check_distribution_dose'])
+    if data['check_distribution_dose'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red       
+    row.Cells[2].AddParagraph('-')
+    
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('DSPs et HT notés')        
+    row.Cells[1].AddParagraph(data['check_DSP'])
+    if data['check_DSP'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red       
+    row.Cells[2].AddParagraph('-')    
+    
+    #TEST - Format cells (this one works!)
+    #for i, row in enumerate(table.Rows):
+    #    if i % 2 == 0:
+    #        row.Shading.Color = Colors.LightBlue
+            
+    #This also works
+    #for i in range(5):
+    #    for j in range (2):
+            #if table.Rows[i].Cells[j] == 'Pas vérifié':
+            #table.Rows[i].Cells[j].Shading.Color = Colors.Red     
+    
+    #Add table to the document
+    sec.Add(table)
+    
+    #Render the document, save it to file and display the file
+    renderer = PdfDocumentRenderer(True, Pdf.PdfFontEmbedding.Always)
+    renderer.Document = doc
+    renderer.RenderDocument()
+    renderer.PdfDocument.Save(filename)
+    process = Process()
+    process.StartInfo.FileName = filename
+    process.Start()
+    process.WaitForExit()
+    
+    
+    
+    
 def create_sample_report():
     filename = r'\\radonc.hmr\Departements\Dosimétristes\STEREO FOIE\Calculs NTCP\test.pdf'
     doc = Document()

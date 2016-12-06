@@ -5421,7 +5421,7 @@ def premiere_verif():
             self.d['presc_text'] = verification.verify_prescription()
             self.label_results.Text = self.d['presc_text']
             self.message.Text = "Vérification des faisceaux en cours"
-            a,b,c = verification.verify_beams()
+            a,b,c,d,e = verification.verify_beams()   #d and e are not needed for a first verification (machine type and energy)
             self.d['beam_text'] = a + "\n\n" + c  
             self.label_results.Text += "\n\nFaisceaux:\n" + self.d['beam_text']
             #self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 80 + 15*b)
@@ -5487,7 +5487,7 @@ def premiere_verif():
             
             if warning:
                 self.message.ForeColor = Color.Red
-                self.message.Text = "Impression terminé - vérification incomplet"
+                self.message.Text = "Impression terminé - vérification incomplète"
             else:
                 self.message.ForeColor = Color.Green
                 self.message.Text = "Impression terminé"
@@ -5541,7 +5541,12 @@ def premiere_verif():
     except:
         debug_window('Aucun examination trouvé')
         return
-        
+    try:
+        temp = patient.ModificationInfo.UserName
+    except:
+        debug_window('Sauvegarder le plan avant de rouler la vérification')
+        return        
+              
     form = Verif1Window()
     Application.Run(form)   
     
@@ -5572,18 +5577,20 @@ def verif_finale():
                      planned_by_name = lib.get_user_name(patient.ModificationInfo.UserName.Split('\\')[1]),
                      verified_by_name = lib.get_user_name(os.getenv('USERNAME')),
                      ext_text = "Script pas roulé",
+                     grid_text = "Script pas roulé",
+                     DSP_text = "Script pas roulé",
                      iso_text = "Script pas roulé",
                      beam_text = "Script pas roulé",
                      presc_text = "Script pas roulé",
-                     opt_text = "Script pas roulé",
-                     check_bonscan = "Pas vérifié",
+                     segments_text = "Script pas roulé",
                      check_scanOK = "Pas vérifié",
                      check_ext = "Pas vérifié",
                      check_isoOK = "Pas vérifié",
+                     check_grid = "Pas vérifié",                     
                      check_beams_Rx = "Pas vérifié",
-                     check_contours = "Pas vérifié",
-                     check_optimisation = "Pas vérifié",
-                     check_distribution_dose = "Pas vérifié")
+                     check_segments = "Pas vérifié",
+                     check_distribution_dose = "Pas vérifié",
+                     check_DSP = "Pas vérifié")
             
         def Panel(self, x, y):
             panel = Panel()
@@ -5617,60 +5624,62 @@ def verif_finale():
             
             vert_spacer = 35
             offset = 20   
-            
-            self.label_bonscan = Label()
-            self.label_bonscan.Text = "Le bon scan est utilisé pour la planification"
-            self.label_bonscan.Location = Point(25, offset)
-            self.label_bonscan.Font = Font("Arial", 11, FontStyle.Bold)
-            self.label_bonscan.AutoSize = True              
-            
-            self.check_bonscan = CheckBox()
-            self.check_bonscan.Location = Point(480, offset)
-            self.check_bonscan.Width = 30
-            self.check_bonscan.Checked = False        
 
             
-       
             self.label_scanOK = Label()
-            self.label_scanOK.Text = "Scan OK (artéfactes, étendu du scan, objets sur la table)"
-            self.label_scanOK.Location = Point(25, offset + vert_spacer)
+            self.label_scanOK.Text = "Scan OK (étendu du scan)"
+            self.label_scanOK.Location = Point(25, offset)
             self.label_scanOK.Font = Font("Arial", 11, FontStyle.Bold)
             self.label_scanOK.AutoSize = True              
             
             self.check_scanOK = CheckBox()
-            self.check_scanOK.Location = Point(480, offset + vert_spacer)
+            self.check_scanOK.Location = Point(480, offset)
             self.check_scanOK.Width = 30
             self.check_scanOK.Checked = False   
 
             
             
             button_ext = Button()
-            button_ext.Text = "Contour 'External'"
+            button_ext.Text = "Contour 'External' et overrides"
             button_ext.Font = Font("Arial", 11, FontStyle.Bold)
-            button_ext.Location = Point(25, offset + vert_spacer*2)
+            button_ext.Location = Point(25, offset + vert_spacer)
             button_ext.Width = 410 
             button_ext.Click += self.button_ext_Clicked                 
             
             self.check_ext = CheckBox()
-            self.check_ext.Location = Point(480, offset + vert_spacer*2)
+            self.check_ext.Location = Point(480, offset + vert_spacer)
             self.check_ext.Width = 30
             self.check_ext.Checked = False   
            
            
            
             button_isoOK = Button()
-            button_isoOK.Text = "Position de l'isocentre"
+            button_isoOK.Text = "Position de l'isocentre et point de localisation"
             button_isoOK.Font = Font("Arial", 11, FontStyle.Bold)
-            button_isoOK.Location = Point(25, offset + vert_spacer*3)
+            button_isoOK.Location = Point(25, offset + vert_spacer*2)
             button_isoOK.Width = 410 
             button_isoOK.Click += self.button_isoOK_Clicked     
 
             self.check_isoOK = CheckBox()
-            self.check_isoOK.Location = Point(480, offset + vert_spacer*3)
+            self.check_isoOK.Location = Point(480, offset + vert_spacer*2)
             self.check_isoOK.Width = 30
             self.check_isoOK.Checked = False              
            
 
+           
+            button_grid = Button()
+            button_grid.Text = "La grille de dose est correcte"
+            button_grid.Font = Font("Arial", 11, FontStyle.Bold)
+            button_grid.Location = Point(25, offset + vert_spacer*3)
+            button_grid.Width = 410 
+            button_grid.Click += self.button_grid_Clicked              
+                    
+            self.check_grid = CheckBox()
+            self.check_grid.Location = Point(480, offset + vert_spacer*3)
+            self.check_grid.Width = 30
+            self.check_grid.Checked = False              
+
+            
            
             button_beams_Rx = Button()
             button_beams_Rx.Text = "Faisceaux et prescription"
@@ -5686,46 +5695,46 @@ def verif_finale():
          
          
          
-            self.label_contours = Label()
-            self.label_contours.Text = "Les contours sont corrects"
-            self.label_contours.Location = Point(25, offset + vert_spacer*5)
-            self.label_contours.Font = Font("Arial", 11, FontStyle.Bold)
-            self.label_contours.AutoSize = True              
+            button_segments = Button()
+            button_segments.Text = "Les segments sont corrects/flashé au besoin"
+            button_segments.Font = Font("Arial", 11, FontStyle.Bold)
+            button_segments.Location = Point(25, offset + vert_spacer*5)
+            button_segments.Width = 410 
+            button_segments.Click += self.button_segments_Clicked                        
             
-            self.check_contours = CheckBox()
-            self.check_contours.Location = Point(480, offset + vert_spacer*5)
-            self.check_contours.Width = 30
-            self.check_contours.Checked = False              
-
-            
-            
-            button_optimisation = Button()
-            button_optimisation.Text = "Objectifs et paramètres d'optimisation"
-            button_optimisation.Font = Font("Arial", 11, FontStyle.Bold)
-            #button_optimisation.TextAlign = HorizontalAlignment.Center
-            button_optimisation.Location = Point(25, offset + vert_spacer*6)
-            button_optimisation.Width = 410 
-            button_optimisation.Click += self.button_opt_Clicked          
-            
-            self.check_optimisation = CheckBox()
-            self.check_optimisation.Location = Point(480, offset + vert_spacer*6)
-            self.check_optimisation.Width = 30
-            self.check_optimisation.Checked = False                  
+            self.check_segments = CheckBox()
+            self.check_segments.Location = Point(480, offset + vert_spacer*5)
+            self.check_segments.Width = 30
+            self.check_segments.Checked = False                      
 
 
             
             self.label_distribution_dose = Label()
             self.label_distribution_dose.Text = "Distribution de dose et clinical goals"
-            self.label_distribution_dose.Location = Point(25, offset + vert_spacer*7)
+            self.label_distribution_dose.Location = Point(25, offset + vert_spacer*6)
             self.label_distribution_dose.Font = Font("Arial", 11, FontStyle.Bold)
             self.label_distribution_dose.AutoSize = True              
             
             self.check_distribution_dose = CheckBox()
-            self.check_distribution_dose.Location = Point(480, offset + vert_spacer*7)
+            self.check_distribution_dose.Location = Point(480, offset + vert_spacer*6)
             self.check_distribution_dose.Width = 30
             self.check_distribution_dose.Checked = False         
 
-
+            
+            
+            self.label_DSP = Label()
+            self.label_DSP.Text = "Notez le HT et les DSP"
+            self.label_DSP.Location = Point(25, offset + vert_spacer*7)
+            self.label_DSP.Font = Font("Arial", 11, FontStyle.Bold)
+            self.label_DSP.AutoSize = True              
+            
+            self.check_DSP = CheckBox()
+            self.check_DSP.Location = Point(480, offset + vert_spacer*7)
+            self.check_DSP.Width = 30
+            self.check_DSP.Checked = False        
+            
+            
+            
             self.label_results_header = Label()
             self.label_results_header.Text = ""
             self.label_results_header.Location = Point(25, offset + vert_spacer*9)
@@ -5746,10 +5755,7 @@ def verif_finale():
             self.label_reminder.AutoSize = True                 
             
             
-            
-            self.MainWindow.Controls.Add(self.label_bonscan)
-            self.MainWindow.Controls.Add(self.check_bonscan)
-            
+           
             self.MainWindow.Controls.Add(self.label_scanOK)
             self.MainWindow.Controls.Add(self.check_scanOK)  
             
@@ -5757,26 +5763,30 @@ def verif_finale():
             self.MainWindow.Controls.Add(self.check_ext)            
             
             self.MainWindow.Controls.Add(button_isoOK)   
-            self.MainWindow.Controls.Add(self.check_isoOK)                 
+            self.MainWindow.Controls.Add(self.check_isoOK)     
+            
+            self.MainWindow.Controls.Add(button_grid)
+            self.MainWindow.Controls.Add(self.check_grid)              
             
             self.MainWindow.Controls.Add(button_beams_Rx)            
             self.MainWindow.Controls.Add(self.check_beams_Rx)
                       
-            self.MainWindow.Controls.Add(self.label_contours)
-            self.MainWindow.Controls.Add(self.check_contours)               
-
-            self.MainWindow.Controls.Add(button_optimisation)            
-            self.MainWindow.Controls.Add(self.check_optimisation)
+            self.MainWindow.Controls.Add(button_segments)
+            self.MainWindow.Controls.Add(self.check_segments)               
             
             self.MainWindow.Controls.Add(self.label_distribution_dose)
             self.MainWindow.Controls.Add(self.check_distribution_dose)            
 
+            self.MainWindow.Controls.Add(self.label_DSP)
+            self.MainWindow.Controls.Add(self.check_DSP)               
+            
             self.MainWindow.Controls.Add(self.label_results_header)
             self.MainWindow.Controls.Add(self.label_results)
             self.MainWindow.Controls.Add(self.label_reminder)            
-
+                        
             
-        def button_ext_Clicked(self, sender, args):       
+        def button_ext_Clicked(self, sender, args):  
+            self.message.ForeColor = Color.Black        
             self.message.Text = "Vérification du contour External en cours"
             self.d['ext_text'] = verification.verify_external_and_overrides()
             self.label_results_header.Text = "Résultats"
@@ -5785,15 +5795,25 @@ def verif_finale():
             self.label_reminder.Text = "Rappel:\nVérifiez que la table (ou la planche ORL) est comprise dans\nle contour External avant de procéder à la prochaine étape"
             self.message.Text = ""
 
+        def button_grid_Clicked(self, sender, args):       
+            self.message.ForeColor = Color.Black
+            self.message.Text = "Vérification de la grille de dose en cours"
+            self.d['grid_text'] = verification.verify_dose_grid_resolution()
+            self.d['DSP_text'] = verification.verify_dose_specification_points()
+            self.label_results_header.Text = "Résultats"
+            self.label_results.Text = self.d['grid_text']
+            self.label_results.Text += "\n" + self.d['DSP_text']
+            self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 50)
+            self.label_reminder.Text = ""
+            self.message.Text = ""            
+            
         def button_isoOK_Clicked(self, sender, args):
+            self.message.ForeColor = Color.Black
             self.message.Text = "Vérification de l'isocentre"
             a,b,c,d = verification.verify_isocenter()
             self.label_results_header.Text = "Résultats"
             self.d['iso_text'] = a + "\n" + b + "\n" + c + "\n\n" + d
             self.label_results.Text = self.d['iso_text']
-            #self.label_results.Text = d['presc_text']
-            #d['iso_text'] = a #+ "\n" + b + "\n" + c + "\n\n" + d
-            #self.label_results.Text = d['iso_text']
             self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 110)
             self.label_reminder.Text = "Rappel:\nVérifiez le placement de l'isocentre en mode BEV avant de\nprocéder à la prochaine étape"
             self.message.Text = ""
@@ -5802,26 +5822,28 @@ def verif_finale():
             self.label_reminder.Text = ""
             self.label_results.Text = ""
             self.label_results_header.Text = "Résultats"
+            self.message.ForeColor = Color.Black
             self.message.Text = "Vérification de la prescription en cours"
             self.d['presc_text'] = verification.verify_prescription()
             self.label_results.Text = self.d['presc_text']
             self.message.Text = "Vérification des faisceaux en cours"
-            a,b,c = verification.verify_beams()
-            self.d['beam_text'] = a + "\n\n" + c  
+            a,b,c,d,e = verification.verify_beams()
+            self.d['beam_text'] = a + "\n\n" + d + "\n" + e + "\n\n" + c  
             self.label_results.Text += "\n\nFaisceaux:\n" + self.d['beam_text']
-            #self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 80 + 15*b)
+            self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 160 + 15*b)
+            self.label_reminder.Text = "Rappel:\nS'il y a un prothèse, un pacemaker ou un membre qui dépasse le\nFOV du scan, vérifiez que les angles de gantry sont bien choisis"
             self.message.Text = ""
-
-        def button_opt_Clicked(self, sender, args):       
+            
+        def button_segments_Clicked(self, sender, args):   
+            self.message.ForeColor = Color.Black        
+            self.label_reminder.Text = ""
+            self.label_results.Text = ""        
+            self.message.Text = "Vérification des segments en cours"
+            self.d['segments_text'] = verification.verify_segments()
             self.label_results_header.Text = "Résultats"
-            self.message.Text = "Vérification des paramètres d'optimisation"              
-            a,b,c,d = verification.verify_opt_parameters()
-            self.d['opt_text']  = a + "\n" + b + "\n" + d + "\n" + c   
-            self.label_results.Text = self.d['opt_text']
-            #d['opt_text'] = a + "\n" + b + "\n" + d + "\n" + c
-            #self.label_results.Text = d['opt_text'] 
+            self.label_results.Text = self.d['segments_text']
             self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 90)
-            self.label_reminder.Text = "Rappel:\nVérifier tout les objectifs d'optimisation avant de\nprocéder à la prochaine étape"
+            self.label_reminder.Text = "Rappel:\nVérifiez les segments en mode BEV avant de procéder"
             self.message.Text = ""            
             
         def cancelClicked(self, sender, args):
@@ -5832,47 +5854,47 @@ def verif_finale():
 
             #Verify that all boxes have been checked
             warning = False
-            if self.check_bonscan.Checked:
-                self.d['check_bonscan'] = 'OK'
-            else:
-                warning = True
             if self.check_scanOK.Checked:
                 self.d['check_scanOK'] = 'OK'
             else:
-                warning = True                
+                warning = True
             if self.check_ext.Checked:
                 self.d['check_ext'] = 'OK'
             else:
-                warning = True                
+                warning = True
             if self.check_isoOK.Checked:
                 self.d['check_isoOK'] = 'OK'
             else:
-                warning = True                
+                warning = True
+            if self.check_grid.Checked:
+                self.d['check_grid'] = 'OK'
+            else:
+                warning = True
             if self.check_beams_Rx.Checked:
                 self.d['check_beams_Rx'] = 'OK'
             else:
-                warning = True                
-            if self.check_contours.Checked:
-                self.d['check_contours'] = 'OK'
+                warning = True
+            if self.check_segments.Checked:
+                self.d['check_segments'] = 'OK'
             else:
-                warning = True                
-            if self.check_optimisation.Checked:
-                self.d['check_optimisation'] = 'OK'
-            else:
-                warning = True                
+                warning = True
             if self.check_distribution_dose.Checked:
                 self.d['check_distribution_dose'] = 'OK'                
+            else:
+                warning = True
+            if self.check_DSP.Checked:
+                self.d['check_DSP'] = 'OK'
             else:
                 warning = True                
                 
 
             self.message.ForeColor = Color.Black
             self.message.Text = "Impression en cours"
-            report.create_verif1_report(data=self.d)
+            report.create_verif2_report(data=self.d)
             
             if warning:
                 self.message.ForeColor = Color.Red
-                self.message.Text = "Impression terminé - vérification incomplet"
+                self.message.Text = "Impression terminé - vérification incomplète"
             else:
                 self.message.ForeColor = Color.Green
                 self.message.Text = "Impression terminé"
@@ -5925,6 +5947,11 @@ def verif_finale():
         exam = lib.get_current_examination()
     except:
         debug_window('Aucun examination trouvé')
+        return
+    try:
+        temp = patient.ModificationInfo.UserName
+    except:
+        debug_window('Sauvegarder le plan avant de rouler la vérification')
         return
         
     form = Verif1Window()
