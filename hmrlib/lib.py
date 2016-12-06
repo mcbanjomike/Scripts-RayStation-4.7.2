@@ -748,7 +748,7 @@ def print_screenshot(printer_name='CutePDF Writer'):
 def get_user_name(user_ID):
     d = dict(hmr0434 = 'Kathleen Ratelle',
              hmr0502 = 'Caroline Duchesne',
-             hmr0624 = 'Brigitte Trudea',
+             hmr0624 = 'Brigitte Trudeau',
              hmr0853 = 'Anne-Marie Locat',
              hmr1078 = 'Laurent Tantôt',
              hmr1575 = 'Marie Boisvert',

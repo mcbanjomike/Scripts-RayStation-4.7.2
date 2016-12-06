@@ -107,7 +107,7 @@ def verify_isocenter():
     if loc_coords is None:
         loc_poi_text = "Aucun point de localisation trouvé"
     else:
-        loc_poi_text = "POI localization: %s     (%.2f, %.2f, %.2f)" % (loc_point_name, loc_coords.x, loc_coords.z, -1*loc_coords.y)
+        loc_poi_text = "POI localization: %s      (%.2f, %.2f, %.2f)" % (loc_point_name, loc_coords.x, loc_coords.z, -1*loc_coords.y)
     
     if iso_coords is None:
         iso_poi_text = iso_point_name
@@ -149,9 +149,9 @@ def verify_isocenter():
         iso_shift_y = iso_coords.y - beam_iso_poi[1].Value
         iso_shift_z = iso_coords.z - beam_iso_poi[2].Value
         if abs(iso_shift_x) > 0.005 or abs(iso_shift_y) > 0.005 or abs(iso_shift_z) > 0.005:
-            shift_text += "\nShift de %.2fcm, %.2fcm, %.2fcm entre les faisceaux et le point %s" % (-1*iso_shift_x, -1*iso_shift_z, iso_shift_y, iso_point_name)
+            shift_text += "Shift de %.2fcm, %.2fcm, %.2fcm entre les faisceaux et le point %s" % (-1*iso_shift_x, -1*iso_shift_z, iso_shift_y, iso_point_name)
         else:
-            shift_text += "\nTous les faisceaux partagent les coordonnés du point " + iso_point_name
+            shift_text += "Tous les faisceaux partagent les coordonnés du point " + iso_point_name
             
     return loc_poi_text, iso_poi_text, beam_iso_text, shift_text
           
@@ -172,7 +172,9 @@ def verify_beams():
         beams = False
         beam_info = "Aucun faisceau trouvé"
     if beams: #Creat table of beam info
-        for i,beam in enumerate(beamset.Beams):
+        machine_mismatch = False
+        energy_mismatch = False       
+        for i,beam in enumerate(beamset.Beams):        
             number_of_beams += 1
             beam_info += "\n" + beam.Name + "    /   "
             beam_info += beam.Description
@@ -203,13 +205,21 @@ def verify_beams():
             elif beam.InitialCollimatorAngle >= 10 and beam.InitialCollimatorAngle < 100:
                 beam_info += " "   #Adds a spacer to keep the columns aligned
             beam_info += "   /      %d     " % (beam.CouchAngle)
+            
+            if i > 0:
+                if beam.MachineReference.MachineName != machine_type:
+                    machine_mismatch = True
+                if beam.MachineReference.Energy != energy:
+                    energy_mismatch = True
+            machine_type = beam.MachineReference.MachineName
+            energy = beam.MachineReference.Energy
     
-        #Check if first and last leaf pairs are open (anywhere)
-        machine_type = beam.MachineReference.MachineName   
+        #Check if first and last leaf pairs are open (anywhere) 
         first_leaf_open = False
         last_leaf_open = False    
         leaf_open_text = ""
-        for beam in beamset.Beams:
+
+        for beam in beamset.Beams:        
             try:
                 temp = beam.Segments[0].CollimatorAngle #Just to see if there are segments defined for the beam
                 for seg in beam.Segments:
@@ -240,8 +250,17 @@ def verify_beams():
         elif not first_leaf_open and not last_leaf_open:
             leaf_open_text += "Première et dernière paires de lames fermées pour tous les segments"
 
+        if machine_mismatch:
+            machine_text = "Machine pas pareil pour tous les faisceaux"
+        else:
+            machine_text = "Machine: " + machine_type + " pour tous les faisceaux"
+            
+        if energy_mismatch:
+            energy_text = "Énergie pas pareil pour tous les faisceaux"
+        else:
+            energy_text = "Énergie: %dMV pour tous les faisceaux" % energy
     
-    return beam_info, number_of_beams, leaf_open_text  
+    return beam_info, number_of_beams, leaf_open_text, machine_text, energy_text
 
     
 def verify_opt_parameters():
@@ -347,6 +366,181 @@ def verify_opt_parameters():
             
             
     return iterations_text, dose_calc_text, settings_text, opt_types_text
+                    
+        
+        
+def verify_segments():
+    plan = lib.get_current_plan()
+    beamset = lib.get_current_beamset()         
+    opt = plan.PlanOptimizations[beamset.Number-1]
+    
+    segment_results = ""
+    area_results = ""
+    MU_results = ""
+    leaf_gap_results = ""
+    incompatible_MLC_results = ""
+    
+    segment_error = False    # If one or more beams does not have valid segments
+    area_error = False       # If one or more segments has an area below the requested minimum segment are
+    MU_error = False         # If one or more segments has a number of MU inferior to requested minimum segment MU
+    leaf_gap_error = False   # If one or more leaf pairs is open less than 2cm (and is not parked)
+    incompatible_MLC = False # If the MLC is non-standard and its width or number of leaf pairs is unknown
+    
+    results = ""             # Used to create a list of all segment areas for debugging purposes
+    output = ""              # The actual output returned by the function
+    
+    min_seg_area = opt.OptimizationParameters.SegmentConversion.MinSegmentArea
+    num_segments = 0
+    
+    for beam in beamset.Beams:
+        #Check to see if beam has segments
+        try:
+            segment = beam.Segments[0]
+            verify_leaves = True
+        except:
+            segment_results += beam.Name + " "
+            segment_error = True
+            verify_leaves = False
+            #continue #Move on to next beam
+        
+        if beam.MachineReference.MachineName == 'BeamMod':
+            leaf_width = 0.4
+            num_leaf_pairs = 40
+        elif beam.MachineReference.MachineName == 'Infinity':
+            leaf_width = 0.5
+            num_leaf_pairs = 80
+        else:
+            area_results = "Impossible de vérifier l'aire des segments pour ce linac"
+            leaf_gap_results = "Impossible de vérifier l'ouverture des lames pour ce linac"
+            verify_leaves = False
+            incompatible_MLC = True
+            incompatible_MLC_results = "Impossible de vérifier le faisceau " + beam.Name + " car la machine est inconnue"
+                 
+        #Calculate the area of each segment
+        #results += beam.Name + "\n"
+        if verify_leaves:            
+            for segment in beam.Segments:         
+                num_segments += 1
+                """
+                The leaf gap restiction set during optimization is ignored for certain leaves that are near the edge of the field. Any leaf pairs that fall within 1cm of the field edge
+                WITH ROOM TO SPARE may ignore the minimum leaf gap setting. Leaf pairs that finish flush at the end of the 1cm area must obey the minimum leaf gap.
+                
+                BEAM MODULATOR: The edge of the field is defined by the first and last pairs of open leaves. As such, there are always exactly 2 pairs of leaves on either side that
+                                may ignore the leaf gap restriction. This does not change if a segment has multiple distinct openings, a maximum of 4 leaf pairs can ignore the restriction.
+                                
+                AGILITY/INFINITY: If a jaw position falls exactly on the line between two leaf pairs, then only the first pair of leaves may ignore the leaf gap restriction (since the
+                                  second pair of leaves ends at the exact boundary of the 1cm area). If a jaw falls between two leaf gaps, then there will be two leaf pairs that can ignore
+                                  the restriction: the partially blocked pair and the first pair that is completely inside the field.
+                                  NOTE: After writing all that down, I checked and RayStation seems to permit 2 pairs of leaves to do whatever if the jaw falls on a leaf edge. Is that different from Pinnacle?
+                                  SO I WILL ADD ONE TO ALL LOWEST LEAF PAIR VALUES AND SUBTRACT ONE FROM ALL HIGHEST LEAF PAIR VALUES FOR THE INFINITY MACHINE
+                """
+                #Determine which leaves to consider for leaf gap verification       
+                #Note that lowest_leaf_pair_index and highest_leaf_pair_index are those of the first leaf pairs that need to be examined for leaf gap violations
+                if beam.MachineReference.MachineName == 'BeamMod': #This part seems to work!
+                    for i in range (num_leaf_pairs-1):
+                        if segment.LeafPositions[1][i] - segment.LeafPositions[0][i] > 0:
+                            lowest_leaf_pair_index = i + 2
+                            break
+                    i = num_leaf_pairs-1
+                    while i >= 0:
+                        if segment.LeafPositions[1][i] - segment.LeafPositions[0][i] > 0:
+                            highest_leaf_pair_index = i - 2
+                            break
+                        else:
+                            i -= 1
+                elif beam.MachineReference.MachineName == 'Infinity': #Only leaves inside the backup jaws should be considered - NEEDS WORK
+                    import math
+                    lowest_leaf_pair_index = int(math.floor(40 + 2*segment.JawPositions[2]))
+                    highest_leaf_pair_index = int(math.ceil(39 + 2*segment.JawPositions[3]))
+                    if (40 + 2*segment.JawPositions[2]) % 0.5 == 0: #Jaw is parked on border between two leaves
+                        lowest_leaf_pair_index += 2
+                    else: #Jaw position is in the middle of a leaf
+                        lowest_leaf_pair_index += 3
+                    if (39 + 2*segment.JawPositions[3]) % 0.5 == 0:
+                        highest_leaf_pair_index -= 2
+                    else:
+                        highest_leaf_pair_index -= 3
+                        
+                #output += "Segment %d\n   First open pair of leaves: %d\n   First considered pair of leaves: %d\n   Last open pair of leaves: %d\n   Last considered pair of leaves: %d\n\n" % (segment.SegmentNumber, lowest_leaf_pair_index-1,lowest_leaf_pair_index+1,highest_leaf_pair_index+3,highest_leaf_pair_index+1)
+                #output += "Segment %d\n   First pair of leaves to evaluate: %d\n   Last pair of leaves to evaluate: %d\n\n" % (segment.SegmentNumber,lowest_leaf_pair_index+1,highest_leaf_pair_index+1)
+                #continue #This will skip the rest, remove after debugging!
+                
+                segment_area = 0
+                for i in range(num_leaf_pairs-1):
+                    leaf_gap = segment.LeafPositions[1][i] - segment.LeafPositions[0][i]
+                    segment_area += leaf_gap * leaf_width
+                    if leaf_gap >= 0.5 and leaf_gap < opt.OptimizationParameters.SegmentConversion.MinLeafEndSeparation and i in range(lowest_leaf_pair_index,highest_leaf_pair_index+1):
+                        leaf_gap_error = True
+                        leaf_gap_results += "   %s segment %d leafpair %d (%.2f) \n" % (beam.Name, segment.SegmentNumber+1, i+1, leaf_gap)
+
+                if segment_area < min_seg_area:
+                    area_error = True
+                    area_results +=  "   %s segment %d (%.2fcm^2)\n" % (beam.Name, segment.SegmentNumber+1, segment_area)
+                
+                if beamset.DeliveryTechnique != "Arc": #Don't check MU per segment in VMAT plans
+                    if beam.BeamMU * segment.RelativeWeight < opt.OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction:
+                        MU_error = True
+                        MU_results += "   %s segment %d (%.2f MUs)\n" % (beam.Name, segment.SegmentNumber+1, beam.BeamMU * segment.RelativeWeight)
+                    
+                #results += "     Segment %d: %.2fcm^2\n" % (segment.SegmentNumber+1, segment_area)
+            #results += "\n"
+    
+    
+
+    if segment_error:
+        output = "Les champs suivants n'ont pas de segments valides: " + segment_results
+        return output
+    elif incompatible_MLC:
+        output = incompatible_MLC_results
+        return output
+    else:
+        output += "Tous les faisceaux ont des segments valides\n"
+        if beamset.DeliveryTechnique != "Arc":
+            output += "Il y a un total de %d segments (nb. demandé: %d)\n" % (num_segments, opt.OptimizationParameters.SegmentConversion.MaxNumberOfSegments)
+            if area_error:
+                output += "Les segments suivants sont plus petits que " + str(min_seg_area) + "cm^2: \n" + area_results
+            else:
+                output += "Tous les segments sont plus grand que %dcm^2\n" % min_seg_area
+            if MU_error:
+                output += "Les segments suivants ont moins que " + str(opt.OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction) + "UMs: \n" + MU_results
+            else:
+                output += "Tous les segments ont plus que %dUMs\n" % opt.OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction            
+        if leaf_gap_error:
+            output += "Les lames sont à <2cm dans les segments suivants: \n" + leaf_gap_results + "\n"
+        else:
+            output += "Toutes les paires de lames sont à >2cm\n"
+        
+    return output
+    #return results
+    
+def verify_dose_grid_resolution():
+    beamset = lib.get_current_beamset() 
+    output = "Résolution dose grid: %.2fcm x %.2fcm x %.2fcm" % (beamset.FractionDose.InDoseGrid.VoxelSize.x,beamset.FractionDose.InDoseGrid.VoxelSize.y,beamset.FractionDose.InDoseGrid.VoxelSize.z)
+    return output
+    
+    
+def verify_dose_specification_points():
+    beamset = lib.get_current_beamset() 
+    output = ""
+    
+    # Dose calculation engine
+    try:
+        dose_algorithm = beamset.FractionDose.DoseValues.AlgorithmProperties.DoseAlgorithm
+        output += "Algorithme de calcul de dose: " + dose_algorithm + "\n"
+    except:
+        output += "Dose pas calculée\n"
             
-    #if time_mismatch or spacing_mismatch or opt_types_mismatch:
-        #warning_text += "AVERTISSEMENT: Beam Optimization Parameters pas pareils pour tous les faisceaux\n"                
+    # Dose specification points
+    try:
+        dsp = beamset.DoseSpecificationPoints[0]
+        output += "Dose Specification Points: "
+        for dsp in beamset.DoseSpecificationPoints:
+            dsp_temp = lib.RSPoint(dsp.Coordinates.x, dsp.Coordinates.y, dsp.Coordinates.z)
+            dsp_dose = beamset.FractionDose.InterpolateDoseInPoint(Point=dsp_temp.value)
+            output += "%s (%.2fGy par fraction) / " % (dsp.Name, dsp_dose/100.0) 
+        output = output[:-2]
+    except:
+        output += "Aucun Dose Specification Point trouvé"  
+        
+
+    return output
