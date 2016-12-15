@@ -367,8 +367,7 @@ def verify_opt_parameters():
             
     return iterations_text, dose_calc_text, settings_text, opt_types_text
                     
-        
-        
+              
 def verify_segments():
     plan = lib.get_current_plan()
     beamset = lib.get_current_beamset()         
@@ -511,7 +510,7 @@ def verify_segments():
             output += "Toutes les paires de lames sont à >2cm\n"
         
     return output
-    #return results
+
     
 def verify_dose_grid_resolution():
     beamset = lib.get_current_beamset() 

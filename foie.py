@@ -40,235 +40,7 @@ except Exception as e:
         raise
     else:
         pass
-
-
-def plan_foie_sbrt(nb_fx = 1, machine = 'BeamMod', isodose_creation = True):
-    """
-    Voir :py:mod:`plan_poumoun_sbrt`.
-    """
-
-    patient = lib.get_current_patient()
-    examination = lib.get_current_examination()
-    msg = ''
-
-    #Create ISO
-    if not poi.poi_exists("ISO"):
-        if poi.poi_exists("REF SCAN"):
-            REF_SCAN_coords = poi.get_poi_coordinates('REF SCAN',examination)
-            poi.create_poi(REF_SCAN_coords,'ISO','Blue','Isocenter',examination)    
-    
-    # Assign Point Types
-    poi.auto_assign_poi_types()
-
-    # Assign ROI Types (excerpted from roi.auto_assign_roi_types)
-    roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
-    for name in roi_names:
-        n = name.replace(' ', '').upper()
-        if 'PTV' in n and '-' not in n:
-            roi.set_roi_type(name, 'Ptv', 'Target')
-        elif 'CTV' in n and '-' not in n:
-            roi.set_roi_type(name, 'Ctv', 'Target')
-        elif 'GTV' in n and '-' not in n:
-            roi.set_roi_type(name, 'Gtv', 'Target')
-        elif 'ITV' in n and '-' not in n:
-            roi.set_roi_type(name, 'TreatedVolume', 'Target')
-        elif n == 'BODY':
-            roi.set_roi_type(name, organ_type='Other')
-        elif n == 'BODY+TABLE':
-            roi.set_roi_type(name, organ_type='Other')
-        elif n.startswith('BOLUS'):
-            roi.set_roi_type(name, 'Bolus', 'Other')
-        else:
-            roi.set_roi_type(name, 'Organ', 'OrganAtRisk')
-
-    # Create BodyRS+Table, erase Body+table from Pinnacle, rename BODY to BODY Pinnacle
-    roi.generate_BodyRS_plus_Table()
-
-    # Determine PTV name, prescription dose and number of fractions
-    # Format: PTVx:y where x is the dose in Gy and y is the number of fractions (eg: PTV37.5:3 or PTV50:5)
-    # nb_fx copies last character in string, then :y is stripped from PTV name so that the prescription dose can be determined
-    roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
-    for name in roi_names:
-        n = name.replace(' ', '').upper()
-        if 'PTV' in n and '-' not in n:
-            try:
-                presc_dose = float(name[3:])
-            except:
-                continue
-            ptv = patient.PatientModel.RegionsOfInterest[name]
-            break
-            
-    # Rename PTV to standard format (eg, PTV A1 37.5Gy)
-    ptv.Name = 'PTV A1 ' + str(presc_dose) + 'Gy'
-    ptv.Name = ptv.Name.replace('.0Gy','Gy')
-
-    # Generate optimization contours
-    # Create PTV+2mm, PTV+5mm, PTV+20mm and PTV+40mm
-    roi.create_expanded_ptv(ptv_name=ptv.Name, color="Magenta", margeptv=0.2)
-    roi.create_expanded_ptv(ptv_name=ptv.Name, color="Yellow", margeptv=0.5)
-    roi.create_expanded_ptv(ptv_name=ptv.Name, color="Orange", margeptv=2)
-    roi.create_expanded_ptv(ptv_name=ptv.Name, color="Green", margeptv=4)
-    # Create RINGs
-    patient.PatientModel.CreateRoi(Name="Ring_1_0mm", Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
-    patient.PatientModel.RegionsOfInterest['Ring_1_0mm'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS+Table", "PTV+0.2cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv.Name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-    patient.PatientModel.RegionsOfInterest['Ring_1_0mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
-    patient.PatientModel.CreateRoi(Name="Ring_2_2mm", Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
-    patient.PatientModel.RegionsOfInterest['Ring_2_2mm'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS+Table", "PTV+0.5cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+0.2cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-    patient.PatientModel.RegionsOfInterest['Ring_2_2mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
-    patient.PatientModel.CreateRoi(Name="Ring_3_5mm", Color="Orange", Type="Organ", TissueName=None, RoiMaterial=None)
-    patient.PatientModel.RegionsOfInterest['Ring_3_5mm'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS+Table", "PTV+2cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+0.5cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-    patient.PatientModel.RegionsOfInterest['Ring_3_5mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
-    patient.PatientModel.CreateRoi(Name="Ring_4_20mm", Color="Tomato", Type="Organ", TissueName=None, RoiMaterial=None)
-    patient.PatientModel.RegionsOfInterest['Ring_4_20mm'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS+Table", "PTV+4cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+2cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-    patient.PatientModel.RegionsOfInterest['Ring_4_20mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
-    # Create TS contours
-    patient.PatientModel.CreateRoi(Name="TISSU SAIN A 2cm", Color="Pink", Type="Organ", TissueName=None, RoiMaterial=None)
-    patient.PatientModel.RegionsOfInterest['TISSU SAIN A 2cm'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+2cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-    patient.PatientModel.RegionsOfInterest['TISSU SAIN A 2cm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
-    patient.PatientModel.CreateRoi(Name="TISSU SAIN A 4cm", Color="Purple", Type="Organ", TissueName=None, RoiMaterial=None)
-    patient.PatientModel.RegionsOfInterest['TISSU SAIN A 4cm'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+4cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-    patient.PatientModel.RegionsOfInterest['TISSU SAIN A 4cm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
-    # Create PEAU
-    patient.PatientModel.CreateRoi(Name="PEAU", Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
-    patient.PatientModel.RegionsOfInterest['PEAU'].SetWallExpression(SourceRoiName="BodyRS", OutwardDistance=0, InwardDistance=0.5)
-    patient.PatientModel.RegionsOfInterest['PEAU'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
-    # Create FOIE EXPI-GTV
-    patient.PatientModel.CreateRoi(Name="FOIE EXPI-GTV", Color="255, 128, 0", Type="Organ", TissueName=None, RoiMaterial=None)
-    patient.PatientModel.RegionsOfInterest['FOIE EXPI-GTV'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["FOIE EXPI"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["GTV"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-    patient.PatientModel.RegionsOfInterest['FOIE EXPI-GTV'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
-    # Create OPT FOIE EXPI
-    patient.PatientModel.CreateRoi(Name="OPT FOIE EXPI", Color="Maroon", Type="Organ", TissueName=None, RoiMaterial=None)
-    patient.PatientModel.RegionsOfInterest['OPT FOIE EXPI'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["FOIE EXPI"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv.Name], 'MarginSettings': {'Type': "Expand", 'Superior': 0.5, 'Inferior': 0.5, 'Anterior': 0.5, 'Posterior': 0.5, 'Right': 0.5, 'Left': 0.5}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-    patient.PatientModel.RegionsOfInterest['OPT FOIE EXPI'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
-    # Create PTV-GTV
-    patient.PatientModel.CreateRoi(Name="PTV-GTV", Color="128, 128, 0", Type="Organ", TissueName=None, RoiMaterial=None)
-    patient.PatientModel.RegionsOfInterest['PTV-GTV'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [ptv.Name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["GTV"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-    patient.PatientModel.RegionsOfInterest['PTV-GTV'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
-    # Create prv5mmMOELLE
-    if roi.roi_exists("MOELLE"):
-        patient.PatientModel.CreateRoi(Name="prv5mmMOELLE", Color="0, 128, 255", Type="Organ", TissueName=None, RoiMaterial=None)
-        patient.PatientModel.RegionsOfInterest['prv5mmMOELLE'].SetWallExpression(SourceRoiName="MOELLE", OutwardDistance=0.5, InwardDistance=0)
-        patient.PatientModel.RegionsOfInterest['prv5mmMOELLE'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
-    # Create REINS
-    if roi.roi_exists("REIN DRT"):
-        if roi.roi_exists("REIN GCHE"):
-            patient.PatientModel.CreateRoi(Name="REINS", Color="128, 128, 192", Type="Organ", TissueName=None, RoiMaterial=None)
-            patient.PatientModel.RegionsOfInterest['REINS'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["REIN DRT"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["REIN GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-            patient.PatientModel.RegionsOfInterest['REINS'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
-    # Erase expanded PTV contours
-    patient.PatientModel.RegionsOfInterest['PTV+0.2cm'].DeleteRoi()
-    patient.PatientModel.RegionsOfInterest['PTV+0.5cm'].DeleteRoi()
-    patient.PatientModel.RegionsOfInterest['PTV+2cm'].DeleteRoi()
-    patient.PatientModel.RegionsOfInterest['PTV+4cm'].DeleteRoi()
-
-    # Remove material override from all ROIs
-    for rois in patient.PatientModel.RegionsOfInterest:
-        rois.SetRoiMaterial(Material=None)
-
-    # Add Treatment plan
-    plan = patient.AddNewPlan(PlanName="Stereo Foie", PlannedBy="", Comment="", ExaminationName="CT 1", AllowDuplicateNames=False)
-    plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
-
-    # Add beamset (assumes 5 fractions)
-    beamset = plan.AddNewBeamSet(Name="Stereo", ExaminationName=lib.get_current_examination().Name, MachineName=machine, NominalEnergy=None,
-                                      Modality="Photons", TreatmentTechnique="VMAT", PatientPosition="HeadFirstSupine", NumberOfFractions=nb_fx, CreateSetupBeams=True, Comment="VMAT")
-    beamset.AddDosePrescriptionToRoi(RoiName=ptv.Name, DoseVolume=95, PrescriptionType="DoseAtVolume", DoseValue=presc_dose * 100, RelativePrescriptionLevel=1)
-
-    # plan and beamset are created but not currently selected in RS
-    # therefore we must retain the objects in variables and pass them on
-    # to the following functions, which otherwise would assume that
-    # these are currently selected by the user in RS.
-    # VTL
-
-    # Add arcs - borrowed from prostate
-    beams.add_beams_prostate_A1(beamset=beamset)
-
-    # Set optimization parameters
-    optim.set_optimization_parameters(plan=plan)
-
-    # Set VMAT conversion parameters
-    optim.set_vmat_conversion_parameters(max_arc_delivery_time=350.0, plan=plan)
-
-    # Add clinical goals and optimization objectives
-    clinical_goals.smart_cg_foie_sbrt(plan=plan, ptv=ptv, Rx_dose=presc_dose)
-
-    # Set Dose Color Table
-    if isodose_creation:
-        eval.remove_all_isodose_lines()
-        patient.CaseSettings.DoseColorMap.ReferenceValue = presc_dose * 100
-        fivegy = 5 / presc_dose * 100
-        tengy = 10 / presc_dose * 100
-
-        patient.CaseSettings.DoseColorMap.ColorMapReferenceType = "ReferenceValue"
-        eval.add_isodose_line_rgb(dose=0, r=0, g=0, b=0, alpha=0)
-        eval.add_isodose_line_rgb(dose=fivegy, r=0, g=128, b=0, alpha=128)
-        eval.add_isodose_line_rgb(dose=tengy, r=0, g=0, b=160, alpha=128)
-        eval.add_isodose_line_rgb(dose=50, r=128, g=0, b=255, alpha=255)
-        eval.add_isodose_line_rgb(dose=80, r=128, g=128, b=255, alpha=255)
-        eval.add_isodose_line_rgb(dose=95, r=0, g=255, b=255, alpha=255)
-        eval.add_isodose_line_rgb(dose=100, r=255, g=0, b=0, alpha=255)
-        eval.add_isodose_line_rgb(dose=120, r=255, g=255, b=0, alpha=255)
-        patient.CaseSettings.DoseColorMap.PresentationType = 'Absolute'
-
-    # Erase any points other than ISO, ISO SCAN or REF SCAN
-    for points in patient.PatientModel.PointsOfInterest:
-        if not points.Name in ["ISO", "ISOCENTRE", "ISO SCAN", "REF SCAN"]:
-            points.DeleteRoi()
-
-
-def finaliser_plan_foie_sbrt():
-    """
-    #Voir :py:mod:`finaliser_plan_foie_stereo`.
-    """
-    patient = lib.get_current_patient()
-    examination = lib.get_current_examination()
-    plan = lib.get_current_plan() 
-    
-    # Rename OAR contours for SuperBridge transfer        
-    for rois in patient.PatientModel.RegionsOfInterest:
-        if rois.Name in ["GTV EXPI", "FOIE INSPI", "FOIE EXPI", "MOELLE", "REINS", "OESOPHAGE", "ESTOMAC", "DUODENUM", "COLON", "GRELE"]:
-            rois.Name += "*"
         
-    colors = ["Red","Green","Blue","Yellow","Orange"] 
-    for i, bs in enumerate(plan.BeamSets):
-        ptv = patient.PatientModel.RegionsOfInterest[bs.Prescription.PrimaryDosePrescription.OnStructure.Name]
-        beamset_name = ptv.Name[4:6] #ROI name must be in the format PTV A1 or PTV B1 48Gy
-        nb_fx = bs.FractionationPattern.NumberOfFractions
-        rx_dose = bs.Prescription.PrimaryDosePrescription.DoseValue
-        
-        #Use presence of isodose contour to decide whether finalisation actions are taken on a given beamset
-        if roi.roi_exists("isodose "+beamset_name): #eg, isodose A1
-            # Rename beamset
-            bs.DicomPlanLabel = beamset_name
-            
-            # Rename isodose ROI and add * to it and PTV
-            isodose_roi = patient.PatientModel.RegionsOfInterest["isodose " + beamset_name]         
-            isodose_roi.Name = ("ISO "+ beamset_name + " " + str(rx_dose/100) + "Gy*")
-            isodose_roi.Name = isodose_roi.Name.replace('.0Gy','Gy')
-            ptv.Name += '*'            
-            
-            # Add comment for Superbridge transfer
-            bs.Prescription.Description = "VMAT"
-      
-            # Create DSP and PT PRESC
-            poi_name = 'PT PRESC ' + beamset_name
-            poi.create_poi({'x': 0, 'y': 0, 'z': 0}, poi_name, color=colors[i])
-            bs.CreateDoseSpecificationPoint(Name="DSP", Coordinates={ 'x': 0, 'y': 0, 'z': 0 })
-           
-            # Move PT PRESC to a point that receives correct dose per fraction and prescribe
-            poi.place_prescription_point(target_fraction_dose=rx_dose/nb_fx, ptv_name=ptv.Name, poi_name=poi_name, beamset=bs)
-            bs.AddDosePrescriptionToPoi(PoiName=poi_name, DoseValue=rx_dose)
-      
-            # Move DSP to coordinates of PT PRESC and assign to all beams
-            point = poi.get_poi_coordinates(poi_name)
-            dsp = [x for x in bs.DoseSpecificationPoints][0]
-            dsp.Name = "DSP "+beamset_name
-            dsp.Coordinates = point.value
-
-            for beam in bs.Beams:
-                beam.SetDoseSpecificationPoint(Name=dsp.Name)
-            bs.ComputeDose(ComputeBeamDoses=True, DoseAlgorithm="CCDose", ForceRecompute=True)  # Dose is recalculated to show beam dose at spec point (otherwise not displayed)       
-   
     
 def calculer_NTCP_foie(rx_dose=None, nb_fx=None):
     #Code to calculate differential DVH
@@ -426,11 +198,9 @@ def calculer_NTCP_foie(rx_dose=None, nb_fx=None):
             diff_volume = dd
             dvh_file.write('%6.2f          %1.10f            %10.2f               %1.10f\n' % (diff_dose, dd, di_BED, dd))
 
-
+                      
             
-                
-            
-
+#Main block of scripts for stereo IMRT/VMAT liver cases
 def foie_stereo_rois(plan_data):
 
     ptv = plan_data['ptv']
@@ -503,8 +273,7 @@ def foie_stereo_rois(plan_data):
     # Remove material override from all ROIs
     for rois in patient.PatientModel.RegionsOfInterest:
         rois.SetRoiMaterial(Material=None)
-
-        
+       
         
 def foie_stereo_add_plan_and_beamset(plan_data):        
         
@@ -538,7 +307,8 @@ def foie_stereo_opt_settings(plan_data):
         plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs = 3
         plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentArea = 2
         plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MaxNumberOfSegments = 40
-    
+  
+  
 def foie_stereo_create_isodose_lines(plan_data):
 
     patient = plan_data['patient']
@@ -561,7 +331,7 @@ def foie_stereo_create_isodose_lines(plan_data):
     
     
     
-
+#Additional scripts for vertebral plans (some of the liver scripts are reused for these cases because they are similar)
 def vertebre_stereo_rois(plan_data):
 
     ptv = plan_data['ptv']
@@ -648,9 +418,7 @@ def vertebre_stereo_rois(plan_data):
     # Remove material override from all ROIs
     for rois in patient.PatientModel.RegionsOfInterest:
         rois.SetRoiMaterial(Material=None)
-
-
-        
+      
         
 def vertebre_stereo_opt_settings(plan_data):
 
