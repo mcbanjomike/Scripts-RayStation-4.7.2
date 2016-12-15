@@ -28,7 +28,7 @@ from connect import *
 def create_verif1_report(data):
     
     #filename = r'\\radonc.hmr\Departements\Dosimétristes\STEREO FOIE\Calculs NTCP\test.pdf'
-    filename = r'\\Mosaiqclsql\mosaiq_app\escan\vérif1_' + data['patient_name'] + '_' + data['patient_number'] + '.pdf'
+    filename = r'\\Mosaiqclsql\mosaiq_app\escan\vérif1_' + data['patient_name'] + '_' + data['patient_number'] + '_' + data['plan_name'] + '_' + data['beamset_name'] + '.pdf'
     
     doc = Document()
     
@@ -204,7 +204,7 @@ def create_verif1_report(data):
 def create_verif2_report(data):
     
     #filename = r'\\radonc.hmr\Departements\Dosimétristes\STEREO FOIE\Calculs NTCP\test.pdf'
-    filename = r'\\Mosaiqclsql\mosaiq_app\escan\vérif2_' + data['patient_name'] + '_' + data['patient_number'] + '.pdf'
+    filename = r'\\Mosaiqclsql\mosaiq_app\escan\vérif2_' + data['patient_name'] + '_' + data['patient_number'] + '_' + data['plan_name'] + '_' + data['beamset_name'] + '.pdf'
     doc = Document()
     
     #Add styles   
@@ -377,9 +377,7 @@ def create_verif2_report(data):
     process.Start()
     process.WaitForExit()
     
-    
-    
-    
+       
 def create_sample_report():
     filename = r'\\radonc.hmr\Departements\Dosimétristes\STEREO FOIE\Calculs NTCP\test.pdf'
     doc = Document()

@@ -2064,4 +2064,3131 @@ def plan_launcher_old():
 
     form = ScriptLauncher()
     Application.Run(form)   
+               
+    
+def plan_launcher():
+
+    class ScriptLauncher(Form):
+        def __init__(self):
+            self.Text = "Planning Script Launcher"
+
+            self.Width = 750
+            self.Height = 550
+
+            self.setupPlanningScriptLauncher()
+            self.setupOKButtons()
+            self.setupMachineSelectPanel()
+
+            self.Controls.Add(self.LauncherPanel)
+            self.Controls.Add(self.OKbuttonPanel)
+            self.Controls.Add(self.MachineSelectPanel)
+            
+        def newPanel(self, x, y):
+            panel = Panel()
+            panel.Width = 750
+            panel.Height = 300
+            panel.Location = Point(x, y)
+            panel.BorderStyle = BorderStyle.None
+            return panel
+
+        def miniPanel(self, x, y):
+            panel = Panel()
+            panel.Width = 750
+            panel.Height = 150
+            panel.Location = Point(x, y)
+            panel.BorderStyle = BorderStyle.None
+            return panel            
+            
+            
+        def setupPlanningScriptLauncher(self):
+            self.LauncherPanel = self.newPanel(0, 0)
+
+            self.Label1 = Label()
+            self.Label1.Text = "Choissisez le site à planifier:                       Patient: " + patient.PatientName.replace('^', ', ')
+            self.Label1.Location = Point(25, 25)
+            self.Label1.Font = Font("Arial", 10, FontStyle.Bold)
+            self.Label1.AutoSize = True
+
+            self.SiteButton1 = RadioButton()
+            self.SiteButton1.Text = "Prostate"
+            self.SiteButton1.Location = Point(40, 50)
+            #self.SiteButton1.Checked = True
+            self.SiteButton1.CheckedChanged += self.checkedChanged
+            
+            self.SiteButton2 = RadioButton()
+            self.SiteButton2.Text = "Crâne Stéréo"
+            self.SiteButton2.Location = Point(40, 75)
+            self.SiteButton2.CheckedChanged += self.checkedChanged
+
+            self.SiteButton3 = RadioButton()
+            self.SiteButton3.Text = "SBRT Poumon"
+            self.SiteButton3.Location = Point(40, 100)
+            self.SiteButton3.CheckedChanged += self.checkedChanged
+            
+            self.SiteButton4 = RadioButton()
+            self.SiteButton4.Text = "SBRT Foie"
+            self.SiteButton4.Location = Point(40, 125)
+            self.SiteButton4.CheckedChanged += self.checkedChanged
+            
+            self.SiteButton5 = RadioButton()
+            self.SiteButton5.Text = "Vertebre"
+            self.SiteButton5.Location = Point(40, 150)
+            self.SiteButton5.CheckedChanged += self.checkedChanged            
+    
+            self.Label2 = Label()
+            self.Label2.Text = ""
+            self.Label2.Location = Point(300, 50)
+            self.Label2.AutoSize = True
+            self.Label2.Font = Font("Arial", 10)
+            self.Label2.ForeColor = Color.Black
+            
+            self.Label3 = Label()
+            self.Label3.Text = ""
+            self.Label3.Location = Point(300, 70)
+            self.Label3.AutoSize = True
+            self.Label3.Font = Font("Arial", 10)
+            self.Label3.ForeColor = Color.Black
+            
+            self.Label4 = Label()
+            self.Label4.Text = ""
+            self.Label4.Location = Point(300, 90)
+            self.Label4.AutoSize = True
+            self.Label4.Font = Font("Arial", 10)
+            self.Label4.ForeColor = Color.Black
+            
+            self.Label5 = Label()
+            self.Label5.Text = ""
+            self.Label5.Location = Point(300, 110)
+            self.Label5.AutoSize = True
+            self.Label5.Font = Font("Arial", 10)
+            self.Label5.ForeColor = Color.Black
+            
+            self.Label6 = Label()
+            self.Label6.Text = ""
+            self.Label6.Location = Point(300, 190)
+            self.Label6.AutoSize = True
+            self.Label6.Font = Font("Arial", 12, FontStyle.Bold)
+            self.Label6.ForeColor = Color.Black
+
+            self.Label7 = Label()
+            self.Label7.Text = ""
+            self.Label7.Location = Point(300, 220)
+            self.Label7.AutoSize = True
+            self.Label7.Font = Font("Arial", 11, FontStyle.Italic)
+            self.Label7.ForeColor = Color.Black
+            
+            self.comboBoxRx = ComboBox()
+            self.comboBoxRx.Parent = self
+            self.comboBoxRx.Size = Size(200,40)
+            self.comboBoxRx.Location = Point(25,190)
+            
+            self.check1 = CheckBox()
+            self.check1.Text = "Double optimization initiale?"
+            self.check1.Location = Point(40, 230)
+            self.check1.Width = 300
+            self.check1.Checked = False
+            
+            self.check2 = CheckBox()
+            self.check2.Text = ""
+            self.check2.Location = Point(40, 255)
+            self.check2.Width = 300            
+
+            self.check3 = CheckBox()
+            self.check3.Text = ""
+            self.check3.Location = Point(40, 280)
+            self.check3.Width = 300            
+            
+            self.LauncherPanel.Controls.Add(self.Label1)
+            self.LauncherPanel.Controls.Add(self.Label2)
+            self.LauncherPanel.Controls.Add(self.Label3)
+            self.LauncherPanel.Controls.Add(self.Label4)
+            self.LauncherPanel.Controls.Add(self.Label5)
+            self.LauncherPanel.Controls.Add(self.Label6)
+            self.LauncherPanel.Controls.Add(self.Label7)            
+            self.LauncherPanel.Controls.Add(self.SiteButton1)
+            self.LauncherPanel.Controls.Add(self.SiteButton2)
+            self.LauncherPanel.Controls.Add(self.SiteButton3)
+            self.LauncherPanel.Controls.Add(self.SiteButton4)
+            self.LauncherPanel.Controls.Add(self.SiteButton5)
+            self.LauncherPanel.Controls.Add(self.check1)
+            self.LauncherPanel.Controls.Add(self.check2)
+            self.LauncherPanel.Controls.Add(self.check3)            
+            #self.LauncherPanel.Controls.Add(self.comboBoxProstate)
+
+            exam_list = []
+            for CT in patient.Examinations:
+                exam_list.append(CT.Name)
+            
+            for contour in patient.PatientModel.RegionsOfInterest:
+                if not roi.get_roi_approval(contour.Name,patient.Examinations["CT 1"]):
+                    VolCT1 = roi.get_roi_volume(contour.Name, exam=patient.Examinations["CT 1"])
+                    if "CT 2" in exam_list:
+                        VolCT2 = roi.get_roi_volume(contour.Name, exam=patient.Examinations["CT 2"])
+                    else:
+                        VolCT2 = 0
+
+                    if VolCT1 == 0:
+                        if VolCT2 == 0:
+                            oldname = contour.Name
+                            contour.Name = ("vide_%s" % oldname)
+            
+        def checkedChanged(self, sender, args):
+            if not sender.Checked:
+                return
+
+            # Erase error messages and clear prescription selection menu
+            self.Label2.Text = " "
+            self.Label3.Text = " "
+            self.Label4.Text = " "
+            self.Label5.Text = " "
+            self.Label6.Text = " "
+            self.Label7.Text = " "            
+            self.Label2.ForeColor = Color.Black
+            self.Label3.ForeColor = Color.Black
+            self.Label4.ForeColor = Color.Black
+            self.Label5.ForeColor = Color.Black
+            self.Label6.ForeColor = Color.Black
+            self.Label7.ForeColor = Color.Black    
+            self.check1.Text = "Double optimization initiale?"            
+            self.check1.Checked = False            
+            self.check2.Text = ""
+            self.check2.Checked = False
+            self.check3.Text = ""
+            self.check3.Checked = False
+            self.comboBoxRx.Items.Clear()
+            PACE = False
+            
+            roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+                        
+            if sender.Text == "Prostate":      
+                # set selection
+                self.comboBoxRx.Text = "Choisissez la prescription"
+                self.comboBoxRx.SelectedValueChanged += self.comboBox_SelectedValueChangedHandler
+                # add items
+                self.comboBoxRx.Items.Add("80Gy-40")
+                self.comboBoxRx.Items.Add("66Gy-33")
+                self.comboBoxRx.Items.Add("66Gy-22")
+                self.comboBoxRx.Items.Add("60Gy-20")
+                self.comboBoxRx.Items.Add("37.5Gy-15")
+                self.comboBoxRx.Items.Add("PACE 78Gy-39")
+                self.comboBoxRx.Items.Add("PACE 36.25Gy-5")
+                
+                self.check1.Text = "Auto-optimisation initial"
+                self.check1.Checked = True
+                self.check2.Text = "Est-ce qu'il y a un plan 3D conforme?"
+                self.check3.Text = "Sauter la création des lignes d'isodoses"    
+            
+                boost = False
+                for name in roi_names:
+                    if 'PTVBOOST' in name.replace(' ', '').upper():
+                        boost = True
+                        boost_name = name
+
+                #Find ROI(s) that will be used to create PTV A1
+                if 'PTV A1' in roi_names:
+                    self.Label2.Text = "Source pour PTV A1: PTV A1 déjà existent"
+                elif 'PTV 1.5cm' in roi_names:
+                    if 'PTV VS' in roi_names:
+                        self.Label2.Text = "Source pour PTV A1: PTV 1.5cm + PTV VS"
+                    else:
+                        self.Label2.Text = "Source pour PTV A1: PTV 1.5cm"          
+                elif 'PTV 1cm' in roi_names:
+                    if 'PTV VS' in roi_names:
+                        self.Label2.Text = "Source pour PTV A1: PTV 1cm + PTV VS"
+                    else:
+                        self.Label2.Text = "Source pour PTV A1: PTV 1cm"
+                elif 'PTV_7800' in roi_names:
+                    self.Label2.Text = "Source pour PTV A1: PTV_7800"
+                    self.comboBoxRx.Text = "PACE 78Gy-39"
+                    PACE = True
+                elif 'PTV_3625' in roi_names:
+                    self.Label2.Text = "Source pour PTV A1: PTV_3625"            
+                    self.comboBoxRx.Text = "PACE 36.25Gy-5"
+                    PACE = True
+                else:
+                    self.Label2.Text = "Attention: Aucun ROI source trouvé pour le PTV A1!"     
+                    self.Label2.ForeColor = Color.Red     
+                
+                #Find ROI that will be used to create PTV A2
+                if boost:
+                    self.Label3.Text = "Source pour PTV A2: " + boost_name
+                elif 'PTV 1cm' in roi_names:
+                    self.Label3.Text = "Source pour PTV A2: PTV 1cm"
+                else:
+                    self.Label3.Text = "Attention: Aucun ROI source trouvé pour le PTV A2!"     
+                    self.Label3.ForeColor = Color.Orange                       
+                
+                #Verify presence of essential contours
+                if not PACE:
+                    essential_list = ["Table","RECTUM","VESSIE"]
+                else:
+                    essential_list = ["Table","Rectum","Bladder"]
+                missing_roi = []
+                for roi in essential_list:
+                    if roi not in roi_names:
+                        missing_roi.append(roi)
+                    
+                if len(missing_roi) > 0:
+                    error_message = ""
+                    for roi in missing_roi:
+                        error_message += roi + ",  "
+                    if error_message[-3:]==",  ":
+                        error_message = error_message[:-3]
+                    self.Label3.Text = "ROI(s) pas trouvés: " + error_message
+                    self.Label3.ForeColor = Color.Red
+                else:
+                    if not PACE:
+                        self.Label4.Text = "ROIs Table, RECTUM et VESSIE trouvés"
+                    else:
+                        self.Label4.Text = "ROIs Table, Rectum et Bladder trouvés"
+
+                #Determine which POI will be used for the isocenter
+                if poi.poi_exists("ISO"):           
+                    self.Label5.Text = "Point ISO sera utilisé comme isocentre"                        
+                elif poi.poi_exists("REF SCAN"):           
+                    self.Label5.Text = "L'isocentre sera créé à partir du point REF SCAN"      
+                else:
+                    self.Label4.Text = "Aucun POI trouvé pour l'isocentre"
+                    self.Label4.ForeColor = Color.Red                 
+ 
+
+            elif sender.Text == "Crâne Stéréo":     
+                self.check1.Checked = True  #Double optimization       
+                self.check3.Text = "Sauter la création des lignes d'isodoses"    
+                #Identify the PTV
+                if 'PTV15' in roi_names:
+                    self.Label2.Text = "PTV15 trouvé"
+                    self.comboBoxRx.Items.Add("15Gy-1 VMAT")
+                    self.comboBoxRx.Items.Add("15Gy-1 IMRT")
+                    self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("15Gy-1 VMAT")
+                elif 'PTV18' in roi_names:
+                    self.Label2.Text = "PTV18 trouvé"
+                    self.comboBoxRx.Items.Add("18Gy-1 VMAT")
+                    self.comboBoxRx.Items.Add("18Gy-1 IMRT")
+                    self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("18Gy-1 VMAT")
+                else:
+                    self.Label2.Text = "Attention: Aucun PTV trouvé!"     
+                    self.Label2.ForeColor = Color.Red     
+                
+                if 'CERVEAU' not in roi_names:
+                    self.Label3.Text = "ROI CERVEAU pas trouvé!"
+                    self.Label3.ForeColor = Color.Red          
+       
+                #Determine which POI will be used for the isocenter
+                if poi.poi_exists("ISO"):           
+                    self.Label5.Text = "Point ISO sera utilisé comme isocentre"                        
+                elif poi.poi_exists("REF SCAN"):           
+                    self.Label5.Text = "L'isocentre sera créé à partir du point REF SCAN"      
+                else:
+                    self.Label4.Text = "Aucun POI trouvé pour l'isocentre"
+                    self.Label4.ForeColor = Color.Red    
+                    
+                    
+            elif sender.Text == "SBRT Poumon":   
+                self.check1.Checked = True  #Double optimization 
+                self.check2.Text = "Ajouter deuxième arc? (plans difficiles)"            
+                #Identify the PTV
+                self.comboBoxRx.Items.Add("48Gy-4")
+                self.comboBoxRx.Items.Add("54Gy-3")
+                self.comboBoxRx.Items.Add("56Gy-4")
+                self.comboBoxRx.Items.Add("60Gy-5")
+                self.comboBoxRx.Items.Add("60Gy-8")
+                if 'PTV48' in roi_names:
+                    if 'ITV48' in roi_names:
+                        self.Label2.Text = "PTV48 et ITV 48 trouvés"
+                        self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("48Gy-4")
+                    else: 
+                        self.Label2.Text = "Attention: PTV48 trouveé, mais ITV48 absent!"     
+                        self.Label2.ForeColor = Color.Red   
+                elif 'PTV54' in roi_names:
+                    if 'ITV54' in roi_names:
+                        self.Label2.Text = "PTV54 et ITV54 trouvés"
+                        self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("54Gy-3")
+                    else:
+                        self.Label2.Text = "Attention: PTV54 trouveé, mais ITV54 absent!"     
+                        self.Label2.ForeColor = Color.Red       
+                elif 'PTV56' in roi_names:
+                    if 'ITV56' in roi_names:
+                        self.Label2.Text = "PTV56 et ITV56 trouvés"
+                        self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("56Gy-4")
+                    else:
+                        self.Label2.Text = "Attention: PTV56 trouveé, mais ITV56 absent!"     
+                        self.Label2.ForeColor = Color.Red                           
+                elif 'PTV60' in roi_names:
+                    if 'ITV60' in roi_names:
+                        self.Label2.Text = "PTV60 et ITV60 trouvés"
+                        self.comboBoxRx.Text = "Choisissez la prescription"
+                        self.check2.Checked = True
+                    else:
+                        self.Label2.Text = "Attention: PTV60 trouveé, mais ITV60 absent!"     
+                        self.Label2.ForeColor = Color.Red      
+                elif 'PTV A1' in roi_names:
+                    if 'ITV A1' in roi_names:
+                        self.Label2.Text = "PTV A1 et ITV A1 trouvés"
+                        self.comboBoxRx.Text = "Choisissez la prescription"
+                    else:
+                        self.Label2.Text = "Attention: PTV A1 trouveé, mais ITV A1 absent!"     
+                        self.Label2.ForeColor = Color.Red    
+                else:
+                    self.Label2.Text = "Attention: Aucun PTV trouvé pour plan A1!"     
+                    self.Label2.ForeColor = Color.Red     
+                if 'PTV B1' in roi_names:
+                    if 'ITV B1' in roi_names:
+                        if poi.poi_exists("ISO B1"):
+                            self.Label5.Text = "PTV B1, ITV B1 et ISO B1 trouvés, possible d'ajouter un plan B1"
+                            self.check3.Text = "Créer plan B1 (seulement si plan A1 existe déjà)"
+                        else:
+                            self.Label5.Text = "PTV B1 et ITV B1 trouvés, mais ISO B1 absent"
+                            self.check3.Text = "Créer plan B1 (seulement si plan A1 existe déjà)"            
+                            self.Label7.Text = "RAPPEL: Pour la création d'un plan B1, il est possible\nd'utiliser un nouvel isocentre avec le nom ISO B1."
+                    else:
+                        self.Label5.Text = "Attention: PTV B1 trouvé, mais ITV B1 absent!"     
+                        self.Label5.ForeColor = Color.Red  
+                    
+                #Verify presence of essential contours
+                essential_list = ["Table","POUMON DRT","POUMON GCHE","BR SOUCHE"]
+                missing_roi = []
+                for roi in essential_list:
+                    if roi not in roi_names:
+                        missing_roi.append(roi)
+                    
+                if len(missing_roi) > 0:
+                    error_message = ""
+                    for roi in missing_roi:
+                        error_message += roi + ",  "
+                    if error_message[-3:]==",  ":
+                        error_message = error_message[:-3]
+                    self.Label3.Text = "ROI(s) pas trouvés: " + error_message
+                    self.Label3.ForeColor = Color.Red
+                else:
+                    self.Label3.Text = "ROIs Table, BR SOUCHE et POUMONs trouvés"      
+       
+                #Determine which POI will be used for the isocenter
+                if poi.poi_exists("ISO", patient.Examinations['CT 1']):           
+                    self.Label5.Text = "Point ISO sera utilisé comme isocentre"                        
+                elif poi.poi_exists("REF SCAN", patient.Examinations['CT 1']):           
+                    self.Label5.Text = "L'isocentre sera créé à partir du point REF SCAN"      
+                else:
+                    self.Label4.Text = "Aucun POI trouvé pour l'isocentre"
+                    self.Label4.ForeColor = Color.Red     
+
+
+            elif sender.Text == "SBRT Foie":     
+                self.check1.Checked = True  #Double optimization        
+                self.check3.Text = "Sauter la création des lignes d'isodoses"             
+                #Identify the PTV
+                ptv_name = "NoValue"
+                #roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+                for name in roi_names:
+                    n = name.replace(' ', '').upper()
+                    if 'PTV' in n and '-' not in n:
+                        try:
+                           presc_dose = float(name[3:])
+                        except:
+                            continue
+                        ptv_name = name
+                        break  
+                if ptv_name != "NoValue":
+                    self.Label2.Text = name + " trouvé"
+                    self.comboBoxRx.Items.Add(ptv_name[3:]+"Gy-3")
+                    self.comboBoxRx.Items.Add(ptv_name[3:]+"Gy-5")
+                    self.comboBoxRx.Text = "Choisissez la prescription"
+                else:
+                    self.Label2.Text = "Attention: Aucun PTV trouvé!"     
+                    self.Label2.ForeColor = Color.Red     
+                
+                #Verify presence of essential contours
+                essential_list = ["Table","FOIE EXPI","GTV"]
+                missing_roi = []
+                for roi in essential_list:
+                    if roi not in roi_names:
+                        missing_roi.append(roi)
+                    
+                if len(missing_roi) > 0:
+                    error_message = ""
+                    for roi in missing_roi:
+                        error_message += roi + ",  "
+                    if error_message[-3:]==",  ":
+                        error_message = error_message[:-3]
+                    self.Label3.Text = "ROI(s) pas trouvés: " + error_message
+                    self.Label3.ForeColor = Color.Red
+                else:
+                    self.Label3.Text = "ROIs Table, FOIE EXPI et GTV trouvés"      
+       
+                #Determine which POI will be used for the isocenter
+                if poi.poi_exists("ISO"):           
+                    self.Label5.Text = "Point ISO sera utilisé comme isocentre"                        
+                elif poi.poi_exists("REF SCAN"):           
+                    self.Label5.Text = "L'isocentre sera créé à partir du point REF SCAN"      
+                else:
+                    self.Label4.Text = "Aucun POI trouvé pour l'isocentre"
+                    self.Label4.ForeColor = Color.Red     
+                 
+                 
+            elif sender.Text == "Vertebre":     
+                self.check1.Checked = True  #Double optimization       
+                self.check3.Text = "Sauter la création des lignes d'isodoses"    
+                #Identify the PTV
+                if 'PTV18' in roi_names:
+                    self.Label2.Text = "PTV18 trouvé"
+                    self.comboBoxRx.Items.Add("18Gy-1")
+                    self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("18Gy-1")
+                else:
+                    self.Label2.Text = "Attention: Aucun PTV trouvé!"     
+                    self.Label2.ForeColor = Color.Red                         
+       
+                #Determine which POI will be used for the isocenter
+                if poi.poi_exists("ISO"):           
+                    self.Label5.Text = "Point ISO sera utilisé comme isocentre"                        
+                elif poi.poi_exists("REF SCAN"):           
+                    self.Label5.Text = "L'isocentre sera créé à partir du point REF SCAN"      
+                else:
+                    self.Label4.Text = "Aucun POI trouvé pour l'isocentre"
+                    self.Label4.ForeColor = Color.Red                     
+                 
+                    
+        def okClicked(self, sender, args):
+            #Check to see which machine is selected for treatment
+            if self.BeamModButton.Checked:
+                machine = 'BeamMod'
+            elif self.InfinityButton.Checked:
+                machine = 'Infinity'
+            else:
+                self.Label6.Text = "Il faut choisir un appareil avant de continuer"
+                self.Label6.ForeColor = Color.Red            
+                return
+                
+            #Prevent users from creating a new plan twice in a row
+            if self.Label6.Text == "Script terminé! Cliquez sur Cancel pour sortir.":
+                return
+                
+            #Check to see which site is treated (and therefore which script to launch)
+            if self.SiteButton1.Checked: #Prostate
+                Rx_type = self.comboBoxRx.SelectedItem
+                if self.comboBoxRx.SelectedIndex == -1:
+                    self.Label6.Text = "Il faut choisir une prescription avant de continuer"
+                    self.Label6.ForeColor = Color.Red  
+                else:
+                    if Rx_type == "80Gy-40":
+                        nb_fx = 40
+                    elif Rx_type == "66Gy-33":
+                        nb_fx = 33
+                    elif Rx_type == "66Gy-22":
+                        nb_fx = 22                        
+                    elif Rx_type == "60Gy-20":
+                        nb_fx = 20   
+                    elif Rx_type == "37.5Gy-15":
+                        nb_fx = 15
+                    elif Rx_type == "PACE 78Gy-39":
+                        nb_fx = 39
+                    elif Rx_type == "PACE 36.25Gy-5":
+                        nb_fx = 5                       
+                        
+                    if self.check3.Checked:
+                        isodose_creation = False
+                    else:
+                        isodose_creation = True                        
+                        
+                    # Check whether 3DCRT plan exists    
+                    if self.check2.Checked:
+                        self.Label6.ForeColor = Color.Black
+                        self.Label6.Text = "Création du plan en cours"
+                        prostate.create_prostate_plan_A1(nb_fx = nb_fx, plan3D = True, machine = machine, isodose_creation = isodose_creation)
+                    else:
+                        self.Label6.ForeColor = Color.Black
+                        self.Label6.Text = "Création du plan en cours"
+                        if nb_fx == 39 or nb_fx ==5: #PACE protocol
+                            prostate.create_prostate_plan_PACE(nb_fx = nb_fx, plan3D = False, machine = machine, isodose_creation = isodose_creation)
+                        else:
+                            prostate.create_prostate_plan_A1(nb_fx = nb_fx, plan3D = False, machine = machine, isodose_creation = isodose_creation)
+                        
+                    # Auto optimization if requested by user    
+                    if self.check1.Checked:
+                        if self.check2.Checked: #If A1 grand bassin already exists
+                            opt_plan = patient.TreatmentPlans["A2 seul"]  
+                        else:
+                            opt_plan = patient.TreatmentPlans["A1 seul"]                       
+                        self.Label6.Text = "Auto-optimization en cours (1er opt avant fit)"
+                        opt_plan.PlanOptimizations[0].RunOptimization()
+                        self.Label6.Text = "Auto-optimization en cours (2er opt avant fit)"
+                        opt_plan.PlanOptimizations[0].RunOptimization()                     
+                        self.Label6.Text = "Auto-optimization en cours (Ajustement des objectifs)"                        
+                        prostate.fit_obj_prostate(plan=opt_plan, beamset = opt_plan.BeamSets[0])
+                        opt_plan.PlanOptimizations[0].AutoScaleToPrescription = False
+                        opt_plan.PlanOptimizations[0].ResetOptimization()
+                        self.Label6.Text = "Auto-optimization en cours (1er opt après fit)"
+                        opt_plan.PlanOptimizations[0].RunOptimization()
+                        self.Label6.Text = "Auto-optimization en cours (2er opt après fit)"
+                        opt_plan.PlanOptimizations[0].RunOptimization()                           
+                    self.Label6.Text = "Script terminé! Cliquez sur Cancel pour sortir."
+                    self.Label6.ForeColor = Color.Green      
+                
+ 
+            elif self.SiteButton2.Checked: #Crâne stéréo
+                if self.comboBoxRx.SelectedIndex == -1:
+                    self.Label6.Text = "Il faut choisir une prescription avant de continuer"
+                    self.Label6.ForeColor = Color.Red
+                else:
+                    if self.comboBoxRx.Text[-4:] == "VMAT":
+                        treatment_technique = 'VMAT'
+                    else:
+                        treatment_technique = 'SMLC'
+                        
+                    if self.check3.Checked:
+                        isodose_creation = False
+                    else:
+                        isodose_creation = True     
+                        
+                    self.Label6.ForeColor = Color.Black
+                    self.Label6.Text = "Création du plan en cours"
+                    crane.plan_crane_stereo(machine = machine, isodose_creation = isodose_creation, treatment_technique = treatment_technique)
+                    # Double optimization if requested by user    
+                    if self.check1.Checked:
+                        self.Label6.Text = "Première optimization en cours"
+                        patient.TreatmentPlans["Stereo Crane"].PlanOptimizations[0].RunOptimization()
+                        self.Label6.Text = "Deuxième optimization en cours"
+                        patient.TreatmentPlans["Stereo Crane"].PlanOptimizations[0].RunOptimization()
+                    self.Label6.Text = "Script terminé! Cliquez sur Cancel pour sortir."
+                    self.Label6.ForeColor = Color.Green   
+
+                    
+            elif self.SiteButton3.Checked: #SBRT Poumon
+                Rx_type = self.comboBoxRx.SelectedItem
+                if Rx_type == "60Gy-5":
+                    nb_fx = 5
+                    rx_dose = 6000
+                elif Rx_type == "60Gy-8":
+                    nb_fx = 8
+                    rx_dose = 6000
+                elif Rx_type == "54Gy-3":
+                    nb_fx = 3          
+                    rx_dose = 5400
+                elif Rx_type == "48Gy-4":
+                    nb_fx = 4           
+                    rx_dose = 4800
+                elif Rx_type == "56Gy-4":
+                    nb_fx = 4           
+                    rx_dose = 5600
+                if self.comboBoxRx.SelectedIndex == -1:
+                    self.Label6.Text = "Il faut choisir une prescription avant de continuer"
+                    self.Label6.ForeColor = Color.Red
+                else:
+                    plan_name = 'A1'
+                    plan_opt = 0
+                    # Check if the user wants to add plan B1 to an existing plan
+                    if self.check3.Checked:
+                        plan_name = 'B1'
+                        plan_opt = 1
+                    self.Label6.ForeColor = Color.Black
+                    self.Label6.Text = "Création du plan en cours"
+                    if self.check2.Checked: # Request for a second arc
+                        two_arcs = True
+                    else:
+                        two_arcs = False
+                    poumon.plan_poumon_sbrt(nb_fx,rx_dose,plan_name,two_arcs,machine)
+                    # Double optimization if requested by user                 
+                    if self.check1.Checked:
+                        self.Label6.Text = "Première optimization en cours"
+                        patient.TreatmentPlans["Stereo Poumon"].PlanOptimizations[plan_opt].RunOptimization()
+                        self.Label6.Text = "Deuxième optimization en cours"
+                        patient.TreatmentPlans["Stereo Poumon"].PlanOptimizations[plan_opt].RunOptimization()
+                    self.Label6.Text = "Script terminé! Cliquez sur Cancel pour sortir."
+                    self.Label6.ForeColor = Color.Green   
+                
+            elif self.SiteButton4.Checked: #SBRT Foie
+                Rx_type = self.comboBoxRx.SelectedItem
+                if Rx_type[-1] == "3":
+                    nb_fx = 3
+                elif Rx_type[-1] == "5":
+                    nb_fx = 5
+                if self.comboBoxRx.SelectedIndex == -1:
+                    self.Label6.Text = "Il faut choisir une prescription avant de continuer"
+                    self.Label6.ForeColor = Color.Red
+                else:
+                    if self.check3.Checked:
+                        isodose_creation = False
+                    else:
+                        isodose_creation = True
+                    self.Label6.ForeColor = Color.Black
+                    self.Label6.Text = "Création du plan en cours"
+                    foie.plan_foie_sbrt(nb_fx,machine,isodose_creation)
+                    # Double optimization if requested by user    
+                    if self.check1.Checked:
+                        self.Label6.Text = "Première optimization en cours"
+                        patient.TreatmentPlans["Stereo Foie"].PlanOptimizations[0].RunOptimization()
+                        self.Label6.Text = "Deuxième optimization en cours"
+                        patient.TreatmentPlans["Stereo Foie"].PlanOptimizations[0].RunOptimization()
+                    self.Label6.Text = "Script terminé! Cliquez sur Cancel pour sortir."
+                    self.Label6.ForeColor = Color.Green   
+
+            elif self.SiteButton5.Checked: #Vertebre
+                if self.comboBoxRx.SelectedIndex == -1:
+                    self.Label6.Text = "Il faut choisir une prescription avant de continuer"
+                    self.Label6.ForeColor = Color.Red
+                else:
+                    if self.check3.Checked:
+                        isodose_creation = False
+                    else:
+                        isodose_creation = True     
+                        
+                    self.Label6.ForeColor = Color.Black
+                    self.Label6.Text = "Création du plan en cours"
+                    foie.plan_vertebre_sbrt(machine = machine, isodose_creation = isodose_creation)
+                    # Double optimization if requested by user    
+                    if self.check1.Checked:
+                        self.Label6.Text = "Première optimization en cours"
+                        patient.TreatmentPlans["Stereo Vertebre"].PlanOptimizations[0].RunOptimization()
+                        self.Label6.Text = "Deuxième optimization en cours"
+                        patient.TreatmentPlans["Stereo Vertebre"].PlanOptimizations[0].RunOptimization()
+                    self.Label6.Text = "Script terminé! Cliquez sur Cancel pour sortir."
+                    self.Label6.ForeColor = Color.Green   
+                    
+                    
+                    
+            else:
+                self.Label6.Text = "Le site n'a pas été sélectionné!"                
+                self.Label6.ForeColor = Color.Red
+
+        def cancelClicked(self, sender, args):
+            self.Close()
+
+        def setupMachineSelectPanel(self):
+            self.MachineSelectPanel = self.miniPanel(0, 300)
+            
+            self.MachineLabel = Label()
+            self.MachineLabel.Text = "Appareil de traitement:"
+            self.MachineLabel.Location = Point(25, 30)
+            self.MachineLabel.Font = Font("Arial", 10)
+            self.MachineLabel.AutoSize = True
+
+            self.BeamModButton = RadioButton()
+            self.BeamModButton.Text = "BeamMod (salles 11-12)"
+            self.BeamModButton.Location = Point(40, 55)
+            self.BeamModButton.Checked = True
+            self.BeamModButton.AutoSize = True
+            
+            self.InfinityButton = RadioButton()
+            self.InfinityButton.Text = "Infinity (salles 1-2-6)"
+            self.InfinityButton.Location = Point(40, 80)
+            self.InfinityButton.Checked = False 
+            self.InfinityButton.AutoSize = True            
+
+            self.MachineSelectPanel.Controls.Add(self.MachineLabel)
+            self.MachineSelectPanel.Controls.Add(self.BeamModButton)
+            self.MachineSelectPanel.Controls.Add(self.InfinityButton)            
+            
+            
+        def setupOKButtons(self):
+            self.OKbuttonPanel = self.newPanel(0, 425)
+
+            okButton = Button()
+            okButton.Text = "OK"
+            okButton.Location = Point(25, 50)
+            self.AcceptButton = okButton
+            okButton.Click += self.okClicked
+            
+            cancelButton = Button()
+            cancelButton.Text = "Cancel"
+            cancelButton.Location = Point(okButton.Left + okButton.Width + 10, okButton.Top)
+            self.CancelButton = cancelButton
+            cancelButton.Click += self.cancelClicked
+
+            self.OKbuttonPanel.Controls.Add(okButton)
+            self.OKbuttonPanel.Controls.Add(cancelButton)
+            
+        # eventhandler
+        def comboBox_SelectedValueChangedHandler(self, sender, args):
+            Rx_type = self.comboBoxRx.Text
+
+    #Check for common errors while importing patient, plan, beamset and examination
+    try:
+        patient = lib.get_current_patient()
+    except:
+        debug_window('Aucun patient sélectionné')
+        return                 
+    try:
+        exam = lib.get_current_examination()
+    except:
+        debug_window('Aucun examination trouvé')
+        return
         
+    form = ScriptLauncher()
+    Application.Run(form)     
+
+   
+def plan_launcher_v2():
+
+    class ScriptLauncher(Form):
+        def __init__(self):
+            self.Text = "Planning Script Launcher v2"
+
+            self.Width = 750
+            self.Height = 580
+
+            self.setupPlanningScriptLauncher()
+            self.setupOKButtons()
+            self.setupMachineSelectPanel()
+
+            self.Controls.Add(self.LauncherPanel)
+            self.Controls.Add(self.OKbuttonPanel)
+            self.Controls.Add(self.MachineSelectPanel)
+            
+        def newPanel(self, x, y):
+            panel = Panel()
+            panel.Width = 750
+            panel.Height = 350
+            panel.Location = Point(x, y)
+            panel.BorderStyle = BorderStyle.None
+            return panel
+
+        def miniPanel(self, x, y):
+            panel = Panel()
+            panel.Width = 750
+            panel.Height = 130
+            panel.Location = Point(x, y)
+            panel.BorderStyle = BorderStyle.None
+            return panel            
+            
+            
+        def setupPlanningScriptLauncher(self):
+            self.LauncherPanel = self.newPanel(0, 0)
+
+            self.PatientLabel = Label()
+            self.PatientLabel.Text = "Choissisez le site à planifier:                       Patient: " + patient.PatientName.replace('^', ', ')
+            self.PatientLabel.Location = Point(25, 25)
+            self.PatientLabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.PatientLabel.AutoSize = True
+
+            self.sitecombo = ComboBox()
+            self.sitecombo.Parent = self
+            self.sitecombo.Size = Size(200,40)
+            self.sitecombo.Location = Point(25, 50)
+            self.sitecombo.Items.Add("Prostate")
+            self.sitecombo.Items.Add("Poumon")     
+            self.sitecombo.Items.Add("Crâne")
+            self.sitecombo.Items.Add("Foie")                 
+            self.sitecombo.Items.Add("Vertebre")              
+            self.sitecombo.Text = "Choisissez site"
+            self.sitecombo.TextChanged += self.siteselectionChanged           
+    
+            self.Label2 = Label()
+            self.Label2.Text = ""
+            self.Label2.Location = Point(300, 50)
+            self.Label2.AutoSize = True
+            self.Label2.Font = Font("Arial", 10)
+            self.Label2.ForeColor = Color.Black
+            
+            self.Label3 = Label()
+            self.Label3.Text = ""
+            self.Label3.Location = Point(300, 70)
+            self.Label3.AutoSize = True
+            self.Label3.Font = Font("Arial", 10)
+            self.Label3.ForeColor = Color.Black
+            
+            self.Label4 = Label()
+            self.Label4.Text = ""
+            self.Label4.Location = Point(300, 90)
+            self.Label4.AutoSize = True
+            self.Label4.Font = Font("Arial", 10)
+            self.Label4.ForeColor = Color.Black
+            
+            self.Label5 = Label()
+            self.Label5.Text = ""
+            self.Label5.Location = Point(300, 110)
+            self.Label5.AutoSize = True
+            self.Label5.Font = Font("Arial", 10)
+            self.Label5.ForeColor = Color.Black
+            
+            #self.Status = Label()
+            #self.Status.Text = ""
+            #self.Status.Location = Point(300, 190)
+            #self.Status.AutoSize = True
+            #self.Status.Font = Font("Arial", 12, FontStyle.Bold)
+            #self.Status.ForeColor = Color.Black
+
+            self.Reminder = Label()
+            self.Reminder.Text = ""
+            self.Reminder.Location = Point(300, 220)
+            self.Reminder.AutoSize = True
+            self.Reminder.Font = Font("Arial", 11, FontStyle.Italic)
+            self.Reminder.ForeColor = Color.Black
+            
+            self.RxLabel = Label()
+            self.RxLabel.Text = "Prescription:"
+            self.RxLabel.Location = Point(25, 90)
+            self.RxLabel.Font = Font("Arial", 10)
+            self.RxLabel.AutoSize = True  
+            
+            self.comboBoxRx = ComboBox()
+            self.comboBoxRx.Parent = self
+            self.comboBoxRx.Size = Size(90,40)
+            self.comboBoxRx.Location = Point(135,90)            
+            
+            #self.DoseLabel = Label()
+            #self.DoseLabel.Text = "Dose (Gy):"
+            #self.DoseLabel.Location = Point(25, 90)
+            #self.DoseLabel.Font = Font("Arial", 10)
+            #self.DoseLabel.AutoSize = True               
+
+            #self.dosebox = TextBox()
+            #self.dosebox.Text = "----"
+            #self.dosebox.Location = Point(135, 90)
+            #self.dosebox.Width = 40
+              
+            #self.FxLabel = Label()
+            #self.FxLabel.Text = "Nb de fx:"
+            #self.FxLabel.Location = Point(25, 120)
+            #self.FxLabel.Font = Font("Arial", 10)
+            #self.FxLabel.AutoSize = True               
+
+            #self.Fxbox = TextBox()
+            #self.Fxbox.Text = "----"
+            #self.Fxbox.Location = Point(135, 120)
+            #self.Fxbox.Width = 40                        
+                        
+            self.techniqueLabel = Label()
+            self.techniqueLabel.Text = "Technique:"
+            self.techniqueLabel.Location = Point(25, 120)
+            self.techniqueLabel.Font = Font("Arial", 10)
+            self.techniqueLabel.AutoSize = True                
+            
+            self.techniquecombo = ComboBox()
+            self.techniquecombo.Parent = self
+            self.techniquecombo.Size = Size(55,40)
+            self.techniquecombo.Location = Point(135, 120)                          
+            
+            self.isodoseLabel = Label()
+            self.isodoseLabel.Text = "Créér isodoses?"
+            self.isodoseLabel.Location = Point(25, 150)
+            self.isodoseLabel.Font = Font("Arial", 10)
+            self.isodoseLabel.AutoSize = True               
+            
+            self.isodosecombo = ComboBox()
+            self.isodosecombo.Parent = self
+            self.isodosecombo.Size = Size(55,40)
+            self.isodosecombo.Location = Point(135, 150)   
+            self.isodosecombo.Items.Add("Oui")     
+            self.isodosecombo.Items.Add("Non")                 
+            self.isodosecombo.Text = 'Oui'                   
+
+            self.SiteLabel = Label()
+            self.SiteLabel.Text = "Nom du site:"
+            self.SiteLabel.Location = Point(25, 180)
+            self.SiteLabel.Font = Font("Arial", 10)
+            self.SiteLabel.AutoSize = True               
+
+            self.SiteBox = TextBox()
+            self.SiteBox.Text = "A1"
+            self.SiteBox.Location = Point(135, 180)
+            self.SiteBox.Width = 40                 
+   
+            self.scanLabel = Label()
+            self.scanLabel.Text = "Scan de planif"
+            self.scanLabel.Location = Point(25, 210)
+            self.scanLabel.Font = Font("Arial", 10)
+            self.scanLabel.AutoSize = True               
+            
+            self.scancombo = ComboBox()
+            self.scancombo.Parent = self
+            self.scancombo.Size = Size(55,40)
+            self.scancombo.Location = Point(135, 210)              
+            self.isodosecombo.Text = 'Choissisez'            
+
+            
+            self.OptionsLabel = Label()
+            self.OptionsLabel.Text = "Options:"
+            self.OptionsLabel.Location = Point(25, 250)
+            self.OptionsLabel.Font = Font("Arial", 10)
+            self.OptionsLabel.AutoSize = True            
+                      
+            self.check1 = CheckBox()
+            self.check1.Text = "Double optimization initiale?"
+            self.check1.Location = Point(40, 270)
+            self.check1.Width = 300
+            self.check1.Checked = False
+            
+            self.check2 = CheckBox()
+            self.check2.Text = ""
+            self.check2.Location = Point(40, 295)
+            self.check2.Width = 300            
+
+            self.check3 = CheckBox()
+            self.check3.Text = ""
+            self.check3.Location = Point(40, 320)
+            self.check3.Width = 300    
+            
+            
+            
+            self.LauncherPanel.Controls.Add(self.PatientLabel)
+            self.LauncherPanel.Controls.Add(self.Label2)
+            self.LauncherPanel.Controls.Add(self.Label3)
+            self.LauncherPanel.Controls.Add(self.Label4)
+            self.LauncherPanel.Controls.Add(self.Label5)
+            #self.LauncherPanel.Controls.Add(self.Status)
+            self.LauncherPanel.Controls.Add(self.Reminder)    
+            self.LauncherPanel.Controls.Add(self.RxLabel) 
+            #self.LauncherPanel.Controls.Add(self.DoseLabel)
+            #self.LauncherPanel.Controls.Add(self.dosebox)  
+            #self.LauncherPanel.Controls.Add(self.FxLabel)
+            #self.LauncherPanel.Controls.Add(self.Fxbox)
+            self.LauncherPanel.Controls.Add(self.isodoseLabel)
+            self.LauncherPanel.Controls.Add(self.scanLabel)
+            self.LauncherPanel.Controls.Add(self.techniqueLabel)         
+            self.LauncherPanel.Controls.Add(self.SiteLabel)
+            self.LauncherPanel.Controls.Add(self.SiteBox)      
+            self.LauncherPanel.Controls.Add(self.OptionsLabel)            
+            self.LauncherPanel.Controls.Add(self.check1)
+            self.LauncherPanel.Controls.Add(self.check2)
+            self.LauncherPanel.Controls.Add(self.check3)            
+
+
+            exam_list = []
+            for CT in patient.Examinations:
+                exam_list.append(CT.Name)
+            
+            for contour in patient.PatientModel.RegionsOfInterest:
+                if not roi.get_roi_approval(contour.Name,patient.Examinations["CT 1"]):
+                    VolCT1 = roi.get_roi_volume(contour.Name, exam=patient.Examinations["CT 1"])
+                    if "CT 2" in exam_list:
+                        VolCT2 = roi.get_roi_volume(contour.Name, exam=patient.Examinations["CT 2"])
+                    else:
+                        VolCT2 = 0
+
+                    if VolCT1 == 0 and VolCT2 == 0:
+                        contour.Name = ("vide_" + contour.Name)
+            
+        def siteselectionChanged(self, sender, args):
+
+            # Erase error messages and clear prescription selection menu
+            self.Label2.Text = ""
+            self.Label3.Text = ""
+            self.Label4.Text = ""
+            self.Label5.Text = ""
+            self.Status.Text = ""
+            self.Reminder.Text = ""            
+            self.Label2.ForeColor = Color.Black
+            self.Label3.ForeColor = Color.Black
+            self.Label4.ForeColor = Color.Black
+            self.Label5.ForeColor = Color.Black
+            self.Status.ForeColor = Color.Black
+            self.Reminder.ForeColor = Color.Black    
+            self.check1.Text = "Double optimization initiale?"            
+            self.check1.Checked = False            
+            self.check2.Text = ""
+            self.check2.Checked = False
+            self.check3.Text = ""
+            self.check3.Checked = False
+            self.comboBoxRx.Items.Clear()
+            self.comboBoxRx.Text = "-----"
+            self.techniquecombo.Items.Clear()
+            self.techniquecombo.Items.Add("VMAT")                 
+            self.techniquecombo.Text = 'VMAT'    
+            PACE = False
+            
+            roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+                        
+            if self.sitecombo.Text == "Prostate":      
+                # add items
+                self.comboBoxRx.Items.Add("80Gy-40")
+                self.comboBoxRx.Items.Add("66Gy-33")
+                self.comboBoxRx.Items.Add("66Gy-22")
+                self.comboBoxRx.Items.Add("60Gy-20")
+                self.comboBoxRx.Items.Add("37.5Gy-15")
+                self.comboBoxRx.Items.Add("PACE 78Gy-39")
+                self.comboBoxRx.Items.Add("PACE 36.25Gy-5")
+                self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("80Gy-40")
+                self.Reminder.Text = "Pour les plans de prostate, le nom du site est\nchoisi de façon automatique (donc la boîte\nNom du site sera ignorée.)"
+                self.check1.Text = "Auto-optimisation initial"
+                self.check1.Checked = True
+                self.check2.Text = "Est-ce qu'il y a un plan 3D conforme?"
+            
+                boost = False
+                for name in roi_names:
+                    if 'PTVBOOST' in name.replace(' ', '').upper():
+                        boost = True
+                        boost_name = name
+
+                #Find ROI(s) that will be used to create PTV A1
+                if 'PTV A1' in roi_names:
+                    self.Label2.Text = "Source pour PTV A1: PTV A1 déjà existent"
+                elif 'PTV 1.5cm' in roi_names:
+                    if 'PTV VS' in roi_names:
+                        self.Label2.Text = "Source pour PTV A1: PTV 1.5cm + PTV VS"
+                    else:
+                        self.Label2.Text = "Source pour PTV A1: PTV 1.5cm"
+                elif 'PTV 1cm' in roi_names:
+                    if 'PTV VS' in roi_names:
+                        self.Label2.Text = "Source pour PTV A1: PTV 1cm + PTV VS"
+                    else:
+                        self.Label2.Text = "Source pour PTV A1: PTV 1cm"
+                elif 'PTV_7800' in roi_names:
+                    self.Label2.Text = "Source pour PTV A1: PTV_7800"
+                    self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("PACE 78Gy-39")
+                    PACE = True
+                elif 'PTV_3625' in roi_names:
+                    self.Label2.Text = "Source pour PTV A1: PTV_3625"  
+                    self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("PACE 36.25Gy-5")
+                    PACE = True
+                else:
+                    self.Label2.Text = "Attention: Aucun ROI source trouvé pour le PTV A1!"     
+                    self.Label2.ForeColor = Color.Red     
+                
+                #Find ROI that will be used to create PTV A2
+                if boost:
+                    self.Label3.Text = "Source pour PTV A2: " + boost_name
+                elif 'PTV 1cm' in roi_names:
+                    self.Label3.Text = "Source pour PTV A2: PTV 1cm"
+                elif not PACE:
+                    self.Label3.Text = "Attention: Aucun ROI source trouvé pour le PTV A2!"     
+                    self.Label3.ForeColor = Color.Orange                       
+                
+                #Verify presence of essential contours
+                if not PACE:
+                    essential_list = ["Table","RECTUM","VESSIE"]
+                else:
+                    essential_list = ["Table","Rectum","Bladder"]
+                missing_roi = []
+                for roi in essential_list:
+                    if roi not in roi_names:
+                        missing_roi.append(roi)
+                    
+                if len(missing_roi) > 0:
+                    error_message = ""
+                    for roi in missing_roi:
+                        error_message += roi + ",  "
+                    if error_message[-3:]==",  ":
+                        error_message = error_message[:-3]
+                    self.Label3.Text = "ROI(s) pas trouvés: " + error_message
+                    self.Label3.ForeColor = Color.Red
+                else:
+                    if not PACE:
+                        self.Label4.Text = "ROIs Table, RECTUM et VESSIE trouvés"
+                    else:
+                        self.Label4.Text = "ROIs Table, Rectum et Bladder trouvés"
+
+                #Determine which POI will be used for the isocenter
+                if poi.poi_exists("ISO"):           
+                    self.Label5.Text = "Point ISO sera utilisé comme isocentre"                        
+                elif poi.poi_exists("REF SCAN"):           
+                    self.Label5.Text = "L'isocentre sera créé à partir du point REF SCAN"      
+                else:
+                    self.Label4.Text = "Aucun POI trouvé pour l'isocentre"
+                    self.Label4.ForeColor = Color.Red                 
+ 
+
+            elif self.sitecombo.Text == "Crâne":     
+                self.check1.Checked = True  #Double optimization
+                #Identify the PTV
+                if 'PTV15' in roi_names:
+                    self.Label2.Text = "PTV15 trouvé"
+                    self.comboBoxRx.Items.Add("15Gy-1")
+                    self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("15Gy-1")
+                    self.techniquecombo.Items.Add("IMRT")                    
+                    #self.dosebox.Text = "15"
+                    #self.Fxbox.Text = "1"
+                elif 'PTV18' in roi_names:
+                    self.Label2.Text = "PTV18 trouvé"
+                    self.comboBoxRx.Items.Add("18Gy-1")
+                    self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("18Gy-1")
+                    self.techniquecombo.Items.Add("IMRT")                    
+                    #self.dosebox.Text = "18"
+                    #self.Fxbox.Text = "1"
+                else:
+                    self.Label2.Text = "Attention: Aucun PTV trouvé!"     
+                    self.Label2.ForeColor = Color.Red     
+                
+                if 'CERVEAU' not in roi_names:
+                    self.Label3.Text = "ROI CERVEAU pas trouvé!"
+                    self.Label3.ForeColor = Color.Red          
+       
+                #Determine which POI will be used for the isocenter
+                if poi.poi_exists("ISO"):           
+                    self.Label5.Text = "Point ISO sera utilisé comme isocentre"                        
+                elif poi.poi_exists("REF SCAN"):           
+                    self.Label5.Text = "L'isocentre sera créé à partir du point REF SCAN"      
+                else:
+                    self.Label4.Text = "Aucun POI trouvé pour l'isocentre"
+                    self.Label4.ForeColor = Color.Red    
+                    
+                    
+            elif self.sitecombo.Text == "Poumon":   
+                self.Reminder.Text = "Pour les plans de poumon, le nom du site est\nchoisi de façon automatique (donc la boîte\nNom du site sera ignorée.)"
+                self.check1.Checked = True  #Double optimization 
+                self.check2.Text = "Ajouter deuxième arc? (plans difficiles)"            
+                self.comboBoxRx.Items.Add("48Gy-4")
+                self.comboBoxRx.Items.Add("54Gy-3")
+                self.comboBoxRx.Items.Add("56Gy-4")
+                self.comboBoxRx.Items.Add("60Gy-5")
+                self.comboBoxRx.Items.Add("60Gy-8")
+                
+                #Identify the PTV
+                if 'PTV48' in roi_names:
+                    if 'ITV48' in roi_names:
+                        self.Label2.Text = "PTV48 et ITV48 trouvés"
+                        self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("48Gy-4")
+                    else: 
+                        self.Label2.Text = "Attention: PTV48 trouveé, mais ITV48 absent!"     
+                        self.Label2.ForeColor = Color.Red   
+                elif 'PTV54' in roi_names:
+                    if 'ITV54' in roi_names:
+                        self.Label2.Text = "PTV54 et ITV54 trouvés"
+                        self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("54Gy-3")
+                    else:
+                        self.Label2.Text = "Attention: PTV54 trouveé, mais ITV54 absent!"     
+                        self.Label2.ForeColor = Color.Red       
+                elif 'PTV56' in roi_names:
+                    if 'ITV56' in roi_names:
+                        self.Label2.Text = "PTV56 et ITV56 trouvés"
+                        self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("56Gy-4")
+                    else:
+                        self.Label2.Text = "Attention: PTV56 trouveé, mais ITV56 absent!"     
+                        self.Label2.ForeColor = Color.Red                           
+                elif 'PTV60' in roi_names:
+                    if 'ITV60' in roi_names:
+                        self.Label2.Text = "PTV60 et ITV60 trouvés"
+                        self.comboBoxRx.Text = "-----"
+                        self.check2.Checked = True
+                    else:
+                        self.Label2.Text = "Attention: PTV60 trouveé, mais ITV60 absent!"     
+                        self.Label2.ForeColor = Color.Red      
+                elif 'PTV A1' in roi_names:
+                    if 'ITV A1' in roi_names:
+                        self.Label2.Text = "PTV A1 et ITV A1 trouvés"
+                        self.comboBoxRx.Text = "-----"
+                    else:
+                        self.Label2.Text = "Attention: PTV A1 trouveé, mais ITV A1 absent!"     
+                        self.Label2.ForeColor = Color.Red    
+                else:
+                    self.Label2.Text = "Attention: Aucun PTV trouvé pour plan A1!"     
+                    self.Label2.ForeColor = Color.Red     
+                if 'PTV B1' in roi_names:
+                    if 'ITV B1' in roi_names:
+                        if poi.poi_exists("ISO B1"):
+                            self.Label5.Text = "PTV B1, ITV B1 et ISO B1 trouvés, possible d'ajouter un plan B1"
+                            self.check3.Text = "Créer plan B1 (seulement si plan A1 existe déjà)"
+                        else:
+                            self.Label5.Text = "PTV B1 et ITV B1 trouvés, mais ISO B1 absent"
+                            self.check3.Text = "Créer plan B1 (seulement si plan A1 existe déjà)"            
+                            self.Reminder.Text = "RAPPEL: Pour la création d'un plan B1, il est possible\nd'utiliser un nouvel isocentre avec le nom ISO B1."
+                    else:
+                        self.Label5.Text = "Attention: PTV B1 trouvé, mais ITV B1 absent!"     
+                        self.Label5.ForeColor = Color.Red  
+                    
+                #Verify presence of essential contours
+                essential_list = ["Table","POUMON DRT","POUMON GCHE","BR SOUCHE"]
+                missing_roi = []
+                for roi in essential_list:
+                    if roi not in roi_names:
+                        missing_roi.append(roi)
+                    
+                if len(missing_roi) > 0:
+                    error_message = ""
+                    for roi in missing_roi:
+                        error_message += roi + ",  "
+                    if error_message[-3:]==",  ":
+                        error_message = error_message[:-3]
+                    self.Label3.Text = "ROI(s) pas trouvés: " + error_message
+                    self.Label3.ForeColor = Color.Red
+                else:
+                    self.Label3.Text = "ROIs Table, BR SOUCHE et POUMONs trouvés"      
+       
+                #Determine which POI will be used for the isocenter
+                if poi.poi_exists("ISO", patient.Examinations['CT 1']):           
+                    self.Label4.Text = "Point ISO sera utilisé comme isocentre"                        
+                elif poi.poi_exists("REF SCAN", patient.Examinations['CT 1']):           
+                    self.Label4.Text = "L'isocentre sera créé à partir du point REF SCAN"      
+                else:
+                    self.Label4.Text = "Aucun POI trouvé pour l'isocentre"
+                    self.Label4.ForeColor = Color.Red     
+
+
+            elif self.sitecombo.Text == "Foie":     
+                self.check1.Checked = True  #Double optimization       
+                #Identify the PTV
+                ptv_name = "NoValue"
+                #roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+                for name in roi_names:
+                    n = name.replace(' ', '').upper()
+                    if 'PTV' in n and '-' not in n:
+                        try:
+                           presc_dose = float(name[3:])
+                        except:
+                            continue
+                        ptv_name = name
+                        break  
+                if ptv_name != "NoValue":
+                    self.Label2.Text = ptv_name + " trouvé"
+                    self.comboBoxRx.Items.Add(ptv_name[3:]+"Gy-3")
+                    self.comboBoxRx.Items.Add(ptv_name[3:]+"Gy-5")
+                    self.comboBoxRx.Text = "Choisissez"
+                else:
+                    self.Label2.Text = "Attention: Aucun PTV trouvé!"     
+                    self.Label2.ForeColor = Color.Red     
+                
+                #Verify presence of essential contours
+                essential_list = ["Table","FOIE EXPI","GTV"]
+                missing_roi = []
+                for roi in essential_list:
+                    if roi not in roi_names:
+                        missing_roi.append(roi)
+                    
+                if len(missing_roi) > 0:
+                    error_message = ""
+                    for roi in missing_roi:
+                        error_message += roi + ",  "
+                    if error_message[-3:]==",  ":
+                        error_message = error_message[:-3]
+                    self.Label3.Text = "ROI(s) pas trouvés: " + error_message
+                    self.Label3.ForeColor = Color.Red
+                else:
+                    self.Label3.Text = "ROIs Table, FOIE EXPI et GTV trouvés"      
+       
+                #Determine which POI will be used for the isocenter
+                if poi.poi_exists("ISO"):           
+                    self.Label5.Text = "Point ISO sera utilisé comme isocentre"                        
+                elif poi.poi_exists("REF SCAN"):           
+                    self.Label5.Text = "L'isocentre sera créé à partir du point REF SCAN"      
+                else:
+                    self.Label4.Text = "Aucun POI trouvé pour l'isocentre"
+                    self.Label4.ForeColor = Color.Red     
+                 
+                 
+            elif self.sitecombo.Text == "Vertebre":     
+                self.check1.Checked = True  #Double optimization        
+                #Identify the PTV
+                if 'PTV18' in roi_names:
+                    self.Label2.Text = "PTV18 trouvé"
+                    self.comboBoxRx.Items.Add("18Gy-1")
+                    self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("18Gy-1")
+                else:
+                    self.Label2.Text = "Attention: Aucun PTV trouvé!"     
+                    self.Label2.ForeColor = Color.Red                         
+       
+                #Determine which POI will be used for the isocenter
+                if poi.poi_exists("ISO"):           
+                    self.Label5.Text = "Point ISO sera utilisé comme isocentre"                        
+                elif poi.poi_exists("REF SCAN"):           
+                    self.Label5.Text = "L'isocentre sera créé à partir du point REF SCAN"      
+                else:
+                    self.Label4.Text = "Aucun POI trouvé pour l'isocentre"
+                    self.Label4.ForeColor = Color.Red                     
+                 
+                    
+        def okClicked(self, sender, args):
+            #Prevent users from creating a new plan twice in a row
+            if self.Status.Text == "Script terminé! Cliquez sur Cancel pour sortir.":
+                return
+                
+            #Check to see which machine is selected for treatment
+            if self.BeamModButton.Checked:
+                machine = 'BeamMod'
+            elif self.InfinityButton.Checked:
+                machine = 'Infinity'
+            else:
+                self.Status.Text = "Il faut choisir un appareil avant de continuer"
+                self.Status.ForeColor = Color.Red            
+                return               
+                
+            #Check whether to create isodose lines
+            if self.isodosecombo.Text == 'Oui':
+                isodose_creation = True
+            else:
+                isodose_creation = False
+                
+            #Check treatment techniqueLabel
+            if self.techniquecombo.Text == 'IMRT':
+                treatment_technique = 'SMLC'
+            else:
+                treatment_technique = 'VMAT'
+                
+            #Ensure that a prescription has been selected
+            if self.comboBoxRx.Text == '-----' or self.comboBoxRx.SelectedIndex == -1:
+                self.Status.Text = "Il faut choisir une prescription avant de continuer"
+                self.Status.ForeColor = Color.Red              
+                return
+            
+            #Determine prescription dose (in cGy) and number of fractions
+            pace = False
+            temp_string = self.comboBoxRx.Text
+            if temp_string[:5] == 'PACE ':
+                temp_string = temp_string[5:]
+                pace = True
+            try:
+                rx_dose = int(float(temp_string.split('Gy-')[0]) * 100)
+                nb_fx = int(temp_string.split('Gy-')[1])
+            except:
+                self.Status.Text = "Impossible de lire dose de prescription ou nombre de fractions"
+                self.Status.ForeColor = Color.Red              
+                return
+                
+
+            #Check to see which site is treated (and therefore which script to launch)
+            if self.sitecombo.Text == 'Prostate':
+            
+                if nb_fx == 15: #37.5Gy-15 plans are initially planned as 60Gy-24 using clinical goals for a 60Gy-20 prescription
+                    nb_fx = 24
+                    rx_dose = 6000
+                    
+                #Set the plan type (used for adding clinical goals later)
+                if pace:
+                    plan_type = 'Prostate PACE'
+                elif nb_fx == 40:
+                    plan_type = 'Prostate'
+                else:
+                    plan_type = 'Lit Prostatique'
+
+                d = dict(patient = patient,
+                         exam = patient.Examinations[self.scancombo.Text],
+                         machine = machine,
+                         nb_fx = nb_fx,
+                         rx_dose = rx_dose,
+                         treatment_technique = treatment_technique,
+                         plan_type = plan_type)        
+
+                self.Status.ForeColor = Color.Black
+                
+                self.Status.Text = "En cours: Gestion des POIs"
+                prostate.prostate_A1_pois(plan_data = d)
+                
+                self.Status.Text = "En cours: Création des ROIs (peut prendre un peu de temps)"
+                prostate.prostate_A1_rois(plan_data = d)
+                
+                self.Status.Text = "En cours: Ajout du plan et beamset"
+                prostate.prostate_A1_add_plan_and_beamset(plan_data = d)           
+
+                self.Status.Text = "En cours: Ajout des faisceaux"
+                beams.add_beams_prostate_A1(beamset=patient.TreatmentPlans['A1 seul'].BeamSets['A1'])          
+
+                self.Status.Text = "En cours: Reglage des paramètres d'optimisation"
+                prostate.prostate_A1_opt_settings(plan_data = d)                
+            
+                self.Status.Text = "En cours: Ajout des objectifs d'optimisation"
+                optimization_objectives.add_opt_obj_prostate_A1(plan=patient.TreatmentPlans['A1 seul'])
+                
+                self.Status.Text = "En cours: Ajout des clinical goals"
+                if nb_fx == 24: #37.5Gy-15 plans are initially planned as 60Gy-24 using clinical goals for a 60Gy-20 prescription
+                    clinical_goals.add_dictionary_cg(plan_type, rx_dose/100, 20, plan=patient.TreatmentPlans['A1 seul'])
+                else:
+                    clinical_goals.add_dictionary_cg(plan_type, rx_dose/100, nb_fx, plan=patient.TreatmentPlans['A1 seul'])
+                
+                if self.check2.Checked and plan_type != 'Prostate PACE': #If 3DCRT grand bassin plan exists
+                    self.Status.Text = "En cours: Changement de noms pour A2-A3"
+                    prostate.prostate_A1_rename(plan_data = d)
+                    isodose_creation = False
+            
+                if isodose_creation:
+                    self.Status.Text = "En cours: Reglage du Dose Color Table"
+                    prostate.prostate_A1_create_isodose_lines(plan_data = d)
+            
+                if plan_type == 'Prostate PACE':
+                    self.Status.Text = "En cours: Changement du nom du PTV"
+                    if roi.roi_exists("PTV_7800"):
+                        patient.PatientModel.RegionsOfInterest["PTV_7800"].Name = "PTV A1 78Gy"
+                    if roi.roi_exists("PTV_3625"):
+                        patient.PatientModel.RegionsOfInterest["PTV_3625"].Name = "PTV A1 36.25Gy"                        
+                    
+                # Auto optimization if requested by user    
+                if self.check1.Checked:
+                    if self.check2.Checked and plan_type != 'Prostate PACE': #If A1 grand bassin already exists
+                        opt_plan = patient.TreatmentPlans["A2 seul"]  
+                    else:
+                        opt_plan = patient.TreatmentPlans["A1 seul"]                       
+                    self.Status.Text = "Auto-optimization en cours (1er opt avant fit)"
+                    opt_plan.PlanOptimizations[0].RunOptimization()
+                    self.Status.Text = "Auto-optimization en cours (2er opt avant fit)"
+                    opt_plan.PlanOptimizations[0].RunOptimization()                     
+                    self.Status.Text = "Auto-optimization en cours (Ajustement des objectifs)"                        
+                    prostate.fit_obj_prostate(plan=opt_plan, beamset = opt_plan.BeamSets[0])
+                    opt_plan.PlanOptimizations[0].AutoScaleToPrescription = False
+                    opt_plan.PlanOptimizations[0].ResetOptimization()
+                    self.Status.Text = "Auto-optimization en cours (1er opt après fit)"
+                    opt_plan.PlanOptimizations[0].RunOptimization()
+                    self.Status.Text = "Auto-optimization en cours (2er opt après fit)"
+                    opt_plan.PlanOptimizations[0].RunOptimization()                   
+                    
+                self.Status.Text = "Script terminé! Cliquez sur Cancel pour sortir."
+                self.Status.ForeColor = Color.Green      
+                
+ 
+            elif self.sitecombo.Text == 'Crâne':
+                if rx_dose == 1500:
+                    ptv = patient.PatientModel.RegionsOfInterest["PTV15"]
+                elif rx_dose == 1800:  
+                    ptv = patient.PatientModel.RegionsOfInterest["PTV18"]                        
+            
+                #Create the plan data dictionary to send to the component scripts                        
+                #d = {'plan_name':'A1'}
+                d = dict(patient = patient,
+                         plan_name = 'Stereo Crane',
+                         beamset_name = 'Stereo Crane',
+                         site_name = self.SiteBox.Text,
+                         exam = patient.Examinations[self.scancombo.Text],
+                         machine = machine,
+                         nb_fx = nb_fx,
+                         rx_dose = rx_dose,
+                         ptv = ptv,
+                         treatment_technique = treatment_technique)                        
+                    
+                self.Status.ForeColor = Color.Black
+                
+                self.Status.Text = "En cours: Gestion des POIs"
+                crane.crane_stereo_pois(plan_data = d)
+                
+                self.Status.Text = "En cours: Création des ROIs (peut prendre un peu de temps)"
+                crane.crane_stereo_rois(plan_data = d)
+                
+                self.Status.Text = "En cours: Ajout du plan et beamset"
+                crane.crane_stereo_add_plan_and_beamset(plan_data = d)           
+
+                self.Status.Text = "En cours: Ajout des faisceaux"
+                crane.crane_stereo_add_beams(plan_data = d)    
+
+                self.Status.Text = "En cours: Reglage des paramètres d'optimisation"
+                crane.crane_stereo_opt_settings(plan_data = d)
+                
+                self.Status.Text = "En cours: Ajout des objectifs d'optimisation"
+                optimization_objectives.add_opt_obj_brain_stereo(patient_plan = patient.TreatmentPlans[d['plan_name']])
+
+                self.Status.Text = "En cours: Ajout des clinical goals"
+                clinical_goals.add_dictionary_cg('Crane Stereo', rx_dose/100, 1, plan = patient.TreatmentPlans[d['plan_name']])
+                
+                self.Status.Text = "En cours: Changement du nom du PTV"
+                crane.crane_stereo_rename_ptv(plan_data = d)
+
+                if isodose_creation:
+                    self.Status.Text = "En cours: Reglage du Dose Color Table"
+                    crane.crane_stereo_create_isodose_lines(plan_data = d)                    
+                
+                # Double optimization if requested by user    
+                if self.check1.Checked:
+                    self.Status.Text = "En cours: Première optimization"
+                    patient.TreatmentPlans[d['plan_name']].PlanOptimizations[0].RunOptimization()
+                    self.Status.Text = "En cours: Deuxième optimization"
+                    patient.TreatmentPlans[d['plan_name']].PlanOptimizations[0].RunOptimization()
+                self.Status.Text = "Script terminé! Cliquez sur Cancel pour sortir."
+                self.Status.ForeColor = Color.Green   
+
+                    
+            elif self.sitecombo.Text == 'Poumon':            
+                # Check if the user wants to add plan B1 to an existing plan
+                if self.check3.Checked:
+                    site_name = 'B1'
+                    plan_opt = 1 #Assume for now that B1 will be added as a second beamset in the original plan
+                    self.SiteBox.Text = 'B1'
+                    ptv_name = 'PTV B1'
+                    itv_name = 'ITV B1'
+                else:
+                    site_name = 'A1' #It's too complicated to accept arbitrary site names for lung cases, sorry
+                    plan_opt = 0
+                    #Determine PTV and ITV names (based on message displayed in Label2 - does not work for B1 plans because message is changed!)
+                    ptv_name = self.Label2.Text
+                    ptv_name = ptv_name[0:6] #Include 6 characters in case PTV A1 is used
+                    if ptv_name[-1] == ' ':
+                        ptv_name = ptv_name[0:5] #Drop blank space at the end if applicable
+                    itv_name = 'I' + ptv_name[1:]
+
+                # See if second arc was requested
+                if self.check2.Checked: 
+                    two_arcs = True
+                else:
+                    two_arcs = False
+            
+                #Create the plan data dictionary to send to the component scripts                        
+                d = dict(patient = patient,
+                         plan_name = 'Stereo Poumon',
+                         beamset_name = site_name,
+                         site_name = site_name,
+                         exam = patient.Examinations[self.scancombo.Text],
+                         machine = machine,
+                         nb_fx = nb_fx,
+                         rx_dose = rx_dose,
+                         ptv = patient.PatientModel.RegionsOfInterest[ptv_name],
+                         itv = patient.PatientModel.RegionsOfInterest[itv_name],
+                         treatment_technique = treatment_technique,
+                         two_arcs = two_arcs)                            
+                    
+                self.Status.ForeColor = Color.Black
+                
+                self.Status.Text = "En cours: Gestion des POIs"
+                poumon.poumon_stereo_pois(plan_data = d)
+                
+                self.Status.Text = "En cours: Création des ROIs"
+                new_names = poumon.poumon_stereo_rois(plan_data = d)
+
+                self.Status.Text = "En cours: Ajout du plan et beamset"
+                new_plan_name = poumon.poumon_stereo_add_plan_and_beamset(plan_data = d)
+                d['plan_name'] = new_plan_name #Update plan name because B1 plan will either be added to existing Stereo Poumon or else will be called B1
+
+                self.Status.Text = "En cours: Ajout des faisceaux"
+                beams.add_beams_lung_stereo(beamset=patient.TreatmentPlans[d['plan_name']].BeamSets[d['beamset_name']], examination=d['exam'], ptv_name=d['ptv'].Name, two_arcs=d['two_arcs'])                    
+                
+                self.Status.Text = "En cours: Reglage des paramètres d'optimisation"
+                poumon.poumon_stereo_opt_settings(plan_data = d)
+                
+                self.Status.Text = "En cours: Ajout des objectifs d'optimisation et les clinical goals"
+                clinical_goals.smart_cg_lung_stereo(plan=patient.TreatmentPlans[d['plan_name']], examination=d['exam'], nb_fx=nb_fx, rx_dose=rx_dose, ptv=d['ptv'], beamset=patient.TreatmentPlans[d['plan_name']].BeamSets[d['beamset_name']])              
+                
+                if isodose_creation:
+                    self.Status.Text = "En cours: Reglage du Dose Color Table"
+                    poumon.poumon_stereo_create_isodose_lines(plan_data=d)
+                
+                # Double optimization if requested by user                 
+                if self.check1.Checked:
+                    if new_plan_name == 'B1': #This indicates a new plan was made (because old one was locked) which only has one beamset, so we need to set plan_opt to 0
+                        plan_opt = 0
+                    self.Status.Text = "Première optimization en cours"
+                    patient.TreatmentPlans[d['plan_name']].PlanOptimizations[plan_opt].RunOptimization()
+                    self.Status.Text = "Deuxième optimization en cours"
+                    patient.TreatmentPlans[d['plan_name']].PlanOptimizations[plan_opt].RunOptimization()
+                self.Status.Text = "Script terminé! Cliquez sur Cancel pour sortir."
+                self.Status.ForeColor = Color.Green   
+                
+                
+            elif self.sitecombo.Text == 'Foie':
+            
+                d = dict(patient = patient,
+                         plan_name = 'Stereo Foie',
+                         beamset_name = 'Stereo',
+                         site_name = self.SiteBox.Text,
+                         exam = patient.Examinations[self.scancombo.Text],
+                         machine = machine,
+                         nb_fx = nb_fx,
+                         rx_dose = rx_dose,
+                         ptv = patient.PatientModel.RegionsOfInterest[self.Label2.Text.split()[0]],
+                         treatment_technique = treatment_technique)     
+                         
+                         
+                self.Status.ForeColor = Color.Black
+                self.Status.Text = "En cours: Gestion des POIs"
+                poi.create_iso(exam = d['exam'])
+                poi.auto_assign_poi_types()
+                poi.erase_pois_not_in_list()
+                
+                self.Status.Text = "En cours: Création des ROIs"
+                roi.auto_assign_roi_types_v2()
+                roi.generate_BodyRS_plus_Table()
+                foie.foie_stereo_rois(plan_data = d)
+
+                self.Status.Text = "En cours: Ajout du plan et beamset"
+                foie.foie_stereo_add_plan_and_beamset(plan_data = d)
+
+                self.Status.Text = "En cours: Ajout des faisceaux"     
+                beams.add_beams_prostate_A1(beamset=patient.TreatmentPlans[d['plan_name']].BeamSets[d['beamset_name']], site_name=d['site_name'])
+                
+                self.Status.Text = "En cours: Reglage des paramètres d'optimisation"
+                foie.foie_stereo_opt_settings(plan_data = d)
+                
+                self.Status.Text = "En cours: Ajout des objectifs d'optimisation et les clinical goals"
+                clinical_goals.smart_cg_foie_sbrt(plan=patient.TreatmentPlans[d['plan_name']], ptv=d['ptv'], Rx_dose=d['rx_dose']/100.0)
+              
+                if isodose_creation:
+                    self.Status.Text = "En cours: Reglage du Dose Color Table"
+                    foie.foie_stereo_create_isodose_lines(plan_data = d)
+
+                # Double optimization if requested by user    
+                if self.check1.Checked:
+                    self.Status.Text = "Première optimization en cours"
+                    patient.TreatmentPlans[d['plan_name']].PlanOptimizations[0].RunOptimization()
+                    self.Status.Text = "Deuxième optimization en cours"
+                    patient.TreatmentPlans[d['plan_name']].PlanOptimizations[0].RunOptimization()
+                self.Status.Text = "Script terminé! Cliquez sur Cancel pour sortir."
+                self.Status.ForeColor = Color.Green   
+
+                
+            elif self.sitecombo.Text == 'Vertebre':
+                
+                d = dict(patient = patient,
+                         plan_name = 'Stereo Vertebre',
+                         beamset_name = 'Stereo',
+                         site_name = self.SiteBox.Text,
+                         exam = patient.Examinations[self.scancombo.Text],
+                         machine = machine,
+                         nb_fx = nb_fx,
+                         rx_dose = rx_dose,
+                         ptv = patient.PatientModel.RegionsOfInterest['PTV18'],
+                         treatment_technique = treatment_technique)     
+                         
+                         
+                self.Status.ForeColor = Color.Black
+                self.Status.Text = "En cours: Gestion des POIs"
+                poi.create_iso(exam = d['exam'])
+                poi.auto_assign_poi_types()
+                poi.erase_pois_not_in_list()
+                
+                self.Status.Text = "En cours: Création des ROIs"
+                roi.auto_assign_roi_types_v2()
+                roi.generate_BodyRS_plus_Table()
+                foie.vertebre_stereo_rois(plan_data = d)
+
+                self.Status.Text = "En cours: Ajout du plan et beamset"
+                foie.foie_stereo_add_plan_and_beamset(plan_data = d) #OK to use same function as for liver cases
+
+                self.Status.Text = "En cours: Ajout des faisceaux"     
+                beams.add_beams_vertebre_stereo(beamset=patient.TreatmentPlans[d['plan_name']].BeamSets[d['beamset_name']], site_name=d['site_name'])
+                
+                self.Status.Text = "En cours: Reglage des paramètres d'optimisation"
+                foie.vertebre_stereo_opt_settings(plan_data = d)
+                
+                self.Status.Text = "En cours: Ajout des objectifs d'optimisation et les clinical goals"
+                clinical_goals.smart_cg_vertebre(plan=patient.TreatmentPlans[d['plan_name']])
+              
+                self.Status.Text = "En cours: Changement du nom du PTV"
+                crane.crane_stereo_rename_ptv(plan_data = d) #OK to borrow from crâne
+              
+                if isodose_creation:
+                    self.Status.Text = "En cours: Reglage du Dose Color Table"
+                    foie.vertebre_stereo_create_isodose_lines(plan_data = d)
+
+                # Double optimization if requested by user    
+                if self.check1.Checked:
+                    self.Status.Text = "Première optimization en cours"
+                    patient.TreatmentPlans[d['plan_name']].PlanOptimizations[0].RunOptimization()
+                    self.Status.Text = "Deuxième optimization en cours"
+                    patient.TreatmentPlans[d['plan_name']].PlanOptimizations[0].RunOptimization()
+                self.Status.Text = "Script terminé! Cliquez sur Cancel pour sortir."
+                self.Status.ForeColor = Color.Green   
+                    
+                    
+                    
+            else:
+                self.Status.Text = "Le site n'a pas été sélectionné!"                
+                self.Status.ForeColor = Color.Red
+
+        def cancelClicked(self, sender, args):
+            self.Close()
+
+        def setupMachineSelectPanel(self):
+            self.MachineSelectPanel = self.miniPanel(0, 350)
+            
+            self.MachineLabel = Label()
+            self.MachineLabel.Text = "Appareil de traitement:"
+            self.MachineLabel.Location = Point(25, 30)
+            self.MachineLabel.Font = Font("Arial", 10)
+            self.MachineLabel.AutoSize = True
+
+            self.BeamModButton = RadioButton()
+            self.BeamModButton.Text = "BeamMod (salles 11-12)"
+            self.BeamModButton.Location = Point(40, 55)
+            self.BeamModButton.Checked = True
+            self.BeamModButton.AutoSize = True
+            
+            self.InfinityButton = RadioButton()
+            self.InfinityButton.Text = "Infinity (salles 1-2-6)"
+            self.InfinityButton.Location = Point(40, 80)
+            self.InfinityButton.Checked = False 
+            self.InfinityButton.AutoSize = True            
+
+            self.MachineSelectPanel.Controls.Add(self.MachineLabel)
+            self.MachineSelectPanel.Controls.Add(self.BeamModButton)
+            self.MachineSelectPanel.Controls.Add(self.InfinityButton)            
+            
+            
+        def setupOKButtons(self):
+            self.OKbuttonPanel = self.newPanel(0, 455)
+
+            okButton = Button()
+            okButton.Text = "OK"
+            okButton.Location = Point(25, 50)
+            self.AcceptButton = okButton
+            okButton.Click += self.okClicked
+            
+            cancelButton = Button()
+            cancelButton.Text = "Cancel"
+            cancelButton.Location = Point(okButton.Left + okButton.Width + 10, okButton.Top)
+            self.CancelButton = cancelButton
+            cancelButton.Click += self.cancelClicked
+            
+            self.Status = Label()
+            self.Status.Text = ""
+            self.Status.Location = Point(200, 50)
+            self.Status.AutoSize = True
+            self.Status.Font = Font("Arial", 12, FontStyle.Bold)
+            self.Status.ForeColor = Color.Black
+
+            self.OKbuttonPanel.Controls.Add(okButton)
+            self.OKbuttonPanel.Controls.Add(cancelButton)
+            self.OKbuttonPanel.Controls.Add(self.Status)
+            
+            if roi.roi_exists('CERVEAU'):
+                self.sitecombo.Text = 'Crâne'
+            elif roi.roi_exists('PROSTATE'):
+                self.sitecombo.Text = 'Prostate'   
+            elif roi.roi_exists('ITV48') or roi.roi_exists('ITV54') or roi.roi_exists('ITV56') or roi.roi_exists('ITV60'):
+                self.sitecombo.Text = 'Poumon'
+            elif roi.roi_exists('FOIE EXPI'):
+                self.sitecombo.Text = 'Foie'                   
+
+            for CT in patient.Examinations:
+                self.scancombo.Items.Add(CT.Name)
+            try:
+                self.scancombo.SelectedIndex = self.scancombo.FindStringExact("CT 1")
+            except:
+                self.scancombo.SelectedIndex = 0
+                
+    #Check for common errors while importing patient and examination
+    try:
+        patient = lib.get_current_patient()
+    except:
+        debug_window('Aucun patient sélectionné')
+        return      
+        
+    try:
+        exam = lib.get_current_examination()
+    except:
+        debug_window('Aucun examination trouvé')
+        return
+        
+    form = ScriptLauncher()
+    Application.Run(form)     
+
+  
+def plan_crane_stereo(machine = 'BeamMod', isodose_creation = True, treatment_technique = 'VMAT', plan_name='A1'):
+    """
+    Voir :py:mod:`plan_poumoun_sbrt`.
+    """
+
+    patient = lib.get_current_patient()
+    exam = lib.get_current_examination()
+    msg = ''
+   
+    # Create ISO (if point doesn't already exist)
+    poi.create_iso()
+    
+    # Assign Point Types
+    poi.auto_assign_poi_types()
+
+    # Assign ROI Types (excerpted from roi.auto_assign_roi_types)
+    roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+    for name in roi_names:
+        n = name.replace(' ', '').upper()
+        if 'PTV' in n and '-' not in n:
+            roi.set_roi_type(name, 'Ptv', 'Target')
+        elif 'CTV' in n and '-' not in n:
+            roi.set_roi_type(name, 'Ctv', 'Target')
+        elif 'GTV' in n and '-' not in n:
+            roi.set_roi_type(name, 'Gtv', 'Target')
+        elif 'ITV' in n and '-' not in n:
+            roi.set_roi_type(name, 'TreatedVolume', 'Target')
+        elif n == 'BODY':
+            roi.set_roi_type(name, organ_type='Other')
+        elif n == 'BODY+TABLE':
+            roi.set_roi_type(name, organ_type='Other')
+        elif n.startswith('BOLUS'):
+            roi.set_roi_type(name, 'Bolus', 'Other')
+        else:
+            roi.set_roi_type(name, 'Organ', 'OrganAtRisk')
+
+    # Create BodyRS, erase Body+table from Pinnacle, rename BODY to BODY Pinnacle
+    #roi.generate_BodyRS_plus_Table(planche_seulement=True)
+    roi.generate_BodyRS_using_threshold()
+
+    # Identify which PTV and ITV to use for creation of optimization contours
+    if roi.roi_exists("PTV15"):
+        ptv = patient.PatientModel.RegionsOfInterest["PTV15"]
+        presc_dose = 1500
+    elif roi.roi_exists("PTV18"):
+        ptv = patient.PatientModel.RegionsOfInterest["PTV18"]
+        presc_dose = 1800
+
+    # Generate optimization contours
+    # Create PTV+2mm, PTV+5mm, PTV+13mm and PTV+23mm
+    patient.PatientModel.CreateRoi(Name="PTV+2mm", Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['PTV+2mm'].SetMarginExpression(SourceRoiName=ptv.Name, MarginSettings={'Type': "Expand", 'Superior': 0.2, 'Inferior': 0.2, 'Anterior': 0.2, 'Posterior': 0.2, 'Right': 0.2, 'Left': 0.2})
+    patient.PatientModel.RegionsOfInterest['PTV+2mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="PTV+5mm", Color="Cyan", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['PTV+5mm'].SetMarginExpression(SourceRoiName=ptv.Name, MarginSettings={'Type': "Expand", 'Superior': 0.5, 'Inferior': 0.5, 'Anterior': 0.5, 'Posterior': 0.5, 'Right': 0.5, 'Left': 0.5})
+    patient.PatientModel.RegionsOfInterest['PTV+5mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="PTV+13mm", Color="255, 128, 0", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['PTV+13mm'].SetMarginExpression(SourceRoiName=ptv.Name, MarginSettings={'Type': "Expand", 'Superior': 1.3, 'Inferior': 1.3, 'Anterior': 1.3, 'Posterior': 1.3, 'Right': 1.3, 'Left': 1.3})
+    patient.PatientModel.RegionsOfInterest['PTV+13mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="PTV+23mm", Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['PTV+23mm'].SetMarginExpression(SourceRoiName=ptv.Name, MarginSettings={'Type': "Expand", 'Superior': 2.3, 'Inferior': 2.3, 'Anterior': 2.3, 'Posterior': 2.3, 'Right': 2.3, 'Left': 2.3})
+    patient.PatientModel.RegionsOfInterest['PTV+23mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="PTV+73mm", Color="White", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['PTV+73mm'].SetMarginExpression(SourceRoiName='PTV+23mm', MarginSettings={'Type': "Expand", 'Superior': 2.5, 'Inferior': 2.5, 'Anterior': 5, 'Posterior': 5, 'Right': 5, 'Left': 5})
+    patient.PatientModel.RegionsOfInterest['PTV+73mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])    
+    # Create RINGs and TISSUS SAINS
+    patient.PatientModel.CreateRoi(Name="RING_0_2mm", Color="Blue", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['RING_0_2mm'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS", "PTV+2mm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv.Name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['RING_0_2mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="RING_1_3mm", Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['RING_1_3mm'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS", "PTV+5mm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+2mm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['RING_1_3mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="RING_2_8mm", Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['RING_2_8mm'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS", "PTV+13mm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+5mm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['RING_2_8mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="RING_3_1cm", Color="Orange", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['RING_3_1cm'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS", "PTV+23mm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+13mm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['RING_3_1cm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="TISSUS SAINS", Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['TISSUS SAINS'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS", "PTV+73mm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+23mm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['TISSUS SAINS'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])    
+    # Create CERVEAU-PTV and OPT CERVEAU-PTV
+    patient.PatientModel.CreateRoi(Name="CERVEAU-PTV", Color="SlateBlue", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['CERVEAU-PTV'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["CERVEAU"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv.Name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['CERVEAU-PTV'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="OPT CERVEAU-PTV", Color="Blue", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['OPT CERVEAU-PTV'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["CERVEAU", "PTV+23mm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv.Name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['OPT CERVEAU-PTV'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    # Erase expanded PTV contours
+    patient.PatientModel.RegionsOfInterest['PTV+2mm'].DeleteRoi()
+    patient.PatientModel.RegionsOfInterest['PTV+5mm'].DeleteRoi()
+    patient.PatientModel.RegionsOfInterest['PTV+13mm'].DeleteRoi()
+    patient.PatientModel.RegionsOfInterest['PTV+23mm'].DeleteRoi()
+    patient.PatientModel.RegionsOfInterest['PTV+73mm'].DeleteRoi()
+
+    # Remove material override from all ROIs
+    for rois in patient.PatientModel.RegionsOfInterest:
+        rois.SetRoiMaterial(Material=None)
+
+    # Add Treatment plan
+    plan = patient.AddNewPlan(PlanName="Stereo Crane", PlannedBy="", Comment="", ExaminationName="CT 1", AllowDuplicateNames=False)
+    plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset
+    beamset = plan.AddNewBeamSet(Name="Stereo Crane", ExaminationName=exam.Name, MachineName=machine, NominalEnergy=None,
+                                      Modality="Photons", TreatmentTechnique=treatment_technique, PatientPosition="HeadFirstSupine", NumberOfFractions=1, CreateSetupBeams=True, Comment="VMAT")
+    beamset.AddDosePrescriptionToRoi(RoiName=ptv.Name, DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=presc_dose, RelativePrescriptionLevel=1)
+
+    # plan and beamset are created but not currently selected in RS
+    # therefore we must retain the objects in variables and pass them on
+    # to the following functions, which otherwise would assume that
+    # these are currently selected by the user in RS.
+    # VTL
+
+    # Add beams
+    if treatment_technique == 'VMAT':
+        beams.add_beams_brain_stereo(beamset=beamset, plan_name=plan_name)
+    elif treatment_technique == 'SMLC':
+        beams.add_beams_brain_static(beamset=beamset, plan_name=plan_name, iso_name='ISO', exam=exam, nb_beams=13)
+
+    # Set optimization parameters and VMAT conversion parameters
+    if treatment_technique == 'VMAT':
+        optim.set_optimization_parameters(plan=plan)
+        optim.set_vmat_conversion_parameters(max_arc_delivery_time=350.0, plan=plan)
+    elif treatment_technique == 'SMLC':
+        plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
+        plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 100
+        plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.IterationsInPreparationsPhase = 60
+        plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.ComputeFinalDose = True          
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 20        
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinLeafEndSeparation = 1
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs = 3
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentArea = 2
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MaxNumberOfSegments = 40
+
+    # Add optimization objectives
+    optimization_objectives.add_opt_obj_brain_stereo(patient_plan=plan)
+
+    # Add clinical goals
+    clinical_goals.add_dictionary_cg('Crane Stereo', presc_dose/100, 1, plan=plan)
+    
+    # Rename PTV with standard formatting
+    ptv.Name = "PTV " + plan_name + " " + str(presc_dose/100) + "Gy"
+    ptv.Name = ptv.Name.replace('.0Gy','Gy')            
+        
+    # Generate dose color table
+    if isodose_creation:
+        eval.remove_all_isodose_lines()
+        patient.CaseSettings.DoseColorMap.ReferenceValue = presc_dose
+        if presc_dose == 1500:           
+            fivegy = 33.33
+            tengy = 66.67
+        elif presc_dose == 1800:
+            fivegy = 27.78
+            tengy = 55.56
+        patient.CaseSettings.DoseColorMap.ColorMapReferenceType = "ReferenceValue"
+        eval.add_isodose_line_rgb(dose=0, r=0, g=0, b=0, alpha=0)
+        eval.add_isodose_line_rgb(dose=fivegy, r=0, g=128, b=0, alpha=128)
+        eval.add_isodose_line_rgb(dose=tengy, r=0, g=0, b=160, alpha=255)
+        eval.add_isodose_line_rgb(dose=80, r=128, g=128, b=255, alpha=255)
+        eval.add_isodose_line_rgb(dose=95, r=0, g=255, b=255, alpha=255)
+        eval.add_isodose_line_rgb(dose=100, r=255, g=0, b=0, alpha=255)
+        eval.add_isodose_line_rgb(dose=120, r=255, g=255, b=0, alpha=255)
+        patient.CaseSettings.DoseColorMap.PresentationType = 'Absolute'
+
+    # Erase any points other than ISO, ISO SCAN or REF SCAN
+    for points in patient.PatientModel.PointsOfInterest:
+        if not points.Name.upper() in ["ISO", "ISOCENTRE", "ISO SCAN", "REF SCAN"]:
+            points.DeleteRoi()
+
+
+def finaliser_plan_crane_stereo():
+    """
+    #Voir :py:mod:`finaliser_plan_crane_stereo`.
+    """
+    patient = lib.get_current_patient()
+    plan = lib.get_current_plan()
+
+    # Rename OAR contours for SuperBridge transfer        
+    for rois in patient.PatientModel.RegionsOfInterest:
+        if rois.Name in ["MOELLE", "TR CEREBRAL", "OEIL DRT", "OEIL GCHE"]:
+            rois.Name += "*"
+        
+    colors = ["Red","Green","Blue","Yellow","Orange"] 
+    for i, bs in enumerate(plan.BeamSets):
+        ptv = patient.PatientModel.RegionsOfInterest[bs.Prescription.PrimaryDosePrescription.OnStructure.Name]
+        beamset_name = ptv.Name[4:6] #ROI name must be in the format PTV A1 or PTV B1 48Gy
+        nb_fx = bs.FractionationPattern.NumberOfFractions
+        rx_dose = bs.Prescription.PrimaryDosePrescription.DoseValue
+        
+        #Use presence of isodose contour to decide whether finalisation actions are taken on a given beamset
+        if roi.roi_exists("isodose "+beamset_name): #eg, isodose A1
+            # Rename beamset
+            bs.DicomPlanLabel = beamset_name
+            
+            # Rename isodose ROI and add * to it and PTV
+            isodose_roi = patient.PatientModel.RegionsOfInterest["isodose " + beamset_name]         
+            isodose_roi.Name = ("ISO "+ beamset_name + " " + str(rx_dose/100) + "Gy*")
+            isodose_roi.Name = isodose_roi.Name.replace('.0Gy','Gy')
+            ptv.Name += '*'            
+            
+            # Add comment for Superbridge transfer
+            bs.Prescription.Description = "VMAT"
+      
+            # Create DSP and PT PRESC
+            poi_name = 'PT PRESC ' + beamset_name
+            poi.create_poi({'x': 0, 'y': 0, 'z': 0}, poi_name, color=colors[i])
+            bs.CreateDoseSpecificationPoint(Name="DSP", Coordinates={ 'x': 0, 'y': 0, 'z': 0 })
+           
+            # Move PT PRESC to a point that receives correct dose per fraction and prescribe
+            poi.place_prescription_point(target_fraction_dose=rx_dose/nb_fx, ptv_name=ptv.Name, poi_name=poi_name, beamset=bs)
+            bs.AddDosePrescriptionToPoi(PoiName=poi_name, DoseValue=rx_dose)
+      
+            # Move DSP to coordinates of PT PRESC and assign to all beams
+            point = poi.get_poi_coordinates(poi_name)
+            dsp = [x for x in bs.DoseSpecificationPoints][0]
+            dsp.Name = "DSP "+beamset_name
+            dsp.Coordinates = point.value
+
+            for beam in bs.Beams:
+                beam.SetDoseSpecificationPoint(Name=dsp.Name)
+            bs.ComputeDose(ComputeBeamDoses=True, DoseAlgorithm="CCDose", ForceRecompute=True)  # Dose is recalculated to show beam dose at spec point (otherwise not displayed)       
+         
+         
+def plan_foie_sbrt(nb_fx = 1, machine = 'BeamMod', isodose_creation = True):
+    """
+    Voir :py:mod:`plan_poumoun_sbrt`.
+    """
+
+    patient = lib.get_current_patient()
+    examination = lib.get_current_examination()
+    msg = ''
+
+    #Create ISO
+    if not poi.poi_exists("ISO"):
+        if poi.poi_exists("REF SCAN"):
+            REF_SCAN_coords = poi.get_poi_coordinates('REF SCAN',examination)
+            poi.create_poi(REF_SCAN_coords,'ISO','Blue','Isocenter',examination)    
+    
+    # Assign Point Types
+    poi.auto_assign_poi_types()
+
+    # Assign ROI Types (excerpted from roi.auto_assign_roi_types)
+    roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+    for name in roi_names:
+        n = name.replace(' ', '').upper()
+        if 'PTV' in n and '-' not in n:
+            roi.set_roi_type(name, 'Ptv', 'Target')
+        elif 'CTV' in n and '-' not in n:
+            roi.set_roi_type(name, 'Ctv', 'Target')
+        elif 'GTV' in n and '-' not in n:
+            roi.set_roi_type(name, 'Gtv', 'Target')
+        elif 'ITV' in n and '-' not in n:
+            roi.set_roi_type(name, 'TreatedVolume', 'Target')
+        elif n == 'BODY':
+            roi.set_roi_type(name, organ_type='Other')
+        elif n == 'BODY+TABLE':
+            roi.set_roi_type(name, organ_type='Other')
+        elif n.startswith('BOLUS'):
+            roi.set_roi_type(name, 'Bolus', 'Other')
+        else:
+            roi.set_roi_type(name, 'Organ', 'OrganAtRisk')
+
+    # Create BodyRS+Table, erase Body+table from Pinnacle, rename BODY to BODY Pinnacle
+    roi.generate_BodyRS_plus_Table()
+
+    # Determine PTV name, prescription dose and number of fractions
+    # Format: PTVx:y where x is the dose in Gy and y is the number of fractions (eg: PTV37.5:3 or PTV50:5)
+    # nb_fx copies last character in string, then :y is stripped from PTV name so that the prescription dose can be determined
+    roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+    for name in roi_names:
+        n = name.replace(' ', '').upper()
+        if 'PTV' in n and '-' not in n:
+            try:
+                presc_dose = float(name[3:])
+            except:
+                continue
+            ptv = patient.PatientModel.RegionsOfInterest[name]
+            break
+            
+    # Rename PTV to standard format (eg, PTV A1 37.5Gy)
+    ptv.Name = 'PTV A1 ' + str(presc_dose) + 'Gy'
+    ptv.Name = ptv.Name.replace('.0Gy','Gy')
+
+    # Generate optimization contours
+    # Create PTV+2mm, PTV+5mm, PTV+20mm and PTV+40mm
+    roi.create_expanded_ptv(ptv_name=ptv.Name, color="Magenta", margeptv=0.2)
+    roi.create_expanded_ptv(ptv_name=ptv.Name, color="Yellow", margeptv=0.5)
+    roi.create_expanded_ptv(ptv_name=ptv.Name, color="Orange", margeptv=2)
+    roi.create_expanded_ptv(ptv_name=ptv.Name, color="Green", margeptv=4)
+    # Create RINGs
+    patient.PatientModel.CreateRoi(Name="Ring_1_0mm", Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['Ring_1_0mm'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS+Table", "PTV+0.2cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv.Name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['Ring_1_0mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="Ring_2_2mm", Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['Ring_2_2mm'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS+Table", "PTV+0.5cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+0.2cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['Ring_2_2mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="Ring_3_5mm", Color="Orange", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['Ring_3_5mm'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS+Table", "PTV+2cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+0.5cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['Ring_3_5mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="Ring_4_20mm", Color="Tomato", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['Ring_4_20mm'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["BodyRS+Table", "PTV+4cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+2cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['Ring_4_20mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    # Create TS contours
+    patient.PatientModel.CreateRoi(Name="TISSU SAIN A 2cm", Color="Pink", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['TISSU SAIN A 2cm'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+2cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['TISSU SAIN A 2cm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    patient.PatientModel.CreateRoi(Name="TISSU SAIN A 4cm", Color="Purple", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['TISSU SAIN A 4cm'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV+4cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['TISSU SAIN A 4cm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    # Create PEAU
+    patient.PatientModel.CreateRoi(Name="PEAU", Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['PEAU'].SetWallExpression(SourceRoiName="BodyRS", OutwardDistance=0, InwardDistance=0.5)
+    patient.PatientModel.RegionsOfInterest['PEAU'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    # Create FOIE EXPI-GTV
+    patient.PatientModel.CreateRoi(Name="FOIE EXPI-GTV", Color="255, 128, 0", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['FOIE EXPI-GTV'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["FOIE EXPI"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["GTV"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['FOIE EXPI-GTV'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    # Create OPT FOIE EXPI
+    patient.PatientModel.CreateRoi(Name="OPT FOIE EXPI", Color="Maroon", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['OPT FOIE EXPI'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["FOIE EXPI"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv.Name], 'MarginSettings': {'Type': "Expand", 'Superior': 0.5, 'Inferior': 0.5, 'Anterior': 0.5, 'Posterior': 0.5, 'Right': 0.5, 'Left': 0.5}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['OPT FOIE EXPI'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    # Create PTV-GTV
+    patient.PatientModel.CreateRoi(Name="PTV-GTV", Color="128, 128, 0", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['PTV-GTV'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [ptv.Name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["GTV"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['PTV-GTV'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    # Create prv5mmMOELLE
+    if roi.roi_exists("MOELLE"):
+        patient.PatientModel.CreateRoi(Name="prv5mmMOELLE", Color="0, 128, 255", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest['prv5mmMOELLE'].SetWallExpression(SourceRoiName="MOELLE", OutwardDistance=0.5, InwardDistance=0)
+        patient.PatientModel.RegionsOfInterest['prv5mmMOELLE'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    # Create REINS
+    if roi.roi_exists("REIN DRT"):
+        if roi.roi_exists("REIN GCHE"):
+            patient.PatientModel.CreateRoi(Name="REINS", Color="128, 128, 192", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest['REINS'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["REIN DRT"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["REIN GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest['REINS'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])
+    # Erase expanded PTV contours
+    patient.PatientModel.RegionsOfInterest['PTV+0.2cm'].DeleteRoi()
+    patient.PatientModel.RegionsOfInterest['PTV+0.5cm'].DeleteRoi()
+    patient.PatientModel.RegionsOfInterest['PTV+2cm'].DeleteRoi()
+    patient.PatientModel.RegionsOfInterest['PTV+4cm'].DeleteRoi()
+
+    # Remove material override from all ROIs
+    for rois in patient.PatientModel.RegionsOfInterest:
+        rois.SetRoiMaterial(Material=None)
+
+    # Add Treatment plan
+    plan = patient.AddNewPlan(PlanName="Stereo Foie", PlannedBy="", Comment="", ExaminationName="CT 1", AllowDuplicateNames=False)
+    plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset (assumes 5 fractions)
+    beamset = plan.AddNewBeamSet(Name="Stereo", ExaminationName=lib.get_current_examination().Name, MachineName=machine, NominalEnergy=None,
+                                      Modality="Photons", TreatmentTechnique="VMAT", PatientPosition="HeadFirstSupine", NumberOfFractions=nb_fx, CreateSetupBeams=True, Comment="VMAT")
+    beamset.AddDosePrescriptionToRoi(RoiName=ptv.Name, DoseVolume=95, PrescriptionType="DoseAtVolume", DoseValue=presc_dose * 100, RelativePrescriptionLevel=1)
+
+    # plan and beamset are created but not currently selected in RS
+    # therefore we must retain the objects in variables and pass them on
+    # to the following functions, which otherwise would assume that
+    # these are currently selected by the user in RS.
+    # VTL
+
+    # Add arcs - borrowed from prostate
+    beams.add_beams_prostate_A1(beamset=beamset)
+
+    # Set optimization parameters
+    optim.set_optimization_parameters(plan=plan)
+
+    # Set VMAT conversion parameters
+    optim.set_vmat_conversion_parameters(max_arc_delivery_time=350.0, plan=plan)
+
+    # Add clinical goals and optimization objectives
+    clinical_goals.smart_cg_foie_sbrt(plan=plan, ptv=ptv, Rx_dose=presc_dose)
+
+    # Set Dose Color Table
+    if isodose_creation:
+        eval.remove_all_isodose_lines()
+        patient.CaseSettings.DoseColorMap.ReferenceValue = presc_dose * 100
+        fivegy = 5 / presc_dose * 100
+        tengy = 10 / presc_dose * 100
+
+        patient.CaseSettings.DoseColorMap.ColorMapReferenceType = "ReferenceValue"
+        eval.add_isodose_line_rgb(dose=0, r=0, g=0, b=0, alpha=0)
+        eval.add_isodose_line_rgb(dose=fivegy, r=0, g=128, b=0, alpha=128)
+        eval.add_isodose_line_rgb(dose=tengy, r=0, g=0, b=160, alpha=128)
+        eval.add_isodose_line_rgb(dose=50, r=128, g=0, b=255, alpha=255)
+        eval.add_isodose_line_rgb(dose=80, r=128, g=128, b=255, alpha=255)
+        eval.add_isodose_line_rgb(dose=95, r=0, g=255, b=255, alpha=255)
+        eval.add_isodose_line_rgb(dose=100, r=255, g=0, b=0, alpha=255)
+        eval.add_isodose_line_rgb(dose=120, r=255, g=255, b=0, alpha=255)
+        patient.CaseSettings.DoseColorMap.PresentationType = 'Absolute'
+
+    # Erase any points other than ISO, ISO SCAN or REF SCAN
+    for points in patient.PatientModel.PointsOfInterest:
+        if not points.Name in ["ISO", "ISOCENTRE", "ISO SCAN", "REF SCAN"]:
+            points.DeleteRoi()
+
+
+def finaliser_plan_foie_sbrt():
+    """
+    #Voir :py:mod:`finaliser_plan_foie_stereo`.
+    """
+    patient = lib.get_current_patient()
+    examination = lib.get_current_examination()
+    plan = lib.get_current_plan() 
+    
+    # Rename OAR contours for SuperBridge transfer        
+    for rois in patient.PatientModel.RegionsOfInterest:
+        if rois.Name in ["GTV EXPI", "FOIE INSPI", "FOIE EXPI", "MOELLE", "REINS", "OESOPHAGE", "ESTOMAC", "DUODENUM", "COLON", "GRELE"]:
+            rois.Name += "*"
+        
+    colors = ["Red","Green","Blue","Yellow","Orange"] 
+    for i, bs in enumerate(plan.BeamSets):
+        ptv = patient.PatientModel.RegionsOfInterest[bs.Prescription.PrimaryDosePrescription.OnStructure.Name]
+        beamset_name = ptv.Name[4:6] #ROI name must be in the format PTV A1 or PTV B1 48Gy
+        nb_fx = bs.FractionationPattern.NumberOfFractions
+        rx_dose = bs.Prescription.PrimaryDosePrescription.DoseValue
+        
+        #Use presence of isodose contour to decide whether finalisation actions are taken on a given beamset
+        if roi.roi_exists("isodose "+beamset_name): #eg, isodose A1
+            # Rename beamset
+            bs.DicomPlanLabel = beamset_name
+            
+            # Rename isodose ROI and add * to it and PTV
+            isodose_roi = patient.PatientModel.RegionsOfInterest["isodose " + beamset_name]         
+            isodose_roi.Name = ("ISO "+ beamset_name + " " + str(rx_dose/100) + "Gy*")
+            isodose_roi.Name = isodose_roi.Name.replace('.0Gy','Gy')
+            ptv.Name += '*'            
+            
+            # Add comment for Superbridge transfer
+            bs.Prescription.Description = "VMAT"
+      
+            # Create DSP and PT PRESC
+            poi_name = 'PT PRESC ' + beamset_name
+            poi.create_poi({'x': 0, 'y': 0, 'z': 0}, poi_name, color=colors[i])
+            bs.CreateDoseSpecificationPoint(Name="DSP", Coordinates={ 'x': 0, 'y': 0, 'z': 0 })
+           
+            # Move PT PRESC to a point that receives correct dose per fraction and prescribe
+            poi.place_prescription_point(target_fraction_dose=rx_dose/nb_fx, ptv_name=ptv.Name, poi_name=poi_name, beamset=bs)
+            bs.AddDosePrescriptionToPoi(PoiName=poi_name, DoseValue=rx_dose)
+      
+            # Move DSP to coordinates of PT PRESC and assign to all beams
+            point = poi.get_poi_coordinates(poi_name)
+            dsp = [x for x in bs.DoseSpecificationPoints][0]
+            dsp.Name = "DSP "+beamset_name
+            dsp.Coordinates = point.value
+
+            for beam in bs.Beams:
+                beam.SetDoseSpecificationPoint(Name=dsp.Name)
+            bs.ComputeDose(ComputeBeamDoses=True, DoseAlgorithm="CCDose", ForceRecompute=True)  # Dose is recalculated to show beam dose at spec point (otherwise not displayed)       
+          
+                    
+def plan_poumon_sbrt(nb_fx = None, rx_dose = None, plan_name = 'A1', two_arcs = False, machine = 'BeamMod'):
+    """
+    Voir :py:mod:`plan_poumoun_sbrt`.
+    """
+
+    patient = lib.get_current_patient()
+    examination = lib.get_current_examination()
+    msg = ''
+
+    if lib.check_version(4.7):
+        scan_index = 1 #Apparently the index is the same even though the names are swapped?
+        scan_name = "CT 1"
+        if plan_name == 'A1':
+            patient.Examinations[scan_index].EquipmentInfo.SetImagingSystemReference(ImagingSystemName=patient.Examinations[0].EquipmentInfo.ImagingSystemReference.ImagingSystemName)
+    else:
+        scan_index = 1
+        scan_name = "CT 2"
+        # Change Imaging System for 2nd scan
+        patient.Examinations[scan_index].SetImagingSystem(ImagingSystemName="HOST-7228")
+
+    #Create ISO
+    if not poi.poi_exists("ISO", patient.Examinations[scan_name]):
+        if poi.poi_exists("REF SCAN", patient.Examinations[scan_name]):
+            REF_SCAN_coords = poi.get_poi_coordinates('REF SCAN',patient.Examinations[scan_name])
+            poi.create_poi(REF_SCAN_coords,'ISO','Blue','Isocenter',patient.Examinations[scan_name])
+    
+    # Assign Point Types
+    poi.auto_assign_poi_types()
+
+    # Assign ROI Types (excerpted from roi.auto_assign_roi_types)
+    roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+    if plan_name == 'A1':
+        for name in roi_names:
+            n = name.replace(' ', '').upper()
+            if 'PTV' in n and '-' not in n:
+                roi.set_roi_type(name, 'Ptv', 'Target')
+            elif 'CTV' in n and '-' not in n:
+                roi.set_roi_type(name, 'Ctv', 'Target')
+            elif 'GTV' in n and '-' not in n:
+                roi.set_roi_type(name, 'Gtv', 'Target')
+            elif 'ITV' in n and '-' not in n:
+                roi.set_roi_type(name, 'TreatedVolume', 'Target')
+            elif n == 'BODY':
+                roi.set_roi_type(name, organ_type='Other')
+            elif n == 'BODY+TABLE':
+                roi.set_roi_type(name, organ_type='Other')
+            elif n.startswith('BOLUS'):
+                roi.set_roi_type(name, 'Bolus', 'Other')
+            else:
+                roi.set_roi_type(name, 'Organ', 'OrganAtRisk')
+
+    # Create BodyRS+Table (except for additional plans)
+    if plan_name == "A1":
+        roi.generate_BodyRS_plus_Table(struct=scan_index)
+        
+    # Rename contours if this is plan B1 (unless they are approved)
+    if plan_name == 'B1':
+        roi_list = ['PTV48','PTV54','PTV60','ITV48','ITV54','ITV60']
+        for name in roi_names:
+            if name in roi_list:
+                if 'PTV' in name:
+                    if not roi.get_roi_approval(name, patient.Examinations[scan_name]):
+                        patient.PatientModel.RegionsOfInterest[name].Name = 'PTV A1 ' + name[-2:] + 'Gy'
+                elif 'ITV' in name:
+                    if not roi.get_roi_approval(name, patient.Examinations[scan_name]):                
+                        patient.PatientModel.RegionsOfInterest[name].Name = 'ITV A1 ' + name[-2:] + 'Gy'
+                    
+        # Rename optimization contours from A1 to avoid errors and confusion in plan B1
+        roi_list = ['PTV+3mm','PTV+1.3cm','PTV+2cm','RING_1','RING_2','RING_3','r50','TISSU SAIN A 2cm','COMBI PMN-ITV-BR','OPT COMBI PMN']
+        for name in roi_names:
+            if name in roi_list:
+                if 'PTV' in name:
+                    if not roi.get_roi_approval(name, patient.Examinations[scan_name]):
+                        patient.PatientModel.RegionsOfInterest[name].Name = name.replace('PTV','PTV A1')
+                else:
+                    if not roi.get_roi_approval(name, patient.Examinations[scan_name]):
+                        patient.PatientModel.RegionsOfInterest[name].Name += " A1"
+            elif 'dans PTV' in name:
+                if not roi.get_roi_approval(name, patient.Examinations[scan_name]):
+                    patient.PatientModel.RegionsOfInterest[name].Name = name.replace('dans PTV','dans PTV A1')
+            elif 'hors PTV' in name:
+                if not roi.get_roi_approval(name, patient.Examinations[scan_name]):
+                    patient.PatientModel.RegionsOfInterest[name].Name = name.replace('hors PTV','hors PTV A1')
+                    
+    # Identify which PTV and ITV to use for creation of optimization contours, then rename them to standard format
+    suffix = ' ' + str(rx_dose/100)
+    suffix = suffix + 'Gy'
+    suffix = suffix.replace('.0Gy','Gy')
+    if plan_name == 'A1':
+        if roi.roi_exists("PTV48", patient.Examinations[scan_name]):
+            ptv = patient.PatientModel.RegionsOfInterest["PTV48"]
+            itv = patient.PatientModel.RegionsOfInterest["ITV48"]
+        elif roi.roi_exists("PTV54", patient.Examinations[scan_name]):
+            ptv = patient.PatientModel.RegionsOfInterest["PTV54"]
+            itv = patient.PatientModel.RegionsOfInterest["ITV54"]
+        elif roi.roi_exists("PTV56", patient.Examinations[scan_name]):
+            ptv = patient.PatientModel.RegionsOfInterest["PTV56"]
+            itv = patient.PatientModel.RegionsOfInterest["ITV56"]                  
+        elif roi.roi_exists("PTV60", patient.Examinations[scan_name]):
+            ptv = patient.PatientModel.RegionsOfInterest["PTV60"]
+            itv = patient.PatientModel.RegionsOfInterest["ITV60"]
+        elif roi.roi_exists("PTV A1", patient.Examinations[scan_name]):
+            ptv = patient.PatientModel.RegionsOfInterest["PTV A1"]
+            itv = patient.PatientModel.RegionsOfInterest["ITV A1"]       
+        ptv.Name = 'PTV ' + plan_name + suffix
+        itv.Name = 'ITV ' + plan_name + suffix            
+    elif plan_name == 'B1':
+        #Need to check if PTV/ITV B1 are locked. If so, must make new copies to work on.
+        if roi.get_roi_approval("PTV B1", patient.Examinations[scan_name]):
+            ptv = patient.PatientModel.CreateRoi(Name=('PTV ' + plan_name + suffix), Color="Red", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest['PTV ' + plan_name + suffix].SetMarginExpression(SourceRoiName='PTV B1', MarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest['PTV ' + plan_name + suffix].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+        else:
+            ptv = patient.PatientModel.RegionsOfInterest["PTV B1"]
+            ptv.Name = 'PTV ' + plan_name + suffix            
+        if roi.get_roi_approval("ITV B1", patient.Examinations[scan_name]):
+            itv = patient.PatientModel.CreateRoi(Name=('ITV ' + plan_name + suffix), Color="Purple", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest['ITV ' + plan_name + suffix].SetMarginExpression(SourceRoiName='ITV B1', MarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest['ITV ' + plan_name + suffix].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+        else:
+            itv = patient.PatientModel.RegionsOfInterest["ITV B1"]       
+            itv.Name = 'ITV ' + plan_name + suffix               
+        roi.set_roi_type(ptv.Name, 'Ptv', 'Target')
+        roi.set_roi_type(itv.Name, 'TreatedVolume', 'Target')
+
+               
+    # Generate optimization contours
+    # Create PTV+3mm, PTV+1.3cm and PTV+2cm
+    if plan_name == 'A1':
+        roi_string = 'PTV'
+    elif plan_name == 'B1':
+        roi_string = 'PTV B1'
+    patient.PatientModel.CreateRoi(Name=roi_string+"+3mm", Color="Pink", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest[roi_string+"+3mm"].SetMarginExpression(SourceRoiName=ptv.Name, MarginSettings={'Type': "Expand", 'Superior': 0.3, 'Inferior': 0.3, 'Anterior': 0.3, 'Posterior': 0.3, 'Right': 0.3, 'Left': 0.3})
+    patient.PatientModel.RegionsOfInterest[roi_string+"+3mm"].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+    patient.PatientModel.CreateRoi(Name=roi_string+"+1.3cm", Color="Orange", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest[roi_string+"+1.3cm"].SetMarginExpression(SourceRoiName=ptv.Name, MarginSettings={'Type': "Expand", 'Superior': 1.3, 'Inferior': 1.3, 'Anterior': 1.3, 'Posterior': 1.3, 'Right': 1.3, 'Left': 1.3})
+    patient.PatientModel.RegionsOfInterest[roi_string+"+1.3cm"].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+    patient.PatientModel.CreateRoi(Name=roi_string+"+2cm", Color="Blue", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest[roi_string+"+2cm"].SetMarginExpression(SourceRoiName=ptv.Name, MarginSettings={'Type': "Expand", 'Superior': 2, 'Inferior': 2, 'Anterior': 2, 'Posterior': 2, 'Right': 2, 'Left': 2})
+    patient.PatientModel.RegionsOfInterest[roi_string+"+2cm"].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+    # Create RINGs
+    if plan_name == 'A1':
+        roi_string = ''
+    elif plan_name == 'B1':
+        roi_string = ' B1'    
+    patient.PatientModel.CreateRoi(Name="RING_1"+roi_string, Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['RING_1'+roi_string].SetWallExpression(SourceRoiName=ptv.Name, OutwardDistance=0.3, InwardDistance=0)
+    patient.PatientModel.RegionsOfInterest['RING_1'+roi_string].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+    patient.PatientModel.CreateRoi(Name="RING_2"+roi_string, Color="Orange", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['RING_2'+roi_string].SetWallExpression(SourceRoiName="PTV" + roi_string + "+3mm", OutwardDistance=1, InwardDistance=0)
+    patient.PatientModel.RegionsOfInterest['RING_2'+roi_string].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+    patient.PatientModel.CreateRoi(Name="RING_3"+roi_string, Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['RING_3'+roi_string].SetWallExpression(SourceRoiName="PTV" + roi_string + "+1.3cm", OutwardDistance=1.5, InwardDistance=0)
+    patient.PatientModel.RegionsOfInterest['RING_3'+roi_string].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+    patient.PatientModel.CreateRoi(Name="r50"+roi_string, Color="White", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['r50'+roi_string].SetWallExpression(SourceRoiName="PTV" + roi_string + "+2cm", OutwardDistance=1, InwardDistance=0)
+    patient.PatientModel.RegionsOfInterest['r50'+roi_string].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+    # Create PEAU
+    if plan_name == 'A1':
+        patient.PatientModel.CreateRoi(Name="PEAU", Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest['PEAU'].SetWallExpression(SourceRoiName="BodyRS", OutwardDistance=0, InwardDistance=0.5)
+        patient.PatientModel.RegionsOfInterest['PEAU'].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+    # Create TISSU SAIN A 2cm and COMBI PMN-ITV-BR
+    if plan_name == 'A1':
+        patient.PatientModel.CreateRoi(Name="TISSU SAIN A 2cm", Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest['TISSU SAIN A 2cm'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [("PTV" + roi_string + "+2cm")], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        patient.PatientModel.RegionsOfInterest['TISSU SAIN A 2cm'].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+        patient.PatientModel.CreateRoi(Name="COMBI PMN-ITV-BR", Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest['COMBI PMN-ITV-BR'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["POUMON DRT", "POUMON GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [itv.Name, "BR SOUCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        patient.PatientModel.RegionsOfInterest['COMBI PMN-ITV-BR'].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+    elif plan_name == 'B1':
+        #Determine name of PTV and ITV for beamset A1
+        for rois in patient.PatientModel.RegionsOfInterest:
+            if rois.Name[:6] == "PTV A1":
+                ptv_A1_name = rois.Name
+                itv_A1_name = "I" + rois.Name[1:]
+                break
+        patient.PatientModel.CreateRoi(Name="TISSU SAIN A 2cm A1+B1", Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest['TISSU SAIN A 2cm A1+B1'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv.Name,ptv_A1_name], 'MarginSettings': {'Type': "Expand", 'Superior': 2, 'Inferior': 2, 'Anterior': 2, 'Posterior': 2, 'Right': 2, 'Left': 2}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        patient.PatientModel.RegionsOfInterest['TISSU SAIN A 2cm A1+B1'].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+        patient.PatientModel.CreateRoi(Name="COMBI PMN-2ITVs-BR", Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest['COMBI PMN-2ITVs-BR'].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["POUMON DRT", "POUMON GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [itv.Name,itv_A1_name,"BR SOUCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        patient.PatientModel.RegionsOfInterest['COMBI PMN-2ITVs-BR'].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+    #Creat OPT COMBI PMN
+    patient.PatientModel.CreateRoi(Name="OPT COMBI PMN"+roi_string, Color="Blue", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['OPT COMBI PMN'+roi_string].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["POUMON DRT", "POUMON GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv.Name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['OPT COMBI PMN'+roi_string].UpdateDerivedGeometry(Examination=patient.Examinations[scan_name])
+    # Rename PAROI if necessary
+    if plan_name == 'A1':    
+        if not roi.roi_exists("PAROI", patient.Examinations[scan_name]):
+            if roi.roi_exists("PAROI D", patient.Examinations[scan_name]):
+                 patient.PatientModel.RegionsOfInterest["PAROI D"].Name = "PAROI"
+            elif roi.roi_exists("PAROI DRT", patient.Examinations[scan_name]):
+                 patient.PatientModel.RegionsOfInterest["PAROI DRT"].Name = "PAROI"
+            elif roi.roi_exists("PAROI G", patient.Examinations[scan_name]):
+                 patient.PatientModel.RegionsOfInterest["PAROI G"].Name = "PAROI"             
+            elif roi.roi_exists("PAROI GCHE", patient.Examinations[scan_name]):
+                 patient.PatientModel.RegionsOfInterest["PAROI GCHE"].Name = "PAROI"             
+                        
+    # Remove material override from all ROIs
+    if plan_name == "A1":
+        for rois in patient.PatientModel.RegionsOfInterest:
+            rois.SetRoiMaterial(Material=None)
+
+    # Add Treatment plan (only for A1)
+    if plan_name == "A1":
+        plan = patient.AddNewPlan(PlanName=("Stereo Poumon"), PlannedBy="", Comment="", ExaminationName=scan_name, AllowDuplicateNames=False)
+        plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+    elif plan_name == "B1":
+        plan = lib.get_current_plan()
+        try: #If the plan is not approved, then plan.Review doesn't exist and querying it will crash the script
+            if plan.Review.ApprovalStatus == "Approved": #Add new plan, since we can't add a beamset to a locked plan. Otherwise, add B1 beamset to existing plan.
+                plan = patient.AddNewPlan(PlanName=("Poumon B1"), PlannedBy="", Comment="", ExaminationName=scan_name, AllowDuplicateNames=False)
+                plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})        
+        except: #If the plan is not approved, then we don't need to do anything
+            pass
+
+    # Add beamset
+    beamset = plan.AddNewBeamSet(Name=plan_name, ExaminationName=scan_name, MachineName=machine, NominalEnergy=None,
+                                      Modality="Photons", TreatmentTechnique="VMAT", PatientPosition="HeadFirstSupine", NumberOfFractions=nb_fx, CreateSetupBeams=False, Comment="VMAT")
+    beamset.AddDosePrescriptionToRoi(RoiName=ptv.Name, DoseVolume=95, PrescriptionType="DoseAtVolume", DoseValue=rx_dose, RelativePrescriptionLevel=1)
+
+    # Add arcs
+    beams.add_beams_lung_stereo(beamset=beamset, examination=patient.Examinations[scan_name], ptv_name=ptv.Name, two_arcs=two_arcs)
+
+    # Set optimization parameters
+    optim.set_optimization_parameters(plan=plan)
+
+    # Set VMAT conversion parameters  
+    fx_dose = rx_dose / nb_fx    
+    optim.set_vmat_conversion_parameters(max_arc_delivery_time=int(fx_dose/100.0*20), plan=plan)
+
+    # Add clinical goals and optimization objectives
+    clinical_goals.smart_cg_lung_stereo(plan=plan, examination=patient.Examinations[scan_name], nb_fx=nb_fx, rx_dose=rx_dose, ptv=ptv, beamset=plan.BeamSets[plan_name])
+
+    # Set Dose Color Table (only for plan A1, might crash RayStation if dose color table already exists)
+    if plan_name == "A1":
+        eval.remove_all_isodose_lines()
+        patient.CaseSettings.DoseColorMap.ReferenceValue = rx_dose
+        fivegy = float(100*500/rx_dose)
+
+        patient.CaseSettings.DoseColorMap.ColorMapReferenceType = "ReferenceValue"
+        eval.add_isodose_line_rgb(dose=0, r=0, g=0, b=0, alpha=0)
+        eval.add_isodose_line_rgb(dose=fivegy, r=0, g=128, b=0, alpha=128)
+        eval.add_isodose_line_rgb(dose=25, r=0, g=0, b=160, alpha=128)
+        eval.add_isodose_line_rgb(dose=50, r=128, g=128, b=255, alpha=255)
+        eval.add_isodose_line_rgb(dose=95, r=0, g=255, b=255, alpha=255)
+        eval.add_isodose_line_rgb(dose=100, r=255, g=0, b=0, alpha=255)
+        eval.add_isodose_line_rgb(dose=120, r=255, g=255, b=0, alpha=255)
+        patient.CaseSettings.DoseColorMap.PresentationType = 'Absolute'
+
+    # Erase any points other than ISO, ISOCENTRE, ISO SCAN or REF SCAN
+    if plan_name == "A1":
+        for points in patient.PatientModel.PointsOfInterest:
+            if not points.Name.upper() in ["ISO", "ISOCENTRE", "ISO SCAN", "REF SCAN", "ISO B1"]:
+                points.DeleteRoi()
+
+    # For B1 plans, rename optimization contours to avoid confusion
+    # WAIT STOP this now has to be done in smart_cg_poumon, since the A1 optimization contours may be approved and will still have their original names. Ugh.
+    """
+    if plan_name == "B1":
+        roi_list = ['PTV+3mm','PTV+1.3cm','PTV+2cm','RING_1','RING_2','RING_3','r50','TISSU SAIN A 2cm','COMBI PMN-ITV-BR','OPT COMBI PMN']
+        for name in roi_names:
+            if name in roi_list:
+                if 'PTV' in name:
+                    patient.PatientModel.RegionsOfInterest[name].Name = name.replace('PTV','PTV B1')
+                else:
+                    patient.PatientModel.RegionsOfInterest[name].Name += " B1"
+            elif 'dans PTV' in name and 'A1' not in name:
+                patient.PatientModel.RegionsOfInterest[name].Name = name.replace('dans PTV','dans PTV B1')
+            elif 'hors PTV' in name:
+                patient.PatientModel.RegionsOfInterest[name].Name = name.replace('hors PTV','hors PTV B1')
+    """
+     
+    
+def finaliser_plan_poumon_sbrt():
+    """
+    Voir :py:mod:`finaliser_plan_poumon_sbrt`.
+    """
+
+    patient = lib.get_current_patient()
+    # examination = lib.get_current_examination()
+    plan = lib.get_current_plan()
+
+    if lib.check_version(4.7):
+        scan_name = "CT 1"
+        expi_scan = "CT 2"
+    else:
+        scan_name = "CT 2"
+        expi_scan = "CT 1"
+
+    # Rename OAR contours for SuperBridge transfer        
+    for rois in patient.PatientModel.RegionsOfInterest:
+        if rois.Name in ["GTV expi", "MOELLE","ITV48","ITV54","ITV56","ITV60"]:
+            rois.Name += "*"
+            patient.PatientModel.CopyRoiGeometry(SourceExamination=patient.Examinations[scan_name], TargetExamination=patient.Examinations[expi_scan], RoiName=rois.Name)        
+        
+    colors = ["Red","Green","Blue","Yellow","Orange"]
+    
+    for i, bs in enumerate(plan.BeamSets):
+        ptv = patient.PatientModel.RegionsOfInterest[bs.Prescription.PrimaryDosePrescription.OnStructure.Name]
+        beamset_name = ptv.Name[4:6] #ROI name must be in the format PTV A1 or PTV B1 48Gy
+        nb_fx = bs.FractionationPattern.NumberOfFractions
+        rx_dose = bs.Prescription.PrimaryDosePrescription.DoseValue
+        
+        #Use presence of isodose contour to decide whether finalisation actions are taken on a given beamset
+        if roi.roi_exists("isodose "+beamset_name, examination=patient.Examinations[scan_name]): #eg, isodose A1
+            # Rename beamset
+            bs.DicomPlanLabel = beamset_name
+            
+            # Rename isodose ROI and add * to it and PTV
+            isodose_roi = patient.PatientModel.RegionsOfInterest["isodose " + beamset_name]         
+            isodose_roi.Name = ("ISO "+ beamset_name + " " + str(rx_dose/100) + "Gy*")
+            isodose_roi.Name = isodose_roi.Name.replace('.0Gy','Gy')
+            ptv.Name += '*'     
+            if roi.roi_exists("ITV "+beamset_name, examination=patient.Examinations[scan_name]): #eg, ITV B1
+                patient.PatientModel.RegionsOfInterest["ITV " + beamset_name].Name += '*'
+            
+            # Copy PTV and isodose ROIs to second beamset for patient positioning at treatment room
+            patient.PatientModel.CopyRoiGeometry(SourceExamination=patient.Examinations[scan_name], TargetExamination=patient.Examinations[expi_scan], RoiName=ptv.Name)    
+            patient.PatientModel.CopyRoiGeometry(SourceExamination=patient.Examinations[scan_name], TargetExamination=patient.Examinations[expi_scan], RoiName=isodose_roi.Name)    
+            
+            # Add comment for Superbridge transfer
+            bs.Prescription.Description = "VMAT"
+      
+            # Create DSP and PT PRESC
+            poi_name = 'PT PRESC ' + beamset_name
+            poi.create_poi({'x': 0, 'y': 0, 'z': 0}, poi_name, color=colors[i], examination=patient.Examinations[scan_name])
+            bs.CreateDoseSpecificationPoint(Name="DSP", Coordinates={ 'x': 0, 'y': 0, 'z': 0 })
+           
+            # Move PT PRESC to a point that receives correct dose per fraction and prescribe
+            poi.place_prescription_point(target_fraction_dose=rx_dose/nb_fx, ptv_name=ptv.Name, poi_name=poi_name, beamset=bs, exam=patient.Examinations[scan_name])
+            bs.AddDosePrescriptionToPoi(PoiName=poi_name, DoseValue=rx_dose)
+      
+            # Move DSP to coordinates of PT PRESC and assign to all beams
+            point = poi.get_poi_coordinates(poi_name)
+            dsp = [x for x in bs.DoseSpecificationPoints][0]
+            dsp.Name = "DSP "+beamset_name
+            dsp.Coordinates = point.value
+
+            for beam in bs.Beams:
+                beam.SetDoseSpecificationPoint(Name=dsp.Name)
+            bs.ComputeDose(ComputeBeamDoses=True, DoseAlgorithm="CCDose", ForceRecompute=True)  # Dose is recalculated to show beam dose at spec point (otherwise not displayed)        
+
+
+def create_prostate_plan_A1(nb_fx = 40, plan3D = False, machine = 'BeamMod', isodose_creation = True):
+    """
+    Voir :py:mod:`plan_prostate_A1`.
+    """
+
+    patient = lib.get_current_patient()
+    examination = lib.get_current_examination()
+    msg = ''
+
+    # Determine dose to be used for optimization of A1
+    if nb_fx == 40:
+        rx_dose = 8000
+    elif nb_fx == 33 or nb_fx == 22:
+        rx_dose = 6600
+    elif nb_fx == 20:
+        rx_dose = 6000
+    elif nb_fx == 15: #Plans that will finish at 37.5Gy in 15fx are initially planned at 60Gy in 24fx (2.5Gy/fx)
+        rx_dose = 6000
+        nb_fx = 24
+    """
+    elif nb_fx == 15: #Plans that will finish at 37.5Gy in 15fx are initially planned at 80Gy in 32fx (2.5Gy/fx)
+        rx_dose = 8000
+        nb_fx = 32
+    """
+ 
+    # Create BodyRS+Table, erase Body+table from Pinnacle, rename BODY to BODY Pinnacle
+    roi.generate_BodyRS_plus_Table()
+
+    # Clean Contrast ROI outside of body
+    if roi.roi_exists("CONTRASTE"):
+        retval_1 = patient.PatientModel.CreateRoi(Name="Contraste Mod", Color="Yellow", Type="ContrastAgent", TissueName=None, RoiMaterial=None)
+        retval_1.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [
+            "CONTRASTE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Intersection", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        retval_1.UpdateDerivedGeometry(Examination=examination)
+
+    # Create PTV A1
+    # Case 1. If PTV A1 already exists, this ROI is used and no additional contours will be created.
+    # Case 2. If PTV 1.5cm exists, it will be combined with PTV VS (if present) to form PTV A1.
+    # Case 3. If neither PTV A1 nor PTV 1.5cm exists, the script will combine PTV 1cm and PTV VS (if present) to form PTV A1.
+
+    # Also, if PTV A1 already exists, change ROI type to "PTV"
+    if roi.roi_exists("PTV A1"):
+        patient.PatientModel.RegionsOfInterest["PTV A1"].Type = "PTV"
+        patient.PatientModel.RegionsOfInterest["PTV A1"].OrganData.OrganType = "Target"
+        ptv = patient.PatientModel.RegionsOfInterest["PTV A1"]
+    elif roi.roi_exists("PTV 1.5cm"):
+        if roi.roi_exists("PTV VS"):
+            ptv = patient.PatientModel.CreateRoi(Name="PTV A1", Color="Red", Type="Ptv", TissueName=None, RoiMaterial=None)
+            ptv.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["PTV 1.5cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV VS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            ptv.UpdateDerivedGeometry(Examination=examination)
+        else: 
+            ptv = patient.PatientModel.CreateRoi(Name="PTV A1", Color="Red", Type="Ptv", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest['PTV A1'].SetMarginExpression(SourceRoiName="PTV 1.5cm", MarginSettings={ 'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0 })
+            patient.PatientModel.RegionsOfInterest['PTV A1'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'], Algorithm="Auto")
+    elif roi.roi_exists("PTV 1cm"):
+        if roi.roi_exists("PTV VS"):
+            ptv = patient.PatientModel.CreateRoi(Name="PTV A1", Color="Red", Type="Ptv", TissueName=None, RoiMaterial=None)
+            ptv.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["PTV 1cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["PTV VS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            ptv.UpdateDerivedGeometry(Examination=examination)
+        else: 
+            ptv = patient.PatientModel.CreateRoi(Name="PTV A1", Color="Red", Type="Ptv", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest['PTV A1'].SetMarginExpression(SourceRoiName="PTV 1cm", MarginSettings={ 'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0 })
+            patient.PatientModel.RegionsOfInterest['PTV A1'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'], Algorithm="Auto")
+
+    # Create PTV A2 (copy of PTV 1cm, except when PTVBoost exists)
+    boost = 0
+    roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+    for name in roi_names:
+        if 'PTVBOOST' in name.replace(' ', '').upper():
+            boost = 1
+            boost_name = name
+    if boost == 1: # PTV A2 is a copy of PTVBoost
+        retval_3 = patient.PatientModel.CreateRoi(Name="PTV A2", Color="Lime", Type="Ptv", TissueName=None, RoiMaterial=None)
+        retval_3.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [boost_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="None", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        retval_3.UpdateDerivedGeometry(Examination=examination)        
+    elif roi.roi_exists("PTV 1cm"): # PTV A2 is a copy of PTV 1cm
+        retval_3 = patient.PatientModel.CreateRoi(Name="PTV A2", Color="Lime", Type="Ptv", TissueName=None, RoiMaterial=None)
+        retval_3.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["PTV 1cm"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="None", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        retval_3.UpdateDerivedGeometry(Examination=examination)
+    
+    # Create RECTUM+3mm
+    patient.PatientModel.CreateRoi(Name="RECTUM+3mm", Color="skyblue", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['RECTUM+3mm'].SetMarginExpression(SourceRoiName="RECTUM", MarginSettings={'Type': "Expand", 'Superior': 0.3, 'Inferior': 0.3, 'Anterior': 0.3, 'Posterior': 0.3, 'Right': 0.3, 'Left': 0.3})
+    patient.PatientModel.RegionsOfInterest['RECTUM+3mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])   
+    
+    # Remove material override from all ROIs
+    for rois in patient.PatientModel.RegionsOfInterest:
+        rois.SetRoiMaterial(Material=None)
+        
+    #Override Contraste Mod with water    
+    if roi.roi_exists("Contraste Mod"):
+        #It is seemingly impossible to use the built-in material Water, so a copy is made called Eau
+        #But first we check to see if Eau exists already, because creating a second copy crashes RayStation (even when using try)
+        db = get_current("PatientDB")
+        finished = False
+        i=0
+        #If Eau already exists, assign it to the ROI and end the function
+        for material in patient.PatientModel.Materials:
+            i += 1
+            if material.Name == 'Eau':
+                patient.PatientModel.RegionsOfInterest["Contraste Mod"].SetRoiMaterial(Material = material)
+                finished = True
+                break
+        #If Eau does not exist, create it, then assign it to the ROI
+        if not finished:
+            patient.PatientModel.CreateMaterial(BaseOnMaterial=db.TemplateMaterials[0].Materials[25], Name = "Eau", MassDensityOverride = 1.000)
+            patient.PatientModel.RegionsOfInterest["Contraste Mod"].SetRoiMaterial(Material = patient.PatientModel.Materials[i])        
+            
+    #Create ISO
+    if not poi.poi_exists("ISO"):
+        if poi.poi_exists("REF SCAN"):
+            REF_SCAN_coords = poi.get_poi_coordinates('REF SCAN',examination)
+            poi.create_poi(REF_SCAN_coords,'ISO','Blue','Isocenter',examination)
+    
+    # Assign Point Types
+    poi.auto_assign_poi_types()
+
+    # Add Treatment plan
+    plan = patient.AddNewPlan(PlanName="A1 seul", PlannedBy="", Comment="", ExaminationName=lib.get_current_examination().Name, AllowDuplicateNames=False)
+    plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset
+    if patient.Examinations[0].PatientPosition == "HFS":
+        position = "HeadFirstSupine"
+    else:
+        position = "HeadFirstProne"
+        
+    beamset = plan.AddNewBeamSet(Name="A1", ExaminationName=lib.get_current_examination().Name, MachineName=machine, NominalEnergy=None,
+                                      Modality="Photons", TreatmentTechnique="VMAT", PatientPosition=position, NumberOfFractions=nb_fx, CreateSetupBeams=False, Comment="")
+    beamset.AddDosePrescriptionToRoi(RoiName="PTV A1", DoseVolume=99.5, PrescriptionType="DoseAtVolume", DoseValue=rx_dose*0.95, RelativePrescriptionLevel=1)
+
+    # plan and beamset are created but not currently selected in RS
+    # therefore we must retain the objects in variables and pass them on
+    # to the following functions, which otherwise would assume that
+    # these are currently selected by the user in RS.
+    # VTL
+
+    # Add arc
+    beams.add_beams_prostate_A1(beamset=beamset)
+
+    # Set optimization parameters
+    optim.set_optimization_parameters(plan=plan)
+
+    # Set VMAT conversion parameters
+    if nb_fx == 22 or nb_fx == 20: #3 Gy per fraction
+        optim.set_vmat_conversion_parameters(max_arc_delivery_time=200.0, plan=plan)
+    elif nb_fx == 24: #2.5 Gy per fraction
+        optim.set_vmat_conversion_parameters(max_arc_delivery_time=175.0, plan=plan)
+    else:
+        optim.set_vmat_conversion_parameters(max_arc_delivery_time=150.0, plan=plan)
+    
+    # Add optimization objectives
+    optimization_objectives.add_opt_obj_prostate_A1(plan=plan)
+
+    # Add clinical goals
+    if nb_fx == 40:
+        clinical_goals.add_dictionary_cg('Prostate', 80, 40, plan=plan)
+    elif nb_fx == 33:
+        clinical_goals.add_dictionary_cg('Lit Prostatique', 66, 33, plan=plan)
+    elif nb_fx == 22:
+        clinical_goals.add_dictionary_cg('Lit Prostatique', 66, 22, plan=plan)
+    elif nb_fx == 20 or nb_fx == 24: #Includes cases of 37.5Gy-15
+        clinical_goals.add_dictionary_cg('Lit Prostatique', 60, 20, plan=plan)
+        
+    # If 3D conformal plan exists, rename PTVs, beams and plan to A2/A3 instead of A1/A2
+    if plan3D:
+        patient.PatientModel.RegionsOfInterest['PTV A2'].Name = 'PTV A3'
+        patient.PatientModel.RegionsOfInterest['PTV A1'].Name = 'PTV A2'
+        plan.Name = "A2 seul"
+        plan.BeamSets[0].DicomPlanLabel = "A2"
+        for beam in plan.BeamSets[0].Beams:
+            beam.Name = "A2"+beam.Name[2:]
+        isodose_creation = False #Most 3D plans come with isodose lines, so always skip creating new ones to avoid crashes
+            
+    # Set Dose Color Table
+    if isodose_creation:
+        eval.remove_all_isodose_lines()
+        patient.CaseSettings.DoseColorMap.ReferenceValue = rx_dose
+        patient.CaseSettings.DoseColorMap.ColorMapReferenceType = "ReferenceValue"
+        patient.CaseSettings.DoseColorMap.PresentationType = 'Absolute'
+        eval.add_isodose_line_rgb(dose=0, r=0, g=0, b=0, alpha=0)
+        eval.add_isodose_line_rgb(dose=25, r=0, g=0, b=160, alpha=128)
+        eval.add_isodose_line_rgb(dose=50, r=128, g=128, b=255, alpha=255)
+        eval.add_isodose_line_rgb(dose=75, r=0, g=255, b=0, alpha=255)
+        #eval.add_isodose_line_rgb(dose=87.7, r=255, g=192, b=0, alpha=255)  # pour plan split
+        eval.add_isodose_line_rgb(dose=95, r=0, g=255, b=255, alpha=255)
+        eval.add_isodose_line_rgb(dose=100, r=255, g=0, b=0, alpha=255)
+        eval.add_isodose_line_rgb(dose=105, r=255, g=255, b=0, alpha=255)
+        eval.add_isodose_line_rgb(dose=108.75, r=255, g=0, b=255, alpha=255)
+
+    # Erase any points other than ISO, ISO SCAN or REF SCAN
+    for points in patient.PatientModel.PointsOfInterest:
+        if not points.Name in ["ISO", "ISOCENTRE", "ISO SCAN", "REF SCAN"]:
+            points.DeleteRoi()        
+    
+    
+def create_prostate_plan_PACE(nb_fx = 39, plan3D = False, machine = 'BeamMod', isodose_creation = True):
+    """
+    Voir :py:mod:`plan_prostate_A1`.
+    """
+
+    patient = lib.get_current_patient()
+    examination = lib.get_current_examination()
+    msg = ''
+
+    # Determine dose to be used for optimization of A1
+    if nb_fx == 39:
+        rx_dose = 7800
+    elif nb_fx == 5:
+        rx_dose = 3625
+ 
+    # Create BodyRS+Table, erase Body+table from Pinnacle, rename BODY to BODY Pinnacle
+    roi.generate_BodyRS_plus_Table()
+
+    # Clean Contrast ROI outside of body
+    if roi.roi_exists("CONTRASTE"):
+        retval_1 = patient.PatientModel.CreateRoi(Name="Contraste Mod", Color="Yellow", Type="ContrastAgent", TissueName=None, RoiMaterial=None)
+        retval_1.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [
+            "CONTRASTE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Intersection", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        retval_1.UpdateDerivedGeometry(Examination=examination)
+
+    # Identify PTV
+    if roi.roi_exists("PTV_7800"):
+        ptv = patient.PatientModel.RegionsOfInterest["PTV_7800"]
+    elif roi.roi_exists("PTV_3625"):
+        ptv = patient.PatientModel.RegionsOfInterest["PTV_3625"]
+
+    # Create Rectum+3mm
+    patient.PatientModel.CreateRoi(Name="Rectum+3mm", Color="skyblue", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['Rectum+3mm'].SetMarginExpression(SourceRoiName="Rectum", MarginSettings={'Type': "Expand", 'Superior': 0.3, 'Inferior': 0.3, 'Anterior': 0.3, 'Posterior': 0.3, 'Right': 0.3, 'Left': 0.3})
+    patient.PatientModel.RegionsOfInterest['Rectum+3mm'].UpdateDerivedGeometry(Examination=patient.Examinations['CT 1'])   
+    
+    # Remove material override from all ROIs
+    for rois in patient.PatientModel.RegionsOfInterest:
+        rois.SetRoiMaterial(Material=None)
+        
+    #Override Contraste Mod with water    
+    if roi.roi_exists("Contraste Mod"):
+        #It is seemingly impossible to use the built-in material Water, so a copy is made called Eau
+        #But first we check to see if Eau exists already, because creating a second copy crashes RayStation (even when using try)
+        db = get_current("PatientDB")
+        finished = False
+        i=0
+        #If Eau already exists, assign it to the ROI and end the function
+        for material in patient.PatientModel.Materials:
+            i += 1
+            if material.Name == 'Eau':
+                patient.PatientModel.RegionsOfInterest["Contraste Mod"].SetRoiMaterial(Material = material)
+                finished = True
+                break
+        #If Eau does not exist, create it, then assign it to the ROI
+        if not finished:
+            patient.PatientModel.CreateMaterial(BaseOnMaterial=db.TemplateMaterials[0].Materials[25], Name = "Eau", MassDensityOverride = 1.000)
+            patient.PatientModel.RegionsOfInterest["Contraste Mod"].SetRoiMaterial(Material = patient.PatientModel.Materials[i])        
+            
+    #Create ISO
+    if not poi.poi_exists("ISO"):
+        if poi.poi_exists("REF SCAN"):
+            REF_SCAN_coords = poi.get_poi_coordinates('REF SCAN',examination)
+            poi.create_poi(REF_SCAN_coords,'ISO','Blue','Isocenter',examination)
+    
+    # Assign Point Types
+    poi.auto_assign_poi_types()
+
+    # Add Treatment plan
+    plan = patient.AddNewPlan(PlanName="A1 seul", PlannedBy="", Comment="", ExaminationName=lib.get_current_examination().Name, AllowDuplicateNames=False)
+    plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset
+    if patient.Examinations[0].PatientPosition == "HFS":
+        position = "HeadFirstSupine"
+    else:
+        position = "HeadFirstProne"
+        
+    beamset = plan.AddNewBeamSet(Name="A1", ExaminationName=lib.get_current_examination().Name, MachineName=machine, NominalEnergy=None,
+                                      Modality="Photons", TreatmentTechnique="VMAT", PatientPosition=position, NumberOfFractions=nb_fx, CreateSetupBeams=False, Comment="")
+    beamset.AddDosePrescriptionToRoi(RoiName=ptv.Name, DoseVolume=99.5, PrescriptionType="DoseAtVolume", DoseValue=rx_dose*0.95, RelativePrescriptionLevel=1)
+
+    # plan and beamset are created but not currently selected in RS
+    # therefore we must retain the objects in variables and pass them on
+    # to the following functions, which otherwise would assume that
+    # these are currently selected by the user in RS.
+    # VTL
+
+    # Add arc
+    beams.add_beams_prostate_A1(beamset=beamset)
+
+    # Set optimization parameters
+    optim.set_optimization_parameters(plan=plan)
+
+    # Set VMAT conversion parameters
+    if nb_fx == 5: #7.25 Gy per fraction
+        optim.set_vmat_conversion_parameters(max_arc_delivery_time=300.0, plan=plan)
+    else: #2 Gy per fraction
+        optim.set_vmat_conversion_parameters(max_arc_delivery_time=150.0, plan=plan)
+    
+    # Add optimization objectives
+    optimization_objectives.add_opt_obj_prostate_A1(plan=plan)
+
+    # Add clinical goals
+    if nb_fx == 39:
+        clinical_goals.add_dictionary_cg('Prostate PACE', 78, 39, plan=plan)
+    elif nb_fx == 5:
+        clinical_goals.add_dictionary_cg('Prostate PACE', 36.25, 5, plan=plan)
+        
+    #Rename PTV
+    if ptv.Name == "PTV_7800":
+        ptv.Name = "PTV A1 78Gy"
+    elif ptv.Name == "PTV_3625":
+        ptv.Name = "PTV A1 36.25Gy"
+                   
+    # Set Dose Color Table
+    if isodose_creation:
+        eval.remove_all_isodose_lines()
+        patient.CaseSettings.DoseColorMap.ReferenceValue = rx_dose
+        patient.CaseSettings.DoseColorMap.ColorMapReferenceType = "ReferenceValue"
+        patient.CaseSettings.DoseColorMap.PresentationType = 'Absolute'
+        eval.add_isodose_line_rgb(dose=0, r=0, g=0, b=0, alpha=0)
+        eval.add_isodose_line_rgb(dose=25, r=0, g=0, b=160, alpha=128)
+        eval.add_isodose_line_rgb(dose=50, r=128, g=128, b=255, alpha=255)
+        eval.add_isodose_line_rgb(dose=75, r=0, g=255, b=0, alpha=255)
+        #eval.add_isodose_line_rgb(dose=87.7, r=255, g=192, b=0, alpha=255)  # pour plan split
+        eval.add_isodose_line_rgb(dose=95, r=0, g=255, b=255, alpha=255)
+        eval.add_isodose_line_rgb(dose=100, r=255, g=0, b=0, alpha=255)
+        eval.add_isodose_line_rgb(dose=105, r=255, g=255, b=0, alpha=255)
+        eval.add_isodose_line_rgb(dose=108.75, r=255, g=0, b=255, alpha=255)
+
+    # Erase any points other than ISO, ISO SCAN or REF SCAN
+    for points in patient.PatientModel.PointsOfInterest:
+        if not points.Name in ["ISO", "ISOCENTRE", "ISO SCAN", "REF SCAN"]:
+            points.DeleteRoi()        
+    
+  
+# Script pour transformer un plan A1 de prostate en plan A1 Split. Suppose que le script plan_prostate_A1
+# a été utilisé pour la creation du plan initial.
+def prostate_split_A1():
+    """
+    Voir :py:mod:`prostate_split_A1`.
+    """
+    patient = lib.get_current_patient()
+    examination = lib.get_current_examination()
+    patient_plan = lib.get_current_plan()
+
+    # Changer nb de fractions si pas 40
+    patient_plan.BeamSets[0].FractionationPattern.NumberOfFractions = 40
+
+    # Create PTV A1-RECTUM
+    retval_4 = patient.PatientModel.CreateRoi(Name="PTV A1-RECTUM", Color="Red", Type="Ptv", TissueName=None, RoiMaterial=None)
+    retval_4.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["PTV A1"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [
+                                  "RECTUM"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    retval_4.UpdateDerivedGeometry(Examination=examination)
+
+    # Create WALL RECT ds PTV A1
+    retval_9 = patient.PatientModel.CreateRoi(Name="WALL RECT ds PTV A1", Color="Green", Type="Ptv", TissueName=None, RoiMaterial=None)
+    retval_9.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["WALL RECTUM"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [
+                                  "PTV A1"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Intersection", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    retval_9.UpdateDerivedGeometry(Examination=examination)
+
+    # Changer objectif min dose PTV A1 à PTV A1-RECTUM
+    patient_plan.PlanOptimizations[0].Objective.ConstituentFunctions[0].DeleteFunction()
+    optim.add_mindose_objective('PTV A1-RECTUM', 7600, weight=100, plan=patient_plan)
+
+    # Ajouter objectif min dose 73.2 Gy à RECTUM ds PTV A1
+    optim.add_mindose_objective('RECTUM ds PTV A1', 7320, weight=10, plan=patient_plan)
+
+    # Ajouter objectif max dose 75 Gy à WALL RECT ds PTV A1
+    optim.add_maxdose_objective('WALL RECT ds PTV A1', 7500, weight=0, plan=patient_plan)
+
+    # Ajouter un clinical goal de couverture sur le PTV A1-RECTUM (NB qu'on ne peut pas effacer le CG sur le vieux PTV car ça fait planter RayStation)
+    # plan.TreatmentCourse.EvaluationSetup.EvaluationFunctions[0].DeleteFunction() # - FAIT PLANTER RAYSTATION!
+    #eval.add_clinical_goal('PTV A1-RECTUM', 7600, 'AtLeast', 'VolumeAtDose', 99.5, plan=patient_plan)
+    patient_plan.TreatmentCourse.EvaluationSetup.AddClinicalGoal(RoiName="PTV A1-RECTUM", GoalValue=7600, GoalCriteria="AtLeast", GoalType="VolumeAtDose", GoalVolume=99.5, AbsoluteGoalVolume=0)
+
+    # Ajouter clinical goal couverture RECTUM ds PTV
+    #eval.add_clinical_goal('RECTUM ds PTV A1', 7320, 'AtLeast', 'VolumeAtDose', 99.5, plan=patient_plan)
+    patient_plan.TreatmentCourse.EvaluationSetup.AddClinicalGoal(RoiName="RECTUM ds PTV A1", GoalValue=7320, GoalCriteria="AtLeast", GoalType="VolumeAtDose", GoalVolume=99.5, AbsoluteGoalVolume=0)
+  
+  
+def create_prostate_plan_A2_split():
+    """
+    Voir :py:mod:`plan_prostate_A2_split`.
+    """
+    patient = lib.get_current_patient()
+    examination = lib.get_current_examination()
+    plan = lib.get_current_plan()
+
+    # Create PTV A2-RECTUM
+    retval_5 = patient.PatientModel.CreateRoi(Name="PTV A2-RECTUM", Color="Lime", Type="Ptv", TissueName=None, RoiMaterial=None)
+    retval_5.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["PTV A2"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [
+                                  "RECTUM"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    retval_5.UpdateDerivedGeometry(Examination=examination)
+
+    # Create WALL RECT ds PTV A2
+    retval_10 = patient.PatientModel.CreateRoi(Name="WALL RECT ds PTV A2", Color="Aqua", Type="Ptv", TissueName=None, RoiMaterial=None)
+    retval_10.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["WALL RECTUM"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [
+                                   "PTV A2"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Intersection", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    retval_10.UpdateDerivedGeometry(Examination=examination)
+
+    # Rename first beamset A1 and change nb fractions to 27
+    plan.BeamSets[0].DicomPlanLabel = "A1"
+    plan.BeamSets[0].FractionationPattern.NumberOfFractions = 27
+
+    # Add Beam Set A2
+    if patient.Examinations[0].PatientPosition == "HFS":
+        beamset = plan.AddNewBeamSet(Name="A2", ExaminationName=examination.Name, MachineName="Salle 11", NominalEnergy=None,
+                                          Modality="Photons", TreatmentTechnique="VMAT", PatientPosition="HeadFirstSupine", NumberOfFractions=13, CreateSetupBeams=True, Comment="")
+    else:
+        beamset = plan.AddNewBeamSet(Name="A2", ExaminationName=examination.Name, MachineName="Salle 11", NominalEnergy=None,
+                                          Modality="Photons", TreatmentTechnique="VMAT", PatientPosition="HeadFirstProne", NumberOfFractions=13, CreateSetupBeams=True, Comment="")
+
+    # Make A2 dependent on A1
+    plan.UpdateDependency(DependentBeamSetName="A2", BackgroundBeamSetName="A1", DependencyUpdate="CreateDependency")
+
+    # Prescribe to PTV A2
+    beamset.AddDosePrescriptionToRoi(RoiName="PTV A2-RECTUM", DoseVolume=99.5, PrescriptionType="DoseAtVolume", DoseValue=2470, RelativePrescriptionLevel=1)
+
+    # Add arc
+    beams.add_beams_prostate_A2(beamset=beamset)
+
+    # Set optimization parameters
+    optim.set_optimization_parameters(plan=plan, beamset=2)
+
+    # Set maximum delivery time
+    optim.set_vmat_conversion_parameters(max_arc_delivery_time=150.0, plan=plan, beamset=2)
+
+    # Add optimization objectives
+    retval_1 = plan.PlanOptimizations[1].AddOptimizationFunction(FunctionType="MinDose", RoiName="PTV A2-RECTUM", IsConstraint=False, RestrictAllBeamsIndividually=False, RestrictToBeam=None, IsRobust=False, RestrictToBeamSet="A2")
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[0].DoseFunctionParameters.DoseLevel = 2470
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[0].DoseFunctionParameters.Weight = 100
+
+    retval_2 = plan.PlanOptimizations[1].AddOptimizationFunction(FunctionType="MaxDose", RoiName="PTV A2", IsConstraint=False, RestrictAllBeamsIndividually=False, RestrictToBeam=None, IsRobust=False, RestrictToBeamSet="A2")
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[1].DoseFunctionParameters.DoseLevel = 2730
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[1].DoseFunctionParameters.Weight = 10
+
+    retval_3 = plan.PlanOptimizations[1].AddOptimizationFunction(FunctionType="MaxDvh", RoiName="RECTUM", IsConstraint=False, RestrictAllBeamsIndividually=False, RestrictToBeam=None, IsRobust=False, RestrictToBeamSet=None)
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[2].DoseFunctionParameters.DoseLevel = 7500
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[2].DoseFunctionParameters.PercentVolume = 15
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[2].DoseFunctionParameters.Weight = 10
+
+    retval_4 = plan.PlanOptimizations[1].AddOptimizationFunction(FunctionType="MaxDvh", RoiName="RECTUM", IsConstraint=False, RestrictAllBeamsIndividually=False, RestrictToBeam=None, IsRobust=False, RestrictToBeamSet=None)
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[3].DoseFunctionParameters.DoseLevel = 7000
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[3].DoseFunctionParameters.PercentVolume = 25
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[3].DoseFunctionParameters.Weight = 10
+
+    retval_5 = plan.PlanOptimizations[1].AddOptimizationFunction(FunctionType="MaxDvh", RoiName="RECTUM", IsConstraint=False, RestrictAllBeamsIndividually=False, RestrictToBeam=None, IsRobust=False, RestrictToBeamSet=None)
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[4].DoseFunctionParameters.DoseLevel = 6500
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[4].DoseFunctionParameters.PercentVolume = 35
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[4].DoseFunctionParameters.Weight = 10
+
+    retval_6 = plan.PlanOptimizations[1].AddOptimizationFunction(FunctionType="MaxDvh", RoiName="RECTUM", IsConstraint=False, RestrictAllBeamsIndividually=False, RestrictToBeam=None, IsRobust=False, RestrictToBeamSet=None)
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[5].DoseFunctionParameters.DoseLevel = 6000
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[5].DoseFunctionParameters.PercentVolume = 50
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[5].DoseFunctionParameters.Weight = 10
+
+    retval_7 = plan.PlanOptimizations[1].AddOptimizationFunction(FunctionType="MaxDose", RoiName="RECTUM", IsConstraint=False, RestrictAllBeamsIndividually=False, RestrictToBeam=None, IsRobust=False, RestrictToBeamSet=None)
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[6].DoseFunctionParameters.DoseLevel = 7950
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[6].DoseFunctionParameters.PercentVolume = 50
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[6].DoseFunctionParameters.Weight = 10
+
+    retval_8 = plan.PlanOptimizations[1].AddOptimizationFunction(FunctionType="MaxDose", RoiName="VESSIE", IsConstraint=False, RestrictAllBeamsIndividually=False, RestrictToBeam=None, IsRobust=False, RestrictToBeamSet=None)
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[7].DoseFunctionParameters.DoseLevel = 8200
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[7].DoseFunctionParameters.PercentVolume = 50
+
+    retval_9 = plan.PlanOptimizations[1].AddOptimizationFunction(FunctionType="DoseFallOff", RoiName="BodyRS", IsConstraint=False, RestrictAllBeamsIndividually=False, RestrictToBeam=None, IsRobust=False, RestrictToBeamSet=None)
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[8].DoseFunctionParameters.HighDoseLevel = 7600
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[8].DoseFunctionParameters.LowDoseLevel = 4000
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[8].DoseFunctionParameters.LowDoseDistance = 3
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[8].DoseFunctionParameters.Weight = 0
+
+    retval_10 = plan.PlanOptimizations[1].AddOptimizationFunction(FunctionType="MinDose", RoiName="RECTUM ds PTV A2", IsConstraint=False, RestrictAllBeamsIndividually=False, RestrictToBeam=None, IsRobust=False, RestrictToBeamSet="A2")
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[9].DoseFunctionParameters.DoseLevel = 2280
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[9].DoseFunctionParameters.Weight = 10
+
+    retval_11 = plan.PlanOptimizations[1].AddOptimizationFunction(FunctionType="MaxDose", RoiName="WALL RECT ds PTV A2", IsConstraint=False, RestrictAllBeamsIndividually=False, RestrictToBeam=None, IsRobust=False, RestrictToBeamSet="A2")
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[10].DoseFunctionParameters.DoseLevel = 2438
+    plan.PlanOptimizations[1].Objective.ConstituentFunctions[10].DoseFunctionParameters.Weight = 0
+
+    # Modify clinical goal for coverage of PTV A1
+    plan.TreatmentCourse.EvaluationSetup.EvaluationFunctions[0].PlanningGoal.GoalValue = 5130
+
+    # Add clinical goal for coverage of PTV A2
+    plan.TreatmentCourse.EvaluationSetup.AddClinicalGoal(RoiName="PTV A2-RECTUM", GoalValue=2470, GoalCriteria="AtLeast", GoalType="VolumeAtDose", GoalVolume=99.5, AbsoluteGoalVolume=0)
+    plan.TreatmentCourse.EvaluationSetup.AddClinicalGoal(RoiName="RECTUM ds PTV A2", GoalValue=2280, GoalCriteria="AtLeast", GoalType="VolumeAtDose", GoalVolume=99.5, AbsoluteGoalVolume=0)
+
+    # Change reference value in Dose Color Table
+    patient.CaseSettings.DoseColorMap.ReferenceValue = 2600
+
+    
+def finaliser_plan_prostate():
+    """
+    Voir :py:mod:`finaliser_plan_prostate`.
+    """
+
+    patient = lib.get_current_patient()
+    # examination = lib.get_current_examination()
+    plan = lib.get_current_plan()
+
+    # Rename OAR contours for SuperBridge transfer
+    for rois in patient.PatientModel.RegionsOfInterest:
+        if rois.Name in ["RECTUM", "VESSIE", "INTESTINS", "RECTO-SIGMOIDE", "PROSTATE"]:
+            rois.Name += "*"
+    
+    colors = ["Red","Green","Blue","Yellow","Orange"]
+    
+    for i, bs in enumerate(plan.BeamSets):        
+        ptv = patient.PatientModel.RegionsOfInterest[bs.Prescription.PrimaryDosePrescription.OnStructure.Name]
+        beamset_name = ptv.Name[4:6] #ROI name must be in the format PTV A1
+        nb_fx = bs.FractionationPattern.NumberOfFractions
+        if nb_fx == 15:
+            rx_dose = 3750
+            for cg in plan.TreatmentCourse.EvaluationSetup.EvaluationFunctions:
+                if cg.ForRegionOfInterest.Name == ptv.Name:
+                    cg.PlanningGoal.ParameterValue = 3563
+        else:
+            rx_dose = 200 * nb_fx
+            for cg in plan.TreatmentCourse.EvaluationSetup.EvaluationFunctions:
+                if cg.ForRegionOfInterest.Name == ptv.Name:
+                    cg.PlanningGoal.ParameterValue = rx_dose * 0.95          
+        
+        #Use presence of isodose contour to decide whether finalisation actions are taken on a given beamset
+        if roi.roi_exists("isodose "+beamset_name): #eg, isodose A1
+            # Rename beamset
+            bs.DicomPlanLabel = beamset_name    
+
+            # Add * to the end of PTV name and rename 95% isodose line
+            ptv.Name += '*'
+            isodose_roi = patient.PatientModel.RegionsOfInterest[("isodose "+beamset_name)]
+            isodose_roi.Name = ("ISO 95% "+beamset_name+" "+str(rx_dose/100.0*0.95)+"Gy*")
+            isodose_roi.Name = isodose_roi.Name.replace('.0Gy','Gy')
+            
+            # Add comment for Superbridge transfer
+            bs.Prescription.Description = "VMAT"
+      
+            # Create DSP and PT PRESC
+            poi_name = 'PT PRESC ' + beamset_name
+            poi.create_poi({'x': 0, 'y': 0, 'z': 0}, poi_name, color=colors[i])
+            bs.CreateDoseSpecificationPoint(Name="DSP", Coordinates={ 'x': 0, 'y': 0, 'z': 0 })
+           
+            # Move PT PRESC to a point that receives correct dose per fraction and prescribe
+            poi.place_prescription_point(target_fraction_dose=rx_dose/nb_fx , ptv_name=ptv.Name, poi_name=poi_name, beamset=bs)
+            bs.AddDosePrescriptionToPoi(PoiName=poi_name, DoseValue=rx_dose)
+      
+            # Move DSP to coordinates of PT PRESC and assign to all beams
+            point = poi.get_poi_coordinates(poi_name)
+            dsp = [x for x in bs.DoseSpecificationPoints][0]
+            dsp.Name = "DSP "+beamset_name
+            dsp.Coordinates = point.value
+
+            for beam in bs.Beams:
+                beam.SetDoseSpecificationPoint(Name=("DSP "+beamset_name))
+            bs.ComputeDose(ComputeBeamDoses=True, DoseAlgorithm="CCDose", ForceRecompute=True)  # Dose is recalculated to show beam dose at spec point (otherwise not displayed)
+    

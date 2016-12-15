@@ -767,3 +767,461 @@ SystemError: There was an error writing to the pipe: The pipe is being closed. (
 2016-12-06 15:57:09,671 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
 2016-12-06 15:57:09,871 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] End of script test_NePasUtiliser.py [execution time = 0:12:46.119000]
 2016-12-06 15:57:10,002 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2016-12-07 15:59:56,829 - hmrlib - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-07 15:59:56,977 - hmrlib - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2016-12-07 15:59:57,006 - hmrlib - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-07 15:59:57,592 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2016-12-07 16:00:00,442 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV18 is NOT approved.
+2016-12-07 16:00:00,567 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV travail is NOT approved.
+2016-12-07 16:00:00,686 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2016-12-07 16:00:00,867 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2016-12-07 16:00:00,998 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2016-12-07 16:00:01,126 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2016-12-07 16:00:01,243 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2016-12-07 16:00:01,361 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2016-12-07 16:00:01,480 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2016-12-07 16:00:01,601 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2016-12-07 16:00:01,719 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV18 is NOT approved.
+2016-12-07 16:00:13,070 - hmrlib.poi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2016-12-07 16:00:13,135 - hmrlib.poi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2016-12-07 16:00:13,710 - hmrlib.poi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2016-12-07 16:00:13,813 - hmrlib.poi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2016-12-07 16:00:14,246 - hmrlib.poi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2016-12-07 16:00:14,448 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2016-12-07 16:00:14,539 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2016-12-07 16:00:14,647 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV18 is NOT approved.
+2016-12-07 16:00:14,732 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV18" set as Gtv
+2016-12-07 16:00:14,811 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV18" set as Target
+2016-12-07 16:00:14,912 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV travail is NOT approved.
+2016-12-07 16:00:15,002 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV travail" set as Gtv
+2016-12-07 16:00:15,077 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV travail" set as Target
+2016-12-07 16:00:15,183 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2016-12-07 16:00:15,262 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CERVEAU" set as Organ
+2016-12-07 16:00:15,332 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CERVEAU" set as OrganAtRisk
+2016-12-07 16:00:15,430 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2016-12-07 16:00:15,511 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2016-12-07 16:00:15,588 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2016-12-07 16:00:15,694 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2016-12-07 16:00:15,776 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL DRT" set as Organ
+2016-12-07 16:00:15,845 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL DRT" set as OrganAtRisk
+2016-12-07 16:00:15,950 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2016-12-07 16:00:16,031 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL GCHE" set as Organ
+2016-12-07 16:00:16,099 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL GCHE" set as OrganAtRisk
+2016-12-07 16:00:16,196 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2016-12-07 16:00:16,276 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TR CEREBRAL" set as Organ
+2016-12-07 16:00:16,366 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TR CEREBRAL" set as OrganAtRisk
+2016-12-07 16:00:16,458 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2016-12-07 16:00:16,535 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CHIASMA" set as Organ
+2016-12-07 16:00:16,605 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CHIASMA" set as OrganAtRisk
+2016-12-07 16:00:16,713 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2016-12-07 16:00:16,795 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT DRT" set as Organ
+2016-12-07 16:00:16,867 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT DRT" set as OrganAtRisk
+2016-12-07 16:00:16,975 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2016-12-07 16:00:17,055 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT GCHE" set as Organ
+2016-12-07 16:00:17,132 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT GCHE" set as OrganAtRisk
+2016-12-07 16:00:17,241 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV18 is NOT approved.
+2016-12-07 16:00:17,324 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV18" set as Ptv
+2016-12-07 16:00:17,398 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV18" set as Target
+2016-12-07 16:01:02,252 - hmrlib.poi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2016-12-07 16:01:02,276 - hmrlib - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=7fd8d362-65bd-437b-9859-c0124bfab705, 'Stereo Crane'>
+2016-12-07 16:01:02,306 - hmrlib - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2016-12-07 16:01:02,396 - hmrlib.poi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (3.04547729492, 5.82760162354, 4.00000076294)
+2016-12-07 16:01:02,557 - hmrlib - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 181 in direction CCW with isocenter ISO.  Energy = 6, collimator = 5, couch = 0.0.
+2016-12-07 16:01:02,583 - hmrlib - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=7fd8d362-65bd-437b-9859-c0124bfab705, 'Stereo Crane'>
+2016-12-07 16:01:02,612 - hmrlib - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2016-12-07 16:01:02,752 - hmrlib.poi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (3.04547729492, 5.82760162354, 4.00000076294)
+2016-12-07 16:01:03,003 - hmrlib - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.2" from 181 to 180 in direction CW with isocenter ISO.  Energy = 6, collimator = 355, couch = 0.0.
+2016-12-07 16:01:03,049 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2016-12-07 16:01:03,101 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2016-12-07 16:01:03,227 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2016-12-07 16:01:03,307 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2016-12-07 16:01:03,378 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2016-12-07 16:01:03,448 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2016-12-07 16:01:03,528 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2016-12-07 16:01:03,557 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2016-12-07 16:01:03,605 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2016-12-07 16:01:03,692 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.1 cm/deg.
+2016-12-07 16:01:03,779 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2016-12-07 16:01:03,894 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2016-12-07 16:01:03,985 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 350.0 s for arc "A1.1".
+2016-12-07 16:01:04,075 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.2".
+2016-12-07 16:01:04,166 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 350.0 s for arc "A1.2".
+2016-12-07 16:01:04,363 - hmrlib.roi - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Possible PTVs identified as ['PTV18']
+2016-12-07 16:01:04,507 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV18" added.
+2016-12-07 16:01:04,725 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV18" added.
+2016-12-07 16:01:04,900 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1_3mm" added.
+2016-12-07 16:01:05,067 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2_8mm" added.
+2016-12-07 16:01:05,244 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3_1cm" added.
+2016-12-07 16:01:05,395 - hmrlib.optim - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TISSUS SAINS" added.
+2016-12-07 16:09:07,880 - hmrlib - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-07 16:09:07,906 - hmrlib - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:09:11.272000]
+2016-12-07 16:09:07,930 - hmrlib - INFO - [hmr30489 - PAQUETTE^SUZANNE (1827943) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-12 11:41:50,721 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ================================================================================
+2016-12-12 11:41:50,889 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Starting script plan_launcher.py
+2016-12-12 11:41:50,936 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ================================================================================
+2016-12-12 11:41:51,570 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI BODY Pinnacle is NOT approved.
+2016-12-12 11:41:52,003 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI Table is NOT approved.
+2016-12-12 11:41:52,468 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI PTV45 is NOT approved.
+2016-12-12 11:41:52,622 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI COEUR is NOT approved.
+2016-12-12 11:41:52,807 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI COLON is NOT approved.
+2016-12-12 11:41:52,950 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI COTES is NOT approved.
+2016-12-12 11:41:53,098 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI DUODENUM is NOT approved.
+2016-12-12 11:41:53,244 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI ESTOMAC is NOT approved.
+2016-12-12 11:41:53,412 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI FOIE EXPI is NOT approved.
+2016-12-12 11:41:53,638 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI FOIE INSPI is NOT approved.
+2016-12-12 11:41:53,872 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI MOELLE is NOT approved.
+2016-12-12 11:41:54,011 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI OESOPHAGE is NOT approved.
+2016-12-12 11:41:54,149 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI PAROI is NOT approved.
+2016-12-12 11:41:54,345 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI REIN GCHE is NOT approved.
+2016-12-12 11:41:54,492 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI REIN DRT is NOT approved.
+2016-12-12 11:41:54,639 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI GTV is NOT approved.
+2016-12-12 11:42:04,333 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ================================================================================
+2016-12-12 11:42:04,381 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] End of script plan_launcher.py [execution time = 0:00:13.911000]
+2016-12-12 11:42:04,430 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ================================================================================
+2016-12-12 11:42:13,750 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ================================================================================
+2016-12-12 11:42:13,913 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Starting script plan_launcher.py
+2016-12-12 11:42:13,959 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ================================================================================
+2016-12-12 11:42:14,482 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI BODY Pinnacle is NOT approved.
+2016-12-12 11:42:14,626 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI Table is NOT approved.
+2016-12-12 11:42:14,754 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI PTV45 is NOT approved.
+2016-12-12 11:42:14,885 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI COEUR is NOT approved.
+2016-12-12 11:42:15,013 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI COLON is NOT approved.
+2016-12-12 11:42:15,141 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI COTES is NOT approved.
+2016-12-12 11:42:15,275 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI DUODENUM is NOT approved.
+2016-12-12 11:42:15,403 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI ESTOMAC is NOT approved.
+2016-12-12 11:42:15,532 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI FOIE EXPI is NOT approved.
+2016-12-12 11:42:15,660 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI FOIE INSPI is NOT approved.
+2016-12-12 11:42:15,790 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI MOELLE is NOT approved.
+2016-12-12 11:42:15,923 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI OESOPHAGE is NOT approved.
+2016-12-12 11:42:16,052 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI PAROI is NOT approved.
+2016-12-12 11:42:16,182 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI REIN GCHE is NOT approved.
+2016-12-12 11:42:16,315 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI REIN DRT is NOT approved.
+2016-12-12 11:42:16,443 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI GTV is NOT approved.
+2016-12-12 11:42:30,811 - hmrlib.poi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Isocenter POI identified as "ISO"
+2016-12-12 11:42:30,888 - hmrlib.poi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] POI ISO is NOT approved.
+2016-12-12 11:42:31,018 - hmrlib.poi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of POI "ISO" set as Isocenter
+2016-12-12 11:42:31,094 - hmrlib.poi - WARNING - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] No localization point could be found.  Using the isocenter point for localization.
+2016-12-12 11:42:31,169 - hmrlib.poi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] POI ISO is NOT approved.
+2016-12-12 11:42:31,279 - hmrlib.poi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of POI "ISO" set as LocalizationPoint
+2016-12-12 11:42:31,354 - hmrlib.poi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] POI PT PRESC A1 is NOT approved.
+2016-12-12 11:42:31,458 - hmrlib.poi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of POI "PT PRESC A1" set as Marker
+2016-12-12 11:42:31,757 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI BODY Pinnacle is NOT approved.
+2016-12-12 11:42:31,862 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "BODY Pinnacle" set as Organ
+2016-12-12 11:42:31,957 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "BODY Pinnacle" set as OrganAtRisk
+2016-12-12 11:42:32,091 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI Table is NOT approved.
+2016-12-12 11:42:32,195 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "Table" set as Organ
+2016-12-12 11:42:32,282 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "Table" set as OrganAtRisk
+2016-12-12 11:42:32,401 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI PTV45 is NOT approved.
+2016-12-12 11:42:32,510 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "PTV45" set as Ptv
+2016-12-12 11:42:32,599 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "PTV45" set as Target
+2016-12-12 11:42:32,731 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI COEUR is NOT approved.
+2016-12-12 11:42:32,828 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "COEUR" set as Organ
+2016-12-12 11:42:32,915 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "COEUR" set as OrganAtRisk
+2016-12-12 11:42:33,045 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI COLON is NOT approved.
+2016-12-12 11:42:33,146 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "COLON" set as Organ
+2016-12-12 11:42:33,239 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "COLON" set as OrganAtRisk
+2016-12-12 11:42:33,371 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI COTES is NOT approved.
+2016-12-12 11:42:33,470 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "COTES" set as Organ
+2016-12-12 11:42:33,559 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "COTES" set as OrganAtRisk
+2016-12-12 11:42:33,683 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI DUODENUM is NOT approved.
+2016-12-12 11:42:33,784 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "DUODENUM" set as Organ
+2016-12-12 11:42:33,872 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "DUODENUM" set as OrganAtRisk
+2016-12-12 11:42:33,996 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI ESTOMAC is NOT approved.
+2016-12-12 11:42:34,100 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "ESTOMAC" set as Organ
+2016-12-12 11:42:34,195 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "ESTOMAC" set as OrganAtRisk
+2016-12-12 11:42:34,319 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI FOIE EXPI is NOT approved.
+2016-12-12 11:42:34,419 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "FOIE EXPI" set as Organ
+2016-12-12 11:42:34,510 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "FOIE EXPI" set as OrganAtRisk
+2016-12-12 11:42:34,640 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI FOIE INSPI is NOT approved.
+2016-12-12 11:42:34,740 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "FOIE INSPI" set as Organ
+2016-12-12 11:42:34,839 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "FOIE INSPI" set as OrganAtRisk
+2016-12-12 11:42:34,962 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI MOELLE is NOT approved.
+2016-12-12 11:42:35,064 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "MOELLE" set as Organ
+2016-12-12 11:42:35,153 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "MOELLE" set as OrganAtRisk
+2016-12-12 11:42:35,277 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI OESOPHAGE is NOT approved.
+2016-12-12 11:42:35,377 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "OESOPHAGE" set as Organ
+2016-12-12 11:42:35,466 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2016-12-12 11:42:35,589 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI PAROI is NOT approved.
+2016-12-12 11:42:35,687 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "PAROI" set as Organ
+2016-12-12 11:42:35,778 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "PAROI" set as OrganAtRisk
+2016-12-12 11:42:35,899 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI REIN GCHE is NOT approved.
+2016-12-12 11:42:36,007 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "REIN GCHE" set as Organ
+2016-12-12 11:42:36,095 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "REIN GCHE" set as OrganAtRisk
+2016-12-12 11:42:36,210 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI REIN DRT is NOT approved.
+2016-12-12 11:42:36,308 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "REIN DRT" set as Organ
+2016-12-12 11:42:36,397 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "REIN DRT" set as OrganAtRisk
+2016-12-12 11:42:36,541 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ROI GTV is NOT approved.
+2016-12-12 11:42:36,639 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] Type of ROI "GTV" set as Gtv
+2016-12-12 11:42:36,726 - hmrlib.roi - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] OrganType of ROI "GTV" set as Target
+2016-12-12 11:43:24,770 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ================================================================================
+2016-12-12 11:43:24,818 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] End of script plan_launcher.py [execution time = 0:01:11.081000]
+2016-12-12 11:43:24,863 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ^JEAN-GUY (474817) - CT 1 - Stereo Foie/A1] ================================================================================
+2016-12-13 10:00:36,306 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 10:00:36,678 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2016-12-13 10:00:36,687 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 10:00:37,457 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\lib.py", line 510, in get_current_patient
+    return get_current('Patient')
+  File "C:\Program Files\RaySearch Laboratories\RayStation 4.7.2\ScriptClient\connect.py", line 21, in get_current
+    return ScriptClient.ScriptObject(ScriptClient.RayScriptService.Instance, ScriptClient.RayScriptService.Instance.Client.GetCurrent(objectType))
+SystemError: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+2016-12-13 10:00:37,527 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Could not get current patient.  No patient is currently selected ?
+2016-12-13 10:00:42,635 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 10:00:42,646 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:00:06.725000]
+2016-12-13 10:00:42,674 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 10:01:00,902 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 10:01:01,031 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2016-12-13 10:01:01,150 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 10:01:02,479 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2016-12-13 10:01:03,382 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2016-12-13 10:01:04,113 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV18 is NOT approved.
+2016-12-13 10:01:04,224 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV18 is NOT approved.
+2016-12-13 10:01:04,334 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2016-12-13 10:01:04,509 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2016-12-13 10:01:04,801 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2016-12-13 10:01:05,117 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2016-12-13 10:01:05,425 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2016-12-13 10:01:05,751 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2016-12-13 10:01:06,064 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2016-12-13 10:01:06,367 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2016-12-13 10:01:06,668 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CONTRASTE is NOT approved.
+2016-12-13 10:01:10,997 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 10:01:11,081 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:00:10.220000]
+2016-12-13 10:01:11,145 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 10:02:00,753 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 10:02:01,044 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2016-12-13 10:02:01,133 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 10:02:02,244 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2016-12-13 10:02:09,226 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2016-12-13 10:02:09,602 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV18 is NOT approved.
+2016-12-13 10:02:09,747 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV18 is NOT approved.
+2016-12-13 10:02:09,890 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2016-12-13 10:02:10,099 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2016-12-13 10:02:10,260 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2016-12-13 10:02:10,412 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2016-12-13 10:02:10,583 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2016-12-13 10:02:10,747 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2016-12-13 10:02:10,902 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2016-12-13 10:02:11,110 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2016-12-13 10:02:11,300 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CONTRASTE is NOT approved.
+2016-12-13 10:02:21,059 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2016-12-13 10:02:21,242 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2016-12-13 10:02:21,515 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2016-12-13 10:02:21,766 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2016-12-13 10:02:21,981 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2016-12-13 10:02:22,523 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2016-12-13 10:02:22,757 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2016-12-13 10:02:22,987 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2016-12-13 10:02:23,217 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2016-12-13 10:02:23,432 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV18 is NOT approved.
+2016-12-13 10:02:23,663 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV18" set as Gtv
+2016-12-13 10:02:23,855 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV18" set as Target
+2016-12-13 10:02:24,094 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV18 is NOT approved.
+2016-12-13 10:02:24,307 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV18" set as Ptv
+2016-12-13 10:02:24,509 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV18" set as Target
+2016-12-13 10:02:24,730 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2016-12-13 10:02:24,929 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CERVEAU" set as Organ
+2016-12-13 10:02:25,113 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CERVEAU" set as OrganAtRisk
+2016-12-13 10:02:25,315 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2016-12-13 10:02:25,481 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2016-12-13 10:02:25,639 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2016-12-13 10:02:25,836 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2016-12-13 10:02:26,014 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL DRT" set as Organ
+2016-12-13 10:02:26,192 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL DRT" set as OrganAtRisk
+2016-12-13 10:02:26,428 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2016-12-13 10:02:26,624 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL GCHE" set as Organ
+2016-12-13 10:02:26,804 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL GCHE" set as OrganAtRisk
+2016-12-13 10:02:27,002 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2016-12-13 10:02:27,193 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TR CEREBRAL" set as Organ
+2016-12-13 10:02:27,370 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TR CEREBRAL" set as OrganAtRisk
+2016-12-13 10:02:27,577 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2016-12-13 10:02:27,775 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CHIASMA" set as Organ
+2016-12-13 10:02:27,946 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CHIASMA" set as OrganAtRisk
+2016-12-13 10:02:28,166 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2016-12-13 10:02:28,359 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT DRT" set as Organ
+2016-12-13 10:02:28,552 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT DRT" set as OrganAtRisk
+2016-12-13 10:02:28,757 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2016-12-13 10:02:28,954 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT GCHE" set as Organ
+2016-12-13 10:02:29,122 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT GCHE" set as OrganAtRisk
+2016-12-13 10:02:29,335 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CONTRASTE is NOT approved.
+2016-12-13 10:02:29,529 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CONTRASTE" set as Organ
+2016-12-13 10:02:29,701 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CONTRASTE" set as OrganAtRisk
+2016-12-13 10:03:18,252 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:03:18,566 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:03:18,779 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:03:19,056 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:03:19,250 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:03:19,494 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:03:19,880 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:03:20,176 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:03:20,456 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:03:21,771 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV18" added.
+2016-12-13 10:03:22,050 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV18" added.
+2016-12-13 10:03:22,218 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1_3mm" added.
+2016-12-13 10:03:22,830 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2_8mm" added.
+2016-12-13 10:03:23,177 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3_1cm" added.
+2016-12-13 10:06:11,639 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 10:06:11,966 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2016-12-13 10:06:12,089 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 10:06:13,300 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2016-12-13 10:06:14,159 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2016-12-13 10:06:14,986 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV18 is NOT approved.
+2016-12-13 10:06:15,309 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV18 is NOT approved.
+2016-12-13 10:06:15,632 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2016-12-13 10:06:16,090 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2016-12-13 10:06:16,429 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2016-12-13 10:06:16,751 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2016-12-13 10:06:17,100 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2016-12-13 10:06:17,464 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2016-12-13 10:06:17,855 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2016-12-13 10:06:18,208 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2016-12-13 10:06:18,565 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CONTRASTE is NOT approved.
+2016-12-13 10:06:26,414 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2016-12-13 10:06:26,559 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2016-12-13 10:06:28,319 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2016-12-13 10:06:28,565 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2016-12-13 10:06:28,749 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2016-12-13 10:06:29,312 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2016-12-13 10:06:29,481 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2016-12-13 10:06:29,826 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2016-12-13 10:06:30,118 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2016-12-13 10:06:30,341 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV18 is NOT approved.
+2016-12-13 10:06:30,567 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV18" set as Gtv
+2016-12-13 10:06:30,735 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV18" set as Target
+2016-12-13 10:06:30,950 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV18 is NOT approved.
+2016-12-13 10:06:31,148 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV18" set as Ptv
+2016-12-13 10:06:31,328 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV18" set as Target
+2016-12-13 10:06:31,552 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2016-12-13 10:06:31,706 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CERVEAU" set as Organ
+2016-12-13 10:06:31,852 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CERVEAU" set as OrganAtRisk
+2016-12-13 10:06:32,071 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2016-12-13 10:06:32,257 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2016-12-13 10:06:32,413 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2016-12-13 10:06:32,620 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2016-12-13 10:06:32,824 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL DRT" set as Organ
+2016-12-13 10:06:32,997 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL DRT" set as OrganAtRisk
+2016-12-13 10:06:33,216 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2016-12-13 10:06:33,491 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL GCHE" set as Organ
+2016-12-13 10:06:33,664 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL GCHE" set as OrganAtRisk
+2016-12-13 10:06:33,887 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2016-12-13 10:06:34,060 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TR CEREBRAL" set as Organ
+2016-12-13 10:06:34,125 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TR CEREBRAL" set as OrganAtRisk
+2016-12-13 10:06:34,227 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2016-12-13 10:06:34,300 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CHIASMA" set as Organ
+2016-12-13 10:06:34,364 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CHIASMA" set as OrganAtRisk
+2016-12-13 10:06:34,482 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2016-12-13 10:06:34,632 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT DRT" set as Organ
+2016-12-13 10:06:34,805 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT DRT" set as OrganAtRisk
+2016-12-13 10:06:35,132 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2016-12-13 10:06:35,212 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT GCHE" set as Organ
+2016-12-13 10:06:35,276 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT GCHE" set as OrganAtRisk
+2016-12-13 10:06:35,382 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CONTRASTE is NOT approved.
+2016-12-13 10:06:35,531 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CONTRASTE" set as Organ
+2016-12-13 10:06:35,653 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CONTRASTE" set as OrganAtRisk
+2016-12-13 10:07:24,208 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:07:24,572 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:07:24,780 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:07:25,061 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:07:25,302 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:07:25,488 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:07:25,737 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:07:26,015 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:07:26,419 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 10:07:27,582 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV18" added.
+2016-12-13 10:07:27,992 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV18" added.
+2016-12-13 10:07:28,181 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1_3mm" added.
+2016-12-13 10:07:28,381 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2_8mm" added.
+2016-12-13 10:07:28,556 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3_1cm" added.
+2016-12-13 11:35:52,793 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 11:35:53,167 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2016-12-13 11:35:53,235 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 11:35:54,708 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2016-12-13 11:35:55,608 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2016-12-13 11:35:56,384 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV18 is NOT approved.
+2016-12-13 11:35:56,636 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV18 is NOT approved.
+2016-12-13 11:35:56,929 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2016-12-13 11:35:57,387 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2016-12-13 11:35:57,703 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2016-12-13 11:35:58,015 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2016-12-13 11:35:58,314 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2016-12-13 11:35:58,628 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2016-12-13 11:35:58,920 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2016-12-13 11:35:59,216 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2016-12-13 11:35:59,506 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CONTRASTE is NOT approved.
+2016-12-13 11:45:03,852 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2016-12-13 11:45:04,023 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2016-12-13 11:45:05,249 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2016-12-13 11:45:05,486 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2016-12-13 11:45:06,607 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2016-12-13 11:45:07,150 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2016-12-13 11:45:07,440 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2016-12-13 11:45:07,742 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2016-12-13 11:45:08,030 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2016-12-13 11:45:08,312 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV18 is NOT approved.
+2016-12-13 11:45:08,527 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV18" set as Gtv
+2016-12-13 11:45:08,706 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV18" set as Target
+2016-12-13 11:45:08,935 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV18 is NOT approved.
+2016-12-13 11:45:09,137 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV18" set as Ptv
+2016-12-13 11:45:09,312 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV18" set as Target
+2016-12-13 11:45:09,518 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2016-12-13 11:45:09,714 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CERVEAU" set as Organ
+2016-12-13 11:45:09,898 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CERVEAU" set as OrganAtRisk
+2016-12-13 11:45:10,132 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2016-12-13 11:45:10,329 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2016-12-13 11:45:10,493 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2016-12-13 11:45:10,702 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2016-12-13 11:45:10,894 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL DRT" set as Organ
+2016-12-13 11:45:11,064 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL DRT" set as OrganAtRisk
+2016-12-13 11:45:11,255 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2016-12-13 11:45:11,434 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL GCHE" set as Organ
+2016-12-13 11:45:11,605 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL GCHE" set as OrganAtRisk
+2016-12-13 11:45:12,069 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2016-12-13 11:45:12,261 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TR CEREBRAL" set as Organ
+2016-12-13 11:45:12,427 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TR CEREBRAL" set as OrganAtRisk
+2016-12-13 11:45:12,646 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2016-12-13 11:45:12,834 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CHIASMA" set as Organ
+2016-12-13 11:45:13,005 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CHIASMA" set as OrganAtRisk
+2016-12-13 11:45:13,219 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2016-12-13 11:45:13,415 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT DRT" set as Organ
+2016-12-13 11:45:13,603 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT DRT" set as OrganAtRisk
+2016-12-13 11:45:13,815 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2016-12-13 11:45:14,008 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT GCHE" set as Organ
+2016-12-13 11:45:14,179 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT GCHE" set as OrganAtRisk
+2016-12-13 11:45:14,392 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ROI CONTRASTE is NOT approved.
+2016-12-13 11:45:14,589 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CONTRASTE" set as Organ
+2016-12-13 11:45:14,762 - hmrlib.roi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CONTRASTE" set as OrganAtRisk
+2016-12-13 11:46:03,261 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 11:46:03,479 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 11:46:03,673 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 11:46:03,863 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 11:46:04,098 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 11:46:04,325 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 11:46:04,559 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 11:46:04,772 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 11:46:04,978 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 11:46:05,937 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV18" added.
+2016-12-13 11:46:06,239 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV18" added.
+2016-12-13 11:46:06,414 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1_3mm" added.
+2016-12-13 11:46:06,653 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2_8mm" added.
+2016-12-13 11:46:07,040 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3_1cm" added.
+2016-12-13 11:46:07,224 - hmrlib.optim - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TISSUS SAINS" added.
+2016-12-13 12:24:18,158 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 12:24:18,221 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:48:25.819000]
+2016-12-13 12:24:18,282 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2016-12-13 13:30:08,073 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2016-12-13 13:30:08,511 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_initiale.py
+2016-12-13 13:30:09,154 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2016-12-13 13:30:20,083 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (0.119395446777, 1.11439056396, 0.0)
+2016-12-13 13:30:20,614 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 13:31:31,258 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2016-12-13 13:31:31,399 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_initiale.py [execution time = 0:01:23.530000]
+2016-12-13 13:31:31,547 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2016-12-13 13:31:36,493 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2016-12-13 13:31:36,856 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2016-12-13 13:31:37,054 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2016-12-13 13:31:40,428 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (0.119395446777, 1.11439056396, 0.0)
+2016-12-13 13:31:40,972 - hmrlib.poi - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-4.78060607910, 4.11439056396, 2.2)
+2016-12-13 13:38:44,332 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2016-12-13 13:38:44,467 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:07:07.918000]
+2016-12-13 13:38:44,628 - hmrlib - INFO - [hmr30489 - GOBEIL^RICHARD (1876443) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
