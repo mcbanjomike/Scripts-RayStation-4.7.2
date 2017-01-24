@@ -3421,6 +3421,10 @@ def verification_initiale():
                      check_optimisation = "Pas vérifié",
                      check_distribution_dose = "Pas vérifié")
             
+            #Create dictionaries for window/level switching
+            self.lung_dict = dict(x=-600,y=1600)
+            self.lw_dict = dict(x=-exam.Series[0].LevelWindow.x,y=exam.Series[0].LevelWindow.y)
+            
         def Panel(self, x, y):
             panel = Panel()
             panel.Width = 535
@@ -3660,9 +3664,14 @@ def verification_initiale():
             self.label_reminder.Text = "Rappel:\nVérifier tout les objectifs d'optimisation avant de\nprocéder à la prochaine étape"
             self.message.Text = ""            
             
-        def cancelClicked(self, sender, args):
-            self.Close()          
-            
+        #def cancelClicked(self, sender, args):
+        #    self.Close()    
+
+        def levelwindowClicked(self, sender, args):
+            if exam.Series[0].LevelWindow.x == -600 and exam.Series[0].LevelWindow.y == 1600:
+                exam.Series[0].LevelWindow = self.lw_dict
+            else:
+                exam.Series[0].LevelWindow = self.lung_dict            
             
         def printClicked(self, sender, args):     
 
@@ -3723,11 +3732,17 @@ def verification_initiale():
             #self.AcceptButton = okButton
             printButton.Click += self.printClicked            
             
-            cancelButton = Button()
-            cancelButton.Text = "Annuler"
-            cancelButton.Location = Point(110,10)
-            self.CancelButton = cancelButton
-            cancelButton.Click += self.cancelClicked
+            #cancelButton = Button()
+            #cancelButton.Text = "Annuler"
+            #cancelButton.Location = Point(110,10)
+            #self.CancelButton = cancelButton
+            #cancelButton.Click += self.cancelClicked
+            
+            levelwindowButton = Button()
+            levelwindowButton.Text = "Level/Window"
+            levelwindowButton.Location = Point(108,10)
+            levelwindowButton.Width = 85
+            levelwindowButton.Click += self.levelwindowClicked
             
             self.message = Label()
             self.message.Text = ""
@@ -3736,7 +3751,8 @@ def verification_initiale():
             self.message.AutoSize = True      
             
             self.OKbuttonPanel.Controls.Add(printButton)
-            self.OKbuttonPanel.Controls.Add(cancelButton)
+            #self.OKbuttonPanel.Controls.Add(cancelButton)
+            self.OKbuttonPanel.Controls.Add(levelwindowButton)
             self.OKbuttonPanel.Controls.Add(self.message)
                
                 
@@ -3811,6 +3827,10 @@ def verification_finale():
                      check_segments = "Pas vérifié",
                      check_distribution_dose = "Pas vérifié",
                      check_DSP = "Pas vérifié")
+            
+            #Create dictionaries for window/level switching
+            self.lung_dict = dict(x=-600,y=1600)
+            self.lw_dict = dict(x=-exam.Series[0].LevelWindow.x,y=exam.Series[0].LevelWindow.y)            
             
         def Panel(self, x, y):
             panel = Panel()
@@ -4066,9 +4086,14 @@ def verification_finale():
             self.label_reminder.Text = "Rappel:\nVérifiez les segments en mode BEV avant de procéder"
             self.message.Text = ""            
             
-        def cancelClicked(self, sender, args):
-            self.Close()          
+        #def cancelClicked(self, sender, args):
+        #    self.Close()          
             
+        def levelwindowClicked(self, sender, args):
+            if exam.Series[0].LevelWindow.x == -600 and exam.Series[0].LevelWindow.y == 1600:
+                exam.Series[0].LevelWindow = self.lw_dict
+            else:
+                exam.Series[0].LevelWindow = self.lung_dict                   
             
         def printClicked(self, sender, args):     
 
@@ -4129,11 +4154,17 @@ def verification_finale():
             #self.AcceptButton = okButton
             printButton.Click += self.printClicked            
             
-            cancelButton = Button()
-            cancelButton.Text = "Annuler"
-            cancelButton.Location = Point(110,10)
-            self.CancelButton = cancelButton
-            cancelButton.Click += self.cancelClicked
+            #cancelButton = Button()
+            #cancelButton.Text = "Annuler"
+            #cancelButton.Location = Point(110,10)
+            #self.CancelButton = cancelButton
+            #cancelButton.Click += self.cancelClicked
+
+            levelwindowButton = Button()
+            levelwindowButton.Text = "Level/Window"
+            levelwindowButton.Location = Point(108,10)
+            levelwindowButton.Width = 85
+            levelwindowButton.Click += self.levelwindowClicked            
             
             self.message = Label()
             self.message.Text = ""
@@ -4142,7 +4173,8 @@ def verification_finale():
             self.message.AutoSize = True      
             
             self.OKbuttonPanel.Controls.Add(printButton)
-            self.OKbuttonPanel.Controls.Add(cancelButton)
+            self.OKbuttonPanel.Controls.Add(levelwindowButton)
+            #self.OKbuttonPanel.Controls.Add(cancelButton)
             self.OKbuttonPanel.Controls.Add(self.message)
                
                 

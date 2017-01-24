@@ -134,9 +134,9 @@ def create_prostate_plan_A2():
             else: #42+24
                 nb_fx_A2 = 8
                 rx_dose_A2 = 24                  
-        except:
-            nb_fx_A2 = 8
-            rx_dose_A2 = 24
+        except: #Fall back on 42+18 since it is the most common prescription
+            nb_fx_A2 = 6
+            rx_dose_A2 = 18
     elif nb_fx_A1 == 33: #66 + Boost
         plan.BeamSets[0].Prescription.PrimaryDosePrescription.DoseValue = 6270
         # Check for PTVBOOST and adjust Rx and number of fractions if found.
