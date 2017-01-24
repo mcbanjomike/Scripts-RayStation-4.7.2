@@ -492,10 +492,11 @@ def essai_autre_technique():
     rx_dose = beamset.Prescription.DosePrescriptions[0].DoseValue
     actual_technique = beamset.DeliveryTechnique
     patient_position = beamset.PatientPosition
+    planner_name = plan.PlannedBy
     
     #crée un plan VMAT si le plan est IMRT
     if actual_technique == 'SMLC':
-        new_plan = patient.AddNewPlan(PlanName= plan_name+' VMAT', PlannedBy="", Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
+        new_plan = patient.AddNewPlan(PlanName= plan_name+' VMAT', PlannedBy=planner_name, Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
         new_plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
         new_beamset = new_plan.AddNewBeamSet(Name='VMAT', ExaminationName=exam.Name, MachineName='BeamMod', NominalEnergy=None,Modality="Photons", TreatmentTechnique='VMAT', PatientPosition=patient_position, NumberOfFractions=nb_fx, CreateSetupBeams=False, Comment='VMAT')
         new_beamset.AddDosePrescriptionToRoi(RoiName=ptv, DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=rx_dose, RelativePrescriptionLevel=1)
@@ -505,7 +506,7 @@ def essai_autre_technique():
         
     #crée un plan IMRT si le plan est VMAT
     else:
-        new_plan = patient.AddNewPlan(PlanName=plan_name+' IMRT', PlannedBy="", Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
+        new_plan = patient.AddNewPlan(PlanName=plan_name+' IMRT', PlannedBy=planner_name, Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
         new_plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
         new_beamset = new_plan.AddNewBeamSet(Name='IMRT', ExaminationName=exam.Name, MachineName='BeamMod', NominalEnergy=None,Modality="Photons", TreatmentTechnique='SMLC', PatientPosition=patient_position, NumberOfFractions=nb_fx, CreateSetupBeams=False, Comment='VMAT')
         new_beamset.AddDosePrescriptionToRoi(RoiName=ptv, DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=rx_dose, RelativePrescriptionLevel=1)

@@ -224,10 +224,11 @@ def poumon_stereo_rois(plan_data):
 
             
 def poumon_stereo_add_plan_and_beamset(plan_data):
-            
+                           
     # Add Treatment plan (only for A1)
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
     if plan_data['site_name'] == "A1":
-        plan = plan_data['patient'].AddNewPlan(PlanName=plan_data['plan_name'], PlannedBy="", Comment="", ExaminationName=plan_data['exam'].Name, AllowDuplicateNames=False)
+        plan = plan_data['patient'].AddNewPlan(PlanName=plan_data['plan_name'], PlannedBy=planner_name, Comment="", ExaminationName=plan_data['exam'].Name, AllowDuplicateNames=False)
         plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
     elif plan_data['site_name'] == "B1": #If the existing plan is locked, create a new plan; otherwise, add beamset to current plan
         plan = lib.get_current_plan()

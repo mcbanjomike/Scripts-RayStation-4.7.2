@@ -78,13 +78,8 @@ def test_MA():
         
     #statistics.stereo_brain_statistics()
     
-    lung_dict = dict(x=-600,y=1600)
-    lw_dict = dict(x=-exam.Series[0].LevelWindow.x,y=exam.Series[0].LevelWindow.y)
-
-    if exam.Series[0].LevelWindow.x == -600 and exam.Series[0].LevelWindow.y == 1600:
-        exam.Series[0].LevelWindow = lw_dict
-    else:
-        exam.Series[0].LevelWindow = lung_dict
+    a,b,c,d,e = verification.verify_beams()
+    message.message_window(a+str(b)+c+d+e)
     
     
     #qa.shift_plans_QA(print_results=True)

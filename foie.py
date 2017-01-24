@@ -278,7 +278,8 @@ def foie_stereo_rois(plan_data):
 def foie_stereo_add_plan_and_beamset(plan_data):        
         
     # Add Treatment plan
-    plan = plan_data['patient'].AddNewPlan(PlanName=plan_data['plan_name'], PlannedBy="", Comment="", ExaminationName=plan_data['exam'].Name, AllowDuplicateNames=False)
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    plan = plan_data['patient'].AddNewPlan(PlanName=plan_data['plan_name'], PlannedBy=planner_name, Comment="", ExaminationName=plan_data['exam'].Name, AllowDuplicateNames=False)
     plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
 
     # Add beamset (assumes 5 fractions)
