@@ -1444,3 +1444,248 @@ SystemError: The communication object, System.ServiceModel.Channels.ServiceChann
 2017-01-24 11:09:04,167 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ_1^JEAN-GUY (474817) - CT 1 - Stereo Foie/Stereo] ================================================================================
 2017-01-24 11:09:04,214 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ_1^JEAN-GUY (474817) - CT 1 - Stereo Foie/Stereo] End of script vérification_finale.py [execution time = 0:34:30.914000]
 2017-01-24 11:09:04,278 - hmrlib - INFO - [hmr30489 - BOURQUARDEZ_1^JEAN-GUY (474817) - CT 1 - Stereo Foie/Stereo] ================================================================================
+2017-01-24 15:40:29,357 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-24 15:40:29,479 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-01-24 15:40:29,522 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-24 15:40:30,103 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-01-24 15:40:30,699 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-01-24 15:40:31,178 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-01-24 15:40:31,694 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-01-24 15:40:32,253 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-01-24 15:40:32,428 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-01-24 15:40:32,605 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV60 is NOT approved.
+2017-01-24 15:40:32,780 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV60 is NOT approved.
+2017-01-24 15:40:32,957 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-01-24 15:40:33,138 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-01-24 15:40:33,325 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-01-24 15:40:33,506 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-01-24 15:40:33,684 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-01-24 15:40:33,949 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-01-24 15:40:34,234 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-01-24 15:40:34,410 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-01-24 15:40:34,613 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-01-24 15:40:34,876 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI sein D travail is NOT approved.
+2017-01-24 15:40:35,167 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI sein D is NOT approved.
+2017-01-24 15:40:35,394 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI foie is NOT approved.
+2017-01-24 15:40:35,622 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI mediastin is NOT approved.
+2017-01-24 15:40:36,015 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI paroi travail is NOT approved.
+2017-01-24 15:40:36,388 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV + 2 is NOT approved.
+2017-01-24 15:40:36,573 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI cotes travail is NOT approved.
+2017-01-24 15:40:36,760 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI 45 Gy 2000 is NOT approved.
+2017-01-24 15:41:01,420 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (-5.52272033691, 2.35065155029, 0.4)
+2017-01-24 15:41:01,910 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-01-24 15:41:01,971 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-01-24 15:41:02,304 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-01-24 15:41:02,455 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-01-24 15:41:02,795 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-01-24 15:41:03,139 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-01-24 15:41:03,319 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-01-24 15:41:03,491 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-01-24 15:41:03,597 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-01-24 15:41:03,671 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-01-24 15:41:03,869 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-01-24 15:41:04,035 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-01-24 15:41:04,205 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-01-24 15:41:04,303 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY-5mm" set as Organ
+2017-01-24 15:41:04,379 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY-5mm" set as OrganAtRisk
+2017-01-24 15:41:04,493 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-01-24 15:41:04,590 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV expi" set as Gtv
+2017-01-24 15:41:04,671 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV expi" set as Target
+2017-01-24 15:41:04,775 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-01-24 15:41:04,871 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV inspi" set as Gtv
+2017-01-24 15:41:04,956 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV inspi" set as Target
+2017-01-24 15:41:05,073 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV60 is NOT approved.
+2017-01-24 15:41:05,177 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ITV60" set as TreatedVolume
+2017-01-24 15:41:05,259 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ITV60" set as Target
+2017-01-24 15:41:05,388 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV60 is NOT approved.
+2017-01-24 15:41:05,485 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV60" set as Ptv
+2017-01-24 15:41:05,567 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV60" set as Target
+2017-01-24 15:41:05,675 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-01-24 15:41:05,763 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BR SOUCHE" set as Organ
+2017-01-24 15:41:05,845 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BR SOUCHE" set as OrganAtRisk
+2017-01-24 15:41:05,967 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-01-24 15:41:06,063 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TRACHEE" set as Organ
+2017-01-24 15:41:06,146 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TRACHEE" set as OrganAtRisk
+2017-01-24 15:41:06,245 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-01-24 15:41:06,337 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-01-24 15:41:06,419 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-01-24 15:41:06,550 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-01-24 15:41:06,642 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-01-24 15:41:06,724 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-01-24 15:41:06,830 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-01-24 15:41:06,926 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON DRT" set as Organ
+2017-01-24 15:41:07,003 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON DRT" set as OrganAtRisk
+2017-01-24 15:41:07,127 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-01-24 15:41:07,217 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON GCHE" set as Organ
+2017-01-24 15:41:07,299 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON GCHE" set as OrganAtRisk
+2017-01-24 15:41:07,407 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-01-24 15:41:07,500 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-01-24 15:41:07,584 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-01-24 15:41:07,702 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-01-24 15:41:07,799 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-01-24 15:41:07,875 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-01-24 15:41:08,003 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-01-24 15:41:08,093 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-01-24 15:41:08,175 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-01-24 15:41:08,288 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI sein D travail is NOT approved.
+2017-01-24 15:41:08,378 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "sein D travail" set as Organ
+2017-01-24 15:41:08,461 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "sein D travail" set as OrganAtRisk
+2017-01-24 15:41:08,558 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI sein D is NOT approved.
+2017-01-24 15:41:08,656 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "sein D" set as Organ
+2017-01-24 15:41:08,732 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "sein D" set as OrganAtRisk
+2017-01-24 15:41:08,862 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI foie is NOT approved.
+2017-01-24 15:41:08,953 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "foie" set as Organ
+2017-01-24 15:41:09,035 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "foie" set as OrganAtRisk
+2017-01-24 15:41:09,142 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI mediastin is NOT approved.
+2017-01-24 15:41:09,237 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "mediastin" set as Organ
+2017-01-24 15:41:09,319 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "mediastin" set as OrganAtRisk
+2017-01-24 15:41:09,439 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI paroi travail is NOT approved.
+2017-01-24 15:41:09,534 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "paroi travail" set as Organ
+2017-01-24 15:41:09,612 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "paroi travail" set as OrganAtRisk
+2017-01-24 15:41:09,724 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV + 2 is NOT approved.
+2017-01-24 15:41:09,820 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV + 2" set as Ptv
+2017-01-24 15:41:09,915 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV + 2" set as Target
+2017-01-24 15:41:10,068 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI cotes travail is NOT approved.
+2017-01-24 15:41:10,158 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "cotes travail" set as Organ
+2017-01-24 15:41:10,243 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "cotes travail" set as OrganAtRisk
+2017-01-24 15:41:10,365 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ROI 45 Gy 2000 is NOT approved.
+2017-01-24 15:41:10,461 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "45 Gy 2000" set as Organ
+2017-01-24 15:41:10,544 - hmrlib.roi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "45 Gy 2000" set as OrganAtRisk
+2017-01-24 15:41:40,152 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-01-24 15:41:41,244 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=45bc66a3-ae86-4b18-8988-acc6916af03f, 'A1'>
+2017-01-24 15:41:41,276 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-01-24 15:41:41,351 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.52272033691, 2.35065155029, 0.4)
+2017-01-24 15:41:41,485 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 30 to 181 in direction CCW with isocenter ISO.  Energy = 6, collimator = 5, couch = 0.0.
+2017-01-24 15:41:41,527 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-01-24 15:41:41,575 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-01-24 15:41:41,659 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-01-24 15:41:41,732 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-01-24 15:41:41,800 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-01-24 15:41:41,869 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-01-24 15:41:41,938 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-01-24 15:41:41,984 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-01-24 15:41:42,029 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-01-24 15:41:42,120 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.1 cm/deg.
+2017-01-24 15:41:42,211 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2017-01-24 15:41:42,333 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-01-24 15:41:42,424 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 150 s for arc "A1.1".
+2017-01-24 15:41:42,619 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV A1 60Gy" added.
+2017-01-24 15:41:42,843 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV A1 60Gy" added.
+2017-01-24 15:41:43,015 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1" added.
+2017-01-24 15:41:43,181 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2" added.
+2017-01-24 15:41:43,345 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3" added.
+2017-01-24 15:42:02,298 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "BR SOUCHE" added.
+2017-01-24 15:42:02,827 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COEUR" added.
+2017-01-24 15:42:04,400 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COTES dans PTV+0.5cm" added.
+2017-01-24 15:42:05,196 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OESOPHAGE" added.
+2017-01-24 15:42:05,703 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MOELLE" added.
+2017-01-24 15:42:08,783 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PEAU" added.
+2017-01-24 15:42:11,213 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "POUMON GCHE" added.
+2017-01-24 15:42:11,731 - hmrlib.optim - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TRACHEE" added.
+2017-01-24 15:43:50,345 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-24 15:43:50,372 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:03:21.159000]
+2017-01-24 15:43:50,395 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-24 15:49:32,480 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:49:32,647 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_initiale.py
+2017-01-24 15:49:32,863 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:49:36,667 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] POI REF SCAN: (x, y, z) = (-5.52272033691, 2.35065155029, 0.4)
+2017-01-24 15:49:36,864 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] POI ISO: (x, y, z) = (-5.52272033691, 2.35065155029, 0.4)
+2017-01-24 15:50:41,680 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:50:41,841 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-01-24 15:50:41,888 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:50:42,049 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:50:42,095 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:00.440000]
+2017-01-24 15:50:42,141 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:51:08,353 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:51:08,525 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-01-24 15:51:08,572 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:51:08,714 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:51:08,760 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:00.429000]
+2017-01-24 15:51:08,805 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:51:25,794 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:51:25,973 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_initiale.py
+2017-01-24 15:51:26,047 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:51:32,423 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] POI REF SCAN: (x, y, z) = (-5.52272033691, 2.35065155029, 0.4)
+2017-01-24 15:51:32,620 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] POI ISO: (x, y, z) = (-5.52272033691, 2.35065155029, 0.4)
+2017-01-24 15:52:51,487 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:52:51,535 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_initiale.py [execution time = 0:01:25.760000]
+2017-01-24 15:52:51,589 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:52:56,666 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:52:56,827 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-01-24 15:52:56,875 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:52:57,020 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:52:57,067 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:00.422000]
+2017-01-24 15:52:57,113 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:53:56,232 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:53:56,403 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_finale.py
+2017-01-24 15:53:56,478 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:56:59,959 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:00,134 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-01-24 15:57:00,181 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:00,939 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:00,987 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:01.053000]
+2017-01-24 15:57:01,034 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:27,826 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:28,197 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-01-24 15:57:28,244 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:33,243 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:33,292 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:05.463000]
+2017-01-24 15:57:33,340 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:37,358 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:37,623 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_initiale.py
+2017-01-24 15:57:37,712 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:42,691 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:42,742 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_initiale.py [execution time = 0:00:05.373000]
+2017-01-24 15:57:42,797 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:56,084 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:57:56,250 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_initiale.py
+2017-01-24 15:57:56,328 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 15:58:00,886 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] POI REF SCAN: (x, y, z) = (-5.52272033691, 2.35065155029, 0.4)
+2017-01-24 15:58:01,095 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] POI ISO: (x, y, z) = (-5.52272033691, 2.35065155029, 0.4)
+2017-01-24 16:01:00,769 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:01:00,825 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_initiale.py [execution time = 0:03:05.827000]
+2017-01-24 16:01:00,880 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:07:43,314 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:07:43,477 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_initiale.py
+2017-01-24 16:07:43,726 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:07:46,048 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:07:46,098 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_initiale.py [execution time = 0:00:02.855000]
+2017-01-24 16:07:46,151 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:07:52,774 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:07:52,933 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_initiale.py
+2017-01-24 16:07:53,008 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:08:30,242 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:08:30,291 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_initiale.py [execution time = 0:00:37.537000]
+2017-01-24 16:08:30,346 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:08:33,811 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:08:33,967 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_finale.py
+2017-01-24 16:08:34,039 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:08:59,994 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:09:00,045 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_finale.py [execution time = 0:00:26.229000]
+2017-01-24 16:09:00,097 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:12:21,420 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:12:21,585 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_initiale.py
+2017-01-24 16:12:21,657 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:12:32,626 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:12:32,676 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_initiale.py [execution time = 0:00:11.246000]
+2017-01-24 16:12:32,731 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:13:05,735 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:13:05,898 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_initiale.py
+2017-01-24 16:13:05,973 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:13:48,165 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:13:48,218 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_initiale.py [execution time = 0:00:42.498000]
+2017-01-24 16:13:48,273 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:13:51,471 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:13:51,628 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_finale.py
+2017-01-24 16:13:51,702 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:13:54,246 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 16:13:54,294 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_finale.py [execution time = 0:00:02.812000]
+2017-01-24 16:13:54,347 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 17:02:44,585 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 17:02:44,745 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_finale.py
+2017-01-24 17:02:44,992 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 17:03:08,215 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] POI REF SCAN: (x, y, z) = (-5.52272033691, 2.35065155029, 0.4)
+2017-01-24 17:03:08,413 - hmrlib.poi - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] POI ISO: (x, y, z) = (-5.52272033691, 2.35065155029, 0.4)
+2017-01-24 17:03:53,979 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-24 17:03:54,027 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_finale.py [execution time = 0:01:09.516000]
+2017-01-24 17:03:54,126 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================

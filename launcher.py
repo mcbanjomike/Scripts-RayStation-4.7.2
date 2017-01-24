@@ -3405,7 +3405,8 @@ def verification_initiale():
                      plan_name = plan.Name,
                      beamset_name = beamset.DicomPlanLabel,
                      patient_number = patient.PatientID,
-                     planned_by_name = lib.get_user_name(patient.ModificationInfo.UserName.Split('\\')[1]),
+                     #planned_by_name = lib.get_user_name(patient.ModificationInfo.UserName.Split('\\')[1]),
+                     planned_by_name = plan.PlannedBy,
                      verified_by_name = lib.get_user_name(os.getenv('USERNAME')),
                      ext_text = "Script pas roulé",
                      iso_text = "Script pas roulé",
@@ -3781,8 +3782,8 @@ def verification_initiale():
     try:
         temp = patient.ModificationInfo.UserName
     except:
-        debug_window('Sauvegarder le plan avant de rouler la vérification')
-        return        
+        debug_window('ATTENTION: Le plan a été modifié depuis la dernière sauvegarde.\n\nFermez cette fenêtre pour poursuivre avec la vérification.')
+        #return        
               
     form = Verif1Window()
     Application.Run(form)   
@@ -3810,7 +3811,8 @@ def verification_finale():
                      plan_name = plan.Name,
                      beamset_name = beamset.DicomPlanLabel,
                      patient_number = patient.PatientID,
-                     planned_by_name = lib.get_user_name(patient.ModificationInfo.UserName.Split('\\')[1]),
+                     #planned_by_name = lib.get_user_name(patient.ModificationInfo.UserName.Split('\\')[1]),
+                     planned_by_name = plan.PlannedBy,
                      verified_by_name = lib.get_user_name(os.getenv('USERNAME')),
                      ext_text = "Script pas roulé",
                      grid_text = "Script pas roulé",
@@ -4203,8 +4205,8 @@ def verification_finale():
     try:
         temp = patient.ModificationInfo.UserName
     except:
-        debug_window('Sauvegarder le plan avant de rouler la vérification')
-        return
+        debug_window('ATTENTION: Le plan a été modifié depuis la dernière sauvegarde.\n\nFermez cette fenêtre pour poursuivre avec la vérification.')
+        #return
         
     form = Verif1Window()
     Application.Run(form)   

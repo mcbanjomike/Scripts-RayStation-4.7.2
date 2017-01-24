@@ -218,6 +218,7 @@ def verify_beams():
         first_leaf_open = False
         last_leaf_open = False    
         leaf_open_text = ""
+        skip_leaf_check = False
 
         for beam in beamset.Beams:        
             try:
@@ -237,18 +238,19 @@ def verify_beams():
                                 #last_leaf_open_name = beam.Name
             except:             
                 leaf_open_text += "Impossible de vérifier les segments car\nau moins un faisceau n'a pas de segments valides"
-                return beam_info, number_of_beams, leaf_open_text
+                skip_leaf_check = True
                                 
-        if machine_type != 'BeamMod': 
-            leaf_open_text += "Vérification des lames seulement possible sur Beam Modulator"
-        elif first_leaf_open and last_leaf_open:
-            leaf_open_text += "Première et dernère paire de lames ouvertes dans au moins un segment,\nPTV potentiellement trop large pour collimateur"
-        elif first_leaf_open and not last_leaf_open:
-            leaf_open_text += "Première paire de lames ouverte dans au moins un segment,\nil est peut-être nécessaire de déplacer l'isocentre"
-        elif not first_leaf_open and last_leaf_open:
-            leaf_open_text += "Dernière paire de lames ouverte dans au moins un segment,\nil est peut-être nécessaire de déplacer l'isocentre"
-        elif not first_leaf_open and not last_leaf_open:
-            leaf_open_text += "Première et dernière paires de lames fermées pour tous les segments"
+        if not skip_leaf_check:
+            if machine_type != 'BeamMod': 
+                leaf_open_text += "Vérification des lames seulement possible sur Beam Modulator"
+            elif first_leaf_open and last_leaf_open:
+                leaf_open_text += "Première et dernère paire de lames ouvertes dans au moins un segment,\nPTV potentiellement trop large pour collimateur"
+            elif first_leaf_open and not last_leaf_open:
+                leaf_open_text += "Première paire de lames ouverte dans au moins un segment,\nil est peut-être nécessaire de déplacer l'isocentre"
+            elif not first_leaf_open and last_leaf_open:
+                leaf_open_text += "Dernière paire de lames ouverte dans au moins un segment,\nil est peut-être nécessaire de déplacer l'isocentre"
+            elif not first_leaf_open and not last_leaf_open:
+                leaf_open_text += "Première et dernière paires de lames fermées pour tous les segments"
 
         if machine_mismatch:
             machine_text = "Machine pas pareil pour tous les faisceaux"

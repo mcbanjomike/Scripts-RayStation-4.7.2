@@ -618,7 +618,8 @@ def prostate_A1_add_plan_and_beamset(plan_data):
         ptv_name = 'PTV A1'
 
     # Add Treatment plan
-    plan = plan_data['patient'].AddNewPlan(PlanName="A1 seul", PlannedBy="", Comment="", ExaminationName=plan_data['exam'].Name, AllowDuplicateNames=False)
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    plan = plan_data['patient'].AddNewPlan(PlanName="A1 seul", PlannedBy=planner_name, Comment="", ExaminationName=plan_data['exam'].Name, AllowDuplicateNames=False)
     plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
 
     # Add beamset
