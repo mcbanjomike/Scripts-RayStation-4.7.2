@@ -49,8 +49,11 @@ def poumon_stereo_pois(plan_data):
 
     # Copy CT-to-Density table to average scan from expi scan
     if plan_data['site_name'] == 'A1':
-        patient.Examinations['CT 1'].EquipmentInfo.SetImagingSystemReference(ImagingSystemName=patient.Examinations['CT 2'].EquipmentInfo.ImagingSystemReference.ImagingSystemName)
-
+        try:
+            patient.Examinations['CT 1'].EquipmentInfo.SetImagingSystemReference(ImagingSystemName=patient.Examinations['CT 2'].EquipmentInfo.ImagingSystemReference.ImagingSystemName)
+        except: #For rare cases where there is only one scan
+            pass
+            
     #Create ISO
     poi.create_iso(exam = plan_data['exam'])
     
@@ -75,7 +78,10 @@ def poumon_stereo_rois(plan_data):
 
     # Create BodyRS+Table (except for additional plans)
     if site_name == "A1":
-        roi.generate_BodyRS_plus_Table(struct=1) #CT 1 (avg) is the second on the list and therefore has a structure set index of 1
+        try:
+            roi.generate_BodyRS_plus_Table(struct=1) #CT 1 (avg) is the second on the list and therefore has a structure set index of 1
+        except:
+            roi.generate_BodyRS_plus_Table(struct=0) #For rare cases where there's only one scan
         
     # Rename contours if this is plan B1 (unless they are approved)
     roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]

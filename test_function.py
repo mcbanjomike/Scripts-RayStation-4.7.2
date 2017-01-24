@@ -36,6 +36,7 @@ import crane
 import foie
 import message
 import verification
+import statistics
 
 import crane2ptv
 
@@ -72,8 +73,20 @@ except Exception as e:
 def test_MA():
     #plan = lib.get_current_plan()
     #beamset = lib.get_current_beamset()
-    #exam = lib.get_current_examination()
+    exam = lib.get_current_examination()
     #patient = lib.get_current_patient()
+        
+    #statistics.stereo_brain_statistics()
+    
+    lung_dict = dict(x=-600,y=1600)
+    lw_dict = dict(x=-exam.Series[0].LevelWindow.x,y=exam.Series[0].LevelWindow.y)
+
+    if exam.Series[0].LevelWindow.x == -600 and exam.Series[0].LevelWindow.y == 1600:
+        exam.Series[0].LevelWindow = lw_dict
+    else:
+        exam.Series[0].LevelWindow = lung_dict
+    
+    
     #qa.shift_plans_QA(print_results=True)
     #qa.create_ac_qa_plans(plan=None, phantom_name='QAVMAT ARCCHECK_2016', iso_name='ISO AC')
     
@@ -93,7 +106,7 @@ def test_MA():
     
     #ui.TabControl_ToolBar.ToolBarGroup['TREAT AND PROTECT'].Button_ConformBeamMLC.Click()
    
-    launcher.verif_finale()
+    #launcher.verif_finale()
     #message.message_window(verification.verify_segments())
     #optim.essai_autre_technique()
     #message.message_window('essai')
