@@ -107,12 +107,15 @@ def verify_isocenter():
     if loc_coords is None:
         loc_poi_text = "Aucun point de localisation trouvé"
     else:
-        loc_poi_text = "POI localization: %s      (%.2f, %.2f, %.2f)" % (loc_point_name, loc_coords.x, loc_coords.z, -1*loc_coords.y)
+        if loc_point_name == "REF SCAN":
+            loc_poi_text = "POI localization: %s (%.2f, %.2f, %.2f)" % (loc_point_name, loc_coords.x, loc_coords.z, -1*loc_coords.y)  #Fewer spaces to maintain alignment of results
+        else:
+            loc_poi_text = "POI localization: %s            (%.2f, %.2f, %.2f)" % (loc_point_name, loc_coords.x, loc_coords.z, -1*loc_coords.y)
     
     if iso_coords is None:
         iso_poi_text = iso_point_name
     else:
-        iso_poi_text = "POI isocentre: %s         (%.2f, %.2f, %.2f)" % (iso_point_name, iso_coords.x, iso_coords.z, -1*iso_coords.y)    
+        iso_poi_text = "POI isocentre: %s                (%.2f, %.2f, %.2f)" % (iso_point_name, iso_coords.x, iso_coords.z, -1*iso_coords.y)    
     
     shift_text = ""
     
@@ -125,7 +128,7 @@ def verify_isocenter():
                 shift_text += "Shift de %.2fcm, %.2fcm, %.2fcm entre point de localisation et point %s" % (loc_coords.x-iso_coords.x, loc_coords.z-iso_coords.z, iso_coords.y-loc_coords.y, iso_point_name)     
 
     # Beam isocenters
-    beam_iso_text = "Coordonnées faisceaux: "
+    beam_iso_text = "Coordonnées faisceaux:       "
     mismatch = False
     try:              
         for i, beam in enumerate(beamset.Beams): #Verify that coordinates are the same for all beams
@@ -149,9 +152,9 @@ def verify_isocenter():
         iso_shift_y = iso_coords.y - beam_iso_poi[1].Value
         iso_shift_z = iso_coords.z - beam_iso_poi[2].Value
         if abs(iso_shift_x) > 0.005 or abs(iso_shift_y) > 0.005 or abs(iso_shift_z) > 0.005:
-            shift_text += "Shift de %.2fcm, %.2fcm, %.2fcm entre les faisceaux et le point %s" % (-1*iso_shift_x, -1*iso_shift_z, iso_shift_y, iso_point_name)
+            shift_text += "\nShift de %.2fcm, %.2fcm, %.2fcm entre les faisceaux et le point %s" % (-1*iso_shift_x, -1*iso_shift_z, iso_shift_y, iso_point_name)
         else:
-            shift_text += "Tous les faisceaux partagent les coordonnés du point " + iso_point_name
+            shift_text += "\nTous les faisceaux partagent les coordonnés du point " + iso_point_name
             
     return loc_poi_text, iso_poi_text, beam_iso_text, shift_text
           
@@ -180,7 +183,7 @@ def verify_beams():
             beam_info += beam.Description
             #Pad out beam description to try to keep columns aligned if name is short
             if len(beam.Description) < 6:
-                beam_info += "       "
+                beam_info += "        "
             elif len(beam.Description) < 7:
                 beam_info += "      "
             elif len(beam.Description) < 9:
@@ -370,7 +373,8 @@ def verify_opt_parameters():
     return iterations_text, dose_calc_text, settings_text, opt_types_text
                     
               
-def verify_segments():
+#This version verifies leaf gaps, but does not account for multiple openings in a single IMRT segment (which can cause multiple pairs of leaves to violate min leaf gap constraint)              
+def verify_segments_old():
     plan = lib.get_current_plan()
     beamset = lib.get_current_beamset()         
     opt = plan.PlanOptimizations[beamset.Number-1]
@@ -507,12 +511,97 @@ def verify_segments():
             else:
                 output += "Tous les segments ont plus que %dUMs\n" % opt.OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction            
         if leaf_gap_error:
-            output += "Les lames sont à <2cm dans les segments suivants: \n" + leaf_gap_results + "\n"
+            output += "Les lames sont à <%.1fcm dans les segments suivants: \n%s\n" % (opt.OptimizationParameters.SegmentConversion.MinLeafEndSeparation, leaf_gap_results)
         else:
-            output += "Toutes les paires de lames sont à >2cm\n"
+            output += "Toutes les paires de lames sont à >%.1fcm\n" % opt.OptimizationParameters.SegmentConversion.MinLeafEndSeparation
         
     return output
 
+             
+def verify_segments():
+    plan = lib.get_current_plan()
+    beamset = lib.get_current_beamset()         
+    opt = plan.PlanOptimizations[beamset.Number-1]
+    
+    segment_results = ""
+    area_results = ""
+    MU_results = ""
+    incompatible_MLC_results = ""
+    
+    segment_error = False    # If one or more beams does not have valid segments
+    area_error = False       # If one or more segments has an area below the requested minimum segment are
+    MU_error = False         # If one or more segments has a number of MU inferior to requested minimum segment MU
+    incompatible_MLC = False # If the MLC is non-standard and its width or number of leaf pairs is unknown
+    
+    output = ""              # The actual output returned by the function
+    
+    min_seg_area = opt.OptimizationParameters.SegmentConversion.MinSegmentArea
+    num_segments = 0
+    
+    for beam in beamset.Beams:
+        #Check to see if beam has segments
+        try:
+            segment = beam.Segments[0]
+            verify_leaves = True
+        except:
+            segment_results += beam.Name + " "
+            segment_error = True
+            verify_leaves = False
+        
+        if beamset.DeliveryTechnique != "Arc": #We only check if all beams have segments for VMAT plans
+            
+            #Check which kind of MLC is used for area calculations
+            if beam.MachineReference.MachineName == 'BeamMod':
+                leaf_width = 0.4
+                num_leaf_pairs = 40
+            elif beam.MachineReference.MachineName == 'Infinity':
+                leaf_width = 0.5
+                num_leaf_pairs = 80
+            else:
+                area_results = "Impossible de vérifier l'aire des segments pour ce linac"
+                verify_leaves = False
+                incompatible_MLC = True
+                incompatible_MLC_results = "Impossible de vérifier le faisceau " + beam.Name + " car la machine est inconnue"
+                     
+            #Verify segment area and MU
+            if verify_leaves:            
+                for segment in beam.Segments:         
+                    num_segments += 1            
+                    segment_area = 0
+                    for i in range(num_leaf_pairs-1): #Area calculation
+                        segment_area += (segment.LeafPositions[1][i] - segment.LeafPositions[0][i]) * leaf_width
+                    if segment_area < min_seg_area:
+                        area_error = True
+                        area_results +=  "   %s segment %d (%.2fcm^2)\n" % (beam.Name, segment.SegmentNumber+1, segment_area)                
+                    if beam.BeamMU * segment.RelativeWeight < opt.OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction:
+                        MU_error = True
+                        MU_results += "   %s segment %d (%.2f MUs)\n" % (beam.Name, segment.SegmentNumber+1, beam.BeamMU * segment.RelativeWeight)
+    
+    #Once the area and MU verifications are complete, output results
+    if segment_error:
+        output = "Les champs suivants n'ont pas de segments valides:\n      " + segment_results
+        return output
+    elif beamset.DeliveryTechnique == "Arc":
+        output = "Tous les faisceaux ont des segments valides."
+        return output            
+    elif incompatible_MLC:
+        output = incompatible_MLC_results
+        return output
+    else: #For IMRT plans that have compatible MLCs
+        output += "Tous les faisceaux ont des segments valides\n"
+        output += "Il y a un total de %d segments (nb. demandé: %d)\n" % (num_segments, opt.OptimizationParameters.SegmentConversion.MaxNumberOfSegments)
+        #Report any errors in segment size or min MUs
+        if area_error:
+            output += "Les segments suivants sont plus petits que " + str(min_seg_area) + "cm^2: \n" + area_results
+        else:
+            output += "Tous les segments sont plus grand que %dcm^2\n" % min_seg_area
+        if MU_error:
+            output += "Les segments suivants ont moins que " + str(opt.OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction) + "UMs: \n" + MU_results
+        else:
+            output += "Tous les segments ont plus que %dUMs\n" % opt.OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction
+    
+    return output
+    
     
 def verify_dose_grid_resolution():
     beamset = lib.get_current_beamset() 
