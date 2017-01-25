@@ -63,7 +63,7 @@ def verify_prescription():
         elif beamset.Prescription.PrimaryDosePrescription.PrescriptionType == 'DoseAtVolume':
             presc_text += "à " + str(beamset.Prescription.PrimaryDosePrescription.DoseVolume) + r'% du volume du ' + beamset.Prescription.PrimaryDosePrescription.OnStructure.Name
         if bkgdose_name != "None":
-            presc_text += " (dépendente sur beamset " + bkgdose_name + ")"
+            presc_text += "\n     (dépendente sur beamset " + bkgdose_name + ")"
         presc_text = presc_text.replace(".0Gy","Gy")
         presc_text = presc_text.replace(".0%","%")
     except:
@@ -245,7 +245,7 @@ def verify_beams():
                                 
         if not skip_leaf_check:
             if machine_type != 'BeamMod': 
-                leaf_open_text += "Vérification des lames seulement possible sur Beam Modulator"
+                leaf_open_text += "Vérification des lames SUP/INF seulement possible sur Beam Modulator"
             elif first_leaf_open and last_leaf_open:
                 leaf_open_text += "Première et dernère paire de lames ouvertes dans au moins un segment,\nPTV potentiellement trop large pour collimateur"
             elif first_leaf_open and not last_leaf_open:

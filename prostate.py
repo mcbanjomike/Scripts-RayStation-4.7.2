@@ -402,7 +402,30 @@ def toggle_reference_dose():
     else:
         patient.CaseSettings.DoseColorMap.ReferenceValue = current_bs_dose
         
-                
+#This version does not correct for prostates being prescribed to 95%, since they aren't when the plan is finalized.   
+def toggle_reference_dose_verif2():
+    """
+    Voir :py:mod:`toggle_reference_dose`.
+    """
+    patient = lib.get_current_patient()
+    plan = lib.get_current_plan()
+    beamset = lib.get_current_beamset()
+
+    dose_per_fx = beamset.Prescription.PrimaryDosePrescription.DoseValue / beamset.FractionationPattern.NumberOfFractions
+    total_dose = 0
+    for bs in plan.BeamSets:
+        total_dose += bs.FractionationPattern.NumberOfFractions * dose_per_fx
+    
+    current_bs_dose = beamset.FractionationPattern.NumberOfFractions * dose_per_fx
+        
+    if patient.CaseSettings.DoseColorMap.ReferenceValue == current_bs_dose:
+        patient.CaseSettings.DoseColorMap.ReferenceValue = total_dose
+    else:
+        patient.CaseSettings.DoseColorMap.ReferenceValue = current_bs_dose
+        
+     
+        
+        
 def prostate_A2_A3():
     """
     Voir :py:mod:`prostate_A2_A3`.

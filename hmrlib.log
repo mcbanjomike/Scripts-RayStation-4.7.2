@@ -1868,3 +1868,107 @@ SystemError: The communication object, System.ServiceModel.Channels.ServiceChann
 2017-01-25 14:56:09,519 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] ================================================================================
 2017-01-25 14:56:09,571 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] End of script vérification_finale.py [execution time = 0:00:13.775000]
 2017-01-25 14:56:09,633 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] ================================================================================
+2017-01-25 15:24:39,861 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] ================================================================================
+2017-01-25 15:24:40,019 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] Starting script vérification_finale.py
+2017-01-25 15:24:40,270 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] ================================================================================
+2017-01-25 15:24:44,745 - hmrlib.poi - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] POI REF SCAN: (x, y, z) = (-5.61537780762, 10.3500015259, 0.0)
+2017-01-25 15:24:44,975 - hmrlib.poi - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] POI ISO: (x, y, z) = (-5.61537780762, 10.3500015259, 0.0)
+2017-01-25 15:27:31,369 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] ================================================================================
+2017-01-25 15:27:31,464 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] End of script vérification_finale.py [execution time = 0:02:51.629000]
+2017-01-25 15:27:31,578 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] ================================================================================
+2017-01-25 15:35:25,238 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:35:25,415 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:35:25,501 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:36:17,348 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:36:17,399 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:00:52.182000]
+2017-01-25 15:36:17,454 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:36:20,804 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:36:20,977 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:36:21,052 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:38:29,413 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:38:29,468 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:02:08.677000]
+2017-01-25 15:38:29,522 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:38:33,094 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:38:33,256 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:38:33,330 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:38:58,196 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:38:58,245 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:00:25.163000]
+2017-01-25 15:38:58,305 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:39:05,339 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:39:05,501 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:39:05,578 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:40:06,484 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:40:06,562 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:01:01.178000]
+2017-01-25 15:40:06,649 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:40:10,573 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:40:10,770 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:40:10,857 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:40:53,040 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:40:53,088 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:00:42.592000]
+2017-01-25 15:40:53,149 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:40:56,488 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:40:56,669 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:40:56,746 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:41:29,853 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:41:29,903 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:00:33.428000]
+2017-01-25 15:41:29,958 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:41:40,837 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:41:41,001 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:41:41,073 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:45:15,496 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:45:15,549 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:03:34.728000]
+2017-01-25 15:45:15,602 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:45:19,269 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:45:19,430 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:45:19,527 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:46:29,366 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:46:29,414 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:01:10.167000]
+2017-01-25 15:46:29,475 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:46:47,057 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:46:47,241 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:46:47,352 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:47:02,701 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:47:02,752 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:00:15.692000]
+2017-01-25 15:47:02,823 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:47:17,289 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:47:17,466 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:47:17,539 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:47:56,594 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:47:56,642 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:00:39.372000]
+2017-01-25 15:47:56,700 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:48:00,225 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:48:00,399 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:48:00,472 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:49:06,874 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:49:06,925 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:01:06.727000]
+2017-01-25 15:49:06,978 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:49:24,509 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:49:24,672 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:49:24,747 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:50:31,913 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:50:31,962 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:01:07.466000]
+2017-01-25 15:50:32,018 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:50:35,139 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:50:35,300 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:50:35,374 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:50:55,555 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:50:55,610 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:00:20.486000]
+2017-01-25 15:50:55,664 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:53:40,656 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:53:40,940 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_initiale.py
+2017-01-25 15:53:41,066 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:54:08,977 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:54:09,079 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_initiale.py [execution time = 0:00:28.392000]
+2017-01-25 15:54:09,170 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:55:24,416 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:55:24,654 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_initiale.py
+2017-01-25 15:55:24,744 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:55:50,143 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:55:50,223 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_initiale.py [execution time = 0:00:25.854000]
+2017-01-25 15:55:50,306 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:55:53,947 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:55:54,178 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] Starting script vérification_finale.py
+2017-01-25 15:55:54,333 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:56:12,607 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================
+2017-01-25 15:56:12,684 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] End of script vérification_finale.py [execution time = 0:00:18.757000]
+2017-01-25 15:56:12,763 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6_2] ================================================================================

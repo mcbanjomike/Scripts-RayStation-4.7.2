@@ -3673,7 +3673,13 @@ def verification_initiale():
                 exam.Series[0].LevelWindow = self.lw_dict
             else:
                 exam.Series[0].LevelWindow = self.lung_dict            
-            
+
+        def referencedoseClicked(self, sender, args):
+            self.message.ForeColor = Color.Black
+            self.message.Text = "En cours"       
+            prostate.toggle_reference_dose()              
+            self.message.Text = ""    
+                
         def printClicked(self, sender, args):     
 
             #Verify that all boxes have been checked
@@ -3729,7 +3735,7 @@ def verification_initiale():
             
             printButton = Button()
             printButton.Text = "Imprimer"
-            printButton.Location = Point(25, 10)
+            printButton.Location = Point(25, 28)
             #self.AcceptButton = okButton
             printButton.Click += self.printClicked            
             
@@ -3738,23 +3744,30 @@ def verification_initiale():
             #cancelButton.Location = Point(110,10)
             #self.CancelButton = cancelButton
             #cancelButton.Click += self.cancelClicked
-            
+
             levelwindowButton = Button()
             levelwindowButton.Text = "Level/Window"
-            levelwindowButton.Location = Point(108,10)
+            levelwindowButton.Location = Point(108,28)
             levelwindowButton.Width = 85
-            levelwindowButton.Click += self.levelwindowClicked
+            levelwindowButton.Click += self.levelwindowClicked            
+            
+            referencedoseButton = Button()
+            referencedoseButton.Text = "Toggle Reference Dose"
+            referencedoseButton.Location = Point(200,28)
+            referencedoseButton.Width = 140
+            referencedoseButton.Click += self.referencedoseClicked                
             
             self.message = Label()
             self.message.Text = ""
-            self.message.Location = Point(200, 13)
+            self.message.Location = Point(30, 0)
             self.message.Font = Font("Arial", 11, FontStyle.Bold)
             self.message.AutoSize = True      
             
             self.OKbuttonPanel.Controls.Add(printButton)
-            #self.OKbuttonPanel.Controls.Add(cancelButton)
             self.OKbuttonPanel.Controls.Add(levelwindowButton)
+            self.OKbuttonPanel.Controls.Add(referencedoseButton)
             self.OKbuttonPanel.Controls.Add(self.message)
+               
                
                 
                 
@@ -4072,7 +4085,7 @@ def verification_finale():
             a,b,c,d,e = verification.verify_beams()
             self.d['beam_text'] = a + "\n\n" + d + "\n" + e + "\n\n" + c  
             self.label_results.Text += "\n\nFaisceaux:\n" + self.d['beam_text']
-            self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 160 + 15*b)
+            self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 170 + 15*b)
             self.label_reminder.Text = "Rappel:\nS'il y a un prothèse, un pacemaker ou un membre qui dépasse le\nFOV du scan, vérifiez que les angles de gantry sont bien choisis"
             self.message.Text = ""
             
@@ -4096,6 +4109,12 @@ def verification_finale():
                 exam.Series[0].LevelWindow = self.lw_dict
             else:
                 exam.Series[0].LevelWindow = self.lung_dict                   
+            
+        def referencedoseClicked(self, sender, args):
+            self.message.ForeColor = Color.Black
+            self.message.Text = "En cours"       
+            prostate.toggle_reference_dose_verif2()              
+            self.message.Text = ""    
             
         def printClicked(self, sender, args):     
 
@@ -4152,7 +4171,7 @@ def verification_finale():
             
             printButton = Button()
             printButton.Text = "Imprimer"
-            printButton.Location = Point(25, 10)
+            printButton.Location = Point(25, 28)
             #self.AcceptButton = okButton
             printButton.Click += self.printClicked            
             
@@ -4164,19 +4183,25 @@ def verification_finale():
 
             levelwindowButton = Button()
             levelwindowButton.Text = "Level/Window"
-            levelwindowButton.Location = Point(108,10)
+            levelwindowButton.Location = Point(108,28)
             levelwindowButton.Width = 85
             levelwindowButton.Click += self.levelwindowClicked            
             
+            referencedoseButton = Button()
+            referencedoseButton.Text = "Toggle Reference Dose"
+            referencedoseButton.Location = Point(200,28)
+            referencedoseButton.Width = 140
+            referencedoseButton.Click += self.referencedoseClicked                
+            
             self.message = Label()
             self.message.Text = ""
-            self.message.Location = Point(200, 13)
+            self.message.Location = Point(30, 0)
             self.message.Font = Font("Arial", 11, FontStyle.Bold)
             self.message.AutoSize = True      
             
             self.OKbuttonPanel.Controls.Add(printButton)
             self.OKbuttonPanel.Controls.Add(levelwindowButton)
-            #self.OKbuttonPanel.Controls.Add(cancelButton)
+            self.OKbuttonPanel.Controls.Add(referencedoseButton)
             self.OKbuttonPanel.Controls.Add(self.message)
                
                 
