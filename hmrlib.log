@@ -1689,3 +1689,182 @@ SystemError: The communication object, System.ServiceModel.Channels.ServiceChann
 2017-01-24 17:03:53,979 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
 2017-01-24 17:03:54,027 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_finale.py [execution time = 0:01:09.516000]
 2017-01-24 17:03:54,126 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-25 10:06:11,948 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - stereo b1/B1] ================================================================================
+2017-01-25 10:06:12,120 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - stereo b1/B1] Starting script vérification_finale.py
+2017-01-25 10:06:12,437 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - stereo b1/B1] ================================================================================
+2017-01-25 10:07:58,690 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - stereo b1/B1] ================================================================================
+2017-01-25 10:07:58,740 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - stereo b1/B1] End of script vérification_finale.py [execution time = 0:01:46.989000]
+2017-01-25 10:07:58,793 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - stereo b1/B1] ================================================================================
+2017-01-25 10:10:29,839 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-25 10:10:30,005 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-01-25 10:10:30,033 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-25 10:10:30,536 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-01-25 10:10:30,668 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV1 is NOT approved.
+2017-01-25 10:10:30,789 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV1 15 Gy is NOT approved.
+2017-01-25 10:10:30,905 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV2 is NOT approved.
+2017-01-25 10:10:31,019 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV2 12 Gy is NOT approved.
+2017-01-25 10:10:31,134 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-01-25 10:10:31,251 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-01-25 10:10:31,364 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-01-25 10:10:31,485 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-01-25 10:10:31,599 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-01-25 10:10:31,716 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-01-25 10:10:31,829 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-01-25 10:10:31,941 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-01-25 10:10:32,056 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV15 is NOT approved.
+2017-01-25 10:10:43,492 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-01-25 10:10:43,556 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-01-25 10:10:44,035 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-01-25 10:10:44,213 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-01-25 10:10:44,637 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-01-25 10:10:44,752 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] POI PT PRESC is NOT approved.
+2017-01-25 10:10:45,168 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "PT PRESC" set as Marker
+2017-01-25 10:10:45,441 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-01-25 10:10:45,548 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-01-25 10:10:45,678 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV1 is NOT approved.
+2017-01-25 10:10:45,771 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV1" set as Gtv
+2017-01-25 10:10:45,850 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV1" set as Target
+2017-01-25 10:10:45,971 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV1 15 Gy is NOT approved.
+2017-01-25 10:10:46,062 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV1 15 Gy" set as Ptv
+2017-01-25 10:10:46,140 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV1 15 Gy" set as Target
+2017-01-25 10:10:46,254 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV2 is NOT approved.
+2017-01-25 10:10:46,356 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV2" set as Gtv
+2017-01-25 10:10:46,441 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV2" set as Target
+2017-01-25 10:10:46,553 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV2 12 Gy is NOT approved.
+2017-01-25 10:10:46,648 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV2 12 Gy" set as Ptv
+2017-01-25 10:10:46,723 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV2 12 Gy" set as Target
+2017-01-25 10:10:46,848 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-01-25 10:10:46,941 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CERVEAU" set as Organ
+2017-01-25 10:10:47,020 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CERVEAU" set as OrganAtRisk
+2017-01-25 10:10:47,137 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-01-25 10:10:47,236 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-01-25 10:10:47,311 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-01-25 10:10:47,443 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-01-25 10:10:47,544 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL DRT" set as Organ
+2017-01-25 10:10:47,622 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL DRT" set as OrganAtRisk
+2017-01-25 10:10:47,751 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-01-25 10:10:47,843 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL GCHE" set as Organ
+2017-01-25 10:10:47,923 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL GCHE" set as OrganAtRisk
+2017-01-25 10:10:48,050 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-01-25 10:10:48,151 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TR CEREBRAL" set as Organ
+2017-01-25 10:10:48,230 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TR CEREBRAL" set as OrganAtRisk
+2017-01-25 10:10:48,344 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-01-25 10:10:48,441 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CHIASMA" set as Organ
+2017-01-25 10:10:48,516 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CHIASMA" set as OrganAtRisk
+2017-01-25 10:10:48,648 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-01-25 10:10:48,745 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT DRT" set as Organ
+2017-01-25 10:10:48,820 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT DRT" set as OrganAtRisk
+2017-01-25 10:10:48,958 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-01-25 10:10:49,056 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT GCHE" set as Organ
+2017-01-25 10:10:49,138 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT GCHE" set as OrganAtRisk
+2017-01-25 10:10:49,269 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV15 is NOT approved.
+2017-01-25 10:10:49,367 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV15" set as Ptv
+2017-01-25 10:10:49,444 - hmrlib.roi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV15" set as Target
+2017-01-25 10:11:32,450 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:11:32,840 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:11:33,185 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:11:33,492 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:11:33,769 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:11:34,106 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:11:34,477 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:11:34,805 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:11:35,127 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:11:36,675 - hmrlib.optim - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Objective of type MinDose for ROI "PTV15" added.
+2017-01-25 10:11:37,138 - hmrlib.optim - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Objective of type MaxDose for ROI "PTV15" added.
+2017-01-25 10:11:37,452 - hmrlib.optim - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Objective of type MaxDose for ROI "RING_1_3mm" added.
+2017-01-25 10:11:37,731 - hmrlib.optim - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Objective of type MaxDose for ROI "RING_2_8mm" added.
+2017-01-25 10:11:38,029 - hmrlib.optim - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Objective of type MaxDose for ROI "RING_3_1cm" added.
+2017-01-25 10:11:38,411 - hmrlib.optim - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Objective of type MaxDose for ROI "TISSUS SAINS" added.
+2017-01-25 10:18:19,668 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:18:19,716 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] End of script plan_launcher.py [execution time = 0:07:49.867000]
+2017-01-25 10:18:19,762 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:23:29,593 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:23:29,766 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-01-25 10:23:29,844 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:23:36,084 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (-0.0300003052, 1.65, 1.5258789062e-06)
+2017-01-25 10:23:36,297 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:25:10,588 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:25:10,638 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:01:41.067000]
+2017-01-25 10:25:10,696 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:26:00,341 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:26:00,511 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-01-25 10:26:00,587 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:26:03,166 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (-0.0300003052, 1.65, 1.5258789062e-06)
+2017-01-25 10:26:03,364 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:28:45,136 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:28:45,185 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:02:44.862000]
+2017-01-25 10:28:45,247 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:28:48,618 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:28:48,796 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-01-25 10:28:48,874 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:28:55,089 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (-0.0300003052, 1.65, 1.5258789062e-06)
+2017-01-25 10:28:55,290 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:29:26,961 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:29:27,011 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:00:38.419000]
+2017-01-25 10:29:27,067 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:29:31,855 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:29:32,015 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-01-25 10:29:32,091 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:29:58,157 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (-0.0300003052, 1.65, 1.5258789062e-06)
+2017-01-25 10:29:58,359 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:31:11,081 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:31:11,131 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:01:39.302000]
+2017-01-25 10:31:11,191 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:35:11,322 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:35:11,503 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-01-25 10:35:11,576 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:35:18,445 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:35:18,495 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:00:07.216000]
+2017-01-25 10:35:18,569 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:36:04,316 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:36:04,480 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-01-25 10:36:04,555 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:36:14,649 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (-0.0300003052, 1.65, 1.5258789062e-06)
+2017-01-25 10:36:14,841 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 10:41:35,604 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:41:35,652 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:05:31.351000]
+2017-01-25 10:41:35,715 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:41:39,467 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:41:39,625 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-01-25 10:41:39,698 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 10:41:48,354 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (-0.0300003052, 1.65, 1.5258789062e-06)
+2017-01-25 10:41:48,556 - hmrlib.poi - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.0300003052, 7.65, 4.0000015259)
+2017-01-25 14:18:53,064 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-25 14:18:53,068 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script vérification_finale.py [execution time = 3:37:13.601000]
+2017-01-25 14:18:53,193 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-25 14:45:46,749 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:45:46,932 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-01-25 14:45:47,178 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:46:05,974 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:46:06,026 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:00:19.366000]
+2017-01-25 14:46:06,085 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:46:59,842 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:47:00,152 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-01-25 14:47:00,229 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:50:53,763 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:50:53,815 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:03:53.985000]
+2017-01-25 14:50:53,880 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:51:01,827 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:51:02,077 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-01-25 14:51:02,180 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:51:35,290 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:51:35,339 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:00:33.574000]
+2017-01-25 14:51:35,394 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:51:38,794 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:51:38,956 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-01-25 14:51:39,029 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:51:49,627 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:51:49,676 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:00:10.885000]
+2017-01-25 14:51:49,730 - hmrlib - INFO - [hmr30489 - BARIL^CAROLE (436887) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-25 14:55:26,992 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 lid stereo/A1] ================================================================================
+2017-01-25 14:55:27,163 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 lid stereo/A1] Starting script vérification_finale.py
+2017-01-25 14:55:27,239 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 lid stereo/A1] ================================================================================
+2017-01-25 14:55:37,527 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 lid stereo/A1] ================================================================================
+2017-01-25 14:55:37,585 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 lid stereo/A1] End of script vérification_finale.py [execution time = 0:00:10.569000]
+2017-01-25 14:55:37,643 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 lid stereo/A1] ================================================================================
+2017-01-25 14:55:55,793 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] ================================================================================
+2017-01-25 14:55:55,978 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] Starting script vérification_finale.py
+2017-01-25 14:55:56,054 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] ================================================================================
+2017-01-25 14:56:09,519 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] ================================================================================
+2017-01-25 14:56:09,571 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] End of script vérification_finale.py [execution time = 0:00:13.775000]
+2017-01-25 14:56:09,633 - hmrlib - INFO - [hmr30489 - LANOUE^JOCELYNE (1832452) - CT 1 - A1 new 2/A1 new 2] ================================================================================
