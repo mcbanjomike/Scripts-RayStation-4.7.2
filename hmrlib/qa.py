@@ -312,13 +312,14 @@ def shift_plans_QA(print_results=True):
         # Get demographic information
         patient_ID = patient.PatientID
         patient_name = patient.PatientName.replace("^", ", ")
-        
-        try:
-            file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\QA'
-            file_path += '\\' + patient_name + '~' + patient_ID + '-TESTSUPERBRIDGE'
 
-            # Write to file
-            if print_results is True:
+        if print_results is True:        
+            try:
+                file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\QA'
+                file_path += '\\' + patient_name + '~' + patient_ID + '-TESTSUPERBRIDGE'
+
+                # Write to file
+
                 with open(file_path + '\\Déplacement ArcCheck ' + name + ".txt", 'w') as dvh_file:
                     dvh_file.write('Patient:                    ' + patient_name + '\n')
                     dvh_file.write('No. HMR:                    ' + patient_ID + '\n\n\n')
@@ -363,17 +364,17 @@ def shift_plans_QA(print_results=True):
                         dose_per_beam = beamdose.InterpolateDoseInPoint(Point=dsp_temp.value)
                         dvh_file.write("\n     %s : %.3fGy" % (beamdose.ForBeam.Name, dose_per_beam / 100.0))
         
-        except:
-            if print_results is True:
+            except:
+                texte = 'Impossible de créer le fichier texte avec les déplacements. SVP, notez les valeurs ci-dessous:\n\n'
                 shift_x = p.x - iso_x
                 if shift_x > 0:
                     direction_x = 'vers A'
                 elif shift_x < 0:
                     direction_x = 'vers B'
                 if shift_x != 0:
-                    texte = '          LATERAL: ' + str(abs(shift_x)) + 'cm ' + direction_x + '\n'
+                    texte += '          LATERAL: ' + str(abs(shift_x)) + 'cm ' + direction_x + '\n'
                 else:
-                    texte = '          LATERAL: Aucun shift\n'
+                    texte += '          LATERAL: Aucun shift\n'
 
                 shift_z = p.z - iso_z
                 if shift_z > 0:

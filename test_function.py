@@ -73,13 +73,13 @@ except Exception as e:
 def test_MA():
     #plan = lib.get_current_plan()
     #beamset = lib.get_current_beamset()
-    exam = lib.get_current_examination()
+    #exam = lib.get_current_examination()
     #patient = lib.get_current_patient()
-        
-    #statistics.stereo_brain_statistics()
     
-    a,b,c,d,e = verification.verify_beams()
-    message.message_window(a+str(b)+c+d+e)
+    statistics.stereo_brain_statistics()
+    
+    #a,b,c,d,e = verification.verify_beams()
+    #message.message_window(a+str(b)+c+d+e)
     
     
     #qa.shift_plans_QA(print_results=True)

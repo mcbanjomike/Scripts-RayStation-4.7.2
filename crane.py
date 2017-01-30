@@ -93,7 +93,7 @@ def plan_crane_3DC(site_name='A1', presc_dose=1500, nb_fx=1, isodose_creation = 
     plan.SetDefaultDoseGrid(VoxelSize={ 'x': 0.2, 'y': 0.2, 'z': 0.2 })
     
     # Create beamset
-    beamset = plan.AddNewBeamSet(Name="3DC", ExaminationName=exam.Name, MachineName="BeamMod", NominalEnergy=None, Modality="Photons", TreatmentTechnique="Conformal", PatientPosition="HeadFirstSupine", NumberOfFractions=nb_fx, CreateSetupBeams=False, UseLocalizationPointAsSetupIsocenter=False, Comment="")
+    beamset = plan.AddNewBeamSet(Name="3DC", ExaminationName=exam.Name, MachineName="BeamMod", NominalEnergy=None, Modality="Photons", TreatmentTechnique="Conformal", PatientPosition="HeadFirstSupine", NumberOfFractions=nb_fx, CreateSetupBeams=False, UseLocalizationPointAsSetupIsocenter=False, Comment="3DC")
     beamset.AddDosePrescriptionToRoi(RoiName=ptv.Name, DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=presc_dose, RelativePrescriptionLevel=1, AutoScaleDose=False)
 
     # Generate dose color table
