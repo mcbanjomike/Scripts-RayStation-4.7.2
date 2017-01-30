@@ -33,6 +33,7 @@ import poumon
 import foie
 import verification
 import report
+import statistics
 
 clr.AddReference('System.Windows.Forms')
 clr.AddReference('System.Drawing')
@@ -2597,6 +2598,12 @@ def finalize_beamset(original_beamset_name, rx_dose, nb_fx, site, ptv_name, colo
     beamset_name = ptv_name.split()[1]
     scan_name = "CT 1" 
 
+    if site == 'Crâne':
+        try:
+            statistics.stereo_brain_statistics()
+        except:
+            pass
+    
     #Check to see if PTV is drawn using contours (since prescription point placement will fail if the PTV is in voxel format)
     try:
         temp = patient.PatientModel.StructureSets[scan_name].RoiGeometries[ptv_name].PrimaryShape.Contours[0]
