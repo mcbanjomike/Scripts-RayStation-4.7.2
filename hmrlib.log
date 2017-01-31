@@ -2826,3 +2826,51 @@ AttributeError: 'NoneType' object has no attribute 'MaxLeafTravelDistancePerDegr
 2017-01-31 12:33:17,789 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] ================================================================================
 2017-01-31 12:33:17,915 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] End of script finalisation.py [execution time = 0:14:57.907000]
 2017-01-31 12:33:18,084 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] ================================================================================
+2017-01-31 15:06:51,035 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:06:51,481 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-01-31 15:06:51,612 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:06:55,838 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:06:55,969 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:05.215000]
+2017-01-31 15:06:56,078 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:07:43,553 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:07:43,941 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-01-31 15:07:44,073 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:07:54,123 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:07:54,238 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:10.711000]
+2017-01-31 15:07:54,350 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:24:00,396 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:24:00,864 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-01-31 15:24:00,992 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:24:06,665 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:24:06,783 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:06.465000]
+2017-01-31 15:24:06,898 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:33:12,956 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:33:13,373 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-01-31 15:33:13,507 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:33:16,623 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:33:16,747 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:03.798000]
+2017-01-31 15:33:16,869 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:35:26,485 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:35:26,895 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-01-31 15:35:27,031 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:35:33,265 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 15:35:33,388 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:06.881000]
+2017-01-31 15:35:33,513 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 16:09:29,199 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 16:09:29,595 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-01-31 16:09:29,729 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 16:09:32,971 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 16:09:33,117 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:03.907000]
+2017-01-31 16:09:33,271 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 16:10:03,607 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 16:10:04,048 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-01-31 16:10:04,187 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 16:10:08,008 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 16:10:08,129 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:04.467000]
+2017-01-31 16:10:08,253 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-01-31 16:14:07,588 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-31 16:14:07,777 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-01-31 16:14:07,831 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-31 16:14:18,595 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-31 16:14:18,737 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:11.428000]
+2017-01-31 16:14:18,882 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
