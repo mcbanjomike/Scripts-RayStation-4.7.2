@@ -2604,7 +2604,15 @@ def finalize_beamset(original_beamset_name, rx_dose, nb_fx, site, ptv_name, colo
             output = patient.PatientName + ',' + patient.PatientID + ',' + plan.Name + ',' + bs.DicomPlanLabel + ',' + 'Echec dans la collecte des statistiques'
             with open(file_path, 'a') as stat_file:
                 stat_file.write(output + '\n')
-    
+    elif site == 'Poumon':
+        try:
+            statistics.stereo_lung_statistics()
+        except:
+            file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\poumon.txt'
+            output = patient.PatientName + ',' + patient.PatientID + ',' + plan.Name + ',' + bs.DicomPlanLabel + ',' + 'Echec dans la collecte des statistiques'
+            with open(file_path, 'a') as stat_file:
+                stat_file.write(output + '\n')
+                
     #Check to see if PTV is drawn using contours (since prescription point placement will fail if the PTV is in voxel format)
     try:
         temp = patient.PatientModel.StructureSets[scan_name].RoiGeometries[ptv_name].PrimaryShape.Contours[0]
