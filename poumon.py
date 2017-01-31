@@ -249,13 +249,25 @@ def poumon_stereo_add_plan_and_beamset(plan_data):
     
 def poumon_stereo_opt_settings(plan_data):
 
+    plan = plan_data['patient'].TreatmentPlans[plan_data['plan_name']]
+
     # Set optimization parameters
-    optim.set_optimization_parameters(plan=plan_data['patient'].TreatmentPlans[plan_data['plan_name']])
+    optim.set_optimization_parameters(plan=plan)
 
-    # Set VMAT conversion parameters  
-    fx_dose = plan_data['rx_dose'] / plan_data['nb_fx']
-    optim.set_vmat_conversion_parameters(max_arc_delivery_time=int(fx_dose/100.0*20), plan=plan_data['patient'].TreatmentPlans[plan_data['plan_name']])
-
+    if plan_data['treatment_technique'] == 'VMAT':
+        # Set VMAT conversion parameters  
+        fx_dose = plan_data['rx_dose'] / plan_data['nb_fx']
+        optim.set_vmat_conversion_parameters(max_arc_delivery_time=int(fx_dose/100.0*20), plan=plan)
+    elif plan_data['treatment_technique'] == 'SMLC':
+        plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
+        plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 100
+        plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.IterationsInPreparationsPhase = 60
+        plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.ComputeFinalDose = True          
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 20        
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinLeafEndSeparation = 1.6
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs = 4
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentArea = 2
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MaxNumberOfSegments = 40
     
 def poumon_stereo_create_isodose_lines(plan_data):
 

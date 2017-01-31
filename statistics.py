@@ -108,7 +108,7 @@ def stereo_brain_statistics():
     brain_overlap.DeleteRoi()
     
     #Generate output string
-    output = patient.PatientName + ',' #+ patient.PatientID + ',' + plan.Name + ',' + beamset.DicomPlanLabel + ',' #Demographic information
+    output = patient.PatientName + ',' + patient.PatientID + ',' + plan.Name + ',' + beamset.DicomPlanLabel + ',' #Demographic information
     output += "%.2f,%d," % (rx_dose/100.0,nb_fx) #Prescription information
     output += "%.3f,%.3f,%.3f," % (ptv_center.x,ptv_center.y,ptv_center.z) #DICOM coordinates of PTV center        
     output += "%.3f,%.3f," % (ptv_vol,ptv_radius) #Volume and (estimated) radius of PTV
