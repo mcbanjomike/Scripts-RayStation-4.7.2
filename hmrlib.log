@@ -2358,3 +2358,471 @@ SystemError: The communication object, System.ServiceModel.Channels.ServiceChann
 2017-01-30 17:09:10,276 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
 2017-01-30 17:09:10,409 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:09.038000]
 2017-01-30 17:09:10,593 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-31 10:33:35,861 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-31 10:33:36,254 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-01-31 10:33:36,328 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-31 10:33:37,851 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-01-31 10:33:38,819 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-01-31 10:33:39,806 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-01-31 10:33:40,856 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-01-31 10:33:41,149 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-01-31 10:33:41,649 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV54 is NOT approved.
+2017-01-31 10:33:42,163 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV54 is NOT approved.
+2017-01-31 10:33:42,651 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-01-31 10:33:43,168 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-01-31 10:33:43,663 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-01-31 10:33:44,192 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PLEXUS BRACHIAL is NOT approved.
+2017-01-31 10:33:44,709 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-01-31 10:33:45,217 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-01-31 10:33:45,834 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-01-31 10:33:46,609 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-01-31 10:33:47,126 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-01-31 10:33:47,695 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-01-31 10:33:48,465 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ROI_1 is NOT approved.
+2017-01-31 10:34:20,034 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 10:34:21,476 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-01-31 10:34:21,676 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-01-31 10:34:22,467 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-01-31 10:34:22,729 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-01-31 10:34:23,544 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-01-31 10:34:24,213 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-01-31 10:34:24,467 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-01-31 10:34:24,700 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-01-31 10:34:24,933 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-01-31 10:34:25,130 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-01-31 10:34:25,356 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-01-31 10:34:25,629 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-01-31 10:34:25,874 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-01-31 10:34:26,119 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV expi" set as Gtv
+2017-01-31 10:34:26,324 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV expi" set as Target
+2017-01-31 10:34:26,547 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-01-31 10:34:26,768 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV inspi" set as Gtv
+2017-01-31 10:34:26,967 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV inspi" set as Target
+2017-01-31 10:34:27,180 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV54 is NOT approved.
+2017-01-31 10:34:27,386 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ITV54" set as TreatedVolume
+2017-01-31 10:34:27,602 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ITV54" set as Target
+2017-01-31 10:34:27,802 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV54 is NOT approved.
+2017-01-31 10:34:28,007 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV54" set as Ptv
+2017-01-31 10:34:28,189 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV54" set as Target
+2017-01-31 10:34:28,398 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-01-31 10:34:28,603 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BR SOUCHE" set as Organ
+2017-01-31 10:34:28,773 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BR SOUCHE" set as OrganAtRisk
+2017-01-31 10:34:28,999 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-01-31 10:34:29,198 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TRACHEE" set as Organ
+2017-01-31 10:34:29,388 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TRACHEE" set as OrganAtRisk
+2017-01-31 10:34:29,609 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-01-31 10:34:29,819 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-01-31 10:34:30,001 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-01-31 10:34:30,226 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PLEXUS BRACHIAL is NOT approved.
+2017-01-31 10:34:30,446 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PLEXUS BRACHIAL" set as Organ
+2017-01-31 10:34:30,630 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PLEXUS BRACHIAL" set as OrganAtRisk
+2017-01-31 10:34:30,848 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-01-31 10:34:31,061 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-01-31 10:34:31,245 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-01-31 10:34:31,488 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-01-31 10:34:31,705 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON DRT" set as Organ
+2017-01-31 10:34:31,892 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON DRT" set as OrganAtRisk
+2017-01-31 10:34:32,115 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-01-31 10:34:32,328 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON GCHE" set as Organ
+2017-01-31 10:34:32,513 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON GCHE" set as OrganAtRisk
+2017-01-31 10:34:32,732 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-01-31 10:34:32,951 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-01-31 10:34:33,137 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-01-31 10:34:33,363 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-01-31 10:34:33,575 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-01-31 10:34:33,763 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-01-31 10:34:34,006 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-01-31 10:34:34,226 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-01-31 10:34:34,412 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-01-31 10:34:34,638 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ROI_1 is NOT approved.
+2017-01-31 10:34:34,855 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ROI_1" set as Organ
+2017-01-31 10:34:35,042 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ROI_1" set as OrganAtRisk
+2017-01-31 10:35:15,819 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-01-31 10:35:18,362 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 10:35:18,903 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.62017-01-31 10:35:22,962 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] CT slice width = 0.1 cm
+2017-01-31 10:35:24,208 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Initial point = {'x':-0.9750, 'y':4.1000, 'z':2.7000} cm
+2017-01-31 10:35:24,345 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Unit vector towards PTV center = {'x':0.6884, 'y':0.7146, 'z':-0.1244} cm
+2017-01-31 10:35:24,461 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Approximate unit vector towards PTV center on single CT slice = {'x':0.6884, 'y':0.7146, 'z':0.0000} cm
+2017-01-31 10:35:24,635 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose per fraction at initial point = 1672.929 cGy
+2017-01-31 10:35:24,781 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0094, 'y':4.0643, 'z':2.7000} = 1595.439 cGy
+2017-01-31 10:35:24,923 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0438, 'y':4.0285, 'z':2.7000} = 1523.279 cGy
+2017-01-31 10:35:25,065 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0783, 'y':3.9928, 'z':2.7000} = 1456.450 cGy
+2017-01-31 10:35:25,187 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0610, 'y':4.0107, 'z':2.7000} = 1489.198 cGy
+2017-01-31 10:35:25,306 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0438, 'y':4.0285, 'z':2.7000} = 1523.279 cGy
+2017-01-31 10:35:25,428 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0524, 'y':4.0196, 'z':2.7000} = 1506.072 cGy
+2017-01-31 10:35:25,547 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0610, 'y':4.0107, 'z':2.7000} = 1489.198 cGy
+2017-01-31 10:35:25,654 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0567, 'y':4.0151, 'z':2.7000} = 1497.593 cGy
+2017-01-31 10:35:25,761 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0524, 'y':4.0196, 'z':2.7000} = 1506.072 cGy
+2017-01-31 10:35:25,874 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0546, 'y':4.0174, 'z':2.7000} = 1501.822 cGy
+2017-01-31 10:35:25,981 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0567, 'y':4.0151, 'z':2.7000} = 1497.593 cGy
+2017-01-31 10:35:26,087 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0557, 'y':4.0163, 'z':2.7000} = 1499.705 cGy
+2017-01-31 10:35:26,183 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0546, 'y':4.0174, 'z':2.7000} = 1501.822 cGy
+2017-01-31 10:35:26,275 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0551, 'y':4.0168, 'z':2.7000} = 1500.763 cGy
+2017-01-31 10:35:26,369 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0557, 'y':4.0163, 'z':2.7000} = 1499.705 cGy
+2017-01-31 10:35:26,464 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0554, 'y':4.0165, 'z':2.7000} = 1500.234 cGy
+2017-01-31 10:35:26,557 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1499.969 cGy
+2017-01-31 10:35:26,640 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0165, 'z':2.7000} = 1500.102 cGy
+2017-01-31 10:35:26,731 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1500.036 cGy
+2017-01-31 10:35:26,813 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1499.969 cGy
+2017-01-31 10:35:26,895 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1500.003 cGy
+2017-01-31 10:35:26,978 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1499.986 cGy
+2017-01-31 10:35:27,063 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1499.994 cGy
+2017-01-31 10:35:27,136 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1500.003 cGy
+2017-01-31 10:35:27,210 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1499.998 cGy
+2017-01-31 10:35:27,296 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1500.000 cGy
+2017-01-31 10:35:27,364 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Final point = {'x':-1.0555, 'y':4.0164, 'z':2.7000} cm
+2017-01-31 10:35:27,462 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] POI PT PRESC A1 is NOT approved.
+2017-01-31 10:35:27,629 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] POI PT PRESC A1 is NOT approved.
+2017-01-31 10:35:27,737 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Set coordinates of POI "PT PRESC A1" to {'x':-1.0555, 'y':4.0164, 'z':2.7000}.
+2017-01-31 10:35:28,043 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] POI PT PRESC A1: (x, y, z) = (-1.05551734868, 4.01641081011, 2.7)
+2017-01-31 10:36:25,842 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] ================================================================================
+2017-01-31 10:36:25,964 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] End of script finalisation.py [execution time = 0:01:34.942000]
+2017-01-31 10:36:26,111 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] ================================================================================
+2017-01-31 10:37:39,289 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-31 10:37:39,441 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-01-31 10:37:39,467 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-31 10:37:39,994 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-01-31 10:37:41,095 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-01-31 10:37:42,202 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-01-31 10:37:43,142 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-01-31 10:37:43,618 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-01-31 10:37:44,105 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV48 is NOT approved.
+2017-01-31 10:37:44,589 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV48 is NOT approved.
+2017-01-31 10:37:45,064 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-01-31 10:37:45,550 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-01-31 10:37:46,054 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-01-31 10:37:46,599 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PLEXUS BRACHIAL is NOT approved.
+2017-01-31 10:37:47,154 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-01-31 10:37:47,642 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-01-31 10:37:48,249 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-01-31 10:37:49,024 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-01-31 10:37:49,514 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-01-31 10:37:50,066 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-01-31 10:37:50,816 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ROI_1 is NOT approved.
+2017-01-31 10:38:07,322 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 10:38:08,261 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-01-31 10:38:08,419 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-01-31 10:38:08,643 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-01-31 10:38:08,874 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-01-31 10:38:09,082 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-01-31 10:38:09,673 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-01-31 10:38:09,903 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-01-31 10:38:10,135 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-01-31 10:38:10,340 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-01-31 10:38:10,520 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-01-31 10:38:10,736 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-01-31 10:38:10,981 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-01-31 10:38:11,239 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-01-31 10:38:11,470 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV expi" set as Gtv
+2017-01-31 10:38:11,665 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV expi" set as Target
+2017-01-31 10:38:11,912 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-01-31 10:38:12,146 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV inspi" set as Gtv
+2017-01-31 10:38:12,346 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV inspi" set as Target
+2017-01-31 10:38:12,596 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV48 is NOT approved.
+2017-01-31 10:38:12,847 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ITV48" set as TreatedVolume
+2017-01-31 10:38:13,052 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ITV48" set as Target
+2017-01-31 10:38:13,300 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV48 is NOT approved.
+2017-01-31 10:38:13,532 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV48" set as Ptv
+2017-01-31 10:38:13,731 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV48" set as Target
+2017-01-31 10:38:13,955 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-01-31 10:38:14,165 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BR SOUCHE" set as Organ
+2017-01-31 10:38:14,350 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BR SOUCHE" set as OrganAtRisk
+2017-01-31 10:38:14,564 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-01-31 10:38:14,772 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TRACHEE" set as Organ
+2017-01-31 10:38:14,968 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TRACHEE" set as OrganAtRisk
+2017-01-31 10:38:15,209 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-01-31 10:38:15,426 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-01-31 10:38:15,644 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-01-31 10:38:15,879 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PLEXUS BRACHIAL is NOT approved.
+2017-01-31 10:38:16,110 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PLEXUS BRACHIAL" set as Organ
+2017-01-31 10:38:16,304 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PLEXUS BRACHIAL" set as OrganAtRisk
+2017-01-31 10:38:16,544 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-01-31 10:38:16,771 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-01-31 10:38:16,968 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-01-31 10:38:17,221 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-01-31 10:38:17,437 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON DRT" set as Organ
+2017-01-31 10:38:17,628 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON DRT" set as OrganAtRisk
+2017-01-31 10:38:17,858 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-01-31 10:38:18,079 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON GCHE" set as Organ
+2017-01-31 10:38:18,269 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON GCHE" set as OrganAtRisk
+2017-01-31 10:38:18,515 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-01-31 10:38:18,739 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-01-31 10:38:18,926 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-01-31 10:38:19,154 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-01-31 10:38:19,368 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-01-31 10:38:19,561 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-01-31 10:38:19,721 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-01-31 10:38:19,844 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-01-31 10:38:19,950 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-01-31 10:38:20,143 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ROI_1 is NOT approved.
+2017-01-31 10:38:20,361 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ROI_1" set as Organ
+2017-01-31 10:38:20,551 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ROI_1" set as OrganAtRisk
+2017-01-31 10:39:00,205 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-01-31 10:39:01,762 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 10:39:02,357 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 10:39:02,770 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 10:39:03,210 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 10:39:03,663 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 10:39:04,067 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 10:39:04,458 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 10:39:04,718 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-01-31 10:39:04,850 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-01-31 10:39:05,052 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-01-31 10:39:05,215 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-01-31 10:39:05,371 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-01-31 10:39:05,516 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-01-31 10:39:05,659 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-01-31 10:39:05,752 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-01-31 10:39:05,854 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-01-31 10:39:05,958 - hmrlib.optim - ERROR - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] 'NoneType' object has no attribute 'MaxLeafTravelDistancePerDegree'
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\optim.py", line 380, in set_vmat_conversion_parameters
+    po.OptimizationParameters.SegmentConversion.ArcConversionProperties.MaxLeafTravelDistancePerDegree = max_leaf_travel_per_degree
+AttributeError: 'NoneType' object has no attribute 'MaxLeafTravelDistancePerDegree'
+2017-01-31 11:24:20,869 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-31 11:24:21,065 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-01-31 11:24:21,133 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-31 11:24:22,463 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-01-31 11:24:23,775 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-01-31 11:24:24,785 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-01-31 11:24:25,826 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-01-31 11:24:26,258 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-01-31 11:24:26,707 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV56 is NOT approved.
+2017-01-31 11:24:27,171 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV56 is NOT approved.
+2017-01-31 11:24:27,710 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-01-31 11:24:28,200 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-01-31 11:24:28,771 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-01-31 11:24:29,316 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PLEXUS BRACHIAL is NOT approved.
+2017-01-31 11:24:29,801 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-01-31 11:24:30,286 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-01-31 11:24:30,928 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-01-31 11:24:31,736 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-01-31 11:24:32,391 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-01-31 11:24:33,007 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-01-31 11:24:33,787 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ROI_1 is NOT approved.
+2017-01-31 11:24:43,626 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:24:44,523 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-01-31 11:24:44,676 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-01-31 11:24:44,957 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-01-31 11:24:45,270 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-01-31 11:24:45,998 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-01-31 11:24:46,620 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-01-31 11:24:46,867 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-01-31 11:24:47,125 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-01-31 11:24:47,356 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-01-31 11:24:47,547 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-01-31 11:24:47,799 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-01-31 11:24:48,083 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-01-31 11:24:48,347 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-01-31 11:24:48,582 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV expi" set as Gtv
+2017-01-31 11:24:48,782 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV expi" set as Target
+2017-01-31 11:24:49,016 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-01-31 11:24:49,248 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV inspi" set as Gtv
+2017-01-31 11:24:49,466 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV inspi" set as Target
+2017-01-31 11:24:49,689 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV56 is NOT approved.
+2017-01-31 11:24:49,924 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ITV56" set as TreatedVolume
+2017-01-31 11:24:50,132 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ITV56" set as Target
+2017-01-31 11:24:50,356 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV56 is NOT approved.
+2017-01-31 11:24:50,578 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV56" set as Ptv
+2017-01-31 11:24:50,773 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV56" set as Target
+2017-01-31 11:24:50,999 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-01-31 11:24:51,226 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BR SOUCHE" set as Organ
+2017-01-31 11:24:51,420 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BR SOUCHE" set as OrganAtRisk
+2017-01-31 11:24:51,661 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-01-31 11:24:51,891 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TRACHEE" set as Organ
+2017-01-31 11:24:52,107 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TRACHEE" set as OrganAtRisk
+2017-01-31 11:24:52,352 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-01-31 11:24:52,586 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-01-31 11:24:52,786 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-01-31 11:24:53,017 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PLEXUS BRACHIAL is NOT approved.
+2017-01-31 11:24:53,249 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PLEXUS BRACHIAL" set as Organ
+2017-01-31 11:24:53,443 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PLEXUS BRACHIAL" set as OrganAtRisk
+2017-01-31 11:24:53,683 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-01-31 11:24:53,916 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-01-31 11:24:54,108 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-01-31 11:24:54,334 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-01-31 11:24:54,547 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON DRT" set as Organ
+2017-01-31 11:24:54,741 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON DRT" set as OrganAtRisk
+2017-01-31 11:24:54,968 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-01-31 11:24:55,189 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON GCHE" set as Organ
+2017-01-31 11:24:55,375 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON GCHE" set as OrganAtRisk
+2017-01-31 11:24:55,642 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-01-31 11:24:55,870 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-01-31 11:24:56,078 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-01-31 11:24:56,296 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-01-31 11:24:56,504 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-01-31 11:24:56,695 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-01-31 11:24:56,943 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-01-31 11:24:57,176 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-01-31 11:24:57,374 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-01-31 11:24:57,703 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ROI_1 is NOT approved.
+2017-01-31 11:24:57,950 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ROI_1" set as Organ
+2017-01-31 11:24:58,143 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ROI_1" set as OrganAtRisk
+2017-01-31 11:25:38,797 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-01-31 11:25:40,703 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:25:41,116 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:25:41,511 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:25:41,953 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:25:42,372 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:25:42,790 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:25:43,204 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:25:43,524 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-01-31 11:25:43,662 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-01-31 11:25:43,885 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-01-31 11:25:44,077 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-01-31 11:25:44,250 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-01-31 11:25:44,414 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-01-31 11:25:44,580 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-01-31 11:28:59,006 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-31 11:28:59,368 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-01-31 11:28:59,446 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-31 11:29:00,734 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-01-31 11:29:01,793 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-01-31 11:29:02,733 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-01-31 11:29:03,839 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-01-31 11:29:04,076 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-01-31 11:29:04,597 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV56 is NOT approved.
+2017-01-31 11:29:05,104 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV56 is NOT approved.
+2017-01-31 11:29:05,602 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-01-31 11:29:06,125 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-01-31 11:29:06,648 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-01-31 11:29:07,179 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PLEXUS BRACHIAL is NOT approved.
+2017-01-31 11:29:07,690 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-01-31 11:29:08,211 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-01-31 11:29:08,860 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-01-31 11:29:09,666 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-01-31 11:29:10,184 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-01-31 11:29:10,766 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-01-31 11:29:11,539 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ROI_1 is NOT approved.
+2017-01-31 11:29:25,024 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:29:26,357 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-01-31 11:29:26,515 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-01-31 11:29:26,743 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-01-31 11:29:26,992 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-01-31 11:29:27,244 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-01-31 11:29:27,851 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-01-31 11:29:28,187 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-01-31 11:29:28,449 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-01-31 11:29:28,691 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-01-31 11:29:28,886 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-01-31 11:29:29,142 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-01-31 11:29:29,438 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-01-31 11:29:29,703 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-01-31 11:29:30,047 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV expi" set as Gtv
+2017-01-31 11:29:30,258 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV expi" set as Target
+2017-01-31 11:29:30,493 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-01-31 11:29:30,732 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV inspi" set as Gtv
+2017-01-31 11:29:30,941 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV inspi" set as Target
+2017-01-31 11:29:31,178 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV56 is NOT approved.
+2017-01-31 11:29:31,412 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ITV56" set as TreatedVolume
+2017-01-31 11:29:31,628 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ITV56" set as Target
+2017-01-31 11:29:31,951 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV56 is NOT approved.
+2017-01-31 11:29:32,289 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV56" set as Ptv
+2017-01-31 11:29:32,502 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV56" set as Target
+2017-01-31 11:29:32,750 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-01-31 11:29:32,988 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BR SOUCHE" set as Organ
+2017-01-31 11:29:33,181 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BR SOUCHE" set as OrganAtRisk
+2017-01-31 11:29:33,438 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-01-31 11:29:33,678 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TRACHEE" set as Organ
+2017-01-31 11:29:33,892 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TRACHEE" set as OrganAtRisk
+2017-01-31 11:29:34,138 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-01-31 11:29:34,375 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-01-31 11:29:34,566 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-01-31 11:29:34,814 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PLEXUS BRACHIAL is NOT approved.
+2017-01-31 11:29:35,049 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PLEXUS BRACHIAL" set as Organ
+2017-01-31 11:29:35,242 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PLEXUS BRACHIAL" set as OrganAtRisk
+2017-01-31 11:29:35,573 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-01-31 11:29:35,827 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-01-31 11:29:36,020 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-01-31 11:29:36,286 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-01-31 11:29:36,520 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON DRT" set as Organ
+2017-01-31 11:29:36,715 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON DRT" set as OrganAtRisk
+2017-01-31 11:29:36,967 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-01-31 11:29:37,198 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON GCHE" set as Organ
+2017-01-31 11:29:37,387 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON GCHE" set as OrganAtRisk
+2017-01-31 11:29:37,734 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-01-31 11:29:37,981 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-01-31 11:29:38,177 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-01-31 11:29:38,421 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-01-31 11:29:38,656 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-01-31 11:29:38,849 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-01-31 11:29:39,091 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-01-31 11:29:39,323 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-01-31 11:29:39,515 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-01-31 11:29:39,776 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ROI ROI_1 is NOT approved.
+2017-01-31 11:29:40,013 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ROI_1" set as Organ
+2017-01-31 11:29:40,205 - hmrlib.roi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ROI_1" set as OrganAtRisk
+2017-01-31 11:30:20,141 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-01-31 11:30:22,771 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:30:23,203 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:30:23,657 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:30:24,115 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:30:24,561 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:30:25,027 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:30:25,473 - hmrlib.poi - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (6.61191101074, 11.8730010986, 3.70006027222)
+2017-01-31 11:30:25,755 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-01-31 11:30:25,896 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-01-31 11:30:26,136 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-01-31 11:30:26,321 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-01-31 11:30:26,500 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-01-31 11:30:26,662 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-01-31 11:30:26,829 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-01-31 11:30:28,262 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV A1 56Gy" added.
+2017-01-31 11:30:28,592 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV A1 56Gy" added.
+2017-01-31 11:30:28,810 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1" added.
+2017-01-31 11:30:29,042 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2" added.
+2017-01-31 11:30:29,260 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3" added.
+2017-01-31 11:31:17,023 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "BR SOUCHE" added.
+2017-01-31 11:31:18,558 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COEUR" added.
+2017-01-31 11:31:22,863 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COTES dans PTV+0.5cm" added.
+2017-01-31 11:31:24,898 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OESOPHAGE" added.
+2017-01-31 11:31:26,260 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MOELLE" added.
+2017-01-31 11:31:32,503 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PEAU" added.
+2017-01-31 11:31:33,890 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PLEXUS BRACHIAL" added.
+2017-01-31 11:31:38,637 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "POUMON DRT" added.
+2017-01-31 11:31:39,973 - hmrlib.optim - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TRACHEE" added.
+2017-01-31 11:43:16,293 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-31 11:43:16,356 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:14:17.405000]
+2017-01-31 11:43:16,507 - hmrlib - INFO - [hmr30489 - ROBERGE^PAUL^EMILE (640502) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-01-31 12:18:20,334 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-31 12:18:20,787 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script finalisation.py
+2017-01-31 12:18:20,923 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-01-31 12:18:36,823 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] CT slice width = 0.1 cm
+2017-01-31 12:18:38,297 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Initial point = {'x':-0.9750, 'y':4.1000, 'z':2.7000} cm
+2017-01-31 12:18:38,470 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Unit vector towards PTV center = {'x':0.6884, 'y':0.7146, 'z':-0.1244} cm
+2017-01-31 12:18:38,612 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Approximate unit vector towards PTV center on single CT slice = {'x':0.6884, 'y':0.7146, 'z':0.0000} cm
+2017-01-31 12:18:38,831 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose per fraction at initial point = 1672.929 cGy
+2017-01-31 12:18:39,023 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0094, 'y':4.0643, 'z':2.7000} = 1595.439 cGy
+2017-01-31 12:18:39,208 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0438, 'y':4.0285, 'z':2.7000} = 1523.279 cGy
+2017-01-31 12:18:39,383 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0783, 'y':3.9928, 'z':2.7000} = 1456.450 cGy
+2017-01-31 12:18:39,573 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0610, 'y':4.0107, 'z':2.7000} = 1489.198 cGy
+2017-01-31 12:18:39,750 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0438, 'y':4.0285, 'z':2.7000} = 1523.279 cGy
+2017-01-31 12:18:39,923 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0524, 'y':4.0196, 'z':2.7000} = 1506.072 cGy
+2017-01-31 12:18:40,098 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0610, 'y':4.0107, 'z':2.7000} = 1489.198 cGy
+2017-01-31 12:18:40,275 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0567, 'y':4.0151, 'z':2.7000} = 1497.593 cGy
+2017-01-31 12:18:40,452 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0524, 'y':4.0196, 'z':2.7000} = 1506.072 cGy
+2017-01-31 12:18:40,639 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0546, 'y':4.0174, 'z':2.7000} = 1501.822 cGy
+2017-01-31 12:18:40,816 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0567, 'y':4.0151, 'z':2.7000} = 1497.593 cGy
+2017-01-31 12:18:40,991 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0557, 'y':4.0163, 'z':2.7000} = 1499.705 cGy
+2017-01-31 12:18:41,175 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0546, 'y':4.0174, 'z':2.7000} = 1501.822 cGy
+2017-01-31 12:18:41,349 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0551, 'y':4.0168, 'z':2.7000} = 1500.763 cGy
+2017-01-31 12:18:41,522 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0557, 'y':4.0163, 'z':2.7000} = 1499.705 cGy
+2017-01-31 12:18:41,696 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0554, 'y':4.0165, 'z':2.7000} = 1500.234 cGy
+2017-01-31 12:18:41,870 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1499.969 cGy
+2017-01-31 12:18:42,045 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0165, 'z':2.7000} = 1500.102 cGy
+2017-01-31 12:18:42,235 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1500.036 cGy
+2017-01-31 12:18:42,409 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1499.969 cGy
+2017-01-31 12:18:42,583 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1500.003 cGy
+2017-01-31 12:18:42,759 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1499.986 cGy
+2017-01-31 12:18:42,931 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1499.994 cGy
+2017-01-31 12:18:43,097 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1500.003 cGy
+2017-01-31 12:18:43,275 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1499.998 cGy
+2017-01-31 12:18:43,438 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Dose at {'x':-1.0555, 'y':4.0164, 'z':2.7000} = 1500.000 cGy
+2017-01-31 12:18:43,585 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Final point = {'x':-1.0555, 'y':4.0164, 'z':2.7000} cm
+2017-01-31 12:18:43,800 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] POI PT PRESC A1 is NOT approved.
+2017-01-31 12:18:44,175 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] POI PT PRESC A1 is NOT approved.
+2017-01-31 12:18:45,239 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] Set coordinates of POI "PT PRESC A1" to {'x':-1.0555, 'y':4.0164, 'z':2.7000}.
+2017-01-31 12:18:46,683 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] POI PT PRESC A1: (x, y, z) = (-1.05551734868, 4.01641081011, 2.7)
+2017-01-31 12:33:17,789 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] ================================================================================
+2017-01-31 12:33:17,915 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] End of script finalisation.py [execution time = 0:14:57.907000]
+2017-01-31 12:33:18,084 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/A1] ================================================================================

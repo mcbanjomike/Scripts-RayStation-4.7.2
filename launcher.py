@@ -74,8 +74,7 @@ def plan_launcher_v3():
             panel.Location = Point(x, y)
             panel.BorderStyle = BorderStyle.None
             return panel            
-            
-            
+                       
         def setupPlanningScriptLauncher(self):
             self.LauncherPanel = self.newPanel(0, 0)
 
@@ -2142,7 +2141,6 @@ def final_launcher():
             self.Beamset2Window.Controls.Add(self.Label26)              
             self.Beamset2Window.Controls.Add(self.Label27)    
                   
-
         def setupBeamset3Window(self):
             self.Beamset3Window = self.medPanel(300, 360)
             
@@ -2602,7 +2600,10 @@ def finalize_beamset(original_beamset_name, rx_dose, nb_fx, site, ptv_name, colo
         try:
             statistics.stereo_brain_statistics()
         except:
-            pass
+            file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\crane.txt'
+            output = patient.PatientName + ',' + patient.PatientID + ',' + plan.Name + ',' + bs.DicomPlanLabel + ',' + 'Echec dans la collecte des statistiques'
+            with open(file_path, 'a') as stat_file:
+                stat_file.write(output + '\n')
     
     #Check to see if PTV is drawn using contours (since prescription point placement will fail if the PTV is in voxel format)
     try:
