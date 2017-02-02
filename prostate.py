@@ -85,7 +85,7 @@ def create_prostate_plan_A2():
     # 1. 80 Gy-40fx > 54 Gy + 26 Gy
     # 2. 66 Gy-33fx > 44 Gy + 22 Gy
     # 3. 66 Gy-33fx > 66 Gy + Boost (NB nobody does this ever)
-    # 4. 66 Gy-22fx > 42 Gy + 24 Gy
+    # 4. 66 Gy-22fx > 42 Gy + 24 Gy - NOT ANY MORE!
     # 5. 60 Gy-20fx > 42 Gy + 18 Gy
     # Use number of fractions to differentiate 80 Gy plans from 66 Gy ones. Use presence of PTV Boost xxGy to differentiate between cases 2 and 3.
     
@@ -124,19 +124,10 @@ def create_prostate_plan_A2():
         nb_fx_A2 = 11
         rx_dose_A2 = 22
         plan.BeamSets[0].Prescription.PrimaryDosePrescription.DoseValue = 4180
-    elif nb_fx_A1 == 14: #42 + 24 or 42 + 18 (3 Gy per fraction)
+    elif nb_fx_A1 == 14: #42 + 18 (3 Gy per fraction)        
+        nb_fx_A2 = 6
+        rx_dose_A2 = 18
         plan.BeamSets[0].Prescription.PrimaryDosePrescription.DoseValue = 3990
-        try:
-            total_fx = patient.TreatmentPlans["A1 seul"].BeamSets[0].FractionationPattern.NumberOfFractions          
-            if total_fx == 20: #This indicates 42+18
-                nb_fx_A2 = 6
-                rx_dose_A2 = 18                         
-            else: #42+24
-                nb_fx_A2 = 8
-                rx_dose_A2 = 24                  
-        except: #Fall back on 42+18 since it is the most common prescription
-            nb_fx_A2 = 6
-            rx_dose_A2 = 18
     elif nb_fx_A1 == 33: #66 + Boost
         plan.BeamSets[0].Prescription.PrimaryDosePrescription.DoseValue = 6270
         # Check for PTVBOOST and adjust Rx and number of fractions if found.
@@ -315,7 +306,7 @@ def create_prostate_plan_A2():
         plan.PlanOptimizations[1].Objective.ConstituentFunctions[i].DoseFunctionParameters.Weight = 10
         i += 1
 
-        if nb_fx_A2 == 11 or nb_fx_A2 == 8: # 44 + 22 or 42 + 24 (3 Gy per fraction)
+        if nb_fx_A2 == 11 or nb_fx_A2 == 8: # 44 + 22 or 42 + 24 (the latter doesn't happen any more)
             retval_7 = plan.PlanOptimizations[1].AddOptimizationFunction(FunctionType="MaxDose", RoiName="RECTUM+3mm", IsConstraint=False, RestrictAllBeamsIndividually=False, RestrictToBeam=None, IsRobust=False, RestrictToBeamSet=None)
             plan.PlanOptimizations[1].Objective.ConstituentFunctions[i].DoseFunctionParameters.DoseLevel = 6500
             plan.PlanOptimizations[1].Objective.ConstituentFunctions[i].DoseFunctionParameters.Weight = 10

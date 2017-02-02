@@ -2874,3 +2874,147 @@ AttributeError: 'NoneType' object has no attribute 'MaxLeafTravelDistancePerDegr
 2017-01-31 16:14:18,595 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
 2017-01-31 16:14:18,737 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:11.428000]
 2017-01-31 16:14:18,882 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-01 13:43:21,162 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 13:43:21,323 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-02-01 13:43:21,351 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 13:43:21,969 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-02-01 13:43:22,368 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-02-01 13:43:22,778 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV1 is NOT approved.
+2017-02-01 13:43:22,930 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV1 is NOT approved.
+2017-02-01 13:43:23,074 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-02-01 13:43:23,265 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-02-01 13:43:23,403 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-02-01 13:43:23,528 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-02-01 13:43:23,664 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-02-01 13:43:23,796 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-02-01 13:43:23,930 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-02-01 13:43:24,068 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-02-01 13:43:27,050 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 13:43:27,076 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:00:06.140000]
+2017-02-01 13:43:27,102 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 13:43:41,678 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 13:43:41,819 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-02-01 13:43:41,845 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 13:43:42,354 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-02-01 13:43:42,477 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-02-01 13:43:42,587 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV1 is NOT approved.
+2017-02-01 13:43:42,695 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV9 is NOT approved.
+2017-02-01 13:43:42,797 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-02-01 13:43:42,900 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-02-01 13:43:43,008 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-02-01 13:43:43,113 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-02-01 13:43:43,218 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-02-01 13:43:43,320 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-02-01 13:43:43,427 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-02-01 13:43:43,529 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-02-01 13:43:46,589 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 13:43:46,615 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:00:04.957000]
+2017-02-01 13:43:46,643 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 13:44:03,078 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 13:44:03,223 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-02-01 13:44:03,248 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 13:44:03,726 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-02-01 13:44:03,843 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-02-01 13:44:03,947 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV1 is NOT approved.
+2017-02-01 13:44:04,051 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV17.12 is NOT approved.
+2017-02-01 13:44:04,155 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-02-01 13:44:04,257 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-02-01 13:44:04,364 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-02-01 13:44:04,468 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-02-01 13:44:04,573 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-02-01 13:44:04,675 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-02-01 13:44:04,778 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-02-01 13:44:04,882 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-02-01 13:44:14,698 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 13:44:14,724 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:00:11.664000]
+2017-02-01 13:44:14,749 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 16:42:25,160 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 16:42:25,318 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-02-01 16:42:25,342 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 16:42:25,902 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-02-01 16:42:26,015 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-02-01 16:42:26,125 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV1 is NOT approved.
+2017-02-01 16:42:26,229 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV27 is NOT approved.
+2017-02-01 16:42:26,333 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-02-01 16:42:26,435 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-02-01 16:42:26,542 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-02-01 16:42:26,644 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-02-01 16:42:26,755 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-02-01 16:42:26,858 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-02-01 16:42:26,963 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-02-01 16:42:27,066 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-02-01 16:42:54,831 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 16:42:54,856 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:00:29.720000]
+2017-02-01 16:42:54,884 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 16:43:24,256 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 16:43:24,453 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-02-01 16:43:24,478 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 16:43:24,968 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-02-01 16:43:25,086 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-02-01 16:43:25,191 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV1 is NOT approved.
+2017-02-01 16:43:25,292 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV27 is NOT approved.
+2017-02-01 16:43:25,394 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-02-01 16:43:25,495 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-02-01 16:43:25,600 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-02-01 16:43:25,703 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-02-01 16:43:25,808 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-02-01 16:43:25,911 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-02-01 16:43:26,014 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-02-01 16:43:26,116 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-02-01 16:43:50,432 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-02-01 16:43:50,489 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-02-01 16:43:51,081 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-02-01 16:43:51,194 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-02-01 16:43:51,666 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-02-01 16:43:51,881 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-02-01 16:43:52,008 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-02-01 16:43:52,152 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-02-01 16:43:52,273 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-02-01 16:43:52,424 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV1 is NOT approved.
+2017-02-01 16:43:52,549 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV1" set as Gtv
+2017-02-01 16:43:52,624 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV1" set as Target
+2017-02-01 16:43:52,716 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV27 is NOT approved.
+2017-02-01 16:43:52,792 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV27" set as Ptv
+2017-02-01 16:43:52,858 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV27" set as Target
+2017-02-01 16:43:52,950 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-02-01 16:43:53,024 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CERVEAU" set as Organ
+2017-02-01 16:43:53,089 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CERVEAU" set as OrganAtRisk
+2017-02-01 16:43:53,204 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-02-01 16:43:53,286 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-02-01 16:43:53,346 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-02-01 16:43:53,431 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-02-01 16:43:53,505 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL DRT" set as Organ
+2017-02-01 16:43:53,567 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL DRT" set as OrganAtRisk
+2017-02-01 16:43:53,653 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-02-01 16:43:53,726 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL GCHE" set as Organ
+2017-02-01 16:43:53,789 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL GCHE" set as OrganAtRisk
+2017-02-01 16:43:53,892 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-02-01 16:43:53,965 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TR CEREBRAL" set as Organ
+2017-02-01 16:43:54,031 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TR CEREBRAL" set as OrganAtRisk
+2017-02-01 16:43:54,120 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-02-01 16:43:54,194 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CHIASMA" set as Organ
+2017-02-01 16:43:54,260 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CHIASMA" set as OrganAtRisk
+2017-02-01 16:43:54,357 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-02-01 16:43:54,433 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT DRT" set as Organ
+2017-02-01 16:43:54,497 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT DRT" set as OrganAtRisk
+2017-02-01 16:43:54,595 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-02-01 16:43:54,669 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT GCHE" set as Organ
+2017-02-01 16:43:54,732 - hmrlib.roi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT GCHE" set as OrganAtRisk
+2017-02-01 16:44:40,163 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-02-01 16:44:40,403 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-02-01 16:44:40,648 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-02-01 16:44:40,894 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-02-01 16:44:41,171 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-02-01 16:44:41,437 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-02-01 16:44:41,719 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-02-01 16:44:41,956 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-02-01 16:44:42,177 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-02-01 16:44:43,428 - hmrlib.optim - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV27" added.
+2017-02-01 16:44:43,645 - hmrlib.optim - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV27" added.
+2017-02-01 16:44:43,781 - hmrlib.optim - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1_3mm" added.
+2017-02-01 16:44:43,935 - hmrlib.optim - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2_8mm" added.
+2017-02-01 16:44:44,085 - hmrlib.optim - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3_1cm" added.
+2017-02-01 16:44:44,243 - hmrlib.optim - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TISSUS SAINS" added.
+2017-02-01 16:50:59,923 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-01 16:50:59,946 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:07:35.718000]
+2017-02-01 16:50:59,970 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
