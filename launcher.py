@@ -406,6 +406,33 @@ def plan_launcher_v3():
 
             elif self.sitecombo.Text == "Crâne":     
                 self.check1.Checked = True  #Double optimization
+                
+                ptv_name = "NoValue"
+                #roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+                for name in roi_names:
+                    n = name.replace(' ', '').upper()
+                    if 'PTV' in n and '-' not in n:
+                        if n[3:] not in ['1','2','3','4','5','6','7','8','9']:
+                            try:
+                               presc_dose = float(name[3:])
+                            except:
+                                continue
+                            ptv_name = name
+                            break  
+                if ptv_name != "NoValue":
+                    self.Label2.Text = ptv_name + " trouvé"
+                    self.comboBoxRx.Items.Add(ptv_name[3:]+"Gy-1")
+                    self.comboBoxRx.Items.Add(ptv_name[3:]+"Gy-3")
+                    if presc_dose > 20:
+                        self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact(ptv_name[3:]+"Gy-3")
+                    else:
+                        self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact(ptv_name[3:]+"Gy-1")
+                    self.techniquecombo.Items.Add("IMRT")
+                else:
+                    self.Label2.Text = "Attention: Aucun PTV trouvé!"     
+                    self.Label2.ForeColor = Color.Red                  
+                    
+                """
                 #Identify the PTV
                 if 'PTV15' in roi_names:
                     self.Label2.Text = "PTV15 trouvé"
@@ -424,6 +451,9 @@ def plan_launcher_v3():
                 else:
                     self.Label2.Text = "Attention: Aucun PTV trouvé!"     
                     self.Label2.ForeColor = Color.Red     
+                """
+                
+                
                 
                 if 'CERVEAU' not in roi_names:
                     self.Label3.Text = "ROI CERVEAU pas trouvé!"
@@ -789,21 +819,20 @@ def plan_launcher_v3():
                 
  
             elif self.sitecombo.Text == 'Crâne' or self.sitecombo.Text == 'Crâne 2 niveaux':
-                if rx_dose == 1500:
-                    ptv = patient.PatientModel.RegionsOfInterest["PTV15"]
-                    if self.sitecombo.Text == 'Crâne 2 niveaux':
+                if self.sitecombo.Text == 'Crâne 2 niveaux':
+                    if rx_dose == 1500:
+                        ptv = patient.PatientModel.RegionsOfInterest["PTV15"]
                         ptv_low = patient.PatientModel.RegionsOfInterest["PTV12"]
-                    else:
-                        ptv_low = None
-                        rx_dose_low = None
-                elif rx_dose == 1800:  
-                    ptv = patient.PatientModel.RegionsOfInterest["PTV18"]
-                    if self.sitecombo.Text == 'Crâne 2 niveaux':
-                        ptv_low = patient.PatientModel.RegionsOfInterest["PTV15"]
-                    else:
-                        ptv_low = None
-                        rx_dose_low = None                    
-            
+                    elif rx_dose == 1800:  
+                        ptv = patient.PatientModel.RegionsOfInterest["PTV18"]
+                        ptv_low = patient.PatientModel.RegionsOfInterest["PTV15"]  
+                        
+                else:
+                    ptv = patient.PatientModel.RegionsOfInterest[self.Label2.Text.split()[0]]
+                    ptv_low = None
+                    rx_dose_low = None
+                    
+                    
                 #Create the plan data dictionary to send to the component scripts                        
                 #d = {'plan_name':'A1'}
                 d = dict(patient = patient,
@@ -849,7 +878,8 @@ def plan_launcher_v3():
                 optimization_objectives.add_opt_obj_brain_stereo_v2(plan_data = d)
 
                 self.Status.Text = "En cours: Ajout des clinical goals"
-                clinical_goals.add_dictionary_cg('Crane Stereo', rx_dose/100, 1, plan = patient.TreatmentPlans[d['plan_name']])
+                eval.add_clinical_goal(ptv.Name, rx_dose, 'AtLeast', 'VolumeAtDose', 99, plan = patient.TreatmentPlans[d['plan_name']])
+                clinical_goals.add_dictionary_cg('Crane Stereo', 15, 1, plan = patient.TreatmentPlans[d['plan_name']]) #Same CG no matter what the Rx dose is
                 if ptv_low != None:
                     eval.add_clinical_goal('Mod_ptvL', rx_dose_low, 'AtLeast', 'VolumeAtDose', 99, plan = patient.TreatmentPlans[d['plan_name']])
                 
@@ -2601,7 +2631,7 @@ def finalize_beamset(original_beamset_name, rx_dose, nb_fx, site, ptv_name, colo
             statistics.stereo_brain_statistics()
         except:
             file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\crane.txt'
-            output = patient.PatientName + ',' + patient.PatientID + ',' + plan.Name + ',' + bs.DicomPlanLabel + ',' + 'Echec dans la collecte des statistiques'
+            output = patient.PatientName + ',' + patient.PatientID + ',' + plan.Name + ',' + bs.DicomPlanLabel + ',' + 'Collecte de statistiques échouée'
             with open(file_path, 'a') as stat_file:
                 stat_file.write(output + '\n')
     elif site == 'Poumon':
@@ -2609,7 +2639,7 @@ def finalize_beamset(original_beamset_name, rx_dose, nb_fx, site, ptv_name, colo
             statistics.stereo_lung_statistics()
         except:
             file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\poumon.txt'
-            output = patient.PatientName + ',' + patient.PatientID + ',' + plan.Name + ',' + bs.DicomPlanLabel + ',' + 'Echec dans la collecte des statistiques'
+            output = patient.PatientName + ',' + patient.PatientID + ',' + plan.Name + ',' + bs.DicomPlanLabel + ',' + 'Collecte de statistiques échouée'
             with open(file_path, 'a') as stat_file:
                 stat_file.write(output + '\n')
                 

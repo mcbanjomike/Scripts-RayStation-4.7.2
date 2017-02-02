@@ -106,6 +106,14 @@ def add_opt_obj_brain_stereo_v2(plan_data):
     plan = plan_data['patient'].TreatmentPlans[plan_data['plan_name']]
 
     if plan_data['ptv_low'] is None: # 1 dose level
+        optim.add_mindose_objective(plan_data['ptv'].Name, plan_data['rx_dose'], weight=50, plan=plan)
+        optim.add_maxdose_objective(plan_data['ptv'].Name, plan_data['rx_dose']*1.5, plan=plan)
+        optim.add_maxdose_objective('RING_1_3mm', plan_data['rx_dose']*1.03, plan=plan)
+        optim.add_maxdose_objective('RING_2_8mm', plan_data['rx_dose']*0.66, plan=plan)
+        optim.add_maxdose_objective('RING_3_1cm', plan_data['rx_dose']*0.5, plan=plan)
+        optim.add_maxdose_objective('TISSUS SAINS', plan_data['rx_dose']*0.42, plan=plan)
+ 
+        """
         if plan_data['rx_dose'] == 1500:
             optim.add_mindose_objective('PTV15', 1500, weight=50, plan=plan)
             optim.add_maxdose_objective('PTV15', 2250, plan=plan)
@@ -123,7 +131,8 @@ def add_opt_obj_brain_stereo_v2(plan_data):
             optim.add_maxdose_objective('RING_2_8mm', 1250, plan=plan)
             optim.add_maxdose_objective('RING_3_1cm', 850, plan=plan)
             optim.add_maxdose_objective('TISSUS SAINS', 725, plan=plan)
-        
+        """    
+    
     else:     # 2 dose levels
         optim.add_mindose_objective(plan_data['ptv'].Name, plan_data['rx_dose'], weight=50, plan=plan)
         optim.add_maxdose_objective(plan_data['ptv'].Name, plan_data['rx_dose']*1.5, plan=plan)
