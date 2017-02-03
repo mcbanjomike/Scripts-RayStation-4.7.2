@@ -804,14 +804,17 @@ def plan_launcher_v3():
                     self.Status.Text = "Auto-optimization en cours (1er opt avant fit)"
                     opt_plan.PlanOptimizations[0].RunOptimization()
                     self.Status.Text = "Auto-optimization en cours (2er opt avant fit)"
+                    optim.set_optimization_parameters(plan=patient.TreatmentPlans['A1 seul'],fluence_iterations=0, max_iterations=20, compute_intermediate_dose=False)
                     opt_plan.PlanOptimizations[0].RunOptimization()                     
                     self.Status.Text = "Auto-optimization en cours (Ajustement des objectifs)"                        
                     prostate.fit_obj_prostate(plan=opt_plan, beamset = opt_plan.BeamSets[0])
                     opt_plan.PlanOptimizations[0].AutoScaleToPrescription = False
                     opt_plan.PlanOptimizations[0].ResetOptimization()
                     self.Status.Text = "Auto-optimization en cours (1er opt après fit)"
+                    optim.set_optimization_parameters(plan=patient.TreatmentPlans['A1 seul'],fluence_iterations=20, max_iterations=80, compute_intermediate_dose=True)
                     opt_plan.PlanOptimizations[0].RunOptimization()
                     self.Status.Text = "Auto-optimization en cours (2er opt après fit)"
+                    optim.set_optimization_parameters(plan=patient.TreatmentPlans['A1 seul'],fluence_iterations=0, max_iterations=20, compute_intermediate_dose=False)
                     opt_plan.PlanOptimizations[0].RunOptimization()                   
                     
                 self.Status.Text = "Script terminé! Cliquez sur Cancel pour sortir."

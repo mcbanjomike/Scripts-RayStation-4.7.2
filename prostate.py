@@ -171,7 +171,7 @@ def create_prostate_plan_A2():
     beams.add_beams_prostate_A2(beamset=beamset)
 
     # Set optimization parameters
-    optim.set_optimization_parameters(plan=plan, beamset=2)
+    optim.set_optimization_parameters(plan=plan,fluence_iterations=20, max_iterations=80, compute_intermediate_dose=True, beamset=2)
 
     # Set maximum delivery time
     if nb_fx_A2 == 8 or nb_fx_A2 ==6: #3Gy per fraction
@@ -650,7 +650,7 @@ def prostate_A1_add_plan_and_beamset(plan_data):
 def prostate_A1_opt_settings(plan_data):
 
     # Set optimization parameters
-    optim.set_optimization_parameters(plan=plan_data['patient'].TreatmentPlans['A1 seul'])
+    optim.set_optimization_parameters(plan=plan_data['patient'].TreatmentPlans['A1 seul'],fluence_iterations=20, max_iterations=80, compute_intermediate_dose=True)
 
     # Set VMAT conversion parameters
     if plan_data['nb_fx'] == 5: #7.25 Gy per fraction
