@@ -76,7 +76,7 @@ def test_MA():
     #exam = lib.get_current_examination()
     #patient = lib.get_current_patient()
     
-    statistics.stereo_brain_statistics()
+    #statistics.stereo_brain_statistics()
     
     #a,b,c,d,e = verification.verify_beams()
     #message.message_window(a+str(b)+c+d+e)
@@ -101,7 +101,7 @@ def test_MA():
     
     #ui.TabControl_ToolBar.ToolBarGroup['TREAT AND PROTECT'].Button_ConformBeamMLC.Click()
    
-    #launcher.verif_finale()
+    launcher.verification_finale_slim()
     #message.message_window(verification.verify_segments())
     #optim.essai_autre_technique()
     #message.message_window('essai')

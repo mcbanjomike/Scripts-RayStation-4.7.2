@@ -3330,3 +3330,143 @@ AttributeError: 'NoneType' object has no attribute 'MaxLeafTravelDistancePerDegr
 2017-02-03 15:38:42,306 - hmrlib - INFO - [hmr30489 - BENOIT_3^JACQUES^ANDRE^WILSON (1190698) - CT 1 - A2/A1] ================================================================================
 2017-02-03 15:38:42,355 - hmrlib - INFO - [hmr30489 - BENOIT_3^JACQUES^ANDRE^WILSON (1190698) - CT 1 - A2/A1] End of script plan_prostate_A2.py [execution time = 0:00:06.904000]
 2017-02-03 15:38:42,400 - hmrlib - INFO - [hmr30489 - BENOIT_3^JACQUES^ANDRE^WILSON (1190698) - CT 1 - A2/A1] ================================================================================
+2017-02-07 15:05:54,670 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:05:55,108 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-02-07 15:05:55,300 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:06:28,447 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:06:28,578 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:00:33.996000]
+2017-02-07 15:06:28,718 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:06:34,295 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:06:34,476 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_initiale.py
+2017-02-07 15:06:34,596 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:06:47,468 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:06:47,597 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_initiale.py [execution time = 0:00:13.140000]
+2017-02-07 15:06:47,740 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:07:15,987 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:07:16,349 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:07:16,472 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:07:33,628 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:07:33,754 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:17.591000]
+2017-02-07 15:07:33,880 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:07:38,884 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:07:39,131 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_initiale.py
+2017-02-07 15:07:39,338 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:07:47,127 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:07:47,251 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_initiale.py [execution time = 0:00:08.216000]
+2017-02-07 15:07:47,389 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:08:02,558 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:08:02,751 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:08:02,803 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:09:20,513 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:09:20,639 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:01:17.921000]
+2017-02-07 15:09:20,770 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:09:27,292 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:09:27,727 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:09:27,848 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:10:42,796 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:10:42,920 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:01:15.657000]
+2017-02-07 15:10:43,042 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:10:48,411 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:10:48,848 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:10:48,982 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:11:32,460 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:11:32,589 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:44.178000]
+2017-02-07 15:11:32,711 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:11:38,130 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:11:38,548 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:11:38,683 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:13:55,518 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:13:55,644 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:02:17.522000]
+2017-02-07 15:13:55,763 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:14:01,473 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:14:01,785 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:14:01,931 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:15:43,062 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:15:43,188 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:01:41.565000]
+2017-02-07 15:15:43,309 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:15:52,919 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:15:53,361 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:15:53,492 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:16:03,271 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (1.08861999512, 1.73466949463, 0.0)
+2017-02-07 15:16:03,785 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.911380004883, 4.73467102051, 2.0)
+2017-02-07 15:16:24,271 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:16:24,396 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:31.473000]
+2017-02-07 15:16:24,519 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:16:30,285 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:16:30,615 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:16:30,752 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:17:23,747 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:17:23,872 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:53.477000]
+2017-02-07 15:17:23,993 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:17:29,885 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:17:30,145 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:17:30,287 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:17:47,065 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (1.08861999512, 1.73466949463, 0.0)
+2017-02-07 15:17:47,574 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.911380004883, 4.73467102051, 2.0)
+2017-02-07 15:18:08,462 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:18:08,586 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:38.639000]
+2017-02-07 15:18:08,730 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:18:14,134 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:18:14,588 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:18:14,722 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:18:33,725 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (1.08861999512, 1.73466949463, 0.0)
+2017-02-07 15:18:34,233 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.911380004883, 4.73467102051, 2.0)
+2017-02-07 15:22:24,295 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:22:24,421 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:04:10.250000]
+2017-02-07 15:22:24,544 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:22:30,670 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:22:31,124 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:22:31,254 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:23:54,378 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (1.08861999512, 1.73466949463, 0.0)
+2017-02-07 15:23:54,898 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.911380004883, 4.73467102051, 2.0)
+2017-02-07 15:24:42,258 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:24:42,383 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:02:11.725000]
+2017-02-07 15:24:42,508 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:24:47,372 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:24:47,629 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:24:47,751 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:24:54,683 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (1.08861999512, 1.73466949463, 0.0)
+2017-02-07 15:24:55,207 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.911380004883, 4.73467102051, 2.0)
+2017-02-07 15:25:48,358 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:25:48,480 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:01:01.050000]
+2017-02-07 15:25:48,603 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:29:34,915 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:29:35,233 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:29:35,355 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:29:50,426 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (1.08861999512, 1.73466949463, 0.0)
+2017-02-07 15:29:50,965 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.911380004883, 4.73467102051, 2.0)
+2017-02-07 15:31:21,020 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:31:21,148 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:01:46.163000]
+2017-02-07 15:31:21,322 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:31:27,798 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:31:28,243 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script toggle_reference_dose.py
+2017-02-07 15:31:28,382 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:31:29,032 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:31:29,146 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script toggle_reference_dose.py [execution time = 0:00:01.313000]
+2017-02-07 15:31:29,257 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:31:34,506 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:31:34,922 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-02-07 15:31:35,053 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:31:52,698 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (1.08861999512, 1.73466949463, 0.0)
+2017-02-07 15:31:53,214 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.911380004883, 4.73467102051, 2.0)
+2017-02-07 15:34:14,541 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:34:14,670 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:02:40.089000]
+2017-02-07 15:34:14,796 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:34:19,877 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:34:20,129 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_initiale.py
+2017-02-07 15:34:20,337 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:34:34,671 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (1.08861999512, 1.73466949463, 0.0)
+2017-02-07 15:34:35,182 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.911380004883, 4.73467102051, 2.0)
+2017-02-07 15:34:43,921 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (1.08861999512, 1.73466949463, 0.0)
+2017-02-07 15:34:44,417 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.911380004883, 4.73467102051, 2.0)
+2017-02-07 15:36:26,319 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:36:26,441 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_initiale.py [execution time = 0:02:06.503000]
+2017-02-07 15:36:26,600 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:36:32,426 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:36:32,831 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_finale.py
+2017-02-07 15:36:33,024 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:36:41,002 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (1.08861999512, 1.73466949463, 0.0)
+2017-02-07 15:36:41,507 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.911380004883, 4.73467102051, 2.0)
+2017-02-07 15:37:24,533 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-07 15:37:24,663 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:00:52.236000]
+2017-02-07 15:37:24,812 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================

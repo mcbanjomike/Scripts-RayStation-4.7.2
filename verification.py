@@ -125,7 +125,7 @@ def verify_isocenter():
             if (loc_coords.x-iso_coords.x ==0 ) and (loc_coords.y-iso_coords.y == 0) and (loc_coords.z-iso_coords.z == 0):
                 shift_text += "Le point de localisation et le point " + iso_point_name + " ont les mêmes coordonnés"
             else:
-                shift_text += "Shift de %.2fcm, %.2fcm, %.2fcm entre point de localisation et point %s" % (loc_coords.x-iso_coords.x, loc_coords.z-iso_coords.z, iso_coords.y-loc_coords.y, iso_point_name)     
+                shift_text += "Shift de %.2fcm, %.2fcm, %.2fcm entre point de localisation\n     et point %s" % (loc_coords.x-iso_coords.x, loc_coords.z-iso_coords.z, iso_coords.y-loc_coords.y, iso_point_name)     
 
     # Beam isocenters
     beam_iso_text = "Coordonnées faisceaux:       "
@@ -152,7 +152,7 @@ def verify_isocenter():
         iso_shift_y = iso_coords.y - beam_iso_poi[1].Value
         iso_shift_z = iso_coords.z - beam_iso_poi[2].Value
         if abs(iso_shift_x) > 0.005 or abs(iso_shift_y) > 0.005 or abs(iso_shift_z) > 0.005:
-            shift_text += "\nShift de %.2fcm, %.2fcm, %.2fcm entre les faisceaux et le point %s" % (-1*iso_shift_x, -1*iso_shift_z, iso_shift_y, iso_point_name)
+            shift_text += "\nShift de %.2fcm, %.2fcm, %.2fcm entre les faisceaux et\n     le point %s" % (-1*iso_shift_x, -1*iso_shift_z, iso_shift_y, iso_point_name)
         else:
             shift_text += "\nTous les faisceaux partagent les coordonnés du point " + iso_point_name
             
@@ -247,13 +247,13 @@ def verify_beams():
             if machine_type != 'BeamMod': 
                 leaf_open_text += "Vérification des lames SUP/INF seulement possible sur Beam Modulator"
             elif first_leaf_open and last_leaf_open:
-                leaf_open_text += "Première et dernère paire de lames ouvertes dans au moins un segment,\nPTV potentiellement trop large pour collimateur"
+                leaf_open_text += "Première et dernère paire de lames ouvertes dans au moins\nun segment, PTV potentiellement trop large pour collimateur"
             elif first_leaf_open and not last_leaf_open:
                 leaf_open_text += "Première paire de lames ouverte dans au moins un segment,\nil est peut-être nécessaire de déplacer l'isocentre"
             elif not first_leaf_open and last_leaf_open:
                 leaf_open_text += "Dernière paire de lames ouverte dans au moins un segment,\nil est peut-être nécessaire de déplacer l'isocentre"
             elif not first_leaf_open and not last_leaf_open:
-                leaf_open_text += "Première et dernière paires de lames fermées pour tous les segments"
+                leaf_open_text += "Première/dernière paires de lames fermées pour tous les segments"
 
         if machine_mismatch:
             machine_text = "Machine pas pareil pour tous les faisceaux"
@@ -305,7 +305,7 @@ def verify_opt_parameters():
                 settings_text += "pas coché\n"
     
     
-        settings_text = "Gantry Spacing / Max Delivery Time: "
+        settings_text += "Gantry Spacing / Max Delivery Time: "
         
         old_time = 0
         new_time = 0
