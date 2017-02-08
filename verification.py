@@ -167,7 +167,7 @@ def verify_beams():
      
     #Beam details
     number_of_beams = 0
-    beam_info = "Nom    /   Description   /    Gantry    /    Sens    /   Colli   /  Couch"
+    beam_info = "Nom    /    Description    /    Gantry    /    Sens    /   Colli   /  Couch"
     beams = True
     try:
         beam_name = beamset.Beams[0].Name
@@ -258,12 +258,12 @@ def verify_beams():
         if machine_mismatch:
             machine_text = "Machine pas pareil pour tous les faisceaux"
         else:
-            machine_text = "Machine: " + machine_type + " pour tous les faisceaux"
+            machine_text = "Machine: " + machine_type + " (tous les faisceaux)"
             
         if energy_mismatch:
             energy_text = "Énergie pas pareil pour tous les faisceaux"
         else:
-            energy_text = "Énergie: %dMV pour tous les faisceaux" % energy
+            energy_text = "Énergie: %dMV (tous les faisceaux)" % energy
     
     return beam_info, number_of_beams, leaf_open_text, machine_text, energy_text
 
