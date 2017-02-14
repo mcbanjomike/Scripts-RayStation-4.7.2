@@ -42,7 +42,7 @@ except Exception as e:
         pass
         
     
-def calculer_NTCP_foie(rx_dose=None, nb_fx=None):
+def calculer_NTCP_foie(rx_dose=None, nb_fx=None, CHC=False):
     #Code to calculate differential DVH
     #Taken from RayStation 4.5 Scripting Guideline
     #Note that all dose values are converted from cGy to Gy to be consistent with Excel spreadsheet
@@ -123,7 +123,11 @@ def calculer_NTCP_foie(rx_dose=None, nb_fx=None):
             total_volume += diff_volume
             
         #Calculate NTCP
-        TD50_1 = 45.8
+        if CHC:
+            TD50_1 = 39.8
+        else: #Meta
+            TD50_1 = 45.8
+            
         m = 0.12
         t = (rx_norm - TD50_1*sum_presc_BED**(-n))/(m*TD50_1*sum_presc_BED**(-n))
         
@@ -198,8 +202,7 @@ def calculer_NTCP_foie(rx_dose=None, nb_fx=None):
             diff_volume = dd
             dvh_file.write('%6.2f          %1.10f            %10.2f               %1.10f\n' % (diff_dose, dd, di_BED, dd))
 
-                      
-            
+                                   
 #Main block of scripts for stereo IMRT/VMAT liver cases
 def foie_stereo_rois(plan_data):
 
