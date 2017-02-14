@@ -66,16 +66,16 @@ def create_ac_qa_plans(plan=None, phantom_name='ARCCHECK', iso_name='ISO AC'):
 
     # Create QA plan (for each beamset)
     for bs in plan.BeamSets:
-        if len(bs.DicomPlanLabel) > 12:  # To prevent crashes if resulting name will be > 16 characters long
+        if len(bs.DicomPlanLabel) > 7:  # To prevent crashes if resulting name will be > 16 characters long
             if iso_name =='ISO AC':
-                name = 'QA ' + bs.DicomPlanLabel[:11]
+                name = 'QA ' + patient.PatientName[:3] + ' ' + bs.DicomPlanLabel[:7]
             else:
-                name = 'PD ' + bs.DicomPlanLabel[:11]
+                name = 'PD ' + patient.PatientName[:3] + ' ' + bs.DicomPlanLabel[:7]
         else:
             if iso_name =='ISO AC':
-                name = 'QA ' + bs.DicomPlanLabel
+                name = 'QA ' + patient.PatientName[:3] + ' ' + bs.DicomPlanLabel
             else:
-                name = 'PD ' + bs.DicomPlanLabel
+                name = 'PD ' + patient.PatientName[:3] + ' ' + bs.DicomPlanLabel
         #bs.CreateQAPlan(PhantomName=phantom_name, QAPlanName=name, IsoCenter=iso, DoseGrid=grid, ComputeDoseWhenPlanIsCreated=True)
 
         # Open the QA Preparation tab
