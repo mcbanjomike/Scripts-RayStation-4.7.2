@@ -3470,3 +3470,29 @@ AttributeError: 'NoneType' object has no attribute 'MaxLeafTravelDistancePerDegr
 2017-02-07 15:37:24,533 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
 2017-02-07 15:37:24,663 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_finale.py [execution time = 0:00:52.236000]
 2017-02-07 15:37:24,812 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-21 15:36:31,055 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-21 15:36:31,274 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Starting script vérification_finale.py
+2017-02-21 15:36:31,337 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-21 15:36:31,793 - hmrlib - ERROR - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Invalid objectHandle.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\lib.py", line 493, in get_current_plan
+    return get_current('Plan')
+  File "C:\Program Files\RaySearch Laboratories\RayStation 4.7.2\ScriptClient\connect.py", line 21, in get_current
+    return ScriptClient.ScriptObject(ScriptClient.RayScriptService.Instance, ScriptClient.RayScriptService.Instance.Client.GetCurrent(objectType))
+SystemError: Invalid objectHandle.
+2017-02-21 15:36:31,848 - hmrlib - ERROR - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] Could not get current plan.  No plan is currently selected ?
+2017-02-21 15:36:33,852 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-21 15:36:33,882 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] End of script vérification_finale.py [execution time = 0:00:02.959000]
+2017-02-21 15:36:33,921 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-21 15:36:41,193 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-02-21 15:36:41,363 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_finale.py
+2017-02-21 15:36:41,437 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-02-21 15:36:45,923 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-02-21 15:36:46,001 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_finale.py [execution time = 0:00:04.755000]
+2017-02-21 15:36:46,080 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-02-21 15:36:52,727 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-02-21 15:36:52,942 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] Starting script vérification_initiale.py
+2017-02-21 15:36:53,018 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-02-21 15:36:55,440 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-02-21 15:36:55,519 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_initiale.py [execution time = 0:00:02.772000]
+2017-02-21 15:36:55,576 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================

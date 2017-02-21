@@ -197,14 +197,14 @@ def verify_beams():
                     beam_info += "  "
                 beam_info += "     %d      /  " % (beam.GantryAngle)
             if beam.ArcRotationDirection == "Clockwise":
-                beam_info += "  CW   "
+                beam_info += "  CW    "
             elif beam.ArcRotationDirection == "CounterClockwise":
-                beam_info += "  CCW  "
+                beam_info += "  CCW   "
             else:
                 beam_info += "Statique"
             beam_info += " /   " + str(beam.InitialCollimatorAngle)
             if beam.InitialCollimatorAngle >= 0 and beam.InitialCollimatorAngle < 10:
-                beam_info += "    "   #Adds a spacer to keep the columns aligned
+                beam_info += "  "   #Adds a spacer to keep the columns aligned
             elif beam.InitialCollimatorAngle >= 10 and beam.InitialCollimatorAngle < 100:
                 beam_info += " "   #Adds a spacer to keep the columns aligned
             beam_info += "   /      %d     " % (beam.CouchAngle)

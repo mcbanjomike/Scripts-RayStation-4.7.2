@@ -59,7 +59,8 @@ def plan_crane_3DC(site_name='A1', presc_dose=1500, nb_fx=1, isodose_creation = 
     poi.auto_assign_poi_types()
 
     # Assign ROI Types (excerpted from roi.auto_assign_roi_types)
-    roi.auto_assign_roi_types_v2()
+    if not roi.roi_exists("BodyRS"): #If BodyRS already exists, then reassigning ROI types will remove its External status
+        roi.auto_assign_roi_types_v2()
     
     # Create BodyRS, erase Body+table from Pinnacle, rename BODY to BODY Pinnacle
     roi.generate_BodyRS_using_threshold()
@@ -353,7 +354,8 @@ def crane_stereo_rois(plan_data):
     exam = plan_data['exam']
     
     # Assign ROI Types (excerpted from roi.auto_assign_roi_types)
-    roi.auto_assign_roi_types_v2()
+    if not roi.roi_exists("BodyRS"): #If BodyRS already exists, then reassigning ROI types will remove its External status
+        roi.auto_assign_roi_types_v2()
 
     # Create BodyRS, erase Body+table from Pinnacle, rename BODY to BODY Pinnacle
     roi.generate_BodyRS_using_threshold()

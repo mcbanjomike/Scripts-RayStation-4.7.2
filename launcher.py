@@ -34,6 +34,7 @@ import foie
 import verification
 import report
 import statistics
+import message
 
 clr.AddReference('System.Windows.Forms')
 clr.AddReference('System.Drawing')
@@ -319,7 +320,6 @@ def plan_launcher_v3():
                 # add items
                 self.comboBoxRx.Items.Add("80Gy-40")
                 self.comboBoxRx.Items.Add("66Gy-33")
-                self.comboBoxRx.Items.Add("66Gy-22")
                 self.comboBoxRx.Items.Add("60Gy-20")
                 self.comboBoxRx.Items.Add("37.5Gy-15")
                 self.comboBoxRx.Items.Add("PACE 78Gy-39")
@@ -3845,7 +3845,7 @@ def verification_initiale_fat():
     try:
         temp = patient.ModificationInfo.UserName
     except:
-        debug_window('ATTENTION: Le plan a été modifié depuis la dernière sauvegarde.\n\nFermez cette fenêtre pour poursuivre avec la vérification.')
+        message.message_window('ATTENTION: Le plan a été modifié depuis la dernière sauvegarde.\n\nFermez cette fenêtre pour poursuivre avec la vérification.')
         #return        
               
     form = Verif1Window()
@@ -4267,7 +4267,7 @@ def verification_initiale():
     try:
         temp = patient.ModificationInfo.UserName
     except:
-        debug_window('ATTENTION: Le plan a été modifié depuis la dernière sauvegarde.\n\nFermez cette fenêtre pour poursuivre avec la vérification.')
+        message.message_window('ATTENTION: Le plan a été modifié depuis la dernière sauvegarde.\n\nFermez cette fenêtre pour poursuivre avec la vérification.')
         #return        
               
     form = Verif1Window()
@@ -5138,7 +5138,7 @@ def verification_finale():
     try:
         temp = patient.ModificationInfo.UserName
     except:
-        debug_window('ATTENTION: Le plan a été modifié depuis la dernière sauvegarde.\n\nFermez cette fenêtre pour poursuivre avec la vérification.')
+        message.message_window('ATTENTION: Le plan a été modifié depuis la dernière sauvegarde.\n\nFermez cette fenêtre pour poursuivre avec la vérification.')
         #return
         
     form = Verif1Window()

@@ -101,7 +101,8 @@ def test_MA():
     
     #ui.TabControl_ToolBar.ToolBarGroup['TREAT AND PROTECT'].Button_ConformBeamMLC.Click()
    
-    launcher.verification_finale_slim()
+    foie.calculer_NTCP_foie(CHC=True)
+    #launcher.verification_finale_slim()
     #message.message_window(verification.verify_segments())
     #optim.essai_autre_technique()
     #message.message_window('essai')

@@ -373,14 +373,34 @@ def toggle_reference_dose():
     plan = lib.get_current_plan()
     beamset = lib.get_current_beamset()
 
-    dose_per_fx = beamset.Prescription.PrimaryDosePrescription.DoseValue / beamset.FractionationPattern.NumberOfFractions
+    #dose_per_fx = beamset.Prescription.PrimaryDosePrescription.DoseValue / beamset.FractionationPattern.NumberOfFractions
     
-    if dose_per_fx == 190: #Prostate with 2 Gy per fraction prescribed to cover with 95% isodose
-        dose_per_fx = 200
-    elif dose_per_fx == 237 or dose_per_fx == 238: #Prostate with 2.5 Gy per fraction prescribed to cover with 95% isodose
-        dose_per_fx = 250
-    elif dose_per_fx == 285: #Prostate with 3 Gy per fraction prescribed to cover with 95% isodose
-        dose_per_fx = 300
+    #This is a big mess. I'm trying to find a way to determine the dose per fraction given that prostate plans are often verified with a "fake" number of fractions
+    #It's possible that prostate cases of 37.5-15 will slip through the cracks, but those don't have A2 plans so it probably doesn't matter
+    if roi.roi_exists("PROSTATE") or roi.roi_exists("PROSTATE*") or roi.roi_exists("LIT PROSTATIQUE") or roi.roi_exists("LIT PROSTATIQUE*") or roi.roi_exists("LIT PROSTATE") or roi.roi_exists("LIT PROSTATE*"):
+        if beamset.Prescription.PrimaryDosePrescription.DoseValue in [5700,3990,1710]:
+            dose_per_fx = 300
+        elif beamset.Prescription.PrimaryDosePrescription.DoseValue in [7600,5130,2470,6270,4180,2080]:
+            dose_per_fx = 200
+        else:
+            dose_per_fx = beamset.Prescription.PrimaryDosePrescription.DoseValue / beamset.FractionationPattern.NumberOfFractions
+            if dose_per_fx == 190: #Prostate with 2 Gy per fraction prescribed to cover with 95% isodose
+                dose_per_fx = 200
+            elif dose_per_fx == 237 or dose_per_fx == 238: #Prostate with 2.5 Gy per fraction prescribed to cover with 95% isodose
+                dose_per_fx = 250  
+            elif dose_per_fx == 285: #Prostate with 3 Gy per fraction prescribed to cover with 95% isodose
+                dose_per_fx = 300                
+    else:
+        dose_per_fx = beamset.Prescription.PrimaryDosePrescription.DoseValue / beamset.FractionationPattern.NumberOfFractions    
+        
+        """
+        if dose_per_fx == 190: #Prostate with 2 Gy per fraction prescribed to cover with 95% isodose
+            dose_per_fx = 200
+        elif dose_per_fx == 237 or dose_per_fx == 238: #Prostate with 2.5 Gy per fraction prescribed to cover with 95% isodose
+            dose_per_fx = 250
+        elif dose_per_fx == 285: #Prostate with 3 Gy per fraction prescribed to cover with 95% isodose
+            dose_per_fx = 300
+        """
     
     total_dose = 0
     for bs in plan.BeamSets:
@@ -402,7 +422,17 @@ def toggle_reference_dose_verif2():
     plan = lib.get_current_plan()
     beamset = lib.get_current_beamset()
 
-    dose_per_fx = beamset.Prescription.PrimaryDosePrescription.DoseValue / beamset.FractionationPattern.NumberOfFractions
+    #Prostate cases are often verified using a modified number of fractions
+    if roi.roi_exists("PROSTATE") or roi.roi_exists("PROSTATE*"):
+        if beamset.Prescription.PrimaryDosePrescription.DoseValue in [4200,1800]:
+            dose_per_fx = 300
+        elif beamset.Prescription.PrimaryDosePrescription.DoseValue == 3750:
+            dose_per_fx = 250
+        else:
+            dose_per_fx = 200
+    else:
+        dose_per_fx = beamset.Prescription.PrimaryDosePrescription.DoseValue / beamset.FractionationPattern.NumberOfFractions
+    
     total_dose = 0
     for bs in plan.BeamSets:
         total_dose += bs.FractionationPattern.NumberOfFractions * dose_per_fx
