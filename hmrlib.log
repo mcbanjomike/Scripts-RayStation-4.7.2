@@ -3496,3 +3496,106 @@ SystemError: Invalid objectHandle.
 2017-02-21 15:36:55,440 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
 2017-02-21 15:36:55,519 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] End of script vérification_initiale.py [execution time = 0:00:02.772000]
 2017-02-21 15:36:55,576 - hmrlib - INFO - [hmr30489 - LEGAULT^SUZANNE (1242583) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-02-23 14:47:20,236 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:47:20,407 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script test_NePasUtiliser.py
+2017-02-23 14:47:20,454 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:47:23,562 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:47:23,611 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script test_NePasUtiliser.py [execution time = 0:00:03.427000]
+2017-02-23 14:47:23,658 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:48:51,918 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:48:52,094 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script test_NePasUtiliser.py
+2017-02-23 14:48:52,145 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:50:12,164 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:50:12,210 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script test_NePasUtiliser.py [execution time = 0:01:20.303000]
+2017-02-23 14:50:12,254 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:50:28,762 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:50:28,937 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script test_NePasUtiliser.py
+2017-02-23 14:50:28,982 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:50:32,729 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:50:32,827 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script test_NePasUtiliser.py [execution time = 0:00:03.952000]
+2017-02-23 14:50:32,919 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:50:55,243 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:50:55,428 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script test_NePasUtiliser.py
+2017-02-23 14:50:55,482 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:55:03,083 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:55:03,136 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script test_NePasUtiliser.py [execution time = 0:04:07.905000]
+2017-02-23 14:55:03,187 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:55:32,297 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:55:32,468 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script test_NePasUtiliser.py
+2017-02-23 14:55:32,516 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:55:32,688 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:55:32,741 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script test_NePasUtiliser.py [execution time = 0:00:00.457000]
+2017-02-23 14:55:32,793 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:56:01,330 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:56:01,536 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script test_NePasUtiliser.py
+2017-02-23 14:56:01,599 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:56:01,882 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:56:01,947 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script test_NePasUtiliser.py [execution time = 0:00:00.671000]
+2017-02-23 14:56:02,032 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:56:31,430 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 14:56:31,621 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script test_NePasUtiliser.py
+2017-02-23 14:56:31,670 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:04:36,404 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:04:36,483 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script test_NePasUtiliser.py [execution time = 0:08:05.072000]
+2017-02-23 15:04:36,573 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:05:31,872 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:05:32,098 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script test_NePasUtiliser.py
+2017-02-23 15:05:32,160 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:05:33,809 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:05:33,875 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script test_NePasUtiliser.py [execution time = 0:00:02.011000]
+2017-02-23 15:05:33,939 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:06:14,575 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:06:14,755 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script test_NePasUtiliser.py
+2017-02-23 15:06:14,803 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:06:15,173 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:06:15,227 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script test_NePasUtiliser.py [execution time = 0:00:00.658000]
+2017-02-23 15:06:15,276 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:08:02,011 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:08:02,198 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script test_NePasUtiliser.py
+2017-02-23 15:08:02,253 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:08:02,370 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:08:02,450 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script test_NePasUtiliser.py [execution time = 0:00:00.416000]
+2017-02-23 15:08:02,518 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:08:19,832 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:08:20,062 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script test_NePasUtiliser.py
+2017-02-23 15:08:20,118 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:08:21,459 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:08:21,516 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script test_NePasUtiliser.py [execution time = 0:00:01.765000]
+2017-02-23 15:08:21,577 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:09:41,032 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:09:41,218 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script vérification_finale.py
+2017-02-23 15:09:41,299 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:09:50,234 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:09:50,307 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script vérification_finale.py [execution time = 0:00:09.232000]
+2017-02-23 15:09:50,413 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:18:09,362 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:18:09,623 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] Starting script vérification_finale.py
+2017-02-23 15:18:09,951 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:20:24,333 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:20:24,416 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] End of script vérification_finale.py [execution time = 0:02:15.151000]
+2017-02-23 15:20:24,510 - hmrlib - INFO - [hmr30489 - _GHANNAMY_1^ADEL (1753395) - CT 1 - MA 2 OK/MA 2] ================================================================================
+2017-02-23 15:24:09,280 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:24:09,514 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérification_finale.py
+2017-02-23 15:24:09,631 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:26:17,164 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:26:17,219 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérification_finale.py [execution time = 0:02:07.961000]
+2017-02-23 15:26:17,296 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:26:31,894 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:26:32,121 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérification_finale.py
+2017-02-23 15:26:32,198 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:27:20,202 - hmrlib.poi - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] POI ISO PT PRESC: (x, y, z) = (1.25, 8.79986877441, 5.7983398438e-05)
+2017-02-23 15:27:57,171 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:27:57,223 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérification_finale.py [execution time = 0:01:25.360000]
+2017-02-23 15:27:57,279 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:31:14,804 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:31:15,044 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérification_initiale.py
+2017-02-23 15:31:15,162 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:39:48,814 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:39:48,860 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérification_initiale.py [execution time = 0:08:34.146000]
+2017-02-23 15:39:48,918 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:40:57,606 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:40:57,813 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérification_initiale.py
+2017-02-23 15:40:57,890 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:43:34,303 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-23 15:43:34,365 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérification_initiale.py [execution time = 0:02:36.746000]
+2017-02-23 15:43:34,431 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================

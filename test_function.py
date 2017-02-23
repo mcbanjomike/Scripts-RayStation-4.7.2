@@ -16,6 +16,7 @@ import hmrlib.optim as optim
 import hmrlib.poi as poi
 import hmrlib.roi as roi
 import hmrlib.qa as qa
+import hmrlib.uis as uis
 import beams
 import optimization_objectives
 import clinical_goals
@@ -76,6 +77,13 @@ def test_MA():
     #exam = lib.get_current_examination()
     #patient = lib.get_current_patient()
     
+    
+    #uis.show_patient_modeling()
+    uis.ui_statetree()
+    #uis.display_loc_point()
+    #uis.show_po_cg()
+    #uis.show_po_2D()
+    
     #statistics.stereo_brain_statistics()
     
     #a,b,c,d,e = verification.verify_beams()
@@ -101,7 +109,7 @@ def test_MA():
     
     #ui.TabControl_ToolBar.ToolBarGroup['TREAT AND PROTECT'].Button_ConformBeamMLC.Click()
    
-    foie.calculer_NTCP_foie(CHC=True)
+    #foie.calculer_NTCP_foie(CHC=True)
     #launcher.verification_finale_slim()
     #message.message_window(verification.verify_segments())
     #optim.essai_autre_technique()
