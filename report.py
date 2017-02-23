@@ -118,6 +118,13 @@ def create_verif1_report(data):
     row.Cells[2].AddParagraph(data['ext_text'])
     if data['ext_text'] == 'Script pas roulé':
         row.Cells[2].Shading.Color = Colors.Red      
+        
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('Contours')    
+    row.Cells[1].AddParagraph(data['check_contours'])
+    if data['check_contours'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red        
+    row.Cells[2].AddParagraph('-')        
 
     row = table.AddRow()
     row.Cells[0].AddParagraph("Position de l'isocentre")
@@ -146,12 +153,6 @@ def create_verif1_report(data):
     if data['presc_text'] == 'Script pas roulé':
         row.Cells[2].Shading.Color = Colors.Red  
 
-    row = table.AddRow()
-    row.Cells[0].AddParagraph('Contours')    
-    row.Cells[1].AddParagraph(data['check_contours'])
-    if data['check_contours'] == 'Pas vérifié':
-        row.Cells[1].Shading.Color = Colors.Red        
-    row.Cells[2].AddParagraph('-')
     
     row = table.AddRow()
     row.Cells[0].AddParagraph("Paramètres d'optimisation et objectifs")    
@@ -272,9 +273,9 @@ def create_verif2_report(data):
     
     #Add a row for each verification
     row = table.AddRow()
-    row.Cells[0].AddParagraph('Scan')
-    row.Cells[1].AddParagraph(data['check_scanOK'])
-    if data['check_scanOK'] == 'Pas vérifié':
+    row.Cells[0].AddParagraph('Billes sur point de localisation')
+    row.Cells[1].AddParagraph(data['check_billes'])
+    if data['check_billes'] == 'Pas vérifié':
         row.Cells[1].Shading.Color = Colors.Red
     row.Cells[2].AddParagraph('-')
 
@@ -294,35 +295,8 @@ def create_verif2_report(data):
         row.Cells[1].Shading.Color = Colors.Red    
     row.Cells[2].AddParagraph(data['iso_text'])  
     if data['iso_text'] == 'Script pas roulé':
-        row.Cells[2].Shading.Color = Colors.Red      
-    
-    row = table.AddRow()
-    row.Cells[0].AddParagraph("Grille de dose")
-    row.Cells[1].AddParagraph(data['check_grid'])
-    if data['check_grid'] == 'Pas vérifié':
-        row.Cells[1].Shading.Color = Colors.Red    
-    row.Cells[2].AddParagraph(data['grid_text']+"\n"+data['DSP_text'])  
-    if data['grid_text'] == 'Script pas roulé':
-        row.Cells[2].Shading.Color = Colors.Red          
-    
-    row = table.AddRow()
-    row.Cells[0].AddParagraph('Champs')    
-    row.Cells[1].AddParagraph(data['check_beams_Rx'])
-    if data['check_beams_Rx'] == 'Pas vérifié':
-        row.Cells[1].Shading.Color = Colors.Red    
-    row.Cells[2].AddParagraph(data['beam_text'])
-    if data['beam_text'] == 'Script pas roulé':
-        row.Cells[2].Shading.Color = Colors.Red      
-    
-    row = table.AddRow()
-    row.Cells[0].AddParagraph('Prescription')    
-    row.Cells[1].AddParagraph(data['check_beams_Rx'])
-    if data['check_beams_Rx'] == 'Pas vérifié':
-        row.Cells[1].Shading.Color = Colors.Red        
-    row.Cells[2].AddParagraph(data['presc_text'])
-    if data['presc_text'] == 'Script pas roulé':
-        row.Cells[2].Shading.Color = Colors.Red  
-
+        row.Cells[2].Shading.Color = Colors.Red           
+            
     row = table.AddRow()
     row.Cells[0].AddParagraph('Segments et flash')    
     row.Cells[1].AddParagraph(data['check_segments'])
@@ -331,6 +305,33 @@ def create_verif2_report(data):
     row.Cells[2].AddParagraph(data['segments_text'])
     if data['segments_text'] == 'Script pas roulé':
         row.Cells[2].Shading.Color = Colors.Red  
+        
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('Champs')    
+    row.Cells[1].AddParagraph(data['check_beams_Rx'])
+    if data['check_beams_Rx'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red    
+    row.Cells[2].AddParagraph(data['beam_text'])
+    if data['beam_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red      
+        
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('Prescription')    
+    row.Cells[1].AddParagraph(data['check_beams_Rx'])
+    if data['check_beams_Rx'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red        
+    row.Cells[2].AddParagraph(data['presc_text'])
+    if data['presc_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red  
+    
+    row = table.AddRow()
+    row.Cells[0].AddParagraph("Grille de dose")
+    row.Cells[1].AddParagraph(data['check_grid'])
+    if data['check_grid'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red    
+    row.Cells[2].AddParagraph(data['grid_text']+"\n"+data['DSP_text'])  
+    if data['grid_text'] == 'Script pas roulé':
+        row.Cells[2].Shading.Color = Colors.Red            
 
     row = table.AddRow()
     row.Cells[0].AddParagraph('DVH')        
