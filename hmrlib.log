@@ -3599,3 +3599,251 @@ SystemError: Invalid objectHandle.
 2017-02-23 15:43:34,303 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
 2017-02-23 15:43:34,365 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérification_initiale.py [execution time = 0:02:36.746000]
 2017-02-23 15:43:34,431 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-24 10:25:54,447 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:25:54,641 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_initiale.py
+2017-02-24 10:25:54,946 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:26:21,071 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (1.08861999512, 1.73466949463, 0.0)
+2017-02-24 10:26:21,293 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.911380004883, 4.73467102051, 2.0)
+2017-02-24 10:29:04,742 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:29:04,795 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_initiale.py [execution time = 0:03:10.556000]
+2017-02-24 10:29:04,859 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:29:12,568 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:29:12,745 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_initiale.py
+2017-02-24 10:29:12,816 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:29:53,070 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (1.08861999512, 1.73466949463, 0.0)
+2017-02-24 10:29:53,251 - hmrlib.poi - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (-0.911380004883, 4.73467102051, 2.0)
+2017-02-24 10:30:41,560 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:30:41,607 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_initiale.py [execution time = 0:01:29.057000]
+2017-02-24 10:30:41,662 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:30:44,887 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:30:45,052 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_initiale.py
+2017-02-24 10:30:45,132 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:30:53,136 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:30:53,186 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_initiale.py [execution time = 0:00:08.319000]
+2017-02-24 10:30:53,237 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:31:04,635 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:31:04,803 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_initiale.py
+2017-02-24 10:31:04,880 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:31:27,484 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:31:27,533 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_initiale.py [execution time = 0:00:22.918000]
+2017-02-24 10:31:27,585 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:31:30,944 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:31:31,106 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérification_initiale.py
+2017-02-24 10:31:31,181 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:32:03,099 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-24 10:32:03,149 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] End of script vérification_initiale.py [execution time = 0:00:32.219000]
+2017-02-24 10:32:03,202 - hmrlib - INFO - [hmr30489 - TOURANGEAU^YVES (88823) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-02-27 11:47:48,734 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 11:47:48,939 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 1.py
+2017-02-27 11:47:49,288 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:10:23,651 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:10:23,710 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 1.py [execution time = 0:22:35.138000]
+2017-02-27 12:10:23,876 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:10:35,725 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:10:35,884 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 1.py
+2017-02-27 12:10:36,169 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:10:39,875 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:10:39,925 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 1.py [execution time = 0:00:04.305000]
+2017-02-27 12:10:39,978 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:10:43,029 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:10:43,187 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 12:10:43,260 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:13:22,294 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:13:22,343 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:02:39.332000]
+2017-02-27 12:13:22,397 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:13:27,561 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:13:27,727 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 12:13:27,799 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:13:51,382 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:13:51,433 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:00:23.869000]
+2017-02-27 12:13:51,489 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:14:13,160 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:14:13,326 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 12:14:13,399 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:14:17,261 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 12:14:17,308 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:00:04.153000]
+2017-02-27 12:14:17,359 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:20:30,573 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:20:30,729 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 13:20:31,016 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:21:02,982 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:21:03,029 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:00:32.623000]
+2017-02-27 13:21:03,088 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:21:07,724 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:21:07,903 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 13:21:07,982 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:21:13,800 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:21:13,846 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:00:06.121000]
+2017-02-27 13:21:13,900 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:21:36,517 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:21:36,683 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script test_NePasUtiliser.py
+2017-02-27 13:21:36,729 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:21:36,803 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:21:36,848 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script test_NePasUtiliser.py [execution time = 0:00:00.352000]
+2017-02-27 13:21:36,894 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:22:31,240 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:22:31,439 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 13:22:31,520 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:24:48,015 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:24:48,063 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:02:16.867000]
+2017-02-27 13:24:48,115 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:24:59,839 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:25:00,006 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 13:25:00,081 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:25:00,532 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:25:00,579 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:00:00.764000]
+2017-02-27 13:25:00,660 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:25:17,310 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:25:17,479 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 13:25:17,554 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:25:19,361 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:25:19,422 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:00:02.099000]
+2017-02-27 13:25:19,486 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:26:14,769 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:26:14,941 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 13:26:15,015 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:27:33,349 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:27:33,396 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:01:18.648000]
+2017-02-27 13:27:33,450 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:29:00,787 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:29:00,969 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script test_NePasUtiliser.py
+2017-02-27 13:29:01,016 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:31:06,696 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:31:06,744 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script test_NePasUtiliser.py [execution time = 0:02:05.973000]
+2017-02-27 13:31:06,791 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:31:12,119 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:31:12,281 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script test_NePasUtiliser.py
+2017-02-27 13:31:12,328 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:31:13,852 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:31:13,898 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script test_NePasUtiliser.py [execution time = 0:00:01.779000]
+2017-02-27 13:31:13,944 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:31:35,781 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:31:35,971 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script test_NePasUtiliser.py
+2017-02-27 13:31:36,019 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:31:39,175 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:31:39,221 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script test_NePasUtiliser.py [execution time = 0:00:03.465000]
+2017-02-27 13:31:39,267 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:32:08,321 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:32:08,491 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script test_NePasUtiliser.py
+2017-02-27 13:32:08,539 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:32:10,100 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:32:10,151 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script test_NePasUtiliser.py [execution time = 0:00:01.825000]
+2017-02-27 13:32:10,198 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:32:40,992 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:32:41,185 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script test_NePasUtiliser.py
+2017-02-27 13:32:41,234 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:33:13,791 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:33:13,839 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script test_NePasUtiliser.py [execution time = 0:00:32.875000]
+2017-02-27 13:33:13,886 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:33:33,315 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:33:33,489 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script test_NePasUtiliser.py
+2017-02-27 13:33:33,536 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:33:34,897 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:33:34,944 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script test_NePasUtiliser.py [execution time = 0:00:01.616000]
+2017-02-27 13:33:34,992 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:34:01,540 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:34:01,717 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 13:34:01,795 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:58:45,072 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:58:45,119 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:24:43.595000]
+2017-02-27 13:58:45,285 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:58:49,736 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:58:49,920 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 13:58:49,997 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:58:52,113 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:58:52,199 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:00:02.431000]
+2017-02-27 13:58:52,254 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:59:09,958 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:59:10,123 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 13:59:10,200 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:59:20,221 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:59:20,273 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:00:10.336000]
+2017-02-27 13:59:20,330 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:59:37,285 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 13:59:37,454 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] Starting script vérif 2.py
+2017-02-27 13:59:37,530 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 14:29:03,585 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 14:29:03,633 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] End of script vérif 2.py [execution time = 0:29:26.370000]
+2017-02-27 14:29:03,806 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - Salle 6/Salle 6] ================================================================================
+2017-02-27 14:31:38,013 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 14:31:38,195 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] Starting script vérif 2.py
+2017-02-27 14:31:38,483 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 14:31:57,083 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 14:31:57,279 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 14:35:48,363 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 14:35:48,570 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 14:35:54,735 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 14:35:54,782 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] End of script vérif 2.py [execution time = 0:04:16.885000]
+2017-02-27 14:35:54,843 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 14:35:58,024 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 14:35:58,204 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] Starting script vérif 2.py
+2017-02-27 14:35:58,291 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 14:36:11,321 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 14:36:11,525 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 17:01:57,884 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-27 17:01:57,888 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script vérif 2.py [execution time = 2:25:59.867000]
+2017-02-27 17:01:58,007 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-02-27 17:02:09,824 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:02:09,988 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] Starting script vérif 2.py
+2017-02-27 17:02:10,278 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:02:26,303 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 17:02:26,510 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 17:03:28,814 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:03:28,861 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] End of script vérif 2.py [execution time = 0:01:19.175000]
+2017-02-27 17:03:28,917 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:03:32,207 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:03:32,374 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] Starting script vérif 2.py
+2017-02-27 17:03:32,449 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:03:56,511 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 17:03:56,719 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 17:04:37,120 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:04:37,170 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] End of script vérif 2.py [execution time = 0:01:04.968000]
+2017-02-27 17:04:37,225 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:04:41,300 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:04:41,470 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] Starting script vérif 2.py
+2017-02-27 17:04:41,775 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:04:55,302 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 17:04:55,509 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 17:05:36,642 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:05:36,690 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] End of script vérif 2.py [execution time = 0:00:55.515000]
+2017-02-27 17:05:36,743 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:05:49,654 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:05:49,826 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] Starting script vérif 2.py
+2017-02-27 17:05:49,901 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:06:07,600 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 17:06:07,811 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 17:07:17,675 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:07:17,723 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] End of script vérif 2.py [execution time = 0:01:28.080000]
+2017-02-27 17:07:17,786 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:07:22,617 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:07:22,777 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] Starting script vérif 2.py
+2017-02-27 17:07:22,851 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:07:33,657 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 17:07:33,866 - hmrlib.poi - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] POI ISO: (x, y, z) = (-4.50314025879, 11.2235992432, -2.8)
+2017-02-27 17:08:46,007 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:08:46,055 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] End of script vérif 2.py [execution time = 0:01:23.442000]
+2017-02-27 17:08:46,109 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:08:49,065 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:08:49,232 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] Starting script vérif 1.py
+2017-02-27 17:08:49,307 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:09:00,633 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:09:00,682 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] End of script vérif 1.py [execution time = 0:00:11.643000]
+2017-02-27 17:09:00,767 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:11:18,606 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:11:18,779 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] Starting script vérif 1.py
+2017-02-27 17:11:18,858 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:11:47,477 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:11:47,527 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] End of script vérif 1.py [execution time = 0:00:28.919000]
+2017-02-27 17:11:47,603 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:11:50,273 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:11:50,433 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] Starting script vérif 1.py
+2017-02-27 17:11:50,508 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:12:45,401 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:12:45,449 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] End of script vérif 1.py [execution time = 0:00:55.188000]
+2017-02-27 17:12:45,538 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:16:52,568 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:16:52,741 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] Starting script vérif 2.py
+2017-02-27 17:16:52,822 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:18:06,088 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================
+2017-02-27 17:18:06,137 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] End of script vérif 2.py [execution time = 0:01:13.584000]
+2017-02-27 17:18:06,200 - hmrlib - INFO - [hmr30489 - BORDELEAU^NICOLE (342084) - CT 1 - Stereo Poumon IMRT/IMRT] ================================================================================

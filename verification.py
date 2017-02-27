@@ -341,8 +341,14 @@ def verify_opt_parameters():
             settings_text += "%ds" % new_time               
         
     else: #For IMRT and 3DC
-        settings_text = "Segment MU / Segment Area / Leaf Pairs / Leaf End Separation / Nb Segments"  
-        settings_text += "\n       %dUMs      /        %d cm2       /        %d        /              %dcm              /          %d" % (opt.OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction, opt.OptimizationParameters.SegmentConversion.MinSegmentArea, opt.OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs, opt.OptimizationParameters.SegmentConversion.MinLeafEndSeparation, opt.OptimizationParameters.SegmentConversion.MaxNumberOfSegments)
+        #settings_text = "Segment MU / Segment Area / Leaf Pairs / Leaf End Separation / Nb Segments"  
+        #settings_text += "\n       %dUMs      /        %d cm2       /        %d        /              %dcm              /          %d" % (opt.OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction, opt.OptimizationParameters.SegmentConversion.MinSegmentArea, opt.OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs, opt.OptimizationParameters.SegmentConversion.MinLeafEndSeparation, opt.OptimizationParameters.SegmentConversion.MaxNumberOfSegments)
+        
+        settings_text = "Segment MU: %dUMs\n"  % opt.OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction
+        settings_text += "Segment Area: %d cm2\n" % opt.OptimizationParameters.SegmentConversion.MinSegmentArea
+        settings_text += "Leaf Pairs: %d\n" % opt.OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs
+        settings_text += "Leaf End Separation: %dcm\n" % opt.OptimizationParameters.SegmentConversion.MinLeafEndSeparation
+        settings_text += "Nb total de segments: %d" % opt.OptimizationParameters.SegmentConversion.MaxNumberOfSegments
         
         old_opt_types = ""
         new_opt_types = ""

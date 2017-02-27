@@ -92,4 +92,13 @@ def select_roi_tab():
         ui = get_current("ui")
         ui.ToolPanel.TabItem['ROIs'].Select()
     except:
-        pass       
+        pass    
+
+def open_plan_settings():
+    try:
+        ui = get_current("ui")
+        ui.MenuItem[2].Button_PlanDesign.Click()
+        ui.TabControl_ToolBar.ToolBarGroup['PLAN PREPARATION'].Button_EditPlan.Click()
+        
+    except:
+        pass
