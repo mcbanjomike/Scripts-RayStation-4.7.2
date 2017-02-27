@@ -3440,7 +3440,7 @@ def verification_initiale():
 
     class Verif1Window(Form):
         def __init__(self):
-            self.Text = "Première vérification"
+            self.Text = "Vérification 1"
 
             self.Width = 450
             self.Height = 1050
@@ -3708,7 +3708,8 @@ def verification_initiale():
             a,b,c,d,e = verification.verify_beams()   #d and e are not needed for a first verification (machine type and energy)
             self.d['beam_text'] = a + "\n\n" + e  + "\n\n" + c 
             self.label_results.Text += "\n\nFaisceaux:\n" + self.d['beam_text']
-            #self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 80 + 15*b)
+            self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 150 + 15*b)
+            self.label_reminder.Text = "Rappel:\nVérifiez que les angles de gantry et collimateur sont bien\nchoisis avant de procéder à la prochaine étape"
             self.message.Text = ""
 
         def button_opt_Clicked(self, sender, args):       
@@ -3738,6 +3739,10 @@ def verification_initiale():
             self.message.Text = "En cours"       
             prostate.toggle_reference_dose()              
             self.message.Text = ""    
+                
+        def nbfxClicked(self, sender, args):            
+            #uis.display_loc_point() 
+            uis.open_plan_settings()                
                 
         def printClicked(self, sender, args):     
 
@@ -3806,15 +3811,21 @@ def verification_initiale():
 
             levelwindowButton = Button()
             levelwindowButton.Text = "Level/Window"
-            levelwindowButton.Location = Point(108,28)
+            levelwindowButton.Location = Point(25,28)
             levelwindowButton.Width = 85
             levelwindowButton.Click += self.levelwindowClicked            
             
             referencedoseButton = Button()
             referencedoseButton.Text = "Toggle Reference Dose"
-            referencedoseButton.Location = Point(200,28)
+            referencedoseButton.Location = Point(117,28)
             referencedoseButton.Width = 140
             referencedoseButton.Click += self.referencedoseClicked                
+            
+            nbfxButton = Button()
+            nbfxButton.Text = "Nb. de fx"
+            nbfxButton.Location = Point(263,28)
+            nbfxButton.Width = 70
+            nbfxButton.Click += self.nbfxClicked  
             
             self.message = Label()
             self.message.Text = ""
@@ -3822,7 +3833,8 @@ def verification_initiale():
             self.message.Font = Font("Arial", 11, FontStyle.Bold)
             self.message.AutoSize = True      
             
-            self.OKbuttonPanel.Controls.Add(printButton)
+            #Printing has been disabled for verif 1, simply add the printButton back if you want to reactivate it
+            self.OKbuttonPanel.Controls.Add(nbfxButton)
             self.OKbuttonPanel.Controls.Add(levelwindowButton)
             self.OKbuttonPanel.Controls.Add(referencedoseButton)
             self.OKbuttonPanel.Controls.Add(self.message)
@@ -3865,7 +3877,7 @@ def verification_finale():
 
     class Verif1Window(Form):
         def __init__(self):
-            self.Text = "Vérification finale"
+            self.Text = "Vérification 2"
 
             self.Width = 450
             self.Height = 1000
@@ -3900,7 +3912,9 @@ def verification_finale():
                      check_beams_Rx = "Pas vérifié",
                      check_segments = "Pas vérifié",
                      check_distribution_dose = "Pas vérifié",
-                     check_DSP = "Pas vérifié")
+                     check_DSP = "Pas vérifié",
+                     check_mise_en_place = "Pas vérifié",
+                     check_codestat = "Pas vérifié")
             
             #Create dictionaries for window/level switching
             self.lung_dict = dict(x=-600,y=1600)
@@ -3939,8 +3953,8 @@ def verification_finale():
         def setupMainWindow(self):
             self.MainWindow = self.Panel(0, 60)
             
-            vert_spacer = 35
-            offset = 20   
+            vert_spacer = 32
+            offset = 15   
 
             
             self.label_billes = Label()
@@ -4040,7 +4054,7 @@ def verification_finale():
             
             
             self.label_DSP = Label()
-            self.label_DSP.Text = "Notez le HT et les DSP"
+            self.label_DSP.Text = "Vérif note positionnement: HT, DSPs, matching"
             self.label_DSP.Location = Point(15, offset + vert_spacer*7)
             self.label_DSP.Font = Font("Arial", 10.25, FontStyle.Bold)
             self.label_DSP.AutoSize = True              
@@ -4052,21 +4066,47 @@ def verification_finale():
             
             
             
+            self.label_mise_en_place = Label()
+            self.label_mise_en_place.Text = "Vérif mise en place: ISO DICOM, struct, phase"
+            self.label_mise_en_place.Location = Point(15, offset + vert_spacer*8)
+            self.label_mise_en_place.Font = Font("Arial", 10.25, FontStyle.Bold)
+            self.label_mise_en_place.AutoSize = True              
+            
+            self.check_mise_en_place = CheckBox()
+            self.check_mise_en_place.Location = Point(410, offset + vert_spacer*8 - 2)
+            self.check_mise_en_place.Width = 30
+            self.check_mise_en_place.Checked = False        
+            
+            
+            
+            self.label_codestat = Label()
+            self.label_codestat.Text = "Vérification des codes statistiques"
+            self.label_codestat.Location = Point(15, offset + vert_spacer*9)
+            self.label_codestat.Font = Font("Arial", 10.25, FontStyle.Bold)
+            self.label_codestat.AutoSize = True              
+            
+            self.check_codestat = CheckBox()
+            self.check_codestat.Location = Point(410, offset + vert_spacer*9 - 2)
+            self.check_codestat.Width = 30
+            self.check_codestat.Checked = False     
+
+
+
             self.label_results_header = Label()
             self.label_results_header.Text = ""
-            self.label_results_header.Location = Point(15, offset + vert_spacer*9)
+            self.label_results_header.Location = Point(15, offset + vert_spacer*11)
             self.label_results_header.Font = Font("Arial", 11, FontStyle.Bold)
             self.label_results_header.AutoSize = True     
             
             self.label_results = Label()
             self.label_results.Text = ""
-            self.label_results.Location = Point(15, offset + vert_spacer*10)
+            self.label_results.Location = Point(15, offset + vert_spacer*12)
             self.label_results.Font = Font("Arial", 10,)
             self.label_results.AutoSize = True             
 
             self.label_reminder = Label()
             self.label_reminder.Text = ""
-            self.label_reminder.Location = Point(15, offset + vert_spacer*11)
+            self.label_reminder.Location = Point(15, offset + vert_spacer*13)
             self.label_reminder.Font = Font("Arial", 10.25, FontStyle.Bold)
             self.label_reminder.ForeColor = Color.Red
             self.label_reminder.AutoSize = True                 
@@ -4096,6 +4136,12 @@ def verification_finale():
 
             self.MainWindow.Controls.Add(self.label_DSP)
             self.MainWindow.Controls.Add(self.check_DSP)               
+
+            self.MainWindow.Controls.Add(self.label_mise_en_place)
+            self.MainWindow.Controls.Add(self.check_mise_en_place)  
+
+            self.MainWindow.Controls.Add(self.label_codestat)
+            self.MainWindow.Controls.Add(self.check_codestat)  
             
             self.MainWindow.Controls.Add(self.label_results_header)
             self.MainWindow.Controls.Add(self.label_results)
@@ -4137,7 +4183,7 @@ def verification_finale():
             self.d['iso_text'] = a + "\n" + b + "\n" + c + "\n\n" + d
             self.label_results.Text = self.d['iso_text']
             self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 130)
-            self.label_reminder.Text = "Rappel:\nVérifiez que les billes coincident avec le point de localisation\n ainsi que le placement de l'isocentre en mode BEV avant de\nprocéder à la prochaine étape"
+            self.label_reminder.Text = "Rappel:\nVérifiez le placement de l'isocentre en mode BEV avant de\nprocéder à la prochaine étape"
             self.message.Text = ""
             
         def button_beams_Clicked(self, sender, args):       
@@ -4154,8 +4200,9 @@ def verification_finale():
             a,b,c,d,e = verification.verify_beams()
             self.d['beam_text'] = a + "\n\n" + d + "\n" + e + "\n\n" + c  
             self.label_results.Text += "\n\nFaisceaux:\n" + self.d['beam_text']
-            self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 170 + 15*b)
-            self.label_reminder.Text = "Rappel:\nS'il y a un prothèse, un pacemaker ou un membre qui\ndépasse le FOV du scan, vérifiez que les angles de gantry\nsont bien choisis"
+            self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 160 + 15*b)
+            #self.label_reminder.Text = "Rappel:\nS'il y a un prothèse, un pacemaker ou un membre qui\ndépasse le FOV du scan, vérifiez que les angles de gantry\nsont bien choisis"
+            self.label_reminder.Text = "Rappel:\nVérifiez que les angles de gantry et collimateur sont bien\nchoisis avant de procéder à la prochaine étape"            
             self.message.Text = ""
             
         def button_segments_Clicked(self, sender, args):   
@@ -4184,6 +4231,10 @@ def verification_finale():
             self.message.Text = "En cours"       
             prostate.toggle_reference_dose_verif2()              
             self.message.Text = ""    
+            
+        def nbfxClicked(self, sender, args):            
+            #uis.display_loc_point() 
+            uis.open_plan_settings()
             
         def printClicked(self, sender, args):     
 
@@ -4221,7 +4272,14 @@ def verification_finale():
                 self.d['check_DSP'] = 'OK'
             else:
                 warning = True                
-                
+            if self.check_mise_en_place.Checked:
+                self.d['check_mise_en_place'] = 'OK'
+            else:
+                warning = True     
+            if self.check_codestat.Checked:
+                self.d['check_codestat'] = 'OK'
+            else:
+                warning = True                     
 
             self.message.ForeColor = Color.Black
             self.message.Text = "Impression en cours"
@@ -4262,6 +4320,12 @@ def verification_finale():
             referencedoseButton.Width = 140
             referencedoseButton.Click += self.referencedoseClicked                
             
+            nbfxButton = Button()
+            nbfxButton.Text = "Nb. de fx"
+            nbfxButton.Location = Point(345,28)
+            nbfxButton.Width = 70
+            nbfxButton.Click += self.nbfxClicked  
+            
             self.message = Label()
             self.message.Text = ""
             self.message.Location = Point(30, 0)
@@ -4271,6 +4335,7 @@ def verification_finale():
             self.OKbuttonPanel.Controls.Add(printButton)
             self.OKbuttonPanel.Controls.Add(levelwindowButton)
             self.OKbuttonPanel.Controls.Add(referencedoseButton)
+            self.OKbuttonPanel.Controls.Add(nbfxButton)
             self.OKbuttonPanel.Controls.Add(self.message)
                
                 

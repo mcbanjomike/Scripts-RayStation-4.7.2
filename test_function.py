@@ -76,13 +76,13 @@ def test_MA():
     #beamset = lib.get_current_beamset()
     #exam = lib.get_current_examination()
     #patient = lib.get_current_patient()
+       
+    #uis.ui_statetree()
     
-    
-    #uis.show_patient_modeling()
-    uis.ui_statetree()
     #uis.display_loc_point()
     #uis.show_po_cg()
     #uis.show_po_2D()
+    uis.open_plan_settings()
     
     #statistics.stereo_brain_statistics()
     

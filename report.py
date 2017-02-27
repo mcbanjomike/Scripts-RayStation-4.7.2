@@ -348,11 +348,25 @@ def create_verif2_report(data):
     row.Cells[2].AddParagraph('-')
     
     row = table.AddRow()
-    row.Cells[0].AddParagraph('DSPs et HT notés')        
+    row.Cells[0].AddParagraph('Vérification note dans positionnement')        
     row.Cells[1].AddParagraph(data['check_DSP'])
     if data['check_DSP'] == 'Pas vérifié':
         row.Cells[1].Shading.Color = Colors.Red       
     row.Cells[2].AddParagraph('-')    
+
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('Vérification mise en place')        
+    row.Cells[1].AddParagraph(data['check_mise_en_place'])
+    if data['check_mise_en_place'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red       
+    row.Cells[2].AddParagraph('-')    
+    
+    row = table.AddRow()
+    row.Cells[0].AddParagraph('Vérification des codes statistiques')        
+    row.Cells[1].AddParagraph(data['check_codestat'])
+    if data['check_codestat'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red       
+    row.Cells[2].AddParagraph('-')        
     
     #TEST - Format cells (this one works!)
     #for i, row in enumerate(table.Rows):
