@@ -136,6 +136,222 @@ def stereo_brain_statistics():
         stat_file.write(output + '\n')
 
 
+#Modified version of the script that can handle multiple PTVs and locked plans
+def stereo_brain_statistics_v2(num_ptvs, ptv_names, rx, technique):
+    patient = lib.get_current_patient()
+    exam = lib.get_current_examination()
+    plan = lib.get_current_plan()
+    beamset = lib.get_current_beamset()    
+   
+    roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+   
+    if "MOELLE*" in roi_names:
+        moelle_name = "MOELLE*"
+    else:
+        moelle_name = "MOELLE"
+        
+    if "TR CEREBRAL*" in roi_names:
+        tronc_name = "TR CEREBRAL*"
+    else:
+        tronc_name = "TR CEREBRAL" 
+
+    if "OEIL DRT*" in roi_names:
+        oeild_name = "OEIL DRT*"
+    else:
+        oeild_name = "OEIL DRT"           
+
+    if "OEIL GCHE*" in roi_names:
+        oeilg_name = "OEIL GCHE*"
+    else:
+        oeilg_name = "OEIL GCHE"               
+               
+    #Get prescription information
+    nb_fx = beamset.FractionationPattern.NumberOfFractions
+    
+    #Get brain volume and radius
+    brain_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['CERVEAU'].GetRoiVolume()
+    brain_minus_ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['CERVEAU-PTV'].GetRoiVolume()
+    brain_radius = math.pow(3*brain_vol/(4*math.pi),1.0/3) #Assume a spherical brain...
+    
+    #PTV stats
+    ptv_output = ""
+    ptv_header = ""
+    ptv_vol = [0,0,0,0]
+    ptv_rad = [0,0,0,0]
+    ptv_tronc_overlap = [0,0,0,0]
+    sum_big_small = 0
+    for i,ptv in enumerate(ptv_names):
+        ring_vol = [0,0,0,0,0,0]
+        ring_int_vol = [0,0,0,0,0,0]
+        
+        #PTV Header
+        ptv_header += "Nom du PTV" + str(i+1) + ",Dose Rx (cGy),Couverture par 100%,Vol PTV(cc),Rayon estimé(cm),Vol smoothé(cc),"
+        ptv_header += "Ring90 vol(cc),Ring90dsCERV vol(cc),Ring80 vol(cc),Ring80dsCERV vol(cc),Ring70 vol(cc),Ring70dsCERV vol(cc),Ring60 vol(cc),Ring60dsCERV vol(cc),Ring50 vol(cc),Ring50dsCERV vol(cc),Ring40 vol(cc),Ring40dsCERV vol(cc),Fraction PTV ds tronc,"        
+        
+        if ptv_names[i] == "":
+            ptv_output += "Aucun PTV" + str(i+1) + ","
+            ptv_output += "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0," #repeat a whole bunch for each empty field
+            continue
+            
+        ptv_vol[i] = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_names[i]].GetRoiVolume()
+        ptv_rad[i] = math.pow(3*ptv_vol[i]/(4*math.pi),1.0/3)
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[i], DoseValues=[rx[i]/nb_fx])
+        
+        #Create rings
+        roi.create_expanded_ptv(ptv_names[i], color="Yellow", examination=exam, margeptv=0.25, output_name='stats_ptv')
+        roi.create_expanded_ptv(ptv_names[i], color="Pink", examination=exam, margeptv=0.4, output_name='stats_ptv')
+        roi.create_expanded_ptv(ptv_names[i], color="Blue", examination=exam, margeptv=0.6, output_name='stats_ptv')
+        roi.create_expanded_ptv(ptv_names[i], color="Tomato", examination=exam, margeptv=0.8, output_name='stats_ptv')
+        roi.create_expanded_ptv(ptv_names[i], color="YellowGreen", examination=exam, margeptv=1.1, output_name='stats_ptv')
+        
+        roi.create_ring(ptv_names[i], r2=0.25, r1=0, new_name='ring90')
+        roi.create_ring('stats_ptv+0.25cm', r2=0.15, r1=0, new_name='ring80')
+        roi.create_ring('stats_ptv+0.4cm', r2=0.2, r1=0, new_name='ring70')
+        roi.create_ring('stats_ptv+0.6cm', r2=0.2, r1=0, new_name='ring60')
+        roi.create_ring('stats_ptv+0.8cm', r2=0.3, r1=0, new_name='ring50')
+        roi.create_ring('stats_ptv+1.1cm', r2=0.4, r1=0, new_name='ring40')
+        
+        #Check volume of each ring
+        ring_vol[0] = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['ring90'].GetRoiVolume()
+        ring_vol[1] = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['ring80'].GetRoiVolume()
+        ring_vol[2] = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['ring70'].GetRoiVolume()
+        ring_vol[3] = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['ring60'].GetRoiVolume()
+        ring_vol[4] = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['ring50'].GetRoiVolume()
+        ring_vol[5] = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['ring40'].GetRoiVolume()
+        
+        #Check volume of each ring that intersects the brain
+        ring_int_vol[0] = roi.get_intersecting_volume('ring90', 'CERVEAU', examination=exam)
+        ring_int_vol[1] = roi.get_intersecting_volume('ring80', 'CERVEAU', examination=exam)
+        ring_int_vol[2] = roi.get_intersecting_volume('ring70', 'CERVEAU', examination=exam)
+        ring_int_vol[3] = roi.get_intersecting_volume('ring60', 'CERVEAU', examination=exam)
+        ring_int_vol[4] = roi.get_intersecting_volume('ring50', 'CERVEAU', examination=exam)
+        ring_int_vol[5] = roi.get_intersecting_volume('ring40', 'CERVEAU', examination=exam)
+        
+        #Expand and contract PTV to smooth
+        roi.create_expanded_ptv(ptv_names[i], color="SteelBlue", examination=exam, margeptv=3, output_name='stats_ptv')
+        roi.create_expanded_ptv('stats_ptv+3cm', color="SteelBlue", examination=exam, margeptv=2.95, output_name='stats_ptv+3cm',operation='Contract')
+        big_small_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['stats_ptv+3cm-2.95cm'].GetRoiVolume()
+        sum_big_small += big_small_vol
+         
+        #Check for tronc overlap
+        tronc_overlap = patient.PatientModel.CreateRoi(Name="temp stats PTV tronc", Color="Red", Type="Ptv", TissueName=None, RoiMaterial=None)
+        tronc_overlap.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [ptv_names[i]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [tronc_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Intersection", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        tronc_overlap.UpdateDerivedGeometry(Examination=exam)
+        ptv_tronc_overlap[i] = roi.get_roi_volume(tronc_overlap.Name, exam=exam) / ptv_vol[i]
+        tronc_overlap.DeleteRoi()
+        
+        #Generate output
+        ptv_output += ptv_names[i] + ',' + str(rx[i]) + ',' + str(ptv_coverage[0]*100) + ',' + str(ptv_vol[i]) + ',' + str(ptv_rad[i]) + ',' + str(big_small_vol) + ','
+        for j in range(6):
+            ptv_output += str(ring_vol[j]) + ',' + str(ring_int_vol[j]) + ','
+        ptv_output += str(ptv_tronc_overlap[i]) + ','
+        
+        #Delete temporary ROIs
+        delete_list = ['stats_ptv+0.25cm','stats_ptv+0.4cm','stats_ptv+0.6cm','stats_ptv+0.8cm','stats_ptv+1.1cm','ring90','ring80','ring70','ring60','ring50','ring40','stats_ptv+3cm','stats_ptv+3cm-2.95cm']
+        for contour in delete_list:
+            patient.PatientModel.RegionsOfInterest[contour].DeleteRoi() 
+    
+    
+    #Create sum of all PTVs, then expand and contract to smooth
+    #I CAN'T THINK OF A GOOD WAY TO DO THIS
+    smooth = True
+    if ptv_names[1] == "": #Only one PTV
+        total_smoothed_vol = sum_big_small
+        smooth = False
+    elif ptv_names[2] == "": #Two PTVs
+        total_ptv = patient.PatientModel.CreateRoi(Name="stats_total_ptv", Color="Orange", Type="Ptv", TissueName=None, RoiMaterial=None)
+        total_ptv.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [ptv_names[0]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv_names[1]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        total_ptv.UpdateDerivedGeometry(Examination=exam)
+        total_smoothed_vol = roi.get_roi_volume(total_ptv.Name, exam=exam)
+    elif ptv_names[3] == "": #Three PTVs
+        total_ptv = patient.PatientModel.CreateRoi(Name="stats_total_ptv", Color="Orange", Type="Ptv", TissueName=None, RoiMaterial=None)
+        total_ptv.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [ptv_names[0],ptv_names[1]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv_names[2]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        total_ptv.UpdateDerivedGeometry(Examination=exam)
+        total_smoothed_vol = roi.get_roi_volume(total_ptv.Name, exam=exam)
+    else: #Four PTVs
+        total_ptv = patient.PatientModel.CreateRoi(Name="stats_total_ptv", Color="Orange", Type="Ptv", TissueName=None, RoiMaterial=None)
+        total_ptv.SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [ptv_names[0],ptv_names[1],ptv_names[2]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv_names[3]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        total_ptv.UpdateDerivedGeometry(Examination=exam)
+        total_smoothed_vol = roi.get_roi_volume(total_ptv.Name, exam=exam)   
+
+    if smooth:
+        roi.create_expanded_ptv(total_ptv.Name, color="LightBlue", examination=exam, margeptv=3, output_name='stats_total_ptv')
+        roi.create_expanded_ptv('stats_total_ptv+3cm', color="LightBlue", examination=exam, margeptv=2.95, output_name='stats_total_ptv+3cm',operation='Contract')
+        total_smoothed_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['stats_total_ptv+3cm-2.95cm'].GetRoiVolume()
+        total_ptv.DeleteRoi() 
+        patient.PatientModel.RegionsOfInterest['stats_total_ptv+3cm'].DeleteRoi()
+        patient.PatientModel.RegionsOfInterest['stats_total_ptv+3cm-2.95cm'].DeleteRoi()
+        
+    #Get DVH information (since we're using Fractiondose we have to compensate for nb_fx)
+    #Note that dose_in_brain excludes the volume of the PTV, while dose_in_body includes it
+    rx_dose = max(rx) #Use highest prescription value for OAR dose calculations
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName='CERVEAU-PTV', DoseValues=[rx_dose/nb_fx,rx_dose*0.9/nb_fx,rx_dose*0.8/nb_fx,rx_dose*0.7/nb_fx,rx_dose*0.6/nb_fx,rx_dose*0.5/nb_fx,rx_dose*0.4/nb_fx,1200/nb_fx,1000/nb_fx])
+    dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName='BodyRS', DoseValues=[rx_dose/nb_fx,rx_dose*0.9/nb_fx,rx_dose*0.8/nb_fx,rx_dose*0.7/nb_fx,rx_dose*0.6/nb_fx,rx_dose*0.5/nb_fx,rx_dose*0.4/nb_fx,1200/nb_fx,1000/nb_fx])
+    body_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['BodyRS'].GetRoiVolume()
+    
+    #Estimate radius of each isodose
+    dose_radius = [math.pow(3*i*body_vol/(4*math.pi),1.0/3) for i in dose_in_body] #Estimated radius for each dose level (V90, V80...V40,12Gy,10Gy)
+    
+    #Calculate D1% for OARs
+    oar_list = [moelle_name,oeild_name,oeilg_name,tronc_name,'CHIASMA','NERF OPT DRT','NERF OPT GCHE']
+    oar_d1 = [0,0,0,0,0,0,0]
+    for i,oar in enumerate(oar_list):
+        try:
+            oar_d1[i] = nb_fx * beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = oar,RelativeVolumes = [0.01])[0] / 100.0 #Returns an array, so we select element 0 and divide by 100 to convert to Gy
+        except:
+            oar_d1[i] = -999
+
+    #Find D0.03cc in BodyRS
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'BodyRS',RelativeVolumes = [0.03/body_vol])
+    dmax[0] = dmax[0] * nb_fx
+    
+    #Check whether GTV has Min Dose objective
+    gtv_objective = 'Non'
+    for objective in plan.PlanOptimizations[beamset.Number-1].Objective.ConstituentFunctions:
+        if 'GTV' in objective.ForRegionOfInterest.Name.upper() and objective.DoseFunctionParameters.FunctionType == 'MinDose':
+            gtv_objective = 'Oui'
+            break
+            
+    #Check number of beams
+    num_beams = 0
+    num_segments = 0
+    for beam in beamset.Beams:
+        num_beams +=1
+        for segment in beam.Segments:         
+            num_segments += 1
+    
+    
+    #Generate output string
+    patient_header = "Name,ID,Plan,Beamset,Nb de PTVs,"
+    patient_output = patient.PatientName + ',' + patient.PatientID + ',' + plan.Name + ',' + beamset.DicomPlanLabel + ',' + str(num_ptvs) + ',' #Demographic information
+    
+    dose_header = "CERV vol,CERV radius,CERV-PTV V100,CERV-PTV V90,CERV-PTV V80,CERV-PTV V70,CERV-PTV V60,CERV-PTV V50,CERV-PTV V40,CERV-PTV V12Gy,CERV-PTV V10Gy,CERV-PTV V12Gy cc,CERV-PTV V10Gy cc,"
+    dose_header += "V100 radius,V90 radius,V80 radius,V70 radius,V60 radius,V50 radius,V40 radius,12Gy radius,10Gy radius,"
+    dose_header += "D1% MOELLE (Gy),D0.01 OEIL DRT (Gy),D0.01 OEIL GCHE (Gy),D0.01 TR CEREBRAL (Gy),D0.01 CHIASMA (Gy),D0.01 NERF OPT DRT (Gy),D0.01 NERF OPT GCHE (Gy),Max globale (Gy),"
+    dose_header += "Min dose objective sur GTV,Nb de fractions,Nb de faisceaux,Nb de segments,Technique,Volume du PTV combiné smoothé (cc)"
+    
+
+    output = "%.3f,%.3f," % (brain_vol,brain_radius) #Volume and (estimated) radius of brain
+    output += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f," % (dose_in_brain[0]*100,dose_in_brain[1]*100,dose_in_brain[2]*100,dose_in_brain[3]*100,dose_in_brain[4]*100,dose_in_brain[5]*100,dose_in_brain[6]*100,dose_in_brain[7]*100,dose_in_brain[8]*100) #CERV-PTV V100...V40,V10Gy,V12Gy in percentage
+    output += "%.3f,%.3f," % (dose_in_brain[7]*brain_minus_ptv_vol,dose_in_brain[8]*brain_minus_ptv_vol) #CERV-PTV V12 and V10 in cc
+    output += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f," % (dose_radius[0],dose_radius[1],dose_radius[2],dose_radius[3],dose_radius[4],dose_radius[5],dose_radius[6],dose_radius[7],dose_radius[8]) #Estimated radii for V100,V90...V40,V12Gy,V10Gy in body
+    output += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f," % (oar_d1[0],oar_d1[1],oar_d1[2],oar_d1[3],oar_d1[4],oar_d1[5],oar_d1[6]) #D1% for OARs
+    output += "%.3f," % (dmax[0] / 100.0) #Global max
+    output += gtv_objective + ','
+    output += "%d,%d,%d,%s," % (nb_fx,num_beams,num_segments,technique)
+    output += str(total_smoothed_vol)
+    
+    
+    #Write to file
+    file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\crane_v2.txt'
+    with open(file_path, 'a') as stat_file:
+        #The line below prints the key, only do so if starting the stats text file over from scratch 
+        #stat_file.write(patient_header + ptv_header + dose_header + '\n')
+        stat_file.write(patient_output + ptv_output + output + '\n')
+        
+
+
+
 
 def stereo_lung_statistics():
     patient = lib.get_current_patient()
