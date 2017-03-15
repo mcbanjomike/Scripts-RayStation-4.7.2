@@ -108,14 +108,14 @@ def verify_isocenter():
         loc_poi_text = "Aucun point de localisation trouvé"
     else:
         if loc_point_name == "REF SCAN":
-            loc_poi_text = "POI localization: %s (%.2f, %.2f, %.2f)" % (loc_point_name, loc_coords.x, loc_coords.z, -1*loc_coords.y)  #Fewer spaces to maintain alignment of results
+            loc_poi_text = "POI localization: %s   (%.2f, %.2f, %.2f)" % (loc_point_name, loc_coords.x, loc_coords.z, -1*loc_coords.y)  #Fewer spaces to maintain alignment of results
         else:
             loc_poi_text = "POI localization: %s            (%.2f, %.2f, %.2f)" % (loc_point_name, loc_coords.x, loc_coords.z, -1*loc_coords.y)
     
     if iso_coords is None:
         iso_poi_text = iso_point_name
     else:
-        iso_poi_text = "POI isocentre: %s                (%.2f, %.2f, %.2f)" % (iso_point_name, iso_coords.x, iso_coords.z, -1*iso_coords.y)    
+        iso_poi_text = "Coordonnées POI %s            (%.2f, %.2f, %.2f)" % (iso_point_name, iso_coords.x, iso_coords.z, -1*iso_coords.y)   
     
     shift_text = ""
     
@@ -128,7 +128,7 @@ def verify_isocenter():
                 shift_text += "Shift de %.2fcm, %.2fcm, %.2fcm entre point de localisation\n     et point %s" % (loc_coords.x-iso_coords.x, loc_coords.z-iso_coords.z, iso_coords.y-loc_coords.y, iso_point_name)     
 
     # Beam isocenters
-    beam_iso_text = "Coordonnées faisceaux:       "
+    beam_iso_text = "Coordonnées faisceaux          "
     mismatch = False
     try:              
         for i, beam in enumerate(beamset.Beams): #Verify that coordinates are the same for all beams

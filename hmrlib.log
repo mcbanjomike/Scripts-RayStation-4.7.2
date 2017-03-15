@@ -4105,3 +4105,109 @@ SystemError: Invalid objectHandle.
 2017-03-15 11:02:09,389 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - 3DC optimised/3DC optimised] ================================================================================
 2017-03-15 11:02:09,438 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - 3DC optimised/3DC optimised] End of script test_NePasUtiliser.py [execution time = 0:01:04.347000]
 2017-03-15 11:02:09,487 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - 3DC optimised/3DC optimised] ================================================================================
+2017-03-15 14:57:44,955 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 14:57:45,425 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 1.py
+2017-03-15 14:57:46,136 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 14:58:21,906 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (0.0706558227539, -0.0351287841797, 0.0)
+2017-03-15 14:58:22,159 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-03-15 14:59:46,801 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 14:59:46,929 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 1.py [execution time = 0:02:02.365000]
+2017-03-15 14:59:47,087 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 14:59:57,939 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 14:59:58,242 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 1.py
+2017-03-15 14:59:58,374 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:00:04,501 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (0.0706558227539, -0.0351287841797, 0.0)
+2017-03-15 15:00:05,074 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-03-15 15:00:48,893 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:00:49,042 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 1.py [execution time = 0:00:51.087000]
+2017-03-15 15:00:49,194 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:00:54,662 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:00:54,904 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 1.py
+2017-03-15 15:00:55,024 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:01:01,185 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (0.0706558227539, -0.0351287841797, 0.0)
+2017-03-15 15:01:01,783 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-03-15 15:02:49,148 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:02:49,280 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 1.py [execution time = 0:01:54.509000]
+2017-03-15 15:02:49,421 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:03:26,469 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:03:26,780 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-03-15 15:03:26,943 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:06:10,040 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:06:10,186 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:02:43.718000]
+2017-03-15 15:06:10,356 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:06:23,970 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:06:24,392 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-03-15 15:06:24,583 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:12:04,217 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:12:04,352 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:05:40.418000]
+2017-03-15 15:12:04,505 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:12:11,357 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:12:11,822 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-03-15 15:12:12,044 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:12:13,374 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:12:13,544 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:00:02.161000]
+2017-03-15 15:12:13,708 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:12:45,372 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:12:45,620 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-03-15 15:12:45,902 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:13:02,723 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (0.0706558227539, -0.0351287841797, 0.0)
+2017-03-15 15:13:03,245 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-03-15 15:15:54,388 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:15:54,527 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:03:08.985000]
+2017-03-15 15:15:54,683 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:16:07,814 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:16:08,090 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-03-15 15:16:08,630 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:17:36,674 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:17:36,812 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:01:29.062000]
+2017-03-15 15:17:36,964 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:17:42,298 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:17:42,747 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-03-15 15:17:42,946 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:19:39,003 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:19:39,145 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:01:56.887000]
+2017-03-15 15:19:39,294 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:20:17,163 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:20:17,524 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 1.py
+2017-03-15 15:20:17,700 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:21:18,771 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (0.0706558227539, -0.0351287841797, 0.0)
+2017-03-15 15:21:19,392 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-03-15 15:22:17,543 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:22:17,674 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 1.py [execution time = 0:02:00.580000]
+2017-03-15 15:22:17,827 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:22:23,102 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:22:23,612 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 1.py
+2017-03-15 15:22:23,872 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:22:54,843 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:22:54,988 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 1.py [execution time = 0:00:31.908000]
+2017-03-15 15:22:55,141 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:23:00,335 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:23:00,700 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-03-15 15:23:00,806 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:32:41,783 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:32:41,913 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:09:41.569000]
+2017-03-15 15:32:42,074 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:32:46,902 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:32:47,280 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 1.py
+2017-03-15 15:32:47,427 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:40:58,782 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:40:58,931 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 1.py [execution time = 0:08:12.102000]
+2017-03-15 15:40:59,088 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:41:05,838 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:41:06,352 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-03-15 15:41:06,594 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:43:14,342 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:43:14,470 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:02:08.774000]
+2017-03-15 15:43:14,620 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:43:20,600 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:43:20,943 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 1.py
+2017-03-15 15:43:21,107 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:43:31,737 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:43:31,862 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 1.py [execution time = 0:00:11.258000]
+2017-03-15 15:43:31,994 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-15 15:44:28,577 - hmrlib - INFO - [hmr30489 - AMORMINO_5^VITTORIO (1424964) - CT 1 - A1+A2 avec dose/A1] ================================================================================
+2017-03-15 15:44:28,815 - hmrlib - INFO - [hmr30489 - AMORMINO_5^VITTORIO (1424964) - CT 1 - A1+A2 avec dose/A1] Starting script vérif 1.py
+2017-03-15 15:44:28,915 - hmrlib - INFO - [hmr30489 - AMORMINO_5^VITTORIO (1424964) - CT 1 - A1+A2 avec dose/A1] ================================================================================
+2017-03-15 15:44:43,521 - hmrlib - INFO - [hmr30489 - AMORMINO_5^VITTORIO (1424964) - CT 1 - A1+A2 avec dose/A1] ================================================================================
+2017-03-15 15:44:43,593 - hmrlib - INFO - [hmr30489 - AMORMINO_5^VITTORIO (1424964) - CT 1 - A1+A2 avec dose/A1] End of script vérif 1.py [execution time = 0:00:15.096000]
+2017-03-15 15:44:43,684 - hmrlib - INFO - [hmr30489 - AMORMINO_5^VITTORIO (1424964) - CT 1 - A1+A2 avec dose/A1] ================================================================================
