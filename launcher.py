@@ -3499,7 +3499,7 @@ def verification_initiale():
             self.HeaderWindow = self.miniPanel(0, 0)     
 
             self.PatientIDHeader = Label()
-            self.PatientIDHeader.Text = "Patient: " + patient.PatientName.replace('^', ', ') #+ "                  Plan: " + plan.Name + "                  Beamset: " + beamset.DicomPlanLabel
+            self.PatientIDHeader.Text = "Patient: " + patient.PatientName.replace('^', ', ') + "               Beamset: " + beamset.DicomPlanLabel
             self.PatientIDHeader.Location = Point(15, 25)
             self.PatientIDHeader.Font = Font("Arial", 11, FontStyle.Bold)
             self.PatientIDHeader.AutoSize = True          
@@ -3620,20 +3620,27 @@ def verification_initiale():
             self.check_distribution_dose.Checked = False         
 
 
+            #Count up beamsets
+            bs_text = ""
+            num_bs = 0
+            for bs in plan.BeamSets:
+                bs_text += bs.DicomPlanLabel + ", "
+                num_bs += 1            
+            
             self.label_results_header = Label()
-            self.label_results_header.Text = ""
+            self.label_results_header.Text = "Résultats"
             self.label_results_header.Location = Point(15, offset + vert_spacer*9)
             self.label_results_header.Font = Font("Arial", 11, FontStyle.Bold)
             self.label_results_header.AutoSize = True     
             
             self.label_results = Label()
-            self.label_results.Text = ""
+            self.label_results.Text = "Nombre de beamsets dans le plan: " + str(num_bs) + ' (' + bs_text[0:-2] + ')'
             self.label_results.Location = Point(15, offset + vert_spacer*10)
             self.label_results.Font = Font("Arial", 10,)
             self.label_results.AutoSize = True             
 
             self.label_reminder = Label()
-            self.label_reminder.Text = ""
+            self.label_reminder.Text = "Rappel:\nRoulez le script de vérification pour chaque beamset"
             self.label_reminder.Location = Point(15, offset + vert_spacer*11)
             self.label_reminder.Font = Font("Arial", 10.25, FontStyle.Bold)
             self.label_reminder.ForeColor = Color.Red
@@ -3914,6 +3921,7 @@ def verification_finale():
                      check_distribution_dose = "Pas vérifié",
                      check_DSP = "Pas vérifié",
                      check_mise_en_place = "Pas vérifié",
+                     check_doctx = "Pas vérifié",
                      check_codestat = "Pas vérifié")
             
             #Create dictionaries for window/level switching
@@ -3943,7 +3951,7 @@ def verification_finale():
             self.HeaderWindow = self.miniPanel(0, 0)     
 
             self.PatientIDHeader = Label()
-            self.PatientIDHeader.Text = "Patient: " + patient.PatientName.replace('^', ', ') #+ "                  Plan: " + plan.Name + "                  Beamset: " + beamset.DicomPlanLabel
+            self.PatientIDHeader.Text = "Patient: " + patient.PatientName.replace('^', ', ') + "               Beamset: " + beamset.DicomPlanLabel
             self.PatientIDHeader.Location = Point(15, 25)
             self.PatientIDHeader.Font = Font("Arial", 11, FontStyle.Bold)
             self.PatientIDHeader.AutoSize = True          
@@ -4079,39 +4087,58 @@ def verification_finale():
             
             
             
+            self.label_doctx = Label()
+            self.label_doctx.Text = "Vérification Document de Tx (et DRRs au besoin)"
+            self.label_doctx.Location = Point(15, offset + vert_spacer*9)
+            self.label_doctx.Font = Font("Arial", 10.25, FontStyle.Bold)
+            self.label_doctx.AutoSize = True              
+            
+            self.check_doctx = CheckBox()
+            self.check_doctx.Location = Point(410, offset + vert_spacer*9 - 2)
+            self.check_doctx.Width = 30
+            self.check_doctx.Checked = False                 
+            
+            
+            
             self.label_codestat = Label()
             self.label_codestat.Text = "Vérification des codes statistiques"
-            self.label_codestat.Location = Point(15, offset + vert_spacer*9)
+            self.label_codestat.Location = Point(15, offset + vert_spacer*10)
             self.label_codestat.Font = Font("Arial", 10.25, FontStyle.Bold)
             self.label_codestat.AutoSize = True              
             
             self.check_codestat = CheckBox()
-            self.check_codestat.Location = Point(410, offset + vert_spacer*9 - 2)
+            self.check_codestat.Location = Point(410, offset + vert_spacer*10 - 2)
             self.check_codestat.Width = 30
             self.check_codestat.Checked = False     
 
-
+            
+            #Count up beamsets
+            bs_text = ""
+            num_bs = 0
+            for bs in plan.BeamSets:
+                bs_text += bs.DicomPlanLabel + ", "
+                num_bs += 1
 
             self.label_results_header = Label()
-            self.label_results_header.Text = ""
-            self.label_results_header.Location = Point(15, offset + vert_spacer*11)
+            self.label_results_header.Text = "Résultats"
+            self.label_results_header.Location = Point(15, offset + vert_spacer*12)
             self.label_results_header.Font = Font("Arial", 11, FontStyle.Bold)
             self.label_results_header.AutoSize = True     
             
             self.label_results = Label()
-            self.label_results.Text = ""
-            self.label_results.Location = Point(15, offset + vert_spacer*12)
+            self.label_results.Text = "Nombre de beamsets dans le plan: " + str(num_bs) + ' (' + bs_text[0:-2] + ')'
+            self.label_results.Location = Point(15, offset + vert_spacer*13)
             self.label_results.Font = Font("Arial", 10,)
             self.label_results.AutoSize = True             
 
             self.label_reminder = Label()
-            self.label_reminder.Text = ""
-            self.label_reminder.Location = Point(15, offset + vert_spacer*13)
+            self.label_reminder.Text = "Rappel:\nRoulez le script de vérification pour chaque beamset"
+            self.label_reminder.Location = Point(15, offset + vert_spacer*14)
             self.label_reminder.Font = Font("Arial", 10.25, FontStyle.Bold)
             self.label_reminder.ForeColor = Color.Red
             self.label_reminder.AutoSize = True                 
             
-            
+                
            
             self.MainWindow.Controls.Add(self.label_billes)
             self.MainWindow.Controls.Add(self.check_billes)  
@@ -4140,6 +4167,9 @@ def verification_finale():
             self.MainWindow.Controls.Add(self.label_mise_en_place)
             self.MainWindow.Controls.Add(self.check_mise_en_place)  
 
+            self.MainWindow.Controls.Add(self.label_doctx)
+            self.MainWindow.Controls.Add(self.check_doctx)              
+            
             self.MainWindow.Controls.Add(self.label_codestat)
             self.MainWindow.Controls.Add(self.check_codestat)  
             
@@ -4276,6 +4306,10 @@ def verification_finale():
                 self.d['check_mise_en_place'] = 'OK'
             else:
                 warning = True     
+            if self.check_doctx.Checked:
+                self.d['check_doctx'] = 'OK'
+            else:
+                warning = True                     
             if self.check_codestat.Checked:
                 self.d['check_codestat'] = 'OK'
             else:

@@ -362,6 +362,13 @@ def create_verif2_report(data):
     row.Cells[2].AddParagraph('-')    
     
     row = table.AddRow()
+    row.Cells[0].AddParagraph('Vérification du document de Tx (et DRRs au besoin)')        
+    row.Cells[1].AddParagraph(data['check_doctx'])
+    if data['check_doctx'] == 'Pas vérifié':
+        row.Cells[1].Shading.Color = Colors.Red       
+    row.Cells[2].AddParagraph('-')       
+    
+    row = table.AddRow()
     row.Cells[0].AddParagraph('Vérification des codes statistiques')        
     row.Cells[1].AddParagraph(data['check_codestat'])
     if data['check_codestat'] == 'Pas vérifié':
