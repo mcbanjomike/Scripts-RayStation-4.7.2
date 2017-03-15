@@ -466,7 +466,7 @@ def create_ring(roi_name, r2, r1=0, new_name=None):
     #                                   ResultMarginSettings=get_margin_settings(0))
     #     ring_roi.UpdateDerivedGeometry(Examination=examination)
     with CompositeAction('Create Wall (%s, Image set: %s)' % (roi_name, examination)):
-        ring_roi = patient.PatientModel.CreateRoi(Name=new_name, Type="Organ", TissueName=None, RoiMaterial=None)
+        ring_roi = patient.PatientModel.CreateRoi(Name=new_name, Color="White", Type="Organ", TissueName=None, RoiMaterial=None)
         ring_roi.SetRoiMaterial(Material=source_roi.OfRoi.RoiMaterial)
         ring_roi.SetWallExpression(SourceRoiName=roi_name, OutwardDistance=r2, InwardDistance=r1)
         ring_roi.UpdateDerivedGeometry(Examination=examination)
@@ -641,7 +641,7 @@ def subtract_roi_ptv(roi_name, ptv_name, color="Yellow", examination=None, marge
     return patient.PatientModel.RegionsOfInterest[newname]
 
 
-def create_expanded_ptv(ptv_name, color="Yellow", examination=None, margeptv=0, output_name=None):
+def create_expanded_ptv(ptv_name, color="Yellow", examination=None, margeptv=0, output_name=None, operation='Expand'):
     """Creates an expansion of the specified PTV with a uniform margin.
        Note that the maximum margin permitted by RayStation is 5cm, so the operation only continues if the margin <=5cm.
 
@@ -659,13 +659,19 @@ def create_expanded_ptv(ptv_name, color="Yellow", examination=None, margeptv=0, 
         examination = lib.get_current_examination()
 
     if output_name is None:
-        name = "PTV+%scm" % margeptv
+        if operation == 'Expand':
+            name = "PTV+%scm" % margeptv
+        else:
+            name = "PTV-%scm" % margeptv
     else:
-        name = output_name + "+%scm" % margeptv
+        if operation == 'Expand':
+            name = output_name + "+%scm" % margeptv
+        else:
+            name = output_name + "-%scm" % margeptv
 
     if margeptv <= 5:
         patient.PatientModel.CreateRoi(Name=name, Color=color, Type="Organ", TissueName=None, RoiMaterial=None)
-        patient.PatientModel.RegionsOfInterest[name].SetMarginExpression(SourceRoiName=ptv_name, MarginSettings={'Type': "Expand", 'Superior': margeptv, 'Inferior': margeptv, 'Anterior': margeptv, 'Posterior': margeptv, 'Right': margeptv, 'Left': margeptv})
+        patient.PatientModel.RegionsOfInterest[name].SetMarginExpression(SourceRoiName=ptv_name, MarginSettings={'Type': operation, 'Superior': margeptv, 'Inferior': margeptv, 'Anterior': margeptv, 'Posterior': margeptv, 'Right': margeptv, 'Left': margeptv})
         patient.PatientModel.RegionsOfInterest[name].UpdateDerivedGeometry(Examination=examination)
 
 

@@ -82,10 +82,10 @@ def test_MA():
     #uis.display_loc_point()
     #uis.show_po_cg()
     #uis.show_po_2D()
-    uis.open_plan_settings()
+    #uis.open_plan_settings()
     
-    #statistics.stereo_brain_statistics()
-    
+
+    launcher.crane_stats_window()
     #a,b,c,d,e = verification.verify_beams()
     #message.message_window(a+str(b)+c+d+e)
     
