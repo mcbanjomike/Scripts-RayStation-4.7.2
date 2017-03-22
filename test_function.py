@@ -78,44 +78,73 @@ def test_MA():
     #patient = lib.get_current_patient()
        
     #uis.ui_statetree()
+
+    pdb = get_current("PatientDB")
     
-    #uis.display_loc_point()
-    #uis.show_po_cg()
-    #uis.show_po_2D()
-    #uis.open_plan_settings()
+    input_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\crane_test_falloff.txt'
+    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\falloff_output.txt'         
+    statsfile = open(input_file_path)
+    startpoint = 1
+    endpoint = 1
+    
+    for i,l in enumerate(statsfile):
+        #Start from the requested point in the file; reject first line of the file if it contains header information
+        if i < startpoint or i > endpoint or l.split(',')[0] == 'Name':
+            continue
+    
+        #Locate and open patient
+        try:
+            fullname = l.split(',')[0]
+            displayname = '^' + fullname.split('^')[1] + ' ' + fullname.split('^')[0] + '$'
+            patient_id = '^' + l.split(',')[1] + '$'            
+            my_patient = pdb.QueryPatientInfo(Filter={'PatientID':patient_id,'DisplayName':displayname})
+            
+            if len(my_patient) > 0:
+                pdb.LoadPatient(PatientInfo=my_patient[0])
+            else:
+                output = 'Patient not found: ' + displayname[1:-1] + ', No. HMR ' + patient_id[1:-1] + '\n'
+                with open(output_file_path, 'a') as output_file:
+                    output_file.write(output)                
+                continue
+
+        except:
+            output = 'Incorrect formatting for patient ' + l.split(',')[0] + ', check source file\n' 
+            with open(output_file_path, 'a') as output_file:
+                output_file.write(output)            
+            continue
+        
+        #Locate plan and beamset
+        try:
+            patient = lib.get_current_patient()
+            plan = patient.TreatmentPlans[l.split(',')[2]]
+            beamset = plan.BeamSets[l.split(',')[3]]
+        except:
+            output = displayname[1:-1] + ': Unable to locate plan or beamset\n'
+            with open(output_file_path, 'a') as output_file:
+                output_file.write(output)            
+            continue
+        
+        #Read prescription and ROI information
+        try:
+            num_ptvs = int(l.split(',')[4])
+            ptv_names = [l.split(',')[5],'','','']
+            rx = [int(l.split(',')[6]),0,0,0]
+            technique = l.split(',')[-2]
+        except:
+            output = displayname[1:-1] + ': Unable to determine PTV names or prescription values\n'
+            with open(output_file_path, 'a') as output_file:
+                output_file.write(output)
+            continue
+        
+        #Run the statistics collection script
+        output = statistics.dose_falloff_v1(num_ptvs,ptv_names,rx,technique,patient,plan,beamset)   
+        with open(output_file_path, 'a') as output_file:
+            output_file.write(output)
+
+    
+    #launcher.crane_stats_window()
     
 
-    launcher.crane_stats_window()
-    #a,b,c,d,e = verification.verify_beams()
-    #message.message_window(a+str(b)+c+d+e)
-    
-    
-    #qa.shift_plans_QA(print_results=True)
-    #qa.create_ac_qa_plans(plan=None, phantom_name='QAVMAT ARCCHECK_2016', iso_name='ISO AC')
-    
-    #statetree.CreateUiStateTreeWindow().ShowDialog() 
-    
-    #crane.optimize_collimator_angles()
-    """
-    ui = get_current("ui")
-    ui.Workspace.TabControl['Beams'].RayDataGrid.DataGridRow['1'].Select()
-    ui.Workspace.TabControl['Beams'].BeamCommands.Button_Edit.Click()
-    ui = get_current("ui")
-    ui.BeamDialogAngles.TextBox_CollimatorAngle.Text = '99'
-    ui.Button_OK.Click()
-    ui = get_current("ui")
-    """
-    #ui.Workspace.TabControl['Beams'].RayDataGrid.DataGridRow['1'].TextBlock_BeamAnglesPO_CollimatorAngle.Text = "45.0"
-    
-    #ui.TabControl_ToolBar.ToolBarGroup['TREAT AND PROTECT'].Button_ConformBeamMLC.Click()
-   
-    #foie.calculer_NTCP_foie(CHC=True)
-    #launcher.verification_finale_slim()
-    #message.message_window(verification.verify_segments())
-    #optim.essai_autre_technique()
-    #message.message_window('essai')
-    #import report
-    #report.create_verif1_report()
     
     
 def test_DM():

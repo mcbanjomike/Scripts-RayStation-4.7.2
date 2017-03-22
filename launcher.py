@@ -754,6 +754,9 @@ def plan_launcher_v3():
                 
                 self.Status.ForeColor = Color.Black
                 
+                if patient.BodySite == '':
+                    patient.BodySite = 'Prostate'                
+                
                 self.Status.Text = "En cours: Gestion des POIs"
                 prostate.prostate_A1_pois(plan_data = d)
                 
@@ -856,6 +859,9 @@ def plan_launcher_v3():
                 
                 self.Status.ForeColor = Color.Black
                 
+                if patient.BodySite == '':
+                    patient.BodySite = 'Crâne'
+                
                 self.Status.Text = "En cours: Gestion des POIs"
                 crane.crane_stereo_pois(plan_data = d)
                 
@@ -944,6 +950,9 @@ def plan_launcher_v3():
                 
                 self.Status.ForeColor = Color.Black
                 
+                if patient.BodySite == '':
+                    patient.BodySite = 'Poumon'                
+                
                 self.Status.Text = "En cours: Gestion des POIs"
                 poumon.poumon_stereo_pois(plan_data = d)
                 
@@ -1002,6 +1011,10 @@ def plan_launcher_v3():
                 
                          
                 self.Status.ForeColor = Color.Black
+                
+                if patient.BodySite == '':
+                    patient.BodySite = 'Foie'                
+                
                 self.Status.Text = "En cours: Gestion des POIs"
                 poi.create_iso(exam = d['exam'])
                 poi.auto_assign_poi_types()
@@ -1057,6 +1070,10 @@ def plan_launcher_v3():
                         
                 
                 self.Status.ForeColor = Color.Black
+                
+                if patient.BodySite == '':
+                    patient.BodySite = 'Vertebre'                
+                
                 self.Status.Text = "En cours: Gestion des POIs"
                 poi.create_iso(exam = d['exam'])
                 poi.auto_assign_poi_types()
@@ -4589,9 +4606,13 @@ def crane_stats_window():
             else:
                 technique = self.techcombo.Text
                 if num_ptvs > 0:
-                    statistics.stereo_brain_statistics_v2(num_ptvs, ptv_names, rx, technique)
-                    self.message.Text = "Calcul terminé"
-                    self.message.ForeColor = Color.Green
+                    #statistics.stereo_brain_statistics_v2(num_ptvs, ptv_names, rx, technique)
+                    #self.message.Text = "Calcul terminé"
+                    self.message.Text = statistics.stereo_brain_statistics_v2(num_ptvs, ptv_names, rx, technique)
+                    if self.message.Text == "Calcul terminé":
+                        self.message.ForeColor = Color.Green
+                    else:
+                        self.message.ForeColor = Color.Red  
                 else:
                     self.message.Text = "Aucun PTV sélectionné"
                     self.message.ForeColor = Color.Red                
