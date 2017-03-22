@@ -175,9 +175,9 @@ def create_prostate_plan_A2():
 
     # Set maximum delivery time
     if nb_fx_A2 == 8 or nb_fx_A2 ==6: #3Gy per fraction
-        optim.set_vmat_conversion_parameters(max_arc_delivery_time=200.0, plan=plan, beamset=2)
+        optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.3,max_arc_delivery_time=200.0, plan=plan, beamset=2)
     else:
-        optim.set_vmat_conversion_parameters(max_arc_delivery_time=150.0, plan=plan, beamset=2)
+        optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.3,max_arc_delivery_time=150.0, plan=plan, beamset=2)
 
     # Add optimization objectives
     # Type 1: 54+26
@@ -684,13 +684,13 @@ def prostate_A1_opt_settings(plan_data):
 
     # Set VMAT conversion parameters
     if plan_data['nb_fx'] == 5: #7.25 Gy per fraction
-        optim.set_vmat_conversion_parameters(max_arc_delivery_time=300.0, plan=plan_data['patient'].TreatmentPlans['A1 seul'])          
+        optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.3,max_arc_delivery_time=300.0, plan=plan_data['patient'].TreatmentPlans['A1 seul'])          
     elif plan_data['nb_fx'] == 22 or plan_data['nb_fx'] == 20: #3 Gy per fraction
-        optim.set_vmat_conversion_parameters(max_arc_delivery_time=200.0, plan=plan_data['patient'].TreatmentPlans['A1 seul'])
+        optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.3,max_arc_delivery_time=200.0, plan=plan_data['patient'].TreatmentPlans['A1 seul'])
     elif plan_data['nb_fx'] == 24: #2.5 Gy per fraction
-        optim.set_vmat_conversion_parameters(max_arc_delivery_time=175.0, plan=plan_data['patient'].TreatmentPlans['A1 seul'])  
+        optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.3,max_arc_delivery_time=175.0, plan=plan_data['patient'].TreatmentPlans['A1 seul'])  
     else:
-        optim.set_vmat_conversion_parameters(max_arc_delivery_time=150.0, plan=plan_data['patient'].TreatmentPlans['A1 seul'])
+        optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.3,max_arc_delivery_time=150.0, plan=plan_data['patient'].TreatmentPlans['A1 seul'])
     
 
 def prostate_A1_rename(plan_data):

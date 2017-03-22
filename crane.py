@@ -51,6 +51,9 @@ def plan_crane_3DC(site_name='A1', presc_dose=1500, nb_fx=1, isodose_creation = 
     
     patient = lib.get_current_patient()
     exam = lib.get_current_examination()
+    
+    if patient.BodySite == '':
+        patient.BodySite = 'Crâne'    
 
     # Create ISO (if point doesn't already exist)
     poi.create_iso()

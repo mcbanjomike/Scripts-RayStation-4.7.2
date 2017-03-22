@@ -4211,3 +4211,312 @@ SystemError: Invalid objectHandle.
 2017-03-15 15:44:43,521 - hmrlib - INFO - [hmr30489 - AMORMINO_5^VITTORIO (1424964) - CT 1 - A1+A2 avec dose/A1] ================================================================================
 2017-03-15 15:44:43,593 - hmrlib - INFO - [hmr30489 - AMORMINO_5^VITTORIO (1424964) - CT 1 - A1+A2 avec dose/A1] End of script vérif 1.py [execution time = 0:00:15.096000]
 2017-03-15 15:44:43,684 - hmrlib - INFO - [hmr30489 - AMORMINO_5^VITTORIO (1424964) - CT 1 - A1+A2 avec dose/A1] ================================================================================
+2017-03-16 11:52:46,216 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-16 11:52:46,605 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 1.py
+2017-03-16 11:52:47,364 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-16 11:54:22,414 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (0.0706558227539, -0.0351287841797, 0.0)
+2017-03-16 11:54:23,988 - hmrlib.poi - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (2.07065582275, 8.96487274170, -3.0)
+2017-03-16 11:56:37,814 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-16 11:56:37,938 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 1.py [execution time = 0:03:52.241000]
+2017-03-16 11:56:38,099 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-16 11:56:58,589 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-16 11:56:59,032 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-03-16 11:56:59,794 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-16 12:23:22,538 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-16 12:23:22,663 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:26:24.412000]
+2017-03-16 12:23:22,912 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-17 17:23:34,463 - hmrlib - INFO - [hmr30489 - ESTRO^2013^Proton^Prostate^Prostate (009) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-17 17:23:34,623 - hmrlib - INFO - [hmr30489 - ESTRO^2013^Proton^Prostate^Prostate (009) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-17 17:23:34,648 - hmrlib - INFO - [hmr30489 - ESTRO^2013^Proton^Prostate^Prostate (009) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-17 17:23:48,468 - hmrlib - INFO - [hmr30489 - Validation^Beam^Mod^TREMBLAY (1745845) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-17 17:23:48,498 - hmrlib - INFO - [hmr30489 - Validation^Beam^Mod^TREMBLAY (1745845) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:14.045000]
+2017-03-17 17:23:48,528 - hmrlib - INFO - [hmr30489 - Validation^Beam^Mod^TREMBLAY (1745845) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 10:35:13,139 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:35:13,594 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 10:35:13,723 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:35:58,299 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:35:58,418 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:45.750000]
+2017-03-20 10:35:58,536 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:41:39,422 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:41:39,819 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 10:41:39,946 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:41:40,075 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:41:40,202 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:00.749000]
+2017-03-20 10:41:40,325 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:42:04,356 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:42:04,615 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 10:42:04,744 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:42:04,910 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:42:05,041 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:00.648000]
+2017-03-20 10:42:05,165 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:42:40,874 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:42:41,222 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 10:42:41,349 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:42:41,483 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:42:41,612 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:00.704000]
+2017-03-20 10:42:41,737 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:43:19,325 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:43:19,672 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 10:43:19,801 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:43:19,935 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:43:20,062 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:00.727000]
+2017-03-20 10:43:20,187 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:43:45,866 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:43:46,215 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 10:43:46,342 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:43:54,038 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:43:54,235 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:08.160000]
+2017-03-20 10:43:54,373 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:45:26,356 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:45:26,795 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 10:45:26,923 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:45:30,520 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:45:30,667 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:04.313000]
+2017-03-20 10:45:30,800 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:45:44,690 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:45:45,069 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 10:45:45,253 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:46:28,894 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:46:29,029 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:44.316000]
+2017-03-20 10:46:29,264 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 10:52:40,015 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 10:52:40,417 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-03-20 10:52:40,492 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 10:52:41,732 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-03-20 10:52:42,573 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-03-20 10:52:42,952 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-03-20 10:52:43,291 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-03-20 10:52:43,622 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-03-20 10:52:43,944 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-03-20 10:52:44,429 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-03-20 10:52:44,756 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-03-20 10:52:45,085 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-03-20 10:52:45,413 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV11 is NOT approved.
+2017-03-20 10:52:45,741 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV1_18 is NOT approved.
+2017-03-20 10:52:46,068 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV21 is NOT approved.
+2017-03-20 10:52:46,408 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV2_18 is NOT approved.
+2017-03-20 10:52:46,735 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRONC is NOT approved.
+2017-03-20 10:52:47,097 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV 18 is NOT approved.
+2017-03-20 10:54:03,475 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 10:54:03,542 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:01:23.730000]
+2017-03-20 10:54:03,607 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 10:55:22,376 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 10:55:22,767 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-03-20 10:55:22,846 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 10:55:24,067 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-03-20 10:55:24,423 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-03-20 10:55:24,743 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-03-20 10:55:25,060 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-03-20 10:55:25,383 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-03-20 10:55:25,695 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI vide_TR CEREBRAL is NOT approved.
+2017-03-20 10:55:26,165 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-03-20 10:55:26,485 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-03-20 10:55:26,812 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-03-20 10:55:27,145 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV11 is NOT approved.
+2017-03-20 10:55:27,479 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV1_18 is NOT approved.
+2017-03-20 10:55:27,838 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV21 is NOT approved.
+2017-03-20 10:55:28,208 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV2_18 is NOT approved.
+2017-03-20 10:55:28,549 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRONC is NOT approved.
+2017-03-20 10:55:28,974 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV18 is NOT approved.
+2017-03-20 10:55:38,968 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (-0.40119934082, 1.05372085571, 7.7056884766e-05)
+2017-03-20 10:55:40,021 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-03-20 10:55:40,191 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-03-20 10:55:40,404 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-03-20 10:55:40,633 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-03-20 10:55:40,825 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-03-20 10:55:41,427 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-03-20 10:55:41,619 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-03-20 10:55:41,802 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-03-20 10:55:41,970 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CERVEAU" set as Organ
+2017-03-20 10:55:42,091 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CERVEAU" set as OrganAtRisk
+2017-03-20 10:55:42,420 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-03-20 10:55:42,608 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-03-20 10:55:42,799 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-03-20 10:55:43,012 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-03-20 10:55:43,240 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL DRT" set as Organ
+2017-03-20 10:55:43,456 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL DRT" set as OrganAtRisk
+2017-03-20 10:55:43,677 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-03-20 10:55:43,884 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL GCHE" set as Organ
+2017-03-20 10:55:44,066 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL GCHE" set as OrganAtRisk
+2017-03-20 10:55:44,277 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI vide_vide_TR CEREBRAL is NOT approved.
+2017-03-20 10:55:44,483 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "vide_vide_TR CEREBRAL" set as Organ
+2017-03-20 10:55:44,666 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "vide_vide_TR CEREBRAL" set as OrganAtRisk
+2017-03-20 10:55:44,878 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-03-20 10:55:45,088 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CHIASMA" set as Organ
+2017-03-20 10:55:45,273 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CHIASMA" set as OrganAtRisk
+2017-03-20 10:55:45,485 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-03-20 10:55:45,696 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT DRT" set as Organ
+2017-03-20 10:55:45,877 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT DRT" set as OrganAtRisk
+2017-03-20 10:55:46,164 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-03-20 10:55:46,374 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT GCHE" set as Organ
+2017-03-20 10:55:46,556 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT GCHE" set as OrganAtRisk
+2017-03-20 10:55:46,762 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV11 is NOT approved.
+2017-03-20 10:55:46,997 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV11" set as Gtv
+2017-03-20 10:55:47,191 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV11" set as Target
+2017-03-20 10:55:47,412 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV1_18 is NOT approved.
+2017-03-20 10:55:47,625 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV1_18" set as Ptv
+2017-03-20 10:55:47,821 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV1_18" set as Target
+2017-03-20 10:55:48,033 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV21 is NOT approved.
+2017-03-20 10:55:48,244 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV21" set as Gtv
+2017-03-20 10:55:48,436 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV21" set as Target
+2017-03-20 10:55:48,641 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV2_18 is NOT approved.
+2017-03-20 10:55:48,840 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV2_18" set as Ptv
+2017-03-20 10:55:49,015 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV2_18" set as Target
+2017-03-20 10:55:49,218 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRONC is NOT approved.
+2017-03-20 10:55:49,397 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TRONC" set as Organ
+2017-03-20 10:55:49,540 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TRONC" set as OrganAtRisk
+2017-03-20 10:55:49,713 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV18 is NOT approved.
+2017-03-20 10:55:49,883 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV18" set as Ptv
+2017-03-20 10:55:50,030 - hmrlib.roi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV18" set as Target
+2017-03-20 10:56:45,602 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-0.40119934082, 1.05372085571, 7.7056884766e-05)
+2017-03-20 10:56:45,840 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-0.40119934082, 1.05372085571, 7.7056884766e-05)
+2017-03-20 10:56:46,072 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-0.40119934082, 1.05372085571, 7.7056884766e-05)
+2017-03-20 10:56:46,312 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-0.40119934082, 1.05372085571, 7.7056884766e-05)
+2017-03-20 10:56:46,514 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-0.40119934082, 1.05372085571, 7.7056884766e-05)
+2017-03-20 10:56:46,839 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-0.40119934082, 1.05372085571, 7.7056884766e-05)
+2017-03-20 10:56:47,173 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-0.40119934082, 1.05372085571, 7.7056884766e-05)
+2017-03-20 10:56:47,481 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-0.40119934082, 1.05372085571, 7.7056884766e-05)
+2017-03-20 10:56:47,699 - hmrlib.poi - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-0.40119934082, 1.05372085571, 7.7056884766e-05)
+2017-03-20 10:56:50,609 - hmrlib.optim - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV18" added.
+2017-03-20 10:56:51,145 - hmrlib.optim - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV18" added.
+2017-03-20 10:56:51,510 - hmrlib.optim - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1_3mm" added.
+2017-03-20 10:56:51,854 - hmrlib.optim - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2_8mm" added.
+2017-03-20 10:56:52,185 - hmrlib.optim - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3_1cm" added.
+2017-03-20 10:56:52,522 - hmrlib.optim - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TISSUS SAINS" added.
+2017-03-20 10:59:54,201 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 10:59:54,270 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:04:31.981000]
+2017-03-20 10:59:54,345 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 11:02:34,092 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 11:02:34,423 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 11:02:34,432 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 11:02:34,451 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\lib.py", line 510, in get_current_patient
+    return get_current('Patient')
+  File "C:\Program Files\RaySearch Laboratories\RayStation 4.7.2\ScriptClient\connect.py", line 21, in get_current
+    return ScriptClient.ScriptObject(ScriptClient.RayScriptService.Instance, ScriptClient.RayScriptService.Instance.Client.GetCurrent(objectType))
+SystemError: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+2017-03-20 11:02:34,516 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Could not get current patient.  No patient is currently selected ?
+2017-03-20 11:02:34,933 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 11:02:34,942 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:01.253000]
+2017-03-20 11:02:34,957 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 11:03:29,416 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:03:29,814 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 11:03:29,944 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:03:30,571 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:03:30,722 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:01.312000]
+2017-03-20 11:03:30,849 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:04:09,990 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:04:10,450 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 11:04:10,578 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:04:11,203 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:04:11,351 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:01.353000]
+2017-03-20 11:04:11,477 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:05:00,453 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:05:00,856 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 11:05:00,987 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:05:01,539 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:05:01,598 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:01.248000]
+2017-03-20 11:05:01,654 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:06:11,754 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:06:11,942 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 11:06:12,013 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:08:33,641 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 11:08:33,728 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:02:21.918000]
+2017-03-20 11:08:33,817 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 12:01:36,078 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 12:01:36,540 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 12:01:36,673 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 12:01:37,125 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 12:01:37,248 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] End of script test_NePasUtiliser.py [execution time = 0:00:01.468000]
+2017-03-20 12:01:37,367 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 12:02:15,704 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 12:02:16,152 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] Starting script test_NePasUtiliser.py
+2017-03-20 12:02:16,281 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-03-20 12:05:16,769 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 12:05:16,845 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:03:01.243000]
+2017-03-20 12:05:16,929 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 12:10:25,190 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 12:10:25,504 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 12:10:25,517 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 12:11:18,310 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 12:11:18,392 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:53.095000]
+2017-03-20 12:11:18,463 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:41:31,618 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:41:32,032 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 13:41:32,101 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:41:32,343 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:41:32,411 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:00.968000]
+2017-03-20 13:41:32,482 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:41:55,886 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:41:56,118 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 13:41:56,191 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:42:43,011 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:42:43,090 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:47.148000]
+2017-03-20 13:42:43,162 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:46:07,762 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:46:08,049 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 13:46:08,123 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:46:49,860 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:46:49,936 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:42.209000]
+2017-03-20 13:46:50,003 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:47:31,899 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:47:32,162 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 13:47:32,228 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:47:53,920 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:47:53,994 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:22.133000]
+2017-03-20 13:47:54,064 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:50:37,791 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:50:38,067 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 13:50:38,132 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:51:01,885 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:51:01,961 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:24.156000]
+2017-03-20 13:51:02,030 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:52:25,721 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:52:26,039 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 13:52:26,111 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:53:10,791 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:53:10,866 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:45.194000]
+2017-03-20 13:53:10,932 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:53:33,849 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:53:34,128 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 13:53:34,193 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:54:17,477 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:54:17,553 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:43.745000]
+2017-03-20 13:54:17,623 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:54:43,245 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:54:43,634 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 13:54:43,702 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:59:00,786 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 13:59:00,862 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:04:17.685000]
+2017-03-20 13:59:00,930 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:00:28,470 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:00:28,812 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 14:00:28,880 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:01:13,177 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:01:13,245 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:44.825000]
+2017-03-20 14:01:13,315 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:01:57,103 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:01:57,505 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 14:01:57,573 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:02:24,168 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:02:24,242 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:27.175000]
+2017-03-20 14:02:24,308 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:12:21,279 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:12:21,435 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 14:12:21,462 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:12:47,658 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:12:47,729 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:26.365000]
+2017-03-20 14:12:47,801 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:13:59,093 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:13:59,454 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 14:13:59,519 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:15:15,515 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:15:15,587 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:01:16.570000]
+2017-03-20 14:15:15,651 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:17:31,225 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:17:31,559 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-03-20 14:17:31,622 - hmrlib - INFO - [hmr30489 - GAUTHIER^DENIS (1816197) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:20:11,389 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-03-20 14:20:11,446 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:02:40.322000]
+2017-03-20 14:20:11,496 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================

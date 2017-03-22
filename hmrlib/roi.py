@@ -641,6 +641,37 @@ def subtract_roi_ptv(roi_name, ptv_name, color="Yellow", examination=None, marge
     return patient.PatientModel.RegionsOfInterest[newname]
 
 
+
+def subtract_rois(big_roi_name, small_roi_name, color="Yellow", examination=None, output_name=None):
+    """Creates ROI that is the subtraction of the two ROIs (useful for creating rings from PTV expansions).
+
+    Args:
+        big_roi_name (str): The name of the larger ROI
+        small_roi_name (str): The name of the smaller ROI
+        color (str): The color of the resulting ROI
+        examination (RS Examination object): The CT on which the source and resulting geometries are contoured
+        output_name (str): The name that the new contour will have
+    Returns:
+        RS region of interest structure
+    """
+
+    patient = lib.get_current_patient()
+    if examination is None:
+        examination = lib.get_current_examination()
+
+    if output_name is None:
+        newname = "%s-%s" % (big_roi_name, small_roi_name)
+    else:
+        newname = output_name
+
+    patient.PatientModel.CreateRoi(Name=newname, Color=color, Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest[newname].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [big_roi_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [small_roi_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest[newname].UpdateDerivedGeometry(Examination=examination)
+
+    return patient.PatientModel.RegionsOfInterest[newname]
+
+    
+    
 def create_expanded_ptv(ptv_name, color="Yellow", examination=None, margeptv=0, output_name=None, operation='Expand'):
     """Creates an expansion of the specified PTV with a uniform margin.
        Note that the maximum margin permitted by RayStation is 5cm, so the operation only continues if the margin <=5cm.
@@ -674,6 +705,38 @@ def create_expanded_ptv(ptv_name, color="Yellow", examination=None, margeptv=0, 
         patient.PatientModel.RegionsOfInterest[name].SetMarginExpression(SourceRoiName=ptv_name, MarginSettings={'Type': operation, 'Superior': margeptv, 'Inferior': margeptv, 'Anterior': margeptv, 'Posterior': margeptv, 'Right': margeptv, 'Left': margeptv})
         patient.PatientModel.RegionsOfInterest[name].UpdateDerivedGeometry(Examination=examination)
 
+
+def create_expanded_roi(roi_name, color="Yellow", examination=None, marge_lat=0, marge_sup_inf=0, output_name=None, operation='Expand'):
+    """Creates an expansion of the specified ROI with a variable margin.
+       Note that the maximum margin permitted by RayStation is 5cm, so the operation only continues if the margin <=5cm.
+
+    Args:
+        roi_name (str): The name of the ROI to use
+        color (str): The color of the resulting ROI
+        examination (RS Examination object): The CT on which the source and resulting geometries are contoured
+        marge_lat (float) : The margin to use in the LAT and A-P directions. Default is 0.
+        marge_sup_inf (float) : The margin to use in the SUP-INF direction. Default is 0.
+        operation(str) : Whether to expand or contract the ROI
+    Returns:
+        RS region of interest structure
+    """
+
+    patient = lib.get_current_patient()
+    if examination is None:
+        examination = lib.get_current_examination()
+
+    if output_name is None:
+        if operation == 'Expand':
+            name = "%s+%scm" % (roi_name, margeptv)
+        else:
+            name = "%s-%scm" % (roi_name, margeptv)
+    else:
+        name = output_name
+
+    if marge_lat <= 5 and marge_sup_inf <= 5:
+        patient.PatientModel.CreateRoi(Name=name, Color=color, Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest[name].SetMarginExpression(SourceRoiName=ptv_name, MarginSettings={'Type': operation, 'Superior': marge_sup_inf, 'Inferior': marge_sup_inf, 'Anterior': marge_lat, 'Posterior': marge_lat, 'Right': marge_lat, 'Left': marge_lat})
+        patient.PatientModel.RegionsOfInterest[name].UpdateDerivedGeometry(Examination=examination)
 
 def generate_BodyRS_plus_Table(threshold=-750, struct=0, planche_seulement=False):
     """
