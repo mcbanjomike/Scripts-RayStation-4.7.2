@@ -78,72 +78,19 @@ def test_MA():
     #patient = lib.get_current_patient()
        
     #uis.ui_statetree()
-
-    pdb = get_current("PatientDB")
     
-    input_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\crane_test_falloff.txt'
-    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\falloff_output.txt'         
-    statsfile = open(input_file_path)
-    startpoint = 1
-    endpoint = 1
+    #statistics.auto_collect_crane_stats(startpoint=60,endpoint=999,min_vol=3.999)
+    #statistics.batch_autoplan_crane(startpoint=1,endpoint=11,min_vol=1.0)
+    #statistics.single_autoplan_crane()
+    #launcher.lung_stats_window()
+    statistics.auto_collect_lung_stats(startpoint=12,endpoint=34)
     
-    for i,l in enumerate(statsfile):
-        #Start from the requested point in the file; reject first line of the file if it contains header information
-        if i < startpoint or i > endpoint or l.split(',')[0] == 'Name':
-            continue
+    #num_ptvs = 2
+    #ptv_names = ['PTV1','PTV2','','']
+    #rx = [1500,1500,0,0]
+    #technique = ['IMRT']
     
-        #Locate and open patient
-        try:
-            fullname = l.split(',')[0]
-            displayname = '^' + fullname.split('^')[1] + ' ' + fullname.split('^')[0] + '$'
-            patient_id = '^' + l.split(',')[1] + '$'            
-            my_patient = pdb.QueryPatientInfo(Filter={'PatientID':patient_id,'DisplayName':displayname})
-            
-            if len(my_patient) > 0:
-                pdb.LoadPatient(PatientInfo=my_patient[0])
-            else:
-                output = 'Patient not found: ' + displayname[1:-1] + ', No. HMR ' + patient_id[1:-1] + '\n'
-                with open(output_file_path, 'a') as output_file:
-                    output_file.write(output)                
-                continue
-
-        except:
-            output = 'Incorrect formatting for patient ' + l.split(',')[0] + ', check source file\n' 
-            with open(output_file_path, 'a') as output_file:
-                output_file.write(output)            
-            continue
-        
-        #Locate plan and beamset
-        try:
-            patient = lib.get_current_patient()
-            plan = patient.TreatmentPlans[l.split(',')[2]]
-            beamset = plan.BeamSets[l.split(',')[3]]
-        except:
-            output = displayname[1:-1] + ': Unable to locate plan or beamset\n'
-            with open(output_file_path, 'a') as output_file:
-                output_file.write(output)            
-            continue
-        
-        #Read prescription and ROI information
-        try:
-            num_ptvs = int(l.split(',')[4])
-            ptv_names = [l.split(',')[5],'','','']
-            rx = [int(l.split(',')[6]),0,0,0]
-            technique = l.split(',')[-2]
-        except:
-            output = displayname[1:-1] + ': Unable to determine PTV names or prescription values\n'
-            with open(output_file_path, 'a') as output_file:
-                output_file.write(output)
-            continue
-        
-        #Run the statistics collection script
-        output = statistics.dose_falloff_v1(num_ptvs,ptv_names,rx,technique,patient,plan,beamset)   
-        with open(output_file_path, 'a') as output_file:
-            output_file.write(output)
-
-    
-    #launcher.crane_stats_window()
-    
+    #output,header,predicted_vol,rad50,brain_minus_ptv_vol,cerv_ptv_name,tronc_name,tronc_max = statistics.dose_falloff_crane_multi(num_ptvs,ptv_names,rx,technique,patient,plan,beamset)  
 
     
     

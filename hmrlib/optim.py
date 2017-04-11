@@ -285,11 +285,11 @@ def set_optimization_parameters(fluence_iterations=60, max_iterations=100, optim
     # TODO Ask confirmation with yes/no dialog before proceeding.
     try:
         for i in indices:
-            if not plan.PlanOptimizations[i].ProgressOfOptimization is None:
+            #if not plan.PlanOptimizations[i].ProgressOfOptimization is None:
                 # Reset optimization because this changes parameters that RS doesn't
                 # allow changing without resetting.
-                plan.PlanOptimizations[i].ResetOptimization()
-                logger.info('Optimization was reset.')
+                #plan.PlanOptimizations[i].ResetOptimization()
+                #logger.info('Optimization was reset.')
 
             logger.info('PlanOptimizations[%s] selected.', i)
 
@@ -408,7 +408,36 @@ def double_optimization(plan=None, beamset=None):
     plan.PlanOptimizations[beamset.Number - 1].RunOptimization()
     plan.PlanOptimizations[beamset.Number - 1].RunOptimization()
 
+def triple_optimization(plan=None, beamset=None):
+    patient = lib.get_current_patient()
+    if plan is None:
+        plan = lib.get_current_plan()
+    if beamset is None:
+        beamset = lib.get_current_beamset()
+       
+    opt = plan.PlanOptimizations[beamset.Number - 1]
+    set_optimization_parameters(plan=plan,fluence_iterations=30, max_iterations=90, compute_intermediate_dose=False)
+    opt.RunOptimization()
+    set_optimization_parameters(plan=plan,fluence_iterations=30, max_iterations=30, compute_intermediate_dose=False)
+    opt.RunOptimization()
+    opt.RunOptimization()    
 
+
+def optimization_90_30(plan=None, beamset=None):
+    patient = lib.get_current_patient()
+    if plan is None:
+        plan = lib.get_current_plan()
+    if beamset is None:
+        beamset = lib.get_current_beamset()
+       
+    opt = plan.PlanOptimizations[beamset.Number - 1]
+    set_optimization_parameters(plan=plan,fluence_iterations=30, max_iterations=90, compute_intermediate_dose=False)
+    opt.RunOptimization()
+    set_optimization_parameters(plan=plan,fluence_iterations=30, max_iterations=30, compute_intermediate_dose=False)
+    opt.RunOptimization()
+    #opt.RunOptimization()    
+    
+    
 def double_opt_save(plan=None, beamset=None):
     # Function which runs two consecutive optimizations and saves the plan afterwards (NB this removes the ability to undo the optimizations).
     patient = lib.get_current_patient()

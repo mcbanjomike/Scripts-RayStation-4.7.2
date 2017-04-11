@@ -727,15 +727,15 @@ def create_expanded_roi(roi_name, color="Yellow", examination=None, marge_lat=0,
 
     if output_name is None:
         if operation == 'Expand':
-            name = "%s+%scm" % (roi_name, margeptv)
+            name = "%s+%scm" % (roi_name, marge_lat)
         else:
-            name = "%s-%scm" % (roi_name, margeptv)
+            name = "%s-%scm" % (roi_name, marge_lat)
     else:
         name = output_name
 
     if marge_lat <= 5 and marge_sup_inf <= 5:
         patient.PatientModel.CreateRoi(Name=name, Color=color, Type="Organ", TissueName=None, RoiMaterial=None)
-        patient.PatientModel.RegionsOfInterest[name].SetMarginExpression(SourceRoiName=ptv_name, MarginSettings={'Type': operation, 'Superior': marge_sup_inf, 'Inferior': marge_sup_inf, 'Anterior': marge_lat, 'Posterior': marge_lat, 'Right': marge_lat, 'Left': marge_lat})
+        patient.PatientModel.RegionsOfInterest[name].SetMarginExpression(SourceRoiName=roi_name, MarginSettings={'Type': operation, 'Superior': marge_sup_inf, 'Inferior': marge_sup_inf, 'Anterior': marge_lat, 'Posterior': marge_lat, 'Right': marge_lat, 'Left': marge_lat})
         patient.PatientModel.RegionsOfInterest[name].UpdateDerivedGeometry(Examination=examination)
 
 def generate_BodyRS_plus_Table(threshold=-750, struct=0, planche_seulement=False):

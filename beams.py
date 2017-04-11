@@ -40,6 +40,31 @@ def add_beams_brain_stereo(beamset=None, site_name='A1'):
     lib.add_arc((site_name+'.2'), iso, 181, 180, 'CW', description='ARC 181-180', collimator=355, beamset=beamset)
 
 
+def add_beams_brain_stereo_kbp(beamset=None, site_name='KBP1'):
+    """
+        Ajoute les arcs utilisés pour la stéréo de crâne.
+
+        Par défaut, ajoutes des arcs allant de :
+
+        - 181 à 180 degrés en CW avec collimateur de 5 degrés
+        - 180 à 181 degrés en CCW avec collimateur de 355 degrés
+
+        .. rubric::
+          PRÉ-REQUIS :
+
+        - Isocentre nommé *ISO SCAN* ou *ISO*.
+
+        .. seealso::
+          fonction :py:func:`hmrlib.lib.add_arc`
+    """
+    if beamset is None:
+        beamset = lib.get_current_beamset()
+
+    iso = poi.identify_isocenter_poi()
+    lib.add_arc((site_name+'.1'), iso, 180, 181, 'CCW', description='ARC 180-181', collimator=2, beamset=beamset)
+
+
+    
 def add_beams_brain_static(beamset=None,site_name='A1',iso_name='ISO', exam=None, nb_beams = 13):    
     """
         Ajoute les faisceaux utilisés pour la stéréo de crâne et les plans 3DC.

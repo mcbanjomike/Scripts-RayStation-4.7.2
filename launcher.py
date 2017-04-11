@@ -4703,3 +4703,260 @@ def crane_stats_window():
     form = CraneStatsWindow()
     Application.Run(form)   
  
+ 
+ 
+ 
+ 
+     
+def lung_stats_window():
+
+    class LungStatsWindow(Form):
+        def __init__(self):
+            self.Text = "Statistiques"
+
+            self.Width = 600
+            self.Height = 500
+
+            self.setupHeaderWindow()
+            self.setupMainWindow()
+            self.setupOKButtons()
+
+            self.Controls.Add(self.HeaderWindow)
+            self.Controls.Add(self.MainWindow)
+            self.Controls.Add(self.OKbuttonPanel)
+            
+        def Panel(self, x, y):
+            panel = Panel()
+            panel.Width = 600
+            panel.Height = 340
+            panel.Location = Point(x, y)
+            panel.BorderStyle = BorderStyle.None
+            return panel
+
+        def miniPanel(self, x, y):
+            panel = Panel()
+            panel.Width = 600
+            panel.Height = 60
+            panel.Location = Point(x, y)
+            panel.BorderStyle = BorderStyle.None
+            return panel                           
+            
+        def setupHeaderWindow(self):
+            self.HeaderWindow = self.miniPanel(0, 0)     
+
+            self.PatientIDHeader = Label()
+            self.PatientIDHeader.Text = "Patient: " + patient.PatientName.replace('^', ', ') + "                       Plan: " + plan.Name
+            self.PatientIDHeader.Location = Point(25, 25)
+            self.PatientIDHeader.Font = Font("Arial", 12, FontStyle.Bold)
+            self.PatientIDHeader.AutoSize = True          
+
+            self.HeaderWindow.Controls.Add(self.PatientIDHeader)
+            
+        def setupMainWindow(self):
+            self.MainWindow = self.Panel(0, 60)
+            
+            vert_spacer = 30
+            offset = 50   
+            
+            self.toplabel = Label()
+            self.toplabel.Text = "PTV                                      Dose (Gy)"
+            self.toplabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.toplabel.Location = Point(100, 20)
+            self.toplabel.AutoSize = True  
+                   
+            self.PTV1combo = ComboBox()
+            self.PTV1combo.Parent = self
+            self.PTV1combo.Size = Size(200,40)
+            self.PTV1combo.Location = Point(25, offset)
+            self.PTV1combo.Text = "Choisissez ROI" 
+     
+            self.dose1_value = TextBox()
+            self.dose1_value.Text = ""
+            self.dose1_value.Location = Point(280, offset)
+            self.dose1_value.Width = 50              
+
+            self.ISOcombo = ComboBox()
+            self.ISOcombo.Parent = self
+            self.ISOcombo.Size = Size(200,40)
+            self.ISOcombo.Location = Point(25, offset + vert_spacer)
+            self.ISOcombo.Text = "Choisissez ISO" 
+
+            self.comments = TextBox()
+            self.comments.Text = ""
+            self.comments.Location = Point(25, offset + 2*vert_spacer)
+            self.comments.Width = 300                
+            
+            self.bottomlabel = Label()
+            self.bottomlabel.Text = "Technique"
+            self.bottomlabel.Location = Point(25, offset + 5*vert_spacer)
+            self.bottomlabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.bottomlabel.AutoSize = True              
+            
+            
+            self.techcombo = ComboBox()
+            self.techcombo.Parent = self
+            self.techcombo.Size = Size(100,40)
+            self.techcombo.Location = Point(25, offset + 6*vert_spacer)
+            self.techcombo.Text = "Technique" 
+            
+            
+            self.MainWindow.Controls.Add(self.toplabel)
+            
+            self.MainWindow.Controls.Add(self.PTV1combo)
+            self.MainWindow.Controls.Add(self.dose1_value)
+            self.MainWindow.Controls.Add(self.ISOcombo)
+            self.MainWindow.Controls.Add(self.comments)
+      
+         
+            self.MainWindow.Controls.Add(self.techcombo)
+            self.MainWindow.Controls.Add(self.bottomlabel)            
+                                     
+            
+        def cancelClicked(self, sender, args):
+            self.Close()          
+            
+        def okClicked(self, sender, args):     
+
+            self.message.ForeColor = Color.Black
+            dose = plan.TreatmentCourse.TotalDose
+            self.message.Text = "Calcul en cours, veuillez patienter"
+                      
+            error_message = ""
+            
+            #Check if PTV exists and dose can be read
+            if roi.roi_exists(self.PTV1combo.Text):     
+                ptv_name = self.PTV1combo.Text
+                try:
+                    rx = int(float(self.dose1_value.Text) * 100)
+                except:
+                    error_message = "Dose du PTV 1 illisible"      
+            else:
+                error_message = "PTV pas trouvé"
+            
+            #Collect info on plan
+            if error_message != "":
+                self.message.Text = error_message
+                self.message.ForeColor = Color.Red
+            else:
+                technique = self.techcombo.Text
+                
+                self.message.Text = "Counting segments"
+                
+                num_segments = 0
+                num_beams = 0
+                for beam in beamset.Beams:
+                    num_beams += 1
+                    for segment in beam.Segments:         
+                        num_segments += 1                
+ 
+                self.message.Text = "Date and nb of fractions"
+                try:
+                    mod_date = str(patient.ModificationInfo.ModificationTime.Year) + '-' + str(patient.ModificationInfo.ModificationTime.Month) + '-' + str(patient.ModificationInfo.ModificationTime.Day)
+                except:
+                    mod_date = 'Unknown'
+                nb_fx = beamset.FractionationPattern.NumberOfFractions
+                
+                self.message.Text = "Getting PTV volume"
+                ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_name].GetRoiVolume()
+                self.message.Text = "Smoothing PTV"
+                roi.create_expanded_ptv(ptv_name, color="SteelBlue", examination=exam, margeptv=3, output_name='stats_ptv')
+                roi.create_expanded_ptv('stats_ptv+3cm', color="SteelBlue", examination=exam, margeptv=2.95, output_name='stats_ptv+3cm',operation='Contract')
+                smoothed_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['stats_ptv+3cm-2.95cm'].GetRoiVolume()    
+                
+                #Print to file
+                header = 'Nom du patient,No. HMR,Plan,Beamset,Nom du PTV,Rx(cGy),Vol PTV,Vol PTV smoothé,Technique,Nb de fx,Nb de faisceaux,Nb de segments,Nom isocentre,Scan de planif,Date de modification,Commentaires\n'
+                output = '%s,%s,%s,%s,%s,%d,%.3f,%.3f,%s,%d,%d,%d,%s,%s,%s,%s\n' % (patient.PatientName,patient.PatientID,plan.Name,beamset.DicomPlanLabel,ptv_name,rx,ptv_vol,smoothed_vol,technique,nb_fx,num_beams,num_segments,self.ISOcombo.Text,exam.Name,mod_date,self.comments.Text)
+                
+                output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\Poumon Master List.txt'     
+                file_exists = os.path.exists(output_file_path)
+                with open(output_file_path, 'a') as output_file:
+                    if not file_exists:
+                        output_file.write(header) #Only want to write the header if we're starting a new file
+                    output_file.write(output)
+                    
+                self.message.Text = 'Finished!'
+                self.message.ForeColor = Color.Green
+            
+
+        def setupOKButtons(self):
+            self.OKbuttonPanel = self.miniPanel(0, 410)
+            
+            okButton = Button()
+            okButton.Text = "Calculer"
+            okButton.Location = Point(25, 10)
+            self.AcceptButton = okButton
+            okButton.Click += self.okClicked            
+            
+            cancelButton = Button()
+            cancelButton.Text = "Annuler"
+            cancelButton.Location = Point(125,10)
+            self.CancelButton = cancelButton
+            cancelButton.Click += self.cancelClicked
+            
+            self.message = Label()
+            self.message.Text = ""
+            self.message.Location = Point(225, 13)
+            self.message.Font = Font("Arial", 11, FontStyle.Bold)
+            self.message.AutoSize = True      
+            
+            self.OKbuttonPanel.Controls.Add(okButton)
+            self.OKbuttonPanel.Controls.Add(cancelButton)
+            self.OKbuttonPanel.Controls.Add(self.message)
+           
+            #Automatically populate ROI selection comboboxes
+            self.PTV1combo.Items.Add("Choisissez ROI")         
+            for roi in patient.PatientModel.RegionsOfInterest:       
+                self.PTV1combo.Items.Add(roi.Name)
+                if "PTV" in roi.Name and roi.Name[-3:] == "Gy*":
+                    self.PTV1combo.Text = roi.Name
+                    self.dose1_value.Text = str(beamset.Prescription.PrimaryDosePrescription.DoseValue/100.0)
+            
+            for poi in patient.PatientModel.PointsOfInterest:       
+                self.ISOcombo.Items.Add(poi.Name)            
+                if poi.Name == "ISO":
+                    self.ISOcombo.Text = 'ISO'
+            
+            if beamset.DeliveryTechnique == "Arc":
+                self.techcombo.Text = 'VMAT'
+            else:
+                self.techcombo.Items.Add('3DC')
+                self.techcombo.Items.Add('IMRT')
+                
+                num_segments = 0
+                num_beams = 0
+                for beam in beamset.Beams:
+                    num_beams += 1
+                    for segment in beam.Segments:         
+                        num_segments += 1
+                
+                if num_segments > num_beams:
+                    self.techcombo.Text = 'IMRT'
+                else:
+                    self.techcombo.Text = '3DC'
+
+                        
+    #Check for common errors while importing patient, plan, beamset and examination
+    try:
+        patient = lib.get_current_patient()
+    except:
+        debug_window('Aucun patient sélectionné')
+        return                
+    try:
+        plan = lib.get_current_plan()
+    except:
+        debug_window('Aucun plan sélectionné')
+        return
+    try:
+        beamset = lib.get_current_beamset()
+    except:
+        debug_window('Aucun beamset sélectionné')
+        return        
+    try:
+        exam = lib.get_current_examination()
+    except:
+        debug_window('Aucun examination trouvé')
+        return
+        
+    form = LungStatsWindow()
+    Application.Run(form)   
+ 
