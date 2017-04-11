@@ -21,6 +21,9 @@ import optimization_objectives
 import clinical_goals
 import message
 
+import statistics
+import time
+
 import logging
 from hmrlib.HMR_RS_LoggerAdapter import HMR_RS_LoggerAdapter
 
@@ -594,3 +597,1693 @@ def crane_stereo_create_isodose_lines(plan_data):
     eval.add_isodose_line_rgb(dose=120, r=255, g=255, b=0, alpha=255)
     patient.CaseSettings.DoseColorMap.PresentationType = 'Absolute'
 
+
+#Script for adding a plan to an existing patient with locked contours and such
+def kbp_test_phase2(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,clinical_beamset):
+
+    exam = lib.get_current_examination()
+
+    if patient.BodySite == '':
+        patient.BodySite = 'Crâne'    
+
+    # Add Treatment plan
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    try:
+        plan = patient.TreatmentPlans['Test KBP MA']
+    except:
+        plan = patient.AddNewPlan(PlanName='Test KBP MA', PlannedBy=planner_name, Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
+        plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset
+    try:
+        beamset = plan.BeamSets['Test KBP']
+    except:
+        beamset = plan.AddNewBeamSet(Name='Test KBP', ExaminationName=exam.Name, MachineName='BeamMod', NominalEnergy=None,
+                                          Modality="Photons", TreatmentTechnique='VMAT', PatientPosition="HeadFirstSupine", NumberOfFractions=nb_fx, CreateSetupBeams=False, Comment='VMAT')
+        beamset.AddDosePrescriptionToRoi(RoiName=ptv_names[0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=rx[0], RelativePrescriptionLevel=1)
+        
+        #Add beams
+        beams.add_beams_brain_stereo_kbp(beamset=beamset, site_name='KBP1')
+        optim.set_optimization_parameters(plan=plan)
+        optim.set_vmat_conversion_parameters(max_arc_delivery_time=350.0, plan=plan)    
+        
+    """
+    # Make the new plan active through the GUI (required so we can manipulate GUI elements below)
+    ui = get_current("ui")
+    # We have to save before selecting the plan
+    try:
+        patient.Save()
+    except Exception, err:
+        message.message_window(err)
+        exit(0)
+    ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.Popup.ComboBoxItem['Test KBP phase2'].Select()      
+    """
+    
+    #Run script to determine predicted volumes for V80/70/60/50 and add optimization rings
+    thing1,thing2,predicted_vol,rad50,brain_minus_ptv_vol,cerv_ptv_name,tronc_name,tronc_max = statistics.dose_falloff_crane(num_ptvs, ptv_names, rx, technique,patient,plan,beamset,add_new_plan=True)
+  
+    ring_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['KBP OPT CERVEAU'].GetRoiVolume()
+    ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_names[0]].GetRoiVolume()  
+    result_text = ""
+
+
+    #First plan: Dose falloffs (MBB), two optimizations
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=50, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*1.02, rx[0]*0.40, 0.4, weight=5, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.6, rx[0]*0.15, 1.0, weight=1, plan=plan, plan_opt=0)   
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)                        
+    
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True
+    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    
+    result_text += '90+30,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+       
+    """
+    #2. Four optimizations
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False   
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    optim.double_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True
+    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    
+    result_text += '90+30x3,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+       
+
+    #3. Six optimizations
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False   
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    optim.double_optimization(plan=plan,beamset=beamset)
+    optim.double_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True
+    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    
+    result_text += '90+30x5,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+       
+     
+    #4. Eight optimizations
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False   
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    optim.double_optimization(plan=plan,beamset=beamset)
+    optim.double_optimization(plan=plan,beamset=beamset)
+    optim.double_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True
+    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    
+    result_text += '90+30x7,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+       
+     
+    #5. Ten optimizations
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False   
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    optim.double_optimization(plan=plan,beamset=beamset)
+    optim.double_optimization(plan=plan,beamset=beamset)
+    optim.double_optimization(plan=plan,beamset=beamset)
+    optim.double_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True
+    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    
+    result_text += '90+30x9,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+    """
+               
+
+    #Second plan: Dose falloffs + predicted DVHs
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+        objective.DeleteFunction()    
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=50, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*1.02, rx[0]*0.40, 0.4, weight=5, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.6, rx[0]*0.15, 1.0, weight=1, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.8, 100*predicted_vol[2]/ring_vol, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.7, 100*predicted_vol[3]/ring_vol, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.6, 100*predicted_vol[4]/ring_vol, weight=5, plan=plan, plan_opt=0)    
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)                        
+    
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True
+    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    
+    result_text += 'Falloff + DVHs,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+
+    
+    #Third plan: Dose falloffs + predicted DVHs (MBB style)
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+        objective.DeleteFunction()    
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=200, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*1.0, rx[0]*0.40, 0.4, weight=25, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.6, rx[0]*0.20, 1.0, weight=1, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.8, 100*predicted_vol[2]/ring_vol, weight=1, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.7, 100*predicted_vol[3]/ring_vol, weight=1, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.6, 100*predicted_vol[4]/ring_vol, weight=1, plan=plan, plan_opt=0)    
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)                        
+    
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True
+    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    
+    result_text += 'Falloff + DVHs,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+    
+    
+    #Fourth plan: Dose falloffs + RING PROX at 80%
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+        objective.DeleteFunction()
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=50, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*1.02, rx[0]*0.40, 0.4, weight=5, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.6, rx[0]*0.15, 1.0, weight=1, plan=plan, plan_opt=0)
+    optim.add_maxdose_objective('KBP RING PROX',  rx[0]*0.8, weight=25, plan=plan, plan_opt=0)   
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)                        
+    
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True
+    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    
+    result_text += 'Falloff + RingProx80,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+
+    
+    #Fifth plan: Dose falloffs + extra falloff on KBP OPT CERV
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+        objective.DeleteFunction()
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=250, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.98, rx[0]*0.40, 0.4, weight=10, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.60, rx[0]*0.20, 1.0, weight=1, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('KBP OPT CERVEAU', rx[0]*0.98, rx[0]*0.70, 0.2, weight=1, plan=plan, plan_opt=0)
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)                        
+    
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True
+    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    
+    result_text += 'Extra Falloff Cerveau,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+
+
+    
+    #Write to file
+    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques'
+    output_file_path += '\\Resultats ' + patient.PatientName + '_' + patient.PatientID + '_phase2.txt'
+    with open(output_file_path, 'a') as output_file:
+        header = 'Essai,Cerv-PTV V100(cc),Cerv-PTV V90(cc),Cerv-PTV V80(cc),Cerv-PTV V70(cc),Cerv-PTV V60(cc),Cerv-PTV V50(cc),Cerv-PTV V40(cc),Couverture PTV(%),Couverture avant scaling,Max ds PTV(Gy),Indice conformité,Dose de Rx(Gy)\n'
+        header += 'Prediction,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n' % (predicted_vol[0],predicted_vol[1],predicted_vol[2],predicted_vol[3],predicted_vol[4],predicted_vol[5],predicted_vol[6],99.0,99.0,rx[0]*1.5/100.0,(predicted_vol[0] + ptv_vol)/ptv_vol,rx[0]/100.0)
+        #Add clinical plan here, it's going to take some effort
+        ptv_coverage = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+        dose_in_brain = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+        dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        header += 'Plan clinique,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,ptv_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)               
+        output_file.write(header)      
+        output_file.write(result_text)
+    
+    """
+    #SAVE THE PLAN
+    try:
+        patient.Save()
+    except Exception, err:
+        print str(err)
+        exit(0)
+    """
+    
+    
+
+
+#Script for adding testing multiple plans on a patient - CONTAINS OUR BEST TECHNIQUE FOR SINGLE PTV PLANNING
+def kbp_test_phase3(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,clinical_beamset,change_ct=False):
+
+    exam = lib.get_current_examination()
+
+    if patient.BodySite == '':
+        patient.BodySite = 'Crâne'    
+
+    # Add Treatment plan (unless it already exists)
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    try:
+        plan = patient.TreatmentPlans['Test KBP MA']
+    except:
+        plan = patient.AddNewPlan(PlanName='Test KBP MA', PlannedBy=planner_name, Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
+        plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset and beams (unless it/they already exists)
+    try:
+        beamset = plan.BeamSets['Test KBP']
+    except:
+        beamset = plan.AddNewBeamSet(Name='Test KBP', ExaminationName=exam.Name, MachineName='BeamMod', NominalEnergy=None,
+                                          Modality="Photons", TreatmentTechnique='VMAT', PatientPosition="HeadFirstSupine", NumberOfFractions=nb_fx, CreateSetupBeams=False, Comment='VMAT')
+        beamset.AddDosePrescriptionToRoi(RoiName=ptv_names[0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=rx[0], RelativePrescriptionLevel=1)
+        
+        #Add beams
+        beams.add_beams_brain_stereo_kbp(beamset=beamset, site_name='KBP1')
+        optim.set_optimization_parameters(plan=plan)
+        optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.1,max_arc_delivery_time=350, plan=plan)
+
+
+    #Run script to determine predicted volumes for V80/70/60/50 and add optimization rings
+    thing1,thing2,predicted_vol,rad50,brain_minus_ptv_vol,cerv_ptv_name,tronc_name,tronc_max,body_name,predicted_100_body = statistics.dose_falloff_crane_multi(num_ptvs, ptv_names, rx, technique,patient,plan,beamset,add_new_plan=True,fix_brain=True)
+  
+    ring_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['KBP OPT CERVEAU'].GetRoiVolume()
+    ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_names[0]].GetRoiVolume()  
+    result_text = ""
+
+    """
+    #First plan: Dose falloffs (MBB), three optimizations
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=50, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*1.02, rx[0]*0.40, 0.4, weight=5, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.6, rx[0]*0.15, 1.0, weight=1, plan=plan, plan_opt=0)   
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)                        
+    
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True
+    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'MBB 0.1,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+     
+    #Now reoptimize with leaves at 0.2cm/deg    
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.2,max_arc_delivery_time=350, plan=plan)
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'MBB 0.2,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+          
+    """ 
+     
+     
+     
+    #Second plan: Dose falloffs + predicted DVHs
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass   
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=50, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*1.02, rx[0]*0.40, 0.4, weight=5, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.6, rx[0]*0.15, 1.0, weight=1, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.8, 100*predicted_vol[2]/ring_vol, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.7, 100*predicted_vol[3]/ring_vol, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.6, 100*predicted_vol[4]/ring_vol, weight=5, plan=plan, plan_opt=0)    
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)                        
+    
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.1,max_arc_delivery_time=350, plan=plan)
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    initial_brain_dvh1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName='KBP OPT CERVEAU', DoseValues=[rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True
+    #If obtained DVH in brain is lower than prediction, change volume to obtained-1% of ROI volume
+    brain80 = min(100*predicted_vol[2]/ring_vol,100*initial_brain_dvh1[0]-1)
+    brain70 = min(100*predicted_vol[3]/ring_vol,100*initial_brain_dvh1[1]-1)
+    brain60 = min(100*predicted_vol[4]/ring_vol,100*initial_brain_dvh1[2]-1)
+    """    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'MBB + DVHs 0.1,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+
+    #Now reoptimize with leaves at 0.2cm/deg    
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.2,max_arc_delivery_time=350, plan=plan)
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    #initial_brain_dvh2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName='KBP OPT CERVEAU', DoseValues=[rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'MBB + DVHs 0.2,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+    """          
+    
+    
+    
+    
+    #Third plan: Falloff + DVHs (adjusted for what was obtained in plan 2)
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+        objective.DeleteFunction()    
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=50, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*1.02, rx[0]*0.40, 0.4, weight=5, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.6, rx[0]*0.15, 1.0, weight=1, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.8, brain80, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.7, brain70, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.6, brain60, weight=5, plan=plan, plan_opt=0)    
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)                        
+    
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.1,max_arc_delivery_time=350, plan=plan)
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True    
+    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'MBB + DVHs fit 0.1,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+    """
+    #Now reoptimize with leaves at 0.2cm/deg    
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.2,max_arc_delivery_time=350, plan=plan)
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'MBB + DVHs fit 0.2,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+              
+        
+    
+    
+    
+    
+    #Fourth plan: Dose falloffs + extra falloff on KBP OPT CERV
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+        objective.DeleteFunction()
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=250, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.98, rx[0]*0.40, 0.4, weight=10, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.60, rx[0]*0.20, 1.0, weight=1, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('KBP OPT CERVEAU', rx[0]*0.98, rx[0]*0.70, 0.2, weight=1, plan=plan, plan_opt=0)
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)                        
+    
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.1,max_arc_delivery_time=350, plan=plan)
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True
+    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'Falloff Cerveau 0.1,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+
+    #Now reoptimize with leaves at 0.2cm/deg    
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.2,max_arc_delivery_time=350, plan=plan)
+    optim.triple_optimization(plan=plan,beamset=beamset)
+    initial_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = True    
+    #Evaluate plan
+    ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'Falloff Cerveau 0.2,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,initial_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)             
+    """          
+        
+    
+    #Write to file
+    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques'
+    output_file_path += '\\Resultats ' + patient.PatientName + '_' + patient.PatientID + '_phase3.txt'
+    with open(output_file_path, 'a') as output_file:
+        header = 'Essai,Cerv-PTV V100(cc),Cerv-PTV V90(cc),Cerv-PTV V80(cc),Cerv-PTV V70(cc),Cerv-PTV V60(cc),Cerv-PTV V50(cc),Cerv-PTV V40(cc),Couverture PTV(%),Couverture avant scaling,Max ds PTV(Gy),Indice conformité,Dose de Rx(Gy)\n'
+        header += 'Prediction,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n' % (predicted_vol[0],predicted_vol[1],predicted_vol[2],predicted_vol[3],predicted_vol[4],predicted_vol[5],predicted_vol[6],99.0,99.0,rx[0]*1.5/100.0,(predicted_vol[0] + ptv_vol)/ptv_vol,rx[0]/100.0)
+        #Add clinical plan here, it's going to take some effort
+        ptv_coverage = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])    
+        dose_in_brain = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[rx[0]/nb_fx,rx[0]*0.9/nb_fx,rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx,rx[0]*0.5/nb_fx,rx[0]*0.4/nb_fx])
+        dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_names[0],RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        header += 'Plan clinique,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage[0]*100,ptv_coverage[0]*100,max_in_ptv,(dose_in_brain[0]*brain_minus_ptv_vol + ptv_vol)/ptv_vol,rx[0]/100.0)               
+        output_file.write(header)      
+        output_file.write(result_text)
+
+        
+        
+        
+        
+#Script for adding testing multiple plans on a patient with multiple PTVs
+def kbp_test_multi(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,clinical_beamset):
+
+    exam = lib.get_current_examination()
+
+    if patient.BodySite == '':
+        patient.BodySite = 'Crâne'    
+
+    # Add Treatment plan (unless it already exists)
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    try:
+        plan = patient.TreatmentPlans['Test KBP MA']
+    except:
+        plan = patient.AddNewPlan(PlanName='Test KBP MA', PlannedBy=planner_name, Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
+        plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset and beams (unless it/they already exists)
+    try:
+        beamset = plan.BeamSets['Test KBP']
+    except:
+        beamset = plan.AddNewBeamSet(Name='Test KBP', ExaminationName=exam.Name, MachineName='BeamMod', NominalEnergy=None,
+                                          Modality="Photons", TreatmentTechnique='SMLC', PatientPosition="HeadFirstSupine", NumberOfFractions=nb_fx, CreateSetupBeams=False, Comment='IMRT')
+        beamset.AddDosePrescriptionToRoi(RoiName=ptv_names[0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=rx[0], RelativePrescriptionLevel=1)
+        
+        #Add beams
+        #beams.add_beams_brain_stereo_kbp(beamset=beamset, site_name='KBP1')
+        beams.add_beams_brain_static(beamset=beamset, site_name='KBP1', iso_name='ISO', exam=exam, nb_beams=9)
+        #optim.set_optimization_parameters(plan=plan)
+        #optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.1,max_arc_delivery_time=350, plan=plan)
+        plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
+        plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 100
+        plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.IterationsInPreparationsPhase = 60
+        plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.ComputeFinalDose = True          
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 20        
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinLeafEndSeparation = 1
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs = 3
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentArea = 2
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MaxNumberOfSegments = 40    
+    
+
+    # Make the new plan active through the GUI (required so we can manipulate GUI elements below)
+    ui = get_current("ui")
+    # We have to save before selecting the plan
+    try:
+        patient.Save()
+    except Exception, err:
+        message.message_window(err)
+        exit(0)
+    ui.MenuItem[3].Button_PlanOptimization.Click()
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.Popup.ComboBoxItem['Test KBP MA'].Select()   
+
+
+
+
+    
+
+    #Run script to determine predicted volumes for V80/70/60/50 and add optimization rings
+    thing1,thing2,predicted_vol,rad50,brain_minus_ptv_vol,cerv_ptv_name,tronc_name,tronc_max,body_name,predicted_100_body = statistics.dose_falloff_crane_multi(num_ptvs, ptv_names, rx, technique,patient,plan,beamset,add_new_plan=True)
+  
+    ring_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['KBP OPT CERVEAU'].GetRoiVolume()
+    ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['stats_sum_ptvs_smooth'].GetRoiVolume()  
+    body_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[body_name].GetRoiVolume() 
+    result_text = ""
+
+
+    #First plan: Initial conditions
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 1:
+        optim.add_mindose_objective(ptv_names[1], rx[1], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 2:
+        optim.add_mindose_objective(ptv_names[2], rx[2], weight=15, plan=plan, plan_opt=0)        
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*1.00, max(rx)*0.40, 0.4, weight=10, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*0.60, max(rx)*0.20, 1.0, weight=5, plan=plan, plan_opt=0)   
+
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
+    optim.add_maxdose_objective('OEIL DRT', 800, weight=1.0, plan=plan, plan_opt=0)                        
+    optim.add_maxdose_objective('OEIL GCHE', 800, weight=1.0, plan=plan, plan_opt=0)      
+    optim.add_maxdose_objective('CHIASMA', 800, weight=1.0, plan=plan, plan_opt=0)    
+    
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    #Get initial coverage before scaling
+    init_ptv_cov = []
+    ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    init_ptv_cov.append(ptv_coverage1[0])
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        init_ptv_cov.append(ptv_coverage2[0])
+    else:
+        ptv_coverage2 = [0]
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+        init_ptv_cov.append(ptv_coverage3[0])
+    else:
+        ptv_coverage3 = [0]        
+        
+    #Increase weight of lower PTV(s)
+    boost_list = []        
+    for i,cov in enumerate(init_ptv_cov):
+        if max(init_ptv_cov) - cov > 0.01:
+            boost_list.append(ptv_names[i])
+        if cov == min(init_ptv_cov):
+            prescribe_to = i
+    
+    #Pad init_ptv_cov out to three entries for when we print the results to file        
+    if len(init_ptv_cov) == 1:
+        init_ptv_cov.append(0)
+    if len(init_ptv_cov) == 2:
+        init_ptv_cov.append(0)
+    
+    #Change prescription to each PTV and scale dose (by doing this three times we guarantee that all PTVs will have adequate coverage)
+    if ptv_coverage1[0] < 0.99 and ptv_names[0][:5] != 'Aucun':
+        beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        if ptv_coverage2[0] < 0.99 and ptv_names[1][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[1], DoseValue=rx[1], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+        if ptv_coverage3[0] < 0.99 and ptv_names[2][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[2], DoseValue=rx[2], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)        
+        
+    #Get coverage after scaling
+    ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])   
+        
+    #Evaluate plan
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+    dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'Initial,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,init_ptv_cov[2]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)             
+
+    #Modify weights and reoptimize
+    for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions: 
+        try:
+            f_type = objective.DoseFunctionParameters.FunctionType  # Dose falloff objectives do not have a FunctionType and must be skipped
+        except:
+            continue
+        if f_type == "MinDose" and objective.ForRegionOfInterest.Name in boost_list:    
+            objective.DoseFunctionParameters.Weight = 1.5*objective.DoseFunctionParameters.Weight
+    
+    #plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    beamset.NormalizeToPrescription(RoiName=ptv_names[prescribe_to], DoseValue=rx[prescribe_to], DoseVolume=init_ptv_cov[prescribe_to]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)    
+    plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+    
+    #Determine initial PTV coverage
+    init_ptv_cov = []
+    ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    init_ptv_cov.append(ptv_coverage1[0])
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        init_ptv_cov.append(ptv_coverage2[0])
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+        init_ptv_cov.append(ptv_coverage3[0])
+        
+    #Determine which PTV is least covered
+    for i,cov in enumerate(init_ptv_cov):
+        if cov == min(init_ptv_cov):
+            prescribe_to = i
+    
+    #Pad init_ptv_cov out to three entries for when we print the results to file        
+    if len(init_ptv_cov) == 1:
+        init_ptv_cov.append(0)
+        init_ptv_cov.append(0)
+    elif len(init_ptv_cov) == 2:
+        init_ptv_cov.append(0)
+    
+    #Change prescription to each PTV and scale dose (by doing this three times we guarantee that all PTVs will have adequate coverage)
+    if ptv_coverage1[0] < 0.99 and ptv_names[0][:5] != 'Aucun':
+        beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        if ptv_coverage2[0] < 0.99 and ptv_names[1][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[1], DoseValue=rx[1], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+        if ptv_coverage3[0] < 0.99 and ptv_names[2][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[2], DoseValue=rx[2], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)  
+    
+    #Get coverage after scaling
+    ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])       
+     
+    #Evaluate plan
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+    dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'Initial + boost,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,init_ptv_cov[2]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)             
+     
+     
+     
+     
+    
+
+
+
+
+
+
+
+    #Second plan: Initial conditions + predicted DVH
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 1:
+        optim.add_mindose_objective(ptv_names[1], rx[1], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 2:
+        optim.add_mindose_objective(ptv_names[2], rx[2], weight=15, plan=plan, plan_opt=0)        
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*1.00, max(rx)*0.40, 0.4, weight=10, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*0.60, max(rx)*0.20, 1.0, weight=5, plan=plan, plan_opt=0)   
+    
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.8, 100*predicted_vol[2]/ring_vol, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.7, 100*predicted_vol[3]/ring_vol, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.6, 100*predicted_vol[4]/ring_vol, weight=5, plan=plan, plan_opt=0) 
+    
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
+    optim.add_maxdose_objective('OEIL DRT', 800, weight=1.0, plan=plan, plan_opt=0)                        
+    optim.add_maxdose_objective('OEIL GCHE', 800, weight=1.0, plan=plan, plan_opt=0)      
+    optim.add_maxdose_objective('CHIASMA', 800, weight=1.0, plan=plan, plan_opt=0)    
+    
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    #Get initial coverage before scaling
+    init_ptv_cov = []
+    ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    init_ptv_cov.append(ptv_coverage1[0])
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        init_ptv_cov.append(ptv_coverage2[0])
+    else:
+        ptv_coverage2 = [0]
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+        init_ptv_cov.append(ptv_coverage3[0])
+    else:
+        ptv_coverage3 = [0]        
+        
+    #Increase weight of lower PTV(s)
+    boost_list = []        
+    for i,cov in enumerate(init_ptv_cov):
+        if max(init_ptv_cov) - cov > 0.01:
+            boost_list.append(ptv_names[i])
+        if cov == min(init_ptv_cov):
+            prescribe_to = i
+    
+    #Pad init_ptv_cov out to three entries for when we print the results to file        
+    if len(init_ptv_cov) == 1:
+        init_ptv_cov.append(0)
+    if len(init_ptv_cov) == 2:
+        init_ptv_cov.append(0)
+    
+    #Change prescription to each PTV and scale dose (by doing this three times we guarantee that all PTVs will have adequate coverage)
+    if ptv_coverage1[0] < 0.99 and ptv_names[0][:5] != 'Aucun':
+        beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        if ptv_coverage2[0] < 0.99 and ptv_names[1][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[1], DoseValue=rx[1], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+        if ptv_coverage3[0] < 0.99 and ptv_names[2][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[2], DoseValue=rx[2], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)       
+        
+    #Get coverage after scaling
+    ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])   
+        
+    #Evaluate plan
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+    dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'Initial + DVH,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,init_ptv_cov[2]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)             
+
+    #Modify weights and reoptimize
+    for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions: 
+        try:
+            f_type = objective.DoseFunctionParameters.FunctionType  # Dose falloff objectives do not have a FunctionType and must be skipped
+        except:
+            continue
+        if f_type == "MinDose" and objective.ForRegionOfInterest.Name in boost_list:    
+            objective.DoseFunctionParameters.Weight = 1.5*objective.DoseFunctionParameters.Weight
+    
+    #plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    beamset.NormalizeToPrescription(RoiName=ptv_names[prescribe_to], DoseValue=rx[prescribe_to], DoseVolume=init_ptv_cov[prescribe_to]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)    
+    plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+    
+    #Determine initial PTV coverage
+    init_ptv_cov = []
+    ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    init_ptv_cov.append(ptv_coverage1[0])
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        init_ptv_cov.append(ptv_coverage2[0])
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+        init_ptv_cov.append(ptv_coverage3[0])
+        
+    #Determine initial brain DVH (for use in DVH fit plan later on)
+    initial_brain_dvh = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName='KBP OPT CERVEAU', DoseValues=[rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx])    
+    brain80 = min(100*predicted_vol[2]/ring_vol,100*initial_brain_dvh[0]-1)
+    brain70 = min(100*predicted_vol[3]/ring_vol,100*initial_brain_dvh[1]-1)
+    brain60 = min(100*predicted_vol[4]/ring_vol,100*initial_brain_dvh[2]-1)    
+        
+    #Determine which PTV is least covered
+    for i,cov in enumerate(init_ptv_cov):
+        if cov == min(init_ptv_cov):
+            prescribe_to = i
+    
+    #Pad init_ptv_cov out to three entries for when we print the results to file        
+    if len(init_ptv_cov) == 1:
+        init_ptv_cov.append(0)
+        init_ptv_cov.append(0)
+    elif len(init_ptv_cov) == 2:
+        init_ptv_cov.append(0)
+    
+    #Change prescription to each PTV and scale dose (by doing this three times we guarantee that all PTVs will have adequate coverage)
+    if ptv_coverage1[0] < 0.99 and ptv_names[0][:5] != 'Aucun':
+        beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        if ptv_coverage2[0] < 0.99 and ptv_names[1][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[1], DoseValue=rx[1], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+        if ptv_coverage3[0] < 0.99 and ptv_names[2][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[2], DoseValue=rx[2], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)   
+    
+    #Get coverage after scaling
+    ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])       
+     
+    #Evaluate plan
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+    dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'Initial + DVH + boost,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,init_ptv_cov[2]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)             
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    #Third plan: Initial conditions + DVH fit
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 1:
+        optim.add_mindose_objective(ptv_names[1], rx[1], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 2:
+        optim.add_mindose_objective(ptv_names[2], rx[2], weight=15, plan=plan, plan_opt=0)        
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*1.00, max(rx)*0.40, 0.4, weight=10, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*0.60, max(rx)*0.20, 1.0, weight=5, plan=plan, plan_opt=0)   
+    
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.8, brain80, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.7, brain70, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.6, brain60, weight=5, plan=plan, plan_opt=0) 
+    
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
+    optim.add_maxdose_objective('OEIL DRT', 800, weight=1.0, plan=plan, plan_opt=0)                        
+    optim.add_maxdose_objective('OEIL GCHE', 800, weight=1.0, plan=plan, plan_opt=0)      
+    optim.add_maxdose_objective('CHIASMA', 800, weight=1.0, plan=plan, plan_opt=0)    
+    
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    #Get initial coverage before scaling
+    init_ptv_cov = []
+    ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    init_ptv_cov.append(ptv_coverage1[0])
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        init_ptv_cov.append(ptv_coverage2[0])
+    else:
+        ptv_coverage2 = [0]
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+        init_ptv_cov.append(ptv_coverage3[0])
+    else:
+        ptv_coverage3 = [0]        
+        
+    #Increase weight of lower PTV(s)
+    boost_list = []        
+    for i,cov in enumerate(init_ptv_cov):
+        if max(init_ptv_cov) - cov > 0.01:
+            boost_list.append(ptv_names[i])
+        if cov == min(init_ptv_cov):
+            prescribe_to = i
+    
+    #Pad init_ptv_cov out to three entries for when we print the results to file        
+    if len(init_ptv_cov) == 1:
+        init_ptv_cov.append(0)
+    if len(init_ptv_cov) == 2:
+        init_ptv_cov.append(0)
+    
+    #Change prescription to each PTV and scale dose (by doing this three times we guarantee that all PTVs will have adequate coverage)
+    if ptv_coverage1[0] < 0.99 and ptv_names[0][:5] != 'Aucun':
+        beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        if ptv_coverage2[0] < 0.99 and ptv_names[1][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[1], DoseValue=rx[1], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+        if ptv_coverage3[0] < 0.99 and ptv_names[2][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[2], DoseValue=rx[2], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)     
+        
+    #Get coverage after scaling
+    ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])   
+        
+    #Evaluate plan
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+    dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'Initial + DVH fit,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,init_ptv_cov[2]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)             
+
+    #Modify weights and reoptimize
+    for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions: 
+        try:
+            f_type = objective.DoseFunctionParameters.FunctionType  # Dose falloff objectives do not have a FunctionType and must be skipped
+        except:
+            continue
+        if f_type == "MinDose" and objective.ForRegionOfInterest.Name in boost_list:    
+            objective.DoseFunctionParameters.Weight = 1.5*objective.DoseFunctionParameters.Weight
+    
+    #plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    beamset.NormalizeToPrescription(RoiName=ptv_names[prescribe_to], DoseValue=rx[prescribe_to], DoseVolume=init_ptv_cov[prescribe_to]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)    
+    plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+    
+    #Determine initial PTV coverage
+    init_ptv_cov = []
+    ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    init_ptv_cov.append(ptv_coverage1[0])
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        init_ptv_cov.append(ptv_coverage2[0])
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+        init_ptv_cov.append(ptv_coverage3[0])        
+        
+    #Determine which PTV is least covered
+    for i,cov in enumerate(init_ptv_cov):
+        if cov == min(init_ptv_cov):
+            prescribe_to = i
+    
+    #Pad init_ptv_cov out to three entries for when we print the results to file        
+    if len(init_ptv_cov) == 1:
+        init_ptv_cov.append(0)
+        init_ptv_cov.append(0)
+    elif len(init_ptv_cov) == 2:
+        init_ptv_cov.append(0)
+    
+    #Change prescription to each PTV and scale dose (by doing this three times we guarantee that all PTVs will have adequate coverage)
+    if ptv_coverage1[0] < 0.99 and ptv_names[0][:5] != 'Aucun':
+        beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        if ptv_coverage2[0] < 0.99 and ptv_names[1][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[1], DoseValue=rx[1], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+        if ptv_coverage3[0] < 0.99 and ptv_names[2][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[2], DoseValue=rx[2], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)  
+    
+    #Get coverage after scaling
+    ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+    if num_ptvs > 1:
+        ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+    if num_ptvs > 2:
+        ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])       
+     
+    #Evaluate plan
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+    dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    result_text += 'Initial + DVH fit + boost,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,init_ptv_cov[2]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)             
+    
+
+    
+    
+    
+    
+    
+    #Write to file
+    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques'
+    output_file_path += '\\Resultats ' + patient.PatientName + '_' + patient.PatientID + '_multiplan_v2_fix_scaling.txt'
+    with open(output_file_path, 'a') as output_file:
+        header = 'Essai,Cerv-PTV V100(cc),Cerv-PTV V90(cc),Cerv-PTV V80(cc),Cerv-PTV V70(cc),Cerv-PTV V60(cc),Cerv-PTV V50(cc),Cerv-PTV V40(cc),Couverture PTV1(%),Couverture PTV2(%),Couverture PTV3(%),Couverture avant scaling PTV1,Couverture avant scaling PTV2,Couverture avant scaling PTV3,Max ds PTV(Gy),Indice conformité,Dose de Rx la plus elevée(Gy)\n'
+        header += 'Prediction,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n' % (predicted_vol[0],predicted_vol[1],predicted_vol[2],predicted_vol[3],predicted_vol[4],predicted_vol[5],predicted_vol[6],99.0,99.0,99.0,99.0,99.0,99.0,rx[0]*1.5/100.0,predicted_100_body/ptv_vol,max(rx)/100.0)
+        #Add clinical plan here, it's going to take some effort
+        ptv_coverage1 = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])  
+        if num_ptvs > 1:
+            ptv_coverage2 = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])    
+        else:
+            ptv_coverage2 = [0]
+        if num_ptvs > 2:
+            ptv_coverage3 = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])    
+        else:
+            ptv_coverage3 = [0]
+        dose_in_brain = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+        dose_in_body  = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+        dmax = clinical_beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        header += 'Plan clinique,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)               
+        output_file.write(header)      
+        output_file.write(result_text)
+        
+        
+        
+        
+        
+        
+#Script for adding testing multiple plans on a patient with multiple PTVs - now with more iterations on PTV min doses
+def kbp_test_multi_v3(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,clinical_beamset):
+
+    exam = lib.get_current_examination()
+
+    if patient.BodySite == '':
+        patient.BodySite = 'Crâne'    
+
+    # Add Treatment plan (unless it already exists)
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    try:
+        plan = patient.TreatmentPlans['Test KBP MA']
+    except:
+        plan = patient.AddNewPlan(PlanName='Test KBP MA', PlannedBy=planner_name, Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
+        plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset and beams (unless it/they already exists)
+    try:
+        beamset = plan.BeamSets['Test KBP']
+    except:
+        beamset = plan.AddNewBeamSet(Name='Test KBP', ExaminationName=exam.Name, MachineName='BeamMod', NominalEnergy=None,
+                                          Modality="Photons", TreatmentTechnique='SMLC', PatientPosition="HeadFirstSupine", NumberOfFractions=nb_fx, CreateSetupBeams=False, Comment='IMRT')
+        beamset.AddDosePrescriptionToRoi(RoiName=ptv_names[0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=rx[0], RelativePrescriptionLevel=1)
+        
+        #Add beams
+        #beams.add_beams_brain_stereo_kbp(beamset=beamset, site_name='KBP1')
+        beams.add_beams_brain_static(beamset=beamset, site_name='KBP1', iso_name='ISO', exam=exam, nb_beams=9)
+        #optim.set_optimization_parameters(plan=plan)
+        #optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.1,max_arc_delivery_time=350, plan=plan)
+        plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
+        plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 100
+        plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.IterationsInPreparationsPhase = 60
+        plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.ComputeFinalDose = True          
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 20        
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinLeafEndSeparation = 1
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs = 3
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentArea = 2
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MaxNumberOfSegments = 40    
+    
+
+    """
+    # Make the new plan active through the GUI (required so we can manipulate GUI elements below)
+    ui = get_current("ui")
+    # We have to save before selecting the plan
+    try:
+        patient.Save()
+    except Exception, err:
+        message.message_window(err)
+        exit(0)
+    ui.MenuItem[3].Button_PlanOptimization.Click()
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.Popup.ComboBoxItem['Test KBP MA'].Select()   
+    """
+
+
+
+    
+
+    #Run script to determine predicted volumes for V80/70/60/50 and add optimization rings
+    thing1,thing2,predicted_vol,rad50,brain_minus_ptv_vol,cerv_ptv_name,tronc_name,tronc_max,body_name,predicted_100_body = statistics.dose_falloff_crane_multi(num_ptvs, ptv_names, rx, technique,patient,plan,beamset,add_new_plan=True)
+  
+    ring_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['KBP OPT CERVEAU'].GetRoiVolume()
+    ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['stats_sum_ptvs_smooth'].GetRoiVolume()  
+    body_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[body_name].GetRoiVolume() 
+    result_text = ""
+
+
+    #First plan: Falloff with strong DVH + up to 3 rounds of min dose weight adjustments
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 1:
+        optim.add_mindose_objective(ptv_names[1], rx[1], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 2:
+        optim.add_mindose_objective(ptv_names[2], rx[2], weight=15, plan=plan, plan_opt=0)        
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*1.00, max(rx)*0.40, 0.4, weight=10, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*0.60, max(rx)*0.20, 1.0, weight=5, plan=plan, plan_opt=0)   
+    
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.8, 100*predicted_vol[2]/ring_vol, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.7, 100*predicted_vol[3]/ring_vol, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.6, 100*predicted_vol[4]/ring_vol, weight=5, plan=plan, plan_opt=0) 
+    
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
+    optim.add_maxdose_objective('OEIL DRT', 800, weight=1.0, plan=plan, plan_opt=0)                        
+    optim.add_maxdose_objective('OEIL GCHE', 800, weight=1.0, plan=plan, plan_opt=0)      
+    optim.add_maxdose_objective('CHIASMA', 800, weight=1.0, plan=plan, plan_opt=0)    
+
+    #Reset and then run initial set of optimizations
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    for j in range(4):
+        if j > 0:
+            plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+        
+        #Get initial coverage before scaling
+        init_ptv_cov = []
+        ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+        init_ptv_cov.append(ptv_coverage1[0])
+        if num_ptvs > 1:
+            ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+            init_ptv_cov.append(ptv_coverage2[0])
+        else:
+            ptv_coverage2 = [0]
+        if num_ptvs > 2:
+            ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+            init_ptv_cov.append(ptv_coverage3[0])
+        else:
+            ptv_coverage3 = [0]        
+            
+        #Increase weight of lower PTV(s)
+        boost_list = []        
+        for i,cov in enumerate(init_ptv_cov):
+            if max(init_ptv_cov) - cov > 0.01:
+                boost_list.append(ptv_names[i])
+            if cov == min(init_ptv_cov):
+                prescribe_to = i
+        
+        #Pad init_ptv_cov out to three entries for when we print the results to file        
+        if len(init_ptv_cov) == 1:
+            init_ptv_cov.append(0)
+        if len(init_ptv_cov) == 2:
+            init_ptv_cov.append(0)
+        
+        #Change prescription to each PTV and scale dose (by doing this three times we guarantee that all PTVs will have adequate coverage)
+        if ptv_coverage1[0] < 0.99 and ptv_names[0][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+        if num_ptvs > 1:
+            ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+            if ptv_coverage2[0] < 0.99 and ptv_names[1][:5] != 'Aucun':
+                beamset.NormalizeToPrescription(RoiName=ptv_names[1], DoseValue=rx[1], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+        if num_ptvs > 2:
+            ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+            if ptv_coverage3[0] < 0.99 and ptv_names[2][:5] != 'Aucun':
+                beamset.NormalizeToPrescription(RoiName=ptv_names[2], DoseValue=rx[2], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)       
+            
+        #Get coverage after scaling
+        ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+        if num_ptvs > 1:
+            ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        if num_ptvs > 2:
+            ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])   
+            
+        #Evaluate plan
+        dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+        dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+        dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        result_text += 'Strong DVH apres %d boosts,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (j,dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,init_ptv_cov[2]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)             
+
+        if j<3:
+            #Modify weights and reoptimize
+            for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions: 
+                try:
+                    f_type = objective.DoseFunctionParameters.FunctionType  # Dose falloff objectives do not have a FunctionType and must be skipped
+                except:
+                    continue
+                if f_type == "MinDose" and objective.ForRegionOfInterest.Name in boost_list:    
+                    objective.DoseFunctionParameters.Weight = 1.25*objective.DoseFunctionParameters.Weight
+            
+            #Put the monitor units back to where they were before scaling
+            beamset.NormalizeToPrescription(RoiName=ptv_names[prescribe_to], DoseValue=rx[prescribe_to], DoseVolume=init_ptv_cov[prescribe_to]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)    
+        
+        
+    
+    
+    
+
+    #Second plan: Falloff with weak DVH + up to 3 rounds of min dose weight adjustments
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 1:
+        optim.add_mindose_objective(ptv_names[1], rx[1], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 2:
+        optim.add_mindose_objective(ptv_names[2], rx[2], weight=15, plan=plan, plan_opt=0)        
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*1.00, max(rx)*0.40, 0.4, weight=10, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*0.60, max(rx)*0.20, 1.0, weight=5, plan=plan, plan_opt=0)   
+    
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.8, 100*predicted_vol[2]/ring_vol, weight=1, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.7, 100*predicted_vol[3]/ring_vol, weight=1, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.6, 100*predicted_vol[4]/ring_vol, weight=1, plan=plan, plan_opt=0) 
+    
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
+    optim.add_maxdose_objective('OEIL DRT', 800, weight=1.0, plan=plan, plan_opt=0)                        
+    optim.add_maxdose_objective('OEIL GCHE', 800, weight=1.0, plan=plan, plan_opt=0)      
+    optim.add_maxdose_objective('CHIASMA', 800, weight=1.0, plan=plan, plan_opt=0)    
+
+    #Reset and then run initial set of optimizations
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    for j in range(4):
+        if j > 0:
+            plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+        
+        #Get initial coverage before scaling
+        init_ptv_cov = []
+        ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+        init_ptv_cov.append(ptv_coverage1[0])
+        if num_ptvs > 1:
+            ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+            init_ptv_cov.append(ptv_coverage2[0])
+        else:
+            ptv_coverage2 = [0]
+        if num_ptvs > 2:
+            ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+            init_ptv_cov.append(ptv_coverage3[0])
+        else:
+            ptv_coverage3 = [0]        
+            
+        #Increase weight of lower PTV(s)
+        boost_list = []        
+        for i,cov in enumerate(init_ptv_cov):
+            if max(init_ptv_cov) - cov > 0.01:
+                boost_list.append(ptv_names[i])
+            if cov == min(init_ptv_cov):
+                prescribe_to = i
+        
+        #Pad init_ptv_cov out to three entries for when we print the results to file        
+        if len(init_ptv_cov) == 1:
+            init_ptv_cov.append(0)
+        if len(init_ptv_cov) == 2:
+            init_ptv_cov.append(0)
+        
+        #Change prescription to each PTV and scale dose (by doing this three times we guarantee that all PTVs will have adequate coverage)
+        if ptv_coverage1[0] < 0.99 and ptv_names[0][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+        if num_ptvs > 1:
+            ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+            if ptv_coverage2[0] < 0.99 and ptv_names[1][:5] != 'Aucun':
+                beamset.NormalizeToPrescription(RoiName=ptv_names[1], DoseValue=rx[1], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+        if num_ptvs > 2:
+            ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+            if ptv_coverage3[0] < 0.99 and ptv_names[2][:5] != 'Aucun':
+                beamset.NormalizeToPrescription(RoiName=ptv_names[2], DoseValue=rx[2], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)       
+            
+        #Get coverage after scaling
+        ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+        if num_ptvs > 1:
+            ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        if num_ptvs > 2:
+            ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])   
+            
+        #Evaluate plan
+        dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+        dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+        dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        result_text += 'Weak DVH apres %d boosts,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (j,dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,init_ptv_cov[2]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)             
+
+        if j<3:
+            #Modify weights and reoptimize
+            for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions: 
+                try:
+                    f_type = objective.DoseFunctionParameters.FunctionType  # Dose falloff objectives do not have a FunctionType and must be skipped
+                except:
+                    continue
+                if f_type == "MinDose" and objective.ForRegionOfInterest.Name in boost_list:    
+                    objective.DoseFunctionParameters.Weight = 1.25*objective.DoseFunctionParameters.Weight
+            
+            #Put the monitor units back to where they were before scaling
+            beamset.NormalizeToPrescription(RoiName=ptv_names[prescribe_to], DoseValue=rx[prescribe_to], DoseVolume=init_ptv_cov[prescribe_to]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)    
+        
+        
+    
+ 
+
+
+
+ 
+    #Write to file
+    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques'
+    output_file_path += '\\Resultats ' + patient.PatientName + '_' + patient.PatientID + '_multiplan_v3.txt'
+    with open(output_file_path, 'a') as output_file:
+        header = 'Essai,Cerv-PTV V100(cc),Cerv-PTV V90(cc),Cerv-PTV V80(cc),Cerv-PTV V70(cc),Cerv-PTV V60(cc),Cerv-PTV V50(cc),Cerv-PTV V40(cc),Couverture PTV1(%),Couverture PTV2(%),Couverture PTV3(%),Couverture avant scaling PTV1,Couverture avant scaling PTV2,Couverture avant scaling PTV3,Max ds PTV(Gy),Indice conformité,Dose de Rx la plus elevée(Gy)\n'
+        header += 'Prediction,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n' % (predicted_vol[0],predicted_vol[1],predicted_vol[2],predicted_vol[3],predicted_vol[4],predicted_vol[5],predicted_vol[6],99.0,99.0,99.0,99.0,99.0,99.0,rx[0]*1.5/100.0,predicted_100_body/ptv_vol,max(rx)/100.0)
+        #Add clinical plan here, it's going to take some effort
+        ptv_coverage1 = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])  
+        if num_ptvs > 1:
+            ptv_coverage2 = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])    
+        else:
+            ptv_coverage2 = [0]
+        if num_ptvs > 2:
+            ptv_coverage3 = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])    
+        else:
+            ptv_coverage3 = [0]
+        dose_in_brain = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+        dose_in_body  = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+        dmax = clinical_beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        header += 'Plan clinique,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)               
+        output_file.write(header)      
+        output_file.write(result_text)
+                
+                
+                
+                
+        
+#Script for adding testing multiple plans on a patient with multiple PTVs - now with more iterations on PTV min doses
+def kbp_test_multi_v4(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,clinical_beamset):
+
+    exam = lib.get_current_examination()
+
+    if patient.BodySite == '':
+        patient.BodySite = 'Crâne'    
+
+    # Add Treatment plan (unless it already exists)
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    try:
+        plan = patient.TreatmentPlans['Test KBP MA']
+    except:
+        plan = patient.AddNewPlan(PlanName='Test KBP MA', PlannedBy=planner_name, Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
+        plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset and beams (unless it/they already exists)
+    try:
+        beamset = plan.BeamSets['Test KBP']
+    except:
+        beamset = plan.AddNewBeamSet(Name='Test KBP', ExaminationName=exam.Name, MachineName='BeamMod', NominalEnergy=None,
+                                          Modality="Photons", TreatmentTechnique='SMLC', PatientPosition="HeadFirstSupine", NumberOfFractions=nb_fx, CreateSetupBeams=False, Comment='IMRT')
+        beamset.AddDosePrescriptionToRoi(RoiName=ptv_names[0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=rx[0], RelativePrescriptionLevel=1)
+        
+        #Add beams
+        #beams.add_beams_brain_stereo_kbp(beamset=beamset, site_name='KBP1')
+        beams.add_beams_brain_static(beamset=beamset, site_name='KBP1', iso_name='ISO', exam=exam, nb_beams=9)
+        #optim.set_optimization_parameters(plan=plan)
+        #optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.1,max_arc_delivery_time=350, plan=plan)
+        plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
+        plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 100
+        plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.IterationsInPreparationsPhase = 60
+        plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.ComputeFinalDose = True          
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 20        
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinLeafEndSeparation = 1
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs = 3
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentArea = 2
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MaxNumberOfSegments = 40    
+    
+
+    """
+    # Make the new plan active through the GUI (required so we can manipulate GUI elements below)
+    ui = get_current("ui")
+    # We have to save before selecting the plan
+    try:
+        patient.Save()
+    except Exception, err:
+        message.message_window(err)
+        exit(0)
+    ui.MenuItem[3].Button_PlanOptimization.Click()
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.Popup.ComboBoxItem['Test KBP MA'].Select()   
+    """
+
+
+
+    
+
+    #Run script to determine predicted volumes for V80/70/60/50 and add optimization rings
+    thing1,thing2,predicted_vol,rad50,brain_minus_ptv_vol,cerv_ptv_name,tronc_name,tronc_max,body_name,predicted_100_body = statistics.dose_falloff_crane_multi(num_ptvs, ptv_names, rx, technique,patient,plan,beamset,add_new_plan=True)
+  
+    ring_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['KBP OPT CERVEAU'].GetRoiVolume()
+    ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['stats_sum_ptvs_smooth'].GetRoiVolume()  
+    body_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[body_name].GetRoiVolume() 
+    result_text = ""
+
+
+    #First plan: 8 rounds of min dose weight adjustments at 1.5x
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 1:
+        optim.add_mindose_objective(ptv_names[1], rx[1], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 2:
+        optim.add_mindose_objective(ptv_names[2], rx[2], weight=15, plan=plan, plan_opt=0)        
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*1.00, max(rx)*0.40, 0.4, weight=10, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*0.60, max(rx)*0.20, 1.0, weight=5, plan=plan, plan_opt=0)   
+    
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.8, 100*predicted_vol[2]/ring_vol, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.7, 100*predicted_vol[3]/ring_vol, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.6, 100*predicted_vol[4]/ring_vol, weight=5, plan=plan, plan_opt=0) 
+    
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
+    optim.add_maxdose_objective('OEIL DRT', 800, weight=1.0, plan=plan, plan_opt=0)                        
+    optim.add_maxdose_objective('OEIL GCHE', 800, weight=1.0, plan=plan, plan_opt=0)      
+    optim.add_maxdose_objective('CHIASMA', 800, weight=1.0, plan=plan, plan_opt=0)    
+
+    #Reset and then run initial set of optimizations
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    for j in range(8):
+        if j > 0:
+            plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+        
+        #Get initial coverage before scaling
+        init_ptv_cov = []
+        ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+        init_ptv_cov.append(ptv_coverage1[0])
+        if num_ptvs > 1:
+            ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+            init_ptv_cov.append(ptv_coverage2[0])
+        else:
+            ptv_coverage2 = [0]
+        if num_ptvs > 2:
+            ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+            init_ptv_cov.append(ptv_coverage3[0])
+        else:
+            ptv_coverage3 = [0]        
+            
+        #Increase weight of lower PTV(s)
+        boost_list = []        
+        for i,cov in enumerate(init_ptv_cov):
+            if max(init_ptv_cov) - cov > 0.01:
+                boost_list.append(ptv_names[i])
+            if cov == min(init_ptv_cov):
+                prescribe_to = i
+        
+        #Pad init_ptv_cov out to three entries for when we print the results to file        
+        if len(init_ptv_cov) == 1:
+            init_ptv_cov.append(0)
+        if len(init_ptv_cov) == 2:
+            init_ptv_cov.append(0)
+        
+        #Change prescription to each PTV and scale dose (by doing this three times we guarantee that all PTVs will have adequate coverage)
+        if ptv_coverage1[0] < 0.99 and ptv_names[0][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+        if num_ptvs > 1:
+            ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+            if ptv_coverage2[0] < 0.99 and ptv_names[1][:5] != 'Aucun':
+                beamset.NormalizeToPrescription(RoiName=ptv_names[1], DoseValue=rx[1], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+        if num_ptvs > 2:
+            ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+            if ptv_coverage3[0] < 0.99 and ptv_names[2][:5] != 'Aucun':
+                beamset.NormalizeToPrescription(RoiName=ptv_names[2], DoseValue=rx[2], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)       
+            
+        #Get coverage after scaling
+        ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+        if num_ptvs > 1:
+            ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        if num_ptvs > 2:
+            ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])   
+            
+        #Evaluate plan
+        dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+        dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+        dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        result_text += 'Weight x1.5 %d boosts,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (j,dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,init_ptv_cov[2]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)             
+
+        if j<7:
+            #Modify weights and reoptimize
+            for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions: 
+                try:
+                    f_type = objective.DoseFunctionParameters.FunctionType  # Dose falloff objectives do not have a FunctionType and must be skipped
+                except:
+                    continue
+                if f_type == "MinDose" and objective.ForRegionOfInterest.Name in boost_list:    
+                    objective.DoseFunctionParameters.Weight = 1.5*objective.DoseFunctionParameters.Weight
+            
+            #Put the monitor units back to where they were before scaling
+            beamset.NormalizeToPrescription(RoiName=ptv_names[prescribe_to], DoseValue=rx[prescribe_to], DoseVolume=init_ptv_cov[prescribe_to]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)    
+        
+        
+ 
+    
+
+    #Second plan: 8 rounds of min dose weight adjustments at 1.25x
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 1:
+        optim.add_mindose_objective(ptv_names[1], rx[1], weight=15, plan=plan, plan_opt=0)
+    if num_ptvs > 2:
+        optim.add_mindose_objective(ptv_names[2], rx[2], weight=15, plan=plan, plan_opt=0)        
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*1.00, max(rx)*0.40, 0.4, weight=10, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS', max(rx)*0.60, max(rx)*0.20, 1.0, weight=5, plan=plan, plan_opt=0)   
+    
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.8, 100*predicted_vol[2]/ring_vol, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.7, 100*predicted_vol[3]/ring_vol, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('KBP OPT CERVEAU', rx[0]*0.6, 100*predicted_vol[4]/ring_vol, weight=5, plan=plan, plan_opt=0) 
+    
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
+    optim.add_maxdose_objective('OEIL DRT', 800, weight=1.0, plan=plan, plan_opt=0)                        
+    optim.add_maxdose_objective('OEIL GCHE', 800, weight=1.0, plan=plan, plan_opt=0)      
+    optim.add_maxdose_objective('CHIASMA', 800, weight=1.0, plan=plan, plan_opt=0)    
+
+    #Reset and then run initial set of optimizations
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    for j in range(8):
+        if j > 0:
+            plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+        
+        #Get initial coverage before scaling
+        init_ptv_cov = []
+        ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+        init_ptv_cov.append(ptv_coverage1[0])
+        if num_ptvs > 1:
+            ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+            init_ptv_cov.append(ptv_coverage2[0])
+        else:
+            ptv_coverage2 = [0]
+        if num_ptvs > 2:
+            ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+            init_ptv_cov.append(ptv_coverage3[0])
+        else:
+            ptv_coverage3 = [0]        
+            
+        #Increase weight of lower PTV(s)
+        boost_list = []        
+        for i,cov in enumerate(init_ptv_cov):
+            if max(init_ptv_cov) - cov > 0.01:
+                boost_list.append(ptv_names[i])
+            if cov == min(init_ptv_cov):
+                prescribe_to = i
+        
+        #Pad init_ptv_cov out to three entries for when we print the results to file        
+        if len(init_ptv_cov) == 1:
+            init_ptv_cov.append(0)
+        if len(init_ptv_cov) == 2:
+            init_ptv_cov.append(0)
+        
+        #Change prescription to each PTV and scale dose (by doing this three times we guarantee that all PTVs will have adequate coverage)
+        if ptv_coverage1[0] < 0.99 and ptv_names[0][:5] != 'Aucun':
+            beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+        if num_ptvs > 1:
+            ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+            if ptv_coverage2[0] < 0.99 and ptv_names[1][:5] != 'Aucun':
+                beamset.NormalizeToPrescription(RoiName=ptv_names[1], DoseValue=rx[1], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+        if num_ptvs > 2:
+            ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])
+            if ptv_coverage3[0] < 0.99 and ptv_names[2][:5] != 'Aucun':
+                beamset.NormalizeToPrescription(RoiName=ptv_names[2], DoseValue=rx[2], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)       
+            
+        #Get coverage after scaling
+        ptv_coverage1 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])
+        if num_ptvs > 1:
+            ptv_coverage2 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])
+        if num_ptvs > 2:
+            ptv_coverage3 = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])   
+            
+        #Evaluate plan
+        dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+        dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+        dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        result_text += 'Weight x1.25 apres %d boosts,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f \n' % (j,dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,init_ptv_cov[2]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)             
+
+        if j<7:
+            #Modify weights and reoptimize
+            for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions: 
+                try:
+                    f_type = objective.DoseFunctionParameters.FunctionType  # Dose falloff objectives do not have a FunctionType and must be skipped
+                except:
+                    continue
+                if f_type == "MinDose" and objective.ForRegionOfInterest.Name in boost_list:    
+                    objective.DoseFunctionParameters.Weight = 1.25*objective.DoseFunctionParameters.Weight
+            
+            #Put the monitor units back to where they were before scaling
+            beamset.NormalizeToPrescription(RoiName=ptv_names[prescribe_to], DoseValue=rx[prescribe_to], DoseVolume=init_ptv_cov[prescribe_to]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)    
+            
+    
+
+ 
+    #Write to file
+    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques'
+    output_file_path += '\\Resultats ' + patient.PatientName + '_' + patient.PatientID + '_multiplan_v4.txt'
+    with open(output_file_path, 'a') as output_file:
+        header = 'Essai,Cerv-PTV V100(cc),Cerv-PTV V90(cc),Cerv-PTV V80(cc),Cerv-PTV V70(cc),Cerv-PTV V60(cc),Cerv-PTV V50(cc),Cerv-PTV V40(cc),Couverture PTV1(%),Couverture PTV2(%),Couverture PTV3(%),Couverture avant scaling PTV1,Couverture avant scaling PTV2,Couverture avant scaling PTV3,Max ds PTV(Gy),Indice conformité,Dose de Rx la plus elevée(Gy)\n'
+        header += 'Prediction,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n' % (predicted_vol[0],predicted_vol[1],predicted_vol[2],predicted_vol[3],predicted_vol[4],predicted_vol[5],predicted_vol[6],99.0,99.0,99.0,99.0,99.0,99.0,rx[0]*1.5/100.0,predicted_100_body/ptv_vol,max(rx)/100.0)
+        #Add clinical plan here, it's going to take some effort
+        ptv_coverage1 = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[0], DoseValues=[rx[0]/nb_fx])  
+        if num_ptvs > 1:
+            ptv_coverage2 = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[1], DoseValues=[rx[1]/nb_fx])    
+        else:
+            ptv_coverage2 = [0]
+        if num_ptvs > 2:
+            ptv_coverage3 = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[2], DoseValues=[rx[2]/nb_fx])    
+        else:
+            ptv_coverage3 = [0]
+        dose_in_brain = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=cerv_ptv_name, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+        dose_in_body  = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[max(rx)/nb_fx])
+        dmax = clinical_beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'stats_sum_ptvs_smooth',RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        header += 'Plan clinique,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)               
+        output_file.write(header)      
+        output_file.write(result_text)
+                
+                

@@ -4520,3 +4520,48 @@ SystemError: The communication object, System.ServiceModel.Channels.ServiceChann
 2017-03-20 14:20:11,389 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
 2017-03-20 14:20:11,446 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:02:40.322000]
 2017-03-20 14:20:11,496 - hmrlib - INFO - [hmr30489 - VILLENEUVE^SYLVIE (1738274) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-04-10 09:36:52,672 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 09:36:52,870 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-04-10 09:36:52,932 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 09:37:09,909 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-04-10 09:37:09,917 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:17.514000]
+2017-04-10 09:37:09,923 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-04-10 09:38:28,157 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 09:38:28,407 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-04-10 09:38:28,471 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 09:40:05,597 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 09:40:05,656 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:01:37.620000]
+2017-04-10 09:40:05,708 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:02:41,532 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:02:41,703 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-04-10 10:02:41,754 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:03:51,769 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:03:51,933 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-04-10 10:03:51,984 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:04:07,579 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:04:07,633 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:15.859000]
+2017-04-10 10:04:07,685 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:06:26,521 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:06:26,706 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-04-10 10:06:26,756 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:06:52,765 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:06:52,817 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:26.291000]
+2017-04-10 10:06:52,869 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:08:35,251 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:08:35,411 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-04-10 10:08:35,461 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:09:08,631 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:09:08,683 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:33.441000]
+2017-04-10 10:09:08,735 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:10:10,961 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:10:11,139 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-04-10 10:10:11,192 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:10:31,088 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:10:31,141 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:20.170000]
+2017-04-10 10:10:31,193 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:11:02,245 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:11:02,432 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] Starting script test_NePasUtiliser.py
+2017-04-10 10:11:02,483 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:11:56,167 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-10 10:11:56,221 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:54.078000]
+2017-04-10 10:11:56,277 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
