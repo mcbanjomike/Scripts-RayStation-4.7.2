@@ -3936,6 +3936,7 @@ def verification_finale():
                      check_beams_Rx = "Pas vérifié",
                      check_segments = "Pas vérifié",
                      check_distribution_dose = "Pas vérifié",
+                     check_noteMD = "Pas vérifié",
                      check_DSP = "Pas vérifié",
                      check_mise_en_place = "Pas vérifié",
                      check_doctx = "Pas vérifié",
@@ -4078,14 +4079,38 @@ def verification_finale():
 
             
             
+            self.label_noteMD = Label()
+            self.label_noteMD.Text = "Vérif note de planif du MD                          NON"
+            self.label_noteMD.Location = Point(15, offset + vert_spacer*7)
+            self.label_noteMD.Font = Font("Arial", 10.25, FontStyle.Bold)
+            self.label_noteMD.AutoSize = True              
+            
+            self.check_noteMD_non = CheckBox()
+            self.check_noteMD_non.Location = Point(340, offset + vert_spacer*7 - 2)
+            self.check_noteMD_non.Width = 30
+            self.check_noteMD_non.Checked = False                    
+            
+            self.label_OK1 = Label()
+            self.label_OK1.Text = "OK"
+            self.label_OK1.Location = Point(370, offset + vert_spacer*7)
+            self.label_OK1.Font = Font("Arial", 10.25, FontStyle.Bold)
+            self.label_OK1.AutoSize = True               
+            
+            self.check_noteMD_OK = CheckBox()
+            self.check_noteMD_OK.Location = Point(410, offset + vert_spacer*7 - 2)
+            self.check_noteMD_OK.Width = 30
+            self.check_noteMD_OK.Checked = False                     
+            
+            
+            
             self.label_DSP = Label()
             self.label_DSP.Text = "Vérif note positionnement: HT, DSPs, matching"
-            self.label_DSP.Location = Point(15, offset + vert_spacer*7)
+            self.label_DSP.Location = Point(15, offset + vert_spacer*8)
             self.label_DSP.Font = Font("Arial", 10.25, FontStyle.Bold)
             self.label_DSP.AutoSize = True              
             
             self.check_DSP = CheckBox()
-            self.check_DSP.Location = Point(410, offset + vert_spacer*7 - 2)
+            self.check_DSP.Location = Point(410, offset + vert_spacer*8 - 2)
             self.check_DSP.Width = 30
             self.check_DSP.Checked = False        
             
@@ -4093,38 +4118,49 @@ def verification_finale():
             
             self.label_mise_en_place = Label()
             self.label_mise_en_place.Text = "Vérif mise en place: ISO DICOM, struct, phase"
-            self.label_mise_en_place.Location = Point(15, offset + vert_spacer*8)
+            self.label_mise_en_place.Location = Point(15, offset + vert_spacer*9)
             self.label_mise_en_place.Font = Font("Arial", 10.25, FontStyle.Bold)
             self.label_mise_en_place.AutoSize = True              
             
             self.check_mise_en_place = CheckBox()
-            self.check_mise_en_place.Location = Point(410, offset + vert_spacer*8 - 2)
+            self.check_mise_en_place.Location = Point(410, offset + vert_spacer*9 - 2)
             self.check_mise_en_place.Width = 30
             self.check_mise_en_place.Checked = False        
             
             
             
             self.label_doctx = Label()
-            self.label_doctx.Text = "Vérification Document de Tx (et DRRs au besoin)"
-            self.label_doctx.Location = Point(15, offset + vert_spacer*9)
+            self.label_doctx.Text = "Vérification Document de Tx                      NON"
+            self.label_doctx.Location = Point(15, offset + vert_spacer*10)
             self.label_doctx.Font = Font("Arial", 10.25, FontStyle.Bold)
             self.label_doctx.AutoSize = True              
             
-            self.check_doctx = CheckBox()
-            self.check_doctx.Location = Point(410, offset + vert_spacer*9 - 2)
-            self.check_doctx.Width = 30
-            self.check_doctx.Checked = False                 
+            self.check_doctx_non = CheckBox()
+            self.check_doctx_non.Location = Point(340, offset + vert_spacer*10 - 2)
+            self.check_doctx_non.Width = 30
+            self.check_doctx_non.Checked = False                   
+            
+            self.label_OK2 = Label()
+            self.label_OK2.Text = "OK"
+            self.label_OK2.Location = Point(370, offset + vert_spacer*10)
+            self.label_OK2.Font = Font("Arial", 10.25, FontStyle.Bold)
+            self.label_OK2.AutoSize = True                 
+            
+            self.check_doctx_OK = CheckBox()
+            self.check_doctx_OK.Location = Point(410, offset + vert_spacer*10 - 2)
+            self.check_doctx_OK.Width = 30
+            self.check_doctx_OK.Checked = False                 
             
             
             
             self.label_codestat = Label()
             self.label_codestat.Text = "Vérification des codes statistiques"
-            self.label_codestat.Location = Point(15, offset + vert_spacer*10)
+            self.label_codestat.Location = Point(15, offset + vert_spacer*11)
             self.label_codestat.Font = Font("Arial", 10.25, FontStyle.Bold)
             self.label_codestat.AutoSize = True              
             
             self.check_codestat = CheckBox()
-            self.check_codestat.Location = Point(410, offset + vert_spacer*10 - 2)
+            self.check_codestat.Location = Point(410, offset + vert_spacer*11 - 2)
             self.check_codestat.Width = 30
             self.check_codestat.Checked = False     
 
@@ -4138,19 +4174,19 @@ def verification_finale():
 
             self.label_results_header = Label()
             self.label_results_header.Text = "Résultats"
-            self.label_results_header.Location = Point(15, offset + vert_spacer*12)
+            self.label_results_header.Location = Point(15, offset + vert_spacer*12.5)
             self.label_results_header.Font = Font("Arial", 11, FontStyle.Bold)
             self.label_results_header.AutoSize = True     
             
             self.label_results = Label()
             self.label_results.Text = "Nombre de beamsets dans le plan: " + str(num_bs) + ' (' + bs_text[0:-2] + ')'
-            self.label_results.Location = Point(15, offset + vert_spacer*13)
+            self.label_results.Location = Point(15, offset + vert_spacer*13.5)
             self.label_results.Font = Font("Arial", 10,)
             self.label_results.AutoSize = True             
 
             self.label_reminder = Label()
             self.label_reminder.Text = "Rappel:\nRoulez le script de vérification pour chaque beamset"
-            self.label_reminder.Location = Point(15, offset + vert_spacer*14)
+            self.label_reminder.Location = Point(15, offset + vert_spacer*14.5)
             self.label_reminder.Font = Font("Arial", 10.25, FontStyle.Bold)
             self.label_reminder.ForeColor = Color.Red
             self.label_reminder.AutoSize = True                 
@@ -4176,7 +4212,12 @@ def verification_finale():
             self.MainWindow.Controls.Add(self.check_grid)                   
             
             self.MainWindow.Controls.Add(self.label_distribution_dose)
-            self.MainWindow.Controls.Add(self.check_distribution_dose)            
+            self.MainWindow.Controls.Add(self.check_distribution_dose)
+
+            self.MainWindow.Controls.Add(self.label_noteMD)
+            self.MainWindow.Controls.Add(self.check_noteMD_non)            
+            self.MainWindow.Controls.Add(self.label_OK1)
+            self.MainWindow.Controls.Add(self.check_noteMD_OK)               
 
             self.MainWindow.Controls.Add(self.label_DSP)
             self.MainWindow.Controls.Add(self.check_DSP)               
@@ -4185,7 +4226,9 @@ def verification_finale():
             self.MainWindow.Controls.Add(self.check_mise_en_place)  
 
             self.MainWindow.Controls.Add(self.label_doctx)
-            self.MainWindow.Controls.Add(self.check_doctx)              
+            self.MainWindow.Controls.Add(self.check_doctx_non)  
+            self.MainWindow.Controls.Add(self.label_OK2)          
+            self.MainWindow.Controls.Add(self.check_doctx_OK)              
             
             self.MainWindow.Controls.Add(self.label_codestat)
             self.MainWindow.Controls.Add(self.check_codestat)  
@@ -4315,6 +4358,12 @@ def verification_finale():
                 self.d['check_distribution_dose'] = 'OK'                
             else:
                 warning = True
+            if self.check_noteMD_non.Checked:
+                self.d['check_noteMD'] = 'A completer'
+            elif self.check_noteMD_OK.Checked:
+                self.d['check_noteMD'] = 'OK'                
+            else:
+                warning = True                    
             if self.check_DSP.Checked:
                 self.d['check_DSP'] = 'OK'
             else:
@@ -4323,8 +4372,10 @@ def verification_finale():
                 self.d['check_mise_en_place'] = 'OK'
             else:
                 warning = True     
-            if self.check_doctx.Checked:
-                self.d['check_doctx'] = 'OK'
+            if self.check_doctx_non.Checked:
+                self.d['check_doctx'] = 'A approuver'
+            elif self.check_doctx_OK.Checked:
+                self.d['check_doctx'] = 'OK'                
             else:
                 warning = True                     
             if self.check_codestat.Checked:
