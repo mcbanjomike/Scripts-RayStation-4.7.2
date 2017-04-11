@@ -4565,3 +4565,41 @@ SystemError: The communication object, System.ServiceModel.Channels.ServiceChann
 2017-04-10 10:11:56,167 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
 2017-04-10 10:11:56,221 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] End of script test_NePasUtiliser.py [execution time = 0:00:54.078000]
 2017-04-10 10:11:56,277 - hmrlib - INFO - [hmr30489 - TREPANIER^FRANCINE (518363) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-04-11 11:22:34,647 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:22:35,127 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-04-11 11:22:35,972 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:24:12,090 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:24:12,223 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:01:38.076000]
+2017-04-11 11:24:12,378 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:24:20,822 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:24:21,276 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-04-11 11:24:21,477 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:25:07,417 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:25:07,551 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:00:46.730000]
+2017-04-11 11:25:07,783 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:25:13,155 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:25:13,641 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-04-11 11:25:13,861 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:26:19,186 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:26:19,309 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:01:06.108000]
+2017-04-11 11:26:19,437 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:26:24,511 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:26:24,833 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-04-11 11:26:25,033 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:26:49,128 - hmrlib.poi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (0.0740310668945, 1.44968948364, 0.0)
+2017-04-11 11:26:49,662 - hmrlib.poi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (0.0740310668945, 1.44968948364, 0.0)
+2017-04-11 11:28:35,718 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:28:35,857 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:02:11.200000]
+2017-04-11 11:28:36,004 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:28:47,512 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:28:47,964 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 2.py
+2017-04-11 11:28:48,160 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:29:01,810 - hmrlib.poi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (0.0740310668945, 1.44968948364, 0.0)
+2017-04-11 11:29:02,008 - hmrlib.poi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (0.0740310668945, 1.44968948364, 0.0)
+2017-04-11 11:29:13,140 - hmrlib.poi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (0.0740310668945, 1.44968948364, 0.0)
+2017-04-11 11:29:13,671 - hmrlib.poi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (0.0740310668945, 1.44968948364, 0.0)
+2017-04-11 11:29:44,465 - hmrlib.poi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] POI REF SCAN: (x, y, z) = (0.0740310668945, 1.44968948364, 0.0)
+2017-04-11 11:29:44,998 - hmrlib.poi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] POI ISO: (x, y, z) = (0.0740310668945, 1.44968948364, 0.0)
+2017-04-11 11:30:30,870 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-11 11:30:31,017 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:01:43.531000]
+2017-04-11 11:30:31,163 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
