@@ -144,14 +144,14 @@ def add_beams_lung_stereo(contralateral_lung=None, beamset=None, examination=Non
         else:
             contralateral_lung = 'POUMON DRT'
 
-    if beamset.DicomPlanLabel == 'A1':
-        beam_name = 'A1.1'
-        beam_name_2 = 'A1.2'
-    elif beamset.DicomPlanLabel == 'B1':
+    if beamset.DicomPlanLabel == 'B1':
         beam_name = 'B1.1'
         beam_name_2 = 'B1.2'
         if poi.poi_exists("ISO B1", examination=examination):
             iso = "ISO B1"
+    else:
+        beam_name = 'A1.1'
+        beam_name_2 = 'A1.2'                  
                   
     if contralateral_lung == 'POUMON GCHE':
         # Poumon D treated

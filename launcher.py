@@ -3699,7 +3699,7 @@ def verification_initiale():
             self.d['ext_text'] = verification.verify_external_and_overrides()
             self.label_results_header.Text = "Résultats"
             self.label_results.Text = self.d['ext_text']
-            self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 50)
+            self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 100)
             self.label_reminder.Text = "Rappel:\nVérifiez que la table (ou la planche ORL) est comprise dans\nle contour External avant de procéder à la prochaine étape"
             self.message.Text = ""
 
@@ -4246,7 +4246,7 @@ def verification_finale():
             self.d['ext_text'] = verification.verify_external_and_overrides()
             self.label_results_header.Text = "Résultats"
             self.label_results.Text = self.d['ext_text']
-            self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 50)
+            self.label_reminder.Location = Point(self.label_results.Left, self.label_results.Top + 100)
             self.label_reminder.Text = "Rappel:\nVérifiez que la table (ou la planche ORL) est comprise dans\nle contour External avant de procéder à la prochaine étape"
             self.message.Text = ""
 
