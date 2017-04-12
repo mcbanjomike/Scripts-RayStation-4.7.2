@@ -33,9 +33,9 @@ def verify_external_and_overrides():
         result_text = "Nom du contour External: " + external_roi
         
     if len(override_roi) > 0:
-        result_text += "\nROIs avec override de matériel: "                
+        result_text += "\nROIs avec override de matériel:\n"                
         for item in override_roi:
-            result_text += item + "  "
+            result_text += "     " + item + "\n"
     else:
         result_text += "\nROIs avec override de matériel: Aucun"      
         
