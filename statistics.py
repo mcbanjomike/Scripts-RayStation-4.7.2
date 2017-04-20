@@ -1192,6 +1192,7 @@ def auto_collect_lung_stats(startpoint=1,endpoint=999,test_plans=False,print_res
         try:
             ptv_name = l.split(',')[4]
             rx = int(l.split(',')[5])
+            num_beams = int(l.split(',')[10])
             #technique = l.split(',')[8]
         except:
             output = displayname[1:-1] + ': Unable to determine PTV name or prescription value\n'
@@ -1213,9 +1214,9 @@ def auto_collect_lung_stats(startpoint=1,endpoint=999,test_plans=False,print_res
             continue
         
         #Run the statistics collection script
-        output,header,laterality,body_name,opt_pmns_name,nb_fx = lung_stats(ptv_name,rx,patient,plan,beamset,exam,iso_name)  
+        output,header,laterality,body_name,opt_pmns_name,nb_fx,oar_list = lung_stats(ptv_name,rx,patient,plan,beamset,exam,iso_name)  
         if test_plans:
-            test_lung_plans(ptv_name,rx,patient,nb_fx,exam,iso_name,laterality,body_name,opt_pmns_name,plan,beamset,show_plan)
+            test_lung_plans_v2(ptv_name,rx,patient,nb_fx,exam,iso_name,laterality,body_name,opt_pmns_name,oar_list,plan,beamset,num_beams,show_plan)
         
         #Print results
         if print_results:
@@ -1309,13 +1310,20 @@ def lung_stats(ptv_name,rx,patient,plan,beamset,exam,iso_name):
     #Determine laterality
     if patient.PatientID == '1846570': #Patient with only one lung
         pmn_ipsi_name = poumon_d_name
+        pmn_contra_name = "Not found"
         laterality = 'DRT'
     else:
         pmn_ipsi_name = roi.find_most_intersecting_roi(ptv_name,[poumon_d_name,poumon_g_name], examination=exam)
         if pmn_ipsi_name == poumon_d_name:
             laterality = 'DRT'
+            pmn_contra_name = poumon_g_name
         else:
             laterality = 'GCHE'
+            pmn_contra_name = poumon_d_name
+          
+          
+    #Generate list of OAR names for later use
+    oar_list = [pmn_ipsi_name,pmn_contra_name,coeur_name,bronches_name,trachee_name,oesophage_name,moelle_name,cotes_name,'r50']
           
     #Get prescription information
     nb_fx = beamset.FractionationPattern.NumberOfFractions
@@ -1394,12 +1402,12 @@ def lung_stats(ptv_name,rx,patient,plan,beamset,exam,iso_name):
     #Return results
     combined_output = patient_output + ptv_output + output + '\n'
     combined_header = patient_header + ptv_header + dose_header + '\n'
-    return combined_output,combined_header,laterality,body_name,opt_pmns_name,nb_fx
+    return combined_output,combined_header,laterality,body_name,opt_pmns_name,nb_fx,oar_list
 
     
     
         
-#Script for adding testing multiple plans on a patient with multiple PTVs - now with more iterations on PTV min doses
+#Script for adding testing multiple plans on a - now with more iterations on PTV min doses
 def test_lung_plans(ptv_name,rx,patient,nb_fx,exam,iso_name,laterality,body_name,opt_pmns_name,clinical_plan,clinical_beamset,show_plan=False):
 
     exam = lib.get_current_examination()
@@ -1663,6 +1671,810 @@ def test_lung_plans(ptv_name,rx,patient,nb_fx,exam,iso_name,laterality,body_name
         for i,dose in enumerate(dose_in_opt_pmns):
             header += "%.3f," % (dose_in_opt_pmns[i]*opt_pmns_vol)
         header += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%d\n" % (max_in_ptv,ptv_coverage[0]*100,ptv_coverage[1]*100,ptv_coverage[0]*100,ptv_coverage[1]*100,(dose_in_body[0]*body_vol)/ptv_vol,rx/100.0)             
+        
+        output_file.write(header)      
+        output_file.write(result_text)
+                
+             
+#Script for adding testing multiple plans on a patient - now featuring OARs!
+def test_lung_plans_v2(ptv_name,rx,patient,nb_fx,exam,iso_name,laterality,body_name,opt_pmns_name,oar_list,clinical_plan,clinical_beamset,num_beams,show_plan=False):
+
+    #exam = lib.get_current_examination()
+
+    if patient.BodySite == '':
+        patient.BodySite = 'Poumon'    
+
+    # Add Treatment plan (unless it already exists)
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    try:
+        plan = patient.TreatmentPlans['Test KBP MA']
+    except:
+        plan = patient.AddNewPlan(PlanName='Test KBP MA', PlannedBy=planner_name, Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
+        plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset and beams (unless it/they already exists)
+    try:
+        beamset = plan.BeamSets['Test KBP']
+        optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.1,max_arc_delivery_time=0.2*rx/nb_fx, plan=plan)
+    except:
+        beamset = plan.AddNewBeamSet(Name='Test KBP', ExaminationName=exam.Name, MachineName='BeamMod', NominalEnergy=None,
+                                          Modality="Photons", TreatmentTechnique='VMAT', PatientPosition="HeadFirstSupine", NumberOfFractions=nb_fx, CreateSetupBeams=False, Comment='VMAT')
+        beamset.AddDosePrescriptionToRoi(RoiName=ptv_name, DoseVolume=95, PrescriptionType="DoseAtVolume", DoseValue=rx, RelativePrescriptionLevel=1)
+        
+        #Add beams
+        if laterality == 'DRT':
+            pmn_contra_name = 'POUMON GCHE' #Temporary, just to get the add_beams function to work properly
+        else:
+            pmn_contra_name = 'POUMON DRT' #Temporary, just to get the add_beams function to work properly
+            
+        if num_beams == 2:
+            two_arcs = True
+        else:
+            two_arcs = False            
+            
+        beams.add_beams_lung_stereo(contralateral_lung=pmn_contra_name, beamset=beamset, examination=exam, ptv_name=ptv_name, two_arcs=two_arcs)
+        optim.set_optimization_parameters(plan=plan)
+        optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.1,max_arc_delivery_time=0.2*rx/nb_fx, plan=plan)
+
+    
+
+    if show_plan:
+        # Make the new plan active through the GUI (required so we can manipulate GUI elements below)
+        ui = get_current("ui")
+        # We have to save before selecting the plan
+        try:
+            patient.Save()
+        except Exception, err:
+            message.message_window(err)
+            exit(0)
+        ui.MenuItem[3].Button_PlanOptimization.Click()
+        ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
+        ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.Popup.ComboBoxItem['Test KBP MA'].Select()   
+
+    pmn_contra_name = oar_list[1]    
+    
+    #Clinical goals!
+    eval.add_clinical_goal(ptv_name, rx, 'AtLeast', 'VolumeAtDose', 95, plan = plan)
+    eval.add_clinical_goal(ptv_name, rx*0.95, 'AtLeast', 'VolumeAtDose', 99, plan = plan)
+    eval.add_clinical_goal(ptv_name, rx*1.5, 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan = plan)
+
+    eval.add_clinical_goal(opt_pmns_name, 2000, 'AtMost', 'AbsoluteVolumeAtDose', 5, plan=plan)
+    eval.add_clinical_goal(opt_pmns_name, 1000, 'AtMost', 'AbsoluteVolumeAtDose', 10, plan=plan)
+    eval.add_clinical_goal(opt_pmns_name, 500, 'AtMost', 'AbsoluteVolumeAtDose', 20, plan=plan)
+    
+    eval.add_clinical_goal(pmn_contra_name, 500, 'AtMost', 'VolumeAtDose', 5, plan=plan)
+    
+    for oar in oar_list:
+        eval.add_clinical_goal(oar, rx, 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan = plan)
+
+    #Collect ROI info
+    ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_name].GetRoiVolume()  
+    body_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[body_name].GetRoiVolume() 
+    opt_pmns_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[opt_pmns_name].GetRoiVolume() 
+    result_text = ""
+
+    #Estimate dose falloff range
+    falloff_range = 1.0 + (ptv_vol - 10) * 0.0125
+    if falloff_range < 1:
+        falloff_range = 1
+    elif falloff_range > 2:
+        falloff_range = 2
+    
+    #Create COMBI PMN KBP
+    roi.create_expanded_roi('r50', color="Yellow", examination=exam, marge_lat=5, marge_sup_inf = 0, output_name='temp KBP1')
+    roi.create_expanded_roi('temp KBP1', color="Lightblue", examination=exam, marge_lat=5, marge_sup_inf = 0, output_name='temp KBP2')
+    patient.PatientModel.CreateRoi(Name="COMBI PMN KBP", Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['COMBI PMN KBP'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["temp KBP2"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [opt_pmns_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Intersection", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['COMBI PMN KBP'].UpdateDerivedGeometry(Examination=exam)
+    combi_pmn_kbp_col = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['COMBI PMN KBP'].GetRoiVolume() 
+
+    #First set: Dose falloff only
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    optim.add_mindose_objective(ptv_name, rx, weight=50, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective(body_name, rx*1.00, rx*0.25, falloff_range, weight=25, plan=plan, plan_opt=0)
+    optim.add_maxdose_objective('r50', (rx/2)-100, weight=5, plan=plan, plan_opt=0) 
+
+    #Reset and then run initial set of optimizations
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    for j in range(1):
+        if j > 0:
+            plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+        else:
+            #Get DVH values for use in the second set
+            dose_in_pmn_kbp = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName='COMBI PMN KBP', DoseValues=[2000/nb_fx,1000/nb_fx,500/nb_fx])
+                  
+        #Get initial coverage before scaling        
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])   
+        init_ptv_cov = ptv_coverage
+            
+        #Modify weight of PTV min dose objective
+        new_weight = 1
+        if ptv_coverage[0] < 0.93:
+            new_weight = 2
+        elif ptv_coverage[0] > 0.97:
+            new_weight = 0.5 
+        
+        #Scale dose to prescription
+        beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=95, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+
+        #Get coverage after scaling
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])
+
+        #Evaluate plan
+        dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx])        
+        dose_in_opt_pmns = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=opt_pmns_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx,2000/nb_fx,1500/nb_fx,1000/nb_fx,500/nb_fx])        
+        dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_name,RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        v5_contra = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=pmn_contra_name, DoseValues=[500/nb_fx])
+        oar_max_dose = [0,0,0,0,0,0,0,0,0]      
+        for i,oar in enumerate(oar_list):
+            try:
+                oar_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[oar].GetRoiVolume() 
+                oar_max_dose[i] = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = oar,RelativeVolumes = [0.1/oar_vol])[0] * nb_fx / 100.0
+            except:
+                oar_max_dose[i] = -999         
+        total_mu = 0
+        num_beams = 0
+        for beam in beamset.Beams:
+            num_beams += 1
+            total_mu += beam.BeamMU       
+        
+        #Add results to result_text
+        if j == 0:
+            result_text += 'Falloff seulement plan initial,'
+        else:
+            result_text += 'Falloff seulement après %d révisions,' % j
+        
+        for i,dose in enumerate(dose_in_body):
+            result_text += "%.3f," % (dose_in_body[i]*body_vol)
+        for i,dose in enumerate(dose_in_opt_pmns):
+            result_text += "%.3f," % (dose_in_opt_pmns[i]*opt_pmns_vol)
+        
+        result_text += "%.3f," % (v5_contra[0]*100)
+        result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f," % (oar_max_dose[1],oar_max_dose[2],oar_max_dose[3],oar_max_dose[4],oar_max_dose[5],oar_max_dose[6],oar_max_dose[7],oar_max_dose[8])
+        result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%d," % (max_in_ptv,ptv_coverage[0]*100,ptv_coverage[1]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,(dose_in_body[0]*body_vol)/ptv_vol,rx/100.0)        
+        result_text += "%d,%.3f\n" % (num_beams,total_mu)             
+
+
+ 
+ 
+ 
+    #Second set: Dose falloff and max DVH
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    #Optimization objectives
+    optim.add_mindose_objective(ptv_name, rx, weight=50, plan=plan, plan_opt=0)
+      
+    optim.add_dosefalloff_objective(body_name, rx*1.00, rx*0.25, falloff_range, weight=25, plan=plan, plan_opt=0)
+    optim.add_maxdose_objective('r50', (rx/2)-100, weight=5, plan=plan, plan_opt=0) 
+
+    optim.add_maxdvh_objective('COMBI PMN KBP', 2000, dose_in_pmn_kbp[0]*80, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('COMBI PMN KBP', 1000, dose_in_pmn_kbp[1]*80, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('COMBI PMN KBP', 500, dose_in_pmn_kbp[2]*80, weight=10, plan=plan, plan_opt=0) 
+    
+    #Reset and then run initial set of optimizations
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    for j in range(1):
+        if j > 0:
+            plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+        
+        #Get initial coverage before scaling        
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])   
+        init_ptv_cov = ptv_coverage
+            
+        #Modify weight of PTV min dose objective
+        new_weight = 1
+        if ptv_coverage[0] < 0.93:
+            new_weight = 2
+        elif ptv_coverage[0] > 0.97:
+            new_weight = 0.5 
+        
+        #Scale dose to prescription
+        beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=95, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+
+        #Get coverage after scaling
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])
+
+        #Evaluate plan
+        dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx])        
+        dose_in_opt_pmns = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=opt_pmns_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx,2000/nb_fx,1500/nb_fx,1000/nb_fx,500/nb_fx])        
+        dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_name,RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        v5_contra = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=pmn_contra_name, DoseValues=[500/nb_fx])
+        oar_max_dose = [0,0,0,0,0,0,0,0,0]      
+        for i,oar in enumerate(oar_list):
+            try:
+                oar_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[oar].GetRoiVolume() 
+                oar_max_dose[i] = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = oar,RelativeVolumes = [0.1/oar_vol])[0] * nb_fx / 100.0
+            except:
+                oar_max_dose[i] = -999         
+        total_mu = 0
+        num_beams = 0
+        for beam in beamset.Beams:
+            num_beams += 1
+            total_mu += beam.BeamMU       
+        
+        #Add results to result_text
+        if j == 0:
+            result_text += 'Falloff avec DVHs plan initial,'
+        else:
+            result_text += 'Falloff avec DVHs après %d révisions,' % j
+        
+        for i,dose in enumerate(dose_in_body):
+            result_text += "%.3f," % (dose_in_body[i]*body_vol)
+        for i,dose in enumerate(dose_in_opt_pmns):
+            result_text += "%.3f," % (dose_in_opt_pmns[i]*opt_pmns_vol)
+        
+        result_text += "%.3f," % (v5_contra[0]*100)
+        result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f," % (oar_max_dose[1],oar_max_dose[2],oar_max_dose[3],oar_max_dose[4],oar_max_dose[5],oar_max_dose[6],oar_max_dose[7],oar_max_dose[8])
+        result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%d," % (max_in_ptv,ptv_coverage[0]*100,ptv_coverage[1]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,(dose_in_body[0]*body_vol)/ptv_vol,rx/100.0)        
+        result_text += "%d,%.3f\n" % (num_beams,total_mu)
+
+ 
+ 
+ 
+ 
+ 
+ 
+    #Third set: Dose falloff, max DVH, adjust for OARs and adjust min dose if necessary over several revisions
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    #Optimization objectives
+    optim.add_mindose_objective(ptv_name, rx, weight=50, plan=plan, plan_opt=0)
+      
+    optim.add_dosefalloff_objective(body_name, rx*1.00, rx*0.25, falloff_range, weight=25, plan=plan, plan_opt=0)
+    optim.add_maxdose_objective('r50', (rx/2)-100, weight=5, plan=plan, plan_opt=0) 
+
+    optim.add_maxdvh_objective('COMBI PMN KBP', 2000, dose_in_pmn_kbp[0]*80, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('COMBI PMN KBP', 1000, dose_in_pmn_kbp[1]*80, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('COMBI PMN KBP', 500, dose_in_pmn_kbp[2]*80, weight=10, plan=plan, plan_opt=0) 
+    
+    optim.add_maxdvh_objective(pmn_contra_name, 500, 50*v5_contra[0], weight=1, plan=plan, plan_opt=0) 
+    
+    for i,oar in enumerate(oar_list):
+        if i > 1:
+            optim.add_maxdose_objective(oar, 80*oar_max_dose[i], weight=1, plan=plan, plan_opt=0) 
+    
+    
+    #Reset and then run initial set of optimizations
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    for j in range(4):
+        if j > 0:
+            plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+        
+        #Get initial coverage before scaling        
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])   
+        init_ptv_cov = ptv_coverage
+            
+        #Modify weight of PTV min dose objective
+        new_weight = 1
+        if ptv_coverage[0] < 0.93:
+            new_weight = 2
+        elif ptv_coverage[0] > 0.97:
+            new_weight = 0.5 
+        
+        #Scale dose to prescription
+        beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=95, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+
+        #Get coverage after scaling
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])
+
+        #Evaluate plan
+        dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx])        
+        dose_in_opt_pmns = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=opt_pmns_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx,2000/nb_fx,1500/nb_fx,1000/nb_fx,500/nb_fx])        
+        dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_name,RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        v5_contra = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=pmn_contra_name, DoseValues=[500/nb_fx])
+        oar_max_dose = [0,0,0,0,0,0,0,0,0]      
+        for i,oar in enumerate(oar_list):
+            try:
+                oar_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[oar].GetRoiVolume() 
+                oar_max_dose[i] = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = oar,RelativeVolumes = [0.1/oar_vol])[0] * nb_fx / 100.0
+            except:
+                oar_max_dose[i] = -999         
+        total_mu = 0
+        num_beams = 0
+        for beam in beamset.Beams:
+            num_beams += 1
+            total_mu += beam.BeamMU       
+        
+        #Add results to result_text
+        if j == 0:
+            result_text += 'Falloff+DVH+OAR plan initial,'
+        else:
+            result_text += 'Falloff+DVH+OAR après %d révisions,' % j
+        
+        for i,dose in enumerate(dose_in_body):
+            result_text += "%.3f," % (dose_in_body[i]*body_vol)
+        for i,dose in enumerate(dose_in_opt_pmns):
+            result_text += "%.3f," % (dose_in_opt_pmns[i]*opt_pmns_vol)
+        
+        result_text += "%.3f," % (v5_contra[0]*100)
+        result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f," % (oar_max_dose[1],oar_max_dose[2],oar_max_dose[3],oar_max_dose[4],oar_max_dose[5],oar_max_dose[6],oar_max_dose[7],oar_max_dose[8])
+        result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%d," % (max_in_ptv,ptv_coverage[0]*100,ptv_coverage[1]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,(dose_in_body[0]*body_vol)/ptv_vol,rx/100.0)        
+        result_text += "%d,%.3f\n" % (num_beams,total_mu)
+
+        if j<3:
+            #Modify weights and reoptimize
+            for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions: 
+                try:
+                    f_type = objective.DoseFunctionParameters.FunctionType  # Dose falloff objectives do not have a FunctionType and must be skipped
+                except:
+                    continue
+                if f_type == "MinDose" and objective.ForRegionOfInterest.Name == ptv_name:    
+                    objective.DoseFunctionParameters.Weight = new_weight*objective.DoseFunctionParameters.Weight
+            
+            #Put the monitor units back to where they were before scaling
+            beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=init_ptv_cov[0]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)    
+
+ 
+ 
+ 
+    #Write to file
+    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques'
+    output_file_path += '\\Resultats ' + patient.PatientName + '_' + patient.PatientID + '_multiplan_poumon_v2.txt'
+    with open(output_file_path, 'a') as output_file:
+        #Prepare header
+        header = "Essai,Body V100 cc,Body V90 cc,Body V80 cc,Body V70 cc,Body V60 cc,Body V50 cc,Body V40 cc,Body V30 cc,Body V20 cc,Body V10 cc,"
+        header += "PMN-ITV-BR V100(cc),PMN-ITV-BR V90(cc),PMN-ITV-BR V80(cc),PMN-ITV-BR V70(cc),PMN-ITV-BR V60(cc),PMN-ITV-BR V50(cc),PMN-ITV-BR V40(cc),PMN-ITV-BR V30(cc),PMN-ITV-BR V20(cc),PMN-ITV-BR V10(cc),PMN-ITV-BR V20Gy(cc),PMN-ITV-BR V15Gy(cc),PMN-ITV-BR V10Gy(cc),PMN-ITV-BR V5Gy(cc),V5Gy dans Pmn contra(%),"
+        header += "D0.1cc PMN contra(Gy),D0.1cc Coeur(Gy),D0.1cc Bronches(Gy),D0.1cc Trachée(Gy),D0.1cc Oesophage(Gy),D0.1cc Moelle(Gy),D0.1cc Côtes(Gy),D0.1cc à 2cm(Gy),"
+        header += "Max in PTV(Gy),Couverture par 100%,Couverture par 95%,Couverture 100% avant scaling,Couverture 95% avant scaling,Indice de conformité,Prescription(Gy),"
+        header += "Nb de faisceau,UM totaux\n"
+        
+        #Add clinical plan information
+        ptv_coverage = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])  
+        dose_in_body = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx])        
+        dose_in_opt_pmns = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=opt_pmns_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx,2000/nb_fx,1500/nb_fx,1000/nb_fx,500/nb_fx])        
+        dmax = clinical_beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_name,RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        v5_contra = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=pmn_contra_name, DoseValues=[500/nb_fx])
+        oar_max_dose = [0,0,0,0,0,0,0,0,0]      
+        for i,oar in enumerate(oar_list):
+            try:
+                oar_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[oar].GetRoiVolume() 
+                oar_max_dose[i] = clinical_beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = oar,RelativeVolumes = [0.1/oar_vol])[0] * nb_fx / 100.0      
+            except:
+                oar_max_dose[i] = -999
+        total_mu = 0
+        num_beams = 0
+        for beam in clinical_beamset.Beams:
+            num_beams += 1
+            total_mu += beam.BeamMU
+                
+        header += 'Plan clinique,'
+        for i,dose in enumerate(dose_in_body):
+            header += "%.3f," % (dose_in_body[i]*body_vol)        
+        for i,dose in enumerate(dose_in_opt_pmns):
+            header += "%.3f," % (dose_in_opt_pmns[i]*opt_pmns_vol)
+        
+        header += "%.3f," % (v5_contra[0]*100)
+        header += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f," % (oar_max_dose[1],oar_max_dose[2],oar_max_dose[3],oar_max_dose[4],oar_max_dose[5],oar_max_dose[6],oar_max_dose[7],oar_max_dose[8])
+        header += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%d," % (max_in_ptv,ptv_coverage[0]*100,ptv_coverage[1]*100,ptv_coverage[0]*100,ptv_coverage[1]*100,(dose_in_body[0]*body_vol)/ptv_vol,rx/100.0)            
+        header += "%d,%.3f\n" % (num_beams,total_mu)
+        
+        output_file.write(header)      
+        output_file.write(result_text)
+                
+
+#Script for adding testing multiple plans on a patient - testing r50 dose reporting
+def test_lung_plans_v3(ptv_name,rx,patient,nb_fx,exam,iso_name,laterality,body_name,opt_pmns_name,oar_list,clinical_plan,clinical_beamset,num_beams,show_plan=False):
+
+    #exam = lib.get_current_examination()
+
+    if patient.BodySite == '':
+        patient.BodySite = 'Poumon'    
+
+    # Add Treatment plan (unless it already exists)
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    try:
+        plan = patient.TreatmentPlans['Test KBP MA']
+    except:
+        plan = patient.AddNewPlan(PlanName='Test KBP MA', PlannedBy=planner_name, Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
+        plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset and beams (unless it/they already exists)
+    try:
+        beamset = plan.BeamSets['Test KBP']
+        optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.1,max_arc_delivery_time=0.2*rx/nb_fx, plan=plan)
+    except:
+        beamset = plan.AddNewBeamSet(Name='Test KBP', ExaminationName=exam.Name, MachineName='BeamMod', NominalEnergy=None,
+                                          Modality="Photons", TreatmentTechnique='VMAT', PatientPosition="HeadFirstSupine", NumberOfFractions=nb_fx, CreateSetupBeams=False, Comment='VMAT')
+        beamset.AddDosePrescriptionToRoi(RoiName=ptv_name, DoseVolume=95, PrescriptionType="DoseAtVolume", DoseValue=rx, RelativePrescriptionLevel=1)
+        
+        #Add beams
+        if laterality == 'DRT':
+            pmn_contra_name = 'POUMON GCHE' #Temporary, just to get the add_beams function to work properly
+        else:
+            pmn_contra_name = 'POUMON DRT' #Temporary, just to get the add_beams function to work properly
+            
+        if num_beams == 2:
+            two_arcs = True
+        else:
+            two_arcs = False            
+            
+        beams.add_beams_lung_stereo(contralateral_lung=pmn_contra_name, beamset=beamset, examination=exam, ptv_name=ptv_name, two_arcs=two_arcs)
+        optim.set_optimization_parameters(plan=plan)
+        optim.set_vmat_conversion_parameters(max_leaf_travel_per_degree=0.1,max_arc_delivery_time=0.2*rx/nb_fx, plan=plan)
+
+    
+
+    if show_plan:
+        # Make the new plan active through the GUI (required so we can manipulate GUI elements below)
+        ui = get_current("ui")
+        # We have to save before selecting the plan
+        try:
+            patient.Save()
+        except Exception, err:
+            message.message_window(err)
+            exit(0)
+        ui.MenuItem[3].Button_PlanOptimization.Click()
+        ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
+        ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.Popup.ComboBoxItem['Test KBP MA'].Select()   
+
+    pmn_contra_name = oar_list[1]    
+    
+    #Clinical goals!
+    eval.add_clinical_goal(ptv_name, rx, 'AtLeast', 'VolumeAtDose', 95, plan = plan)
+    eval.add_clinical_goal(ptv_name, rx*0.95, 'AtLeast', 'VolumeAtDose', 99, plan = plan)
+    eval.add_clinical_goal(ptv_name, rx*1.5, 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan = plan)
+
+    eval.add_clinical_goal(opt_pmns_name, 2000, 'AtMost', 'AbsoluteVolumeAtDose', 5, plan=plan)
+    eval.add_clinical_goal(opt_pmns_name, 1000, 'AtMost', 'AbsoluteVolumeAtDose', 10, plan=plan)
+    eval.add_clinical_goal(opt_pmns_name, 500, 'AtMost', 'AbsoluteVolumeAtDose', 20, plan=plan)
+    
+    eval.add_clinical_goal(pmn_contra_name, 500, 'AtMost', 'VolumeAtDose', 5, plan=plan)
+    
+    for oar in oar_list:
+        eval.add_clinical_goal(oar, rx, 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan = plan)
+
+    #Collect ROI info
+    ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_name].GetRoiVolume()  
+    body_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[body_name].GetRoiVolume() 
+    opt_pmns_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[opt_pmns_name].GetRoiVolume() 
+    result_text = ""
+
+    #Estimate dose falloff range
+    falloff_range = 1.0 + (ptv_vol - 10) * 0.0125
+    if falloff_range < 1:
+        falloff_range = 1
+    elif falloff_range > 2:
+        falloff_range = 2
+    
+    #Create COMBI PMN KBP
+    roi.create_expanded_roi('r50', color="Yellow", examination=exam, marge_lat=5, marge_sup_inf = 0, output_name='temp KBP1')
+    roi.create_expanded_roi('temp KBP1', color="Lightblue", examination=exam, marge_lat=5, marge_sup_inf = 0, output_name='temp KBP2')
+    patient.PatientModel.CreateRoi(Name="COMBI PMN KBP", Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest['COMBI PMN KBP'].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["temp KBP2"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [opt_pmns_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Intersection", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest['COMBI PMN KBP'].UpdateDerivedGeometry(Examination=exam)
+    combi_pmn_kbp_col = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['COMBI PMN KBP'].GetRoiVolume() 
+
+    #First set: Dose falloff only
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    optim.add_mindose_objective(ptv_name, rx, weight=50, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective(body_name, rx*1.00, rx*0.25, falloff_range, weight=25, plan=plan, plan_opt=0)
+    optim.add_maxdose_objective('r50', (rx/2)-100, weight=5, plan=plan, plan_opt=0) 
+
+    #Reset and then run initial set of optimizations
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    for j in range(1):
+        if j > 0:
+            plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+        else:
+            #Get DVH values for use in the second set
+            dose_in_pmn_kbp = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName='COMBI PMN KBP', DoseValues=[2000/nb_fx,1000/nb_fx,500/nb_fx])
+                  
+        #Get initial coverage before scaling        
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])   
+        init_ptv_cov = ptv_coverage
+            
+        #Modify weight of PTV min dose objective
+        new_weight = 1
+        if ptv_coverage[0] < 0.93:
+            new_weight = 2
+        elif ptv_coverage[0] > 0.97:
+            new_weight = 0.5 
+        
+        #Scale dose to prescription
+        beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=95, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+
+        #Get coverage after scaling
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])
+
+        #Evaluate plan
+        dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx])        
+        dose_in_opt_pmns = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=opt_pmns_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx,2000/nb_fx,1500/nb_fx,1000/nb_fx,500/nb_fx])        
+        dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_name,RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        v5_contra = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=pmn_contra_name, DoseValues=[500/nb_fx])
+        oar_max_dose = [0,0,0,0,0,0,0,0,0]      
+        for i,oar in enumerate(oar_list):
+            try:
+                oar_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[oar].GetRoiVolume() 
+                oar_max_dose[i] = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = oar,RelativeVolumes = [0.1/oar_vol])[0] * nb_fx / 100.0
+            except:
+                oar_max_dose[i] = -999         
+        total_mu = 0
+        num_beams = 0
+        for beam in beamset.Beams:
+            num_beams += 1
+            total_mu += beam.BeamMU       
+        
+        #Add results to result_text
+        if j == 0:
+            result_text += 'Falloff seulement plan initial,'
+        else:
+            result_text += 'Falloff seulement après %d révisions,' % j
+        
+        for i,dose in enumerate(dose_in_body):
+            result_text += "%.3f," % (dose_in_body[i]*body_vol)
+        for i,dose in enumerate(dose_in_opt_pmns):
+            result_text += "%.3f," % (dose_in_opt_pmns[i]*opt_pmns_vol)
+        
+        result_text += "%.3f," % (v5_contra[0]*100)
+        result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f," % (oar_max_dose[1],oar_max_dose[2],oar_max_dose[3],oar_max_dose[4],oar_max_dose[5],oar_max_dose[6],oar_max_dose[7],oar_max_dose[8])
+        result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%d," % (max_in_ptv,ptv_coverage[0]*100,ptv_coverage[1]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,(dose_in_body[0]*body_vol)/ptv_vol,rx/100.0)        
+        result_text += "%d,%.3f\n" % (num_beams,total_mu)             
+
+
+ 
+ 
+    """
+    #Second set: Dose falloff and max DVH
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    #Optimization objectives
+    optim.add_mindose_objective(ptv_name, rx, weight=50, plan=plan, plan_opt=0)
+      
+    optim.add_dosefalloff_objective(body_name, rx*1.00, rx*0.25, falloff_range, weight=25, plan=plan, plan_opt=0)
+    optim.add_maxdose_objective('r50', (rx/2)-100, weight=5, plan=plan, plan_opt=0) 
+
+    optim.add_maxdvh_objective('COMBI PMN KBP', 2000, dose_in_pmn_kbp[0]*80, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('COMBI PMN KBP', 1000, dose_in_pmn_kbp[1]*80, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('COMBI PMN KBP', 500, dose_in_pmn_kbp[2]*80, weight=10, plan=plan, plan_opt=0) 
+    
+    #Reset and then run initial set of optimizations
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    for j in range(1):
+        if j > 0:
+            plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+        
+        #Get initial coverage before scaling        
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])   
+        init_ptv_cov = ptv_coverage
+            
+        #Modify weight of PTV min dose objective
+        new_weight = 1
+        if ptv_coverage[0] < 0.93:
+            new_weight = 2
+        elif ptv_coverage[0] > 0.97:
+            new_weight = 0.5 
+        
+        #Scale dose to prescription
+        beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=95, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+
+        #Get coverage after scaling
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])
+
+        #Evaluate plan
+        dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx])        
+        dose_in_opt_pmns = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=opt_pmns_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx,2000/nb_fx,1500/nb_fx,1000/nb_fx,500/nb_fx])        
+        dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_name,RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        v5_contra = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=pmn_contra_name, DoseValues=[500/nb_fx])
+        oar_max_dose = [0,0,0,0,0,0,0,0,0]      
+        for i,oar in enumerate(oar_list):
+            try:
+                oar_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[oar].GetRoiVolume() 
+                oar_max_dose[i] = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = oar,RelativeVolumes = [0.1/oar_vol])[0] * nb_fx / 100.0
+            except:
+                oar_max_dose[i] = -999         
+        total_mu = 0
+        num_beams = 0
+        for beam in beamset.Beams:
+            num_beams += 1
+            total_mu += beam.BeamMU       
+        
+        #Add results to result_text
+        if j == 0:
+            result_text += 'Falloff avec DVHs plan initial,'
+        else:
+            result_text += 'Falloff avec DVHs après %d révisions,' % j
+        
+        for i,dose in enumerate(dose_in_body):
+            result_text += "%.3f," % (dose_in_body[i]*body_vol)
+        for i,dose in enumerate(dose_in_opt_pmns):
+            result_text += "%.3f," % (dose_in_opt_pmns[i]*opt_pmns_vol)
+        
+        result_text += "%.3f," % (v5_contra[0]*100)
+        result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f," % (oar_max_dose[1],oar_max_dose[2],oar_max_dose[3],oar_max_dose[4],oar_max_dose[5],oar_max_dose[6],oar_max_dose[7],oar_max_dose[8])
+        result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%d," % (max_in_ptv,ptv_coverage[0]*100,ptv_coverage[1]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,(dose_in_body[0]*body_vol)/ptv_vol,rx/100.0)        
+        result_text += "%d,%.3f\n" % (num_beams,total_mu)
+
+ 
+ 
+ 
+ 
+ 
+ 
+    #Third set: Dose falloff, max DVH, adjust for OARs and adjust min dose if necessary over several revisions
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass
+
+    #Optimization objectives
+    optim.add_mindose_objective(ptv_name, rx, weight=50, plan=plan, plan_opt=0)
+      
+    optim.add_dosefalloff_objective(body_name, rx*1.00, rx*0.25, falloff_range, weight=25, plan=plan, plan_opt=0)
+    optim.add_maxdose_objective('r50', (rx/2)-100, weight=5, plan=plan, plan_opt=0) 
+
+    optim.add_maxdvh_objective('COMBI PMN KBP', 2000, dose_in_pmn_kbp[0]*80, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('COMBI PMN KBP', 1000, dose_in_pmn_kbp[1]*80, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('COMBI PMN KBP', 500, dose_in_pmn_kbp[2]*80, weight=10, plan=plan, plan_opt=0) 
+    
+    optim.add_maxdvh_objective(pmn_contra_name, 500, 50*v5_contra[0], weight=1, plan=plan, plan_opt=0) 
+    
+    for i,oar in enumerate(oar_list):
+        if i > 1:
+            optim.add_maxdose_objective(oar, 80*oar_max_dose[i], weight=1, plan=plan, plan_opt=0) 
+    
+    
+    #Reset and then run initial set of optimizations
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    for j in range(4):
+        if j > 0:
+            plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+        
+        #Get initial coverage before scaling        
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])   
+        init_ptv_cov = ptv_coverage
+            
+        #Modify weight of PTV min dose objective
+        new_weight = 1
+        if ptv_coverage[0] < 0.93:
+            new_weight = 2
+        elif ptv_coverage[0] > 0.97:
+            new_weight = 0.5 
+        
+        #Scale dose to prescription
+        beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=95, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+
+        #Get coverage after scaling
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])
+
+        #Evaluate plan
+        dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx])        
+        dose_in_opt_pmns = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=opt_pmns_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx,2000/nb_fx,1500/nb_fx,1000/nb_fx,500/nb_fx])        
+        dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_name,RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        v5_contra = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=pmn_contra_name, DoseValues=[500/nb_fx])
+        oar_max_dose = [0,0,0,0,0,0,0,0,0]      
+        for i,oar in enumerate(oar_list):
+            try:
+                oar_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[oar].GetRoiVolume() 
+                oar_max_dose[i] = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = oar,RelativeVolumes = [0.1/oar_vol])[0] * nb_fx / 100.0
+            except:
+                oar_max_dose[i] = -999         
+        total_mu = 0
+        num_beams = 0
+        for beam in beamset.Beams:
+            num_beams += 1
+            total_mu += beam.BeamMU       
+        
+        #Add results to result_text
+        if j == 0:
+            result_text += 'Falloff+DVH+OAR plan initial,'
+        else:
+            result_text += 'Falloff+DVH+OAR après %d révisions,' % j
+        
+        for i,dose in enumerate(dose_in_body):
+            result_text += "%.3f," % (dose_in_body[i]*body_vol)
+        for i,dose in enumerate(dose_in_opt_pmns):
+            result_text += "%.3f," % (dose_in_opt_pmns[i]*opt_pmns_vol)
+        
+        result_text += "%.3f," % (v5_contra[0]*100)
+        result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f," % (oar_max_dose[1],oar_max_dose[2],oar_max_dose[3],oar_max_dose[4],oar_max_dose[5],oar_max_dose[6],oar_max_dose[7],oar_max_dose[8])
+        result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%d," % (max_in_ptv,ptv_coverage[0]*100,ptv_coverage[1]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,(dose_in_body[0]*body_vol)/ptv_vol,rx/100.0)        
+        result_text += "%d,%.3f\n" % (num_beams,total_mu)
+
+        if j<3:
+            #Modify weights and reoptimize
+            for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions: 
+                try:
+                    f_type = objective.DoseFunctionParameters.FunctionType  # Dose falloff objectives do not have a FunctionType and must be skipped
+                except:
+                    continue
+                if f_type == "MinDose" and objective.ForRegionOfInterest.Name == ptv_name:    
+                    objective.DoseFunctionParameters.Weight = new_weight*objective.DoseFunctionParameters.Weight
+            
+            #Put the monitor units back to where they were before scaling
+            beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=init_ptv_cov[0]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)    
+
+ 
+    """
+ 
+    #Write to file
+    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques'
+    output_file_path += '\\Resultats ' + patient.PatientName + '_' + patient.PatientID + '_multiplan_poumon_test_r50.txt'
+    with open(output_file_path, 'a') as output_file:
+        #Prepare header
+        header = "Essai,Body V100 cc,Body V90 cc,Body V80 cc,Body V70 cc,Body V60 cc,Body V50 cc,Body V40 cc,Body V30 cc,Body V20 cc,Body V10 cc,"
+        header += "PMN-ITV-BR V100(cc),PMN-ITV-BR V90(cc),PMN-ITV-BR V80(cc),PMN-ITV-BR V70(cc),PMN-ITV-BR V60(cc),PMN-ITV-BR V50(cc),PMN-ITV-BR V40(cc),PMN-ITV-BR V30(cc),PMN-ITV-BR V20(cc),PMN-ITV-BR V10(cc),PMN-ITV-BR V20Gy(cc),PMN-ITV-BR V15Gy(cc),PMN-ITV-BR V10Gy(cc),PMN-ITV-BR V5Gy(cc),V5Gy dans Pmn contra(%),"
+        header += "D0.1cc PMN contra(Gy),D0.1cc Coeur(Gy),D0.1cc Bronches(Gy),D0.1cc Trachée(Gy),D0.1cc Oesophage(Gy),D0.1cc Moelle(Gy),D0.1cc Côtes(Gy),D0.1cc à 2cm(Gy),"
+        header += "Max in PTV(Gy),Couverture par 100%,Couverture par 95%,Couverture 100% avant scaling,Couverture 95% avant scaling,Indice de conformité,Prescription(Gy),"
+        header += "Nb de faisceau,UM totaux\n"
+        
+        #Add clinical plan information
+        ptv_coverage = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])  
+        dose_in_body = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx])        
+        dose_in_opt_pmns = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=opt_pmns_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx,0.6*rx/nb_fx,0.5*rx/nb_fx,0.4*rx/nb_fx,0.3*rx/nb_fx,0.2*rx/nb_fx,0.1*rx/nb_fx,2000/nb_fx,1500/nb_fx,1000/nb_fx,500/nb_fx])        
+        dmax = clinical_beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_name,RelativeVolumes = [0.03/ptv_vol])
+        max_in_ptv = dmax[0] * nb_fx / 100.0
+        v5_contra = clinical_beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=pmn_contra_name, DoseValues=[500/nb_fx])
+        oar_max_dose = [0,0,0,0,0,0,0,0,0]      
+        for i,oar in enumerate(oar_list):
+            try:
+                oar_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[oar].GetRoiVolume() 
+                oar_max_dose[i] = clinical_beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = oar,RelativeVolumes = [0.1/oar_vol])[0] * nb_fx / 100.0      
+            except:
+                oar_max_dose[i] = -999
+        total_mu = 0
+        num_beams = 0
+        for beam in clinical_beamset.Beams:
+            num_beams += 1
+            total_mu += beam.BeamMU
+                
+        header += 'Plan clinique,'
+        for i,dose in enumerate(dose_in_body):
+            header += "%.3f," % (dose_in_body[i]*body_vol)        
+        for i,dose in enumerate(dose_in_opt_pmns):
+            header += "%.3f," % (dose_in_opt_pmns[i]*opt_pmns_vol)
+        
+        header += "%.3f," % (v5_contra[0]*100)
+        header += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f," % (oar_max_dose[1],oar_max_dose[2],oar_max_dose[3],oar_max_dose[4],oar_max_dose[5],oar_max_dose[6],oar_max_dose[7],oar_max_dose[8])
+        header += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%d," % (max_in_ptv,ptv_coverage[0]*100,ptv_coverage[1]*100,ptv_coverage[0]*100,ptv_coverage[1]*100,(dose_in_body[0]*body_vol)/ptv_vol,rx/100.0)            
+        header += "%d,%.3f\n" % (num_beams,total_mu)
         
         output_file.write(header)      
         output_file.write(result_text)
