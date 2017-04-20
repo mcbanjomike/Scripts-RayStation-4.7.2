@@ -84,7 +84,7 @@ def test_MA():
     #statistics.single_autoplan_crane()
     #launcher.lung_stats_window()
     #statistics.auto_collect_lung_stats(startpoint=35,endpoint=35)
-    statistics.auto_collect_lung_stats(startpoint=23,endpoint=33,test_plans=True,print_results=False,show_plan=False)
+    statistics.auto_collect_lung_stats(startpoint=23,endpoint=23,test_plans=True,print_results=False,show_plan=False)
     
     #num_ptvs = 2
     #ptv_names = ['PTV1','PTV2','','']

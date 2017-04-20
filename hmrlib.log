@@ -4603,3 +4603,125 @@ SystemError: The communication object, System.ServiceModel.Channels.ServiceChann
 2017-04-11 11:30:30,870 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
 2017-04-11 11:30:31,017 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 2.py [execution time = 0:01:43.531000]
 2017-04-11 11:30:31,163 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-04-20 10:11:17,014 - hmrlib - INFO - [hmr30489 - ACCHF_3^CHF (TESTAC03) - CT 1 - QAAC2/QAAC2] ================================================================================
+2017-04-20 10:11:17,453 - hmrlib - INFO - [hmr30489 - ACCHF_3^CHF (TESTAC03) - CT 1 - QAAC2/QAAC2] Starting script outils_crane_3DC.py
+2017-04-20 10:11:17,575 - hmrlib - INFO - [hmr30489 - ACCHF_3^CHF (TESTAC03) - CT 1 - QAAC2/QAAC2] ================================================================================
+2017-04-20 11:24:19,947 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-04-20 11:24:19,957 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script outils_crane_3DC.py [execution time = 1:13:03.172000]
+2017-04-20 11:24:19,977 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-04-20 12:00:42,999 - hmrlib - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-04-20 12:00:43,430 - hmrlib - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Starting script outils_crane_3DC.py
+2017-04-20 12:00:43,492 - hmrlib - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-04-20 12:00:58,230 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-04-20 12:00:58,389 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-04-20 12:00:59,444 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-04-20 12:00:59,711 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-04-20 12:01:00,687 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-04-20 12:01:01,201 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-04-20 12:01:01,431 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-04-20 12:01:01,631 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-04-20 12:01:01,834 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CERVEAU" set as Organ
+2017-04-20 12:01:01,994 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CERVEAU" set as OrganAtRisk
+2017-04-20 12:01:02,229 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV1 is NOT approved.
+2017-04-20 12:01:02,431 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV1" set as Gtv
+2017-04-20 12:01:02,615 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV1" set as Target
+2017-04-20 12:01:02,828 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV24 is NOT approved.
+2017-04-20 12:01:03,042 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV24" set as Ptv
+2017-04-20 12:01:03,225 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV24" set as Target
+2017-04-20 12:01:03,436 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-04-20 12:01:03,643 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-04-20 12:01:03,808 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-04-20 12:01:04,030 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-04-20 12:01:04,220 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL DRT" set as Organ
+2017-04-20 12:01:04,389 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL DRT" set as OrganAtRisk
+2017-04-20 12:01:04,592 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-04-20 12:01:04,804 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL GCHE" set as Organ
+2017-04-20 12:01:04,980 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL GCHE" set as OrganAtRisk
+2017-04-20 12:01:05,193 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-04-20 12:01:05,385 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TR CEREBRAL" set as Organ
+2017-04-20 12:01:05,558 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TR CEREBRAL" set as OrganAtRisk
+2017-04-20 12:01:05,774 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-04-20 12:01:05,978 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CHIASMA" set as Organ
+2017-04-20 12:01:06,157 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CHIASMA" set as OrganAtRisk
+2017-04-20 12:01:06,397 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-04-20 12:01:06,589 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT DRT" set as Organ
+2017-04-20 12:01:06,760 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT DRT" set as OrganAtRisk
+2017-04-20 12:01:06,976 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-04-20 12:01:07,174 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT GCHE" set as Organ
+2017-04-20 12:01:07,340 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT GCHE" set as OrganAtRisk
+2017-04-20 12:01:54,193 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:01:54,678 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:01:54,967 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:01:55,183 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:01:55,384 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:01:55,633 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:01:55,908 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:01:56,215 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:01:56,553 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:01:56,908 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:01:57,154 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:01:57,403 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:01:57,833 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:03:33,923 - hmrlib.optim - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - 3DC optimised/3DC optimised] Objective of type MinDose for ROI "PTV24" added.
+2017-04-20 12:03:34,490 - hmrlib.optim - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - 3DC optimised/3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-04-20 12:05:02,835 - hmrlib - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - 3DC optimised/3DC optimised] ================================================================================
+2017-04-20 12:05:02,981 - hmrlib - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - 3DC optimised/3DC optimised] End of script outils_crane_3DC.py [execution time = 0:04:19.967000]
+2017-04-20 12:05:03,108 - hmrlib - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - 3DC optimised/3DC optimised] ================================================================================
+2017-04-20 12:12:28,831 - hmrlib - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-04-20 12:12:29,230 - hmrlib - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Starting script outils_crane_3DC.py
+2017-04-20 12:12:29,299 - hmrlib - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-04-20 12:12:41,723 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-04-20 12:12:41,900 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-04-20 12:12:43,543 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-04-20 12:12:43,903 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-04-20 12:12:45,421 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-04-20 12:12:45,954 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-04-20 12:12:46,331 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-04-20 12:12:46,662 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-04-20 12:12:46,901 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CERVEAU" set as Organ
+2017-04-20 12:12:47,076 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CERVEAU" set as OrganAtRisk
+2017-04-20 12:12:47,461 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV1 is NOT approved.
+2017-04-20 12:12:47,740 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV1" set as Gtv
+2017-04-20 12:12:47,925 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV1" set as Target
+2017-04-20 12:12:48,283 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV24 is NOT approved.
+2017-04-20 12:12:48,562 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV24" set as Ptv
+2017-04-20 12:12:48,755 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV24" set as Target
+2017-04-20 12:12:49,130 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-04-20 12:12:49,390 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-04-20 12:12:49,561 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-04-20 12:12:49,941 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-04-20 12:12:50,216 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL DRT" set as Organ
+2017-04-20 12:12:50,384 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL DRT" set as OrganAtRisk
+2017-04-20 12:12:50,754 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-04-20 12:12:51,021 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL GCHE" set as Organ
+2017-04-20 12:12:51,197 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL GCHE" set as OrganAtRisk
+2017-04-20 12:12:51,445 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-04-20 12:12:51,687 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TR CEREBRAL" set as Organ
+2017-04-20 12:12:51,862 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TR CEREBRAL" set as OrganAtRisk
+2017-04-20 12:12:52,229 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-04-20 12:12:52,515 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CHIASMA" set as Organ
+2017-04-20 12:12:52,696 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CHIASMA" set as OrganAtRisk
+2017-04-20 12:12:53,117 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-04-20 12:12:53,378 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT DRT" set as Organ
+2017-04-20 12:12:53,556 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT DRT" set as OrganAtRisk
+2017-04-20 12:12:53,928 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-04-20 12:12:54,193 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "NERF OPT GCHE" set as Organ
+2017-04-20 12:12:54,371 - hmrlib.roi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "NERF OPT GCHE" set as OrganAtRisk
+2017-04-20 12:13:42,827 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:13:43,176 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:13:43,598 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:13:44,079 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:13:44,511 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:13:45,071 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:13:45,523 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:13:45,950 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:13:46,366 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:13:46,836 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:13:47,269 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:13:47,733 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:13:48,160 - hmrlib.poi - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-3.37469787598, 4.87727050781, 3.0)
+2017-04-20 12:15:19,007 - hmrlib.optim - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - 3DC optimised/3DC optimised] Objective of type MinDose for ROI "PTV24" added.
+2017-04-20 12:15:19,983 - hmrlib.optim - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - 3DC optimised/3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-04-20 12:17:51,989 - hmrlib - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - 3DC optimised/3DC optimised] ================================================================================
+2017-04-20 12:17:52,127 - hmrlib - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - 3DC optimised/3DC optimised] End of script outils_crane_3DC.py [execution time = 0:05:23.556000]
+2017-04-20 12:17:52,257 - hmrlib - INFO - [hmr30489 - DAWSON^MICHAEL (1867854) - CT 1 - 3DC optimised/3DC optimised] ================================================================================

@@ -78,6 +78,9 @@ def plan_crane_3DC(site_name='A1', presc_dose=1500, nb_fx=1, isodose_creation = 
     elif roi.roi_exists("PTV18"):
         ptv = patient.PatientModel.RegionsOfInterest["PTV18"]
         presc_dose = 1800
+    elif roi.roi_exists("PTV24"):
+        ptv = patient.PatientModel.RegionsOfInterest["PTV24"]
+        presc_dose = 2400        
         
     # Create OPTPTV
     if not roi.roi_exists("OPTPTV"):
@@ -154,7 +157,7 @@ def plan_crane_3DC(site_name='A1', presc_dose=1500, nb_fx=1, isodose_creation = 
     beamset.NormalizeToPrescription(RoiName=ptv.Name, DoseValue=presc_dose, DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=False)
             
     # Add clinical goals
-    clinical_goals.add_dictionary_cg('Crane Stereo', presc_dose/100, 1, plan = plan)            
+    clinical_goals.add_dictionary_cg('Crane Stereo', presc_dose/100, nb_fx, plan = plan)            
     
     # Save plan and create copy
     patient.Save()

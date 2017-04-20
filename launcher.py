@@ -1207,688 +1207,6 @@ def plan_launcher_v3():
     form = ScriptLauncher()
     Application.Run(form)     
    
-   
-def verify_parameters():
-
-    class VerificationWindow(Form):
-        def __init__(self):
-            self.Text = "Vérification des paramètres"
-
-            self.Width = 900
-            self.Height = 900
-
-            self.setupVerifPanel()
-            self.setupButtonPanel()
-
-            self.Controls.Add(self.VerifPanel)
-            self.Controls.Add(self.ButtonPanel)
-            
-        def bigPanel(self, x, y):
-            panel = Panel()
-            panel.Width = 900
-            panel.Height = 800 #Overflows onto the ButtonPanel, but it actually looks better that way
-            panel.Location = Point(x, y)
-            panel.BorderStyle = BorderStyle.None
-            return panel
-            
-        def smallPanel(self, x, y):
-            panel = Panel()
-            panel.Width = 900
-            panel.Height = 130
-            panel.Location = Point(x, y)
-            panel.BorderStyle = BorderStyle.None
-            return panel
-            
-        # eventhandler - THIS DOES NOT WORK CORRECTLY FOR NOW, it seems to take the wrong index from the combobox (ie, it verifies the old plan, not the new one)
-        #def comboBox_changed(self, sender, args):
-            #beamset = plan.BeamSets[self.beamset_comboBox.Text]
-            #self.okClicked(sender, args)
-            
-        def setupVerifPanel(self):
-            self.VerifPanel = self.bigPanel(0, 0)
-
-            self.PatientIDHeader = Label()
-            self.PatientIDHeader.Text = "Patient: " + patient.PatientName.replace('^', ', ') + "                       Plan: " + plan.Name + "                       BeamSet: " + beamset.DicomPlanLabel
-            self.PatientIDHeader.Location = Point(25, 25)
-            self.PatientIDHeader.Font = Font("Arial", 12, FontStyle.Bold)
-            self.PatientIDHeader.AutoSize = True
-            
-            self.Header1 = Label()
-            self.Header1.Text = "ROIs et POIs"
-            self.Header1.Location = Point(30, 60)
-            self.Header1.Font = Font("Arial", 10, FontStyle.Bold)
-            self.Header1.AutoSize = True
-
-            self.Text1a = Label()
-            self.Text1a.Text = "Nom du contour External: "
-            self.Text1a.Location = Point(self.Header1.Left + 10, self.Header1.Top + 20)
-            self.Text1a.AutoSize = True
-            self.Text1a.Font = Font("Arial", 10)
-
-            self.Text1b = Label()
-            self.Text1b.Text = "ROIs avec override de matériel:"
-            self.Text1b.Location = Point(self.Text1a.Left, self.Text1a.Top + 20)
-            self.Text1b.AutoSize = True
-            self.Text1b.Font = Font("Arial", 10)
-
-            self.Text1c = Label()
-            self.Text1c.Text = "POIs isocentre/localisation:"
-            self.Text1c.Location = Point(self.Text1b.Left, self.Text1b.Top + 20)
-            self.Text1c.AutoSize = True
-            self.Text1c.Font = Font("Arial", 10)            
-            
-            self.Text1d = Label()
-            self.Text1d.Text = "Tableau de densité: "
-            self.Text1d.Location = Point(self.Text1c.Left, self.Text1c.Top + 20)
-            self.Text1d.AutoSize = True
-            self.Text1d.Font = Font("Arial", 10)                 
-                          
-            
-            self.Header2 = Label()
-            self.Header2.Text = "Détails du beamset"
-            self.Header2.Location = Point(self.Header1.Left, self.Text1d.Top + 40)
-            self.Header2.Font = Font("Arial", 10, FontStyle.Bold)
-            self.Header2.AutoSize = True
-
-            self.Text2a = Label()
-            self.Text2a.Text = "Prescription: "
-            self.Text2a.Location = Point(self.Header2.Left + 10, self.Header2.Top + 20)
-            self.Text2a.AutoSize = True
-            self.Text2a.Font = Font("Arial", 10)
-
-            self.Text2b = Label()
-            self.Text2b.Text = "Résolution dose grid: "
-            self.Text2b.Location = Point(self.Text2a.Left, self.Text2a.Top + 20)
-            self.Text2b.AutoSize = True
-            self.Text2b.Font = Font("Arial", 10)
-
-            self.Text2c = Label()
-            self.Text2c.Text = "Coordonnées iso: "
-            self.Text2c.Location = Point(self.Text2b.Left, self.Text2b.Top + 20)
-            self.Text2c.AutoSize = True
-            self.Text2c.Font = Font("Arial", 10)                   
-
-            self.Text2d = Label()
-            self.Text2d.Text = "Coordonnées faisceaux: "
-            self.Text2d.Location = Point(self.Text2c.Left, self.Text2c.Top + 20)
-            self.Text2d.AutoSize = True
-            self.Text2d.Font = Font("Arial", 10)        
-            
-            self.Text2f = Label()
-            self.Text2f.Text = "Dose Specification Points: "
-            self.Text2f.Location = Point(self.Text2d.Left, self.Text2d.Top + 20)
-            self.Text2f.AutoSize = True
-            self.Text2f.Font = Font("Arial", 10)      
-
-            self.Text2g = Label()
-            self.Text2g.Text = "Algorithme de calcul: "
-            self.Text2g.Location = Point(self.Text2f.Left, self.Text2f.Top + 20)
-            self.Text2g.AutoSize = True
-            self.Text2g.Font = Font("Arial", 10)                 
-
-            self.Text2h = Label()
-            self.Text2h.Text = "CT de planification: "
-            self.Text2h.Location = Point(self.Text2g.Left, self.Text2g.Top + 20)
-            self.Text2h.AutoSize = True
-            self.Text2h.Font = Font("Arial", 10)       
-            
-            self.Header4 = Label()
-            self.Header4.Text = "Faisceaux"
-            self.Header4.Location = Point(self.Header2.Left, self.Text2h.Top + 40)
-            self.Header4.Font = Font("Arial", 10, FontStyle.Bold)
-            self.Header4.AutoSize = True            
-            
-            self.Text2e = Label()
-            self.Text2e.Text = "Nom / Description / Énergie / Gantry / Sens / Colli / Couch / Segments / UMs / Temps "
-            self.Text2e.Location = Point(self.Text2d.Left, self.Header4.Top + 20)
-            self.Text2e.AutoSize = True
-            self.Text2e.Font = Font("Arial", 10)     
-            
-            self.Header3 = Label()
-            self.Header3.Text = "Optimisation"
-            self.Header3.Location = Point(self.Header2.Left, self.Text2e.Top + 40)
-            self.Header3.Font = Font("Arial", 10, FontStyle.Bold)
-            self.Header3.AutoSize = True
-
-            self.Text3a = Label()
-            self.Text3a.Text = "Optimization Settings: "
-            self.Text3a.Location = Point(self.Header3.Left + 10, self.Header3.Top + 20)
-            self.Text3a.AutoSize = True
-            self.Text3a.Font = Font("Arial", 10)
-
-            self.Text3b = Label()
-            self.Text3b.Text = "Constrain Leaf Motion: "
-            self.Text3b.Location = Point(self.Text3a.Left, self.Text3a.Top + 20)
-            self.Text3b.AutoSize = True
-            self.Text3b.Font = Font("Arial", 10)
-
-            self.Text3c = Label()
-            self.Text3c.Text = "Calculate Intermediate Dose / Calculate Final Dose: "
-            self.Text3c.Location = Point(self.Text3b.Left, self.Text3b.Top + 20)
-            self.Text3c.AutoSize = True
-            self.Text3c.Font = Font("Arial", 10)                   
-
-            self.Text3d = Label()
-            self.Text3d.Text = "Gantry Spacing / Max Delivery Time: "
-            self.Text3d.Location = Point(self.Text3c.Left, self.Text3c.Top + 20)
-            self.Text3d.AutoSize = True
-            self.Text3d.Font = Font("Arial", 10)     
-
-            self.Text3e = Label()
-            self.Text3e.Text = "Beam Optimization Settings: "
-            self.Text3e.Location = Point(self.Text3d.Left, self.Text3d.Top + 20)
-            self.Text3e.AutoSize = True
-            self.Text3e.Font = Font("Arial", 10)             
-            
-            self.Text3f = Label()
-            self.Text3f.Text = "Première/dernière paires de lames: "
-            self.Text3f.Location = Point(self.Text3e.Left, self.Text3e.Top + 20)
-            self.Text3f.AutoSize = True
-            self.Text3f.Font = Font("Arial", 10)     
-            
-            
-            self.avertissement = Label()
-            self.avertissement.Text = ""
-            self.avertissement.Location = Point(self.Text3f.Left, self.Text3f.Top + 40)
-            self.avertissement.AutoSize = True
-            self.avertissement.Font = Font("Arial", 10, FontStyle.Bold)  
-            self.avertissement.ForeColor = Color.Red            
-            
-            
-            self.VerifPanel.Controls.Add(self.PatientIDHeader)
-            self.VerifPanel.Controls.Add(self.Header1)
-            self.VerifPanel.Controls.Add(self.Text1a)
-            self.VerifPanel.Controls.Add(self.Text1b)
-            self.VerifPanel.Controls.Add(self.Text1c)
-            self.VerifPanel.Controls.Add(self.Text1d)            
-            self.VerifPanel.Controls.Add(self.Header2)
-            self.VerifPanel.Controls.Add(self.Text2a)
-            self.VerifPanel.Controls.Add(self.Text2b)
-            self.VerifPanel.Controls.Add(self.Text2c)
-            self.VerifPanel.Controls.Add(self.Text2d)
-            self.VerifPanel.Controls.Add(self.Text2f)
-            self.VerifPanel.Controls.Add(self.Text2g)            
-            self.VerifPanel.Controls.Add(self.Text2h)              
-            self.VerifPanel.Controls.Add(self.Header4) # Out of order, sorry
-            self.VerifPanel.Controls.Add(self.Text2e)  # Maybe not VERY sorry, though
-            self.VerifPanel.Controls.Add(self.Header3)
-            self.VerifPanel.Controls.Add(self.Text3a)
-            self.VerifPanel.Controls.Add(self.Text3b)
-            self.VerifPanel.Controls.Add(self.Text3c)
-            self.VerifPanel.Controls.Add(self.Text3d)
-            self.VerifPanel.Controls.Add(self.Text3e)
-            self.VerifPanel.Controls.Add(self.Text3f)
-            self.VerifPanel.Controls.Add(self.avertissement)
-
-        # eventhandler
-        #def comboBox_changed(self, sender, args):
-            #beamset = plan.BeamSets[self.beamset_comboBox.Text]
-            #okButton.PerformClick()
-            #self.okClicked()
-                   
-        def okClicked(self, sender, args):
-            beamset = plan.BeamSets[self.beamset_comboBox.Text]
-            self.PatientIDHeader.Text = "Patient: " + patient.PatientName.replace('^', ', ') + "                       Plan: " + plan.Name + "                       BeamSet: " + beamset.DicomPlanLabel
-         
-            warning_text = ""
-            coords = None
-            loc_coords = None
-            beam_iso_poi = None
-
-            # External contour and material overrides
-            override_roi = []
-            external_roi = "Aucun trouvé"
-            for roi in patient.PatientModel.StructureSets[exam.Name].RoiGeometries:
-                if roi.OfRoi.Type == "External":
-                    external_roi = roi.OfRoi.Name
-                try:
-                    override_material = roi.OfRoi.RoiMaterial.OfMaterial.Name
-                    override_roi.append((roi.OfRoi.Name + " (" + override_material + ")"))
-                except:
-                    continue
-            if len(override_roi) > 0:
-                self.Text1b.Text = "ROIs avec override de matériel: "                
-                for item in override_roi:
-                    self.Text1b.Text += item + "  "
-            else:
-                self.Text1b.Text = "ROIs avec override de matériel: Aucun"      
-            self.Text1a.Text = "Nom du contour External: " + external_roi
-            
-            if external_roi == "Aucun trouvé":
-                warning_text += "AVERTISSEMENT: Aucun ROI external défini\n"
-            
-            # Isocenter and localization point
-            try:
-                loc_point_name = beamset.PatientSetup.LocalizationPoiGeometrySource.LocalizationPoiGeometry.OfPoi.Name
-                loc_coords = poi.get_poi_coordinates(loc_point_name,exam)
-            except:
-                loc_point_name = "Aucun point de localisation trouvé"
-                warning_text += "AVERTISSEMENT: Aucun point de localisation défini\n"
-            
-            num_iso = 0
-            if poi.poi_exists("ISOCENTRE", exam):
-                iso_point_name = "ISOCENTRE"
-                num_iso +=1                    
-            if poi.poi_exists("ISO", exam):
-                iso_point_name = "ISO"
-                num_iso +=1                
-            if poi.poi_exists("ISO SCAN", exam):
-                iso_point_name = "ISO SCAN"
-                num_iso +=1                
-            if poi.poi_exists("ISO B1", exam):
-                iso_point_name = "ISO B1"
-                num_iso +=1
-             
-            if num_iso == 0:
-                iso_point_name = "Aucun point trouvé pour l'isocentre"
-                warning_text += "AVERTISSEMENT: Aucun point trouvé pour l'isocentre\n"
-                 
-            elif num_iso > 1:
-                iso_point_name = "Plus qu'un candidat trouvé"            
-                warning_text += "AVERTISSEMENT: Plus qu'un point isocentre trouvé, vérifiez attentivement les coordonées des faiceaux\n"
-            elif num_iso == 1:            
-                coords = poi.get_poi_coordinates(iso_point_name,exam) 
-            
-            self.Text1c.Text = "POIs isocentre/localisation: " + iso_point_name + " / " + loc_point_name                
-                   
-            #Check to find shift from reference point to isocenter
-            if loc_coords != None and coords != None:
-                if iso_point_name != loc_point_name:
-                    if (loc_coords.x-coords.x ==0 ) and (loc_coords.y-coords.y == 0) and (loc_coords.z-coords.z == 0):
-                        self.Text1c.Text += " (mêmes coordonnées)"
-                    else:
-                        self.Text1c.Text += " (Shift de %.2fcm en x, %.2fcm en y et %.2fcm en z)" % (loc_coords.x-coords.x, loc_coords.z-coords.z, coords.y-loc_coords.y)
-            
-            # CT-to-density table(s)
-            table_mismatch = False
-            for i,CT in enumerate(patient.Examinations):
-                if i > 0:
-                    if table != CT.EquipmentInfo.ImagingSystemReference.ImagingSystemName:
-                        table_mismatch = True
-                table = CT.EquipmentInfo.ImagingSystemReference.ImagingSystemName
-            if table_mismatch:
-                warning_text += "AVERTISSEMENT: Tableau de densité pas pareil pour tous les CTs\n"                 
-                self.Text1d.Text = "Tableau de densité: Pas pareil pour tous les CTs"
-            else:
-                self.Text1d.Text = "Tableau de densité: " + table
-            if table != "HOST-7403" and table != "HOST-7228":
-                warning_text += "AVERTISSEMENT: Tableau de densité n'est pas HOST-7228 ni HOST-7403\n"              
-
-            # Prescription
-            # Check if beamset dose is dependent
-            try:
-                bkgdose_name = plan.PlanOptimizations[beamset.Number-1].BackgroundDose.ForBeamSet.DicomPlanLabel
-            except:
-                bkgdose_name = "None"
-            # Determine prescription dose, fractions and target
-            try:
-                presc_text = str((beamset.Prescription.PrimaryDosePrescription.DoseValue)/100.0) + "Gy"
-                presc_text += " en %dfx " % beamset.FractionationPattern.NumberOfFractions
-                # Display prescription type and dose
-                if beamset.Prescription.PrimaryDosePrescription.PrescriptionType == 'DoseAtPoint':
-                    presc_text += "au point " + beamset.Prescription.PrimaryDosePrescription.OnStructure.Name
-                elif beamset.Prescription.PrimaryDosePrescription.PrescriptionType == 'DoseAtVolume':
-                    presc_text += "à " + str(beamset.Prescription.PrimaryDosePrescription.DoseVolume) + r'% du volume du ' + beamset.Prescription.PrimaryDosePrescription.OnStructure.Name
-                if bkgdose_name != "None":
-                    presc_text += " (dépendente sur beamset " + bkgdose_name + ")"
-                presc_text = presc_text.replace(".0Gy","Gy")
-                presc_text = presc_text.replace(".0%","%")
-            except:
-                presc_text = "Prescription non définie"
-                warning_text += "AVERTISSEMENT: Prescription non définie\n"
-            self.Text2a.Text = "Prescription: " + presc_text          
-
-            # Dose grid resolution
-            self.Text2b.Text = "Résolution dose grid: %.2fcm x %.2fcm x %.2fcm" % (beamset.FractionDose.InDoseGrid.VoxelSize.x,beamset.FractionDose.InDoseGrid.VoxelSize.y,beamset.FractionDose.InDoseGrid.VoxelSize.z)
-            if beamset.FractionDose.InDoseGrid.VoxelSize.x != 0.2 or beamset.FractionDose.InDoseGrid.VoxelSize.y != 0.2 or beamset.FractionDose.InDoseGrid.VoxelSize.z != 0.2:
-                warning_text += "AVERTISSEMENT: Résolution dose grid n'est pas 0.2cm x 0.2cm x 0.2cm\n"
-            #self.Text2b.Text = (str(dir(beamset.FractionDose.InDoseGrid.VoxelSize)))
-            
-            # Find isocenter point and coordinates
-            if num_iso == 1:
-                self.Text2c.Text = "Coordonnées point %s:  (%.2f, %.2f, %.2f)" % (iso_point_name, coords.x, coords.z, coords.y*-1)
-            elif num_iso == 0:
-                self.Text2c.Text = "Coordonnées POI isocentre: Aucun point trouvé pour l'isocentre"
-            elif num_iso > 1:
-                self.Text2c.Text = "Coordonnées POI isocentre: Plus qu'un point isocentre trouvé, impossible d'afficher coordonnées"            
-
-            # Beam isocenters
-            self.Text2d.Text = "Coordonnées faisceaux: "
-            mismatch = False
-            try:              
-                for i, beam in enumerate(beamset.Beams): #Verify that coordinates are the same for all beams
-                    if i > 0:
-                        old_iso_poi = beam_iso_poi
-                    beam_iso_poi = [x for x in beam.PatientToBeamMapping.IsocenterPoint]
-                    if i>0:
-                        if abs(beam_iso_poi[0].Value - old_iso_poi[0].Value) > 0.005 or abs(beam_iso_poi[1].Value - old_iso_poi[1].Value) > 0.005 or abs(beam_iso_poi[2].Value - old_iso_poi[2].Value) > 0.005:
-                            self.Text2d.Text = "Coordonnées faisceaux: Coordonnées différentes pour faisceaux " + beamset.Beams[i-1].Name + " et " + beam.Name + "!"
-                            warning_text += "AVERTISSEMENT: Coordonnées isocentres pas pareils pour tous les faisceaux\n"
-                            mismatch = True
-                            break
-                if not mismatch:
-                    self.Text2d.Text += " (%.2f, %.2f, %.2f)" % (beam_iso_poi[0].Value, beam_iso_poi[2].Value, beam_iso_poi[1].Value*-1)
-            except:
-                self.Text2d.Text += "Coordonnées pas trouvés"
-                warning_text += "AVERTISSEMENT: Coordonnées isocentres faisceaux pas trouvées\n"
-                
-            # Verify if beams are centered on isocenter point
-            if beam_iso_poi != None and coords != None:
-                iso_shift_x = coords.x - beam_iso_poi[0].Value
-                iso_shift_y = coords.y - beam_iso_poi[1].Value
-                iso_shift_z = coords.z - beam_iso_poi[2].Value
-                if abs(iso_shift_x) > 0.005 or abs(iso_shift_y) > 0.005 or abs(iso_shift_z) > 0.005:
-                    warning_text += "AVERTISSEMENT: Écart entre les coordonnés des faisceaux et le point " + iso_point_name + "\n"
-                    warning_text += "                                 Shift de %.2fcm en x, %.2fcm en y et %.2fcm en z\n" % (-1*iso_shift_x, -1*iso_shift_z, iso_shift_y)
-
-            # Dose to Dose Specification Points
-            self.Text2f.Text = "Dose Specification Points: "
-            dsps = True
-            try:
-                dsp_name = beamset.DoseSpecificationPoints[0].Name
-            except:
-                dsps = False
-                self.Text2f.Text += "Aucun Dose Specification Point trouvé \n"  
-            if dsps:
-                for dsp in beamset.DoseSpecificationPoints:
-                    dsp_temp = lib.RSPoint(dsp.Coordinates.x, dsp.Coordinates.y, dsp.Coordinates.z)
-                    dsp_dose = beamset.FractionDose.InterpolateDoseInPoint(Point=dsp_temp.value)
-                    self.Text2f.Text += "%s (%.2fGy par fraction) / " % (dsp.Name, dsp_dose/100.0)
-                self.Text2f.Text = self.Text2f.Text[:-2]
-                
-            # Dose calculation engine
-            try:
-                dose_algorithm = beamset.FractionDose.DoseValues.AlgorithmProperties.DoseAlgorithm
-            except:
-                dose_algorithm = "Dose pas calculée"
-            self.Text2g.Text = "Algorithme de calcul: " + dose_algorithm
-            if dose_algorithm != "CCDose":
-                warning_text += "AVERTISSEMENT: La dose n'est pas calculée en collapsed cone\n"              
-                
-            # Planning CT name
-            self.Text2h.Text = "CT de planification: " + beamset.FractionDose.OnDensity.FromExamination.Name                
-                    
-            #Beam details
-            header3_vert = 40
-            self.Text2e.Text = "Nom   /    Description    /    Machine   / Énergie /   Gantry   /  Sens  /   Colli   /  Couch  / Segments /   UMs   /     DSP     "
-            beams = True
-            try:
-                beam_name = beamset.Beams[0].Name
-            except:
-                beams = False
-                self.Text2e.Text = "Aucun faisceau trouvé"
-                warning_text += "AVERTISSEMENT: Aucun faisceau trouvé\n"
-            if beams:
-                for i,beam in enumerate(beamset.Beams):
-                    header3_vert += 15
-                    self.Text2e.Text += "\n" + beam.Name + "    /   " + beam.Description + "   /  " + beam.MachineReference.MachineName + "  / "
-                    try: #Checks whether beam has a stop angle (for arcs)
-                        stop_angle = beam.ArcStopGantryAngle
-                        self.Text2e.Text += "    %d      /  %d-%d   /  " % (beam.MachineReference.Energy, beam.GantryAngle, beam.ArcStopGantryAngle)
-                    except:
-                        self.Text2e.Text += "    %d      /  %d   /  " % (beam.MachineReference.Energy, beam.GantryAngle)
-                    if beam.ArcRotationDirection == "Clockwise":
-                        self.Text2e.Text += " CW  "
-                    elif beam.ArcRotationDirection == "CounterClockwise":
-                        self.Text2e.Text += " CCW "
-                    else:
-                        self.Text2e.Text += "Statique"
-                    self.Text2e.Text += " /     %d     /      %d     " % (beam.InitialCollimatorAngle, beam.CouchAngle)
-
-                    # Get number of segments per beam - THIS IS EXTREMELY INELEGANT
-                    num_seg = -1
-                    try:
-                        for segment in beam.Segments:
-                            if segment.SegmentNumber > num_seg:
-                                num_seg = segment.SegmentNumber
-                    except:
-                        num_seg = -1
-                    if num_seg > -1:
-                        self.Text2e.Text += " /        " + str(num_seg+1)
-                    else:
-                        self.Text2e.Text += " / Aucun"
-                    self.Text2e.Text += "      /  %.1f" % beam.BeamMU
-                    #Name of associated DSP
-                    try:
-                        dsp_name = beamset.FractionDose.BeamDoses[i].IsocenterOverride.Name
-                    except:
-                        dsp_name = "Isocenter"
-                    self.Text2e.Text += "  /   %s" % dsp_name
-                
-            #Bump next header down depending on number of beams found
-            self.Header3.Location = Point(self.Header2.Left, self.Text2e.Top + header3_vert)
-            self.Text3a.Location = Point(self.Header3.Left + 10, self.Header3.Top + 20)
-            self.Text3b.Location = Point(self.Text3a.Left, self.Text3a.Top + 20)
-            self.Text3c.Location = Point(self.Text3b.Left, self.Text3b.Top + 20)
-            self.Text3d.Location = Point(self.Text3c.Left, self.Text3c.Top + 20)
-            self.Text3e.Location = Point(self.Text3d.Left, self.Text3d.Top + 20)
-            self.Text3f.Location = Point(self.Text3e.Left, self.Text3e.Top + 20)
-            self.avertissement.Location = Point(self.Text3f.Left, self.Text3f.Top + 40)
-
-            # Optimization parameters
-            self.Text3a.Text = "Optimization Settings: "
-            opt = plan.PlanOptimizations[beamset.Number-1]
-            self.Text3a.Text += "%d iterations / %d avant la conversion" % (opt.OptimizationParameters.Algorithm.MaxNumberOfIterations, opt.OptimizationParameters.DoseCalculation.IterationsInPreparationsPhase)
-            self.Text3a.Text += ", Stopping Tolerance " + str(opt.OptimizationParameters.Algorithm.OptimalityTolerance)
-            
-            self.Text3b.Text = "Constrain Leaf Motion: "
-            if beamset.DeliveryTechnique == "Arc":
-                if opt.OptimizationParameters.SegmentConversion.ArcConversionProperties.UseMaxLeafTravelDistancePerDegree == True:
-                    self.Text3b.Text += "%.1fcm/deg" % opt.OptimizationParameters.SegmentConversion.ArcConversionProperties.MaxLeafTravelDistancePerDegree
-                else:
-                    self.Text3b.Text += "pas coché"
-                    warning_text += "AVERTISSEMENT: Constrain Leaf Motion n'est pas coché\n"
-            else:
-                self.Text3b.Text += "non-applicable au cas d'IMRT ou 3DC"
-                
-            self.Text3c.Text = "Compute Intermediate Dose / Compute Final Dose: "
-            if opt.OptimizationParameters.DoseCalculation.ComputeIntermediateDose == True:
-                self.Text3c.Text += "oui / "
-            else:
-                self.Text3c.Text += "non / "
-            if opt.OptimizationParameters.DoseCalculation.ComputeFinalDose == True:
-                self.Text3c.Text += "oui"
-            else:
-                self.Text3c.Text += "non"
-                
-            #Beam optimization parameters         
-            time_mismatch = False
-            spacing_mismatch = False
-            opt_types_mismatch = False            
-            
-            if beamset.DeliveryTechnique == "Arc":
-                self.Text3d.Text = "Gantry Spacing / Max Delivery Time: "
-                
-                old_time = 0
-                new_time = 0
-                old_spacing = 0
-                new_spacing = 0
-                old_opt_types = ""
-                new_opt_types = ""              
-                
-                for ts in opt.OptimizationParameters.TreatmentSetupSettings:
-                    for i, beam_setting in enumerate(ts.BeamSettings):
-                        new_spacing = beam_setting.ArcConversionPropertiesPerBeam.FinalArcGantrySpacing
-                        new_time = beam_setting.ArcConversionPropertiesPerBeam.MaxArcDeliveryTime
-                        new_opt_types = ""
-                        for opt_type in beam_setting.OptimizationTypes:
-                            new_opt_types += opt_type
-                        if i > 0:
-                            if old_spacing != new_spacing:
-                                spacing_mismatch = True
-                            if old_time != new_time:
-                                time_mismatch = True
-                            if old_opt_types != new_opt_types:
-                                opt_types_mismatch = True
-                        old_spacing = new_spacing
-                        old_time = new_time
-                        old_opt_types = new_opt_types
-                if spacing_mismatch:
-                    self.Text3d.Text += "pas pareil pour tous les faisceaux / "
-                else:
-                    self.Text3d.Text += "%d degrés / " % new_spacing
-                if time_mismatch:
-                    self.Text3d.Text += "pas pareil pour tous les faisceaux"
-                else:
-                    self.Text3d.Text += "%ds" % new_time               
-                
-            else: #For IMRT and 3DC
-                self.Text3d.Text = "Gantry Spacing / Max Delivery Time: non-applicable au cas d'IMRT ou 3DC"      
-
-                old_opt_types = ""
-                new_opt_types = ""
-                
-                for ts in opt.OptimizationParameters.TreatmentSetupSettings:
-                    for i, beam_setting in enumerate(ts.BeamSettings):
-                        new_opt_types = ""
-                        for opt_type in beam_setting.OptimizationTypes:
-                            new_opt_types += opt_type
-                        if i > 0 and old_opt_types != new_opt_types:
-                            opt_types_mismatch = True
-                        old_opt_types = new_opt_types
-
-            self.Text3e.Text = "Optimize Segment Shapes / Segment MU: "
-            if opt_types_mismatch:
-                self.Text3e.Text += "pas pareil pour tous les faisceaux"
-            else:
-                if new_opt_types == "SegmentOptSegmentMU" or new_opt_types == "SegmentMUSegmentOpt":
-                    self.Text3e.Text += "oui / oui"
-                elif new_opt_types == "SegmentOpt":
-                    self.Text3e.Text += "oui / non"
-                elif new_opt_types == "SegmentMU":
-                    self.Text3e.Text += "non / oui"
-                elif new_opt_types == "":
-                    self.Text3e.Text += "non / non"
-                    
-            if time_mismatch or spacing_mismatch or opt_types_mismatch:
-                warning_text += "AVERTISSEMENT: Beam Optimization Parameters pas pareils pour tous les faisceaux\n"            
-                    
-            # Check to see if first/last leaf pairs used
-            self.Text3f.Text = "Première/dernière paires de lames: "
-            first_leaf_open = False
-            last_leaf_open = False
-
-            machine_type = None
-            try:
-                machine_type = beamset.Beams[0].MachineReference.MachineName
-            except:
-                self.Text3f.Text += "Aucun faisceau trouvé"
-
-            for beam in beamset.Beams:
-                try:
-                    temp = beam.Segments[0].CollimatorAngle #Just to see if there are segments defined for the beam
-                    first_leaf_open = False
-                    last_leaf_open = False
-                    for seg in beam.Segments:
-                        if first_leaf_open == False: #Stop checking if a segment is found where leaves are open
-                            if machine_type == "BeamMod":
-                                if seg.LeafPositions[0][0] != seg.LeafPositions[1][0]:
-                                    first_leaf_open = True
-                                    first_leaf_open_seg = seg.SegmentNumber
-                        if last_leaf_open == False:
-                            if machine_type == "BeamMod":
-                                if seg.LeafPositions[0][39] != seg.LeafPositions[1][39]:
-                                    last_leaf_open = True
-                                    last_leaf_open_seg = seg.SegmentNumber
-                    if machine_type != 'BeamMod': 
-                        self.Text3f.Text += "vérification seulement possible sur Beam Modulator / "
-                    elif first_leaf_open and last_leaf_open:
-                        self.Text3f.Text += "%s: première et dernère paire de lames ouvertes (segments %d et %d)" % (beam.Name, first_leaf_open_seg+1, last_leaf_open_seg+1)
-                        warning_text += "AVERTISSEMENT: Première et dernière paires de lames ouvertes, PTV potentiellement trop large pour collimateur\n"
-                    elif first_leaf_open and not last_leaf_open:
-                        self.Text3f.Text += "%s: première paire de lames ouvertes (segment %d) / " % (beam.Name, first_leaf_open_seg+1)
-                        warning_text += "AVERTISSEMENT: Première paire de lames ouvertes dans %s, il est peut-être nécessaire de déplacer l'isocentre\n" % beam.Name
-                    elif not first_leaf_open and last_leaf_open:
-                        self.Text3f.Text += "%s: dernière paire de lames ouvertes (segment %d) / " % (beam.Name, last_leaf_open_seg+1)
-                        warning_text += "AVERTISSEMENT: Dernière paire de lames ouvertes dans %s, il est peut-être nécessaire de déplacer l'isocentre\n" % beam.Name
-                    elif not first_leaf_open and not last_leaf_open:
-                        self.Text3f.Text += beam.Name + ": fermées / "
-                except:
-                    self.Text3f.Text += beam.Name + " n'a pas de segments valides / "
-            if self.Text3f.Text[-3:] == " / ":
-                self.Text3f.Text = self.Text3f.Text[:-3]
-  
-            # Print warning messages
-            self.avertissement.Text = warning_text    
-           
-            
-              
-            
-        def cancelClicked(self, sender, args):
-            self.Close()
-             
-        def setupButtonPanel(self):
-            self.ButtonPanel = self.smallPanel(0, 770)
-
-            okButton = Button()
-            okButton.Text = "Vérifier"
-            okButton.Location = Point(200, 50)
-            self.AcceptButton = okButton
-            okButton.Click += self.okClicked
-            
-            cancelButton = Button()
-            cancelButton.Text = "Cancel"
-            cancelButton.Location = Point(okButton.Left + okButton.Width + 10, okButton.Top)
-            self.CancelButton = cancelButton
-            cancelButton.Click += self.cancelClicked
-
-            self.ButtonPanel.Controls.Add(okButton)
-            self.ButtonPanel.Controls.Add(cancelButton)
-
-            self.beamset_comboBox = ComboBox()
-            self.beamset_comboBox.Parent = self
-            self.beamset_comboBox.Size = Size(160,40)
-            self.beamset_comboBox.Location = Point(25, 821)
-            self.beamset_comboBox.Text = beamset.DicomPlanLabel
-            #self.beamset_comboBox.SelectionChangeCommitted += self.comboBox_changed    #I might need to comment this out again, it's working backwards      
-            for bs in plan.BeamSets:
-                self.beamset_comboBox.Items.Add(bs.DicomPlanLabel)
- 
-            okButton.PerformClick() # This automatically clicks OK, running a verification on the default (current) beamset
-    
-    #Check if Malik is running the script (for custom insult)
-    if os.getenv('USERNAME') == 'hmr30968':
-        custom_error = ", espèce de hipster"
-    elif os.getenv('USERNAME') == 'hmr30489':
-        custom_error = ", chef"
-    else:
-        custom_error = ""
-    
-    
-    #Check for common errors while importing patient, plan, beamset and examination
-    try:
-        patient = lib.get_current_patient()
-    except:
-        debug_window('Aucun patient sélectionné'+custom_error)
-        return                
-    try:
-        plan = lib.get_current_plan()
-    except:
-        debug_window('Aucun plan sélectionné'+custom_error)
-        return
-    try:
-        beamset = lib.get_current_beamset()
-    except:
-        debug_window('Aucun beamset sélectionné'+custom_error)
-        return        
-    try:
-        exam = lib.get_current_examination()
-    except:
-        debug_window('Aucun examination trouvé'+custom_error)
-        return
-    
-    #Beamset numbering usually starts at 1, but in some cases it starts at 0 - this causes problems when verifying Plan Optimization parameters
-    if beamset.Number == 0:
-        debug_window('Warning: unusually-numbered beamset. Please verify plan without the script')
-        return
-    """
-    if beamset.DeliveryTechnique == "SMLC":
-        debug_window('Warning: SMLC plan detected. Verification script currently only supports VMAT plans.')
-        return
-    """
-    form = VerificationWindow()
-    Application.Run(form)   
-
 
 def debug_window(input = "Everything's fine"):
 
@@ -3202,17 +2520,23 @@ def crane_3DC_window():
             self.PTVcombo.TextChanged += self.PTVselectionChanged
             
             self.doselabel = Label()
-            self.doselabel.Text = "Dose (Gy) "
+            self.doselabel.Text = "Dose (Gy)"
             self.doselabel.Location = Point(240, 20)
             self.doselabel.Font = Font("Arial", 9)
             self.doselabel.AutoSize = True              
             
             self.fxlabel = Label()
-            self.fxlabel.Text = "Nb de fx "
-            self.fxlabel.Location = Point(320, 20)
+            self.fxlabel.Text = "Nb de fx"
+            self.fxlabel.Location = Point(300, 20)
             self.fxlabel.Font = Font("Arial", 9)
             self.fxlabel.AutoSize = True                 
 
+            self.sitelabel = Label()
+            self.sitelabel.Text = "Site"
+            self.sitelabel.Location = Point(360, 20)
+            self.sitelabel.Font = Font("Arial", 9)
+            self.sitelabel.AutoSize = True               
+            
             self.dose_value = TextBox()
             self.dose_value.Text = "- - -"
             self.dose_value.Location = Point(240, offset)
@@ -3220,8 +2544,13 @@ def crane_3DC_window():
 
             self.fx_value = TextBox()
             self.fx_value.Text = "- - -"
-            self.fx_value.Location = Point(320, offset)
+            self.fx_value.Location = Point(300, offset)
             self.fx_value.Width = 40                      
+                        
+            self.site_value = TextBox()
+            self.site_value.Text = "A1"
+            self.site_value.Location = Point(360, offset)
+            self.site_value.Width = 40                                  
                         
             CreatePlanButton = Button()
             CreatePlanButton.Text = "Créér plan"
@@ -3230,7 +2559,7 @@ def crane_3DC_window():
             CreatePlanButton.Click += self.CreatePlanButtonClicked     
 
             self.plan_warning = Label()
-            self.plan_warning.Text = "Pré-réquis: PTV15 ou PTV18, CERVEAU, ISO ou REF SCAN"
+            self.plan_warning.Text = "Pré-réquis: PTV15/PTV18/PTV24, CERVEAU, ISO ou REF SCAN"
             self.plan_warning.Location = Point(25, offset + vert_spacer) 
             self.plan_warning.Font = Font("Arial", 9)
             self.plan_warning.AutoSize = True                  
@@ -3305,9 +2634,11 @@ def crane_3DC_window():
             self.MainWindow.Controls.Add(self.toplabel)
             self.MainWindow.Controls.Add(self.doselabel)
             self.MainWindow.Controls.Add(self.fxlabel)            
+            self.MainWindow.Controls.Add(self.sitelabel)             
             self.MainWindow.Controls.Add(self.PTVcombo)
             self.MainWindow.Controls.Add(self.dose_value)
             self.MainWindow.Controls.Add(self.fx_value)            
+            self.MainWindow.Controls.Add(self.site_value)            
             self.MainWindow.Controls.Add(CreatePlanButton)
             self.MainWindow.Controls.Add(self.plan_warning)
             self.MainWindow.Controls.Add(self.checkbox)            
@@ -3349,10 +2680,10 @@ def crane_3DC_window():
                 opt_collimator_angles = False
             
             presc_dose = self.dose_value.Text*100
-            nb_fx = self.fx_value.Text
+            nb_fx = int(self.fx_value.Text)
             self.plan_warning.Text = "Ne touchez pas à RayStation pendant l'execution du script!"
             self.message.Text = "Création du plan en cours"
-            crane.plan_crane_3DC(site_name='A1', presc_dose=presc_dose, nb_fx=nb_fx, isodose_creation = isodose_creation, opt_collimator_angles = opt_collimator_angles)
+            crane.plan_crane_3DC(site_name=self.site_value.Text, presc_dose=presc_dose, nb_fx=nb_fx, isodose_creation = isodose_creation, opt_collimator_angles = opt_collimator_angles)
             self.message.Text = "Terminé avec succès!"
             self.message.ForeColor = Color.Green
             self.plan_warning.Text = ""
@@ -3391,9 +2722,12 @@ def crane_3DC_window():
                 self.fx_value.Text = "1"
             elif self.PTVcombo.Text == "PTV18":
                 self.dose_value.Text = "18"
-                self.fx_value.Text = "1"          
+                self.fx_value.Text = "1"       
+            elif self.PTVcombo.Text == "PTV24":
+                self.dose_value.Text = "24"
+                self.fx_value.Text = "3"                  
             else:
-                self.plan_warning.Text = "Le PTV doit s'appeler PTV15 ou PTV18"                 
+                self.plan_warning.Text = "Le PTV doit s'appeler PTV15, PTV18 ou PTV24"                 
                 self.plan_warning.ForeColor = Color.Red
             
             
@@ -3425,7 +2759,7 @@ def crane_3DC_window():
             self.subPTVcombo.Items.Add("Choisissez sous-PTV")
          
             for roi in patient.PatientModel.RegionsOfInterest:       
-                if roi.Name in ['PTV15','PTV18']:
+                if roi.Name in ['PTV15','PTV18','PTV24']:
                     self.PTVcombo.Items.Add(roi.Name)
                     self.PTVcombo.SelectedIndex = self.PTVcombo.FindStringExact(roi.Name)
                 if roi.Name in ['PTV1','PTV2','PTV3','PTV4']:
