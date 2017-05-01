@@ -166,6 +166,41 @@ def add_beams_lung_stereo(contralateral_lung=None, beamset=None, examination=Non
     else:
         lib.error('Contralateral lung ROI name not recognized.')  
 
+        
+#Modified script that opens arcs up a little bit compared to clinical script
+def add_beams_lung_stereo_test(laterality=None, beamset=None, examination=None, two_arcs=False):
+    
+    patient = lib.get_current_patient()
+    iso = poi.identify_isocenter_poi()
+
+    #Ajouté par MA pour permettre le fonctionnement du méga-script poumons
+    if beamset is None:
+        beamset = lib.get_current_beamset()
+    if examination is None:
+        examination = lib.get_current_examination()
+
+    if beamset.DicomPlanLabel == 'B1':
+        beam_name = 'B1.1'
+        beam_name_2 = 'B1.2'
+        if poi.poi_exists("ISO B1", examination=examination):
+            iso = "ISO B1"
+    else:
+        beam_name = 'A1.1'
+        beam_name_2 = 'A1.2'                  
+                  
+    if laterality == 'DRT':
+        lib.add_arc(beam_name, iso, 40, 181, 'CCW', description='ARC 30-181', collimator=5, beamset=beamset, exam=examination)
+        if two_arcs:
+            lib.add_arc(beam_name_2, iso, 181, 40, 'CW', description='ARC 181-30', collimator=355, beamset=beamset, exam=examination)
+    elif laterality == 'GCHE':
+        lib.add_arc(beam_name, iso, 180, 320, 'CCW', description='ARC 180-330', collimator=5, beamset=beamset, exam=examination)
+        if two_arcs:
+            lib.add_arc(beam_name_2, iso, 320, 180, 'CW', description='ARC 330-180', collimator=355, beamset=beamset, exam=examination)        
+
+
+          
+        
+        
 def add_beams_imrt_lung_stereo(contralateral_lung=None, beamset=None, examination=None, ptv_name=None, two_arcs=False):
     """
         Ajoute les champs IMRT utilisés en stéréo de poumon.

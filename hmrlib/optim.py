@@ -604,9 +604,17 @@ def essai_autre_technique():
     new_plan.PlanOptimizations[new_beamset.Number-1].RunOptimization()
     
     import launcher
-    launcher.debug_window('Optimisation du plan '+new_plan.Name+' terminée')
+    launcher.debug_window('Optimisation du plan '+new_plan.Name+' terminée')   
     
     
+def copy_clinical_goals(old_plan = None,new_plan = None):
+    for goal in old_plan.TreatmentCourse.EvaluationSetup.EvaluationFunctions:
     
-    
-    
+        roi_name = goal.ForRegionOfInterest.Name
+        goal_criteria = goal.PlanningGoal.GoalCriteria
+        goal_type = goal.PlanningGoal.Type
+        acceptance_level = goal.PlanningGoal.AcceptanceLevel
+        parameter_value = goal.PlanningGoal.ParameterValue
+        
+        new_plan.TreatmentCourse.EvaluationSetup.AddClinicalGoal(RoiName=roi_name, GoalCriteria=goal_criteria, GoalType=goal_type, AcceptanceLevel=acceptance_level, ParameterValue=parameter_value, IsComparativeGoal=False)
+

@@ -290,8 +290,422 @@ def poumon_stereo_create_isodose_lines(plan_data):
 
         
         
-          
+        
+        
+        
+        
+        
+      
+#Scripts for the new KBP planning technique
+def poumon_stereo_kbp_identify_rois(plan_data):
+    
+    patient = plan_data['patient']
+    ptv_name = plan_data['ptv'].Name
+    exam = plan_data['exam']
+    
+    roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+   
+    poumon_d_name = "Not found"
+    poumon_g_name = "Not found"
+    coeur_name = "Not found"
+    bronches_name = "Not found"
+    trachee_name = "Not found"
+    oesophage_name = "Not found"
+    moelle_name = "Not found" 
+    prvmoelle_name = "Not found"
+    plexus_name = "Not found"
+    prvplexus_name = "Not found"
+    cotes_name = "Not found"
+    body_name = "Not found"
+    opt_pmns_name = "Not found"
+   
+    #Check names for ROIs
+    name_list = ['POUMON DRT','POUMON DRT*','POUMON D','POUMON D*']
+    for name in name_list:
+        if name in roi_names:
+            poumon_d_name = name
+            break
+      
+    name_list = ['POUMON GCHE','POUMON GCHE*','POUMON G','POUMON G*']
+    for name in name_list:
+        if name in roi_names:
+            poumon_g_name = name
+            break
+            
+    name_list = ['COEUR','COEUR*']
+    for name in name_list:
+        if name in roi_names:
+            coeur_name = name
+            break
 
+    name_list = ['BR SOUCHE','BR SOUCHE*']
+    for name in name_list:
+        if name in roi_names:
+            bronches_name = name
+            break            
+                        
+    name_list = ['TRACHEE','TRACHEE*']
+    for name in name_list:
+        if name in roi_names:
+            trachee_name = name
+            break      
+
+    name_list = ['OESOPHAGE','OESOPHAGE*']
+    for name in name_list:
+        if name in roi_names:
+            oesophage_name = name
+            break                
+
+    name_list = ['COTES','COTES*']
+    for name in name_list:
+        if name in roi_names:
+            cotes_name = name
+            break              
+            
+    name_list = ['MOELLE','MOELLE*']
+    for name in name_list:
+        if name in roi_names:
+            moelle_name = name
+            break    
+
+    name_list = ['PRV MOELLE','PRV MOELLE*','prvMOELLE','prvMOELLE*']
+    for name in name_list:
+        if name in roi_names:
+            prvmoelle_name = name
+            break                
+            
+    name_list = ['PLEXUS BRACHIAL','PLEXUS BRACHIAL*']
+    for name in name_list:
+        if name in roi_names:
+            plexus_name = name
+            break    
+
+    name_list = ['PRV PLEXUS','PRV PLEXUS*','prvPLEXUS','prvPLEXUS*']
+    for name in name_list:
+        if name in roi_names:
+            prvplexus_name = name
+            break                
+                     
+    name_list = ['BodyRS','BODY']
+    for name in name_list:
+        if name in roi_names:
+            body_name = name
+            break                
+            
+    name_list = ['COMBI PMN-ITV-BR','COMBI PMN-ITV-BR*']
+    for name in name_list:
+        if name in roi_names:
+            opt_pmns_name = name
+            break                
+    
+    #Determine laterality
+    if poumon_d_name == "Not found": #Patient only has left lung
+        pmn_ipsi_name = poumon_g_name
+        pmn_contra_name = "Not found"
+        laterality = 'GCHE'
+    elif poumon_g_name == "Not found": #Patient only has right lung
+        pmn_ipsi_name = poumon_d_name
+        pmn_contra_name = "Not found"
+        laterality = 'DRT'    
+    else:
+        pmn_ipsi_name = roi.find_most_intersecting_roi(ptv_name,[poumon_d_name,poumon_g_name], examination=exam)
+        if pmn_ipsi_name == poumon_d_name:
+            laterality = 'DRT'
+            pmn_contra_name = poumon_g_name
+        else:
+            laterality = 'GCHE'
+            pmn_contra_name = poumon_d_name
+          
+          
+    #Generate list of OAR names for later use
+    oar_list = [pmn_ipsi_name,pmn_contra_name,coeur_name,bronches_name,trachee_name,oesophage_name,cotes_name,moelle_name,prvmoelle_name,plexus_name,prvplexus_name,'r50',body_name,opt_pmns_name]
+    
+    return oar_list,laterality
+           
+        
+def poumon_stereo_kbp_add_plan_and_beamset(plan_data,laterality):
+    
+    patient = plan_data['patient']
+    exam = plan_data['exam']
+    
+    # Add Treatment plan (unless it already exists)
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    
+    plan = patient.AddNewPlan(PlanName='Plan Test', PlannedBy=planner_name, Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
+    plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset and beams (unless it/they already exists)
+    beamset = plan.AddNewBeamSet(Name=plan_data['site_name']+' test', ExaminationName=exam.Name, MachineName=plan_data['machine'], NominalEnergy=None,
+                                      Modality="Photons", TreatmentTechnique=plan_data['treatment_technique'], PatientPosition="HeadFirstSupine", NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment='VMAT')
+    beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv'].Name, DoseVolume=95, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)
+
+    #Add beams
+    if plan_data['treatment_technique'] == 'SMLC':
+        beams.add_beams_imrt_lung_stereo(beamset=beamset,examination=exam, ptv_name=plan_data['ptv'].Name)    
+    elif plan_data['treatment_technique'] == 'VMAT':
+        if plan_data['rx_dose'] >= 5600:
+            two_arcs = True
+        else:
+            two_arcs = False            
+        beams.add_beams_lung_stereo_test(laterality=laterality, beamset=beamset, examination=exam, two_arcs=two_arcs)
+                  
+            
+def poumon_stereo_kbp_opt_settings(plan_data):
+
+    plan = plan_data['patient'].TreatmentPlans['Plan Test']
+
+    # Set optimization parameters
+    optim.set_optimization_parameters(plan=plan)
+
+    if plan_data['treatment_technique'] == 'VMAT':
+        # Set VMAT conversion parameters  
+        fx_dose = plan_data['rx_dose'] / plan_data['nb_fx']
+        optim.set_vmat_conversion_parameters(max_arc_delivery_time=int(fx_dose/100.0*20), plan=plan)
+    elif plan_data['treatment_technique'] == 'SMLC':
+        plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
+        plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 100
+        plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.IterationsInPreparationsPhase = 60
+        plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.ComputeFinalDose = True          
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 20        
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinLeafEndSeparation = 1.6
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs = 4
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentArea = 2
+        plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MaxNumberOfSegments = 40        
+        
+        
+def poumon_stereo_kbp_initial_plan(plan_data,oar_list):
+    patient = plan_data['patient']
+    exam = plan_data['exam']
+    plan = patient.TreatmentPlans['Plan Test']
+    beamset = plan.BeamSets[plan_data['site_name']+' test']
+    rx = plan_data['rx_dose']
+    
+    ptv_name = plan_data['ptv'].Name
+    body_name = oar_list[12]
+    opt_pmns_name = oar_list[13]    
+
+    #Collect ROI info
+    ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_name].GetRoiVolume()  
+
+    #Estimate dose falloff range
+    falloff_range = 1.0 + (ptv_vol - 10) * 0.0125
+    if falloff_range < 1:
+        falloff_range = 1
+    elif falloff_range > 2:
+        falloff_range = 2
+        
+    #Estimate what dose to ask for r50
+    r50_max_dose = 40 + (ptv_vol - 8) * 0.1087
+    if r50_max_dose < 40:
+        r50_max_dose = 40
+    elif r50_max_dose > 50:
+        r50_max_dose = 50
+    r50_max_dose = r50_max_dose / 100.0
+    
+    if ptv_vol > 40:
+        r50_weight = 100
+        ptv_weight = 100
+    else:
+        r50_weight = 25
+        ptv_weight = 25      
+
+    #Create COMBI PMN KBP (need to do this now because you can't evaluate dose on a structure that didn't exist during dose calculation)
+    pmn_kbp_name = 'OPT PMNS ' + plan_data['site_name']
+    roi.create_expanded_roi('r50', color="Yellow", examination=exam, marge_lat=5, marge_sup_inf = 0, output_name='temp KBP1')
+    roi.create_expanded_roi('temp KBP1', color="Lightblue", examination=exam, marge_lat=5, marge_sup_inf = 0, output_name='temp KBP2')
+    patient.PatientModel.CreateRoi(Name=pmn_kbp_name, Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest[pmn_kbp_name].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["temp KBP2"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [opt_pmns_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Intersection", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+    patient.PatientModel.RegionsOfInterest[pmn_kbp_name].UpdateDerivedGeometry(Examination=exam)    
+    patient.PatientModel.RegionsOfInterest['temp KBP1'].DeleteRoi()
+    patient.PatientModel.RegionsOfInterest['temp KBP2'].DeleteRoi()          
+
+    #Initial set of optimization objectives
+    optim.add_mindose_objective(ptv_name, rx, weight=ptv_weight, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective(body_name, rx*1.00, rx*0.25, falloff_range, weight=25, plan=plan, plan_opt=0)
+    optim.add_maxdose_objective('r50', rx*r50_max_dose, weight=r50_weight, plan=plan, plan_opt=0) 
+    optim.add_maxdose_objective('RING_1', rx*1.02, weight=1, plan=plan, plan_opt=0) 
+
+    #Copy clinical goals from old-style plan
+    #optim.copy_clinical_goals(old_plan = patient.TreatmentPlans[plan_data['plan_name']],new_plan = plan)
+    optim.copy_clinical_goals(old_plan = patient.TreatmentPlans[0],new_plan = plan)
+    
+    #Run initial set of optimizations
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+       
+    
+def poumon_stereo_kbp_modify_plan(plan_data,oar_list):    
+    patient = plan_data['patient']
+    exam = plan_data['exam']
+    plan = patient.TreatmentPlans['Plan Test']
+    beamset = plan.BeamSets[plan_data['site_name']+' test']
+    rx = plan_data['rx_dose']
+    nb_fx = plan_data['nb_fx']
+    
+    ptv_name = plan_data['ptv'].Name
+    pmn_contra_name = oar_list[1]
+    pmn_kbp_name = 'OPT PMNS ' + plan_data['site_name']  
+    
+    #Evaluate lung DVH before scaling
+    dose_in_pmn_kbp = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=pmn_kbp_name, DoseValues=[2000/nb_fx,1000/nb_fx,500/nb_fx])             
+    
+    #Scale dose to prescription
+    beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=95, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+
+    #Evaluate plan
+    v5_contra = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=pmn_contra_name, DoseValues=[500/nb_fx])
+    oar_max_dose = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]      
+    for i,oar in enumerate(oar_list):
+        try:
+            oar_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[oar].GetRoiVolume() 
+            oar_max_dose[i] = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = oar,RelativeVolumes = [0.1/oar_vol])[0] * nb_fx / 100.0
+        except:
+            oar_max_dose[i] = -999         
+
+    plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
+
+    #Add optimization objectives for OARs
+    optim.add_maxdvh_objective(pmn_kbp_name, 2000, round(dose_in_pmn_kbp[0]*80,2), weight=5, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective(pmn_kbp_name, 1000, round(dose_in_pmn_kbp[1]*80,2), weight=5, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective(pmn_kbp_name, 500,  round(dose_in_pmn_kbp[2]*80,2), weight=5, plan=plan, plan_opt=0) 
+    
+    if 25*v5_contra[0] > 1:
+        optim.add_maxdvh_objective(pmn_contra_name, 500, round(25*v5_contra[0],2), weight=10, plan=plan, plan_opt=0) 
+    else:
+        optim.add_maxdose_objective(pmn_contra_name, 500, weight=10, plan=plan, plan_opt=0) 
+
+    #We don't want to compromise on the MOELLE and PLEXUS, so they are treated separately
+    if nb_fx == 8:
+        moelle_tolerance_dose = 2590
+        prvmoelle_tolerance_dose = 2910
+        plexus_tolerance_dose = 3550
+        prvplexus_tolerance_dose = 4030
+    elif nb_fx == 5:
+        moelle_tolerance_dose = 2620
+        prvmoelle_tolerance_dose = 2930
+        plexus_tolerance_dose = 2960
+        prvplexus_tolerance_dose = 3340
+    elif nb_fx == 3:
+        moelle_tolerance_dose = 1800
+        prvmoelle_tolerance_dose = 2000
+        plexus_tolerance_dose = 2400
+        prvplexus_tolerance_dose = 2700
+    elif nb_fx == 4:
+        moelle_tolerance_dose = 2020
+        prvmoelle_tolerance_dose = 2240
+        plexus_tolerance_dose = 2700
+        prvplexus_tolerance_dose = 3050
+    elif nb_fx == 15:
+        moelle_tolerance_dose = 3000     
+        prvmoelle_tolerance_dose = 3300 #I just made this number up
+        plexus_tolerance_dose = 3800 #I just made this number up
+        prvplexus_tolerance_dose = 4100 #I just made this number up
+
+    #REMINDER: oar_list = [pmn_ipsi_name,pmn_contra_name,coeur_name,bronches_name,trachee_name,oesophage_name,cotes_name,moelle_name,prvmoelle_name,plexus_name,prvplexus_name,'r50',body_name,opt_pmns_name]        
+    if moelle_tolerance_dose-200 < 100*oar_max_dose[7]: #If obtained dose is higher than tolerance-2Gy, use tolerance value-2Gy instead of obtained dose value
+        optim.add_maxdose_objective(oar_list[7], moelle_tolerance_dose-200, weight=500, plan=plan, plan_opt=0) 
+    else:
+        if 80*oar_max_dose[7] > 1000:
+            optim.add_maxdose_objective(oar_list[7], 80*oar_max_dose[7], weight=1, plan=plan, plan_opt=0) 
+        elif 100*oar_max_dose[7] > 500:
+            optim.add_maxdose_objective(oar_list[7], 100*oar_max_dose[7], weight=1, plan=plan, plan_opt=0) 
+    
+    if prvmoelle_tolerance_dose-200 < 100*oar_max_dose[8]: #If 80% of obtained dose is higher than tolerance, use tolerance value instead of obtained dose value
+        optim.add_maxdose_objective(oar_list[8], prvmoelle_tolerance_dose-200, weight=500, plan=plan, plan_opt=0) 
+    else:
+        if 80*oar_max_dose[8] > 1000:
+            optim.add_maxdose_objective(oar_list[8], 80*oar_max_dose[8], weight=1, plan=plan, plan_opt=0) 
+        elif 100*oar_max_dose[8] > 500:
+            optim.add_maxdose_objective(oar_list[8], 100*oar_max_dose[8], weight=1, plan=plan, plan_opt=0)             
+            
+    if plexus_tolerance_dose-200 < 100*oar_max_dose[9]: #If 80% of obtained dose is higher than tolerance, use tolerance value instead of obtained dose value
+        optim.add_maxdose_objective(oar_list[9], plexus_tolerance_dose-200, weight=500, plan=plan, plan_opt=0) 
+    else:
+        if 80*oar_max_dose[9] > 1000:
+            optim.add_maxdose_objective(oar_list[9], 80*oar_max_dose[9], weight=1, plan=plan, plan_opt=0) 
+        elif 100*oar_max_dose[9] > 500:
+            optim.add_maxdose_objective(oar_list[9], 100*oar_max_dose[9], weight=1, plan=plan, plan_opt=0) 
+    
+    if prvplexus_tolerance_dose-200 < 100*oar_max_dose[10]: #If 80% of obtained dose is higher than tolerance, use tolerance value instead of obtained dose value
+        optim.add_maxdose_objective(oar_list[10], prvplexus_tolerance_dose-200, weight=500, plan=plan, plan_opt=0) 
+    else:
+        if 80*oar_max_dose[10] > 1000:
+            optim.add_maxdose_objective(oar_list[10], 80*oar_max_dose[10], weight=1, plan=plan, plan_opt=0) 
+        elif 100*oar_max_dose[10] > 500:
+            optim.add_maxdose_objective(oar_list[10], 100*oar_max_dose[10], weight=1, plan=plan, plan_opt=0)              
+    
+    for i,oar in enumerate(oar_list):
+        if i in [2,3,4,5,6]: #Apply to coeur, bronches, trachee, oesophage and cotes
+            try: #Use a try here in case OAR is missing (which causes a crash when finding intersecting volume)
+                volume_intersect = roi.get_intersecting_volume('PTV+3mm', oar, examination=exam)
+                if volume_intersect == 0: #OAR far from PTV
+                    if 80*oar_max_dose[i] > 1000: #Don't reduce dose value if below 10Gy
+                        optim.add_maxdose_objective(oar, 80*oar_max_dose[i], weight=1, plan=plan, plan_opt=0) 
+                    elif 100*oar_max_dose[i] > 500:
+                        optim.add_maxdose_objective(oar, 100*oar_max_dose[i], weight=1, plan=plan, plan_opt=0)
+                else: #OAR close to or inside PTV
+                    newvol = roi.intersect_roi_ptv(oar, 'PTV+3mm', color="Blue", examination=exam, margeptv=0, output_name="PTV "+plan_data['site_name']+' test')
+                    if 100*oar_max_dose[i] > rx:
+                        optim.add_maxdose_objective(newvol.Name, rx, weight=25, plan=plan, plan_opt=0) 
+                    else:
+                        optim.add_maxdose_objective(newvol.Name, 90*oar_max_dose[i], weight=25, plan=plan, plan_opt=0) 
+            except:
+                pass        
+      
+         
+def poumon_stereo_kbp_iterate_plan(plan_data,oar_list):
+    patient = plan_data['patient']
+    plan = patient.TreatmentPlans['Plan Test']
+    beamset = plan.BeamSets[plan_data['site_name']+' test']
+    rx = plan_data['rx_dose']
+    nb_fx = plan_data['nb_fx']
+    
+    ptv_name = plan_data['ptv'].Name
+    
+    #Reset and then run initial set of optimizations
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+    optim.optimization_90_30(plan=plan,beamset=beamset)
+    
+    for j in range(4):
+        if j > 0:
+            plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+        
+        #Get initial coverage before scaling        
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx,0.95*rx/nb_fx])   
+        init_ptv_cov = ptv_coverage
+            
+        #Modify weight of PTV min dose objective
+        new_weight = 1
+        if ptv_coverage[0] < 0.8:
+            new_weight = 8
+        elif ptv_coverage[0] < 0.90:
+            new_weight = 4            
+        elif ptv_coverage[0] < 0.93:
+            new_weight = 2
+        elif ptv_coverage[0] > 0.97:
+            new_weight = 0.5        
+
+        if new_weight == 1 or j == 3:
+            #Scale dose to prescription and end script
+            beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=95, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)  
+            break
+        elif j<3:
+            #Modify weights and reoptimize
+            for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions: 
+                try:
+                    f_type = objective.DoseFunctionParameters.FunctionType  # Dose falloff objectives do not have a FunctionType and must be skipped
+                except:
+                    continue
+                if f_type == "MinDose" and objective.ForRegionOfInterest.Name == ptv_name:    
+                    objective.DoseFunctionParameters.Weight = new_weight*objective.DoseFunctionParameters.Weight
+            
+            #Put the monitor units back to where they were before scaling
+            beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=init_ptv_cov[0]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)    
+         
+   
+         
+         
+         
 #Experimental script for IMRT lung cases in RayStation (not clinical as of Dec 2016)
 def plan_poumon():
     """
