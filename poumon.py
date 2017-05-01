@@ -717,6 +717,7 @@ def poumon_stereo_kbp_evaluate_plan(plan_data,oar_list):
     opt_pmns_name = oar_list[13]  
 
     #Evaluate plan
+    ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_name].GetRoiVolume()  
     dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx])        
     dose_in_opt_pmns = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=opt_pmns_name, DoseValues=[2000/nb_fx,1500/nb_fx,1000/nb_fx,500/nb_fx])        
     dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_name,RelativeVolumes = [0.03/ptv_vol])
