@@ -2562,8 +2562,6 @@ def test_lung_plans_v3(ptv_name,rx,patient,nb_fx,exam,iso_name,laterality,body_n
         output_file.write(result_text)
                 
                 
-                
-
 #Script for adding testing multiple plans on a patient - lots of changes from last version (wider arcs, changes to max dose values)
 def test_lung_plans_v4(ptv_name,rx,patient,nb_fx,exam,iso_name,laterality,body_name,opt_pmns_name,oar_list,clinical_plan,clinical_beamset,num_beams,show_plan=False):
 
@@ -3016,8 +3014,7 @@ def test_lung_plans_v4(ptv_name,rx,patient,nb_fx,exam,iso_name,laterality,body_n
         
         output_file.write(header)      
         output_file.write(result_text)
-                
-                 
+                                
 
 #Script for adding testing multiple plans on a patient - minor changes to tighten up r50 for big PTVs and to control moelle/plexus dose
 def test_lung_plans_v5(ptv_name,rx,patient,nb_fx,exam,iso_name,laterality,body_name,opt_pmns_name,oar_list,clinical_plan,clinical_beamset,num_beams,show_plan=False):
@@ -3482,7 +3479,6 @@ def test_lung_plans_v5(ptv_name,rx,patient,nb_fx,exam,iso_name,laterality,body_n
         output_file.write(header)      
         output_file.write(result_text)
                 
- 
  
 #Script for adding testing multiple plans on a patient - FINAL/BEST RECIPE FOR SBRT LUNG PLANS
 def test_lung_plans_v5_express(ptv_name,rx,patient,nb_fx,exam,iso_name,laterality,body_name,opt_pmns_name,oar_list,clinical_plan,clinical_beamset,num_beams,show_plan=False):

@@ -700,10 +700,69 @@ def poumon_stereo_kbp_iterate_plan(plan_data,oar_list):
                     objective.DoseFunctionParameters.Weight = new_weight*objective.DoseFunctionParameters.Weight
             
             #Put the monitor units back to where they were before scaling
-            beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=init_ptv_cov[0]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)    
-         
+            beamset.NormalizeToPrescription(RoiName=ptv_name, DoseValue=rx, DoseVolume=init_ptv_cov[0]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)         
    
          
+def poumon_stereo_kbp_evaluate_plan(plan_data,oar_list):
+    patient = plan_data['patient']
+    exam = plan_data['exam']
+    plan = patient.TreatmentPlans['Plan Test']
+    beamset = plan.BeamSets[plan_data['site_name']+' test']
+    rx = plan_data['rx_dose']
+    nb_fx = plan_data['nb_fx']    
+    
+    ptv_name = plan_data['ptv'].Name
+    pmn_contra_name = oar_list[1]
+    body_name = oar_list[12]
+    opt_pmns_name = oar_list[13]  
+
+    #Evaluate plan
+    dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=body_name, DoseValues=[rx/nb_fx,0.9*rx/nb_fx,0.8*rx/nb_fx,0.7*rx/nb_fx])        
+    dose_in_opt_pmns = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=opt_pmns_name, DoseValues=[2000/nb_fx,1500/nb_fx,1000/nb_fx,500/nb_fx])        
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_name,RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    v5_contra = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=pmn_contra_name, DoseValues=[500/nb_fx])
+    oar_max_dose = [0,0,0,0,0,0,0,0,0,0,0,0]      
+    for i,oar in enumerate(oar_list):
+        try:
+            oar_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[oar].GetRoiVolume() 
+            oar_max_dose[i] = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = oar,RelativeVolumes = [0.1/oar_vol])[0] * nb_fx / 100.0
+        except:
+            oar_max_dose[i] = -999         
+    total_mu = 0
+    num_beams = 0
+    for beam in beamset.Beams:
+        num_beams += 1
+        total_mu += beam.BeamMU       
+    
+    #Add results to result_text
+    result_text += 'Secret KBP,'
+    
+    for i,dose in enumerate(dose_in_body):
+        result_text += "%.3f," % (dose_in_body[i]*body_vol)
+    for i,dose in enumerate(dose_in_opt_pmns):
+        result_text += "%.3f," % (dose_in_opt_pmns[i]*opt_pmns_vol)
+    
+    result_text += "%.3f," % (v5_contra[0]*100)
+    result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f," % (oar_max_dose[1],oar_max_dose[2],oar_max_dose[3],oar_max_dose[4],oar_max_dose[5],oar_max_dose[6],oar_max_dose[9],oar_max_dose[10],oar_max_dose[11],oar_max_dose[7],oar_max_dose[8])
+    result_text += "%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%d," % (max_in_ptv,ptv_coverage[0]*100,ptv_coverage[1]*100,init_ptv_cov[0]*100,init_ptv_cov[1]*100,(dose_in_body[0]*body_vol)/ptv_vol,rx/100.0)        
+    result_text += "%d,%.3f\n" % (num_beams,total_mu)         
+
+    #Prepare header
+    header = "Essai,Body V100 cc,Body V90 cc,Body V80 cc,Body V70 cc,"
+    header += "PMN-ITV-BR V20Gy(cc),PMN-ITV-BR V15Gy(cc),PMN-ITV-BR V10Gy(cc),PMN-ITV-BR V5Gy(cc),V5Gy dans Pmn contra(%),"
+    header += "D0.1cc PMN contra(Gy),D0.1cc Coeur(Gy),D0.1cc Bronches(Gy),D0.1cc Trachée(Gy),D0.1cc Oesophage(Gy),D0.1cc Moelle(Gy),D0.1cc PRV Moelle(Gy),D0.1cc Plexus(Gy),D0.1cc PRV Plexus(Gy),D0.1cc Côtes(Gy),D0.1cc à 2cm(Gy),"
+    header += "Max in PTV(Gy),Couverture par 100%,Couverture par 95%,Couverture 100% avant scaling,Couverture 95% avant scaling,Indice de conformité,Prescription(Gy),"
+    header += "Nb de faisceau,UM totaux\n"
+    
+    #Write to file
+    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques'
+    output_file_path += '\\Resultats ' + patient.PatientName + '_' + patient.PatientID + '_poumon_secret_kbp.txt'
+    with open(output_file_path, 'a') as output_file:
+        output_file.write(header)      
+        output_file.write(result_text)
+                        
+     
          
          
 #Experimental script for IMRT lung cases in RayStation (not clinical as of Dec 2016)

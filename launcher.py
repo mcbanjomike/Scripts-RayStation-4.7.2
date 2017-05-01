@@ -999,6 +999,8 @@ def plan_launcher_v3():
                     poumon.poumon_stereo_kbp_modify_plan(plan_data=d,oar_list=oar_list)
                     self.Status.Text = "Test: Optimisation du plan modifié"
                     poumon.poumon_stereo_kbp_iterate_plan(plan_data=d,oar_list=oar_list)
+                    self.Status.Text = "Test: Impression des resultats"
+                    poumon.poumon_stereo_kbp_evaluate_plan(plan_data=d,oar_list=oar_list)
 
                 
                 self.Status.Text = "Script terminé! Cliquez sur Cancel pour sortir."
