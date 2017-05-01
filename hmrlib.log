@@ -7848,3 +7848,307 @@ SystemError: hmrlib error: POI ISO is not segmented on current examination.  Sel
 2017-05-01 12:19:38,722 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - lsd stereo/lsd] ================================================================================
 2017-05-01 12:19:38,845 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - lsd stereo/lsd] End of script plan_launcher.py [execution time = 0:14:52.549000]
 2017-05-01 12:19:38,967 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - lsd stereo/lsd] ================================================================================
+2017-05-01 14:37:18,913 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-01 14:37:19,037 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-05-01 14:37:19,051 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-01 14:37:19,339 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Invalid objectHandle.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\lib.py", line 510, in get_current_patient
+    return get_current('Patient')
+  File "C:\Program Files\RaySearch Laboratories\RayStation 4.7.2\ScriptClient\connect.py", line 21, in get_current
+    return ScriptClient.ScriptObject(ScriptClient.RayScriptService.Instance, ScriptClient.RayScriptService.Instance.Client.GetCurrent(objectType))
+SystemError: Invalid objectHandle.
+2017-05-01 14:37:19,369 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Could not get current patient.  No patient is currently selected ?
+2017-05-01 14:37:21,369 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-01 14:37:21,377 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:02.505000]
+2017-05-01 14:37:21,388 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-01 14:38:38,611 - hmrlib - INFO - [hmr30489 - BRASSEUR^CAROLE (668730) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-01 14:38:39,015 - hmrlib - INFO - [hmr30489 - BRASSEUR^CAROLE (668730) - CT 1 - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-05-01 14:38:39,082 - hmrlib - INFO - [hmr30489 - BRASSEUR^CAROLE (668730) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-01 14:38:39,798 - hmrlib - ERROR - [hmr30489 - BRASSEUR^CAROLE (668730) - CT 1 - <No plan selected>/<No beamset selected>] Invalid objectHandle.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\lib.py", line 493, in get_current_plan
+    return get_current('Plan')
+  File "C:\Program Files\RaySearch Laboratories\RayStation 4.7.2\ScriptClient\connect.py", line 21, in get_current
+    return ScriptClient.ScriptObject(ScriptClient.RayScriptService.Instance, ScriptClient.RayScriptService.Instance.Client.GetCurrent(objectType))
+SystemError: Invalid objectHandle.
+2017-05-01 14:38:39,908 - hmrlib - ERROR - [hmr30489 - BRASSEUR^CAROLE (668730) - CT 1 - <No plan selected>/<No beamset selected>] Could not get current plan.  No plan is currently selected ?
+2017-05-01 14:38:42,052 - hmrlib - INFO - [hmr30489 - BRASSEUR^CAROLE (668730) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-01 14:38:42,119 - hmrlib - INFO - [hmr30489 - BRASSEUR^CAROLE (668730) - CT 1 - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:03.672000]
+2017-05-01 14:38:42,189 - hmrlib - INFO - [hmr30489 - BRASSEUR^CAROLE (668730) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-01 14:39:46,567 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-01 14:39:46,975 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-05-01 14:39:47,006 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-01 14:39:47,902 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-01 14:39:47,926 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:02.630000]
+2017-05-01 14:39:47,945 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-01 14:39:53,601 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:39:54,016 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 14:39:54,131 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:42:42,890 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:42:43,053 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:02:49.413000]
+2017-05-01 14:42:43,172 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:42:48,086 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:42:48,524 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 14:42:48,653 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:42:57,724 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:42:57,851 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:09.649000]
+2017-05-01 14:42:57,981 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:43:58,496 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:43:58,942 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 14:43:59,064 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:44:00,104 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:44:00,226 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:01.765000]
+2017-05-01 14:44:00,347 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:45:48,952 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:45:49,264 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 14:45:49,386 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:46:18,719 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:46:18,854 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:29.777000]
+2017-05-01 14:46:19,062 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:49:10,501 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:49:10,917 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 14:49:11,039 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:51:12,974 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:51:13,092 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:02:02.579000]
+2017-05-01 14:51:13,202 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:51:18,590 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:51:19,061 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 14:51:19,203 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:52:18,522 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:52:18,644 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:01:00.097000]
+2017-05-01 14:52:18,765 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:52:26,491 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:52:26,909 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 14:52:27,031 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:53:20,736 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:53:20,858 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:54.370000]
+2017-05-01 14:53:20,978 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:53:26,085 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:53:26,525 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 14:53:26,646 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:54:09,736 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:54:09,859 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:43.735000]
+2017-05-01 14:54:09,979 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:54:15,252 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:54:15,713 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 14:54:15,834 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:55:16,722 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:55:16,844 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:01:01.635000]
+2017-05-01 14:55:16,964 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:55:22,824 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:55:23,260 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 14:55:23,385 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:57:11,024 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:57:11,148 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:01:48.348000]
+2017-05-01 14:57:11,268 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:57:18,092 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:57:18,574 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 14:57:18,713 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:58:21,247 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:58:21,433 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:01:03.215000]
+2017-05-01 14:58:21,555 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:58:27,637 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 14:58:28,072 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 14:58:28,195 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:02:42,915 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:02:43,043 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:04:15.291000]
+2017-05-01 15:02:43,167 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:02:51,470 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:02:51,816 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:02:51,963 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:03:00,162 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:03:00,305 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:08.563000]
+2017-05-01 15:03:00,425 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:03:13,133 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:03:13,478 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:03:13,597 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:07:02,266 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:07:02,391 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:03:49.236000]
+2017-05-01 15:07:02,512 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:07:19,329 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:07:19,751 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:07:19,873 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:07:20,744 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:07:20,789 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:01.641000]
+2017-05-01 15:07:20,833 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:07:45,413 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:07:45,755 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:07:45,853 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:11:40,227 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:11:40,350 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:03:54.911000]
+2017-05-01 15:11:40,482 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:11:49,033 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:11:49,488 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:11:49,627 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:11:50,792 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:11:50,927 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:01.863000]
+2017-05-01 15:11:51,059 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:12:29,643 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:12:30,088 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:12:30,215 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:13:19,854 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:13:19,978 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:50.381000]
+2017-05-01 15:13:20,103 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:13:24,989 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:13:25,355 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:13:25,478 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:13:59,153 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:13:59,277 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:34.155000]
+2017-05-01 15:13:59,396 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:14:04,878 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:14:05,077 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:14:05,199 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:15:31,844 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:15:31,971 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:01:26.933000]
+2017-05-01 15:15:32,091 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:15:38,288 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:15:38,713 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:15:38,851 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:21:02,450 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:21:02,575 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:05:24.267000]
+2017-05-01 15:21:02,710 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:21:08,356 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:21:08,807 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:21:08,947 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:22:45,226 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:22:45,376 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:01:36.961000]
+2017-05-01 15:22:45,567 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:23:03,829 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:23:04,198 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:23:04,320 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:23:58,007 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:23:58,200 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:54.221000]
+2017-05-01 15:23:58,294 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:24:04,074 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:24:04,522 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:24:04,660 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:28:50,750 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:28:50,874 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:04:46.848000]
+2017-05-01 15:28:51,008 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:28:56,529 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:28:56,970 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:28:57,092 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:29:14,902 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:29:14,948 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:18.439000]
+2017-05-01 15:29:14,998 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:29:19,922 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:29:20,108 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:29:20,159 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:32:31,194 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:32:31,317 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:03:11.264000]
+2017-05-01 15:32:31,450 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:32:36,937 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:32:37,374 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:32:37,498 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:32:38,289 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:32:38,335 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:01.604000]
+2017-05-01 15:32:38,380 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:33:04,833 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:33:05,019 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:33:05,121 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:33:06,304 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:33:06,427 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:01.470000]
+2017-05-01 15:33:06,548 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:33:33,354 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:33:33,549 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:33:33,669 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:36:58,824 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:36:58,979 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:03:25.394000]
+2017-05-01 15:36:59,200 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:37:05,799 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:37:06,257 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:37:06,394 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:42:15,364 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:42:15,487 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:05:09.669000]
+2017-05-01 15:42:15,624 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:42:22,133 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:42:22,610 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:42:22,749 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:42:23,947 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:42:24,066 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:01.994000]
+2017-05-01 15:42:24,209 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:43:02,487 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:43:02,682 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:43:02,737 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:43:03,366 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:43:03,422 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:00.945000]
+2017-05-01 15:43:03,478 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:43:33,803 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:43:34,116 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:43:34,236 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:43:35,624 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:43:35,750 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:01.895000]
+2017-05-01 15:43:35,870 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:44:09,765 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:44:10,286 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:44:10,436 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:48:57,207 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:48:57,344 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:04:47.604000]
+2017-05-01 15:48:57,499 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:49:08,425 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:49:08,614 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:49:08,666 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:50:10,071 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:50:10,198 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:01:01.640000]
+2017-05-01 15:50:10,319 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:50:15,434 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:50:15,633 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:50:15,696 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:50:37,372 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:50:37,495 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:21.940000]
+2017-05-01 15:50:37,614 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:50:42,960 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:50:43,149 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:50:43,201 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:51:08,073 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:51:08,198 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:25.039000]
+2017-05-01 15:51:08,467 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:51:15,027 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:51:15,452 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:51:15,579 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:51:51,705 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:51:51,844 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:36.752000]
+2017-05-01 15:51:51,977 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:51:57,548 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 15:51:58,023 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 15:51:58,148 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:02:52,790 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:02:52,916 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:10:55.400000]
+2017-05-01 16:02:53,049 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:02:59,164 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:02:59,617 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 16:02:59,739 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:03:00,948 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:03:01,068 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:01.924000]
+2017-05-01 16:03:01,188 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:04:07,840 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:04:08,290 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 16:04:08,413 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:05:23,526 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:05:23,653 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:01:15.850000]
+2017-05-01 16:05:23,775 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:07:28,008 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:07:28,438 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 16:07:28,560 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:07:50,528 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:07:50,651 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:22.606000]
+2017-05-01 16:07:50,771 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:07:56,063 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:07:56,487 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 16:07:56,610 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:10:59,799 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:10:59,922 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:03:03.723000]
+2017-05-01 16:11:00,044 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:11:36,135 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:11:36,583 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 16:11:36,713 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:12:31,576 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:12:31,700 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:55.604000]
+2017-05-01 16:12:31,827 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:12:37,944 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:12:38,318 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] Starting script test_NePasUtiliser.py
+2017-05-01 16:12:38,453 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:13:04,446 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================
+2017-05-01 16:13:04,675 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] End of script test_NePasUtiliser.py [execution time = 0:00:26.579000]
+2017-05-01 16:13:04,798 - hmrlib - INFO - [hmr30489 - GUIMOND^MARCEL (1789143) - CT 2 - Plan Test/A1 test] ================================================================================

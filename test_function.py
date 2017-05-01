@@ -82,9 +82,9 @@ def test_MA():
     #statistics.auto_collect_crane_stats(startpoint=60,endpoint=999,min_vol=3.999)
     #statistics.batch_autoplan_crane(startpoint=1,endpoint=11,min_vol=1.0)
     #statistics.single_autoplan_crane()
-    #launcher.lung_stats_window()
+    launcher.crane_launcher()
     #statistics.auto_collect_lung_stats(startpoint=1,endpoint=1,test_plans=True,print_results=False,show_plan=True)
-    statistics.auto_collect_lung_stats(startpoint=3,endpoint=8,test_plans=True,print_results=False,show_plan=False)
+    #statistics.auto_collect_lung_stats(startpoint=3,endpoint=8,test_plans=True,print_results=False,show_plan=False)
     #statistics.auto_collect_lung_stats(startpoint=13,endpoint=16,test_plans=True,print_results=False,show_plan=False)
     
     #num_ptvs = 2

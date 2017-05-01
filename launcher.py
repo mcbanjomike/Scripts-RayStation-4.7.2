@@ -2794,11 +2794,7 @@ def crane_3DC_window():
     form = MainWindow()
     Application.Run(form)   
  
-  
-  
-
- 
-   
+    
 def verification_initiale():
 
     class Verif1Window(Form):
@@ -3818,8 +3814,322 @@ def verification_finale():
     form = Verif1Window()
     Application.Run(form)   
     
-
     
+   
+    
+def crane_launcher():
+
+    class CraneLauncher(Form):
+        def __init__(self):
+            self.Text = "Statistiques"
+
+            self.Width = 700
+            self.Height = 740
+
+            self.setupHeaderWindow()
+            self.setupMainWindow()
+
+            self.Controls.Add(self.HeaderWindow)
+            self.Controls.Add(self.MainWindow)
+            
+            #Automatically populate ROI selection comboboxes
+            self.PTV1combo.Items.Add("Choisissez ROI")
+            self.PTV2combo.Items.Add("Choisissez ROI")
+            self.PTV3combo.Items.Add("Choisissez ROI")         
+            for roi in patient.PatientModel.RegionsOfInterest:       
+                if 'PTV' in roi.Name.upper():
+                    self.PTV1combo.Items.Add(roi.Name)
+                    self.PTV2combo.Items.Add(roi.Name)
+                    self.PTV3combo.Items.Add(roi.Name)      
+            
+        def Panel(self, x, y):
+            panel = Panel()
+            panel.Width = 700
+            panel.Height = 640
+            panel.Location = Point(x, y)
+            panel.BorderStyle = BorderStyle.None
+            return panel
+
+        def miniPanel(self, x, y):
+            panel = Panel()
+            panel.Width = 700
+            panel.Height = 60
+            panel.Location = Point(x, y)
+            panel.BorderStyle = BorderStyle.None
+            return panel                           
+            
+        def setupHeaderWindow(self):
+            self.HeaderWindow = self.miniPanel(0, 0)     
+
+            self.PatientIDHeader = Label()
+            self.PatientIDHeader.Text = "Patient: " + patient.PatientName.replace('^', ', ')
+            self.PatientIDHeader.Location = Point(25, 25)
+            self.PatientIDHeader.Font = Font("Arial", 12, FontStyle.Bold)
+            self.PatientIDHeader.AutoSize = True          
+
+            self.HeaderWindow.Controls.Add(self.PatientIDHeader)
+            
+        def setupMainWindow(self):
+            self.MainWindow = self.Panel(0, 60)
+            
+            vert_spacer = 30
+            offset = 50   
+            
+            self.toplabel = Label()
+            self.toplabel.Text = "PTV                      Dose (Gy)"
+            self.toplabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.toplabel.Location = Point(60, 20)
+            self.toplabel.AutoSize = True  
+                   
+            self.PTV1combo = ComboBox()
+            self.PTV1combo.Parent = self
+            self.PTV1combo.Size = Size(120,40)
+            self.PTV1combo.Location = Point(25, offset)
+            self.PTV1combo.Text = "Choisissez ROI" 
+     
+            self.dose1_value = TextBox()
+            self.dose1_value.Text = ""
+            self.dose1_value.Location = Point(180, offset)
+            self.dose1_value.Width = 50              
+
+            self.PTV2combo = ComboBox()
+            self.PTV2combo.Parent = self
+            self.PTV2combo.Size = Size(120,40)
+            self.PTV2combo.Location = Point(25, offset + vert_spacer)
+            self.PTV2combo.Text = "Choisissez ROI" 
+
+            self.dose2_value = TextBox()
+            self.dose2_value.Text = ""
+            self.dose2_value.Location = Point(180, offset + vert_spacer)
+            self.dose2_value.Width = 50                                
+
+            self.PTV3combo = ComboBox()
+            self.PTV3combo.Parent = self
+            self.PTV3combo.Size = Size(120,40)
+            self.PTV3combo.Location = Point(25, offset + 2*vert_spacer)
+            self.PTV3combo.Text = "Choisissez ROI" 
+                      
+            self.dose3_value = TextBox()
+            self.dose3_value.Text = ""
+            self.dose3_value.Location = Point(180, offset + 2*vert_spacer)
+            self.dose3_value.Width = 50                   
+         
+         
+            self.fxlabel = Label()
+            self.fxlabel.Text = "Nb de fx"
+            self.fxlabel.Location = Point(25, offset + 3.5*vert_spacer)
+            self.fxlabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.fxlabel.AutoSize = True              
+            
+            self.fxbox = TextBox()
+            self.fxbox.Parent = self
+            self.fxbox.Size = Size(50,40)
+            self.fxbox.Location = Point(120, offset + 3.5*vert_spacer)
+            self.fxbox.Text = "- - -"                 
+            
+            self.techlabel = Label()
+            self.techlabel.Text = "Technique"
+            self.techlabel.Location = Point(25, offset + 4.5*vert_spacer)
+            self.techlabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.techlabel.AutoSize = True              
+            
+            self.techcombo = ComboBox()
+            self.techcombo.Parent = self
+            self.techcombo.Size = Size(80,40)
+            self.techcombo.Location = Point(120, offset + 4.5*vert_spacer)
+            self.techcombo.Text = "Technique" 
+            self.techcombo.Items.Add('VMAT')
+            self.techcombo.Items.Add('IMRT')
+            self.techcombo.Items.Add('3DC')
+            self.techcombo.Items.Add('VMAT+3DC')
+            self.techcombo.Items.Add('IMRT+3DC')
+            
+            
+            self.sitelabel = Label()
+            self.sitelabel.Text = "Nom du site"
+            self.sitelabel.Location = Point(25, offset + 5.5*vert_spacer)
+            self.sitelabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.sitelabel.AutoSize = True              
+            
+            self.sitebox = TextBox()
+            self.sitebox.Parent = self
+            self.sitebox.Size = Size(50,40)
+            self.sitebox.Location = Point(120, offset + 5.5*vert_spacer)
+            self.sitebox.Text = "A1"    
+            
+            
+            self.scanlabel = Label()
+            self.scanlabel.Text = "CT de planif"
+            self.scanlabel.Location = Point(25, offset + 6.5*vert_spacer)
+            self.scanlabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.scanlabel.AutoSize = True              
+            
+            self.scancombo = ComboBox()
+            self.scancombo.Parent = self
+            self.scancombo.Size = Size(80,40)
+            self.scancombo.Location = Point(120, offset + 6.5*vert_spacer)
+            self.scancombo.Text = "CT 1"         
+            
+            
+            self.machinelabel = Label()
+            self.machinelabel.Text = "Appareil"
+            self.machinelabel.Location = Point(25, offset + 7.5*vert_spacer)
+            self.machinelabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.machinelabel.AutoSize = True              
+            
+            self.machinecombo = ComboBox()
+            self.machinecombo.Parent = self
+            self.machinecombo.Size = Size(80,40)
+            self.machinecombo.Location = Point(120, offset + 7.5*vert_spacer)
+            self.machinecombo.Text = "BeamMod"                  
+            self.machinecombo.Items.Add('BeamMod')
+            self.machinecombo.Items.Add('Infinity')
+            
+
+            self.isodoselabel = Label()
+            self.isodoselabel.Text = "Dose table"
+            self.isodoselabel.Location = Point(25, offset + 8.5*vert_spacer)
+            self.isodoselabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.isodoselabel.AutoSize = True              
+            
+            self.isodosecombo = ComboBox()
+            self.isodosecombo.Parent = self
+            self.isodosecombo.Size = Size(80,40)
+            self.isodosecombo.Location = Point(120, offset + 8.5*vert_spacer)
+            self.isodosecombo.Text = "Créer"                  
+            self.isodosecombo.Items.Add('Créer')            
+            self.isodosecombo.Items.Add('Ne pas créer')            
+            
+
+            self.message = Label()
+            self.message.Text = "Sélectionnez le(s) ROI(s) à traiter\n(chaque contour distinct devrait\nêtre indiqué séparément)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLes plans IMRT/3DC avec plusieurs PTVs\ndistincts auront une optimisation automatique\nde la collimateur. SVP touchez pas\nl'ordinateur pendant cette optimisation\n(4 à 5 minutes environ)"
+            self.message.Location = Point(300, offset)
+            self.message.Font = Font("Arial", 11, FontStyle.Italic)
+            self.message.AutoSize = True                
+            
+            self.status = Label()
+            self.status.Text = "Ajout du plan en cours"
+            self.status.Location = Point(25, 600)
+            self.status.Font = Font("Arial", 11, FontStyle.Bold)
+            self.status.AutoSize = True    
+            
+            
+            evalButton = Button()
+            evalButton.Text = "Évaluer les PTVs"
+            evalButton.Location = Point(25, offset + 11 * vert_spacer)
+            evalButton.Width = 200
+            evalButton.Click += self.evalClicked                           
+            
+            addplanButton = Button()
+            addplanButton.Text = "Ajouter plan(s)"
+            addplanButton.Location = Point(25, offset + 12 * vert_spacer)
+            addplanButton.Width = 200
+            addplanButton.Click += self.addplanClicked   
+
+            self.MainWindow.Controls.Add(self.toplabel)
+            
+            self.MainWindow.Controls.Add(self.PTV1combo)
+            self.MainWindow.Controls.Add(self.dose1_value)
+            self.MainWindow.Controls.Add(self.PTV2combo)
+            self.MainWindow.Controls.Add(self.dose2_value)
+            self.MainWindow.Controls.Add(self.PTV3combo)
+            self.MainWindow.Controls.Add(self.dose3_value)          
+
+            self.MainWindow.Controls.Add(self.fxlabel)
+            self.MainWindow.Controls.Add(self.fxbox)   
+            
+            self.MainWindow.Controls.Add(self.techlabel)          
+            self.MainWindow.Controls.Add(self.techcombo)          
+         
+            self.MainWindow.Controls.Add(self.sitelabel)
+            self.MainWindow.Controls.Add(self.sitebox)            
+
+            self.MainWindow.Controls.Add(self.scanlabel)          
+            self.MainWindow.Controls.Add(self.scancombo)    
+            
+            self.MainWindow.Controls.Add(self.machinelabel)          
+            self.MainWindow.Controls.Add(self.machinecombo)          
+
+            self.MainWindow.Controls.Add(self.isodoselabel)          
+            self.MainWindow.Controls.Add(self.isodosecombo)     
+
+            self.MainWindow.Controls.Add(self.message)            
+            self.MainWindow.Controls.Add(self.status)     
+
+            self.MainWindow.Controls.Add(evalButton)
+            self.MainWindow.Controls.Add(addplanButton)            
+
+
+            
+        def evalClicked(self, sender, args):
+            self.status.Text = "Eval clicked"
+
+        def addplanClicked(self, sender, args):
+            self.status.Text = "SinglePTV clicked"    
+            
+            self.status.ForeColor = Color.Black
+            self.status.Text = "Calcul en cours, veuillez patienter"
+            
+            ptv_names = ['','','']
+            rx = [0,0,0]            
+            error_message = ""
+            num_ptvs = 0
+            
+            if roi.roi_exists(self.PTV1combo.Text):       
+                ptv_names[0] = self.PTV1combo.Text
+                num_ptvs += 1
+                try:
+                    rx[0] = int(float(self.dose1_value.Text) * 100)
+                except:
+                    error_message = "Dose du PTV 1 illisible"
+
+            if roi.roi_exists(self.PTV2combo.Text):       
+                ptv_names[1] = self.PTV2combo.Text
+                num_ptvs += 1
+                try:
+                    rx[1] = int(float(self.dose2_value.Text) * 100)
+                except:
+                    error_message = "Dose du PTV 2 illisible"
+
+            if roi.roi_exists(self.PTV3combo.Text):       
+                ptv_names[2] = self.PTV3combo.Text
+                num_ptvs += 1
+                try:
+                    rx[2] = int(float(self.dose3_value.Text) * 100)
+                except:
+                    error_message = "Dose du PTV 3 illisible"              
+                    
+            if error_message != "":
+                self.status.Text = error_message
+                self.status.ForeColor = Color.Red
+            else:
+                technique = self.techcombo.Text
+                if num_ptvs > 0:
+                    self.status.Text == "Calcul terminé"
+                    self.status.ForeColor = Color.Green
+                else:
+                    self.status.Text = "Aucun PTV sélectionné"
+                    self.status.ForeColor = Color.Red                
+             
+            
+    
+    #Check for common errors while importing patient, plan, beamset and examination
+    try:
+        patient = lib.get_current_patient()
+    except:
+        debug_window('Aucun patient sélectionné')
+        return                    
+    try:
+        exam = lib.get_current_examination()
+    except:
+        debug_window('Aucun examination trouvé')
+        return
+        
+    form = CraneLauncher()
+    Application.Run(form)   
+ 
+  
+   
     
 def crane_stats_window():
 
@@ -4099,10 +4409,6 @@ def crane_stats_window():
         
     form = CraneStatsWindow()
     Application.Run(form)   
- 
- 
- 
- 
  
      
 def lung_stats_window():
