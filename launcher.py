@@ -432,29 +432,6 @@ def plan_launcher_v3():
                 else:
                     self.Label2.Text = "Attention: Aucun PTV trouvé!"     
                     self.Label2.ForeColor = Color.Red                  
-                    
-                """
-                #Identify the PTV
-                if 'PTV15' in roi_names:
-                    self.Label2.Text = "PTV15 trouvé"
-                    self.comboBoxRx.Items.Add("15Gy-1")
-                    self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("15Gy-1")
-                    self.techniquecombo.Items.Add("IMRT")                    
-                    #self.dosebox.Text = "15"
-                    #self.Fxbox.Text = "1"
-                elif 'PTV18' in roi_names:
-                    self.Label2.Text = "PTV18 trouvé"
-                    self.comboBoxRx.Items.Add("18Gy-1")
-                    self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("18Gy-1")
-                    self.techniquecombo.Items.Add("IMRT")                    
-                    #self.dosebox.Text = "18"
-                    #self.Fxbox.Text = "1"
-                else:
-                    self.Label2.Text = "Attention: Aucun PTV trouvé!"     
-                    self.Label2.ForeColor = Color.Red     
-                """
-                
-                
                 
                 if 'CERVEAU' not in roi_names:
                     self.Label3.Text = "ROI CERVEAU pas trouvé!"
@@ -513,6 +490,10 @@ def plan_launcher_v3():
                 self.comboBoxRx.Items.Add("56Gy-4")
                 self.comboBoxRx.Items.Add("60Gy-5")
                 self.comboBoxRx.Items.Add("60Gy-8")
+                self.comboBoxRx.Items.Add("LUSTRE 48Gy-4")                
+                self.comboBoxRx.Items.Add("LUSTRE 60Gy-8")
+                self.comboBoxRx.Items.Add("LUSTRE 60Gy-15")
+
                 
                 #Identify the PTV
                 if 'PTV48' in roi_names:
@@ -712,6 +693,9 @@ def plan_launcher_v3():
             if temp_string[:5] == 'PACE ':
                 temp_string = temp_string[5:]
                 pace = True
+            elif temp_string[:7] == 'LUSTRE ':
+                temp_string = temp_string[7:]
+                lustre = True                
             try:
                 if 'et' in temp_string.split('Gy-')[0]: #if 2 dose levels
                     temp_rx_dose = temp_string.split('Gy-')[0]
@@ -949,48 +933,74 @@ def plan_launcher_v3():
                 
                 
                 self.Status.ForeColor = Color.Black
-                
-                if patient.BodySite == '':
-                    patient.BodySite = 'Poumon'                
-                
-                self.Status.Text = "En cours: Gestion des POIs"
-                poumon.poumon_stereo_pois(plan_data = d)
-                
-                self.Status.Text = "En cours: Création des ROIs"
-                new_names = poumon.poumon_stereo_rois(plan_data = d)
 
-                self.Status.Text = "En cours: Ajout du plan et beamset"
-                new_plan_name = poumon.poumon_stereo_add_plan_and_beamset(plan_data = d)
-                d['plan_name'] = new_plan_name #Update plan name because B1 plan will either be added to existing Stereo Poumon or else will be called B1
+                #SECRET OPTION: If you want to add a KBP plan (regular plan must already exist), create an ROI called kbp or KBP and give it some geometry
+                roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+                if 'kbp' in roi_names or 'KBP' in roi_names:
+                    add_kbp_plan = True      
+                else:
+                    add_kbp_plan = False
                 
-                if isodose_creation:
-                    self.Status.Text = "En cours: Reglage du Dose Color Table"
-                    poumon.poumon_stereo_create_isodose_lines(plan_data=d)
-                
-                if d['treatment_technique']=='VMAT':
-                    self.Status.Text = "En cours: Ajout des faisceaux"
-                    beams.add_beams_lung_stereo(beamset=patient.TreatmentPlans[d['plan_name']].BeamSets[d['beamset_name']], examination=d['exam'], ptv_name=d['ptv'].Name, two_arcs=d['two_arcs'])                    
+                if add_kbp_plan is False:
+                    if patient.BodySite == '':
+                        patient.BodySite = 'Poumon'                
                     
-                if d['treatment_technique']=='SMLC':
-                    self.Status.Text = "En cours: Ajout des faisceaux"
-                    beams.add_beams_imrt_lung_stereo(beamset=patient.TreatmentPlans[d['plan_name']].BeamSets[d['beamset_name']],examination=d['exam'], ptv_name=d['ptv'].Name)                    
+                    self.Status.Text = "En cours: Gestion des POIs"
+                    poumon.poumon_stereo_pois(plan_data = d)
                     
-                self.Status.Text = "En cours: Reglage des paramètres d'optimisation"
-                poumon.poumon_stereo_opt_settings(plan_data = d)
+                    self.Status.Text = "En cours: Création des ROIs"
+                    new_names = poumon.poumon_stereo_rois(plan_data = d)
+
+                    self.Status.Text = "En cours: Ajout du plan et beamset"
+                    new_plan_name = poumon.poumon_stereo_add_plan_and_beamset(plan_data = d)
+                    d['plan_name'] = new_plan_name #Update plan name because B1 plan will either be added to existing Stereo Poumon or else will be called B1
                     
-                self.Status.Text = "En cours: Ajout des objectifs d'optimisation et les clinical goals"
-                clinical_goals.smart_cg_lung_stereo(plan=patient.TreatmentPlans[d['plan_name']], examination=d['exam'], nb_fx=nb_fx, rx_dose=rx_dose, ptv=d['ptv'], beamset=patient.TreatmentPlans[d['plan_name']].BeamSets[d['beamset_name']])              
+                    if isodose_creation:
+                        self.Status.Text = "En cours: Reglage du Dose Color Table"
+                        poumon.poumon_stereo_create_isodose_lines(plan_data=d)
+                    
+                    if d['treatment_technique']=='VMAT':
+                        self.Status.Text = "En cours: Ajout des faisceaux"
+                        beams.add_beams_lung_stereo(beamset=patient.TreatmentPlans[d['plan_name']].BeamSets[d['beamset_name']], examination=d['exam'], ptv_name=d['ptv'].Name, two_arcs=d['two_arcs'])                    
                         
+                    if d['treatment_technique']=='SMLC':
+                        self.Status.Text = "En cours: Ajout des faisceaux"
+                        beams.add_beams_imrt_lung_stereo(beamset=patient.TreatmentPlans[d['plan_name']].BeamSets[d['beamset_name']],examination=d['exam'], ptv_name=d['ptv'].Name)                    
+                        
+                    self.Status.Text = "En cours: Reglage des paramètres d'optimisation"
+                    poumon.poumon_stereo_opt_settings(plan_data = d)
+                        
+                    self.Status.Text = "En cours: Ajout des objectifs d'optimisation et les clinical goals"
+                    clinical_goals.smart_cg_lung_stereo(plan=patient.TreatmentPlans[d['plan_name']], examination=d['exam'], nb_fx=nb_fx, rx_dose=rx_dose, ptv=d['ptv'], beamset=patient.TreatmentPlans[d['plan_name']].BeamSets[d['beamset_name']])              
+                            
+                    
+                    
+                    # Double optimization if requested by user                 
+                    if self.check1.Checked:
+                        if new_plan_name == 'B1': #This indicates a new plan was made (because old one was locked) which only has one beamset, so we need to set plan_opt to 0
+                            plan_opt = 0
+                        self.Status.Text = "Première optimization en cours"
+                        patient.TreatmentPlans[d['plan_name']].PlanOptimizations[plan_opt].RunOptimization()
+                        self.Status.Text = "Deuxième optimization en cours"
+                        patient.TreatmentPlans[d['plan_name']].PlanOptimizations[plan_opt].RunOptimization()
+                    
+
+                # ADD SECOND PLAN USING NEW TECHNIQUE
+                if add_kbp_plan:
+                    self.Status.Text = "Test: Vérification des OARs"
+                    oar_list,laterality = poumon.poumon_stereo_kbp_identify_rois(plan_data=d)
+                    self.Status.Text = "Test: Ajout du plan et beamset test"                    
+                    poumon.poumon_stereo_kbp_add_plan_and_beamset(plan_data=d,laterality=laterality)
+                    self.Status.Text = "Test: Configuration des paramêtres d'optimisation"
+                    poumon.poumon_stereo_kbp_opt_settings(plan_data=d)
+                    self.Status.Text = "Test: Création et optimisation du plan inital"
+                    poumon.poumon_stereo_kbp_initial_plan(plan_data=d,oar_list=oar_list)
+                    self.Status.Text = "Test: Modification des objectifs d'optimisation"
+                    poumon.poumon_stereo_kbp_modify_plan(plan_data=d,oar_list=oar_list)
+                    self.Status.Text = "Test: Optimisation du plan modifié"
+                    poumon.poumon_stereo_kbp_iterate_plan(plan_data=d,oar_list=oar_list)
+
                 
-                
-                # Double optimization if requested by user                 
-                if self.check1.Checked:
-                    if new_plan_name == 'B1': #This indicates a new plan was made (because old one was locked) which only has one beamset, so we need to set plan_opt to 0
-                        plan_opt = 0
-                    self.Status.Text = "Première optimization en cours"
-                    patient.TreatmentPlans[d['plan_name']].PlanOptimizations[plan_opt].RunOptimization()
-                    self.Status.Text = "Deuxième optimization en cours"
-                    patient.TreatmentPlans[d['plan_name']].PlanOptimizations[plan_opt].RunOptimization()
                 self.Status.Text = "Script terminé! Cliquez sur Cancel pour sortir."
                 self.Status.ForeColor = Color.Green   
                 
@@ -2527,13 +2537,13 @@ def crane_3DC_window():
             
             self.fxlabel = Label()
             self.fxlabel.Text = "Nb de fx"
-            self.fxlabel.Location = Point(300, 20)
+            self.fxlabel.Location = Point(310, 20)
             self.fxlabel.Font = Font("Arial", 9)
             self.fxlabel.AutoSize = True                 
 
             self.sitelabel = Label()
             self.sitelabel.Text = "Site"
-            self.sitelabel.Location = Point(360, 20)
+            self.sitelabel.Location = Point(380, 20)
             self.sitelabel.Font = Font("Arial", 9)
             self.sitelabel.AutoSize = True               
             
@@ -2544,12 +2554,12 @@ def crane_3DC_window():
 
             self.fx_value = TextBox()
             self.fx_value.Text = "- - -"
-            self.fx_value.Location = Point(300, offset)
+            self.fx_value.Location = Point(310, offset)
             self.fx_value.Width = 40                      
                         
             self.site_value = TextBox()
             self.site_value.Text = "A1"
-            self.site_value.Location = Point(360, offset)
+            self.site_value.Location = Point(380, offset)
             self.site_value.Width = 40                                  
                         
             CreatePlanButton = Button()

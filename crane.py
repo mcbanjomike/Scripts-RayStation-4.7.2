@@ -601,6 +601,10 @@ def crane_stereo_create_isodose_lines(plan_data):
     patient.CaseSettings.DoseColorMap.PresentationType = 'Absolute'
 
 
+    
+    
+    
+    
 #Script for adding a plan to an existing patient with locked contours and such
 def kbp_test_phase2(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,clinical_beamset):
 
@@ -884,8 +888,6 @@ def kbp_test_phase2(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,
     """
     
     
-
-
 #Script for adding testing multiple plans on a patient - CONTAINS OUR BEST TECHNIQUE FOR SINGLE PTV PLANNING
 def kbp_test_phase3(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,clinical_beamset,change_ct=False):
 
@@ -1120,9 +1122,6 @@ def kbp_test_phase3(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,
         output_file.write(header)      
         output_file.write(result_text)
 
-        
-        
-        
         
 #Script for adding testing multiple plans on a patient with multiple PTVs
 def kbp_test_multi(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,clinical_beamset):
@@ -1676,11 +1675,7 @@ def kbp_test_multi(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,c
         output_file.write(result_text)
         
         
-        
-        
-        
-        
-#Script for adding testing multiple plans on a patient with multiple PTVs - now with more iterations on PTV min doses
+#Script for adding testing multiple plans on a patient with multiple PTVs - strong DVH vs weak DVH
 def kbp_test_multi_v3(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,clinical_beamset):
 
     exam = lib.get_current_examination()
@@ -1984,10 +1979,7 @@ def kbp_test_multi_v3(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_pla
         header += 'Plan clinique,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f\n' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,ptv_coverage1[0]*100,ptv_coverage2[0]*100,ptv_coverage3[0]*100,max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol,max(rx)/100.0)               
         output_file.write(header)      
         output_file.write(result_text)
-                
-                
-                
-                
+                  
         
 #Script for adding testing multiple plans on a patient with multiple PTVs - now with more iterations on PTV min doses
 def kbp_test_multi_v4(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_plan,clinical_beamset):
@@ -2056,7 +2048,7 @@ def kbp_test_multi_v4(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_pla
     result_text = ""
 
 
-    #First plan: 8 rounds of min dose weight adjustments at 1.5x
+    #First plan: 8 rounds of min dose weight adjustments at 1.5x (BEST TECHNIQUE FOR MULTI-PTV)
     plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
     try:
         for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
@@ -2161,7 +2153,7 @@ def kbp_test_multi_v4(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_pla
  
     
 
-    #Second plan: 8 rounds of min dose weight adjustments at 1.25x
+    #Second plan: 8 rounds of min dose weight adjustments at 1.25x (NOT BAD, BUT 1.5x IS BETTER)
     plan.PlanOptimizations[beamset.Number-1].AutoScaleToPrescription = False
     try:
         for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
