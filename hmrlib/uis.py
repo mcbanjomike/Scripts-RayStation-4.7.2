@@ -102,3 +102,12 @@ def open_plan_settings():
         
     except:
         pass
+        
+def set_dual_arc():
+    try:
+        ui = get_current("ui")
+        ui.MenuItem[3].Button_PlanOptimization.Click()
+        ui.Workspace.TabControl['Objectives/Constraints'].TabItem['Beam Optimization Settings'].Select()
+        ui.Workspace.TabControl['Objectives/Constraints'].RayDataGrid.DataGridRow[0].CheckBox[3].Click()
+    except:
+        pass   

@@ -46,8 +46,7 @@ def add_beams_brain_stereo_kbp(beamset=None, site_name='KBP1'):
 
         Par défaut, ajoutes des arcs allant de :
 
-        - 181 à 180 degrés en CW avec collimateur de 5 degrés
-        - 180 à 181 degrés en CCW avec collimateur de 355 degrés
+        - 181 à 180 degrés en CW avec collimateur de 2 degrés
 
         .. rubric::
           PRÉ-REQUIS :

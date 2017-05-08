@@ -76,25 +76,18 @@ def test_MA():
     #beamset = lib.get_current_beamset()
     #exam = lib.get_current_examination()
     #patient = lib.get_current_patient()
-       
+    
     #uis.ui_statetree()
+    #uis.set_dual_arc()
     
     #statistics.auto_collect_crane_stats(startpoint=60,endpoint=999,min_vol=3.999)
     #statistics.batch_autoplan_crane(startpoint=1,endpoint=11,min_vol=1.0)
     #statistics.single_autoplan_crane()
     launcher.crane_launcher()
-    #statistics.auto_collect_lung_stats(startpoint=1,endpoint=1,test_plans=True,print_results=False,show_plan=True)
+    #statistics.auto_collect_lung_stats(startpoint=3,endpoint=3,test_plans=True,print_results=False,show_plan=False,use_dual_arc=False)
     #statistics.auto_collect_lung_stats(startpoint=3,endpoint=8,test_plans=True,print_results=False,show_plan=False)
     #statistics.auto_collect_lung_stats(startpoint=13,endpoint=16,test_plans=True,print_results=False,show_plan=False)
-    
-    #num_ptvs = 2
-    #ptv_names = ['PTV1','PTV2','','']
-    #rx = [1500,1500,0,0]
-    #technique = ['IMRT']
-    
-    #output,header,predicted_vol,rad50,brain_minus_ptv_vol,cerv_ptv_name,tronc_name,tronc_max = statistics.dose_falloff_crane_multi(num_ptvs,ptv_names,rx,technique,patient,plan,beamset)  
 
-    
     
 def test_DM():
     #launcher.verif_finale()

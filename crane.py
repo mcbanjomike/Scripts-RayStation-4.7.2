@@ -2282,3 +2282,559 @@ def kbp_test_multi_v4(num_ptvs,ptv_names,rx,technique,patient,nb_fx,clinical_pla
         output_file.write(result_text)
                 
                 
+
+                
+                
+                
+                
+                
+                
+def crane_stereo_kbp_identify_rois(patient):
+    roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+    oar_list = []
+    missing_oar = []
+   
+    if "CERVEAU*" in roi_names:
+        cerveau_name = "CERVEAU*"
+    elif "CERVEAU" in roi_names:
+        cerveau_name = "CERVEAU"
+    else:
+       missing_oar.append("cerveau pas trouvé")
+
+    if "TR CEREBRAL*" in roi_names:
+        tronc_name = "TR CEREBRAL*"
+    elif "TR CEREBRAL" in roi_names:
+        tronc_name = "TR CEREBRAL" 
+    elif "TRONC CEREBRAL" in roi_names:
+        tronc_name = "TRONC CEREBRAL" 
+    elif "TRONC CEREBRAL*" in roi_names:
+        tronc_name = "TRONC CEREBRAL*" 
+    elif "TR cerebral" in roi_names:
+        tronc_name = "TR cerebral" 
+    elif "TRONC" in roi_names:
+        tronc_name = "TRONC"         
+    elif "TRONC*" in roi_names:
+        tronc_name = "TRONC*"           
+    else:
+        missing_oar.append("tronc cérébral pas trouvé")
+        
+    if len(missing_oar) > 0:
+        oar_list = ['ERROR']
+        for oar in missing_oar:
+            oar_list.append(oar)
+    else:
+        oar_list = [cerveau_name,tronc_name]
+    
+    return oar_list
+    
+    
+def crane_stereo_kbp_predict_dose(plan_data):
+            
+    patient = plan_data['patient']
+    ptv_names = plan_data['ptv_names']
+    exam = plan_data['exam']
+    site = plan_data['site_name']
+    cerveau_name = plan_data['oar_list'][0]
+    num_ptvs = len(ptv_names)
+    
+    #If predictions already exist, skip the roi creation and return only the predicted volumes
+    if not roi.roi_exists("sum_ptvs_smooth_"+site):
+        ptv_vol = []
+        #For each PTV, create isodose prediction ROIs
+        for i,ptv in enumerate(ptv_names):
+            #Expand and contract PTV to smooth
+            roi.create_expanded_ptv(ptv_names[i], color="SteelBlue", examination=exam, margeptv=3, output_name='stats_ptv')
+            roi.create_expanded_ptv('stats_ptv+3cm', color="SteelBlue", examination=exam, margeptv=2.95, output_name='stats_ptv+3cm',operation='Contract')
+            ptv_vol.append(patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_names[i]].GetRoiVolume())
+            
+            #Calculate radii of the predicted isodoses
+            marge_lat = 0.07
+            marge_sup_inf = 0.02
+            
+            rad100 = marge_lat
+            rad90 = 0.0013*ptv_vol[i] + 0.1314 + marge_lat
+            rad80 = 0.0029*ptv_vol[i] + 0.2386 + marge_lat
+            rad70 = 0.0048*ptv_vol[i] + 0.4109 + marge_lat
+            rad60 = 0.0078*ptv_vol[i] + 0.6000 + marge_lat
+            rad50 = 0.0122*ptv_vol[i] + 0.8800 + marge_lat
+            rad40 = 0.0165*ptv_vol[i] + 1.4200 + marge_lat
+            
+            rad100_si = marge_sup_inf
+            rad90_si = 0.0000*ptv_vol[i] + 0.0818 + marge_sup_inf
+            rad80_si = 0.0014*ptv_vol[i] + 0.1293 + marge_sup_inf
+            rad70_si = 0.0028*ptv_vol[i] + 0.1906 + marge_sup_inf
+            rad60_si = 0.0048*ptv_vol[i] + 0.2351 + marge_sup_inf     
+            rad50_si = 0.0058*ptv_vol[i] + 0.2931 + marge_sup_inf
+            rad40_si = 0.0084*ptv_vol[i] + 0.3449 + marge_sup_inf 
+            
+            #Create predicted isodose ROIs starting from smoothed PTV
+            roi.create_expanded_roi('stats_ptv+3cm-2.95cm', color="Yellow", examination=exam, marge_lat=rad100, marge_sup_inf = rad100_si, output_name='predicted_r100_'+str(i))
+            roi.create_expanded_roi('stats_ptv+3cm-2.95cm', color="Green",  examination=exam, marge_lat=rad90,  marge_sup_inf = rad90_si, output_name='predicted_r90_'+str(i))
+            roi.create_expanded_roi('stats_ptv+3cm-2.95cm', color="Red",    examination=exam, marge_lat=rad80,  marge_sup_inf = rad80_si, output_name='predicted_r80_'+str(i))
+            roi.create_expanded_roi('stats_ptv+3cm-2.95cm', color="Pink",   examination=exam, marge_lat=rad70,  marge_sup_inf = rad70_si, output_name='predicted_r70_'+str(i))
+            roi.create_expanded_roi('stats_ptv+3cm-2.95cm', color="Blue",   examination=exam, marge_lat=rad60,  marge_sup_inf = rad60_si, output_name='predicted_r60_'+str(i))
+            roi.create_expanded_roi('stats_ptv+3cm-2.95cm', color="Tomato", examination=exam, marge_lat=rad50,  marge_sup_inf = rad50_si, output_name='predicted_r50_'+str(i))
+            roi.create_expanded_roi('stats_ptv+3cm-2.95cm', color="Brown",  examination=exam, marge_lat=rad40,  marge_sup_inf = rad40_si, output_name='predicted_r40_'+str(i))
+            
+            #Erase unneeded expansion of PTV, rename smoothed volume
+            patient.PatientModel.RegionsOfInterest['stats_ptv+3cm'].DeleteRoi()
+            patient.PatientModel.RegionsOfInterest['stats_ptv+3cm-2.95cm'].Name = 'ptv_smooth_' + str(i)        
+
+        #Sum the smoothed volumes for the different PTVs; also create sum of PTVs for site
+        if num_ptvs == 1:
+            patient.PatientModel.CreateRoi(Name="sum_ptvs_smooth_"+site, Color="128, 128, 192", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest["sum_ptvs_smooth_"+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['ptv_smooth_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['ptv_smooth_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest["sum_ptvs_smooth_"+site].UpdateDerivedGeometry(Examination=exam)    
+            patient.PatientModel.CreateRoi(Name="sum_ptvs_"+site, Color="128, 128, 192", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest["sum_ptvs_"+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [ptv_names[0]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv_names[0]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest["sum_ptvs_"+site].UpdateDerivedGeometry(Examination=exam)                
+        elif num_ptvs == 2:
+            patient.PatientModel.CreateRoi(Name="sum_ptvs_smooth_"+site, Color="128, 128, 192", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest["sum_ptvs_smooth_"+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['ptv_smooth_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['ptv_smooth_1'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest["sum_ptvs_smooth_"+site].UpdateDerivedGeometry(Examination=exam)
+            patient.PatientModel.CreateRoi(Name="sum_ptvs_"+site, Color="128, 128, 192", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest["sum_ptvs_"+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [ptv_names[0]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv_names[1]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest["sum_ptvs_"+site].UpdateDerivedGeometry(Examination=exam)              
+        elif num_ptvs == 3:
+            patient.PatientModel.CreateRoi(Name="sum_ptvs_smooth_"+site, Color="128, 128, 192", Type="Ptv", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest["sum_ptvs_smooth_"+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['ptv_smooth_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['ptv_smooth_1','ptv_smooth_2'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest["sum_ptvs_smooth_"+site].UpdateDerivedGeometry(Examination=exam) 
+            patient.PatientModel.CreateRoi(Name="sum_ptvs_"+site, Color="128, 128, 192", Type="Ptv", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest["sum_ptvs_"+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [ptv_names[0]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv_names[1],ptv_names[2]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest["sum_ptvs_"+site].UpdateDerivedGeometry(Examination=exam)                
+        
+        #Combine the expanded volumes (except if there's only one PTV, in which case we just rename the existing ones)
+        if num_ptvs == 1:
+            patient.PatientModel.RegionsOfInterest['predicted_r100_0'].Name = 'predicted_r100_'+site
+            patient.PatientModel.RegionsOfInterest['predicted_r90_0'].Name = 'predicted_r90_'+site
+            patient.PatientModel.RegionsOfInterest['predicted_r80_0'].Name = 'predicted_r80_'+site
+            patient.PatientModel.RegionsOfInterest['predicted_r70_0'].Name = 'predicted_r70_'+site
+            patient.PatientModel.RegionsOfInterest['predicted_r60_0'].Name = 'predicted_r60_'+site
+            patient.PatientModel.RegionsOfInterest['predicted_r50_0'].Name = 'predicted_r50_'+site
+            patient.PatientModel.RegionsOfInterest['predicted_r40_0'].Name = 'predicted_r40_'+site
+        else:
+            patient.PatientModel.CreateRoi(Name="predicted_r100_"+site, Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.CreateRoi(Name="predicted_r90_"+site, Color="Red", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.CreateRoi(Name="predicted_r80_"+site, Color="Pink", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.CreateRoi(Name="predicted_r70_"+site, Color="Blue", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.CreateRoi(Name="predicted_r60_"+site, Color="Tomato", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.CreateRoi(Name="predicted_r50_"+site, Color="Brown", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.CreateRoi(Name="predicted_r40_"+site, Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
+            
+            if num_ptvs == 2:
+                patient.PatientModel.RegionsOfInterest['predicted_r100_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r100_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r100_1'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                patient.PatientModel.RegionsOfInterest['predicted_r90_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r90_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r90_1'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                patient.PatientModel.RegionsOfInterest['predicted_r80_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r80_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r80_1'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                patient.PatientModel.RegionsOfInterest['predicted_r70_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r70_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r70_1'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                patient.PatientModel.RegionsOfInterest['predicted_r60_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r60_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r60_1'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                patient.PatientModel.RegionsOfInterest['predicted_r50_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r50_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r50_1'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                patient.PatientModel.RegionsOfInterest['predicted_r40_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r40_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r40_1'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            elif num_ptvs == 3:
+                patient.PatientModel.RegionsOfInterest['predicted_r100_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r100_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r100_1','predicted_r100_2'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                patient.PatientModel.RegionsOfInterest['predicted_r90_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r90_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r90_1','predicted_r90_2'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                patient.PatientModel.RegionsOfInterest['predicted_r80_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r80_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r80_1','predicted_r80_2'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                patient.PatientModel.RegionsOfInterest['predicted_r70_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r70_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r70_1','predicted_r70_2'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                patient.PatientModel.RegionsOfInterest['predicted_r60_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r60_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r60_1','predicted_r60_2'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                patient.PatientModel.RegionsOfInterest['predicted_r50_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r50_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r50_1','predicted_r50_2'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                patient.PatientModel.RegionsOfInterest['predicted_r40_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ['predicted_r40_0'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['predicted_r40_1','predicted_r40_2'], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Union", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                    
+            patient.PatientModel.RegionsOfInterest['predicted_r100_'+site].UpdateDerivedGeometry(Examination=exam)
+            patient.PatientModel.RegionsOfInterest['predicted_r90_'+site].UpdateDerivedGeometry(Examination=exam)
+            patient.PatientModel.RegionsOfInterest['predicted_r80_'+site].UpdateDerivedGeometry(Examination=exam)
+            patient.PatientModel.RegionsOfInterest['predicted_r70_'+site].UpdateDerivedGeometry(Examination=exam)
+            patient.PatientModel.RegionsOfInterest['predicted_r60_'+site].UpdateDerivedGeometry(Examination=exam)
+            patient.PatientModel.RegionsOfInterest['predicted_r50_'+site].UpdateDerivedGeometry(Examination=exam)
+            patient.PatientModel.RegionsOfInterest['predicted_r40_'+site].UpdateDerivedGeometry(Examination=exam)
+
+        #Clean up ROIs
+        roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
+        for name in roi_names:
+            if ('ptv_smooth' in name or 'predicted_r' in name) and name[-2:] in ['_0','_1','_2']:
+                patient.PatientModel.RegionsOfInterest[name].DeleteRoi()
+     
+    #Calculate total smoothed volume
+    smoothed_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries["sum_ptvs_smooth_"+site].GetRoiVolume()    
+    ptv_in_cerv_vol =  roi.get_intersecting_volume("sum_ptvs_smooth_"+site, cerveau_name, examination=exam)      
+   
+    #Calculate predicted volumes for each isodose
+    predicted_vol = [0,0,0,0,0,0,0]
+    predicted_vol[0] = roi.get_intersecting_volume('predicted_r100_'+site, cerveau_name, examination=exam) - ptv_in_cerv_vol
+    predicted_vol[1] = roi.get_intersecting_volume('predicted_r90_'+site, cerveau_name, examination=exam) - ptv_in_cerv_vol
+    predicted_vol[2] = roi.get_intersecting_volume('predicted_r80_'+site, cerveau_name, examination=exam) - ptv_in_cerv_vol
+    predicted_vol[3] = roi.get_intersecting_volume('predicted_r70_'+site, cerveau_name, examination=exam) - ptv_in_cerv_vol
+    predicted_vol[4] = roi.get_intersecting_volume('predicted_r60_'+site, cerveau_name, examination=exam) - ptv_in_cerv_vol
+    predicted_vol[5] = roi.get_intersecting_volume('predicted_r50_'+site, cerveau_name, examination=exam) - ptv_in_cerv_vol
+    predicted_vol[6] = roi.get_intersecting_volume('predicted_r40_'+site, cerveau_name, examination=exam) - ptv_in_cerv_vol
+    
+    #Correct volumes for 70/60/50/40 according to empirical formulas that Malik devised, using average volume of PTVs
+    predicted_vol[3] = predicted_vol[3] - (smoothed_vol/num_ptvs)*0.063 - 0.17
+    predicted_vol[4] = predicted_vol[4] - (smoothed_vol/num_ptvs)*0.011 - 0.9
+    predicted_vol[5] = predicted_vol[5] - (smoothed_vol/num_ptvs)*0.048 - 1.3
+    predicted_vol[6] = predicted_vol[6] + (smoothed_vol/num_ptvs)*0.03 - 6.4      
+
+    #Make a ring based on the estimated radius of the 40% isodose (with an added margin in sup-inf to control which leaf pairs are open), but restricted to the brain and excluding the PTV
+    if not roi.roi_exists('OPT CERVEAU_'+site):
+        roi.create_expanded_roi('predicted_r40_'+site, color="Brown",  examination=exam, marge_lat=0,  marge_sup_inf = 0.5, output_name='temp_r40_mod')
+        patient.PatientModel.CreateRoi(Name='OPT CERVEAU_'+site, Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest['OPT CERVEAU_'+site].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["temp_r40_mod", cerveau_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ["sum_ptvs_smooth_"+site], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        patient.PatientModel.RegionsOfInterest['OPT CERVEAU_'+site].UpdateDerivedGeometry(Examination=exam)       
+        patient.PatientModel.RegionsOfInterest['temp_r40_mod'].DeleteRoi()       
+    
+    return predicted_vol
+       
+    
+def crane_stereo_kbp_predict_oar_dose(plan_data):
+
+    site = plan_data['site_name']
+    exam = plan_data['exam']
+    rx_dose = plan_data['rx_dose']
+    tronc_name = plan_data['oar_list'][1]
+
+    #Detailed analysis to predict dose to tronc
+    tronc_est = 0 #Dose that we expect the tronc to receive (in cGy)
+    ring_list = ['predicted_r40_'+site,'predicted_r50_'+site,'predicted_r60_'+site,'predicted_r70_'+site,'predicted_r80_'+site,'predicted_r90_'+site,'predicted_r100_'+site]
+    for r in ring_list:
+        if roi.get_intersecting_volume(tronc_name, r, examination=exam) > 0: #Tronc overlaps with this predicted dose level
+            tronc_est = int(r.split('_')[1][1:])*rx_dose/100
+        else:
+            break
+    
+    if tronc_est > 800:
+        tronc_max = 800
+    elif tronc_est > 500 and tronc_est <= 800:
+        tronc_max = tronc_est
+    else:
+        tronc_max = 500
+        
+    return tronc_max
+    
+   
+def crane_stereo_kbp_add_VMAT_plan_and_beamset(plan_data):    
+    
+    name = plan_data['site_name'] + ' VMAT'
+    
+    # Add Treatment plan
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    plan = plan_data['patient'].AddNewPlan(PlanName=name, PlannedBy=planner_name, Comment="", ExaminationName=plan_data['exam'].Name, AllowDuplicateNames=False)
+    
+    plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset
+    beamset = plan.AddNewBeamSet(Name=name, ExaminationName=plan_data['exam'].Name, MachineName=plan_data['machine'], NominalEnergy=None,
+                                      Modality="Photons", TreatmentTechnique='VMAT', PatientPosition="HeadFirstSupine", NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment='VMAT')
+    beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv_names'][0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)    
+    
+    # Add beam
+    beams.add_beams_brain_stereo_kbp(beamset=beamset, site_name=plan_data['site_name'])
+    
+    # Set optimization parameters
+    optim.set_optimization_parameters(plan=plan)
+    optim.set_vmat_conversion_parameters(max_arc_delivery_time=350.0, plan=plan)
+    
+    return plan,beamset
+    
+    
+def crane_stereo_kbp_add_IMRT_plan_and_beamset(plan_data):    
+    
+    name = plan_data['site_name'] + ' IMRT'
+    
+    # Add Treatment plan
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    plan = plan_data['patient'].AddNewPlan(PlanName=name, PlannedBy=planner_name, Comment="", ExaminationName=plan_data['exam'].Name, AllowDuplicateNames=False)
+    
+    plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
+
+    # Add beamset
+    beamset = plan.AddNewBeamSet(Name=name, ExaminationName=plan_data['exam'].Name, MachineName=plan_data['machine'], NominalEnergy=None,
+                                      Modality="Photons", TreatmentTechnique='SMLC', PatientPosition="HeadFirstSupine", NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment='IMRT')
+    beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv_names'][0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)    
+    
+    # Add beam
+    beams.add_beams_brain_static(beamset=beamset,site_name=plan_data['site_name'],iso_name='ISO', exam=plan_data['exam'], nb_beams = 9)
+    
+    # Set optimization parameters
+    plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
+    plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 100
+    plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.IterationsInPreparationsPhase = 60
+    plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.ComputeFinalDose = True          
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 20        
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinLeafEndSeparation = 1
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs = 3
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentArea = 2
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MaxNumberOfSegments = 40
+    
+    return plan,beamset
+    
+ 
+def crane_stereo_kbp_add_3DC_plan(plan_data):
+    
+    patient = plan_data['patient']
+    site = plan_data['site_name']
+    exam = plan_data['exam']
+    name = site + ' ' + plan_data['technique']
+    cerveau_name = plan_data['oar_list'][0]
+    
+    # Add plan
+    planner_name = lib.get_user_name(os.getenv('USERNAME'))
+    plan = patient.AddNewPlan(PlanName=name, PlannedBy=planner_name, Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
+    plan.SetDefaultDoseGrid(VoxelSize={ 'x': 0.2, 'y': 0.2, 'z': 0.2 })
+    
+    # Add beamset
+    beamset = plan.AddNewBeamSet(Name=name, ExaminationName=exam.Name, MachineName=plan_data['machine'], NominalEnergy=None, Modality="Photons", TreatmentTechnique="Conformal", PatientPosition="HeadFirstSupine", NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, UseLocalizationPointAsSetupIsocenter=False, Comment=plan_data['technique'])
+    beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv_names'][0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1, AutoScaleDose=False)
+
+    # Add beams
+    if plan_data['technique'] == 'IMRT':
+        nb_beams = 9
+    elif plan_data['technique'] == '3DC':
+        nb_beams = 13
+    beams.add_beams_brain_static(beamset=beamset, site_name=plan_data['site_name'], iso_name='ISO', exam=exam, nb_beams=nb_beams)    
+    
+    # Create OPTPTV
+    if not roi.roi_exists("OPTPTV_"+site): #We put an underscore as the first character to guarantee that the OPTPTV shows up in the Treat and Protect list before the PTV
+        patient.PatientModel.CreateRoi(Name="OPTPTV_"+site, Color="Yellow", Type="Ptv", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest["OPTPTV_"+site].SetMarginExpression(SourceRoiName='sum_ptvs_'+site, MarginSettings={'Type': "Expand", 'Superior': 0.15, 'Inferior': 0.15, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        patient.PatientModel.RegionsOfInterest["OPTPTV_"+site].UpdateDerivedGeometry(Examination=exam)
+    # Create CERVEAU-PTV
+    if not roi.roi_exists("CERVEAU-PTV_"+site):
+        patient.PatientModel.CreateRoi(Name="CERVEAU-PTV_"+site, Color="Orange", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest["CERVEAU-PTV_"+site].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': [cerveau_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['sum_ptvs_'+site], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        patient.PatientModel.RegionsOfInterest["CERVEAU-PTV_"+site].UpdateDerivedGeometry(Examination=exam)    
+            
+    # Make the new plan active through the GUI (required so we can manipulate GUI elements below)
+    ui = get_current("ui")
+    # We have to save before selecting the plan
+    patient.Save()
+    ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.Popup.ComboBoxItem[name].Select()  
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
+    
+    # Conform the MLCs to the OPTPTV
+    ui.TabControl_Modules.TabItem['3D-CRT Beam Design'].Select()
+    ui.TabControl_ToolBar.ToolBarGroup['TREAT AND PROTECT'].Button_PlanSettings.Click()
+
+    # Change settings in Plan Settings window
+    for row in ui.RoisUsedForPlanningView.DataGridRow:
+        if row.RoiGeometry.TextBlock_Name.Text == 'OPTPTV_'+site or row.RoiGeometry.TextBlock_Name.Text == plan_data['ptv_names'][0]:
+            if not row.CheckBox.IsChecked:
+                row.CheckBox.Click()    
+        elif row.CheckBox.IsChecked:
+            row.CheckBox.Click()
+
+    ui.TextBox_LeafPositioningThreshold.Text = '0.25'
+    ui.Button_OK.Click()
+   
+    # Check boxes to treat OPTPTV
+    # Determine which column corresponds to the OPTPTV
+    #if ui.Workspace.TabControl['Beams'].RayDataGrid.DataGridColumnHeader['Treat'].RoiGeometry[0].TextBlock_Name.Text == 'OPTPTV_'+site:
+    #    optptv_index = 0
+    #else:
+    #    optptv_index = 1
+    # Check the boxes for the OPTPTV and uncheck the boxes for the PTV
+    ui.Workspace.TabControl['Beams'].TabItem['Treat and Protect'].Select()
+    for row in ui.Workspace.TabControl['Beams'].RayDataGrid.DataGridRow:
+        #if optptv_index == 0:
+        if not row.CheckBox[0].IsChecked:
+            row.CheckBox[0].Click()   
+        if not row.CheckBox[1].IsChecked:
+            row.CheckBox[1].Click()
+        #elif optptv_index == 1:
+        #    if not row.CheckBox[1].IsChecked:
+        #        row.CheckBox[1].Click()   
+        #    if row.CheckBox[0].IsChecked:
+        #        row.CheckBox[0].Click()                
+            
+    # Actually conform the MLCs
+    ui.TabControl_ToolBar.ToolBarGroup['TREAT AND PROTECT'].Button_ConformAllBeams.Click()
+    
+    return plan,beamset
+
+    
+def crane_stereo_convert_3DC_IMRT(plan,beamset):
+    ui = get_current("ui")
+    ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
+    ui.TabControl_Modules.TabItem['Plan Setup'].Select()
+    ui.TabControl_ToolBar.ToolBarGroup['PLAN PREPARATION'].Button_EditPlan.Click()
+    ui.TabControl.TreatmentSetup.TreatmentSetup2.ComboBox_AvailableTreatmentTechniques.ToggleButton.Click()
+    ui.TabControl.TreatmentSetup.TreatmentSetup2.ComboBox_AvailableTreatmentTechniques.Popup.ComboBoxItem['SMLC'].Select()
+    ui.TabControl.TreatmentSetup.TreatmentSetup2.ComboBox_AvailableTreatmentTechniques.ToggleButton.Click()
+    ui.Button_OK.Click()
+    
+    # Set optimization parameters
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
+    plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 100
+    plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.IterationsInPreparationsPhase = 60
+    plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.ComputeFinalDose = True          
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 20        
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinLeafEndSeparation = 1
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs = 3
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentArea = 2
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MaxNumberOfSegments = 40
+    
+ 
+def crane_stereo_kbp_optimize_3DC_plan(plan_data,plan,beamset):
+
+    patient = plan_data['patient']
+    rx_dose = plan_data['rx_dose']
+    nb_fx = plan_data['nb_fx']
+    site = plan_data['site_name']
+
+    # Calculate dose and scale to Rx
+    beamset.ComputeDose(ComputeBeamDoses=True, DoseAlgorithm="CCDose", ForceRecompute=True)
+    beamset.NormalizeToPrescription(RoiName=plan_data['ptv_names'][0], DoseValue=rx_dose, DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=False)                  
+    
+    # Save plan and create copy
+    patient.Save()
+    plan = patient.CopyPlan(PlanName=site+" 3DC", NewPlanName=site+" 3DC optimised")
+    
+    # In the new plan, change optimization settings
+    patient.Save() #Might not be necessary a second time, I'm not sure
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.Popup.ComboBoxItem['3DC optimised'].Select()    
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
+    
+    plan = lib.get_current_plan()
+    beamset = lib.get_current_beamset()
+    
+    plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
+    plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 30
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 6
+    plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.ComputeFinalDose = True    
+    
+    # Uncheck Segment Shape optimization for all beams
+    ui.MenuItem[3].Button_PlanOptimization.Click() #Select Plan Optimization tab
+    ui.Workspace.TabControl['Objectives/Constraints'].TabItem['Beam Optimization Settings'].Select()
+    if ui.Workspace.TabControl['Objectives/Constraints'].RayDataGrid.DataGridColumnHeader['Segment shapes'].CheckBox.IsChecked:
+        ui.Workspace.TabControl['Objectives/Constraints'].RayDataGrid.DataGridColumnHeader['Segment shapes'].CheckBox.Click()
+    
+    # Add optimization objectives
+    optim.add_mindose_objective(plan_data['ptv_names'][0], rx_dose, weight=1, plan=plan)
+    optim.add_dosefalloff_objective('BodyRS', rx_dose, rx_dose*0.45, 0.7, weight=10, plan=plan) 
+    
+    # Optimize plan twice
+    plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+    plan.PlanOptimizations[beamset.Number-1].RunOptimization()
+    
+    
+def crane_stereo_kbp_initial_optimization_objectives(plan_data,plan,predicted_vol,tronc_max):
+    patient = plan_data['patient']
+    ptv_names = plan_data['ptv_names']
+    rx = plan_data['rx']
+    site = plan_data['site_name']
+    exam = plan_data['exam']
+    tronc_name = plan_data['oar_list'][1]
+    
+    ring_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['OPT CERVEAU_'+site].GetRoiVolume()
+    
+    if len(ptv_names) == 1: #Single PTV
+        optim.add_mindose_objective(ptv_names[0], rx[0], weight=50, plan=plan, plan_opt=0)
+        optim.add_dosefalloff_objective('BodyRS',     rx[0]*1.02, rx[0]*0.40, 0.4, weight=5, plan=plan, plan_opt=0)
+        optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.6, rx[0]*0.15, 1.0, weight=1, plan=plan, plan_opt=0)
+        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.8, 100*predicted_vol[2]/ring_vol, weight=10, plan=plan, plan_opt=0)
+        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.7, 100*predicted_vol[3]/ring_vol, weight=10, plan=plan, plan_opt=0)
+        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, 100*predicted_vol[4]/ring_vol, weight=5, plan=plan, plan_opt=0)    
+        optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
+        
+    elif len(ptv_names) > 1: #Multiple PTVs
+        for i,ptv in enumerate(ptv_names):
+            optim.add_mindose_objective(ptv_names[i], rx[i], weight=15, plan=plan, plan_opt=0)
+            
+        optim.add_dosefalloff_objective('BodyRS', max(rx)*1.00, max(rx)*0.40, 0.4, weight=10, plan=plan, plan_opt=0)
+        optim.add_dosefalloff_objective('BodyRS', max(rx)*0.60, max(rx)*0.20, 1.0, weight=5, plan=plan, plan_opt=0)   
+        
+        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.8, 100*predicted_vol[2]/ring_vol, weight=10, plan=plan, plan_opt=0)
+        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.7, 100*predicted_vol[3]/ring_vol, weight=10, plan=plan, plan_opt=0)
+        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, 100*predicted_vol[4]/ring_vol, weight=5, plan=plan, plan_opt=0) 
+        
+        optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
+        optim.add_maxdose_objective('OEIL DRT', 800, weight=1.0, plan=plan, plan_opt=0)                        
+        optim.add_maxdose_objective('OEIL GCHE', 800, weight=1.0, plan=plan, plan_opt=0)      
+        optim.add_maxdose_objective('CHIASMA', 800, weight=1.0, plan=plan, plan_opt=0)        
+        
+        
+def crane_stereo_kbp_modify_plan_single_ptv(plan_data,plan,beamset,predicted_vol,tronc_max):
+    patient = plan_data['patient']
+    ptv_names = plan_data['ptv_names']
+    rx = plan_data['rx']
+    nb_fx = plan_data['nb_fx']
+    tronc_name = plan_data['oar_list'][1]
+    site = plan_data['site_name']
+    exam = plan_data['exam']
+
+    ring_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['OPT CERVEAU_'+site].GetRoiVolume()
+    
+    #If obtained DVH in brain is lower than prediction, change volume to obtained-1% of ROI volume
+    initial_brain_dvh = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName='OPT CERVEAU_'+site, DoseValues=[rx[0]*0.8/nb_fx,rx[0]*0.7/nb_fx,rx[0]*0.6/nb_fx])
+    brain80 = min(100*predicted_vol[2]/ring_vol,100*initial_brain_dvh[0]-1)
+    brain70 = min(100*predicted_vol[3]/ring_vol,100*initial_brain_dvh[1]-1)
+    brain60 = min(100*predicted_vol[4]/ring_vol,100*initial_brain_dvh[2]-1)
+    
+    #Replace optimization objectives with updated values
+    for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+        objective.DeleteFunction()    
+
+    optim.add_mindose_objective(ptv_names[0], rx[0], weight=50, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS', rx[0]*1.02, rx[0]*0.40, 0.4, weight=5, plan=plan, plan_opt=0)
+    optim.add_dosefalloff_objective('BodyRS', rx[0]*0.6, rx[0]*0.15, 1.0, weight=1, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.8, brain80, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.7, brain70, weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, brain60, weight=5, plan=plan, plan_opt=0)    
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)                        
+     
+    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+    
+    
+def crane_stereo_kbp_modify_plan_multi_ptv(plan_data,plan,beamset):
+    patient = plan_data['patient']
+    ptv_names = plan_data['ptv_names']
+    rx = plan_data['rx']
+    nb_fx = plan_data['nb_fx']
+    num_ptvs = len(ptv_names)
+
+    #Get initial coverage before scaling
+    initial_ptv_cov = []   
+    for i,ptv in enumerate(ptv_names):
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[i], DoseValues=[rx[i]/nb_fx])
+        initial_ptv_cov.append(ptv_coverage[0])
+    
+    #Increase weight of lower PTV(s)
+    boost_list = []        
+    for i,cov in enumerate(initial_ptv_cov):
+        if max(initial_ptv_cov) - cov > 0.01:
+            boost_list.append(ptv_names[i])
+        if cov == min(initial_ptv_cov):
+            prescribe_to = i
+    
+    if len(boost_list) > 0: #If some PTVs have poor coverage, modify min dose weights and reoptimize
+        #Modify weights and reoptimize
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions: 
+            try:
+                f_type = objective.DoseFunctionParameters.FunctionType  # Dose falloff objectives do not have a FunctionType and must be skipped
+            except:
+                continue
+            if f_type == "MinDose" and objective.ForRegionOfInterest.Name in boost_list:    
+                objective.DoseFunctionParameters.Weight = 1.25*objective.DoseFunctionParameters.Weight
+        
+        plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+        plan.PlanOptimizations[beamset.Number-1].RunOptimization()        
+        continue_optimization = True
+    else: #If all PTVs are covered equally, stop here
+        continue_optimization = False
+        
+    return continue_optimization
+        
+        
+def crane_stereo_kbp_scale_dose_multi_ptv(plan_data,beamset):    
+    ptv_names = plan_data['ptv_names']
+    rx = plan_data['rx']
+    nb_fx = plan_data['nb_fx']
+    
+    #For each PTV, check coverage and scale plan up if necessary (this ensures that all PTVs are covered)
+    for i,ptv in enumerate(ptv_names):
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[i], DoseValues=[rx[i]/nb_fx])
+        if ptv_coverage[0] < 0.99:
+            beamset.NormalizeToPrescription(RoiName=ptv_names[i], DoseValue=rx[i], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)     
+    
+
