@@ -484,6 +484,12 @@ def poumon_stereo_kbp_initial_plan(plan_data,oar_list):
     body_name = oar_list[12]
     opt_pmns_name = oar_list[13]    
 
+    #Set PTV contour type
+    try:
+        roi.set_roi_type(ptv_name, 'Ptv', 'Target')
+    except:
+        pass    
+    
     #Collect ROI info
     ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_name].GetRoiVolume()  
 

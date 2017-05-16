@@ -83,7 +83,16 @@ def test_MA():
     #statistics.auto_collect_crane_stats(startpoint=60,endpoint=999,min_vol=3.999)
     #statistics.batch_autoplan_crane(startpoint=1,endpoint=11,min_vol=1.0)
     #statistics.single_autoplan_crane()
+    
     launcher.crane_launcher()
+    #launcher.foie_calculer_ntcp()
+    """
+    rx = [1500]
+    predicted_vol = [0.11,3.08,7.24,11.49,11.88,28.19,44.94]
+    v10 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=1000)
+    message.message_window(v10)
+    """
+    
     #statistics.auto_collect_lung_stats(startpoint=3,endpoint=3,test_plans=True,print_results=False,show_plan=False,use_dual_arc=False)
     #statistics.auto_collect_lung_stats(startpoint=3,endpoint=8,test_plans=True,print_results=False,show_plan=False)
     #statistics.auto_collect_lung_stats(startpoint=13,endpoint=16,test_plans=True,print_results=False,show_plan=False)

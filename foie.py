@@ -42,7 +42,7 @@ except Exception as e:
         pass
         
     
-def calculer_NTCP_foie(rx_dose=None, nb_fx=None, CHC=False):
+def calculer_NTCP_foie(rx_dose=None, nb_fx=None, CHC=False, roi_name='FOIE EXPI-GTV'):
     #Code to calculate differential DVH
     #Taken from RayStation 4.5 Scripting Guideline
     #Note that all dose values are converted from cGy to Gy to be consistent with Excel spreadsheet
@@ -61,7 +61,7 @@ def calculer_NTCP_foie(rx_dose=None, nb_fx=None, CHC=False):
         rx_dose = float(beamset.Prescription.PrimaryDosePrescription.DoseValue)/100.0
     if nb_fx is None:
         nb_fx = float(beamset.FractionationPattern.NumberOfFractions)
-    volume=roi.get_roi_volume("FOIE EXPI-GTV", exam=examination)
+    volume=roi.get_roi_volume(roi_name, exam=examination)
     
     #Set bin size (Gy)
     bin_size = 0.01 #keep as float
@@ -75,7 +75,7 @@ def calculer_NTCP_foie(rx_dose=None, nb_fx=None, CHC=False):
     plan_max_dose = math.ceil(max(plan_dose)*100)/100.0
     #Compute differential DVH
     #Get dose grid ROI representation
-    dgr = plan.TreatmentCourse.TotalDose.GetDoseGridRoi(RoiName="FOIE EXPI-GTV")
+    dgr = plan.TreatmentCourse.TotalDose.GetDoseGridRoi(RoiName=roi_name)
     roi_dose = [plan_dose[vi] for vi in dgr.RoiVolumeDistribution.VoxelIndices]
     roi_max_dose = math.ceil(max(roi_dose)*100)/100.0
     #Set number of bins
@@ -95,7 +95,8 @@ def calculer_NTCP_foie(rx_dose=None, nb_fx=None, CHC=False):
         dvh_file.write('Dose de prescription:       %.2fGy\n' % rx_dose)
         dvh_file.write('Dose max globale:           %.2fGy\n' % plan_max_dose)
         dvh_file.write('Dose max au FOIE EXPI-GTV:  %.2fGy\n' % roi_max_dose)
-        dvh_file.write('Volume du FOIE EXPI-GTV:    %.2fcc\n\n' % volume)
+        dvh_file.write('Volume du FOIE EXPI-GTV:    %.2fcc\n' % volume)
+
 
         #Calculate Veff
         sum_max = 0.0
@@ -125,8 +126,10 @@ def calculer_NTCP_foie(rx_dose=None, nb_fx=None, CHC=False):
         #Calculate NTCP
         if CHC:
             TD50_1 = 39.8
+            diagnostic = 'CHC'
         else: #Meta
             TD50_1 = 45.8
+            diagnostic = 'Méta'
             
         m = 0.12
         t = (rx_norm - TD50_1*sum_presc_BED**(-n))/(m*TD50_1*sum_presc_BED**(-n))
@@ -179,6 +182,8 @@ def calculer_NTCP_foie(rx_dose=None, nb_fx=None, CHC=False):
         sum_presc_BED *= 100.0
         NTCP *= 100.0
         
+        dvh_file.write('Diagnostic:                 %s (TD50-1 de %.1fGy)\n' % (diagnostic,TD50_1))
+        dvh_file.write('ROI évalué:                 %s \n\n' % roi_name)
         #dvh_file.write('\nVolume check (should be 1): %.4f\n' % total_volume)
         dvh_file.write('Dose max normalized to 1.5Gy/fx: %.2fGy\n' % max_norm)
         dvh_file.write('Dose Rx normalized to 1.5Gy/fx : %.2fGy\n' % rx_norm)
@@ -201,6 +206,8 @@ def calculer_NTCP_foie(rx_dose=None, nb_fx=None, CHC=False):
             di_BED = diff_dose * (1+(diff_dose/nb_fx)/alpha_beta)/(1+(ref_dose_fx/alpha_beta))
             diff_volume = dd
             dvh_file.write('%6.2f          %1.10f            %10.2f               %1.10f\n' % (diff_dose, dd, di_BED, dd))
+            
+        return sum_presc_BED,NTCP
 
                                    
 #Main block of scripts for stereo IMRT/VMAT liver cases
