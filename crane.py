@@ -2543,6 +2543,8 @@ def crane_stereo_kbp_add_VMAT_plan_and_beamset(plan_data):
 def crane_stereo_kbp_add_IMRT_plan_and_beamset(plan_data):    
     
     name = plan_data['site_name'] + ' IMRT'
+    if plan_data['couch']:
+        name += ' Couch'    
     
     # Add Treatment plan
     planner_name = lib.get_user_name(os.getenv('USERNAME'))
@@ -2556,7 +2558,10 @@ def crane_stereo_kbp_add_IMRT_plan_and_beamset(plan_data):
     beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv_names'][0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)    
     
     # Add beam
-    beams.add_beams_brain_static(beamset=beamset,site_name=plan_data['site_name'],iso_name=plan_data['iso_name'], exam=plan_data['exam'], nb_beams = 9)
+    if plan_data['couch']:    
+        beams.add_beams_brain_static(beamset=beamset,site_name=plan_data['site_name'],iso_name=plan_data['iso_name'], exam=plan_data['exam'], nb_beams = 14)
+    else:
+        beams.add_beams_brain_static(beamset=beamset,site_name=plan_data['site_name'],iso_name=plan_data['iso_name'], exam=plan_data['exam'], nb_beams = 9)
     
     # Set optimization parameters
     plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
@@ -2578,6 +2583,8 @@ def crane_stereo_kbp_add_3DC_plan(plan_data):
     site = plan_data['site_name']
     exam = plan_data['exam']
     name = site + ' ' + plan_data['technique']
+    if plan_data['couch']:
+        name += ' Couch'
     cerveau_name = plan_data['oar_list'][0]
     
     # Add plan
@@ -2590,7 +2597,9 @@ def crane_stereo_kbp_add_3DC_plan(plan_data):
     beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv_names'][0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1, AutoScaleDose=False)
 
     # Add beams
-    if plan_data['technique'] == 'IMRT':
+    if plan_data['couch']:
+        nb_beams = 14
+    elif plan_data['technique'] == 'IMRT':
         nb_beams = 9
     elif plan_data['technique'] == '3DC':
         nb_beams = 13
@@ -2829,23 +2838,31 @@ def crane_stereo_kbp_modify_plan_multi_ptv(plan_data,plan,beamset):
     return continue_optimization
         
         
-def crane_stereo_kbp_scale_dose_multi_ptv(plan_data,beamset,reset_dose=False):    
+def crane_stereo_kbp_scale_dose(plan_data,beamset,reset_dose=False):    
+
+    #This function verifies the initial dose to each PTV and then scales the plan to get coverage
+    #For a single PTV, coverage is set to exactly 99%
+    #For multiple PTVs, coverage is set to be at least 99% for all PTVs
+    #If the user wishes to return the coverage to where it was initially, they can set reset_dose=True
+
     ptv_names = plan_data['ptv_names']
     rx = plan_data['rx']
     nb_fx = plan_data['nb_fx']
     
     #If we want to scale the dose back to its initial level, we need to determine what the initial PTV coverage was
-    if reset_dose:
-        initial_ptv_cov = []
-        for i,ptv in enumerate(ptv_names):
-            ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[i], DoseValues=[rx[i]/nb_fx])
-            initial_ptv_cov.append(ptv_coverage[0])    
-    
-    #For each PTV, check coverage and scale plan up if necessary (this ensures that all PTVs are covered)
+    initial_ptv_cov = []
     for i,ptv in enumerate(ptv_names):
         ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[i], DoseValues=[rx[i]/nb_fx])
-        if ptv_coverage[0] < 0.99:
+        initial_ptv_cov.append(ptv_coverage[0])    
+    
+    #For each PTV, check coverage and scale plan if necessary
+    for i,ptv in enumerate(ptv_names):
+        ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[i], DoseValues=[rx[i]/nb_fx])
+        if len(ptv_names) == 1:
             beamset.NormalizeToPrescription(RoiName=ptv_names[i], DoseValue=rx[i], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)     
+        elif len(ptv_names) > 1:
+            if ptv_coverage[0] < 0.99:
+                beamset.NormalizeToPrescription(RoiName=ptv_names[i], DoseValue=rx[i], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)     
     
     #Evaluate V10,V12
     obtained_vol = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName="CERVEAU-PTV_"+plan_data['site_name'], DoseValues=[1000/nb_fx,1200/nb_fx])
@@ -2854,8 +2871,9 @@ def crane_stereo_kbp_scale_dose_multi_ptv(plan_data,beamset,reset_dose=False):
     if reset_dose:
         beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=initial_ptv_cov[0]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)     
         
-    return obtained_vol
+    return obtained_vol,initial_ptv_cov
 
+    
 def estimate_vx(predicted_vol,rx_dose,dose_level=1000):
     #predicted_vol=[v100,v90,v80,v70,v60,v50,v40] (in cc)
     #rx_dose and dose_level should be in cGy
@@ -2893,3 +2911,83 @@ def estimate_vx(predicted_vol,rx_dose,dose_level=1000):
         output = 'au moins %.2fcc' % predicted_vol[0]
     
     return output
+    
+    
+def crane_kbp_write_results_to_file(plan_data,plan,beamset,predicted_vol,initial_ptv_cov,obtained_vol):
+    #Three elements to write to file:
+    #   - demographic information (patient name, plan, beamset, PTV names, doses, technique used, nb beams, nb segments...)
+    #   - predicted results
+    #   - obtained results
+    
+    patient = plan_data['patient']
+    exam = plan_data['exam']
+    site = plan_data['site_name']
+    rx = plan_data['rx']
+    nb_fx = plan_data['nb_fx']
+    ptv_names = plan_data['ptv_names']
+    
+    result_text = ""    
+    ptv_coverage = []
+    
+    #Get PTV coverage
+    for i,ptv in enumerate(ptv_names):
+        cov = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[i], DoseValues=[rx[i]/nb_fx])
+        ptv_coverage.append(cov[0])
+    
+    #Pad out arrays if necessary (to prevent crashes during printing)
+    if len(ptv_names) == 1:
+        ptv_names.append('Aucun PTV2')
+        rx.append(0)
+        ptv_coverage.append(0)
+        initial_ptv_cov.append(0)
+    if len(ptv_names) == 2:
+        ptv_names.append('Aucun PTV3')
+        rx.append(0)
+        ptv_coverage.append(0)
+        initial_ptv_cov.append(0)        
+    
+    #Demographic information
+    header = 'Nom du patient,No. HMR,Nom plan,Nom beamset,'
+    result_text += patient.PatientName + ',' + patient.PatientID + ',' + plan.Name + ',' + beamset.DicomPlanLabel + ','
+    header += 'Nom PTV 1,Rx PTV1 (cGy),Nom PTV 2,Rx PTV2 (cGy),Nom PTV 3,Rx PTV3 (cGy),'
+    result_text += "%s,%d,%s,%d,%s,%d," % (ptv_names[0],rx[0],ptv_names[1],rx[1],ptv_names[2],rx[2])
+    header += 'Technique,'
+    result_text += plan_data['technique'] + ','
+    
+    #Predicted volumes
+    header += 'Cerv-PTV V100 prédit (cc),Cerv-PTV V90 prédit (cc),Cerv-PTV V80 prédit (cc),Cerv-PTV V70 prédit (cc),Cerv-PTV V60 prédit (cc),Cerv-PTV V50 prédit (cc),Cerv-PTV V40 prédit (cc),'
+    result_text += "%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f," % (predicted_vol[0],predicted_vol[1],predicted_vol[2],predicted_vol[3],predicted_vol[4],predicted_vol[5],predicted_vol[6])
+    
+    #Evaluate plan
+    ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries["sum_ptvs_smooth_"+site].GetRoiVolume() 
+    body_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries["BodyRS"].GetRoiVolume() 
+    brain_minus_ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries["CERVEAU-PTV_"+site].GetRoiVolume() 
+    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName="CERVEAU-PTV_"+site, DoseValues=[max(rx)/nb_fx,max(rx)*0.9/nb_fx,max(rx)*0.8/nb_fx,max(rx)*0.7/nb_fx,max(rx)*0.6/nb_fx,max(rx)*0.5/nb_fx,max(rx)*0.4/nb_fx])
+    dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName="BodyRS", DoseValues=[max(rx)/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName="sum_ptvs_smooth_"+site,RelativeVolumes = [0.03/ptv_vol])
+    max_in_ptv = dmax[0] * nb_fx / 100.0
+    
+    #CERVEAU-PTV v100/V90...V40 in cc
+    header += 'Cerv-PTV V100 obtenu (cc),Cerv-PTV V90 obtenu (cc),Cerv-PTV V80 obtenu (cc),Cerv-PTV V70 obtenu (cc),Cerv-PTV V60 obtenu (cc),Cerv-PTV V50 obtenu (cc),Cerv-PTV V40 obtenu (cc),'
+    result_text += '%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol)
+    
+    #V10 and V12 in cc
+    header += 'V10 obtenu (cc),V12 obtenu (cc),'
+    result_text += '%.2f,%.2f,' % (obtained_vol[0]*brain_minus_ptv_vol,obtained_vol[1]*brain_minus_ptv_vol)
+    
+    #PTV coverage before and after scaling
+    header += 'Couverture PTV1,Couverture PTV2,Couverture PTV3,Couv PTV1 avant scaling,Couv PTV2 avant scaling,Couv PTV3 avant scaling,'
+    result_text += '%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,' % (ptv_coverage[0]*100,ptv_coverage[1]*100,ptv_coverage[2]*100,initial_ptv_cov[0]*100,initial_ptv_cov[1]*100,initial_ptv_cov[2]*100)             
+    
+    #Max dose and conformity index
+    header += 'Max dans PTV,Indice de conformité\n'
+    result_text += '%.2f,%.2f\n' % (max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol)
+    
+    
+    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\Crane KBP Clinique.txt'
+    file_exists = os.path.exists(output_file_path)
+    with open(output_file_path, 'a') as output_file:
+        if not file_exists:
+            output_file.write(header) #Only want to write the header if we're starting a new file
+        output_file.write(result_text)

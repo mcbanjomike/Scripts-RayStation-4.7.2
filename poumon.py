@@ -268,7 +268,8 @@ def poumon_stereo_opt_settings(plan_data):
         plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinNumberOfOpenLeafPairs = 4
         plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentArea = 2
         plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MaxNumberOfSegments = 40
-    
+
+        
 def poumon_stereo_create_isodose_lines(plan_data):
 
     # Set Dose Color Table (only for plan A1, might crash RayStation if dose color table already exists)

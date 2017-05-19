@@ -68,7 +68,8 @@ def add_beams_brain_static(beamset=None,site_name='A1',iso_name='ISO', exam=None
     """
         Ajoute les faisceaux utilisés pour la stéréo de crâne et les plans 3DC.
 
-        Par défaut, ajoutes 13 faisceaux avec des angles de gantry et de collimateur variés
+        Par défaut, ajoutes 13 faisceaux avec des angles de gantry et de collimateur variés pour les plans de 3DC.
+        9 champs coplanaires sont utilisés pour les plans d'IMRT standards, et 5 champs non-coplanairs sont ajoutés en plus si demandé par le planificateur.
     """
     if nb_beams == 13:
         beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".1", Description="OPG 166", GantryAngle=166, CouchAngle=0, CollimatorAngle=0, ApertureBlock=None)
@@ -84,7 +85,7 @@ def add_beams_brain_static(beamset=None,site_name='A1',iso_name='ISO', exam=None
         beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".11", Description="OAD 305", GantryAngle=305, CouchAngle=0, CollimatorAngle=150, ApertureBlock=None)
         beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".12", Description="OAD 332", GantryAngle=332, CouchAngle=0, CollimatorAngle=165, ApertureBlock=None)
         beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".13", Description="ANT 0", GantryAngle=0, CouchAngle=0, CollimatorAngle=180, ApertureBlock=None)
-    elif nb_beams == 9:
+    elif nb_beams == 9 or nb_beams == 14:
         beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".1", Description="OPG 160", GantryAngle=160, CouchAngle=0, CollimatorAngle=0, ApertureBlock=None)
         beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".2", Description="OPG 120", GantryAngle=120, CouchAngle=0, CollimatorAngle=20, ApertureBlock=None)
         beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".3", Description="OAG 80", GantryAngle=80, CouchAngle=0, CollimatorAngle=40, ApertureBlock=None)
@@ -94,8 +95,13 @@ def add_beams_brain_static(beamset=None,site_name='A1',iso_name='ISO', exam=None
         beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".7", Description="OAD 280", GantryAngle=280, CouchAngle=0, CollimatorAngle=120, ApertureBlock=None)
         beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".8", Description="OAD 320", GantryAngle=320, CouchAngle=0, CollimatorAngle=140, ApertureBlock=None)
         beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".9", Description="ANT", GantryAngle=0, CouchAngle=0, CollimatorAngle=160, ApertureBlock=None)
-       
-    
+        if nb_beams == 14:
+            beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".10", Description="OA CD 340", GantryAngle=340, CouchAngle=270, CollimatorAngle=90, ApertureBlock=None)
+            beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".11", Description="OA CP 30", GantryAngle=30, CouchAngle=270, CollimatorAngle=90, ApertureBlock=None)
+            beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".12", Description="OA CP 60", GantryAngle=60, CouchAngle=270, CollimatorAngle=90, ApertureBlock=None)
+            beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".13", Description="OP CP 120", GantryAngle=120, CouchAngle=270, CollimatorAngle=90, ApertureBlock=None)
+            beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".14", Description="OP CP 150", GantryAngle=150, CouchAngle=270, CollimatorAngle=90, ApertureBlock=None)
+            
 
 def add_beams_lung_stereo(contralateral_lung=None, beamset=None, examination=None, ptv_name=None, two_arcs=False):
     """

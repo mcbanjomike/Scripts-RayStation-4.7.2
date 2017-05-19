@@ -408,6 +408,7 @@ def double_optimization(plan=None, beamset=None):
     plan.PlanOptimizations[beamset.Number - 1].RunOptimization()
     plan.PlanOptimizations[beamset.Number - 1].RunOptimization()
 
+    
 def triple_optimization(plan=None, beamset=None):
     patient = lib.get_current_patient()
     if plan is None:
@@ -434,8 +435,7 @@ def optimization_90_30(plan=None, beamset=None):
     set_optimization_parameters(plan=plan,fluence_iterations=30, max_iterations=90, compute_intermediate_dose=False)
     opt.RunOptimization()
     set_optimization_parameters(plan=plan,fluence_iterations=30, max_iterations=30, compute_intermediate_dose=False)
-    opt.RunOptimization()
-    #opt.RunOptimization()    
+    opt.RunOptimization()  
     
     
 def double_opt_save(plan=None, beamset=None):
@@ -618,3 +618,10 @@ def copy_clinical_goals(old_plan = None,new_plan = None):
         
         new_plan.TreatmentCourse.EvaluationSetup.AddClinicalGoal(RoiName=roi_name, GoalCriteria=goal_criteria, GoalType=goal_type, AcceptanceLevel=acceptance_level, ParameterValue=parameter_value, IsComparativeGoal=False)
 
+
+def erase_objectives(plan,beamset):
+    try:
+        for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+            objective.DeleteFunction()   
+    except:
+        pass

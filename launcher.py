@@ -3946,7 +3946,7 @@ def crane_launcher():
             self.fxbox = TextBox()
             self.fxbox.Parent = self
             self.fxbox.Size = Size(50,40)
-            self.fxbox.Location = Point(120, offset + 3.5*vert_spacer)
+            self.fxbox.Location = Point(150, offset + 3.5*vert_spacer)
             self.fxbox.Text = "1"                 
             
             self.techlabel = Label()
@@ -3957,8 +3957,8 @@ def crane_launcher():
             
             self.techcombo = ComboBox()
             self.techcombo.Parent = self
-            self.techcombo.Size = Size(80,40)
-            self.techcombo.Location = Point(120, offset + 4.5*vert_spacer)
+            self.techcombo.Size = Size(90,40)
+            self.techcombo.Location = Point(150, offset + 4.5*vert_spacer)
             self.techcombo.Text = "VMAT" 
             self.techcombo.Items.Add('VMAT')
             self.techcombo.Items.Add('IMRT')
@@ -3973,7 +3973,7 @@ def crane_launcher():
             self.sitebox = TextBox()
             self.sitebox.Parent = self
             self.sitebox.Size = Size(50,40)
-            self.sitebox.Location = Point(120, offset + 5.5*vert_spacer)
+            self.sitebox.Location = Point(150, offset + 5.5*vert_spacer)
             self.sitebox.Text = "A1"    
             
             
@@ -3985,8 +3985,8 @@ def crane_launcher():
             
             self.isocombo = ComboBox()
             self.isocombo.Parent = self
-            self.isocombo.Size = Size(80,40)
-            self.isocombo.Location = Point(120, offset + 6.5*vert_spacer)
+            self.isocombo.Size = Size(90,40)
+            self.isocombo.Location = Point(150, offset + 6.5*vert_spacer)
             for poi in patient.PatientModel.PointsOfInterest:
                 if 'ISO' in poi.Name:
                     self.isocombo.Items.Add(poi.Name)               
@@ -4000,8 +4000,8 @@ def crane_launcher():
             
             self.scancombo = ComboBox()
             self.scancombo.Parent = self
-            self.scancombo.Size = Size(80,40)
-            self.scancombo.Location = Point(120, offset + 7.5*vert_spacer)
+            self.scancombo.Size = Size(90,40)
+            self.scancombo.Location = Point(150, offset + 7.5*vert_spacer)
             for ct in patient.Examinations:
                 self.scancombo.Items.Add(ct.Name)         
             
@@ -4014,8 +4014,8 @@ def crane_launcher():
             
             self.machinecombo = ComboBox()
             self.machinecombo.Parent = self
-            self.machinecombo.Size = Size(80,40)
-            self.machinecombo.Location = Point(120, offset + 8.5*vert_spacer)
+            self.machinecombo.Size = Size(90,40)
+            self.machinecombo.Location = Point(150, offset + 8.5*vert_spacer)
             self.machinecombo.Text = "BeamMod"                  
             self.machinecombo.Items.Add('BeamMod')
             self.machinecombo.Items.Add('Infinity')
@@ -4029,15 +4029,30 @@ def crane_launcher():
             
             self.isodosecombo = ComboBox()
             self.isodosecombo.Parent = self
-            self.isodosecombo.Size = Size(80,40)
-            self.isodosecombo.Location = Point(120, offset + 9.5*vert_spacer)
+            self.isodosecombo.Size = Size(90,40)
+            self.isodosecombo.Location = Point(150, offset + 9.5*vert_spacer)
             self.isodosecombo.Text = "Créer"                  
             self.isodosecombo.Items.Add('Créer')            
             self.isodosecombo.Items.Add('Ne pas créer')            
-            
 
+
+            self.couchlabel = Label()
+            self.couchlabel.Text = "Couch table"
+            self.couchlabel.Location = Point(25, offset + 10.5*vert_spacer)
+            self.couchlabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.couchlabel.AutoSize = True              
+            
+            self.couchcombo = ComboBox()
+            self.couchcombo.Parent = self
+            self.couchcombo.Size = Size(90,40)
+            self.couchcombo.Location = Point(150, offset + 10.5*vert_spacer)
+            self.couchcombo.Text = "Ne pas ajouter"                  
+            self.couchcombo.Items.Add('Ne pas ajouter')            
+            self.couchcombo.Items.Add('Ajouter')                  
+
+            
             self.message = Label()
-            self.message.Text = "Sélectionnez le(s) ROI(s) à traiter (chaque\ncontour distinct devrait être indiqué\nséparément). Seulement les ROIs avec\nPTV dans leurs noms sont disponibles.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLes plans IMRT/3DC avec plusieurs PTVs\ndistincts auront une optimisation automatique\nde la collimateur. SVP touchez pas à\nl'ordinateur pendant cette optimisation\n(4 à 5 minutes environ)"
+            self.message.Text = "Sélectionnez le(s) ROI(s) à traiter (chaque\ncontour distinct devrait être indiqué\nséparément). Seulement les ROIs avec\nPTV dans leurs noms sont disponibles.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLes plans IMRT/3DC avec plusieurs PTVs\ndistincts auront une optimisation automatique\nde la collimateur. SVP touchez pas à\nl'ordinateur pendant cette optimisation\n(4 à 5 minutes environ)"
             self.message.Location = Point(300, offset)
             self.message.Font = Font("Arial", 11, FontStyle.Italic)
             self.message.AutoSize = True                
@@ -4051,16 +4066,17 @@ def crane_launcher():
             
             evalButton = Button()
             evalButton.Text = "Évaluer les PTVs"
-            evalButton.Location = Point(25, offset + 11 * vert_spacer)
+            evalButton.Location = Point(25, offset + 13 * vert_spacer)
             evalButton.Width = 200
             evalButton.Click += self.evalClicked                           
             
             addplanButton = Button()
-            addplanButton.Text = "Ajouter plan(s)"
-            addplanButton.Location = Point(25, offset + 12 * vert_spacer)
+            addplanButton.Text = "Ajouter plan"
+            addplanButton.Location = Point(25, offset + 14 * vert_spacer)
             addplanButton.Width = 200
             addplanButton.Click += self.addplanClicked   
 
+            
             self.MainWindow.Controls.Add(self.toplabel)
             
             self.MainWindow.Controls.Add(self.PTV1combo)
@@ -4091,21 +4107,19 @@ def crane_launcher():
             self.MainWindow.Controls.Add(self.isodoselabel)          
             self.MainWindow.Controls.Add(self.isodosecombo)     
 
+            self.MainWindow.Controls.Add(self.couchlabel)          
+            self.MainWindow.Controls.Add(self.couchcombo)             
+            
             self.MainWindow.Controls.Add(self.message)            
             self.MainWindow.Controls.Add(self.status)     
 
             self.MainWindow.Controls.Add(evalButton)
             self.MainWindow.Controls.Add(addplanButton)            
 
-
             
-        def evalClicked(self, sender, args):
-            self.status.Text = "Eval clicked"
-
-        def addplanClicked(self, sender, args):
-        
-            self.status.ForeColor = Color.Black
-            self.status.Text = "Calcul en cours, veuillez patienter"
+        def compile_plan_data(self):            
+                               
+            self.status.Text = "Compilation des données du plan"      
             
             ptv_names = []
             rx = []            
@@ -4141,25 +4155,29 @@ def crane_launcher():
                 error_message = "Nb de fractions illisible"
                 
             technique = self.techcombo.Text
-            
-            try:
-                name = self.sitebox.Text + ' ' + technique
+                    
+            if self.couchcombo.Text == 'Ajouter':
+                couch = True
+            else:
+                couch = False                    
+                    
+            name = self.sitebox.Text + ' ' + technique
+            if couch:
+                name += ' Couch'            
+            try:    
                 existing_plan = patient.TreatmentPlans[name]
                 error_message = "Un plan avec le nom %s exist déjà, SVP le renommez avant de commencer" % name
             except:
-                pass
-                    
-            
+                pass                    
                 
             oar_list = crane.crane_stereo_kbp_identify_rois(patient)
             if oar_list[0] == 'ERROR':
-                error_message = 'OAR essentiel pas trouvé: ' + oar_list[1]
+                error_message = 'OAR essentiel pas trouvé: ' + oar_list[1]                     
+
+            if error_message != '': #In case of any error, abort and send error message back
+                d = []
+                return d,error_message
             
-            if error_message != "": #If an error is noticed, cancel script execution
-                self.status.Text = error_message
-                self.status.ForeColor = Color.Red
-                return                
-                        
             #Compile plan data to send to scripts
             d = dict(patient = patient,
                      site_name = self.sitebox.Text,
@@ -4171,12 +4189,97 @@ def crane_launcher():
                      rx_dose = max(rx), #Needed for isodose creation
                      ptv_names = ptv_names,
                      oar_list = oar_list,
-                     technique = technique)      
-                                     
+                     technique = technique,
+                     couch = couch)      
+            
+            return d,error_message
+
+            
+        def evalClicked(self, sender, args):
+
+            self.status.ForeColor = Color.Black
+            self.status.Text = "Évaluation en cours, veuillez patienter"        
+            
+            d,error_message = self.compile_plan_data()
+            
+            if error_message != "": #If an error is noticed, cancel script execution
+                self.status.Text = error_message
+                self.status.ForeColor = Color.Red
+                return                 
+            
+            rx = d['rx']
+            ptv_names = d['ptv_names']
+            
+            #Predict dose to brain (and generate ROIs)
             self.status.ForeColor = Color.Black
             self.status.Text = "Estimation de la dose au cerveau"
             predicted_vol = crane.crane_stereo_kbp_predict_dose(plan_data = d)
-            self.message.Text = 'Dose de prescription le plus elevée: %.dcGy\n\nVolumes prédits dans le cerveau-PTV:\n   V100: %.2fcc\n   V90:  %.2fcc\n   V80:  %.2fcc\n   V70: %.2fcc\n   V60:  %.2fcc\n   V50:  %.2fcc\n   V40:  %.2fcc' % (d['rx_dose'],predicted_vol[0],predicted_vol[1],predicted_vol[2],predicted_vol[3],predicted_vol[4],predicted_vol[5],predicted_vol[6])
+            cerv_ptv_vol = patient.PatientModel.StructureSets[d['exam'].Name].RoiGeometries["CERVEAU-PTV_"+d['site_name']].GetRoiVolume()
+            
+            #Display predicted results
+            self.message.Text = 'Volumes prédits dans le cerveau-PTV:\n   V100%%: %.2fcc\n   V90%%:  %.2fcc\n   V80%%:  %.2fcc\n   V70%%: %.2fcc\n   V60%%:  %.2fcc\n   V50%%:  %.2fcc\n   V40%%:  %.2fcc' % (predicted_vol[0],predicted_vol[1],predicted_vol[2],predicted_vol[3],predicted_vol[4],predicted_vol[5],predicted_vol[6])
+            v10 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=1000)
+            v12 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=1200)
+            self.message.Text += '\n\nV10 Cerveau-PTV estimé: %s\nV12 Cerveau-PTV estimé: %s' % (v10,v12)
+            
+            self.status.Text = "Terminé"
+            
+            #Use bounding boxes to determine PTV diameters
+            small_ptvs = 0
+            medium_ptvs = 0
+            for ptv in d['ptv_names']:
+                bb = patient.PatientModel.StructureSets[d['exam'].Name].RoiGeometries[ptv].GetBoundingBox()
+                ptv_vol = patient.PatientModel.StructureSets[d['exam'].Name].RoiGeometries[ptv].GetRoiVolume()
+                dia = [abs(bb[0].x-bb[1].x),abs(bb[0].y-bb[1].y),abs(bb[0].z-bb[1].z)]
+                self.message.Text += "\n\nCible: %s\n   Vol (cc): %.2f\n   Dimensions: %.2fcm x %.2fcm x %.2fcm" % (ptv,ptv_vol,dia[0],dia[1],dia[2])
+                if min(dia)<1:
+                    self.message.Text += "\nCe PTV est plus petit que 1cm, consultez la physique"
+                elif min(dia)<2:
+                    small_ptvs += 1
+                elif min(dia)<3:
+                    medium_ptvs +=1
+                    
+            if len(ptv_names) == 1 and small_ptvs == 0:                
+                if medium_ptvs == 0:
+                    self.message.Text += "\n\nLe VMAT devrait être utilisé pour ce plan"
+                    self.techcombo.Text = 'VMAT'
+                elif medium_pts == 1:
+                    self.message.Text += "\n\nComme le PTV est relativement petit, faites une comparaison 3DC/VMAT"
+                    self.techcombo.Text = '3DC'
+            elif len(ptv_names) == 1 and small_ptvs > 0:
+                    self.message.Text += "\n\nLe PTV est trop petit pour un plan VMAT, utilisez le 3DC"
+                    self.techcombo.Text = '3DC'
+            elif len(ptv_names) > 1:
+                if small_ptvs == 0:
+                    self.message.Text += "\n\nL'IMRT devrait être utilisé pour ce plan"
+                    self.techcombo.Text = 'IMRT'
+                else:
+                    self.message.Text += "\n\nAu moins un PTV <2cm, faites une comparaison 3DC/IMRT et consultez la physique"
+                    self.techcombo.Text = '3DC'            
+            
+        def addplanClicked(self, sender, args):
+            self.status.ForeColor = Color.Black
+            self.status.Text = "Calcul en cours, veuillez patienter"
+            
+            d,error_message = self.compile_plan_data()
+            
+            if error_message != "": #If an error is noticed, cancel script execution
+                self.status.Text = error_message
+                self.status.ForeColor = Color.Red
+                return                  
+        
+            rx = d['rx']       
+            ptv_names = d['ptv_names']
+            technique = d['technique']
+                        
+            #Predict dose to brain (and generate ROIs)
+            self.status.ForeColor = Color.Black
+            self.status.Text = "Estimation de la dose au cerveau"
+            predicted_vol = crane.crane_stereo_kbp_predict_dose(plan_data = d)
+            cerv_ptv_vol = patient.PatientModel.StructureSets[d['exam'].Name].RoiGeometries["CERVEAU-PTV_"+d['site_name']].GetRoiVolume()
+            
+            #Display predicted results
+            self.message.Text = 'Volumes prédits dans le cerveau-PTV:\n   V100%%: %.2fcc\n   V90%%:  %.2fcc\n   V80%%:  %.2fcc\n   V70%%: %.2fcc\n   V60%%:  %.2fcc\n   V50%%:  %.2fcc\n   V40%%:  %.2fcc' % (predicted_vol[0],predicted_vol[1],predicted_vol[2],predicted_vol[3],predicted_vol[4],predicted_vol[5],predicted_vol[6])
             v10 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=1000)
             v12 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=1200)
             self.message.Text += '\n\nV10 Cerveau-PTV estimé: %s\nV12 Cerveau-PTV estimé: %s' % (v10,v12)
@@ -4191,7 +4294,7 @@ def crane_launcher():
                 self.status.Text = "Ajout du dose color table"
                 crane.crane_stereo_create_isodose_lines(plan_data = d)           
                 
-            #Deal with POIs and ROIs (only if this is the first plan for the patient)
+            #Create/assign types to POIs and ROIs (only if this is the first plan for the patient)
             try:
                 existing_plan = patient.TreatmentPlans[0]
             except:
@@ -4273,26 +4376,50 @@ def crane_launcher():
                     self.status.Text = "Optimization du plan modifié"
                     optim.triple_optimization(plan=plan,beamset=beamset)
                     self.status.Text = "Scaling couverture à la prescription"
-                    beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
-                    obtained_vol = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName="CERVEAU-PTV_"+d['site_name'], DoseValues=[1000/nb_fx,1200/nb_fx])
+                    obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=False)
                 elif len(ptv_names) > 1:     
+                    obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=True)
+                    self.message.Text += '\n\nV10 obtenu (plan initial): %.2fcc\nV12 obtenu (plan initial): %.2fcc' % (obtained_vol[0]*cerv_ptv_vol,obtained_vol[1]*cerv_ptv_vol)
                     continue_optimization = True
-                    for i in range(4):
+                    best_vol = 100000
+                    for i in range(4): #i IS EQUAL TO THE NUMBER OF COMPLETED ITERATIONS!
                         if continue_optimization:
                             self.status.Text = "Modification du plan et réoptimisation (étape %d/4)" % (i+1)
-                            continue_optimization = crane.crane_stereo_kbp_modify_plan_multi_ptv(plan_data=d,plan=plan,beamset=beamset)
-                            obtained_vol = crane.crane_stereo_kbp_scale_dose_multi_ptv(plan_data=d,beamset=beamset,reset_dose=True)
-                            cerv_ptv_vol = patient.PatientModel.StructureSets[d['exam'].Name].RoiGeometries["CERVEAU-PTV_"+d['site_name']].GetRoiVolume()
-                            if continue_optimization: #If crane_stereo_kbp_modify_plan_multi_ptv returns False, then the plan hasn't changed since last time and we don't need to print these values again
-                                self.message.Text += '\n\nV10 obtenu (étape %d): %.2fcc\nV12 obtenu (étape %d): %.2fcc' % (i+1,obtained_vol[0]*cerv_ptv_vol,i+1,obtained_vol[1]*cerv_ptv_vol)                            
+                            continue_optimization = crane.crane_stereo_kbp_modify_plan_multi_ptv(plan_data=d,plan=plan,beamset=beamset) #Evaluates PTV coverage, adjusts and reoptimizes if necessary
+                            obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=True)
+                            if (obtained_vol[0] + obtained_vol[1]) < best_vol:
+                                best_vol = obtained_vol[0] + obtained_vol[1]
+                                best_iteration = i
+                            #if continue_optimization: #If crane_stereo_kbp_modify_plan_multi_ptv returns False, then the plan hasn't changed since last time and we don't need to print these values again
+                            self.message.Text += '\n\nV10 obtenu (après %d révision(s)): %.2fcc\nV12 obtenu (après %d révision(s)): %.2fcc' % (i+1,obtained_vol[0]*cerv_ptv_vol,i+1,obtained_vol[1]*cerv_ptv_vol)                            
                     self.status.Text = "Scaling de la couverture à la prescription"
-                    obtained_vol = crane.crane_stereo_kbp_scale_dose_multi_ptv(plan_data=d,beamset=beamset,reset_dose=False)
+                    obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=False)
+                    
+                    #Now we have to check if the final plan is better than the previous plans. If not, we will reoptimize and stop and the correct point.
+                    self.status.Text = "Meilleur plan: plan initial avec %d itérations" % best_iteration
+                    
+                    #if (obtained_vol[0]+obtained_vol[1]*0.9) > best_vol:
+                    if (obtained_vol[0]+obtained_vol[1]) > best_vol:
+                        self.status.Text = "Retour vers le meilleur plan, veuillez patientez svp"
+                        optim.erase_objectives(plan,beamset)
+                        plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+                        crane.crane_stereo_kbp_initial_optimization_objectives(plan_data=d,plan=plan,predicted_vol=predicted_vol,tronc_max=tronc_max)
+                        optim.optimization_90_30(plan=plan,beamset=beamset)
+                        for i in range(best_iteration+1):
+                            self.status.Text = "Modification du plan et réoptimisation (étape %d/%d)" % (i+1,best_iteration+1)
+                            continue_optimization = crane.crane_stereo_kbp_modify_plan_multi_ptv(plan_data=d,plan=plan,beamset=beamset)
+                        self.status.Text = "Scaling de la couverture à la prescription"
+                        obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=False)                            
             
-
             
             #Display results of plan
-            cerv_ptv_vol = patient.PatientModel.StructureSets[d['exam'].Name].RoiGeometries["CERVEAU-PTV_"+d['site_name']].GetRoiVolume()
             self.message.Text += '\n\nV10 obtenu: %.2fcc\nV12 obtenu: %.2fcc' % (obtained_vol[0]*cerv_ptv_vol,obtained_vol[1]*cerv_ptv_vol)
+            
+            #Write results to file (this is put into a try because it will crash if someone has the destination file open when it tries to write to it)
+            try:
+                crane.crane_kbp_write_results_to_file(plan_data=d,plan=plan,beamset=beamset,predicted_vol=predicted_vol,initial_ptv_cov=initial_ptv_cov,obtained_vol=obtained_vol)
+            except:
+                pass
             
             self.status.Text = "Terminé avec succès!"
             self.status.ForeColor = Color.Green
