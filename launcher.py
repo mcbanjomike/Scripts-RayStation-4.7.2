@@ -4243,8 +4243,8 @@ def crane_launcher():
                 if medium_ptvs == 0:
                     self.message.Text += "\n\nLe VMAT devrait être utilisé pour ce plan"
                     self.techcombo.Text = 'VMAT'
-                elif medium_pts == 1:
-                    self.message.Text += "\n\nComme le PTV est relativement petit, faites une comparaison 3DC/VMAT"
+                elif medium_ptvs == 1:
+                    self.message.Text += "\n\nComme le PTV est relativement petit, faites une\ncomparaison 3DC/VMAT"
                     self.techcombo.Text = '3DC'
             elif len(ptv_names) == 1 and small_ptvs > 0:
                     self.message.Text += "\n\nLe PTV est trop petit pour un plan VMAT, utilisez le 3DC"
@@ -4254,7 +4254,7 @@ def crane_launcher():
                     self.message.Text += "\n\nL'IMRT devrait être utilisé pour ce plan"
                     self.techcombo.Text = 'IMRT'
                 else:
-                    self.message.Text += "\n\nAu moins un PTV <2cm, faites une comparaison 3DC/IMRT et consultez la physique"
+                    self.message.Text += "\n\nAu moins un PTV <2cm, faites une comparaison\n3DC/IMRT et consultez la physique"
                     self.techcombo.Text = '3DC'            
             
         def addplanClicked(self, sender, args):
@@ -4357,8 +4357,8 @@ def crane_launcher():
             #Add objectives and optimize plan
             if technique == '3DC':
                 self.status.Text = "Optimisation du plan 3DC (touchez pas à l'ordinateur SVP)"
-                crane.crane_stereo_kbp_optimize_3DC_plan(plan_data=d,plan=plan,beamset=beamset) 
-            
+                plan,beamset = crane.crane_stereo_kbp_optimize_3DC_plan(plan_data=d,plan=plan,beamset=beamset) 
+                obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=False)            
             else:
                 self.status.Text = "Ajout des objectifs d'optimisation"
                 crane.crane_stereo_kbp_initial_optimization_objectives(plan_data=d,plan=plan,predicted_vol=predicted_vol,tronc_max=tronc_max)
@@ -4421,6 +4421,7 @@ def crane_launcher():
             except:
                 pass
             
+            self.isodosecombo.Text = 'Ne pas créer'
             self.status.Text = "Terminé avec succès!"
             self.status.ForeColor = Color.Green
     

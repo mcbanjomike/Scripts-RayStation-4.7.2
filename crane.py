@@ -2729,6 +2729,8 @@ def crane_stereo_kbp_optimize_3DC_plan(plan_data,plan,beamset):
     plan.PlanOptimizations[beamset.Number-1].RunOptimization()
     plan.PlanOptimizations[beamset.Number-1].RunOptimization()
     
+    return plan,beamset
+    
     
 def crane_stereo_kbp_initial_optimization_objectives(plan_data,plan,predicted_vol,tronc_max):
     patient = plan_data['patient']
@@ -2968,6 +2970,15 @@ def crane_kbp_write_results_to_file(plan_data,plan,beamset,predicted_vol,initial
     dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName="sum_ptvs_smooth_"+site,RelativeVolumes = [0.03/ptv_vol])
     max_in_ptv = dmax[0] * nb_fx / 100.0
     
+    num_segments = 0
+    num_beams = 0
+    total_mu = 0
+    for beam in beamset.Beams:
+        num_beams += 1
+        total_mu += beam.BeamMU
+        for segment in beam.Segments:         
+            num_segments += 1
+    
     #CERVEAU-PTV v100/V90...V40 in cc
     header += 'Cerv-PTV V100 obtenu (cc),Cerv-PTV V90 obtenu (cc),Cerv-PTV V80 obtenu (cc),Cerv-PTV V70 obtenu (cc),Cerv-PTV V60 obtenu (cc),Cerv-PTV V50 obtenu (cc),Cerv-PTV V40 obtenu (cc),'
     result_text += '%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol)
@@ -2981,10 +2992,15 @@ def crane_kbp_write_results_to_file(plan_data,plan,beamset,predicted_vol,initial
     result_text += '%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,' % (ptv_coverage[0]*100,ptv_coverage[1]*100,ptv_coverage[2]*100,initial_ptv_cov[0]*100,initial_ptv_cov[1]*100,initial_ptv_cov[2]*100)             
     
     #Max dose and conformity index
-    header += 'Max dans PTV,Indice de conformité\n'
-    result_text += '%.2f,%.2f\n' % (max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol)
+    header += 'Max dans PTV,Indice de conformité,'
+    result_text += '%.2f,%.2f,' % (max_in_ptv,(dose_in_body[0]*body_vol)/ptv_vol)
+    
+    #Number of segments   
+    header += 'Nb de faisceaux,Nb de segments,Nb de UM\n'
+    result_text += '%d,%d,%.2f\n' % (num_beams,num_segments,total_mu)
     
     
+    #Print
     output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\Crane KBP Clinique.txt'
     file_exists = os.path.exists(output_file_path)
     with open(output_file_path, 'a') as output_file:
