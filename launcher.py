@@ -590,7 +590,9 @@ def plan_launcher_v3():
                     n = name.replace(' ', '').upper()
                     if 'PTV' in n and '-' not in n:
                         try:
-                           presc_dose = float(name[3:])
+                            presc_dose = float(name[3:])
+                            if presc_dose < 10: #Contours named PTV1, PTV2, etc don't actually correspond to treatments of 1 or 2 Gy!
+                                continue
                         except:
                             continue
                         ptv_name = name
@@ -3853,7 +3855,14 @@ def crane_launcher():
             try:
                 self.scancombo.SelectedIndex = self.scancombo.FindStringExact('CT 1')
             except:
-                self.scancombo.Text = self.scancombo.FindStringExact('Sélectionnez')
+                self.scancombo.Text = 'Sélectionnez'
+            
+            #Choose isocenter POI
+            try:
+                self.isocombo.SelectedIndex = self.isocombo.FindStringExact('ISO')
+            except:
+                self.isocombo.Text = 'Sélectionnez'
+                
             
         def Panel(self, x, y):
             panel = Panel()
@@ -3968,30 +3977,45 @@ def crane_launcher():
             self.sitebox.Text = "A1"    
             
             
+            self.isolabel = Label()
+            self.isolabel.Text = "Isocentre"
+            self.isolabel.Location = Point(25, offset + 6.5*vert_spacer)
+            self.isolabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.isolabel.AutoSize = True              
+            
+            self.isocombo = ComboBox()
+            self.isocombo.Parent = self
+            self.isocombo.Size = Size(80,40)
+            self.isocombo.Location = Point(120, offset + 6.5*vert_spacer)
+            for poi in patient.PatientModel.PointsOfInterest:
+                if 'ISO' in poi.Name:
+                    self.isocombo.Items.Add(poi.Name)               
+            
+            
             self.scanlabel = Label()
             self.scanlabel.Text = "CT de planif"
-            self.scanlabel.Location = Point(25, offset + 6.5*vert_spacer)
+            self.scanlabel.Location = Point(25, offset + 7.5*vert_spacer)
             self.scanlabel.Font = Font("Arial", 10, FontStyle.Bold)
             self.scanlabel.AutoSize = True              
             
             self.scancombo = ComboBox()
             self.scancombo.Parent = self
             self.scancombo.Size = Size(80,40)
-            self.scancombo.Location = Point(120, offset + 6.5*vert_spacer)
+            self.scancombo.Location = Point(120, offset + 7.5*vert_spacer)
             for ct in patient.Examinations:
                 self.scancombo.Items.Add(ct.Name)         
             
             
             self.machinelabel = Label()
             self.machinelabel.Text = "Appareil"
-            self.machinelabel.Location = Point(25, offset + 7.5*vert_spacer)
+            self.machinelabel.Location = Point(25, offset + 8.5*vert_spacer)
             self.machinelabel.Font = Font("Arial", 10, FontStyle.Bold)
             self.machinelabel.AutoSize = True              
             
             self.machinecombo = ComboBox()
             self.machinecombo.Parent = self
             self.machinecombo.Size = Size(80,40)
-            self.machinecombo.Location = Point(120, offset + 7.5*vert_spacer)
+            self.machinecombo.Location = Point(120, offset + 8.5*vert_spacer)
             self.machinecombo.Text = "BeamMod"                  
             self.machinecombo.Items.Add('BeamMod')
             self.machinecombo.Items.Add('Infinity')
@@ -3999,14 +4023,14 @@ def crane_launcher():
 
             self.isodoselabel = Label()
             self.isodoselabel.Text = "Dose table"
-            self.isodoselabel.Location = Point(25, offset + 8.5*vert_spacer)
+            self.isodoselabel.Location = Point(25, offset + 9.5*vert_spacer)
             self.isodoselabel.Font = Font("Arial", 10, FontStyle.Bold)
             self.isodoselabel.AutoSize = True              
             
             self.isodosecombo = ComboBox()
             self.isodosecombo.Parent = self
             self.isodosecombo.Size = Size(80,40)
-            self.isodosecombo.Location = Point(120, offset + 8.5*vert_spacer)
+            self.isodosecombo.Location = Point(120, offset + 9.5*vert_spacer)
             self.isodosecombo.Text = "Créer"                  
             self.isodosecombo.Items.Add('Créer')            
             self.isodosecombo.Items.Add('Ne pas créer')            
@@ -4055,6 +4079,9 @@ def crane_launcher():
             self.MainWindow.Controls.Add(self.sitelabel)
             self.MainWindow.Controls.Add(self.sitebox)            
 
+            self.MainWindow.Controls.Add(self.isolabel)
+            self.MainWindow.Controls.Add(self.isocombo) 
+            
             self.MainWindow.Controls.Add(self.scanlabel)          
             self.MainWindow.Controls.Add(self.scancombo)    
             
@@ -4137,6 +4164,7 @@ def crane_launcher():
             d = dict(patient = patient,
                      site_name = self.sitebox.Text,
                      exam = patient.Examinations[self.scancombo.Text],
+                     iso_name = self.isocombo.Text,
                      machine = self.machinecombo.Text,
                      nb_fx = nb_fx,
                      rx = rx,
@@ -4148,7 +4176,10 @@ def crane_launcher():
             self.status.ForeColor = Color.Black
             self.status.Text = "Estimation de la dose au cerveau"
             predicted_vol = crane.crane_stereo_kbp_predict_dose(plan_data = d)
-            self.message.Text = 'Volumes prédites dans le cerveau-PTV:\n   V100: %.2fcc\n   V90:  %.2fcc\n   V80:  %.2fcc\n\nDose de prescription le plus elevée: %.dcGy' % (predicted_vol[0],predicted_vol[1],predicted_vol[2],d['rx_dose'])
+            self.message.Text = 'Dose de prescription le plus elevée: %.dcGy\n\nVolumes prédits dans le cerveau-PTV:\n   V100: %.2fcc\n   V90:  %.2fcc\n   V80:  %.2fcc\n   V70: %.2fcc\n   V60:  %.2fcc\n   V50:  %.2fcc\n   V40:  %.2fcc' % (d['rx_dose'],predicted_vol[0],predicted_vol[1],predicted_vol[2],predicted_vol[3],predicted_vol[4],predicted_vol[5],predicted_vol[6])
+            v10 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=1000)
+            v12 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=1200)
+            self.message.Text += '\n\nV10 Cerveau-PTV estimé: %s\nV12 Cerveau-PTV estimé: %s' % (v10,v12)
             
             self.status.Text = "Estimation de la dose max au tronc cerebral"
             tronc_max = crane.crane_stereo_kbp_predict_oar_dose(plan_data = d)    
@@ -4209,9 +4240,20 @@ def crane_launcher():
                     self.status.Text = "Optimisation angles collimateur (touchez pas à l'ordinateur SVP)"
                     crane.optimize_collimator_angles()  
                     
+            # Add clinical goals (conveniently the same for all types of plan)
+            self.status.Text = "Ajout des clinical goals"
+            clinical_goals.add_dictionary_cg('Crane Stereo', 15, 1, plan = plan)
+            eval.add_clinical_goal("CERVEAU-PTV_"+d['site_name'], 1000, 'AtMost', 'AbsoluteVolumeAtDose', 10, plan=plan)
+            eval.add_clinical_goal("CERVEAU-PTV_"+d['site_name'], 1200, 'AtMost', 'AbsoluteVolumeAtDose', 8, plan=plan)
+            for i,ptv in enumerate(ptv_names):
+                eval.add_clinical_goal(ptv, rx[i], 'AtLeast', 'VolumeAtDose', 99, plan=plan)
+                eval.add_clinical_goal(ptv, 1.5 * rx[i], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+                #if technique == '3DC':
+                #    optim.copy_clinical_goals(old_plan = plan,new_plan = patient.TreatmentPlans[d['site_name']+' 3DC optimised'])                    
+                    
             #Add objectives and optimize plan
             if technique == '3DC':
-                self.status.Text = "Optimisation du plan 3DC(touchez pas à l'ordinateur SVP)"
+                self.status.Text = "Optimisation du plan 3DC (touchez pas à l'ordinateur SVP)"
                 crane.crane_stereo_kbp_optimize_3DC_plan(plan_data=d,plan=plan,beamset=beamset) 
             
             else:
@@ -4232,23 +4274,27 @@ def crane_launcher():
                     optim.triple_optimization(plan=plan,beamset=beamset)
                     self.status.Text = "Scaling couverture à la prescription"
                     beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)
+                    obtained_vol = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName="CERVEAU-PTV_"+d['site_name'], DoseValues=[1000/nb_fx,1200/nb_fx])
                 elif len(ptv_names) > 1:     
                     continue_optimization = True
                     for i in range(4):
                         if continue_optimization:
                             self.status.Text = "Modification du plan et réoptimisation (étape %d/4)" % (i+1)
                             continue_optimization = crane.crane_stereo_kbp_modify_plan_multi_ptv(plan_data=d,plan=plan,beamset=beamset)
+                            obtained_vol = crane.crane_stereo_kbp_scale_dose_multi_ptv(plan_data=d,beamset=beamset,reset_dose=True)
+                            cerv_ptv_vol = patient.PatientModel.StructureSets[d['exam'].Name].RoiGeometries["CERVEAU-PTV_"+d['site_name']].GetRoiVolume()
+                            if continue_optimization: #If crane_stereo_kbp_modify_plan_multi_ptv returns False, then the plan hasn't changed since last time and we don't need to print these values again
+                                self.message.Text += '\n\nV10 obtenu (étape %d): %.2fcc\nV12 obtenu (étape %d): %.2fcc' % (i+1,obtained_vol[0]*cerv_ptv_vol,i+1,obtained_vol[1]*cerv_ptv_vol)                            
                     self.status.Text = "Scaling de la couverture à la prescription"
-                    crane.crane_stereo_kbp_scale_dose_multi_ptv(plan_data=d,beamset=beamset)
+                    obtained_vol = crane.crane_stereo_kbp_scale_dose_multi_ptv(plan_data=d,beamset=beamset,reset_dose=False)
             
-            # Add clinical goals (conveniently the same for all types of plan)
-            self.status.Text = "Ajout des clinical goals"
-            clinical_goals.add_dictionary_cg('Crane Stereo', 15, 1, plan = plan)
-            for i,ptv in enumerate(ptv_names):
-                eval.add_clinical_goal(ptv, rx[i], 'AtLeast', 'VolumeAtDose', 99, plan=plan)
-                eval.add_clinical_goal(ptv, 1.5 * rx[i], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+
             
-            self.status.Text = "That's it for now!"
+            #Display results of plan
+            cerv_ptv_vol = patient.PatientModel.StructureSets[d['exam'].Name].RoiGeometries["CERVEAU-PTV_"+d['site_name']].GetRoiVolume()
+            self.message.Text += '\n\nV10 obtenu: %.2fcc\nV12 obtenu: %.2fcc' % (obtained_vol[0]*cerv_ptv_vol,obtained_vol[1]*cerv_ptv_vol)
+            
+            self.status.Text = "Terminé avec succès!"
             self.status.ForeColor = Color.Green
     
     
@@ -4808,3 +4854,174 @@ def lung_stats_window():
     form = LungStatsWindow()
     Application.Run(form)   
  
+ 
+ 
+def foie_calculer_ntcp():
+
+    class NTCPWindow(Form):
+        def __init__(self):
+            self.Text = "Calcul NTCP"
+
+            self.Width = 600
+            self.Height = 500
+
+            self.setupHeaderWindow()
+            self.setupMainWindow()
+            self.setupOKButtons()
+
+            self.Controls.Add(self.HeaderWindow)
+            self.Controls.Add(self.MainWindow)
+            self.Controls.Add(self.OKbuttonPanel)
+            
+        def Panel(self, x, y):
+            panel = Panel()
+            panel.Width = 600
+            panel.Height = 340
+            panel.Location = Point(x, y)
+            panel.BorderStyle = BorderStyle.None
+            return panel
+
+        def miniPanel(self, x, y):
+            panel = Panel()
+            panel.Width = 600
+            panel.Height = 60
+            panel.Location = Point(x, y)
+            panel.BorderStyle = BorderStyle.None
+            return panel                           
+            
+        def setupHeaderWindow(self):
+            self.HeaderWindow = self.miniPanel(0, 0)     
+
+            self.PatientIDHeader = Label()
+            self.PatientIDHeader.Text = "Patient: " + patient.PatientName.replace('^', ', ') + "                       Plan: " + plan.Name
+            self.PatientIDHeader.Location = Point(25, 25)
+            self.PatientIDHeader.Font = Font("Arial", 12, FontStyle.Bold)
+            self.PatientIDHeader.AutoSize = True          
+
+            self.HeaderWindow.Controls.Add(self.PatientIDHeader)
+            
+        def setupMainWindow(self):
+            self.MainWindow = self.Panel(0, 60)
+            
+            vert_spacer = 30
+            offset = 50   
+            
+            self.toplabel = Label()
+            self.toplabel.Text = "ROI                                      Diagnostique"
+            self.toplabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.toplabel.Location = Point(100, 20)
+            self.toplabel.AutoSize = True  
+                   
+            self.ROIcombo = ComboBox()
+            self.ROIcombo.Parent = self
+            self.ROIcombo.Size = Size(200,40)
+            self.ROIcombo.Location = Point(25, offset)
+            self.ROIcombo.Text = "Choisissez ROI"             
+
+            self.typecombo = ComboBox()
+            self.typecombo.Parent = self
+            self.typecombo.Size = Size(100,40)
+            self.typecombo.Location = Point(275, offset)
+            self.typecombo.Text = "Méta" 
+            self.typecombo.Items.Add('Méta')
+            self.typecombo.Items.Add('CHC')
+            
+            self.MainWindow.Controls.Add(self.toplabel)
+            self.MainWindow.Controls.Add(self.ROIcombo)
+            self.MainWindow.Controls.Add(self.typecombo)
+        
+            
+        def cancelClicked(self, sender, args):
+            self.Close()          
+            
+        def okClicked(self, sender, args):     
+
+            self.message.ForeColor = Color.Black
+            self.message.Text = "Calcul en cours, veuillez patienter"
+                      
+            error_message = ""
+            
+            #Check if PTV exists and dose can be read
+            if roi.roi_exists(self.ROIcombo.Text):     
+                roi_name = self.ROIcombo.Text
+            else:
+                error_message = "ROI pas trouvé"
+            
+            if self.typecombo.Text == 'CHC':
+                CHC = True
+            elif self.typecombo.Text == 'Méta':
+                CHC = False
+            else:
+                error_message = "SVP choisissez CHC ou Méta"
+            
+            #Collect info on plan
+            if error_message != "":
+                self.message.Text = error_message
+                self.message.ForeColor = Color.Red
+                return
+
+            veff,ntcp = foie.calculer_NTCP_foie(rx_dose=None, nb_fx=None, CHC=CHC, roi_name=roi_name)
+
+              
+            self.message.Text = 'Calcul terminé. Veff = %.2f, NTCP = %.2f%%' % (veff,ntcp)
+            self.message.ForeColor = Color.Green
+            
+
+        def setupOKButtons(self):
+            self.OKbuttonPanel = self.miniPanel(0, 410)
+            
+            okButton = Button()
+            okButton.Text = "Calculer"
+            okButton.Location = Point(25, 10)
+            self.AcceptButton = okButton
+            okButton.Click += self.okClicked            
+            
+            cancelButton = Button()
+            cancelButton.Text = "Annuler"
+            cancelButton.Location = Point(125,10)
+            self.CancelButton = cancelButton
+            cancelButton.Click += self.cancelClicked
+            
+            self.message = Label()
+            self.message.Text = ""
+            self.message.Location = Point(225, 13)
+            self.message.Font = Font("Arial", 11, FontStyle.Bold)
+            self.message.AutoSize = True      
+            
+            self.OKbuttonPanel.Controls.Add(okButton)
+            self.OKbuttonPanel.Controls.Add(cancelButton)
+            self.OKbuttonPanel.Controls.Add(self.message)
+           
+            #Automatically populate ROI selection comboboxes
+            self.ROIcombo.Items.Add("Choisissez ROI")         
+            for roi in patient.PatientModel.RegionsOfInterest:       
+                self.ROIcombo.Items.Add(roi.Name)
+                if roi.Name == 'FOIE EXPI-GTV':
+                    self.ROIcombo.Text = roi.Name
+
+                        
+    #Check for common errors while importing patient, plan, beamset and examination
+    try:
+        patient = lib.get_current_patient()
+    except:
+        debug_window('Aucun patient sélectionné')
+        return                
+    try:
+        plan = lib.get_current_plan()
+    except:
+        debug_window('Aucun plan sélectionné')
+        return
+    try:
+        beamset = lib.get_current_beamset()
+    except:
+        debug_window('Aucun beamset sélectionné')
+        return        
+    try:
+        exam = lib.get_current_examination()
+    except:
+        debug_window('Aucun examination trouvé')
+        return
+        
+    form = NTCPWindow()
+    Application.Run(form)   
+  

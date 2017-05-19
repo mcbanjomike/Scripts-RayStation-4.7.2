@@ -40,7 +40,7 @@ def add_beams_brain_stereo(beamset=None, site_name='A1'):
     lib.add_arc((site_name+'.2'), iso, 181, 180, 'CW', description='ARC 181-180', collimator=355, beamset=beamset)
 
 
-def add_beams_brain_stereo_kbp(beamset=None, site_name='KBP1'):
+def add_beams_brain_stereo_kbp(beamset=None, site_name='KBP1',iso_name=None):
     """
         Ajoute les arcs utilisés pour la stéréo de crâne.
 
@@ -58,9 +58,9 @@ def add_beams_brain_stereo_kbp(beamset=None, site_name='KBP1'):
     """
     if beamset is None:
         beamset = lib.get_current_beamset()
-
-    iso = poi.identify_isocenter_poi()
-    lib.add_arc((site_name+'.1'), iso, 180, 181, 'CCW', description='ARC 180-181', collimator=2, beamset=beamset)
+    if iso_name is None:
+        iso_name = poi.identify_isocenter_poi()
+    lib.add_arc((site_name+'.1'), iso_name, 180, 181, 'CCW', description='ARC 180-181', collimator=2, beamset=beamset)
 
 
     

@@ -2456,6 +2456,12 @@ def crane_stereo_kbp_predict_dose(plan_data):
     smoothed_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries["sum_ptvs_smooth_"+site].GetRoiVolume()    
     ptv_in_cerv_vol =  roi.get_intersecting_volume("sum_ptvs_smooth_"+site, cerveau_name, examination=exam)      
    
+    # Create CERVEAU-PTV
+    if not roi.roi_exists("CERVEAU-PTV_"+site):
+        patient.PatientModel.CreateRoi(Name="CERVEAU-PTV_"+site, Color="Orange", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest["CERVEAU-PTV_"+site].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': [cerveau_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['sum_ptvs_'+site], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        patient.PatientModel.RegionsOfInterest["CERVEAU-PTV_"+site].UpdateDerivedGeometry(Examination=exam)   
+   
     #Calculate predicted volumes for each isodose
     predicted_vol = [0,0,0,0,0,0,0]
     predicted_vol[0] = roi.get_intersecting_volume('predicted_r100_'+site, cerveau_name, examination=exam) - ptv_in_cerv_vol
@@ -2525,7 +2531,7 @@ def crane_stereo_kbp_add_VMAT_plan_and_beamset(plan_data):
     beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv_names'][0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)    
     
     # Add beam
-    beams.add_beams_brain_stereo_kbp(beamset=beamset, site_name=plan_data['site_name'])
+    beams.add_beams_brain_stereo_kbp(beamset=beamset, site_name=plan_data['site_name'],iso_name=plan_data['iso_name'])
     
     # Set optimization parameters
     optim.set_optimization_parameters(plan=plan)
@@ -2550,7 +2556,7 @@ def crane_stereo_kbp_add_IMRT_plan_and_beamset(plan_data):
     beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv_names'][0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)    
     
     # Add beam
-    beams.add_beams_brain_static(beamset=beamset,site_name=plan_data['site_name'],iso_name='ISO', exam=plan_data['exam'], nb_beams = 9)
+    beams.add_beams_brain_static(beamset=beamset,site_name=plan_data['site_name'],iso_name=plan_data['iso_name'], exam=plan_data['exam'], nb_beams = 9)
     
     # Set optimization parameters
     plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
@@ -2588,18 +2594,13 @@ def crane_stereo_kbp_add_3DC_plan(plan_data):
         nb_beams = 9
     elif plan_data['technique'] == '3DC':
         nb_beams = 13
-    beams.add_beams_brain_static(beamset=beamset, site_name=plan_data['site_name'], iso_name='ISO', exam=exam, nb_beams=nb_beams)    
+    beams.add_beams_brain_static(beamset=beamset, site_name=plan_data['site_name'], iso_name=plan_data['iso_name'], exam=exam, nb_beams=nb_beams)    
     
     # Create OPTPTV
     if not roi.roi_exists("OPTPTV_"+site): #We put an underscore as the first character to guarantee that the OPTPTV shows up in the Treat and Protect list before the PTV
         patient.PatientModel.CreateRoi(Name="OPTPTV_"+site, Color="Yellow", Type="Ptv", TissueName=None, RoiMaterial=None)
         patient.PatientModel.RegionsOfInterest["OPTPTV_"+site].SetMarginExpression(SourceRoiName='sum_ptvs_'+site, MarginSettings={'Type': "Expand", 'Superior': 0.15, 'Inferior': 0.15, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
         patient.PatientModel.RegionsOfInterest["OPTPTV_"+site].UpdateDerivedGeometry(Examination=exam)
-    # Create CERVEAU-PTV
-    if not roi.roi_exists("CERVEAU-PTV_"+site):
-        patient.PatientModel.CreateRoi(Name="CERVEAU-PTV_"+site, Color="Orange", Type="Organ", TissueName=None, RoiMaterial=None)
-        patient.PatientModel.RegionsOfInterest["CERVEAU-PTV_"+site].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': [cerveau_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['sum_ptvs_'+site], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-        patient.PatientModel.RegionsOfInterest["CERVEAU-PTV_"+site].UpdateDerivedGeometry(Examination=exam)    
             
     # Make the new plan active through the GUI (required so we can manipulate GUI elements below)
     ui = get_current("ui")
@@ -2660,6 +2661,7 @@ def crane_stereo_convert_3DC_IMRT(plan,beamset):
     ui.TabControl.TreatmentSetup.TreatmentSetup2.ComboBox_AvailableTreatmentTechniques.Popup.ComboBoxItem['SMLC'].Select()
     ui.TabControl.TreatmentSetup.TreatmentSetup2.ComboBox_AvailableTreatmentTechniques.ToggleButton.Click()
     ui.Button_OK.Click()
+    time.sleep(6) #The script kept crashing here, so I added a pause to let it close the Edit Plan window before proceeding
     
     # Set optimization parameters
     plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
@@ -2691,8 +2693,9 @@ def crane_stereo_kbp_optimize_3DC_plan(plan_data,plan,beamset):
     
     # In the new plan, change optimization settings
     patient.Save() #Might not be necessary a second time, I'm not sure
+    ui = get_current("ui")
     ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
-    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.Popup.ComboBoxItem['3DC optimised'].Select()    
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.Popup.ComboBoxItem[site+' 3DC optimised'].Select()    
     ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
     
     plan = lib.get_current_plan()
@@ -2732,9 +2735,9 @@ def crane_stereo_kbp_initial_optimization_objectives(plan_data,plan,predicted_vo
         optim.add_mindose_objective(ptv_names[0], rx[0], weight=50, plan=plan, plan_opt=0)
         optim.add_dosefalloff_objective('BodyRS',     rx[0]*1.02, rx[0]*0.40, 0.4, weight=5, plan=plan, plan_opt=0)
         optim.add_dosefalloff_objective('BodyRS',     rx[0]*0.6, rx[0]*0.15, 1.0, weight=1, plan=plan, plan_opt=0)
-        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.8, 100*predicted_vol[2]/ring_vol, weight=10, plan=plan, plan_opt=0)
-        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.7, 100*predicted_vol[3]/ring_vol, weight=10, plan=plan, plan_opt=0)
-        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, 100*predicted_vol[4]/ring_vol, weight=5, plan=plan, plan_opt=0)    
+        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.8, round(100*predicted_vol[2]/ring_vol,2), weight=10, plan=plan, plan_opt=0)
+        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.7, round(100*predicted_vol[3]/ring_vol,2), weight=10, plan=plan, plan_opt=0)
+        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, round(100*predicted_vol[4]/ring_vol,2), weight=5, plan=plan, plan_opt=0)    
         optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
         
     elif len(ptv_names) > 1: #Multiple PTVs
@@ -2744,9 +2747,9 @@ def crane_stereo_kbp_initial_optimization_objectives(plan_data,plan,predicted_vo
         optim.add_dosefalloff_objective('BodyRS', max(rx)*1.00, max(rx)*0.40, 0.4, weight=10, plan=plan, plan_opt=0)
         optim.add_dosefalloff_objective('BodyRS', max(rx)*0.60, max(rx)*0.20, 1.0, weight=5, plan=plan, plan_opt=0)   
         
-        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.8, 100*predicted_vol[2]/ring_vol, weight=10, plan=plan, plan_opt=0)
-        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.7, 100*predicted_vol[3]/ring_vol, weight=10, plan=plan, plan_opt=0)
-        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, 100*predicted_vol[4]/ring_vol, weight=5, plan=plan, plan_opt=0) 
+        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.8, round(100*predicted_vol[2]/ring_vol,2), weight=10, plan=plan, plan_opt=0)
+        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.7, round(100*predicted_vol[3]/ring_vol,2), weight=10, plan=plan, plan_opt=0)
+        optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, round(100*predicted_vol[4]/ring_vol,2), weight=5, plan=plan, plan_opt=0)  
         
         optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
         optim.add_maxdose_objective('OEIL DRT', 800, weight=1.0, plan=plan, plan_opt=0)                        
@@ -2778,9 +2781,9 @@ def crane_stereo_kbp_modify_plan_single_ptv(plan_data,plan,beamset,predicted_vol
     optim.add_mindose_objective(ptv_names[0], rx[0], weight=50, plan=plan, plan_opt=0)
     optim.add_dosefalloff_objective('BodyRS', rx[0]*1.02, rx[0]*0.40, 0.4, weight=5, plan=plan, plan_opt=0)
     optim.add_dosefalloff_objective('BodyRS', rx[0]*0.6, rx[0]*0.15, 1.0, weight=1, plan=plan, plan_opt=0)
-    optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.8, brain80, weight=10, plan=plan, plan_opt=0)
-    optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.7, brain70, weight=10, plan=plan, plan_opt=0)
-    optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, brain60, weight=5, plan=plan, plan_opt=0)    
+    optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.8, round(brain80,2), weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.7, round(brain70,2), weight=10, plan=plan, plan_opt=0)
+    optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, round(brain60,2), weight=5, plan=plan, plan_opt=0)    
     optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)                        
      
     plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
@@ -2815,9 +2818,9 @@ def crane_stereo_kbp_modify_plan_multi_ptv(plan_data,plan,beamset):
             except:
                 continue
             if f_type == "MinDose" and objective.ForRegionOfInterest.Name in boost_list:    
-                objective.DoseFunctionParameters.Weight = 1.25*objective.DoseFunctionParameters.Weight
+                objective.DoseFunctionParameters.Weight = 1.5*objective.DoseFunctionParameters.Weight
         
-        plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+        #plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
         plan.PlanOptimizations[beamset.Number-1].RunOptimization()        
         continue_optimization = True
     else: #If all PTVs are covered equally, stop here
@@ -2826,10 +2829,17 @@ def crane_stereo_kbp_modify_plan_multi_ptv(plan_data,plan,beamset):
     return continue_optimization
         
         
-def crane_stereo_kbp_scale_dose_multi_ptv(plan_data,beamset):    
+def crane_stereo_kbp_scale_dose_multi_ptv(plan_data,beamset,reset_dose=False):    
     ptv_names = plan_data['ptv_names']
     rx = plan_data['rx']
     nb_fx = plan_data['nb_fx']
+    
+    #If we want to scale the dose back to its initial level, we need to determine what the initial PTV coverage was
+    if reset_dose:
+        initial_ptv_cov = []
+        for i,ptv in enumerate(ptv_names):
+            ptv_coverage = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_names[i], DoseValues=[rx[i]/nb_fx])
+            initial_ptv_cov.append(ptv_coverage[0])    
     
     #For each PTV, check coverage and scale plan up if necessary (this ensures that all PTVs are covered)
     for i,ptv in enumerate(ptv_names):
@@ -2837,4 +2847,49 @@ def crane_stereo_kbp_scale_dose_multi_ptv(plan_data,beamset):
         if ptv_coverage[0] < 0.99:
             beamset.NormalizeToPrescription(RoiName=ptv_names[i], DoseValue=rx[i], DoseVolume=99, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)     
     
+    #Evaluate V10,V12
+    obtained_vol = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName="CERVEAU-PTV_"+plan_data['site_name'], DoseValues=[1000/nb_fx,1200/nb_fx])
+    
+    #Reset dose to where it was before scaling if requested
+    if reset_dose:
+        beamset.NormalizeToPrescription(RoiName=ptv_names[0], DoseValue=rx[0], DoseVolume=initial_ptv_cov[0]*100, PrescriptionType="DoseAtVolume", LockedBeamNames=None, EvaluateAfterScaling=True)     
+        
+    return obtained_vol
 
+def estimate_vx(predicted_vol,rx_dose,dose_level=1000):
+    #predicted_vol=[v100,v90,v80,v70,v60,v50,v40] (in cc)
+    #rx_dose and dose_level should be in cGy
+
+    ratio = float(dose_level) / float(rx_dose)
+    if ratio < 0.4: #Prescription is so high that 10Gy falls below the predicted dose levels
+        output = 'moins que %.2fcc' % predicted_vol[6]
+    elif ratio == 0.4:
+        output = '%.2fcc' % predicted_vol[6]
+    elif ratio > 0.4 and ratio < 0.5:
+        output = 'approx %.2fcc' % ((0.5-ratio)*10*predicted_vol[6]+(ratio-0.4)*10*predicted_vol[5])
+    elif ratio == 0.5:
+        output = '%.2fcc' % predicted_vol[5]
+    elif ratio > 0.5 and ratio < 0.6:
+        output = 'approx %.2fcc' % ((0.6-ratio)*10*predicted_vol[5]+(ratio-0.5)*10*predicted_vol[4])
+    elif ratio == 0.6:
+        output = '%.2fcc' % predicted_vol[4]
+    elif ratio > 0.6 and ratio < 0.7:
+        output = 'approx %.2fcc' % ((0.7-ratio)*10*predicted_vol[4]+(ratio-0.6)*10*predicted_vol[3])
+    elif ratio == 0.7:
+        output = '%.2fcc' % predicted_vol[3]        
+    elif ratio > 0.7 and ratio < 0.8:
+        output = 'approx %.2fcc' % ((0.8-ratio)*10*predicted_vol[3]+(ratio-0.7)*10*predicted_vol[2])
+    elif ratio == 0.8:
+        output = '%.2fcc' % predicted_vol[2]   
+    elif ratio > 0.8 and ratio < 0.9:
+        output = 'approx %.2fcc' % ((0.9-ratio)*10*predicted_vol[2]+(ratio-0.8)*10*predicted_vol[1])
+    elif ratio == 0.9:
+        output = '%.2fcc' % predicted_vol[1]   
+    elif ratio > 0.9 and ratio < 1.0:
+        output = 'approx %.2fcc' % ((1.0-ratio)*10*predicted_vol[1]+(ratio-0.9)*10*predicted_vol[0])
+    elif ratio == 1.0:
+        output = '%.2fcc' % predicted_vol[0]           
+    elif ratio > 1.0:
+        output = 'au moins %.2fcc' % predicted_vol[0]
+    
+    return output
