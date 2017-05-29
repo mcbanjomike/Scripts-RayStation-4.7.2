@@ -1168,3 +1168,186 @@ SystemError: CommunicationError: Script Execution has been stopped by the user
 2017-05-19 16:46:46,741 - hmrlib - INFO - [hmr30489 - LEFEBVRE^JACQUES (1568892) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
 2017-05-19 16:46:46,797 - hmrlib - INFO - [hmr30489 - LEFEBVRE^JACQUES (1568892) - CT 1 - B1 IMRT/B1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:27:55.145000]
 2017-05-19 16:46:46,884 - hmrlib - INFO - [hmr30489 - LEFEBVRE^JACQUES (1568892) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-05-29 15:11:50,013 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:11:50,457 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 15:11:50,580 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:16:30,312 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:16:30,476 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:04:40.533000]
+2017-05-29 15:16:30,601 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:20:11,640 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:20:12,081 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 15:20:12,210 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:20:13,275 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:20:13,412 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:01.734000]
+2017-05-29 15:20:13,533 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:21:01,577 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:21:02,018 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 15:21:02,141 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:21:14,639 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:21:14,767 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:13.213000]
+2017-05-29 15:21:14,972 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:22:54,809 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:22:55,248 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 15:22:55,370 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:24:59,811 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:25:00,296 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 15:25:00,444 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:25:19,778 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:25:19,981 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:20.102000]
+2017-05-29 15:25:20,106 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:38:55,143 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:38:55,610 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 15:38:55,808 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:39:22,995 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:39:23,196 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:27.929000]
+2017-05-29 15:39:23,338 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:40:15,587 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:40:15,967 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 15:40:16,078 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:40:46,604 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:40:46,729 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:31.106000]
+2017-05-29 15:40:46,853 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:41:14,462 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:41:14,962 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 15:41:15,110 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:41:32,550 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:41:32,680 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:18.193000]
+2017-05-29 15:41:32,809 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:41:46,825 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:41:47,311 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 15:41:47,439 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:42:16,420 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:42:16,546 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:29.782000]
+2017-05-29 15:42:16,671 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:42:22,581 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:42:23,032 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 15:42:23,188 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:42:43,102 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:42:43,227 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:20.598000]
+2017-05-29 15:42:43,356 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:58:26,252 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 15:58:26,609 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 15:58:26,731 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:08:34,853 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:08:34,978 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:10:08.720000]
+2017-05-29 16:08:35,099 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:08:40,828 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:08:41,263 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:08:41,385 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:09:11,416 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:09:11,538 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:30.758000]
+2017-05-29 16:09:11,657 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:09:17,872 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:09:18,271 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script outils_crane_3DC.py
+2017-05-29 16:09:18,393 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:11:08,506 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:11:08,632 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script outils_crane_3DC.py [execution time = 0:01:50.780000]
+2017-05-29 16:11:08,754 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:11:14,204 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:11:14,649 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script outils_crane_3DC.py
+2017-05-29 16:11:14,772 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:11:22,927 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:11:23,067 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script outils_crane_3DC.py [execution time = 0:00:08.748000]
+2017-05-29 16:11:23,193 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:11:29,052 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:11:29,492 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:11:29,616 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:12:13,440 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:12:13,565 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:44.532000]
+2017-05-29 16:12:13,686 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:12:19,778 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:12:20,221 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:12:20,350 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:13:34,249 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:13:34,374 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:01:14.654000]
+2017-05-29 16:13:34,497 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:13:39,115 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:13:39,550 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:13:39,674 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:14:04,470 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:14:04,596 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:25.348000]
+2017-05-29 16:14:04,718 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:14:09,657 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:14:10,099 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:14:10,223 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:14:32,707 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:14:32,830 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:23.067000]
+2017-05-29 16:14:32,953 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:14:38,412 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:14:38,838 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:14:38,985 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:14:59,381 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:14:59,507 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:21.094000]
+2017-05-29 16:14:59,634 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:15:05,529 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:15:05,976 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:15:06,099 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:18:33,941 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:18:34,066 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:03:28.604000]
+2017-05-29 16:18:34,188 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:18:40,545 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:18:40,972 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:18:41,097 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:18:41,862 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:18:41,912 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:01.518000]
+2017-05-29 16:18:41,960 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:19:23,213 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:19:23,655 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:19:23,781 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:19:24,887 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:19:24,993 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:01.741000]
+2017-05-29 16:19:25,096 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:20:06,457 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:20:06,870 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:20:06,994 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:20:49,415 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:20:49,539 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:43.101000]
+2017-05-29 16:20:49,663 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:21:11,999 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:21:12,381 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:21:12,507 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:24:31,747 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:24:31,927 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:03:19.887000]
+2017-05-29 16:24:32,071 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:24:38,325 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:24:38,698 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:24:38,821 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:25:51,812 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:25:51,938 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:01:13.588000]
+2017-05-29 16:25:52,060 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:25:58,083 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:25:58,541 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:25:58,665 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:26:58,555 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:26:58,679 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:01:00.620000]
+2017-05-29 16:26:58,798 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:27:04,588 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:27:05,043 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:27:05,194 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:28:02,429 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:28:02,557 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:57.937000]
+2017-05-29 16:28:02,682 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:28:07,606 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:28:08,031 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] Starting script calculer_NTCP_foie.py
+2017-05-29 16:28:08,154 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:28:47,419 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:28:47,543 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] End of script calculer_NTCP_foie.py [execution time = 0:00:39.818000]
+2017-05-29 16:28:47,668 - hmrlib - INFO - [hmr30489 - BISAILLON^THERESE (1892738) - CT 1 - B1 3DC optimised/B1 3DC optimised] ================================================================================
+2017-05-29 16:32:50,744 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - LSG STEREO/LSG STEREO.0] ================================================================================
+2017-05-29 16:32:51,158 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - LSG STEREO/LSG STEREO.0] Starting script calculer_NTCP_foie.py
+2017-05-29 16:32:51,289 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - LSG STEREO/LSG STEREO.0] ================================================================================
+2017-05-29 16:32:59,769 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - LSG STEREO/LSG STEREO.0] ================================================================================
+2017-05-29 16:32:59,898 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - LSG STEREO/LSG STEREO.0] End of script calculer_NTCP_foie.py [execution time = 0:00:09.135000]
+2017-05-29 16:33:00,026 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - LSG STEREO/LSG STEREO.0] ================================================================================
+2017-05-29 16:33:21,854 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - isabelle/isabelle] ================================================================================
+2017-05-29 16:33:22,242 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - isabelle/isabelle] Starting script calculer_NTCP_foie.py
+2017-05-29 16:33:22,414 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - isabelle/isabelle] ================================================================================
+2017-05-29 16:34:50,319 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-29 16:34:50,342 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script calculer_NTCP_foie.py [execution time = 0:01:28.582000]
+2017-05-29 16:34:50,361 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-05-29 16:35:59,643 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - isabelle/isabelle] ================================================================================
+2017-05-29 16:36:00,110 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - isabelle/isabelle] Starting script outils_planificateur.py
+2017-05-29 16:36:00,244 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - isabelle/isabelle] ================================================================================
+2017-05-29 16:36:05,345 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - isabelle/isabelle] ================================================================================
+2017-05-29 16:36:05,472 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - isabelle/isabelle] End of script outils_planificateur.py [execution time = 0:00:05.860000]
+2017-05-29 16:36:05,599 - hmrlib - INFO - [hmr30489 - BLANCHET^SOLANGE (170667) - CT sim - isabelle/isabelle] ================================================================================
