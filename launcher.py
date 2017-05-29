@@ -4984,11 +4984,11 @@ def lung_stats_window():
  
  
  
-def foie_calculer_ntcp():
+def tool_window():
 
-    class NTCPWindow(Form):
+    class ToolWindow(Form):
         def __init__(self):
-            self.Text = "Calcul NTCP"
+            self.Text = "Outils de planification"
 
             self.Width = 600
             self.Height = 500
@@ -5032,37 +5032,97 @@ def foie_calculer_ntcp():
             self.MainWindow = self.Panel(0, 60)
             
             vert_spacer = 30
-            offset = 50   
+            offset = 20   
             
-            self.toplabel = Label()
-            self.toplabel.Text = "ROI                                      Diagnostique"
-            self.toplabel.Font = Font("Arial", 10, FontStyle.Bold)
-            self.toplabel.Location = Point(100, 20)
-            self.toplabel.AutoSize = True  
+            self.NTCPlabel = Label()
+            self.NTCPlabel.Text = "Calculer NTCP"
+            self.NTCPlabel.Location = Point(25, offset)
+            self.NTCPlabel.Font = Font("Arial", 11, FontStyle.Bold)
+            self.NTCPlabel.AutoSize = True              
+            
+            self.roilabel = Label()
+            self.roilabel.Text = "ROI:"
+            self.roilabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.roilabel.Location = Point(25, offset + vert_spacer)
+            self.roilabel.AutoSize = True  
                    
             self.ROIcombo = ComboBox()
             self.ROIcombo.Parent = self
-            self.ROIcombo.Size = Size(200,40)
-            self.ROIcombo.Location = Point(25, offset)
-            self.ROIcombo.Text = "Choisissez ROI"             
-
-            self.typecombo = ComboBox()
-            self.typecombo.Parent = self
-            self.typecombo.Size = Size(100,40)
-            self.typecombo.Location = Point(275, offset)
-            self.typecombo.Text = "Méta" 
-            self.typecombo.Items.Add('Méta')
-            self.typecombo.Items.Add('CHC')
+            self.ROIcombo.Size = Size(150,40)
+            self.ROIcombo.Location = Point(65, offset + vert_spacer)
+            self.ROIcombo.Text = "Choisissez ROI"                                
+                   
+            self.diaglabel = Label()
+            self.diaglabel.Text = "Diagnostique:"
+            self.diaglabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.diaglabel.Location = Point(235, offset + vert_spacer)
+            self.diaglabel.AutoSize = True                     
+                   
+            self.diagcombo = ComboBox()
+            self.diagcombo.Parent = self
+            self.diagcombo.Size = Size(75,40)
+            self.diagcombo.Location = Point(335, offset + vert_spacer)
+            self.diagcombo.Text = "Méta" 
+            self.diagcombo.Items.Add('Méta')
+            self.diagcombo.Items.Add('CHC')
             
-            self.MainWindow.Controls.Add(self.toplabel)
+            self.NTCPButton = Button()
+            self.NTCPButton.Text = "Calculer NTCP"
+            self.NTCPButton.Size = Size(100,20)
+            self.NTCPButton.Location = Point(450, offset + vert_spacer)
+            self.NTCPButton.Click += self.NTCPClicked                 
+            
+            
+            
+            self.renamelabel = Label()
+            self.renamelabel.Text = "Renommer les faisceaux"
+            self.renamelabel.Location = Point(25, offset + vert_spacer * 3)
+            self.renamelabel.Font = Font("Arial", 11, FontStyle.Bold)
+            self.renamelabel.AutoSize = True          
+
+            self.renamewarninglabel = Label()
+            self.renamewarninglabel.Text = "Pas recommendé pour les plans avec couch de table"
+            self.renamewarninglabel.Location = Point(25, offset + vert_spacer * 3.7)
+            self.renamewarninglabel.Font = Font("Arial", 10, FontStyle.Italic)
+            self.renamewarninglabel.AutoSize = True                  
+            
+            self.sitelabel = Label()
+            self.sitelabel.Text = "Site:"
+            self.sitelabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.sitelabel.Location = Point(25, offset + vert_spacer * 4.7)
+            self.sitelabel.AutoSize = True   
+            
+            self.sitebox = TextBox()
+            self.sitebox.Parent = self
+            self.sitebox.Size = Size(60,40)
+            self.sitebox.Location = Point(75,offset + vert_spacer * 4.7)
+            self.sitebox.Text = "A1"
+            
+            self.renameButton = Button()
+            self.renameButton.Text = "Renommer les faisceaux"
+            self.renameButton.Size = Size(150,20)
+            self.renameButton.Location = Point(420,offset + vert_spacer * 4.7)
+            self.renameButton.Click += self.renameClicked
+            
+            
+            self.MainWindow.Controls.Add(self.NTCPlabel)
+            self.MainWindow.Controls.Add(self.roilabel)
+            self.MainWindow.Controls.Add(self.diaglabel)            
             self.MainWindow.Controls.Add(self.ROIcombo)
-            self.MainWindow.Controls.Add(self.typecombo)
-        
+            self.MainWindow.Controls.Add(self.diagcombo)
+            self.MainWindow.Controls.Add(self.NTCPButton)
+            
+            self.MainWindow.Controls.Add(self.renamelabel)
+            self.MainWindow.Controls.Add(self.renamewarninglabel)
+            self.MainWindow.Controls.Add(self.sitelabel)
+            self.MainWindow.Controls.Add(self.sitebox)
+            self.MainWindow.Controls.Add(self.renameButton)
+            
             
         def cancelClicked(self, sender, args):
             self.Close()          
             
-        def okClicked(self, sender, args):     
+        def NTCPClicked(self, sender, args):     
 
             self.message.ForeColor = Color.Black
             self.message.Text = "Calcul en cours, veuillez patienter"
@@ -5075,9 +5135,9 @@ def foie_calculer_ntcp():
             else:
                 error_message = "ROI pas trouvé"
             
-            if self.typecombo.Text == 'CHC':
+            if self.diagcombo.Text == 'CHC':
                 CHC = True
-            elif self.typecombo.Text == 'Méta':
+            elif self.diagcombo.Text == 'Méta':
                 CHC = False
             else:
                 error_message = "SVP choisissez CHC ou Méta"
@@ -5095,28 +5155,80 @@ def foie_calculer_ntcp():
             self.message.ForeColor = Color.Green
             
 
-        def setupOKButtons(self):
-            self.OKbuttonPanel = self.miniPanel(0, 410)
+        def renameClicked(self, sender, args):
             
-            okButton = Button()
-            okButton.Text = "Calculer"
-            okButton.Location = Point(25, 10)
-            self.AcceptButton = okButton
-            okButton.Click += self.okClicked            
+            self.message.ForeColor = Color.Black
+            self.message.Text = "En cours"
+        
+            #Check if the plan has been approved
+            try:
+                if plan.Review.ApprovalStatus == "Approved":      
+                    self.message.Text = "Le plan est locké"
+                    self.message.ForeColor = Color.Red
+                    return
+            except:
+                pass
+
+            #Make sure there are beams
+            try:
+                beam_name = beamset.Beams[0].Name
+                beams = True
+            except:
+                beams = False
+                self.message.Text = "Aucun faisceau trouvé"
+                self.message.ForeColor = Color.Red
+                return
+            
+            couched_beams = False
+            for i,beam in enumerate(beamset.Beams):
+                beam.Name = self.sitebox.Text + '.' + str(i+1)
+                
+                try: #Checks whether beam has a stop angle (for arcs)
+                    beam.Description = 'ARC %d-%d' % (beam.GantryAngle, beam.ArcStopGantryAngle)
+                except:
+                    if beam.GantryAngle == 0:
+                        incidence = 'ANT'
+                    elif beam.GantryAngle > 0 and beam.GantryAngle < 90:
+                        incidence = 'OAG'
+                    elif beam.GantryAngle == 90:
+                        incidence = 'LAT G'
+                    elif beam.GantryAngle > 90 and beam.GantryAngle < 180:
+                        incidence = 'OPG'                        
+                    elif beam.GantryAngle == 180:
+                        incidence = 'POST'
+                    elif beam.GantryAngle > 180 and beam.GantryAngle < 270:
+                        incidence = 'OPD'                        
+                    elif beam.GantryAngle == 270:
+                        incidence = 'LAT D'
+                    elif beam.GantryAngle > 270:
+                        incidence = 'OAD'                        
+                    
+                    beam.Description = "%s %d" % (incidence,beam.GantryAngle)
+                    
+                    if beam.CouchAngle != 0:
+                        couched_beams = True
+
+            if couched_beams:
+                self.message.Text = "Terminé - Il faut entrer les noms manuellement\nsi couch pas égal à 0"
+            else:
+                self.message.Text = "Terminé"
+            self.message.ForeColor = Color.Green
+            
+        def setupOKButtons(self):
+            self.OKbuttonPanel = self.miniPanel(0, 410)                  
             
             cancelButton = Button()
             cancelButton.Text = "Annuler"
-            cancelButton.Location = Point(125,10)
+            cancelButton.Location = Point(25,10)
             self.CancelButton = cancelButton
             cancelButton.Click += self.cancelClicked
             
             self.message = Label()
             self.message.Text = ""
-            self.message.Location = Point(225, 13)
+            self.message.Location = Point(125, 13)
             self.message.Font = Font("Arial", 11, FontStyle.Bold)
             self.message.AutoSize = True      
             
-            self.OKbuttonPanel.Controls.Add(okButton)
             self.OKbuttonPanel.Controls.Add(cancelButton)
             self.OKbuttonPanel.Controls.Add(self.message)
            
@@ -5150,6 +5262,6 @@ def foie_calculer_ntcp():
         debug_window('Aucun examination trouvé')
         return
         
-    form = NTCPWindow()
+    form = ToolWindow()
     Application.Run(form)   
   
