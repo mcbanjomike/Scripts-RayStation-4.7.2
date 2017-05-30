@@ -194,6 +194,31 @@ def remove_all_isodose_lines():
         raise
 
 
+def calculate_cihi(ptv_name,isodose_name,rx_dose):
+    
+    patient = lib.get_current_patient()    
+    beamset = lib.get_current_beamset()
+    exam = lib.get_current_examination()
+    
+    ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_name].GetRoiVolume()
+    isodose_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[isodose_name].GetRoiVolume()
+    nb_fx = beamset.FractionationPattern.NumberOfFractions
+    
+    cirtog = isodose_vol / ptv_vol
+    
+    try:
+        body_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries['BodyRS'].GetRoiVolume()
+        max_dose = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = 'BodyRS',RelativeVolumes = [0.1/body_vol])
+        hi = max_dose[0] / (rx_dose/nb_fx*100)
+    except:
+        max_dose = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName = ptv_name,RelativeVolumes = [0.1/ptv_vol])
+        hi = max_dose[0] / (rx_dose/nb_fx*100)
+        
+    ptv_couvert = roi.get_intersecting_volume(ptv_name,isodose_name,exam)
+    cipaddick = (ptv_couvert*ptv_couvert) / (ptv_vol*isodose_vol)
+    
+    return cirtog,hi,cipaddick
+        
 # def set_dose_color_map(map, reference_type='RelativeValue', reference_value=100, display_type='Absolute'):
 #     """
 #         Sets a new dose map for the diplay of isodose lines.
