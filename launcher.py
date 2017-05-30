@@ -4271,6 +4271,7 @@ def crane_launcher():
             rx = d['rx']       
             ptv_names = d['ptv_names']
             technique = d['technique']
+            site = d['site_name']
                         
             #Predict dose to brain (and generate ROIs)
             self.status.ForeColor = Color.Black
@@ -4308,6 +4309,12 @@ def crane_launcher():
                 
                 self.status.Text = "Création du contour externe"
                 roi.generate_BodyRS_using_threshold()
+                
+                #Create TISSU SAINS à 1cm
+                if not roi.roi_exists("TISSU SAIN 1cm "+site):
+                    patient.PatientModel.CreateRoi(Name="TISSU SAIN 1cm "+site, Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
+                    patient.PatientModel.RegionsOfInterest["TISSU SAIN 1cm "+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['sum_ptvs_'+site], 'MarginSettings': {'Type': "Expand", 'Superior': 1, 'Inferior': 1, 'Anterior': 1, 'Posterior': 1, 'Right': 1, 'Left': 1}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                    patient.PatientModel.RegionsOfInterest["TISSU SAIN 1cm "+site].UpdateDerivedGeometry(Examination=exam)                    
             
             #Assign proper contour type to all PTVs
             self.status.Text = "Assignation du statut PTV"
