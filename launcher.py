@@ -4052,7 +4052,7 @@ def crane_launcher():
 
             
             self.message = Label()
-            self.message.Text = "Sélectionnez le(s) ROI(s) à traiter (chaque\ncontour distinct devrait être indiqué\nséparément). Seulement les ROIs avec\nPTV dans leurs noms sont disponibles.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLes plans IMRT/3DC avec plusieurs PTVs\ndistincts auront une optimisation automatique\nde la collimateur. SVP touchez pas à\nl'ordinateur pendant cette optimisation\n(4 à 5 minutes environ)"
+            self.message.Text = "Sélectionnez le(s) ROI(s) à traiter (chaque\ncontour distinct devrait être indiqué\nséparément). Seulement les ROIs avec\nPTV dans leurs noms sont disponibles.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLes plans IMRT/3DC avec plusieurs PTVs\ndistincts auront une optimisation automatique\ndu collimateur. SVP ne touchez pas à\nl'ordinateur pendant cette optimisation\n(4 à 5 minutes environ)"
             self.message.Location = Point(300, offset)
             self.message.Font = Font("Arial", 11, FontStyle.Italic)
             self.message.AutoSize = True                
@@ -5041,6 +5041,7 @@ def tool_window():
             vert_spacer = 30
             offset = 20   
             
+            #NTCP group
             self.NTCPlabel = Label()
             self.NTCPlabel.Text = "Calculer NTCP"
             self.NTCPlabel.Location = Point(25, offset)
@@ -5081,35 +5082,80 @@ def tool_window():
             
             
             
+            #Conformity Index group
+            self.CIHIlabel = Label()
+            self.CIHIlabel.Text = "Calculer CI/HI"
+            self.CIHIlabel.Location = Point(25, offset + vert_spacer * 3)
+            self.CIHIlabel.Font = Font("Arial", 11, FontStyle.Bold)
+            self.CIHIlabel.AutoSize = True              
+            
+            self.ptvlabel = Label()
+            self.ptvlabel.Text = "PTV:"
+            self.ptvlabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.ptvlabel.Location = Point(25, offset + vert_spacer * 4)
+            self.ptvlabel.AutoSize = True  
+                   
+            self.ptvcombo = ComboBox()
+            self.ptvcombo.Parent = self
+            self.ptvcombo.Size = Size(100,40)
+            self.ptvcombo.Location = Point(65, offset + vert_spacer * 4)
+            self.ptvcombo.Text = "Choisissez PTV"                                
+                   
+            self.isodoselabel = Label()
+            self.isodoselabel.Text = "ROI isodose:"
+            self.isodoselabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.isodoselabel.Location = Point(175, offset + vert_spacer * 4)
+            self.isodoselabel.AutoSize = True                     
+                   
+            self.isodosecombo = ComboBox()
+            self.isodosecombo.Parent = self
+            self.isodosecombo.Size = Size(100,40)
+            self.isodosecombo.Location = Point(265, offset + vert_spacer * 4)
+            self.isodosecombo.Text = "Choissisez ROI" 
+
+            self.dosebox = TextBox()
+            self.dosebox.Parent = self
+            self.dosebox.Size = Size(60,40)
+            self.dosebox.Location = Point(380,offset + vert_spacer * 4)          
+            
+            self.CIHIButton = Button()
+            self.CIHIButton.Text = "Calculer CI/HI"
+            self.CIHIButton.Size = Size(100,20)
+            self.CIHIButton.Location = Point(450, offset + vert_spacer * 4)
+            self.CIHIButton.Click += self.CIHIClicked                 
+            
+            
+            #Rename beams group
             self.renamelabel = Label()
             self.renamelabel.Text = "Renommer les faisceaux"
-            self.renamelabel.Location = Point(25, offset + vert_spacer * 3)
+            self.renamelabel.Location = Point(25, offset + vert_spacer * 6)
             self.renamelabel.Font = Font("Arial", 11, FontStyle.Bold)
             self.renamelabel.AutoSize = True          
 
             self.renamewarninglabel = Label()
-            self.renamewarninglabel.Text = "Pas recommendé pour les plans avec couch de table"
-            self.renamewarninglabel.Location = Point(25, offset + vert_spacer * 3.7)
+            self.renamewarninglabel.Text = "Seulement pour patients en position dorsal avec couch à zéro"
+            self.renamewarninglabel.Location = Point(25, offset + vert_spacer * 6.7)
             self.renamewarninglabel.Font = Font("Arial", 10, FontStyle.Italic)
             self.renamewarninglabel.AutoSize = True                  
             
             self.sitelabel = Label()
             self.sitelabel.Text = "Site:"
             self.sitelabel.Font = Font("Arial", 10, FontStyle.Bold)
-            self.sitelabel.Location = Point(25, offset + vert_spacer * 4.7)
+            self.sitelabel.Location = Point(25, offset + vert_spacer * 7.7)
             self.sitelabel.AutoSize = True   
             
             self.sitebox = TextBox()
             self.sitebox.Parent = self
             self.sitebox.Size = Size(60,40)
-            self.sitebox.Location = Point(75,offset + vert_spacer * 4.7)
+            self.sitebox.Location = Point(75,offset + vert_spacer * 7.7)
             self.sitebox.Text = "A1"
             
             self.renameButton = Button()
             self.renameButton.Text = "Renommer les faisceaux"
             self.renameButton.Size = Size(150,20)
-            self.renameButton.Location = Point(420,offset + vert_spacer * 4.7)
-            self.renameButton.Click += self.renameClicked
+            self.renameButton.Location = Point(420,offset + vert_spacer * 7.7)
+            self.renameButton.Click += self.renameClicked            
+            
             
             
             self.MainWindow.Controls.Add(self.NTCPlabel)
@@ -5119,12 +5165,20 @@ def tool_window():
             self.MainWindow.Controls.Add(self.diagcombo)
             self.MainWindow.Controls.Add(self.NTCPButton)
             
+            self.MainWindow.Controls.Add(self.CIHIlabel)
+            self.MainWindow.Controls.Add(self.ptvlabel)                      
+            self.MainWindow.Controls.Add(self.ptvcombo)
+            self.MainWindow.Controls.Add(self.isodoselabel)             
+            self.MainWindow.Controls.Add(self.isodosecombo)
+            self.MainWindow.Controls.Add(self.dosebox)            
+            self.MainWindow.Controls.Add(self.CIHIButton)            
+                        
             self.MainWindow.Controls.Add(self.renamelabel)
             self.MainWindow.Controls.Add(self.renamewarninglabel)
             self.MainWindow.Controls.Add(self.sitelabel)
             self.MainWindow.Controls.Add(self.sitebox)
             self.MainWindow.Controls.Add(self.renameButton)
-            
+
             
         def cancelClicked(self, sender, args):
             self.Close()          
@@ -5220,7 +5274,34 @@ def tool_window():
             else:
                 self.message.Text = "Terminé"
             self.message.ForeColor = Color.Green
+  
+
+        def CIHIClicked(self, sender, args):                
+                     
+            self.message.ForeColor = Color.Black
+            self.message.Text = "Calcul en cours, veuillez patienter"                       
+                     
+            if roi.roi_exists(self.ptvcombo.Text) and roi.roi_exists(self.isodosecombo.Text):         
+                ptv_name = self.ptvcombo.Text
+                isodose_name = self.isodosecombo.Text
+            else:
+                self.message.Text = "PTV et/ou ROI isodose pas trouvé"
+                self.message.ForeColor = Color.Red
+                return              
+
+            try:
+                rx_dose = float(self.dosebox.Text)
+            except:
+                self.message.Text = "Dose illisible"
+                self.message.ForeColor = Color.Red
+                return
+        
+            cirtog,hi,cipaddick = eval.calculate_cihi(ptv_name,isodose_name,rx_dose)
+            self.message.Text = "CIRTOG: %.2f, HI: %.2f, CIPADDICK: %.2f" % (cirtog,hi,cipaddick)
+            self.message.ForeColor = Color.Green
             
+            
+  
         def setupOKButtons(self):
             self.OKbuttonPanel = self.miniPanel(0, 410)                  
             
@@ -5245,6 +5326,15 @@ def tool_window():
                 self.ROIcombo.Items.Add(roi.Name)
                 if roi.Name == 'FOIE EXPI-GTV':
                     self.ROIcombo.Text = roi.Name
+                if 'PTV' in roi.Name or 'ptv' in roi.Name:
+                    self.ptvcombo.Items.Add(roi.Name)
+                if 'ISO' in roi.Name or 'iso' in roi.Name:
+                    self.isodosecombo.Items.Add(roi.Name)
+                    
+            try:
+                self.dosebox.Text = str((beamset.Prescription.PrimaryDosePrescription.DoseValue)/100.0)
+            except:
+                self.dosebox.Text = 'Dose (Gy)'
 
                         
     #Check for common errors while importing patient, plan, beamset and examination
