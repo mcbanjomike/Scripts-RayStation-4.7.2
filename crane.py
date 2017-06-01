@@ -2502,20 +2502,29 @@ def crane_stereo_kbp_predict_oar_dose(plan_data):
 
     #Detailed analysis to predict dose to tronc
     tronc_est = 0 #Dose that we expect the tronc to receive (in cGy)
-    ring_list = ['predicted_r40_'+site,'predicted_r50_'+site,'predicted_r60_'+site,'predicted_r70_'+site,'predicted_r80_'+site,'predicted_r90_'+site,'predicted_r100_'+site]
+    ring_list = ['predicted_r40_'+site,'predicted_r50_'+site,'predicted_r60_'+site,'predicted_r70_'+site,'predicted_r80_'+site,'predicted_r90_'+site]
     for r in ring_list:
         if roi.get_intersecting_volume(tronc_name, r, examination=exam) > 0: #Tronc overlaps with this predicted dose level
             tronc_est = int(r.split('_')[1][1:])*rx_dose/100
         else:
             break
     
+    if tronc_est >= 0.9 * rx_dose: #Very close to PTV
+        tronc_max = rx_dose
+    elif tronc_est > 625 and tronc_est < 0.9 * rx_dose:
+        tronc_max = 0.8 * tronc_est
+    else:
+        tronc_max = 500
+    
+    """
     if tronc_est > 800:
         tronc_max = 800
     elif tronc_est > 500 and tronc_est <= 800:
         tronc_max = tronc_est
     else:
         tronc_max = 500
-        
+    """
+    
     return tronc_max
     
    
@@ -2556,10 +2565,16 @@ def crane_stereo_kbp_add_IMRT_plan_and_beamset(plan_data):
     
     plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
 
+    #Determine which PTV has highest prescription dose
+    highest_ptv = plan_data['ptv_names'][0]
+    for i,dose in enumerate(plan_data['rx']):
+        if dose == max(plan_data['rx']):
+            highest_ptv = plan_data['ptv_names'][i]
+    
     # Add beamset
     beamset = plan.AddNewBeamSet(Name=name, ExaminationName=plan_data['exam'].Name, MachineName=plan_data['machine'], NominalEnergy=None,
                                       Modality="Photons", TreatmentTechnique='SMLC', PatientPosition="HeadFirstSupine", NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment='IMRT')
-    beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv_names'][0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)    
+    beamset.AddDosePrescriptionToRoi(RoiName=highest_ptv, DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)    
     
     # Add beam
     if plan_data['couch']:    
@@ -2596,9 +2611,15 @@ def crane_stereo_kbp_add_3DC_plan(plan_data):
     plan = patient.AddNewPlan(PlanName=name, PlannedBy=planner_name, Comment="", ExaminationName=exam.Name, AllowDuplicateNames=False)
     plan.SetDefaultDoseGrid(VoxelSize={ 'x': 0.2, 'y': 0.2, 'z': 0.2 })
     
+    #Determine which PTV has highest prescription dose
+    highest_ptv = plan_data['ptv_names'][0]
+    for i,dose in enumerate(plan_data['rx']):
+        if dose == max(plan_data['rx']):
+            highest_ptv = plan_data['ptv_names'][i]    
+    
     # Add beamset
     beamset = plan.AddNewBeamSet(Name=name, ExaminationName=exam.Name, MachineName=plan_data['machine'], NominalEnergy=None, Modality="Photons", TreatmentTechnique="Conformal", PatientPosition="HeadFirstSupine", NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, UseLocalizationPointAsSetupIsocenter=False, Comment=plan_data['technique'])
-    beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv_names'][0], DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1, AutoScaleDose=False)
+    beamset.AddDosePrescriptionToRoi(RoiName=highest_ptv, DoseVolume=99, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1, AutoScaleDose=False)
 
     # Add beams
     if plan_data['couch']:
@@ -2630,7 +2651,7 @@ def crane_stereo_kbp_add_3DC_plan(plan_data):
 
     # Change settings in Plan Settings window
     for row in ui.RoisUsedForPlanningView.DataGridRow:
-        if row.RoiGeometry.TextBlock_Name.Text == 'OPTPTV_'+site or row.RoiGeometry.TextBlock_Name.Text == plan_data['ptv_names'][0]:
+        if row.RoiGeometry.TextBlock_Name.Text == 'OPTPTV_'+site or row.RoiGeometry.TextBlock_Name.Text == highest_ptv:
             if not row.CheckBox.IsChecked:
                 row.CheckBox.Click()    
         elif row.CheckBox.IsChecked:
@@ -2767,9 +2788,9 @@ def crane_stereo_kbp_initial_optimization_objectives(plan_data,plan,predicted_vo
         optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, round(100*predicted_vol[4]/ring_vol,2), weight=5, plan=plan, plan_opt=0)  
         
         optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
-        optim.add_maxdose_objective('OEIL DRT', 800, weight=1.0, plan=plan, plan_opt=0)                        
-        optim.add_maxdose_objective('OEIL GCHE', 800, weight=1.0, plan=plan, plan_opt=0)      
-        optim.add_maxdose_objective('CHIASMA', 800, weight=1.0, plan=plan, plan_opt=0)        
+        #optim.add_maxdose_objective('OEIL DRT', 800, weight=1.0, plan=plan, plan_opt=0)                        
+        #optim.add_maxdose_objective('OEIL GCHE', 800, weight=1.0, plan=plan, plan_opt=0)      
+        #optim.add_maxdose_objective('CHIASMA', 800, weight=1.0, plan=plan, plan_opt=0)        
         
         
 def crane_stereo_kbp_modify_plan_single_ptv(plan_data,plan,beamset,predicted_vol,tronc_max):

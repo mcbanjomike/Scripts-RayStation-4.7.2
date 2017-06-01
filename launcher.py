@@ -3851,18 +3851,6 @@ def crane_launcher():
             except:
                 self.isodosecombo.SelectedIndex = self.isodosecombo.FindStringExact('Créer')
                 
-            #Choose planning scan
-            try:
-                self.scancombo.SelectedIndex = self.scancombo.FindStringExact('CT 1')
-            except:
-                self.scancombo.Text = 'Sélectionnez'
-            
-            #Choose isocenter POI
-            try:
-                self.isocombo.SelectedIndex = self.isocombo.FindStringExact('ISO')
-            except:
-                self.isocombo.Text = 'Sélectionnez'
-                
             
         def Panel(self, x, y):
             panel = Panel()
@@ -3988,8 +3976,9 @@ def crane_launcher():
             self.isocombo.Size = Size(90,40)
             self.isocombo.Location = Point(150, offset + 6.5*vert_spacer)
             for poi in patient.PatientModel.PointsOfInterest:
-                if 'ISO' in poi.Name:
-                    self.isocombo.Items.Add(poi.Name)               
+                self.isocombo.Items.Add(poi.Name)   
+                if poi.Name == 'REF SCAN':
+                    self.isocombo.Text = 'REF SCAN'
             
             
             self.scanlabel = Label()
@@ -4004,6 +3993,8 @@ def crane_launcher():
             self.scancombo.Location = Point(150, offset + 7.5*vert_spacer)
             for ct in patient.Examinations:
                 self.scancombo.Items.Add(ct.Name)         
+                if ct.Name == 'CT 1':
+                    self.scancombo.Text = 'CT 1'
             
             
             self.machinelabel = Label()
@@ -4076,6 +4067,16 @@ def crane_launcher():
             addplanButton.Width = 200
             addplanButton.Click += self.addplanClicked   
 
+
+            self.stepcombo = ComboBox()
+            self.stepcombo.Parent = self
+            self.stepcombo.Size = Size(250,40)
+            self.stepcombo.Location = Point(25, offset + 15 * vert_spacer)
+            self.stepcombo.Text = "Rouler le script au complet"                  
+            self.stepcombo.Items.Add('Rouler le script au complet')            
+            self.stepcombo.Items.Add('Multi-PTV: Arrêtez avant optimization collimateur')            
+            self.stepcombo.Items.Add('Multi-PTV: Reprendre après optimization collimateur')                   
+            
             
             self.MainWindow.Controls.Add(self.toplabel)
             
@@ -4115,6 +4116,8 @@ def crane_launcher():
 
             self.MainWindow.Controls.Add(evalButton)
             self.MainWindow.Controls.Add(addplanButton)            
+            
+            self.MainWindow.Controls.Add(self.stepcombo) 
 
             
         def compile_plan_data(self):            
@@ -4156,19 +4159,26 @@ def crane_launcher():
                 
             technique = self.techcombo.Text
                     
+            if self.isocombo.Text == '':
+                error_message = "Choisissez un isocentre avant de continuer"
+
+            if self.scancombo.Text == '':
+                error_message = "Choisissez un scan avant de continuer"
+                
             if self.couchcombo.Text == 'Ajouter':
                 couch = True
             else:
                 couch = False                    
-                    
+                                  
             name = self.sitebox.Text + ' ' + technique
             if couch:
-                name += ' Couch'            
-            try:    
-                existing_plan = patient.TreatmentPlans[name]
-                error_message = "Un plan avec le nom %s exist déjà, SVP le renommez avant de commencer" % name
-            except:
-                pass                    
+                name += ' Couch'    
+            if self.stepcombo.Text != "Multi-PTV: Reprendre après optimization collimateur": #We need to skip this step if completing a plan that was started earlier           
+                try:    
+                    existing_plan = patient.TreatmentPlans[name]
+                    error_message = "Un plan avec le nom %s exist déjà, SVP le renommez avant de commencer" % name
+                except:
+                    pass                    
                 
             oar_list = crane.crane_stereo_kbp_identify_rois(patient)
             if oar_list[0] == 'ERROR':
@@ -4259,7 +4269,7 @@ def crane_launcher():
             
         def addplanClicked(self, sender, args):
             self.status.ForeColor = Color.Black
-            self.status.Text = "Calcul en cours, veuillez patienter"
+            self.status.Text = "Compilation des données du plan"
             
             d,error_message = self.compile_plan_data()
             
@@ -4272,12 +4282,11 @@ def crane_launcher():
             ptv_names = d['ptv_names']
             technique = d['technique']
             site = d['site_name']
-                        
+                                            
             #Predict dose to brain (and generate ROIs)
-            self.status.ForeColor = Color.Black
             self.status.Text = "Estimation de la dose au cerveau"
             predicted_vol = crane.crane_stereo_kbp_predict_dose(plan_data = d)
-            cerv_ptv_vol = patient.PatientModel.StructureSets[d['exam'].Name].RoiGeometries["CERVEAU-PTV_"+d['site_name']].GetRoiVolume()
+            cerv_ptv_vol = patient.PatientModel.StructureSets[d['exam'].Name].RoiGeometries["CERVEAU-PTV_"+d['site_name']].GetRoiVolume()            
             
             #Display predicted results
             self.message.Text = 'Volumes prédits dans le cerveau-PTV:\n   V100%%: %.2fcc\n   V90%%:  %.2fcc\n   V80%%:  %.2fcc\n   V70%%: %.2fcc\n   V60%%:  %.2fcc\n   V50%%:  %.2fcc\n   V40%%:  %.2fcc' % (predicted_vol[0],predicted_vol[1],predicted_vol[2],predicted_vol[3],predicted_vol[4],predicted_vol[5],predicted_vol[6])
@@ -4288,150 +4297,187 @@ def crane_launcher():
             self.status.Text = "Estimation de la dose max au tronc cerebral"
             tronc_max = crane.crane_stereo_kbp_predict_oar_dose(plan_data = d)    
             
-            if patient.BodySite == '':
-                patient.BodySite = 'Crâne'  
+            #Check which steps of the script are to be performed
+            if self.stepcombo.Text == "Rouler le script au complet":
+                add_plan = True
+                optimize_collimator_angles = True
+                optimize_plan = True               
+            elif self.stepcombo.Text == "Multi-PTV: Arrêtez avant optimization collimateur":
+                add_plan = True
+                optimize_collimator_angles = False
+                optimize_plan = False              
+            elif self.stepcombo.Text == "Multi-PTV: Reprendre après optimization collimateur":
+                add_plan = False
+                optimize_collimator_angles = False
+                optimize_plan = True            
             
-            if self.isodosecombo.Text == "Créer":
-                self.status.Text = "Ajout du dose color table"
-                crane.crane_stereo_create_isodose_lines(plan_data = d)           
+            if add_plan:
                 
-            #Create/assign types to POIs and ROIs (only if this is the first plan for the patient)
-            try:
-                existing_plan = patient.TreatmentPlans[0]
-            except:
-                self.status.Text = "Gestion des POIs"
-                poi.create_iso()
-                poi.auto_assign_poi_types()
+                if patient.BodySite == '':
+                    patient.BodySite = 'Crâne'  
                 
-                self.status.Text = "Suppression des overrides de densité"
-                for rois in patient.PatientModel.RegionsOfInterest:
-                    rois.SetRoiMaterial(Material=None)    
-                
-                self.status.Text = "Création du contour externe"
-                roi.generate_BodyRS_using_threshold()
-                
-                #Create TISSU SAINS à 1cm
-                if not roi.roi_exists("TISSU SAIN 1cm "+site):
-                    patient.PatientModel.CreateRoi(Name="TISSU SAIN 1cm "+site, Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
-                    patient.PatientModel.RegionsOfInterest["TISSU SAIN 1cm "+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['sum_ptvs_'+site], 'MarginSettings': {'Type': "Expand", 'Superior': 1, 'Inferior': 1, 'Anterior': 1, 'Posterior': 1, 'Right': 1, 'Left': 1}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-                    patient.PatientModel.RegionsOfInterest["TISSU SAIN 1cm "+site].UpdateDerivedGeometry(Examination=exam)                    
-            
-            #Assign proper contour type to all PTVs
-            self.status.Text = "Assignation du statut PTV"
-            for ptv in ptv_names:
+                if self.isodosecombo.Text == "Créer":
+                    self.status.Text = "Ajout du dose color table"
+                    crane.crane_stereo_create_isodose_lines(plan_data = d)           
+                    
+                #Create/assign types to POIs and ROIs (only if this is the first plan for the patient)
                 try:
-                    roi.set_roi_type(ptv, 'Ptv', 'Target')
-                except:
-                    pass #In a perfect world, I would copy the ROI, replace the PTV with the copy in ptv_names and then change its type
-            
-            #Add plan, beamset and beams
-            self.status.Text = "Ajout du plan, beamset et faisceaux"
-            if technique == 'VMAT': #Only case where we don't need a 3DC plan at all
-                plan,beamset = crane.crane_stereo_kbp_add_VMAT_plan_and_beamset(plan_data = d)
-            
-            elif technique == 'IMRT' and len(ptv_names) == 1:
-                plan,beamset = crane.crane_stereo_kbp_add_IMRT_plan_and_beamset(plan_data = d)
-            
-            elif technique == 'IMRT' and len(ptv_names) > 1:
-                self.status.Text = "Ajout du plan, beamset et faisceaux (touchez pas à l'ordinateur SVP)"
-                plan,beamset = crane.crane_stereo_kbp_add_3DC_plan(plan_data = d)
+                    existing_plan = patient.TreatmentPlans[0]
+                except:                
+                    if d['iso_name'] == 'REF SCAN': #Need to skip this step if planner is intentionally using a different isocenter
+                        self.status.Text = "Création de l'isocentre à partir du REF SCAN"
+                        poi.create_iso()
+                    self.status.Text = "Gestion des POIs"
+                    poi.auto_assign_poi_types()
+                    
+                    self.status.Text = "Suppression des overrides de densité"
+                    for rois in patient.PatientModel.RegionsOfInterest:
+                        rois.SetRoiMaterial(Material=None)    
+                    
+                    self.status.Text = "Création du contour externe"
+                    roi.generate_BodyRS_using_threshold()
+                    
+                    #Create TISSU SAINS à 1cm
+                    if not roi.roi_exists("TISSU SAIN 1cm "+site):
+                        patient.PatientModel.CreateRoi(Name="TISSU SAIN 1cm "+site, Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
+                        patient.PatientModel.RegionsOfInterest["TISSU SAIN 1cm "+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['sum_ptvs_'+site], 'MarginSettings': {'Type': "Expand", 'Superior': 1, 'Inferior': 1, 'Anterior': 1, 'Posterior': 1, 'Right': 1, 'Left': 1}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                        patient.PatientModel.RegionsOfInterest["TISSU SAIN 1cm "+site].UpdateDerivedGeometry(Examination=exam)                    
                 
-                self.status.Text = "Optimisation angles collimateur (touchez pas à l'ordinateur SVP)"
-                crane.optimize_collimator_angles()
+                #Assign proper contour type to all PTVs
+                self.status.Text = "Assignation du statut PTV"
+                for ptv in ptv_names:
+                    try:
+                        roi.set_roi_type(ptv, 'Ptv', 'Target')
+                    except:
+                        pass #In a perfect world, I would copy the ROI, replace the PTV with the copy in ptv_names and then change its type
                 
-                self.status.Text = "Conversion du plan 3DC > IMRT (touchez pas à l'ordinateur SVP)"
-                crane.crane_stereo_convert_3DC_IMRT(plan=plan,beamset=beamset)
+                #Add plan, beamset and beams
+                self.status.Text = "Ajout du plan, beamset et faisceaux"
+                if technique == 'VMAT': #Only case where we don't need a 3DC plan at all
+                    plan,beamset = crane.crane_stereo_kbp_add_VMAT_plan_and_beamset(plan_data = d)
+                
+                elif technique == 'IMRT' and len(ptv_names) == 1:
+                    plan,beamset = crane.crane_stereo_kbp_add_IMRT_plan_and_beamset(plan_data = d)
             
-            elif technique == '3DC':
-                self.status.Text = "Ajout du plan, beamset et faisceaux (touchez pas à l'ordinateur SVP)"
-                plan,beamset = crane.crane_stereo_kbp_add_3DC_plan(plan_data = d)
+                elif technique == 'IMRT' and len(ptv_names) > 1:
+                    if optimize_collimator_angles:
+                        self.status.Text = "Ajout du plan, beamset et faisceaux (touchez pas à l'ordinateur SVP)"
+                        plan,beamset = crane.crane_stereo_kbp_add_3DC_plan(plan_data = d)
+                        
+                        self.status.Text = "Optimisation angles collimateur (touchez pas à l'ordinateur SVP)"
+                        crane.optimize_collimator_angles()
+                        
+                        self.status.Text = "Conversion du plan 3DC > IMRT (touchez pas à l'ordinateur SVP)"
+                        crane.crane_stereo_convert_3DC_IMRT(plan=plan,beamset=beamset)
+                    
+                    else:
+                        self.status.Text = "Ajout du plan, beamset et faisceaux"
+                        plan,beamset = crane.crane_stereo_kbp_add_IMRT_plan_and_beamset(plan_data = d)
+                        self.status.Text = "Prêt pour optimisation manuelle des angles de collimateur"
+                        self.status.ForeColor = Color.Green
+                        return
+                    
+                elif technique == '3DC':
+                    self.status.Text = "Ajout du plan, beamset et faisceaux (touchez pas à l'ordinateur SVP)"
+                    plan,beamset = crane.crane_stereo_kbp_add_3DC_plan(plan_data = d)
+                    
+                    #if len(ptv_names)>1:
+                    if optimize_collimator_angles:
+                        self.status.Text = "Optimisation angles collimateur (touchez pas à l'ordinateur SVP)"
+                        crane.optimize_collimator_angles()  
+                    else:
+                        self.status.Text = "Prêt pour optimisation manuelle des angles de collimateur"
+                        self.status.ForeColor = Color.Green
+                        return
+
+            if add_plan == False:
+                plan = lib.get_current_plan()
+                beamset = lib.get_current_beamset()
                 
-                if len(ptv_names)>1:
-                    self.status.Text = "Optimisation angles collimateur (touchez pas à l'ordinateur SVP)"
-                    crane.optimize_collimator_angles()  
+            if optimize_plan:
+                            
+                # Add clinical goals (conveniently the same for all types of plan)
+                self.status.Text = "Ajout des clinical goals"
+                clinical_goals.add_dictionary_cg('Crane Stereo', 15, 1, plan = plan)
+                eval.add_clinical_goal("CERVEAU-PTV_"+d['site_name'], 1000, 'AtMost', 'AbsoluteVolumeAtDose', 10, plan=plan)
+                eval.add_clinical_goal("CERVEAU-PTV_"+d['site_name'], 1200, 'AtMost', 'AbsoluteVolumeAtDose', 8, plan=plan)
+                for i,ptv in enumerate(ptv_names):
+                    eval.add_clinical_goal(ptv, rx[i], 'AtLeast', 'VolumeAtDose', 99, plan=plan)
+                    eval.add_clinical_goal(ptv, 1.5 * rx[i], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+                    #if technique == '3DC':
+                    #    optim.copy_clinical_goals(old_plan = plan,new_plan = patient.TreatmentPlans[d['site_name']+' 3DC optimised'])                    
+                        
+                #Add objectives and optimize plan
+                if technique == '3DC':
+                    self.status.Text = "Optimisation du plan 3DC (touchez pas à l'ordinateur SVP)"
+                    plan,beamset = crane.crane_stereo_kbp_optimize_3DC_plan(plan_data=d,plan=plan,beamset=beamset) 
+                    obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=False)            
+                else:
+                    self.status.Text = "Ajout des objectifs d'optimisation"
+                    crane.crane_stereo_kbp_initial_optimization_objectives(plan_data=d,plan=plan,predicted_vol=predicted_vol,tronc_max=tronc_max)
                     
-            # Add clinical goals (conveniently the same for all types of plan)
-            self.status.Text = "Ajout des clinical goals"
-            clinical_goals.add_dictionary_cg('Crane Stereo', 15, 1, plan = plan)
-            eval.add_clinical_goal("CERVEAU-PTV_"+d['site_name'], 1000, 'AtMost', 'AbsoluteVolumeAtDose', 10, plan=plan)
-            eval.add_clinical_goal("CERVEAU-PTV_"+d['site_name'], 1200, 'AtMost', 'AbsoluteVolumeAtDose', 8, plan=plan)
-            for i,ptv in enumerate(ptv_names):
-                eval.add_clinical_goal(ptv, rx[i], 'AtLeast', 'VolumeAtDose', 99, plan=plan)
-                eval.add_clinical_goal(ptv, 1.5 * rx[i], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
-                #if technique == '3DC':
-                #    optim.copy_clinical_goals(old_plan = plan,new_plan = patient.TreatmentPlans[d['site_name']+' 3DC optimised'])                    
-                    
-            #Add objectives and optimize plan
-            if technique == '3DC':
-                self.status.Text = "Optimisation du plan 3DC (touchez pas à l'ordinateur SVP)"
-                plan,beamset = crane.crane_stereo_kbp_optimize_3DC_plan(plan_data=d,plan=plan,beamset=beamset) 
-                obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=False)            
-            else:
-                self.status.Text = "Ajout des objectifs d'optimisation"
-                crane.crane_stereo_kbp_initial_optimization_objectives(plan_data=d,plan=plan,predicted_vol=predicted_vol,tronc_max=tronc_max)
-                
-                self.status.Text = "Optimization du plan initial"
-                plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
-                if len(ptv_names) == 1:
-                    optim.triple_optimization(plan=plan,beamset=beamset)
-                elif len(ptv_names) > 1:
-                    optim.optimization_90_30(plan=plan,beamset=beamset)  
-                    
-                self.status.Text = "Modification du plan"
-                if len(ptv_names) == 1:
-                    crane.crane_stereo_kbp_modify_plan_single_ptv(plan_data=d,plan=plan,beamset=beamset,predicted_vol=predicted_vol,tronc_max=tronc_max)
-                    self.status.Text = "Optimization du plan modifié"
-                    optim.triple_optimization(plan=plan,beamset=beamset)
-                    self.status.Text = "Scaling couverture à la prescription"
-                    obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=False)
-                elif len(ptv_names) > 1:     
-                    obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=True)
-                    self.message.Text += '\n\nV10 obtenu (plan initial): %.2fcc\nV12 obtenu (plan initial): %.2fcc' % (obtained_vol[0]*cerv_ptv_vol,obtained_vol[1]*cerv_ptv_vol)
-                    continue_optimization = True
-                    best_vol = 100000
-                    for i in range(4): #i IS EQUAL TO THE NUMBER OF COMPLETED ITERATIONS!
-                        if continue_optimization:
-                            self.status.Text = "Modification du plan et réoptimisation (étape %d/4)" % (i+1)
-                            continue_optimization = crane.crane_stereo_kbp_modify_plan_multi_ptv(plan_data=d,plan=plan,beamset=beamset) #Evaluates PTV coverage, adjusts and reoptimizes if necessary
-                            obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=True)
-                            if (obtained_vol[0] + obtained_vol[1]) < best_vol:
-                                best_vol = obtained_vol[0] + obtained_vol[1]
-                                best_iteration = i
-                            #if continue_optimization: #If crane_stereo_kbp_modify_plan_multi_ptv returns False, then the plan hasn't changed since last time and we don't need to print these values again
-                            self.message.Text += '\n\nV10 obtenu (après %d révision(s)): %.2fcc\nV12 obtenu (après %d révision(s)): %.2fcc' % (i+1,obtained_vol[0]*cerv_ptv_vol,i+1,obtained_vol[1]*cerv_ptv_vol)                            
-                    self.status.Text = "Scaling de la couverture à la prescription"
-                    obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=False)
-                    
-                    #Now we have to check if the final plan is better than the previous plans. If not, we will reoptimize and stop and the correct point.
-                    self.status.Text = "Meilleur plan: plan initial avec %d itérations" % best_iteration
-                    
-                    #if (obtained_vol[0]+obtained_vol[1]*0.9) > best_vol:
-                    if (obtained_vol[0]+obtained_vol[1]) > best_vol:
-                        self.status.Text = "Retour vers le meilleur plan, veuillez patientez svp"
-                        optim.erase_objectives(plan,beamset)
-                        plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
-                        crane.crane_stereo_kbp_initial_optimization_objectives(plan_data=d,plan=plan,predicted_vol=predicted_vol,tronc_max=tronc_max)
-                        optim.optimization_90_30(plan=plan,beamset=beamset)
-                        for i in range(best_iteration+1):
-                            self.status.Text = "Modification du plan et réoptimisation (étape %d/%d)" % (i+1,best_iteration+1)
-                            continue_optimization = crane.crane_stereo_kbp_modify_plan_multi_ptv(plan_data=d,plan=plan,beamset=beamset)
+                    self.status.Text = "Optimization du plan initial"
+                    plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+                    if len(ptv_names) == 1:
+                        optim.triple_optimization(plan=plan,beamset=beamset)
+                    elif len(ptv_names) > 1:
+                        optim.optimization_90_30(plan=plan,beamset=beamset)  
+                        
+                    self.status.Text = "Modification du plan"
+                    if len(ptv_names) == 1:
+                        crane.crane_stereo_kbp_modify_plan_single_ptv(plan_data=d,plan=plan,beamset=beamset,predicted_vol=predicted_vol,tronc_max=tronc_max)
+                        self.status.Text = "Optimization du plan modifié"
+                        optim.triple_optimization(plan=plan,beamset=beamset)
+                        self.status.Text = "Scaling couverture à la prescription"
+                        obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=False)
+                    elif len(ptv_names) > 1:     
+                        obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=True)
+                        self.message.Text += '\n\nV10 obtenu (plan initial): %.2fcc\nV12 obtenu (plan initial): %.2fcc' % (obtained_vol[0]*cerv_ptv_vol,obtained_vol[1]*cerv_ptv_vol)
+                        continue_optimization = True
+                        best_vol = 100000
+                        for i in range(4): #i IS EQUAL TO THE NUMBER OF COMPLETED ITERATIONS!
+                            if continue_optimization:
+                                self.status.Text = "Modification du plan et réoptimisation (étape %d/4)" % (i+1)
+                                continue_optimization = crane.crane_stereo_kbp_modify_plan_multi_ptv(plan_data=d,plan=plan,beamset=beamset) #Evaluates PTV coverage, adjusts and reoptimizes if necessary
+                                obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=True)
+                                if (obtained_vol[0] + obtained_vol[1]) < best_vol:
+                                    best_vol = obtained_vol[0] + obtained_vol[1]
+                                    best_iteration = i
+                                #if continue_optimization: #If crane_stereo_kbp_modify_plan_multi_ptv returns False, then the plan hasn't changed since last time and we don't need to print these values again
+                                self.message.Text += '\n\nV10 obtenu (après %d révision(s)): %.2fcc\nV12 obtenu (après %d révision(s)): %.2fcc' % (i+1,obtained_vol[0]*cerv_ptv_vol,i+1,obtained_vol[1]*cerv_ptv_vol)                            
                         self.status.Text = "Scaling de la couverture à la prescription"
-                        obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=False)                            
-            
-            
-            #Display results of plan
-            self.message.Text += '\n\nV10 obtenu: %.2fcc\nV12 obtenu: %.2fcc' % (obtained_vol[0]*cerv_ptv_vol,obtained_vol[1]*cerv_ptv_vol)
-            
-            #Write results to file (this is put into a try because it will crash if someone has the destination file open when it tries to write to it)
-            try:
-                crane.crane_kbp_write_results_to_file(plan_data=d,plan=plan,beamset=beamset,predicted_vol=predicted_vol,initial_ptv_cov=initial_ptv_cov,obtained_vol=obtained_vol)
-            except:
-                pass
-            
+                        obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=False)
+                        
+                        #Now we have to check if the final plan is better than the previous plans. If not, we will reoptimize and stop and the correct point.
+                        self.status.Text = "Meilleur plan: plan initial avec %d itérations" % best_iteration
+                        
+                        #if (obtained_vol[0]+obtained_vol[1]*0.9) > best_vol:
+                        if (obtained_vol[0]+obtained_vol[1]) > best_vol:
+                            self.status.Text = "Retour vers le meilleur plan, veuillez patientez svp"
+                            optim.erase_objectives(plan,beamset)
+                            plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
+                            crane.crane_stereo_kbp_initial_optimization_objectives(plan_data=d,plan=plan,predicted_vol=predicted_vol,tronc_max=tronc_max)
+                            optim.optimization_90_30(plan=plan,beamset=beamset)
+                            for i in range(best_iteration+1):
+                                self.status.Text = "Modification du plan et réoptimisation (étape %d/%d)" % (i+1,best_iteration+1)
+                                continue_optimization = crane.crane_stereo_kbp_modify_plan_multi_ptv(plan_data=d,plan=plan,beamset=beamset)
+                            self.status.Text = "Scaling de la couverture à la prescription"
+                            obtained_vol,initial_ptv_cov = crane.crane_stereo_kbp_scale_dose(plan_data=d,beamset=beamset,reset_dose=False)                            
+                
+                
+                #Display results of plan
+                self.message.Text += '\n\nV10 obtenu: %.2fcc\nV12 obtenu: %.2fcc' % (obtained_vol[0]*cerv_ptv_vol,obtained_vol[1]*cerv_ptv_vol)
+                
+                #Write results to file (this is put into a try because it will crash if someone has the destination file open when it tries to write to it)
+                try:
+                    crane.crane_kbp_write_results_to_file(plan_data=d,plan=plan,beamset=beamset,predicted_vol=predicted_vol,initial_ptv_cov=initial_ptv_cov,obtained_vol=obtained_vol)
+                except:
+                    pass
+                
             self.isodosecombo.Text = 'Ne pas créer'
             self.status.Text = "Terminé avec succès!"
             self.status.ForeColor = Color.Green
-    
+        
     
     
     
