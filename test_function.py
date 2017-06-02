@@ -29,7 +29,6 @@ from hmrlib.HMR_RS_LoggerAdapter import HMR_RS_LoggerAdapter
 #import clr
 #import System.Array
 
-
 # Temporary stuff to get rid of after testing GUI
 import launcher
 import poumon
@@ -38,7 +37,7 @@ import foie
 import message
 import verification
 import statistics
-
+import orlDM
 import crane2ptv
 
 # Stuff to potentially allow for UI manipulation
@@ -96,7 +95,14 @@ def test_MA():
     
 def test_DM():
     #launcher.verif_finale()
-    temp_string = 'Mike changed this again!'
+    #d = dict(rx_dose = [7000,6000,5400],
+     #        ptv = ['PTV70','PTV60','PTV54'],
+      #       patient = lib.get_current_patient(),
+       #      exam = lib.get_current_examination())
+    #orlDM.orl_rois(plan_data=d)
+    #launcher.double_opt_extra()
+    optim.fit_objectives_orl(plan=None, beamset=None)
+    #temp_string = 'Mike changed this again!'
     
 
     

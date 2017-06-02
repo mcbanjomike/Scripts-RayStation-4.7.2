@@ -34,7 +34,7 @@ def add_beams_brain_stereo(beamset=None, site_name='A1'):
     """
     if beamset is None:
         beamset = lib.get_current_beamset()
-
+    
     iso = poi.identify_isocenter_poi()
     lib.add_arc((site_name+'.1'), iso, 180, 181, 'CCW', description='ARC 180-181', collimator=5, beamset=beamset)
     lib.add_arc((site_name+'.2'), iso, 181, 180, 'CW', description='ARC 181-180', collimator=355, beamset=beamset)
@@ -349,3 +349,4 @@ def ajouter_arc_oppose():
     # Update max delivery time for new beam
     max_time = plan.PlanOptimizations[beamset.Number-1].OptimizationParameters.TreatmentSetupSettings[0].BeamSettings[0].ArcConversionPropertiesPerBeam.MaxArcDeliveryTime
     plan.PlanOptimizations[beamset.Number-1].OptimizationParameters.TreatmentSetupSettings[0].BeamSettings[1].ArcConversionPropertiesPerBeam.MaxArcDeliveryTime = max_time
+    
