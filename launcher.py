@@ -3826,7 +3826,7 @@ def crane_launcher():
             self.Text = "Statistiques"
 
             self.Width = 700
-            self.Height = 740
+            self.Height = 900
 
             self.setupHeaderWindow()
             self.setupMainWindow()
@@ -3837,12 +3837,19 @@ def crane_launcher():
             #Automatically populate ROI selection comboboxes
             self.PTV1combo.Items.Add("Choisissez ROI")
             self.PTV2combo.Items.Add("Choisissez ROI")
-            self.PTV3combo.Items.Add("Choisissez ROI")         
+            self.PTV3combo.Items.Add("Choisissez ROI")    
+            self.OAR1combo.Items.Add("Choisissez OAR")
+            self.OAR2combo.Items.Add("Choisissez OAR")
+            self.OAR3combo.Items.Add("Choisissez OAR")
             for roi in patient.PatientModel.RegionsOfInterest:       
                 if 'PTV' in roi.Name.upper():
                     self.PTV1combo.Items.Add(roi.Name)
                     self.PTV2combo.Items.Add(roi.Name)
                     self.PTV3combo.Items.Add(roi.Name)      
+                if 'PTV' not in roi.Name.upper():
+                    self.OAR1combo.Items.Add(roi.Name)
+                    self.OAR2combo.Items.Add(roi.Name)
+                    self.OAR3combo.Items.Add(roi.Name)
                     
             #Determine whether to add dose color table by looking for existing plans
             try:
@@ -3855,7 +3862,7 @@ def crane_launcher():
         def Panel(self, x, y):
             panel = Panel()
             panel.Width = 700
-            panel.Height = 640
+            panel.Height = 800
             panel.Location = Point(x, y)
             panel.BorderStyle = BorderStyle.None
             return panel
@@ -4039,31 +4046,71 @@ def crane_launcher():
             self.couchcombo.Location = Point(150, offset + 10.5*vert_spacer)
             self.couchcombo.Text = "Ne pas ajouter"                  
             self.couchcombo.Items.Add('Ne pas ajouter')            
-            self.couchcombo.Items.Add('Ajouter')                  
+            #self.couchcombo.Items.Add('Ajouter')                  
 
             
             self.message = Label()
-            self.message.Text = "Sélectionnez le(s) ROI(s) à traiter (chaque\ncontour distinct devrait être indiqué\nséparément). Seulement les ROIs avec\nPTV dans leurs noms sont disponibles.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLes plans IMRT/3DC avec plusieurs PTVs\ndistincts auront une optimisation automatique\ndu collimateur. SVP ne touchez pas à\nl'ordinateur pendant cette optimisation\n(4 à 5 minutes environ)"
+            self.message.Text = "Sélectionnez le(s) ROI(s) à traiter (chaque\ncontour distinct devrait être indiqué\nséparément). Seulement les ROIs avec\nPTV dans leurs noms sont disponibles.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLes plans IMRT/3DC avec plusieurs PTVs\ndistincts auront une optimisation automatique\ndu collimateur. SVP ne touchez pas à\nl'ordinateur pendant cette optimisation\n(4 à 5 minutes environ)"
             self.message.Location = Point(300, offset)
             self.message.Font = Font("Arial", 11, FontStyle.Italic)
             self.message.AutoSize = True                
             
             self.status = Label()
             self.status.Text = ""
-            self.status.Location = Point(25, 600)
+            self.status.Location = Point(25, 760)
             self.status.Font = Font("Arial", 11, FontStyle.Bold)
             self.status.AutoSize = True    
             
+
+            self.OARlabel = Label()
+            self.OARlabel.Text = "Max doses custom (Gy)"
+            self.OARlabel.Location = Point(25, offset + 13*vert_spacer)
+            self.OARlabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.OARlabel.AutoSize = True              
+            
+            self.OAR1combo = ComboBox()
+            self.OAR1combo.Parent = self
+            self.OAR1combo.Size = Size(120,40)
+            self.OAR1combo.Location = Point(25, offset + 14*vert_spacer)
+            self.OAR1combo.Text = "Choisissez OAR"     
+
+            self.OAR1_value = TextBox()
+            self.OAR1_value.Text = ""
+            self.OAR1_value.Location = Point(160, offset + 14*vert_spacer)
+            self.OAR1_value.Width = 50                  
+            
+            self.OAR2combo = ComboBox()
+            self.OAR2combo.Parent = self
+            self.OAR2combo.Size = Size(120,40)
+            self.OAR2combo.Location = Point(25, offset + 15*vert_spacer)
+            self.OAR2combo.Text = "Choisissez OAR"     
+            
+            self.OAR2_value = TextBox()
+            self.OAR2_value.Text = ""
+            self.OAR2_value.Location = Point(160, offset + 15*vert_spacer)
+            self.OAR2_value.Width = 50                
+            
+            self.OAR3combo = ComboBox()
+            self.OAR3combo.Parent = self
+            self.OAR3combo.Size = Size(120,40)
+            self.OAR3combo.Location = Point(25, offset + 16*vert_spacer)
+            self.OAR3combo.Text = "Choisissez OAR"                 
+            
+            self.OAR3_value = TextBox()
+            self.OAR3_value.Text = ""
+            self.OAR3_value.Location = Point(160, offset + 16*vert_spacer)
+            self.OAR3_value.Width = 50    
+
             
             evalButton = Button()
             evalButton.Text = "Évaluer les PTVs"
-            evalButton.Location = Point(25, offset + 13 * vert_spacer)
+            evalButton.Location = Point(25, offset + 18 * vert_spacer)
             evalButton.Width = 200
             evalButton.Click += self.evalClicked                           
             
             addplanButton = Button()
             addplanButton.Text = "Ajouter plan"
-            addplanButton.Location = Point(25, offset + 14 * vert_spacer)
+            addplanButton.Location = Point(25, offset + 19 * vert_spacer)
             addplanButton.Width = 200
             addplanButton.Click += self.addplanClicked   
 
@@ -4071,7 +4118,7 @@ def crane_launcher():
             self.stepcombo = ComboBox()
             self.stepcombo.Parent = self
             self.stepcombo.Size = Size(250,40)
-            self.stepcombo.Location = Point(25, offset + 15 * vert_spacer)
+            self.stepcombo.Location = Point(25, offset + 20 * vert_spacer)
             self.stepcombo.Text = "Rouler le script au complet"                  
             self.stepcombo.Items.Add('Rouler le script au complet')            
             self.stepcombo.Items.Add('Multi-PTV: Arrêtez avant optimization collimateur')            
@@ -4111,6 +4158,14 @@ def crane_launcher():
             self.MainWindow.Controls.Add(self.couchlabel)          
             self.MainWindow.Controls.Add(self.couchcombo)             
             
+            self.MainWindow.Controls.Add(self.OARlabel)
+            self.MainWindow.Controls.Add(self.OAR1combo)
+            self.MainWindow.Controls.Add(self.OAR1_value)
+            self.MainWindow.Controls.Add(self.OAR2combo)
+            self.MainWindow.Controls.Add(self.OAR2_value)
+            self.MainWindow.Controls.Add(self.OAR3combo)
+            self.MainWindow.Controls.Add(self.OAR3_value)
+            
             self.MainWindow.Controls.Add(self.message)            
             self.MainWindow.Controls.Add(self.status)     
 
@@ -4125,7 +4180,8 @@ def crane_launcher():
             self.status.Text = "Compilation des données du plan"      
             
             ptv_names = []
-            rx = []            
+            rx = []  
+            custom_max = []
             error_message = ""
             
             if roi.roi_exists(self.PTV1combo.Text):       
@@ -4180,6 +4236,29 @@ def crane_launcher():
                 except:
                     pass                    
                 
+            if self.stepcombo.Text == "Multi-PTV: Arrêtez avant optimization collimateur" or self.stepcombo.Text == "Multi-PTV: Reprendre après optimization collimateur":
+                if technique == 'VMAT':
+                    error_message = "Le script partiel devrait seulement être utilisé pour les cas d'IMRT et 3DC"
+                elif len(ptv_names) == 1:
+                    error_message = "Le script partiel devrait seulement être utilisé pour les cas avec plus qu'un PTV"
+                
+            if roi.roi_exists(self.OAR1combo.Text):
+                try:
+                    custom_max.append((self.OAR1combo.Text,float(self.OAR1_value.Text))) #Yes, you need all those parentheses for this to work
+                except:
+                    error_message = "Impossible de lire custom max dose 1"
+            if roi.roi_exists(self.OAR2combo.Text):
+                try:
+                    custom_max.append((self.OAR2combo.Text,float(self.OAR2_value.Text)))
+                except:
+                    error_message = "Impossible de lire custom max dose 2"
+            if roi.roi_exists(self.OAR3combo.Text):
+                try:
+                    custom_max.append((self.OAR3combo.Text,float(self.OAR3_value.Text)))
+                except:
+                    error_message = "Impossible de lire custom max dose 3"         
+                
+                
             oar_list = crane.crane_stereo_kbp_identify_rois(patient)
             if oar_list[0] == 'ERROR':
                 error_message = 'OAR essentiel pas trouvé: ' + oar_list[1]                     
@@ -4200,7 +4279,8 @@ def crane_launcher():
                      ptv_names = ptv_names,
                      oar_list = oar_list,
                      technique = technique,
-                     couch = couch)      
+                     couch = couch,
+                     custom_max = custom_max)      
             
             return d,error_message
 
@@ -4266,7 +4346,8 @@ def crane_launcher():
                 else:
                     self.message.Text += "\n\nAu moins un PTV <2cm, faites une comparaison\n3DC/IMRT et consultez la physique"
                     self.techcombo.Text = '3DC'            
-            
+   
+   
         def addplanClicked(self, sender, args):
             self.status.ForeColor = Color.Black
             self.status.Text = "Compilation des données du plan"

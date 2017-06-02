@@ -2415,3 +2415,306 @@ SystemError: The combination of function type and organ type is not allowed. ROI
 2017-06-01 16:41:39,404 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
 2017-06-01 16:41:39,451 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:09:30.276000]
 2017-06-01 16:41:39,497 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 16:54:15,898 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 16:54:16,054 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-01 16:54:16,102 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 16:55:06,181 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-01 16:55:06,189 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:50.462000]
+2017-06-01 16:55:06,195 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-01 17:04:53,542 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:04:53,688 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-01 17:04:53,735 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:06:12,982 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:06:13,027 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:01:19.528000]
+2017-06-01 17:06:13,070 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:06:17,714 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:06:17,861 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-01 17:06:17,948 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:10:23,764 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:10:23,808 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:04:06.135000]
+2017-06-01 17:10:23,850 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:10:27,843 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:10:27,997 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-01 17:10:28,049 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:13:27,669 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:13:27,715 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:02:59.911000]
+2017-06-01 17:13:27,764 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:13:31,817 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:13:31,965 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-01 17:13:32,011 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:15:18,279 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:15:18,325 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:01:46.551000]
+2017-06-01 17:15:18,368 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:15:21,538 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:15:21,685 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-01 17:15:21,732 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:19:58,078 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:19:58,128 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:04:36.626000]
+2017-06-01 17:19:58,171 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:24:18,098 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:24:18,251 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-01 17:24:18,300 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:25:25,191 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:25:25,344 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-01 17:25:25,394 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:25:28,453 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:25:28,498 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:00:03.336000]
+2017-06-01 17:25:28,544 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:26:20,973 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:26:21,124 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-01 17:26:21,174 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:26:51,625 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-01 17:26:51,633 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:30.778000]
+2017-06-01 17:26:51,638 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-01 17:26:56,302 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:26:56,456 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-01 17:26:56,505 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:27:18,462 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-01 17:27:18,508 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:00:22.237000]
+2017-06-01 17:27:18,551 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-02 09:59:07,473 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-02 09:59:07,628 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-02 09:59:07,675 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-02 10:22:43,573 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-02 10:22:43,618 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:23:36.365000]
+2017-06-02 10:22:43,660 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-02 10:22:59,506 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-02 10:22:59,664 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-02 10:22:59,709 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ================================================================================
+2017-06-02 10:23:56,048 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] ROI PTV15 is NOT approved.
+2017-06-02 10:23:56,196 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] Type of ROI "PTV15" set as Ptv
+2017-06-02 10:23:56,337 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] OrganType of ROI "PTV15" set as Target
+2017-06-02 10:23:57,189 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:23:57,489 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:23:57,748 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:23:58,027 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:23:58,275 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:23:58,547 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:23:58,821 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:23:59,112 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:23:59,377 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:23:59,632 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:23:59,893 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:24:00,158 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:24:00,430 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - B1 IMRT/B1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:28:09,161 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MinDose for ROI "PTV15" added.
+2017-06-02 10:28:09,773 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:28:11,463 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDose for ROI "MOELLE" added.
+2017-06-02 10:28:12,098 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDose for ROI "OEIL DRT" added.
+2017-06-02 10:34:35,136 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] ROI PTV15 is NOT approved.
+2017-06-02 10:34:35,715 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Type of ROI "PTV15" set as Ptv
+2017-06-02 10:34:36,169 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] OrganType of ROI "PTV15" set as Target
+2017-06-02 10:34:37,860 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Beam Set = <ScriptObject id=a8d59aad-fbe2-4658-9dab-ed9c6c91cfd4, 'C1 VMAT'>
+2017-06-02 10:34:37,922 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Exam = CT 1
+2017-06-02 10:34:38,055 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:34:38,364 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Added arc "C1.1" from 180 to 181 in direction CCW with isocenter REF SCAN.  Energy = 6, collimator = 2, couch = 0.0.
+2017-06-02 10:34:38,422 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:34:38,492 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-02 10:34:38,751 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Fluence iterations set to 60.
+2017-06-02 10:34:38,988 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Max iterations set to 100.
+2017-06-02 10:34:39,239 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-02 10:34:39,468 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Compute intermediate dose set to True.
+2017-06-02 10:34:39,714 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Compute final dose set to True.
+2017-06-02 10:34:39,775 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:34:39,865 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-02 10:34:40,140 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Max leaf travel per degree set to 0.1 cm/deg.
+2017-06-02 10:34:40,397 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Constrain leaf motion set to True.
+2017-06-02 10:34:40,711 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Arc gantry spacing set to 4 degrees for arc "C1.1".
+2017-06-02 10:34:40,959 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Max arc delivery time set to 350.0 s for arc "C1.1".
+2017-06-02 10:34:45,752 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MinDose for ROI "PTV15" added.
+2017-06-02 10:34:46,720 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:34:47,734 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:34:48,604 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-02 10:34:49,428 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-02 10:34:50,281 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-02 10:34:51,429 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDose for ROI "TRONC" added.
+2017-06-02 10:34:51,923 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDose for ROI "MOELLE" added.
+2017-06-02 10:34:52,404 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDose for ROI "OEIL DRT" added.
+2017-06-02 10:34:52,894 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:34:52,953 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-02 10:34:53,222 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Fluence iterations set to 30.
+2017-06-02 10:34:53,451 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Max iterations set to 90.
+2017-06-02 10:34:53,687 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-02 10:34:53,919 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Compute intermediate dose set to False.
+2017-06-02 10:34:54,167 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Compute final dose set to True.
+2017-06-02 10:36:08,386 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:36:08,444 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-02 10:36:09,435 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Fluence iterations set to 30.
+2017-06-02 10:36:09,662 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Max iterations set to 30.
+2017-06-02 10:36:09,964 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-02 10:36:10,325 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Compute intermediate dose set to False.
+2017-06-02 10:36:10,742 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Compute final dose set to True.
+2017-06-02 10:37:31,711 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MinDose for ROI "PTV15" added.
+2017-06-02 10:37:32,923 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:37:34,366 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:37:35,496 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-02 10:37:36,783 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-02 10:37:38,219 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-02 10:37:39,334 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDose for ROI "TRONC" added.
+2017-06-02 10:37:39,806 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDose for ROI "MOELLE" added.
+2017-06-02 10:37:40,284 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Objective of type MaxDose for ROI "OEIL DRT" added.
+2017-06-02 10:37:40,960 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:37:41,081 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-02 10:37:41,514 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Fluence iterations set to 30.
+2017-06-02 10:37:41,846 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Max iterations set to 90.
+2017-06-02 10:37:42,452 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-02 10:37:42,778 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Compute intermediate dose set to False.
+2017-06-02 10:37:43,381 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Compute final dose set to True.
+2017-06-02 10:38:58,506 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:38:58,594 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-02 10:38:58,955 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Fluence iterations set to 30.
+2017-06-02 10:38:59,650 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Max iterations set to 30.
+2017-06-02 10:38:59,987 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-02 10:39:00,582 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Compute intermediate dose set to False.
+2017-06-02 10:39:00,913 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] Compute final dose set to True.
+2017-06-02 10:40:56,313 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] ================================================================================
+2017-06-02 10:40:56,366 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] End of script test_NePasUtiliser.py [execution time = 0:17:56.887000]
+2017-06-02 10:40:56,414 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 3DC optimised/C1 3DC optimised] ================================================================================
+2017-06-02 10:43:24,666 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] ================================================================================
+2017-06-02 10:43:24,829 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Starting script test_NePasUtiliser.py
+2017-06-02 10:43:24,884 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] ================================================================================
+2017-06-02 10:44:46,421 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] ROI PTV15 is NOT approved.
+2017-06-02 10:44:48,288 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Type of ROI "PTV15" set as Ptv
+2017-06-02 10:44:49,856 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] OrganType of ROI "PTV15" set as Target
+2017-06-02 10:44:51,391 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:44:51,855 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:44:52,239 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:44:52,677 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:44:53,166 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:44:53,592 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:44:54,044 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:44:54,426 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:44:54,848 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:45:02,212 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MinDose for ROI "PTV15" added.
+2017-06-02 10:45:02,789 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:45:03,876 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:45:04,774 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-02 10:45:05,285 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-02 10:45:05,824 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-02 10:45:06,373 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MaxDose for ROI "TRONC" added.
+2017-06-02 10:45:06,701 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MaxDose for ROI "MOELLE" added.
+2017-06-02 10:45:07,028 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MaxDose for ROI "OREILLE GCHE" added.
+2017-06-02 10:45:07,381 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:45:07,448 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] PlanOptimizations[0] selected.
+2017-06-02 10:45:07,642 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Fluence iterations set to 30.
+2017-06-02 10:45:07,818 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Max iterations set to 90.
+2017-06-02 10:45:08,064 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Optimality tolerance set to 1e-09.
+2017-06-02 10:45:08,290 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Compute intermediate dose set to False.
+2017-06-02 10:45:08,574 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Compute final dose set to True.
+2017-06-02 10:45:25,965 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:45:26,033 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] PlanOptimizations[0] selected.
+2017-06-02 10:45:26,200 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Fluence iterations set to 30.
+2017-06-02 10:45:26,362 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Max iterations set to 30.
+2017-06-02 10:45:26,619 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Optimality tolerance set to 1e-09.
+2017-06-02 10:45:26,835 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Compute intermediate dose set to False.
+2017-06-02 10:45:27,075 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Compute final dose set to True.
+2017-06-02 10:45:53,283 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MinDose for ROI "PTV15" added.
+2017-06-02 10:45:53,688 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:45:54,293 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:45:54,821 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-02 10:45:55,330 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-02 10:45:55,790 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-02 10:45:56,320 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MaxDose for ROI "TRONC" added.
+2017-06-02 10:45:56,639 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MaxDose for ROI "MOELLE" added.
+2017-06-02 10:45:56,970 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Objective of type MaxDose for ROI "OREILLE GCHE" added.
+2017-06-02 10:45:57,487 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:45:57,553 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] PlanOptimizations[0] selected.
+2017-06-02 10:45:57,739 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Fluence iterations set to 30.
+2017-06-02 10:45:57,984 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Max iterations set to 90.
+2017-06-02 10:45:58,199 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Optimality tolerance set to 1e-09.
+2017-06-02 10:45:58,471 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Compute intermediate dose set to False.
+2017-06-02 10:45:58,882 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Compute final dose set to True.
+2017-06-02 10:46:16,433 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:46:16,548 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] PlanOptimizations[0] selected.
+2017-06-02 10:46:16,831 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Fluence iterations set to 30.
+2017-06-02 10:46:16,980 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Max iterations set to 30.
+2017-06-02 10:46:17,126 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Optimality tolerance set to 1e-09.
+2017-06-02 10:46:17,279 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Compute intermediate dose set to False.
+2017-06-02 10:46:17,425 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] Compute final dose set to True.
+2017-06-02 10:49:17,390 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] ================================================================================
+2017-06-02 10:49:17,441 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] End of script test_NePasUtiliser.py [execution time = 0:05:52.882000]
+2017-06-02 10:49:17,492 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 VMAT/C1 VMAT] ================================================================================
+2017-06-02 10:53:00,805 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 IMRT/C1 IMRT] ================================================================================
+2017-06-02 10:53:00,968 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 IMRT/C1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-02 10:53:01,028 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 IMRT/C1 IMRT] ================================================================================
+2017-06-02 10:53:05,467 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 IMRT/C1 IMRT] ================================================================================
+2017-06-02 10:53:05,526 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 IMRT/C1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:00:04.692000]
+2017-06-02 10:53:05,582 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - C1 IMRT/C1 IMRT] ================================================================================
+2017-06-02 10:53:28,180 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-06-02 10:53:28,341 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Starting script test_NePasUtiliser.py
+2017-06-02 10:53:28,404 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-06-02 10:54:35,539 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ROI PTV15 is NOT approved.
+2017-06-02 10:54:38,726 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Type of ROI "PTV15" set as Ptv
+2017-06-02 10:54:41,615 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] OrganType of ROI "PTV15" set as Target
+2017-06-02 10:54:43,170 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Beam Set = <ScriptObject id=369d7665-7a5e-46c6-afb2-cecb13abeb4a, 'A1 VMAT'>
+2017-06-02 10:54:43,284 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Exam = CT 1
+2017-06-02 10:54:43,538 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-06-02 10:54:44,144 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Added arc "A1.1" from 180 to 181 in direction CCW with isocenter REF SCAN.  Energy = 6, collimator = 2, couch = 0.0.
+2017-06-02 10:54:44,213 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:54:44,294 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] PlanOptimizations[0] selected.
+2017-06-02 10:54:44,601 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Fluence iterations set to 60.
+2017-06-02 10:54:44,859 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Max iterations set to 100.
+2017-06-02 10:54:45,230 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Optimality tolerance set to 1e-09.
+2017-06-02 10:54:45,637 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Compute intermediate dose set to True.
+2017-06-02 10:54:45,821 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Compute final dose set to True.
+2017-06-02 10:54:45,893 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:54:45,996 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] PlanOptimizations[0] selected.
+2017-06-02 10:54:46,206 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Max leaf travel per degree set to 0.1 cm/deg.
+2017-06-02 10:54:46,423 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Constrain leaf motion set to True.
+2017-06-02 10:54:47,177 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-06-02 10:54:47,373 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Max arc delivery time set to 350.0 s for arc "A1.1".
+2017-06-02 10:54:51,526 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MinDose for ROI "PTV15" added.
+2017-06-02 10:54:52,110 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:54:53,226 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:54:53,819 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-06-02 10:54:54,420 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-06-02 10:54:55,027 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-06-02 10:54:55,661 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDose for ROI "TRONC" added.
+2017-06-02 10:54:56,024 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDose for ROI "TRONC" added.
+2017-06-02 10:54:56,612 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDose for ROI "TRONC" added.
+2017-06-02 10:54:56,937 - hmrlib.eval - WARNING - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Identical clinical goal already exists
+2017-06-02 10:54:57,305 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDose for ROI "TRONC" added.
+2017-06-02 10:54:58,440 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:54:58,496 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] PlanOptimizations[0] selected.
+2017-06-02 10:54:58,681 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Fluence iterations set to 30.
+2017-06-02 10:54:58,863 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Max iterations set to 90.
+2017-06-02 10:54:59,031 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Optimality tolerance set to 1e-09.
+2017-06-02 10:54:59,210 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Compute intermediate dose set to False.
+2017-06-02 10:54:59,395 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Compute final dose set to True.
+2017-06-02 10:56:14,680 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:56:14,748 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] PlanOptimizations[0] selected.
+2017-06-02 10:56:15,020 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Fluence iterations set to 30.
+2017-06-02 10:56:15,273 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Max iterations set to 30.
+2017-06-02 10:56:15,560 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Optimality tolerance set to 1e-09.
+2017-06-02 10:56:16,008 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Compute intermediate dose set to False.
+2017-06-02 10:56:16,277 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Compute final dose set to True.
+2017-06-02 10:57:35,518 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MinDose for ROI "PTV15" added.
+2017-06-02 10:57:36,098 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:57:37,243 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-02 10:57:38,187 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-06-02 10:57:39,086 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-06-02 10:57:40,066 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-06-02 10:57:40,968 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDose for ROI "TRONC" added.
+2017-06-02 10:57:41,509 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDose for ROI "TRONC" added.
+2017-06-02 10:57:42,115 - hmrlib.eval - WARNING - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Identical clinical goal already exists
+2017-06-02 10:57:42,404 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDose for ROI "TRONC" added.
+2017-06-02 10:57:42,950 - hmrlib.eval - WARNING - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Identical clinical goal already exists
+2017-06-02 10:57:43,668 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Objective of type MaxDose for ROI "TRONC" added.
+2017-06-02 10:57:44,176 - hmrlib.eval - WARNING - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Identical clinical goal already exists
+2017-06-02 10:57:44,704 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:57:44,798 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] PlanOptimizations[0] selected.
+2017-06-02 10:57:45,090 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Fluence iterations set to 30.
+2017-06-02 10:57:45,268 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Max iterations set to 90.
+2017-06-02 10:57:45,547 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Optimality tolerance set to 1e-09.
+2017-06-02 10:57:45,799 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Compute intermediate dose set to False.
+2017-06-02 10:57:46,110 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Compute final dose set to True.
+2017-06-02 10:59:02,153 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-06-02 10:59:02,270 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] PlanOptimizations[0] selected.
+2017-06-02 10:59:02,543 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Fluence iterations set to 30.
+2017-06-02 10:59:02,896 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Max iterations set to 30.
+2017-06-02 10:59:03,357 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Optimality tolerance set to 1e-09.
+2017-06-02 10:59:03,633 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Compute intermediate dose set to False.
+2017-06-02 10:59:03,872 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Compute final dose set to True.
+2017-06-02 11:05:46,758 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-06-02 11:05:46,814 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:12:18.668000]
+2017-06-02 11:05:46,872 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================

@@ -2749,6 +2749,7 @@ def crane_stereo_kbp_optimize_3DC_plan(plan_data,plan,beamset):
     # Add optimization objectives
     optim.add_mindose_objective(plan_data['ptv_names'][0], rx_dose, weight=1, plan=plan)
     optim.add_dosefalloff_objective('BodyRS', rx_dose, rx_dose*0.45, 0.7, weight=10, plan=plan) 
+    add_custom_max_doses(custom_max=plan_data['custom_max'],plan=plan)
     
     # Optimize plan twice
     plan.PlanOptimizations[beamset.Number-1].RunOptimization()
@@ -2775,6 +2776,7 @@ def crane_stereo_kbp_initial_optimization_objectives(plan_data,plan,predicted_vo
         optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.7, round(100*predicted_vol[3]/ring_vol,2), weight=10, plan=plan, plan_opt=0)
         optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, round(100*predicted_vol[4]/ring_vol,2), weight=5, plan=plan, plan_opt=0)    
         optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
+        add_custom_max_doses(custom_max=plan_data['custom_max'],plan=plan)
         
     elif len(ptv_names) > 1: #Multiple PTVs
         for i,ptv in enumerate(ptv_names):
@@ -2788,6 +2790,7 @@ def crane_stereo_kbp_initial_optimization_objectives(plan_data,plan,predicted_vo
         optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, round(100*predicted_vol[4]/ring_vol,2), weight=5, plan=plan, plan_opt=0)  
         
         optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)  
+        add_custom_max_doses(custom_max=plan_data['custom_max'],plan=plan)
         #optim.add_maxdose_objective('OEIL DRT', 800, weight=1.0, plan=plan, plan_opt=0)                        
         #optim.add_maxdose_objective('OEIL GCHE', 800, weight=1.0, plan=plan, plan_opt=0)      
         #optim.add_maxdose_objective('CHIASMA', 800, weight=1.0, plan=plan, plan_opt=0)        
@@ -2820,7 +2823,8 @@ def crane_stereo_kbp_modify_plan_single_ptv(plan_data,plan,beamset,predicted_vol
     optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.8, round(brain80,2), weight=10, plan=plan, plan_opt=0)
     optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.7, round(brain70,2), weight=10, plan=plan, plan_opt=0)
     optim.add_maxdvh_objective('OPT CERVEAU_'+site, rx[0]*0.6, round(brain60,2), weight=5, plan=plan, plan_opt=0)    
-    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)                        
+    optim.add_maxdose_objective(tronc_name, tronc_max, weight=1.0, plan=plan, plan_opt=0)     
+    add_custom_max_doses(custom_max=plan_data['custom_max'],plan=plan)    
      
     plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
     
@@ -3032,3 +3036,12 @@ def crane_kbp_write_results_to_file(plan_data,plan,beamset,predicted_vol,initial
         if not file_exists:
             output_file.write(header) #Only want to write the header if we're starting a new file
         output_file.write(result_text)
+ 
+ 
+def add_custom_max_doses(custom_max,plan,plan_opt=0):
+    if len(custom_max) > 0:
+        for set in custom_max:
+            oar_name = set[0]
+            dose_level = set[1]*100
+            optim.add_maxdose_objective(oar_name, int(dose_level), weight=1.0, plan=plan, plan_opt=plan_opt)
+            eval.add_clinical_goal(oar_name, int(dose_level), 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
