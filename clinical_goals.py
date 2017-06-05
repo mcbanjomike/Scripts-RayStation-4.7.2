@@ -74,7 +74,67 @@ def add_dictionary_cg(Site, RX, FX, plan=None):
             elif type == "Dmoy":
                 eval.add_clinical_goal(roi_name, float(tol2) * 100, criteria, 'AverageDose', 0, plan=plan)
 
+
+# Automatically fill list of clinical goals using the dictionary
+def add_dictionary_cg2(Site, RX, FX, plan=None,skip_modptv = False):
+    """
+    Args:
+        Site (string)
+        RX (float): The total prescribed dose for the plan in Gy
+        FX (int): The number of fractions for the plan
+        plan: RayStation plan object to which the clinical goals should be added
+    It is recommended to erase all clinical goals in the plan before running this script.
+    Note that you are allowed to have ROIs with spaces in their names or ROIs with underscores in their names, but NOT BOTH IN THE SAME PATIENT.
+    """
     
+    if plan is None:
+        plan = lib.get_current_plan()
+    
+    c = read_cg()
+
+    Site = Site.upper().replace(' ', '_')
+    RX = str(RX)
+    FX = str(FX)
+    
+    #launcher.debug_window(Site)
+    
+    #Go through the dictionary line by line, adding clinical goals for each
+    for k,v in c.items(): #k is for key, v is for values
+        if k[0]==Site and k[1]==RX and k[2]==FX:
+            if Site != 'PROSTATE_PACE': #Exception because PACE protocol ROIs have underscores in their names
+                roi_name = k[3].replace('_', ' ') #Change underscores to spaces
+            else:
+                roi_name = k[3]
+            type = k[4]
+            #ctype, tol1, tol2, unit = c[(Site, RX, FX, roi_name.replace(' ', '_'), type)]  # Note that all four variables here are strings, must be converted to floats for use in CGs
+            ctype, tol1, tol2, unit = c[(Site, RX, FX, k[3], type)]  # Note that all four variables here are strings, must be converted to floats for use in CGs            
+            if ctype == 'PTV':
+                criteria = 'AtLeast'
+            elif ctype == 'OAR':
+                criteria = 'AtMost'
+            if skip_modptv and roi_name[:6]=='modPTV':
+                continue            
+            elif type[0] == "D" and type[-2:] == "cc":  # Criterion of type Dxxcc
+                absvol = float(type[1:-2])
+                eval.add_clinical_goal(roi_name, float(tol2) * 100, criteria, "DoseAtAbsoluteVolume", absvol, plan=plan)
+            elif type[0] == "D" and type[-1:] == r'%':  # Criterion of type Dxx%
+                relvol = float(type[1:-1])
+                eval.add_clinical_goal(roi_name, float(tol2) * 100, criteria, "DoseAtVolume", relvol, plan=plan)
+            elif type[0] == "V" and type[-2:] == "Gy":  # Criterion of type Vxx
+                if 'cc' in unit: # Absolute volume (cc)
+                    dose_level = float(type[1:-2])
+                    eval.add_clinical_goal(roi_name, dose_level * 100, criteria, 'AbsoluteVolumeAtDose', float(tol2), plan=plan)
+                else: # Relative volume (%)
+                    dose_level = float(type[1:-2])
+                    eval.add_clinical_goal(roi_name, dose_level * 100, criteria, 'VolumeAtDose', float(tol2), plan=plan)
+            elif type == "Dmoy":
+                if roi_name == 'LARYNX':
+                    eval.add_clinical_goal(roi_name, 4500, criteria, 'AverageDose', 0, plan=plan)
+                elif roi_name == 'OESOPHAGE':
+                    eval.add_clinical_goal(roi_name, 4500, criteria, 'AverageDose', 0, plan=plan)
+                else:
+                    eval.add_clinical_goal(roi_name, float(tol2) * 100, criteria, 'AverageDose', 0, plan=plan)
+                   
     
 # VTL
 def add_cg_brain_stereo(patient_plan=None):
@@ -1849,4 +1909,45 @@ def smart_cg_vertebre(plan=None, examination=None):
         if VolPL > 5:
             five_cc = int(5.0/VolPL*100)
             optim.add_maxdvh_objective("PLEXUS LOMBAIRE", 1440, five_cc, 1, plan=plan)
+          
         
+def cg_orl(plan_data):
+    # This script adds clinical goals for ORL cases from the file also used in Pinnacle script
+
+    patient = plan_data['patient']
+    plan = plan_data['patient'].TreatmentPlans[plan_data['plan_name']]
+    ptv = plan_data['ptv']
+    rx_dose = plan_data['rx_dose']
+    exam = plan_data['exam']
+    nb_fx = plan_data['nb_fx']
+
+    add_dictionary_cg2('ORL', 70, 33, plan=plan,skip_modptv = True)
+    
+    
+    # Add clinical goals for coverage
+    eval.add_clinical_goal(("BodyRS+Table"), rx_dose[0]*1.08, 'AtMost', 'DoseAtAbsoluteVolume', 0, plan=plan)
+    if len(ptv)==4:
+        eval.add_clinical_goal(("mod" + ptv[0]), rx_dose[0], 'AtLeast', 'VolumeAtDose', 95, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[0]), rx_dose[0]*95/100, 'AtLeast', 'VolumeAtDose', 99.5, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[1]), rx_dose[1], 'AtLeast', 'VolumeAtDose', 95, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[1]), rx_dose[1]*95/100, 'AtLeast', 'VolumeAtDose', 99.5, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[2]), rx_dose[2], 'AtLeast', 'VolumeAtDose', 95, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[2]), rx_dose[2]*95/100, 'AtLeast', 'VolumeAtDose', 99.5, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[3]), rx_dose[3], 'AtLeast', 'VolumeAtDose', 95, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[3]), rx_dose[3]*95/100, 'AtLeast', 'VolumeAtDose', 99.5, plan=plan)
+    elif len(ptv)==3:
+        eval.add_clinical_goal(("mod" + ptv[0]), rx_dose[0], 'AtLeast', 'VolumeAtDose', 95, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[0]), rx_dose[0]*95/100, 'AtLeast', 'VolumeAtDose', 99.5, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[1]), rx_dose[1], 'AtLeast', 'VolumeAtDose', 95, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[1]), rx_dose[1]*95/100, 'AtLeast', 'VolumeAtDose', 99.5, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[2]), rx_dose[2], 'AtLeast', 'VolumeAtDose', 95, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[2]), rx_dose[2]*95/100, 'AtLeast', 'VolumeAtDose', 99.5, plan=plan)
+    elif len(ptv)==2:
+        eval.add_clinical_goal(("mod" + ptv[0]), rx_dose[0], 'AtLeast', 'VolumeAtDose', 95, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[0]), rx_dose[0]*95/100, 'AtLeast', 'VolumeAtDose', 99.5, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[1]), rx_dose[1], 'AtLeast', 'VolumeAtDose', 95, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[1]), rx_dose[1]*95/100, 'AtLeast', 'VolumeAtDose', 99.5, plan=plan)
+    elif len(ptv)==1:
+        eval.add_clinical_goal(("mod" + ptv[0]), rx_dose[0], 'AtLeast', 'VolumeAtDose', 95, plan=plan)
+        eval.add_clinical_goal(("mod" + ptv[0]), rx_dose[0]*95/100, 'AtLeast', 'VolumeAtDose', 99.5, plan=plan)
+    

@@ -156,7 +156,7 @@ def add_maxdvh_objective(roi_name, dose, percent_volume, weight=1.0, plan=None, 
             r.DoseFunctionParameters.Weight = weight
 
 
-def add_dosefalloff_objective(roi_name, high_dose, low_dose, distance, weight=1.0, plan=None, plan_opt=0):
+def add_dosefalloff_objective(roi_name, high_dose, low_dose, distance, weight=1.0, plan=None, plan_opt=0, adapt_dose_level=False):
     """
     Adds a dose fall-off objective to a ROI.
 
@@ -175,6 +175,8 @@ def add_dosefalloff_objective(roi_name, high_dose, low_dose, distance, weight=1.
         r.DoseFunctionParameters.LowDoseDistance = distance
         if weight != 1.0:
             r.DoseFunctionParameters.Weight = weight
+        if adapt_dose_level:
+            r.DoseFunctionParameters.AdaptToTargetDoseLevels = True
 
 
 def add_mineud_objective(roi_name, dose, param_a=1.0, weight=1.0, plan=None, plan_opt=0):
@@ -506,6 +508,55 @@ def fit_objectives(plan=None, beamset=None):
     # plan.PlanOptimizations[beamset.Number-1].RunOptimization()
     # plan.PlanOptimizations[beamset.Number-1].RunOptimization()
 
+   
+def fit_objectives_orl(plan=None, beamset=None):
+    # Function which adjusts DVH and EUD values in objectives to reflect obtained values.
+    patient = lib.get_current_patient()
+    if plan is None:
+        plan = lib.get_current_plan()
+    if beamset is None:
+        beamset = lib.get_current_beamset()
+    
+    for objective in plan.PlanOptimizations[beamset.Number - 1].Objective.ConstituentFunctions:
+    
+        try:
+            f_type = objective.DoseFunctionParameters.FunctionType  # Dose falloff objectives do not have a FunctionType and must be skipped
+        except:
+            continue
+        
+        roi_name = objective.ForRegionOfInterest.Name
+        if roi_name in ['BLOC MOELLE','MOELLE','prv5mmMOELLE']:
+            continue
+        else:
+            if f_type == "MaxDvh":
+                dose_level = objective.DoseFunctionParameters.DoseLevel
+                obtained_vol = plan.TreatmentCourse.TotalDose.GetRelativeVolumeAtDoseValues(RoiName=roi_name, DoseValues=[dose_level])
+                if obtained_vol[0] >= 0.02:
+                    objective.DoseFunctionParameters.PercentVolume = int(obtained_vol[0] * 90)
+                if obtained_vol[0] < 0.02:
+                    objective.DoseFunctionParameters.DoseLevel = int(dose_level*0.9)
+
+            elif f_type == "MaxEud":
+                dose_level = objective.DoseFunctionParameters.DoseLevel
+                a = objective.DoseFunctionParameters.EudParameterA
+                obtained_eud = compute_eud(plan.TreatmentCourse.TotalDose, roi_name, a)
+                if obtained_eud > 100:
+                    objective.DoseFunctionParameters.DoseLevel = round(obtained_eud*0.99,-1)
+
+            elif f_type == "MaxDose":
+                dose_level = objective.DoseFunctionParameters.DoseLevel
+                vol_roi=patient.PatientModel.StructureSets['CT 1'].RoiGeometries[roi_name].GetRoiVolume()
+                if vol_roi >= 0.1:
+                    vol_cc=0.1/vol_roi
+                    max_dose_obtenue = plan.TreatmentCourse.TotalDose.GetDoseAtRelativeVolumes(RoiName=roi_name, RelativeVolumes=[vol_cc])
+                else:
+                    max_dose_obtenue = plan.TreatmentCourse.TotalDose.GetDoseAtRelativeVolumes(RoiName=roi_name, RelativeVolumes=[vol_roi])
+                if max_dose_obtenue[0] < (dose_level/1.05) and max_dose_obtenue[0] > 500:
+                    objective.DoseFunctionParameters.DoseLevel = int(max_dose_obtenue[0]*1.05)
+                elif max_dose_obtenue[0] < (dose_level/1.05) and max_dose_obtenue[0] <= 500:
+                    objective.DoseFunctionParameters.DoseLevel = 500    
+    
+    
 def essai_autre_technique():
 #pour faire un plan qui essai une autre technique (si VMAT essai IMRT et si IMRT essai VMAT)
 #mais en gardant les meme objectifs d'optimisations et clinical goals
