@@ -144,9 +144,7 @@ def add_opt_obj_brain_stereo_v2(plan_data):
         optim.add_maxdose_objective('RING_PTVL_2_8mm', plan_data['rx_dose_low']*0.8, plan=plan)
         optim.add_maxdose_objective('RING_PTVH_3_1cm', plan_data['rx_dose']*0.53, plan=plan)
         optim.add_maxdose_objective('RING_PTVL_3_1cm', plan_data['rx_dose_low']*0.53, plan=plan)
-
-
-        
+       
         
 def add_opt_obj_lung_stereo(contralateral_lung=None, patient_plan=None):
     """
@@ -420,3 +418,149 @@ def add_opt_obj_prostate_A1(plan=None):
         optim.add_maxdose_objective('Rectum+3mm', 3575, weight=10, plan=plan)
         optim.add_maxdose_objective('Bladder', 3700, weight=1, plan=plan)
         optim.add_dosefalloff_objective('BodyRS', 3444, 1813, 3, weight=0, plan=plan)        
+ 
+ 
+def add_opt_obj_orl(plan_data,yeux=False):
+
+    plan = plan_data['patient'].TreatmentPlans[plan_data['plan_name']]
+    patient = plan_data['patient']
+    rx_dose = plan_data['rx_dose']
+    ptv = plan_data['ptv']
+    nb_fx = plan_data['nb_fx']
+    nb_ptv = len(ptv)
+    
+    #change the dose from 60 to 59.4 if 33 fractions but just for the objectives and clinical goals
+    if 'PTV60' in ptv and nb_fx == 33:
+        rx_dose.append(5940)
+        rx_dose.remove(6000)
+        rx_dose.sort(reverse=True)
+    
+    if nb_ptv == 4:
+        optim.add_mindose_objective('mod'+ptv[0], rx_dose[0], weight=500, plan=plan)
+        optim.add_maxdose_objective('mod'+ptv[0], rx_dose[0]*1.05, weight=50, plan=plan)
+        optim.add_mindose_objective('mod'+ptv[1], rx_dose[1], weight=500, plan=plan)
+        optim.add_maxdose_objective('OPT'+ptv[1], rx_dose[1]*1.05, weight=50, plan=plan)
+        optim.add_mindose_objective('mod'+ptv[2], rx_dose[2], weight=500, plan=plan)
+        optim.add_maxdose_objective('OPT'+ptv[2], rx_dose[2]*1.05, weight=50, plan=plan)
+        optim.add_mindose_objective('mod'+ptv[3], rx_dose[3], weight=500, plan=plan)
+        optim.add_maxdose_objective('OPT'+ptv[3], rx_dose[3]*1.05, weight=50, plan=plan)
+    elif nb_ptv == 3:
+        optim.add_mindose_objective('mod'+ptv[0], rx_dose[0], weight=500, plan=plan)
+        optim.add_maxdose_objective('mod'+ptv[0], rx_dose[0]*1.05, weight=50, plan=plan)
+        optim.add_mindose_objective('mod'+ptv[1], rx_dose[1], weight=500, plan=plan)
+        optim.add_maxdose_objective('OPT'+ptv[1], rx_dose[1]*1.05, weight=50, plan=plan)
+        optim.add_mindose_objective('mod'+ptv[2], rx_dose[2], weight=500, plan=plan)
+        optim.add_maxdose_objective('OPT'+ptv[2], rx_dose[2]*1.05, weight=50, plan=plan)
+    elif nb_ptv == 2:
+        optim.add_mindose_objective('mod'+ptv[0], rx_dose[0], weight=500, plan=plan)
+        optim.add_maxdose_objective('mod'+ptv[0], rx_dose[0]*1.05, weight=50, plan=plan)
+        optim.add_mindose_objective('mod'+ptv[1], rx_dose[1], weight=500, plan=plan)
+        optim.add_maxdose_objective('OPT'+ptv[1], rx_dose[1]*1.05, weight=50, plan=plan)
+    elif nb_ptv == 1:
+        optim.add_mindose_objective('mod'+ptv[0], rx_dose[0], weight=500, plan=plan)
+        optim.add_maxdose_objective('mod'+ptv[0], rx_dose[0]*1.05, weight=50, plan=plan)
+        
+    if rx_dose[0] < 4300:
+        optim.add_maxdose_objective('MOELLE', rx_dose[0], plan=plan)
+        optim.add_maxdose_objective('prv5mmMOELLE', rx_dose[0], plan=plan)
+        optim.add_maxdose_objective('TR CEREBRAL', rx_dose[0], plan=plan)
+        optim.add_maxdose_objective('prv5mmTR CEREBRAL', rx_dose[0], plan=plan)
+    else:
+        optim.add_maxdose_objective('MOELLE', 4300,weight=100, plan=plan)
+        optim.add_maxdose_objective('prv5mmMOELLE', 4700,weight=100, plan=plan)
+        optim.add_maxdose_objective('TR CEREBRAL', 4800,weight=100, plan=plan)
+        optim.add_maxdose_objective('prv5mm TRONC', 5000,weight=100, plan=plan)
+        optim.add_maxdose_objective('BLOC MOELLE', 4300,weight=1, plan=plan)
+    
+    try:
+        optim.add_maxdose_objective('OREILLE DRT', 4800,weight=10, plan=plan)
+    except:
+        pass
+    try:
+        optim.add_maxdose_objective('OREILLE GCHE', 4800,weight=10, plan=plan)
+    except:
+        pass
+    try:
+        if rx_dose[0]> 5700:
+            optim.add_maxdose_objective('OPT CERVEAU', 5700,weight=10, plan=plan)
+        else:
+            optim.add_maxdose_objective('OPT CERVEAU', rx_dose[0]*1.02,weight=10, plan=plan)
+    except:
+        pass
+    try:
+        optim.add_maxdose_objective('MAND ds '+ptv[0]+'+5mm', rx_dose[0]*1.02,weight=10, plan=plan)
+    except:
+        pass
+    try:
+        optim.add_maxdose_objective('MAND-'+ptv[0]+'-5mm', rx_dose[0]*0.97,weight=10, plan=plan)
+    except:
+        pass
+    try:
+        optim.add_maxdose_objective('PBD ds ' + ptv[0], rx_dose[0]*1.02,weight=10, plan=plan)
+    except:
+        pass
+    try:
+        optim.add_maxdose_objective('PBG ds ' + ptv[0], rx_dose[0]*1.02,weight=10, plan=plan)
+    except:
+        pass
+    try:
+        optim.add_maxdose_objective('PBD ds ' + ptv[1], rx_dose[1]*1.05,weight=10, plan=plan)
+    except:
+        pass
+    try:
+        optim.add_maxdose_objective('PBG ds ' + ptv[1], rx_dose[1]*1.05,weight=10, plan=plan)
+    except:
+        pass
+    try:
+        vol_paro_drt = patient.PatientModel.StructureSets[plan_data['ct']].RoiGeometries['OPT PARO DRT'].GetRoiVolume()/patient.PatientModel.StructureSets[plan_data['ct']].RoiGeometries['PARO DRT'].GetRoiVolume()
+        if vol_paro_drt > 0.99:
+            vol_paro_drt = 0.5
+        dose_paro_drt = round(vol_paro_drt*30*rx_dose[0]/(100),-1)
+        optim.add_maxeud_objective('OPT PARO DRT', dose_paro_drt, param_a=1.0, weight=1.0, plan=plan, plan_opt=0)
+    except:
+        pass
+    try:
+        vol_paro_gche = patient.PatientModel.StructureSets[plan_data['ct']].RoiGeometries['OPT PARO GCHE'].GetRoiVolume()/patient.PatientModel.StructureSets[plan_data['ct']].RoiGeometries['PARO GCHE'].GetRoiVolume()
+        if vol_paro_gche > 0.99:
+            vol_paro_gche = 0.5
+        dose_paro_gche = round(vol_paro_gche*30*rx_dose[0]/(100),-1)
+        optim.add_maxeud_objective('OPT PARO GCHE', dose_paro_gche, param_a=1.0, weight=1.0, plan=plan, plan_opt=0)
+    except:
+        pass
+    try:
+        vol_cavite = patient.PatientModel.StructureSets[plan_data['ct']].RoiGeometries['OPT CAVITE ORALE'].GetRoiVolume()/patient.PatientModel.StructureSets[plan_data['ct']].RoiGeometries['CAVITE ORALE'].GetRoiVolume()
+        if vol_cavite > 0.98:
+            vol_cavite = 1.6
+        dose_vol_cavite = round(((vol_cavite*(-26))+72)*rx_dose[0]/100,-1)
+        optim.add_maxeud_objective('OPT CAVITE ORALE', dose_vol_cavite, param_a=1.0, weight=1.0, plan=plan, plan_opt=0)
+    except:
+        pass
+    if roi.roi_exists('OPT LARYNX'):
+        optim.add_maxeud_objective('OPT LARYNX', round(0.54*rx_dose[0],-1), param_a=1.0, weight=1.0, plan=plan, plan_opt=0)
+    else:
+        if roi.roi_exists('LARYNX'):
+            optim.add_maxdose_objective('LARYNX', round(rx_dose[0]*1.03,-1),weight=10, plan=plan)
+    try:
+        vol_oeso = patient.PatientModel.StructureSets[plan_data['ct']].RoiGeometries['OPT OESOPHAGE'].GetRoiVolume()/patient.PatientModel.StructureSets[plan_data['ct']].RoiGeometries['OESOPHAGE'].GetRoiVolume()
+        if vol_oeso > 0.98:
+            vol_oeso = 1
+        dose_vol_oeso = round(((vol_oeso*(-30))+58)*rx_dose[0]/(100),-1)
+        optim.add_maxeud_objective('OPT OESOPHAGE', dose_vol_oeso, param_a=1.0, weight=1.0, plan=plan, plan_opt=0)
+    except:
+        if roi.roi_exists('OESOPHAGE'):
+            optim.add_maxdose_objective('OESOPHAGE', round(rx_dose[0]*1.03,-1),weight=10, plan=plan)
+
+    optim.add_dosefalloff_objective('Ring', rx_dose[0], rx_dose[0]*0.5, distance=3, weight=1, plan=plan, plan_opt=0,adapt_dose_level=True)
+    optim.add_dosefalloff_objective('BodyRS+Table', rx_dose[0], rx_dose[0]*0.85, distance=0.3, weight=1, plan=plan, plan_opt=0,adapt_dose_level=True)
+    
+    if yeux:
+        optim.add_maxdose_objective('CHIASMA', 4900,weight=10, plan=plan)
+        optim.add_maxdose_objective('prv5mmCHIASMA', 5500,weight=10, plan=plan)
+        optim.add_maxdose_objective('OEIL DRT', 4400,weight=10, plan=plan)
+        optim.add_maxdose_objective('OEIL GCHE', 4400,weight=10, plan=plan)
+        optim.add_maxdose_objective('CRISTALLIN DRT', 600,weight=10, plan=plan)
+        optim.add_maxdose_objective('CRISTALLIN GCHE', 600,weight=10, plan=plan)
+        optim.add_maxdose_objective('N OPT DRT', 4400,weight=10, plan=plan)
+        optim.add_maxdose_objective('N OPT GCHE', 4400,weight=10, plan=plan)
+        optim.add_maxdose_objective('prv5mmNOD', 5300,weight=10, plan=plan)
+        optim.add_maxdose_objective('prv5mmNOG', 5300,weight=10, plan=plan)        
