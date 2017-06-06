@@ -8071,3 +8071,65 @@ def plan_orl():
     msg += "Il faut faire Remove holes (on all slices) sur le contour BodyRS+Table avant d'optimiser.\n"
     # log_window.show_log_window(msg)
 
+    
+
+def debug_window(input = "Everything's fine"):
+
+    class DebugWindow(Form):
+        def __init__(self):
+            self.Text = "Erreur"
+
+            self.Width = 750
+            self.Height = 750
+
+            self.setupMessageWindow()
+            self.setupOKButtons()
+
+            self.Controls.Add(self.MessageWindow)
+            self.Controls.Add(self.OKbuttonPanel)
+            
+        def bigPanel(self, x, y):
+            panel = Panel()
+            panel.Width = 750
+            panel.Height = 600
+            panel.Location = Point(x, y)
+            panel.BorderStyle = BorderStyle.None
+            return panel
+
+        def miniPanel(self, x, y):
+            panel = Panel()
+            panel.Width = 750
+            panel.Height = 150
+            panel.Location = Point(x, y)
+            panel.BorderStyle = BorderStyle.None
+            return panel                           
+            
+        def setupMessageWindow(self):
+            self.MessageWindow = self.bigPanel(0, 0)
+
+            self.Label1 = Label()
+            self.Label1.Text = input
+            self.Label1.Location = Point(25, 25)
+            self.Label1.Font = Font("Arial", 10)
+            self.Label1.AutoSize = True
+            
+            self.MessageWindow.Controls.Add(self.Label1)
+
+        def cancelClicked(self, sender, args):
+            self.Close()
+
+        def setupOKButtons(self):
+            self.OKbuttonPanel = self.miniPanel(0, 600)
+            
+            cancelButton = Button()
+            cancelButton.Text = "Cancel"
+            cancelButton.Location = Point(25,25)
+            self.CancelButton = cancelButton
+            cancelButton.Click += self.cancelClicked
+
+            self.OKbuttonPanel.Controls.Add(cancelButton)
+
+
+    form = DebugWindow()
+    Application.Run(form)   
+

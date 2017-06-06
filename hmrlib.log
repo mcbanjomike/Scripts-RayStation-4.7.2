@@ -2718,3 +2718,741 @@ SystemError: The combination of function type and organ type is not allowed. ROI
 2017-06-02 11:05:46,758 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
 2017-06-02 11:05:46,814 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:12:18.668000]
 2017-06-02 11:05:46,872 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-06-05 11:22:28,878 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-05 11:22:29,034 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher_ORL.py
+2017-06-05 11:22:29,069 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-05 11:22:29,625 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY Pinnacle is NOT approved.
+2017-06-05 11:22:29,942 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-06-05 11:22:30,192 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-06-05 11:22:30,318 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-06-05 11:22:30,445 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PARO DRT is NOT approved.
+2017-06-05 11:22:30,572 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PARO GCHE is NOT approved.
+2017-06-05 11:22:30,699 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI LARYNX is NOT approved.
+2017-06-05 11:22:30,830 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MANDIBULE is NOT approved.
+2017-06-05 11:22:30,951 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CAVITE ORALE is NOT approved.
+2017-06-05 11:22:31,073 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-06-05 11:22:31,250 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-06-05 11:22:31,373 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-06-05 11:22:31,490 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-06-05 11:22:31,612 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OREILLE DRT is NOT approved.
+2017-06-05 11:22:31,728 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OREILLE GCHE is NOT approved.
+2017-06-05 11:22:31,843 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PL BRACHIAL DRT is NOT approved.
+2017-06-05 11:22:31,960 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PL BRACHIAL GCHE is NOT approved.
+2017-06-05 11:22:32,075 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVpreop is NOT approved.
+2017-06-05 11:22:32,191 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVn preop is NOT approved.
+2017-06-05 11:22:32,310 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV70 is NOT approved.
+2017-06-05 11:22:32,425 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV66 is NOT approved.
+2017-06-05 11:22:32,545 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVrecidive is NOT approved.
+2017-06-05 11:22:32,661 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV60 is NOT approved.
+2017-06-05 11:22:32,798 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV54 is NOT approved.
+2017-06-05 11:22:32,940 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV66 is NOT approved.
+2017-06-05 11:22:33,071 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV70 is NOT approved.
+2017-06-05 11:22:33,189 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV59.4 is NOT approved.
+2017-06-05 11:22:33,330 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV54 is NOT approved.
+2017-06-05 11:22:33,486 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRISTALLIN DRT is NOT approved.
+2017-06-05 11:22:33,599 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRISTALLIN GCHE is NOT approved.
+2017-06-05 11:22:33,717 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI N OPT DRT is NOT approved.
+2017-06-05 11:22:33,840 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI N OPT GCHE is NOT approved.
+2017-06-05 11:22:33,954 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-06-05 11:23:30,644 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-06-05 11:23:30,704 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-06-05 11:23:31,046 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-06-05 11:23:31,132 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-06-05 11:23:31,451 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-06-05 11:23:31,818 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY Pinnacle is NOT approved.
+2017-06-05 11:23:31,915 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY Pinnacle" set as Organ
+2017-06-05 11:23:31,994 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY Pinnacle" set as OrganAtRisk
+2017-06-05 11:23:32,090 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-06-05 11:23:32,205 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-06-05 11:23:32,299 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-06-05 11:23:32,403 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-06-05 11:23:32,487 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-06-05 11:23:32,561 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-06-05 11:23:32,679 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-06-05 11:23:32,783 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TR CEREBRAL" set as Organ
+2017-06-05 11:23:32,857 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TR CEREBRAL" set as OrganAtRisk
+2017-06-05 11:23:32,944 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PARO DRT is NOT approved.
+2017-06-05 11:23:33,034 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PARO DRT" set as Organ
+2017-06-05 11:23:33,108 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PARO DRT" set as OrganAtRisk
+2017-06-05 11:23:33,215 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PARO GCHE is NOT approved.
+2017-06-05 11:23:33,306 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PARO GCHE" set as Organ
+2017-06-05 11:23:33,384 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PARO GCHE" set as OrganAtRisk
+2017-06-05 11:23:33,476 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI LARYNX is NOT approved.
+2017-06-05 11:23:33,559 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "LARYNX" set as Organ
+2017-06-05 11:23:33,630 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "LARYNX" set as OrganAtRisk
+2017-06-05 11:23:33,732 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MANDIBULE is NOT approved.
+2017-06-05 11:23:33,813 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MANDIBULE" set as Organ
+2017-06-05 11:23:33,888 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MANDIBULE" set as OrganAtRisk
+2017-06-05 11:23:33,974 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CAVITE ORALE is NOT approved.
+2017-06-05 11:23:34,059 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CAVITE ORALE" set as Organ
+2017-06-05 11:23:34,132 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CAVITE ORALE" set as OrganAtRisk
+2017-06-05 11:23:34,235 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-06-05 11:23:34,341 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CERVEAU" set as Organ
+2017-06-05 11:23:34,445 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CERVEAU" set as OrganAtRisk
+2017-06-05 11:23:34,539 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-06-05 11:23:34,624 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-06-05 11:23:34,698 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-06-05 11:23:34,789 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-06-05 11:23:34,873 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL DRT" set as Organ
+2017-06-05 11:23:35,007 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL DRT" set as OrganAtRisk
+2017-06-05 11:23:35,273 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-06-05 11:23:35,358 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL GCHE" set as Organ
+2017-06-05 11:23:35,431 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL GCHE" set as OrganAtRisk
+2017-06-05 11:23:35,538 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OREILLE DRT is NOT approved.
+2017-06-05 11:23:35,626 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OREILLE DRT" set as Organ
+2017-06-05 11:23:35,697 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OREILLE DRT" set as OrganAtRisk
+2017-06-05 11:23:35,802 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OREILLE GCHE is NOT approved.
+2017-06-05 11:23:35,890 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OREILLE GCHE" set as Organ
+2017-06-05 11:23:35,963 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OREILLE GCHE" set as OrganAtRisk
+2017-06-05 11:23:36,054 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PL BRACHIAL DRT is NOT approved.
+2017-06-05 11:23:36,137 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PL BRACHIAL DRT" set as Organ
+2017-06-05 11:23:37,020 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PL BRACHIAL DRT" set as OrganAtRisk
+2017-06-05 11:23:37,118 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PL BRACHIAL GCHE is NOT approved.
+2017-06-05 11:23:37,195 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PL BRACHIAL GCHE" set as Organ
+2017-06-05 11:23:37,262 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PL BRACHIAL GCHE" set as OrganAtRisk
+2017-06-05 11:23:37,369 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVpreop is NOT approved.
+2017-06-05 11:23:37,447 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTVpreop" set as Gtv
+2017-06-05 11:23:37,515 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTVpreop" set as Target
+2017-06-05 11:23:37,632 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVn preop is NOT approved.
+2017-06-05 11:23:37,745 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTVn preop" set as Gtv
+2017-06-05 11:23:37,811 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTVn preop" set as Target
+2017-06-05 11:23:37,944 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV70 is NOT approved.
+2017-06-05 11:23:38,058 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CTV70" set as Ctv
+2017-06-05 11:23:38,140 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CTV70" set as Target
+2017-06-05 11:23:38,312 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV66 is NOT approved.
+2017-06-05 11:23:38,428 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CTV66" set as Ctv
+2017-06-05 11:23:38,516 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CTV66" set as Target
+2017-06-05 11:23:38,659 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVrecidive is NOT approved.
+2017-06-05 11:23:38,771 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTVrecidive" set as Gtv
+2017-06-05 11:23:38,846 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTVrecidive" set as Target
+2017-06-05 11:23:38,962 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV60 is NOT approved.
+2017-06-05 11:23:39,047 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CTV60" set as Ctv
+2017-06-05 11:23:39,118 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CTV60" set as Target
+2017-06-05 11:23:39,221 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV54 is NOT approved.
+2017-06-05 11:23:39,304 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CTV54" set as Ctv
+2017-06-05 11:23:39,380 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CTV54" set as Target
+2017-06-05 11:23:39,483 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV66 is NOT approved.
+2017-06-05 11:23:39,569 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV66" set as Ptv
+2017-06-05 11:23:39,645 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV66" set as Target
+2017-06-05 11:23:39,747 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV70 is NOT approved.
+2017-06-05 11:23:39,831 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV70" set as Ptv
+2017-06-05 11:23:39,907 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV70" set as Target
+2017-06-05 11:23:41,595 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV59.4 is NOT approved.
+2017-06-05 11:23:41,827 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV59.4" set as Ptv
+2017-06-05 11:23:41,899 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV59.4" set as Target
+2017-06-05 11:23:41,997 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV54 is NOT approved.
+2017-06-05 11:23:42,080 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV54" set as Ptv
+2017-06-05 11:23:42,154 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV54" set as Target
+2017-06-05 11:23:42,248 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRISTALLIN DRT is NOT approved.
+2017-06-05 11:23:42,331 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CRISTALLIN DRT" set as Organ
+2017-06-05 11:23:42,406 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CRISTALLIN DRT" set as OrganAtRisk
+2017-06-05 11:23:42,516 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRISTALLIN GCHE is NOT approved.
+2017-06-05 11:23:42,600 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CRISTALLIN GCHE" set as Organ
+2017-06-05 11:23:42,675 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CRISTALLIN GCHE" set as OrganAtRisk
+2017-06-05 11:23:42,777 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI N OPT DRT is NOT approved.
+2017-06-05 11:23:42,859 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "N OPT DRT" set as Organ
+2017-06-05 11:23:42,936 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "N OPT DRT" set as OrganAtRisk
+2017-06-05 11:23:43,032 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI N OPT GCHE is NOT approved.
+2017-06-05 11:23:43,114 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "N OPT GCHE" set as Organ
+2017-06-05 11:23:43,188 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "N OPT GCHE" set as OrganAtRisk
+2017-06-05 11:23:43,280 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-06-05 11:23:43,366 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CHIASMA" set as Organ
+2017-06-05 11:23:43,435 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CHIASMA" set as OrganAtRisk
+2017-06-05 11:24:09,491 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV70 is NOT approved.
+2017-06-05 11:24:09,594 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "modPTV70" set as Ptv
+2017-06-05 11:24:09,689 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "modPTV70" set as Target
+2017-06-05 11:24:09,799 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV66 is NOT approved.
+2017-06-05 11:24:09,911 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "modPTV66" set as Ptv
+2017-06-05 11:24:10,066 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "modPTV66" set as Target
+2017-06-05 11:24:10,167 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV59.4 is NOT approved.
+2017-06-05 11:24:10,259 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "modPTV59.4" set as Ptv
+2017-06-05 11:24:10,342 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "modPTV59.4" set as Target
+2017-06-05 11:24:10,430 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV54 is NOT approved.
+2017-06-05 11:24:10,525 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "modPTV54" set as Ptv
+2017-06-05 11:24:10,611 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "modPTV54" set as Target
+2017-06-05 11:24:10,725 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV66 is NOT approved.
+2017-06-05 11:24:10,822 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OPTPTV66" set as Ptv
+2017-06-05 11:24:10,908 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OPTPTV66" set as Target
+2017-06-05 11:24:11,016 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV59.4 is NOT approved.
+2017-06-05 11:24:11,110 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OPTPTV59.4" set as Ptv
+2017-06-05 11:24:11,196 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OPTPTV59.4" set as Target
+2017-06-05 11:24:11,292 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV54 is NOT approved.
+2017-06-05 11:24:11,387 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OPTPTV54" set as Ptv
+2017-06-05 11:24:11,474 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OPTPTV54" set as Target
+2017-06-05 11:24:46,197 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY Pinnacle is NOT approved.
+2017-06-05 11:24:46,335 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-06-05 11:24:46,473 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-06-05 11:24:46,612 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-06-05 11:24:46,749 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PARO DRT is NOT approved.
+2017-06-05 11:24:46,886 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PARO GCHE is NOT approved.
+2017-06-05 11:24:47,023 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI LARYNX is NOT approved.
+2017-06-05 11:24:47,163 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MANDIBULE is NOT approved.
+2017-06-05 11:24:47,298 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CAVITE ORALE is NOT approved.
+2017-06-05 11:24:47,436 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-06-05 11:24:47,572 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-06-05 11:24:47,711 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-06-05 11:24:47,846 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-06-05 11:24:47,985 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OREILLE DRT is NOT approved.
+2017-06-05 11:24:48,121 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OREILLE GCHE is NOT approved.
+2017-06-05 11:24:48,258 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PL BRACHIAL DRT is NOT approved.
+2017-06-05 11:24:48,395 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PL BRACHIAL GCHE is NOT approved.
+2017-06-05 11:24:48,532 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVpreop is NOT approved.
+2017-06-05 11:24:48,671 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVn preop is NOT approved.
+2017-06-05 11:24:48,806 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV70 is NOT approved.
+2017-06-05 11:24:48,944 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV66 is NOT approved.
+2017-06-05 11:24:49,080 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVrecidive is NOT approved.
+2017-06-05 11:24:49,219 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV60 is NOT approved.
+2017-06-05 11:24:49,355 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV54 is NOT approved.
+2017-06-05 11:24:49,492 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV66 is NOT approved.
+2017-06-05 11:24:49,627 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV70 is NOT approved.
+2017-06-05 11:24:49,766 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV59.4 is NOT approved.
+2017-06-05 11:24:49,903 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV54 is NOT approved.
+2017-06-05 11:24:50,041 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRISTALLIN DRT is NOT approved.
+2017-06-05 11:24:50,180 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRISTALLIN GCHE is NOT approved.
+2017-06-05 11:24:50,316 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI N OPT DRT is NOT approved.
+2017-06-05 11:24:50,455 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI N OPT GCHE is NOT approved.
+2017-06-05 11:24:50,590 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-06-05 11:24:50,730 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BodyRS is NOT approved.
+2017-06-05 11:24:51,064 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BodyRS+Table is NOT approved.
+2017-06-05 11:24:51,385 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BodyRS-5mm is NOT approved.
+2017-06-05 11:24:51,521 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV70 is NOT approved.
+2017-06-05 11:24:51,663 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV66 is NOT approved.
+2017-06-05 11:24:51,811 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV59.4 is NOT approved.
+2017-06-05 11:24:51,965 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV54 is NOT approved.
+2017-06-05 11:24:52,119 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV66 is NOT approved.
+2017-06-05 11:24:52,263 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV59.4 is NOT approved.
+2017-06-05 11:24:52,413 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV54 is NOT approved.
+2017-06-05 11:24:52,563 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI Ring is NOT approved.
+2017-06-05 11:24:52,804 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI prv5mmMOELLE is NOT approved.
+2017-06-05 11:24:52,940 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI prv5mm TRONC is NOT approved.
+2017-06-05 11:24:53,078 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI prv5mmNOD is NOT approved.
+2017-06-05 11:24:53,215 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI prv5mmNOG is NOT approved.
+2017-06-05 11:24:53,353 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI prv5mmCHIASMA is NOT approved.
+2017-06-05 11:24:53,488 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT CAVITE ORALE is NOT approved.
+2017-06-05 11:24:53,632 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT LARYNX is NOT approved.
+2017-06-05 11:24:53,776 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT OESOPHAGE is NOT approved.
+2017-06-05 11:24:53,919 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT PARO DRT is NOT approved.
+2017-06-05 11:24:54,062 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT PARO GCHE is NOT approved.
+2017-06-05 11:24:54,204 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT CERVEAU is NOT approved.
+2017-06-05 11:24:54,346 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLOC MOELLE is NOT approved.
+2017-06-05 11:24:54,482 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MAND ds PTV70+5mm is NOT approved.
+2017-06-05 11:24:54,623 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MAND-PTV70-5mm is NOT approved.
+2017-06-05 11:24:54,763 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PBD ds PTV70 is NOT approved.
+2017-06-05 11:24:55,029 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PBD ds PTV66 is NOT approved.
+2017-06-05 11:24:55,296 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PBG ds PTV70 is NOT approved.
+2017-06-05 11:24:55,429 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PBG ds PTV66 is NOT approved.
+2017-06-05 11:24:57,065 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-06-05 11:24:57,154 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:24:57,367 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:24:57,583 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:24:57,846 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:24:58,088 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:24:58,332 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:24:58,551 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:24:58,765 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:24:59,031 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:24:59,950 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "modPTV70" added.
+2017-06-05 11:25:00,196 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "modPTV70" added.
+2017-06-05 11:25:00,410 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "modPTV66" added.
+2017-06-05 11:25:00,594 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OPTPTV66" added.
+2017-06-05 11:25:00,780 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "modPTV59.4" added.
+2017-06-05 11:25:00,983 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OPTPTV59.4" added.
+2017-06-05 11:25:01,175 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "modPTV54" added.
+2017-06-05 11:25:01,376 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OPTPTV54" added.
+2017-06-05 11:25:01,564 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MOELLE" added.
+2017-06-05 11:25:01,753 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "prv5mmMOELLE" added.
+2017-06-05 11:25:01,940 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-06-05 11:25:02,143 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "prv5mm TRONC" added.
+2017-06-05 11:25:02,328 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "BLOC MOELLE" added.
+2017-06-05 11:25:02,485 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OREILLE DRT" added.
+2017-06-05 11:25:02,671 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OREILLE GCHE" added.
+2017-06-05 11:25:02,875 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OPT CERVEAU" added.
+2017-06-05 11:25:03,074 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MAND ds PTV70+5mm" added.
+2017-06-05 11:25:03,271 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MAND-PTV70-5mm" added.
+2017-06-05 11:25:03,468 - hmrlib.optim - WARNING - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Warning: no ROI named "PBD ds PTV70".  Skip adding objective.
+2017-06-05 11:25:03,582 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PBG ds PTV70" added.
+2017-06-05 11:25:03,767 - hmrlib.optim - WARNING - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Warning: no ROI named "PBD ds PTV66".  Skip adding objective.
+2017-06-05 11:25:03,878 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PBG ds PTV66" added.
+2017-06-05 11:25:04,207 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "OPT PARO DRT" added.
+2017-06-05 11:25:04,485 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "OPT PARO GCHE" added.
+2017-06-05 11:25:04,767 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "OPT CAVITE ORALE" added.
+2017-06-05 11:25:04,989 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "OPT LARYNX" added.
+2017-06-05 11:25:05,262 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "OPT OESOPHAGE" added.
+2017-06-05 11:25:05,409 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "Ring" added.
+2017-06-05 11:25:05,700 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS+Table" added.
+2017-06-05 11:28:02,417 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-05 11:28:02,537 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher_ORL.py
+2017-06-05 11:28:02,578 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-05 11:28:03,144 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY Pinnacle is NOT approved.
+2017-06-05 11:28:03,457 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-06-05 11:28:03,708 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-06-05 11:28:03,836 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-06-05 11:28:03,971 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PARO DRT is NOT approved.
+2017-06-05 11:28:04,100 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PARO GCHE is NOT approved.
+2017-06-05 11:28:04,225 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI LARYNX is NOT approved.
+2017-06-05 11:28:04,357 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MANDIBULE is NOT approved.
+2017-06-05 11:28:04,481 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CAVITE ORALE is NOT approved.
+2017-06-05 11:28:04,601 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-06-05 11:28:04,779 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-06-05 11:28:04,900 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-06-05 11:28:05,017 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-06-05 11:28:05,137 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OREILLE DRT is NOT approved.
+2017-06-05 11:28:05,251 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OREILLE GCHE is NOT approved.
+2017-06-05 11:28:05,366 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PL BRACHIAL DRT is NOT approved.
+2017-06-05 11:28:05,482 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PL BRACHIAL GCHE is NOT approved.
+2017-06-05 11:28:05,596 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVpreop is NOT approved.
+2017-06-05 11:28:05,709 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVn preop is NOT approved.
+2017-06-05 11:28:05,825 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV70 is NOT approved.
+2017-06-05 11:28:05,940 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV66 is NOT approved.
+2017-06-05 11:28:06,060 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVrecidive is NOT approved.
+2017-06-05 11:28:06,174 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV60 is NOT approved.
+2017-06-05 11:28:06,310 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV54 is NOT approved.
+2017-06-05 11:28:06,453 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV66 is NOT approved.
+2017-06-05 11:28:06,581 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV70 is NOT approved.
+2017-06-05 11:28:06,702 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV59.4 is NOT approved.
+2017-06-05 11:28:06,841 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV54 is NOT approved.
+2017-06-05 11:28:06,996 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRISTALLIN DRT is NOT approved.
+2017-06-05 11:28:07,110 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRISTALLIN GCHE is NOT approved.
+2017-06-05 11:28:07,232 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI N OPT DRT is NOT approved.
+2017-06-05 11:28:07,352 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI N OPT GCHE is NOT approved.
+2017-06-05 11:28:07,466 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-06-05 11:28:33,045 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-06-05 11:28:33,104 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-06-05 11:28:33,394 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-06-05 11:28:33,476 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-06-05 11:28:33,748 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-06-05 11:28:34,103 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY Pinnacle is NOT approved.
+2017-06-05 11:28:34,198 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY Pinnacle" set as Organ
+2017-06-05 11:28:34,273 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY Pinnacle" set as OrganAtRisk
+2017-06-05 11:28:34,380 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-06-05 11:28:34,465 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-06-05 11:28:34,538 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-06-05 11:28:34,658 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-06-05 11:28:34,743 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-06-05 11:28:34,815 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-06-05 11:28:34,909 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-06-05 11:28:35,001 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TR CEREBRAL" set as Organ
+2017-06-05 11:28:35,073 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TR CEREBRAL" set as OrganAtRisk
+2017-06-05 11:28:35,177 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PARO DRT is NOT approved.
+2017-06-05 11:28:35,267 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PARO DRT" set as Organ
+2017-06-05 11:28:35,341 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PARO DRT" set as OrganAtRisk
+2017-06-05 11:28:35,440 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PARO GCHE is NOT approved.
+2017-06-05 11:28:35,523 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PARO GCHE" set as Organ
+2017-06-05 11:28:35,595 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PARO GCHE" set as OrganAtRisk
+2017-06-05 11:28:35,708 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI LARYNX is NOT approved.
+2017-06-05 11:28:35,792 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "LARYNX" set as Organ
+2017-06-05 11:28:35,866 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "LARYNX" set as OrganAtRisk
+2017-06-05 11:28:35,957 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MANDIBULE is NOT approved.
+2017-06-05 11:28:36,041 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MANDIBULE" set as Organ
+2017-06-05 11:28:36,115 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MANDIBULE" set as OrganAtRisk
+2017-06-05 11:28:36,221 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CAVITE ORALE is NOT approved.
+2017-06-05 11:28:36,314 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CAVITE ORALE" set as Organ
+2017-06-05 11:28:36,391 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CAVITE ORALE" set as OrganAtRisk
+2017-06-05 11:28:36,484 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-06-05 11:28:36,569 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CERVEAU" set as Organ
+2017-06-05 11:28:36,645 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CERVEAU" set as OrganAtRisk
+2017-06-05 11:28:36,739 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-06-05 11:28:36,824 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-06-05 11:28:36,895 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-06-05 11:28:36,990 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-06-05 11:28:37,072 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL DRT" set as Organ
+2017-06-05 11:28:37,145 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL DRT" set as OrganAtRisk
+2017-06-05 11:28:37,243 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-06-05 11:28:37,324 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OEIL GCHE" set as Organ
+2017-06-05 11:28:37,397 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OEIL GCHE" set as OrganAtRisk
+2017-06-05 11:28:37,505 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OREILLE DRT is NOT approved.
+2017-06-05 11:28:37,589 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OREILLE DRT" set as Organ
+2017-06-05 11:28:37,662 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OREILLE DRT" set as OrganAtRisk
+2017-06-05 11:28:37,755 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OREILLE GCHE is NOT approved.
+2017-06-05 11:28:37,839 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OREILLE GCHE" set as Organ
+2017-06-05 11:28:37,914 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OREILLE GCHE" set as OrganAtRisk
+2017-06-05 11:28:38,022 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PL BRACHIAL DRT is NOT approved.
+2017-06-05 11:28:38,105 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PL BRACHIAL DRT" set as Organ
+2017-06-05 11:28:38,179 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PL BRACHIAL DRT" set as OrganAtRisk
+2017-06-05 11:28:38,282 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PL BRACHIAL GCHE is NOT approved.
+2017-06-05 11:28:38,368 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PL BRACHIAL GCHE" set as Organ
+2017-06-05 11:28:38,440 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PL BRACHIAL GCHE" set as OrganAtRisk
+2017-06-05 11:28:38,535 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVpreop is NOT approved.
+2017-06-05 11:28:38,622 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTVpreop" set as Gtv
+2017-06-05 11:28:38,698 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTVpreop" set as Target
+2017-06-05 11:28:38,828 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVn preop is NOT approved.
+2017-06-05 11:28:38,924 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTVn preop" set as Gtv
+2017-06-05 11:28:39,003 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTVn preop" set as Target
+2017-06-05 11:28:39,097 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV70 is NOT approved.
+2017-06-05 11:28:39,180 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CTV70" set as Ctv
+2017-06-05 11:28:39,271 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CTV70" set as Target
+2017-06-05 11:28:39,407 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV66 is NOT approved.
+2017-06-05 11:28:39,500 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CTV66" set as Ctv
+2017-06-05 11:28:39,580 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CTV66" set as Target
+2017-06-05 11:28:39,705 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVrecidive is NOT approved.
+2017-06-05 11:28:39,795 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTVrecidive" set as Gtv
+2017-06-05 11:28:39,869 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTVrecidive" set as Target
+2017-06-05 11:28:39,983 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV60 is NOT approved.
+2017-06-05 11:28:40,073 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CTV60" set as Ctv
+2017-06-05 11:28:40,158 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CTV60" set as Target
+2017-06-05 11:28:40,263 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV54 is NOT approved.
+2017-06-05 11:28:40,358 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CTV54" set as Ctv
+2017-06-05 11:28:40,437 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CTV54" set as Target
+2017-06-05 11:28:40,537 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV66 is NOT approved.
+2017-06-05 11:28:40,625 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV66" set as Ptv
+2017-06-05 11:28:40,705 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV66" set as Target
+2017-06-05 11:28:40,848 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV70 is NOT approved.
+2017-06-05 11:28:40,934 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV70" set as Ptv
+2017-06-05 11:28:41,006 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV70" set as Target
+2017-06-05 11:28:41,117 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV59.4 is NOT approved.
+2017-06-05 11:28:41,200 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV59.4" set as Ptv
+2017-06-05 11:28:41,277 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV59.4" set as Target
+2017-06-05 11:28:41,385 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV54 is NOT approved.
+2017-06-05 11:28:41,476 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV54" set as Ptv
+2017-06-05 11:28:41,554 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV54" set as Target
+2017-06-05 11:28:41,662 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRISTALLIN DRT is NOT approved.
+2017-06-05 11:28:41,750 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CRISTALLIN DRT" set as Organ
+2017-06-05 11:28:41,825 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CRISTALLIN DRT" set as OrganAtRisk
+2017-06-05 11:28:41,931 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRISTALLIN GCHE is NOT approved.
+2017-06-05 11:28:42,018 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CRISTALLIN GCHE" set as Organ
+2017-06-05 11:28:42,091 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CRISTALLIN GCHE" set as OrganAtRisk
+2017-06-05 11:28:42,195 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI N OPT DRT is NOT approved.
+2017-06-05 11:28:42,280 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "N OPT DRT" set as Organ
+2017-06-05 11:28:42,362 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "N OPT DRT" set as OrganAtRisk
+2017-06-05 11:28:42,461 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI N OPT GCHE is NOT approved.
+2017-06-05 11:28:42,548 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "N OPT GCHE" set as Organ
+2017-06-05 11:28:42,620 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "N OPT GCHE" set as OrganAtRisk
+2017-06-05 11:28:42,738 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-06-05 11:28:42,827 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CHIASMA" set as Organ
+2017-06-05 11:28:42,904 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CHIASMA" set as OrganAtRisk
+2017-06-05 11:29:08,765 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV70 is NOT approved.
+2017-06-05 11:29:08,865 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "modPTV70" set as Ptv
+2017-06-05 11:29:08,958 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "modPTV70" set as Target
+2017-06-05 11:29:09,080 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV66 is NOT approved.
+2017-06-05 11:29:09,184 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "modPTV66" set as Ptv
+2017-06-05 11:29:09,284 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "modPTV66" set as Target
+2017-06-05 11:29:09,416 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV59.4 is NOT approved.
+2017-06-05 11:29:09,511 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "modPTV59.4" set as Ptv
+2017-06-05 11:29:09,595 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "modPTV59.4" set as Target
+2017-06-05 11:29:09,695 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV54 is NOT approved.
+2017-06-05 11:29:09,794 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "modPTV54" set as Ptv
+2017-06-05 11:29:09,886 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "modPTV54" set as Target
+2017-06-05 11:29:09,987 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV66 is NOT approved.
+2017-06-05 11:29:10,085 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OPTPTV66" set as Ptv
+2017-06-05 11:29:10,177 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OPTPTV66" set as Target
+2017-06-05 11:29:10,268 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV59.4 is NOT approved.
+2017-06-05 11:29:10,367 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OPTPTV59.4" set as Ptv
+2017-06-05 11:29:10,459 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OPTPTV59.4" set as Target
+2017-06-05 11:29:10,570 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV54 is NOT approved.
+2017-06-05 11:29:10,676 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OPTPTV54" set as Ptv
+2017-06-05 11:29:10,762 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OPTPTV54" set as Target
+2017-06-05 11:29:45,247 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY Pinnacle is NOT approved.
+2017-06-05 11:29:45,387 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-06-05 11:29:45,534 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-06-05 11:29:45,678 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-06-05 11:29:45,819 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PARO DRT is NOT approved.
+2017-06-05 11:29:45,957 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PARO GCHE is NOT approved.
+2017-06-05 11:29:46,099 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI LARYNX is NOT approved.
+2017-06-05 11:29:46,239 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MANDIBULE is NOT approved.
+2017-06-05 11:29:46,387 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CAVITE ORALE is NOT approved.
+2017-06-05 11:29:46,526 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-06-05 11:29:46,665 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-06-05 11:29:46,807 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-06-05 11:29:46,946 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-06-05 11:29:47,086 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OREILLE DRT is NOT approved.
+2017-06-05 11:29:47,225 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OREILLE GCHE is NOT approved.
+2017-06-05 11:29:47,367 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PL BRACHIAL DRT is NOT approved.
+2017-06-05 11:29:47,504 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PL BRACHIAL GCHE is NOT approved.
+2017-06-05 11:29:47,646 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVpreop is NOT approved.
+2017-06-05 11:29:47,784 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVn preop is NOT approved.
+2017-06-05 11:29:47,926 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV70 is NOT approved.
+2017-06-05 11:29:48,065 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV66 is NOT approved.
+2017-06-05 11:29:48,204 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTVrecidive is NOT approved.
+2017-06-05 11:29:48,348 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV60 is NOT approved.
+2017-06-05 11:29:48,487 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV54 is NOT approved.
+2017-06-05 11:29:48,629 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV66 is NOT approved.
+2017-06-05 11:29:48,769 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV70 is NOT approved.
+2017-06-05 11:29:48,927 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV59.4 is NOT approved.
+2017-06-05 11:29:49,065 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV54 is NOT approved.
+2017-06-05 11:29:49,206 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRISTALLIN DRT is NOT approved.
+2017-06-05 11:29:49,351 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRISTALLIN GCHE is NOT approved.
+2017-06-05 11:29:49,496 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI N OPT DRT is NOT approved.
+2017-06-05 11:29:49,634 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI N OPT GCHE is NOT approved.
+2017-06-05 11:29:49,773 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-06-05 11:29:49,917 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BodyRS is NOT approved.
+2017-06-05 11:29:50,211 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BodyRS+Table is NOT approved.
+2017-06-05 11:29:50,539 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BodyRS-5mm is NOT approved.
+2017-06-05 11:29:50,682 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV70 is NOT approved.
+2017-06-05 11:29:50,829 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV66 is NOT approved.
+2017-06-05 11:29:50,978 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV59.4 is NOT approved.
+2017-06-05 11:29:51,136 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI modPTV54 is NOT approved.
+2017-06-05 11:29:51,292 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV66 is NOT approved.
+2017-06-05 11:29:51,442 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV59.4 is NOT approved.
+2017-06-05 11:29:51,590 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV54 is NOT approved.
+2017-06-05 11:29:51,742 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI Ring is NOT approved.
+2017-06-05 11:29:51,983 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI prv5mmMOELLE is NOT approved.
+2017-06-05 11:29:52,122 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI prv5mm TRONC is NOT approved.
+2017-06-05 11:29:52,264 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI prv5mmNOD is NOT approved.
+2017-06-05 11:29:52,407 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI prv5mmNOG is NOT approved.
+2017-06-05 11:29:52,548 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI prv5mmCHIASMA is NOT approved.
+2017-06-05 11:29:52,688 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT CAVITE ORALE is NOT approved.
+2017-06-05 11:29:52,834 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT LARYNX is NOT approved.
+2017-06-05 11:29:52,982 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT OESOPHAGE is NOT approved.
+2017-06-05 11:29:53,127 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT PARO DRT is NOT approved.
+2017-06-05 11:29:53,272 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT PARO GCHE is NOT approved.
+2017-06-05 11:29:53,417 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT CERVEAU is NOT approved.
+2017-06-05 11:29:53,559 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLOC MOELLE is NOT approved.
+2017-06-05 11:29:53,698 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MAND ds PTV70+5mm is NOT approved.
+2017-06-05 11:29:53,843 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI MAND-PTV70-5mm is NOT approved.
+2017-06-05 11:29:53,977 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PBD ds PTV70 is NOT approved.
+2017-06-05 11:29:54,242 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PBD ds PTV66 is NOT approved.
+2017-06-05 11:29:54,506 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PBG ds PTV70 is NOT approved.
+2017-06-05 11:29:54,641 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ROI PBG ds PTV66 is NOT approved.
+2017-06-05 11:29:55,200 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-06-05 11:29:55,290 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:29:55,547 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:29:55,775 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:29:56,021 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:29:56,229 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:29:56,449 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:29:56,670 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:29:56,948 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:29:57,196 - hmrlib.poi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (0.35636901855, 2.7584289551, 0.0)
+2017-06-05 11:29:58,070 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "modPTV70" added.
+2017-06-05 11:29:58,273 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "modPTV70" added.
+2017-06-05 11:29:58,463 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "modPTV66" added.
+2017-06-05 11:29:58,663 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OPTPTV66" added.
+2017-06-05 11:29:58,853 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "modPTV59.4" added.
+2017-06-05 11:29:59,040 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OPTPTV59.4" added.
+2017-06-05 11:29:59,227 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "modPTV54" added.
+2017-06-05 11:29:59,426 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OPTPTV54" added.
+2017-06-05 11:29:59,619 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MOELLE" added.
+2017-06-05 11:29:59,822 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "prv5mmMOELLE" added.
+2017-06-05 11:30:00,009 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-06-05 11:30:00,212 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "prv5mm TRONC" added.
+2017-06-05 11:30:00,393 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "BLOC MOELLE" added.
+2017-06-05 11:30:00,552 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OREILLE DRT" added.
+2017-06-05 11:30:00,744 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OREILLE GCHE" added.
+2017-06-05 11:30:00,931 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OPT CERVEAU" added.
+2017-06-05 11:30:01,148 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MAND ds PTV70+5mm" added.
+2017-06-05 11:30:01,329 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MAND-PTV70-5mm" added.
+2017-06-05 11:30:01,511 - hmrlib.optim - WARNING - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Warning: no ROI named "PBD ds PTV70".  Skip adding objective.
+2017-06-05 11:30:01,616 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PBG ds PTV70" added.
+2017-06-05 11:30:01,805 - hmrlib.optim - WARNING - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Warning: no ROI named "PBD ds PTV66".  Skip adding objective.
+2017-06-05 11:30:01,915 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PBG ds PTV66" added.
+2017-06-05 11:30:02,256 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "OPT PARO DRT" added.
+2017-06-05 11:30:02,540 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "OPT PARO GCHE" added.
+2017-06-05 11:30:02,839 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "OPT CAVITE ORALE" added.
+2017-06-05 11:30:03,072 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "OPT LARYNX" added.
+2017-06-05 11:30:03,345 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "OPT OESOPHAGE" added.
+2017-06-05 11:30:03,525 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "Ring" added.
+2017-06-05 11:30:03,836 - hmrlib.optim - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS+Table" added.
+2017-06-05 11:34:34,948 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-05 11:34:34,975 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher_ORL.py [execution time = 0:06:32.619000]
+2017-06-05 11:34:34,995 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-05 16:17:13,611 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-05 16:17:13,764 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] Starting script crane_launcher.py
+2017-06-05 16:17:13,809 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-05 16:17:13,857 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-05 16:17:13,919 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] End of script crane_launcher.py [execution time = 0:00:00.447000]
+2017-06-05 16:17:13,962 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-05 16:18:22,753 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-05 16:18:22,899 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] Starting script crane_launcher.py
+2017-06-05 16:18:22,944 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-05 16:18:22,989 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-05 16:18:23,049 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] End of script crane_launcher.py [execution time = 0:00:00.314000]
+2017-06-05 16:18:23,091 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-05 16:20:04,188 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-05 16:20:04,342 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] Starting script crane_launcher.py
+2017-06-05 16:20:04,406 - hmrlib - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-05 16:21:40,343 - hmrlib.roi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ROI PTV1 15 is NOT approved.
+2017-06-05 16:21:40,570 - hmrlib.roi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] Type of ROI "PTV1 15" set as Ptv
+2017-06-05 16:21:40,816 - hmrlib.roi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] OrganType of ROI "PTV1 15" set as Target
+2017-06-05 16:21:40,947 - hmrlib.roi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ROI PTV1 15 is NOT approved.
+2017-06-05 16:21:41,097 - hmrlib.roi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] Type of ROI "PTV1 15" set as Ptv
+2017-06-05 16:21:41,241 - hmrlib.roi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] OrganType of ROI "PTV1 15" set as Target
+2017-06-05 16:21:41,378 - hmrlib.roi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] ROI PTV3 18 is NOT approved.
+2017-06-05 16:21:41,556 - hmrlib.roi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] Type of ROI "PTV3 18" set as Ptv
+2017-06-05 16:21:41,718 - hmrlib.roi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] OrganType of ROI "PTV3 18" set as Target
+2017-06-05 16:21:42,733 - hmrlib.poi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (0.591741943359, 2.68982009888, 0.0)
+2017-06-05 16:21:43,049 - hmrlib.poi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (0.591741943359, 2.68982009888, 0.0)
+2017-06-05 16:21:43,335 - hmrlib.poi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (0.591741943359, 2.68982009888, 0.0)
+2017-06-05 16:21:43,775 - hmrlib.poi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (0.591741943359, 2.68982009888, 0.0)
+2017-06-05 16:21:44,106 - hmrlib.poi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (0.591741943359, 2.68982009888, 0.0)
+2017-06-05 16:21:44,389 - hmrlib.poi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (0.591741943359, 2.68982009888, 0.0)
+2017-06-05 16:21:44,676 - hmrlib.poi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (0.591741943359, 2.68982009888, 0.0)
+2017-06-05 16:21:45,029 - hmrlib.poi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (0.591741943359, 2.68982009888, 0.0)
+2017-06-05 16:21:45,470 - hmrlib.poi - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (0.591741943359, 2.68982009888, 0.0)
+2017-06-05 16:24:21,527 - hmrlib.eval - WARNING - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Identical clinical goal already exists
+2017-06-05 16:24:21,976 - hmrlib.eval - WARNING - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Identical clinical goal already exists
+2017-06-05 16:24:23,019 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MinDose for ROI "PTV1 15" added.
+2017-06-05 16:24:23,581 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MinDose for ROI "PTV1 15" added.
+2017-06-05 16:24:24,356 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MinDose for ROI "PTV3 18" added.
+2017-06-05 16:24:24,900 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-05 16:24:25,681 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-05 16:24:26,580 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_B1" added.
+2017-06-05 16:24:27,351 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_B1" added.
+2017-06-05 16:24:28,188 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_B1" added.
+2017-06-05 16:24:29,146 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-06-05 16:24:29,531 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MaxDose for ROI "CHIASMA" added.
+2017-06-05 16:24:30,263 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-06-05 16:24:30,329 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] PlanOptimizations[0] selected.
+2017-06-05 16:24:30,528 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Fluence iterations set to 30.
+2017-06-05 16:24:30,728 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Max iterations set to 90.
+2017-06-05 16:24:31,024 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Optimality tolerance set to 1e-09.
+2017-06-05 16:24:31,277 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Compute intermediate dose set to False.
+2017-06-05 16:24:31,454 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Compute final dose set to True.
+2017-06-05 16:25:14,188 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-06-05 16:25:14,258 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] PlanOptimizations[0] selected.
+2017-06-05 16:25:14,454 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Fluence iterations set to 30.
+2017-06-05 16:25:14,654 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Max iterations set to 30.
+2017-06-05 16:25:14,847 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Optimality tolerance set to 1e-09.
+2017-06-05 16:25:15,035 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Compute intermediate dose set to False.
+2017-06-05 16:25:15,247 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Compute final dose set to True.
+2017-06-05 16:27:59,155 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MinDose for ROI "PTV1 15" added.
+2017-06-05 16:27:59,694 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MinDose for ROI "PTV1 15" added.
+2017-06-05 16:28:00,493 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MinDose for ROI "PTV3 18" added.
+2017-06-05 16:28:01,005 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-05 16:28:01,812 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-05 16:28:02,560 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_B1" added.
+2017-06-05 16:28:03,263 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_B1" added.
+2017-06-05 16:28:04,106 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_B1" added.
+2017-06-05 16:28:04,927 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-06-05 16:28:05,446 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Objective of type MaxDose for ROI "CHIASMA" added.
+2017-06-05 16:28:05,754 - hmrlib.eval - WARNING - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Identical clinical goal already exists
+2017-06-05 16:28:05,815 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-06-05 16:28:05,862 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] PlanOptimizations[0] selected.
+2017-06-05 16:28:06,125 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Fluence iterations set to 30.
+2017-06-05 16:28:06,574 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Max iterations set to 90.
+2017-06-05 16:28:06,765 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Optimality tolerance set to 1e-09.
+2017-06-05 16:28:06,933 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Compute intermediate dose set to False.
+2017-06-05 16:28:07,103 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Compute final dose set to True.
+2017-06-05 16:28:45,237 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-06-05 16:28:45,303 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] PlanOptimizations[0] selected.
+2017-06-05 16:28:45,517 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Fluence iterations set to 30.
+2017-06-05 16:28:45,711 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Max iterations set to 30.
+2017-06-05 16:28:45,906 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Optimality tolerance set to 1e-09.
+2017-06-05 16:28:46,093 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Compute intermediate dose set to False.
+2017-06-05 16:28:46,289 - hmrlib.optim - INFO - [hmr30489 - JAUVIN^SOPHIE (1113285) - CT 1 - B1 IMRT/B1 IMRT] Compute final dose set to True.
+2017-06-06 09:49:29,811 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 09:49:29,939 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] Starting script crane_launcher.py
+2017-06-06 09:49:29,967 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 09:49:33,168 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 09:49:33,194 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] End of script crane_launcher.py [execution time = 0:00:03.488000]
+2017-06-06 09:49:33,216 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 10:06:32,754 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 10:06:32,886 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher_ORL.py
+2017-06-06 10:06:32,924 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 10:06:33,469 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-06-06 10:06:39,827 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV1 is NOT approved.
+2017-06-06 10:06:39,948 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV1 is NOT approved.
+2017-06-06 10:06:40,075 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV2 is NOT approved.
+2017-06-06 10:06:40,193 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV2 is NOT approved.
+2017-06-06 10:06:40,320 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU is NOT approved.
+2017-06-06 10:06:40,922 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-06-06 10:06:41,055 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL DRT is NOT approved.
+2017-06-06 10:06:41,181 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI OEIL GCHE is NOT approved.
+2017-06-06 10:06:41,302 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI TR CEREBRAL is NOT approved.
+2017-06-06 10:06:41,457 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI CHIASMA is NOT approved.
+2017-06-06 10:06:41,568 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT DRT is NOT approved.
+2017-06-06 10:06:41,685 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI NERF OPT GCHE is NOT approved.
+2017-06-06 10:06:41,802 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV A1 18Gy is NOT approved.
+2017-06-06 10:06:41,936 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI BodyRS is NOT approved.
+2017-06-06 10:06:47,382 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPTPTV is NOT approved.
+2017-06-06 10:06:47,487 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI CERVEAU-PTV is NOT approved.
+2017-06-06 10:06:47,863 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI RING_0_2mm is NOT approved.
+2017-06-06 10:06:48,007 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI RING_1_3mm is NOT approved.
+2017-06-06 10:06:48,158 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI RING_2_8mm is NOT approved.
+2017-06-06 10:06:48,346 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI RING_3_1cm is NOT approved.
+2017-06-06 10:06:48,625 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI TISSUS SAINS is NOT approved.
+2017-06-06 10:06:53,664 - hmrlib.roi - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ROI OPT CERVEAU-PTV is NOT approved.
+2017-06-06 10:07:03,481 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 10:07:03,503 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher_ORL.py [execution time = 0:00:30.817000]
+2017-06-06 10:07:03,533 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 10:24:48,632 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-06-06 10:24:48,780 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] Starting script double_opt_extra.py
+2017-06-06 10:24:48,825 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-06-06 10:28:40,979 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-06-06 10:28:41,032 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] End of script double_opt_extra.py [execution time = 0:03:52.410000]
+2017-06-06 10:28:41,078 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-06-06 10:29:34,561 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-06-06 10:29:34,698 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] Starting script double_opt_extra.py
+2017-06-06 10:29:34,745 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-06-06 10:35:08,142 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-06-06 10:35:08,376 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] End of script double_opt_extra.py [execution time = 0:05:33.516000]
+2017-06-06 10:35:08,478 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-06-06 16:25:11,853 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:25:11,953 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Starting script finalisation.py
+2017-06-06 16:25:11,959 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:25:12,246 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Invalid objectHandle.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\lib.py", line 510, in get_current_patient
+    return get_current('Patient')
+  File "C:\Program Files\RaySearch Laboratories\RayStation 4.7.2\ScriptClient\connect.py", line 21, in get_current
+    return ScriptClient.ScriptObject(ScriptClient.RayScriptService.Instance, ScriptClient.RayScriptService.Instance.Client.GetCurrent(objectType))
+SystemError: Invalid objectHandle.
+2017-06-06 16:25:12,274 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Could not get current patient.  No patient is currently selected ?
+2017-06-06 16:25:12,368 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:25:12,375 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script finalisation.py [execution time = 0:00:00.603000]
+2017-06-06 16:25:12,384 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:26:19,791 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:26:19,891 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Starting script finalisation.py
+2017-06-06 16:26:19,897 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:26:20,184 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Invalid objectHandle.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\lib.py", line 510, in get_current_patient
+    return get_current('Patient')
+  File "C:\Program Files\RaySearch Laboratories\RayStation 4.7.2\ScriptClient\connect.py", line 21, in get_current
+    return ScriptClient.ScriptObject(ScriptClient.RayScriptService.Instance, ScriptClient.RayScriptService.Instance.Client.GetCurrent(objectType))
+SystemError: Invalid objectHandle.
+2017-06-06 16:26:20,212 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Could not get current patient.  No patient is currently selected ?
+2017-06-06 16:26:21,928 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:26:21,935 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script finalisation.py [execution time = 0:00:02.180000]
+2017-06-06 16:26:21,944 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:27:26,530 - hmrlib - INFO - [hmr30489 - _HEMBLING^JOAN^AUDREY (1721334) - CT 1 - MA IMRT/MA IMRT] ================================================================================
+2017-06-06 16:27:26,682 - hmrlib - INFO - [hmr30489 - _HEMBLING^JOAN^AUDREY (1721334) - CT 1 - MA IMRT/MA IMRT] Starting script finalisation.py
+2017-06-06 16:27:26,748 - hmrlib - INFO - [hmr30489 - _HEMBLING^JOAN^AUDREY (1721334) - CT 1 - MA IMRT/MA IMRT] ================================================================================
+2017-06-06 16:27:28,194 - hmrlib - INFO - [hmr30489 - _HEMBLING^JOAN^AUDREY (1721334) - CT 1 - MA IMRT/MA IMRT] ================================================================================
+2017-06-06 16:27:28,243 - hmrlib - INFO - [hmr30489 - _HEMBLING^JOAN^AUDREY (1721334) - CT 1 - MA IMRT/MA IMRT] End of script finalisation.py [execution time = 0:00:01.867000]
+2017-06-06 16:27:28,290 - hmrlib - INFO - [hmr30489 - _HEMBLING^JOAN^AUDREY (1721334) - CT 1 - MA IMRT/MA IMRT] ================================================================================
+2017-06-06 16:28:44,777 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_1^JOSEE (636803) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-06-06 16:28:44,987 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_1^JOSEE (636803) - CT 1 - A1 VMAT/A1 VMAT] Starting script finalisation.py
+2017-06-06 16:28:45,070 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_1^JOSEE (636803) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-06-06 16:29:23,610 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_1^JOSEE (636803) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-06-06 16:29:23,657 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_1^JOSEE (636803) - CT 1 - A1 VMAT/A1 VMAT] End of script finalisation.py [execution time = 0:00:38.948000]
+2017-06-06 16:29:23,702 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_1^JOSEE (636803) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-06-06 16:38:28,846 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:38:28,968 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] Starting script vérif 1.py
+2017-06-06 16:38:29,045 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:38:29,336 - hmrlib - ERROR - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] Invalid objectHandle.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\lib.py", line 493, in get_current_plan
+    return get_current('Plan')
+  File "C:\Program Files\RaySearch Laboratories\RayStation 4.7.2\ScriptClient\connect.py", line 21, in get_current
+    return ScriptClient.ScriptObject(ScriptClient.RayScriptService.Instance, ScriptClient.RayScriptService.Instance.Client.GetCurrent(objectType))
+SystemError: Invalid objectHandle.
+2017-06-06 16:38:29,369 - hmrlib - ERROR - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] Could not get current plan.  No plan is currently selected ?
+2017-06-06 16:38:30,635 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:38:30,662 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] End of script vérif 1.py [execution time = 0:00:01.892000]
+2017-06-06 16:38:30,692 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:38:33,628 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:38:33,751 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] Starting script vérif 2.py
+2017-06-06 16:38:33,819 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:38:34,108 - hmrlib - ERROR - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] Invalid objectHandle.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\lib.py", line 493, in get_current_plan
+    return get_current('Plan')
+  File "C:\Program Files\RaySearch Laboratories\RayStation 4.7.2\ScriptClient\connect.py", line 21, in get_current
+    return ScriptClient.ScriptObject(ScriptClient.RayScriptService.Instance, ScriptClient.RayScriptService.Instance.Client.GetCurrent(objectType))
+SystemError: Invalid objectHandle.
+2017-06-06 16:38:34,141 - hmrlib - ERROR - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] Could not get current plan.  No plan is currently selected ?
+2017-06-06 16:38:35,739 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:38:35,768 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] End of script vérif 2.py [execution time = 0:00:02.183000]
+2017-06-06 16:38:35,799 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-06-06 16:38:40,853 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-06-06 16:38:40,988 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] Starting script vérif 1.py
+2017-06-06 16:38:41,077 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-06-06 16:38:55,397 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-06-06 16:38:55,454 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] End of script vérif 1.py [execution time = 0:00:14.628000]
+2017-06-06 16:38:55,519 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - Stereo Crane/Stereo Crane] ================================================================================
+2017-06-06 16:39:11,834 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - 3DC optimised/3DC optimised] ================================================================================
+2017-06-06 16:39:11,969 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - 3DC optimised/3DC optimised] Starting script vérif 2.py
+2017-06-06 16:39:12,064 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - 3DC optimised/3DC optimised] ================================================================================
+2017-06-06 16:39:54,255 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - 3DC optimised/3DC optimised] ================================================================================
+2017-06-06 16:39:54,301 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - 3DC optimised/3DC optimised] End of script vérif 2.py [execution time = 0:00:42.513000]
+2017-06-06 16:39:54,356 - hmrlib - INFO - [hmr30489 - CAPORUSCIO^MARGHERITA (1869765) - CT 1 - 3DC optimised/3DC optimised] ================================================================================

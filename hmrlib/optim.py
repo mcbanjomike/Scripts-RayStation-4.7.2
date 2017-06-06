@@ -455,6 +455,18 @@ def double_opt_save(plan=None, beamset=None):
     patient.Save()
 
 
+def double_opt_extra():
+    
+    plan = lib.get_current_plan()
+    beamset = lib.get_current_beamset()
+    plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 100
+    plan.PlanOptimizations[0].RunOptimization()
+    plan.PlanOptimizations[0].RunOptimization()
+    fit_objectives_orl(plan, beamset)
+    plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 29
+    plan.PlanOptimizations[0].RunOptimization()  
+    
+    
 # Taken from RayStation 4.7.2 Scripting Guideline page 23
 def compute_eud(dose, roi_name, parameter_a):
     # Get the dose values from the dose distribution
