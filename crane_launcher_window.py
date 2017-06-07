@@ -680,10 +680,10 @@ def crane_launcher():
                     plan,beamset = crane.crane_stereo_kbp_add_3DC_plan(plan_data = d)
                     
                     #if len(ptv_names)>1:
-                    if optimize_collimator_angles:
+                    if optimize_collimator_angles and len(ptv_names) > 1:
                         self.status.Text = "Optimisation angles collimateur (touchez pas à l'ordinateur SVP)"
                         crane.optimize_collimator_angles()  
-                    else:
+                    elif not optimize_collimator_angles:
                         self.status.Text = "Prêt pour optimisation manuelle des angles de collimateur"
                         self.status.ForeColor = Color.Green
                         return

@@ -274,7 +274,6 @@ def poumon_stereo_create_isodose_lines(plan_data):
 
     # Set Dose Color Table (only for plan A1, might crash RayStation if dose color table already exists)
     if plan_data['site_name'] == 'A1':
-        eval.remove_all_isodose_lines()
         plan_data['patient'].CaseSettings.DoseColorMap.ReferenceValue = plan_data['rx_dose']
         fivegy = float(100*500/plan_data['rx_dose'])
 
@@ -1041,7 +1040,6 @@ def plan_poumon():
     clinical_goals.smart_cg_poumon(plan=plan)
 
     # Set Dose Color Table
-    eval.remove_all_isodose_lines()
     patient.CaseSettings.DoseColorMap.ReferenceValue = ptvs[0] * 100
 
     tengy = 10.0 / float(ptvs[0]) * 100

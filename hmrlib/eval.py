@@ -155,9 +155,12 @@ def add_isodose_line_rgb(dose, r, g, b, alpha=255):
         # Create System.Drawing.Color instance
         color = Drawing.Color().FromArgb(alpha, r, g, b)
         _add_isodose_line(dose, color)
-    except Exception as e:
-        logger.exception(e)
-        raise
+
+    except:
+        pass
+    #except Exception as e:
+        #logger.exception(e)
+        #raise        
 
 
 def remove_isodose_line(dose):
@@ -181,6 +184,7 @@ def remove_isodose_line(dose):
 def remove_all_isodose_lines():
     """
         Removes all isodose lines.
+        WARNING: This script typically hard-crashes RayStation in its current form. Avoid using it.
     """
     patient = lib.get_current_patient()
 
