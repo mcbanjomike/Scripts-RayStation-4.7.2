@@ -324,7 +324,6 @@ def foie_stereo_create_isodose_lines(plan_data):
 
     patient = plan_data['patient']
 
-    eval.remove_all_isodose_lines()
     patient.CaseSettings.DoseColorMap.ReferenceValue = plan_data['rx_dose']
     fivegy = 500 / plan_data['rx_dose'] * 100
     tengy = 1000 / plan_data['rx_dose'] * 100
@@ -444,7 +443,6 @@ def vertebre_stereo_create_isodose_lines(plan_data):
 
     patient = plan_data['patient']
 
-    eval.remove_all_isodose_lines()
     patient.CaseSettings.DoseColorMap.ReferenceValue = 1800
     fivegy = 5 / 18.0 * 100
     patient.CaseSettings.DoseColorMap.ColorMapReferenceType = "ReferenceValue"

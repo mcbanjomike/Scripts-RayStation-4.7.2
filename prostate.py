@@ -710,7 +710,6 @@ def prostate_A1_create_isodose_lines(plan_data):
 
     patient = plan_data['patient']
 
-    eval.remove_all_isodose_lines()
     patient.CaseSettings.DoseColorMap.ReferenceValue = plan_data['rx_dose']
     patient.CaseSettings.DoseColorMap.ColorMapReferenceType = "ReferenceValue"
     patient.CaseSettings.DoseColorMap.PresentationType = 'Absolute'

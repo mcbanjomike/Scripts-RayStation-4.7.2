@@ -467,8 +467,9 @@ def double_opt_extra():
     plan.PlanOptimizations[0].RunOptimization()  
     
     
-# Taken from RayStation 4.7.2 Scripting Guideline page 23
 def compute_eud(dose, roi_name, parameter_a):
+# Taken from RayStation 4.7.2 Scripting Guideline page 23
+
     # Get the dose values from the dose distribution
     dose_values = [d for d in dose.DoseValues.DoseData]
     # Get the dose grid representation of the ROI
@@ -514,11 +515,6 @@ def fit_objectives(plan=None, beamset=None):
             obtained_eud = compute_eud(plan.TreatmentCourse.TotalDose, roi_name, a)
             if obtained_eud > 200:
                 objective.DoseFunctionParameters.DoseLevel = int(obtained_eud - 200)
-
-    # Beamsets are numbered starting at 1 whereas Plan Optimizations are numbered starting at 0.
-    # Determine what the number of the selected beamset is, then subtract one to locate the associated Plan Optimization.
-    # plan.PlanOptimizations[beamset.Number-1].RunOptimization()
-    # plan.PlanOptimizations[beamset.Number-1].RunOptimization()
 
    
 def fit_objectives_orl(plan=None, beamset=None):

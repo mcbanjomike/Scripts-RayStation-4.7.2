@@ -1379,75 +1379,75 @@ def tool_window():
             #Conformity Index group
             self.CIHIlabel = Label()
             self.CIHIlabel.Text = "Calculer CI/HI"
-            self.CIHIlabel.Location = Point(25, offset + vert_spacer * 3)
+            self.CIHIlabel.Location = Point(25, offset + vert_spacer * 2.5)
             self.CIHIlabel.Font = Font("Arial", 11, FontStyle.Bold)
             self.CIHIlabel.AutoSize = True              
             
             self.ptvlabel = Label()
             self.ptvlabel.Text = "PTV:"
             self.ptvlabel.Font = Font("Arial", 10, FontStyle.Bold)
-            self.ptvlabel.Location = Point(25, offset + vert_spacer * 4)
+            self.ptvlabel.Location = Point(25, offset + vert_spacer * 3.5)
             self.ptvlabel.AutoSize = True  
                    
             self.ptvcombo = ComboBox()
             self.ptvcombo.Parent = self
             self.ptvcombo.Size = Size(100,40)
-            self.ptvcombo.Location = Point(65, offset + vert_spacer * 4)
+            self.ptvcombo.Location = Point(65, offset + vert_spacer * 3.5)
             self.ptvcombo.Text = "Choisissez PTV"                                
                    
             self.isodoselabel = Label()
             self.isodoselabel.Text = "ROI isodose:"
             self.isodoselabel.Font = Font("Arial", 10, FontStyle.Bold)
-            self.isodoselabel.Location = Point(175, offset + vert_spacer * 4)
+            self.isodoselabel.Location = Point(175, offset + vert_spacer * 3.5)
             self.isodoselabel.AutoSize = True                     
                    
             self.isodosecombo = ComboBox()
             self.isodosecombo.Parent = self
             self.isodosecombo.Size = Size(100,40)
-            self.isodosecombo.Location = Point(265, offset + vert_spacer * 4)
+            self.isodosecombo.Location = Point(265, offset + vert_spacer * 3.5)
             self.isodosecombo.Text = "Choissisez ROI" 
 
             self.dosebox = TextBox()
             self.dosebox.Parent = self
             self.dosebox.Size = Size(60,40)
-            self.dosebox.Location = Point(380,offset + vert_spacer * 4)          
+            self.dosebox.Location = Point(380,offset + vert_spacer * 3.5)          
             
             self.CIHIButton = Button()
             self.CIHIButton.Text = "Calculer CI/HI"
             self.CIHIButton.Size = Size(100,20)
-            self.CIHIButton.Location = Point(450, offset + vert_spacer * 4)
+            self.CIHIButton.Location = Point(450, offset + vert_spacer * 3.5)
             self.CIHIButton.Click += self.CIHIClicked                 
             
             
             #Rename beams group
             self.renamelabel = Label()
             self.renamelabel.Text = "Renommer les faisceaux"
-            self.renamelabel.Location = Point(25, offset + vert_spacer * 6)
+            self.renamelabel.Location = Point(25, offset + vert_spacer * 5)
             self.renamelabel.Font = Font("Arial", 11, FontStyle.Bold)
             self.renamelabel.AutoSize = True          
 
             self.renamewarninglabel = Label()
             self.renamewarninglabel.Text = "Seulement pour patients en position dorsal avec couch à zéro"
-            self.renamewarninglabel.Location = Point(25, offset + vert_spacer * 6.7)
+            self.renamewarninglabel.Location = Point(25, offset + vert_spacer * 5.7)
             self.renamewarninglabel.Font = Font("Arial", 10, FontStyle.Italic)
             self.renamewarninglabel.AutoSize = True                  
             
             self.sitelabel = Label()
             self.sitelabel.Text = "Site:"
             self.sitelabel.Font = Font("Arial", 10, FontStyle.Bold)
-            self.sitelabel.Location = Point(25, offset + vert_spacer * 7.7)
+            self.sitelabel.Location = Point(25, offset + vert_spacer * 6.7)
             self.sitelabel.AutoSize = True   
             
             self.sitebox = TextBox()
             self.sitebox.Parent = self
             self.sitebox.Size = Size(60,40)
-            self.sitebox.Location = Point(75,offset + vert_spacer * 7.7)
+            self.sitebox.Location = Point(75,offset + vert_spacer * 6.7)
             self.sitebox.Text = "A1"
             
             self.renameButton = Button()
             self.renameButton.Text = "Renommer les faisceaux"
             self.renameButton.Size = Size(150,20)
-            self.renameButton.Location = Point(420,offset + vert_spacer * 7.7)
+            self.renameButton.Location = Point(420,offset + vert_spacer * 6.7)
             self.renameButton.Click += self.renameClicked            
             
             

@@ -590,7 +590,6 @@ def crane_stereo_create_isodose_lines(plan_data):
     patient = plan_data['patient']
     rx_dose = plan_data['rx_dose']
 
-    eval.remove_all_isodose_lines()
     patient.CaseSettings.DoseColorMap.ReferenceValue = rx_dose
 
     patient.CaseSettings.DoseColorMap.ColorMapReferenceType = "ReferenceValue"
