@@ -662,8 +662,8 @@ def essai_autre_technique():
     new_plan.PlanOptimizations[new_beamset.Number-1].RunOptimization()
     new_plan.PlanOptimizations[new_beamset.Number-1].RunOptimization()
     
-    import launcher
-    launcher.debug_window('Optimisation du plan '+new_plan.Name+' terminée')   
+    #import launcher
+    #launcher.debug_window('Optimisation du plan '+new_plan.Name+' terminée')   
     
     
 def copy_clinical_goals(old_plan = None,new_plan = None):

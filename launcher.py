@@ -402,22 +402,22 @@ def eud_window():
     try:
         patient = lib.get_current_patient()
     except:
-        debug_window('Aucun patient sélectionné')
+        message.message_window('Aucun patient sélectionné')
         return                
     try:
         plan = lib.get_current_plan()
     except:
-        debug_window('Aucun plan sélectionné')
+        message.message_window('Aucun plan sélectionné')
         return
     try:
         beamset = lib.get_current_beamset()
     except:
-        debug_window('Aucun beamset sélectionné')
+        message.message_window('Aucun beamset sélectionné')
         return        
     try:
         exam = lib.get_current_examination()
     except:
-        debug_window('Aucun examination trouvé')
+        message.message_window('Aucun examination trouvé')
         return
         
     form = EudWindow()
@@ -740,12 +740,12 @@ def crane_3DC_window():
     try:
         patient = lib.get_current_patient()
     except:
-        debug_window('Aucun patient sélectionné')
+        message.message_window('Aucun patient sélectionné')
         return                    
     try:
         exam = lib.get_current_examination()
     except:
-        debug_window('Aucun examination trouvé')
+        message.message_window('Aucun examination trouvé')
         return
         
     form = MainWindow()
@@ -1010,22 +1010,22 @@ def crane_stats_window():
     try:
         patient = lib.get_current_patient()
     except:
-        debug_window('Aucun patient sélectionné')
+        message.message_window('Aucun patient sélectionné')
         return                
     try:
         plan = lib.get_current_plan()
     except:
-        debug_window('Aucun plan sélectionné')
+        message.message_window('Aucun plan sélectionné')
         return
     try:
         beamset = lib.get_current_beamset()
     except:
-        debug_window('Aucun beamset sélectionné')
+        message.message_window('Aucun beamset sélectionné')
         return        
     try:
         exam = lib.get_current_examination()
     except:
-        debug_window('Aucun examination trouvé')
+        message.message_window('Aucun examination trouvé')
         return
         
     form = CraneStatsWindow()
@@ -1263,22 +1263,22 @@ def lung_stats_window():
     try:
         patient = lib.get_current_patient()
     except:
-        debug_window('Aucun patient sélectionné')
+        message.message_window('Aucun patient sélectionné')
         return                
     try:
         plan = lib.get_current_plan()
     except:
-        debug_window('Aucun plan sélectionné')
+        message.message_window('Aucun plan sélectionné')
         return
     try:
         beamset = lib.get_current_beamset()
     except:
-        debug_window('Aucun beamset sélectionné')
+        message.message_window('Aucun beamset sélectionné')
         return        
     try:
         exam = lib.get_current_examination()
     except:
-        debug_window('Aucun examination trouvé')
+        message.message_window('Aucun examination trouvé')
         return
         
     form = LungStatsWindow()
@@ -1451,6 +1451,17 @@ def tool_window():
             self.renameButton.Click += self.renameClicked            
             
             
+            self.DICOMButton = Button()
+            self.DICOMButton.Text = "Afficher coordonnées DICOM des POIs"
+            self.DICOMButton.Size = Size(400,20)
+            self.DICOMButton.Location = Point(25,offset + vert_spacer * 8.2)
+            self.DICOMButton.Click += self.DICOMClicked               
+            
+            self.changertechButton = Button()
+            self.changertechButton.Text = "Changer technique VMAT<->IMRT"
+            self.changertechButton.Size = Size(400,20)
+            self.changertechButton.Location = Point(25,offset + vert_spacer * 9.2)
+            self.changertechButton.Click += self.changertechClicked                
             
             self.MainWindow.Controls.Add(self.NTCPlabel)
             self.MainWindow.Controls.Add(self.roilabel)
@@ -1472,6 +1483,9 @@ def tool_window():
             self.MainWindow.Controls.Add(self.sitelabel)
             self.MainWindow.Controls.Add(self.sitebox)
             self.MainWindow.Controls.Add(self.renameButton)
+            
+            self.MainWindow.Controls.Add(self.DICOMButton)
+            self.MainWindow.Controls.Add(self.changertechButton)
 
             
         def cancelClicked(self, sender, args):
@@ -1594,20 +1608,32 @@ def tool_window():
             self.message.Text = "CIRTOG: %.2f, HI: %.2f, CIPADDICK: %.2f" % (cirtog,hi,cipaddick)
             self.message.ForeColor = Color.Green
             
+
+        def DICOMClicked(self, sender, args):     
+
+            self.message.ForeColor = Color.Black
+            self.message.Text = poi.show_all_poi_coordinates()    
             
+        def changertechClicked(self, sender, args):     
+
+            self.message.ForeColor = Color.Black
+            self.message.Text = "En cours"                
+            optim.essai_autre_technique()
+            self.message.Text = "Terminé!"
+            self.message.ForeColor = Color.Green
   
         def setupOKButtons(self):
             self.OKbuttonPanel = self.miniPanel(0, 410)                  
             
             cancelButton = Button()
             cancelButton.Text = "Annuler"
-            cancelButton.Location = Point(25,10)
+            cancelButton.Location = Point(25,0)
             self.CancelButton = cancelButton
             cancelButton.Click += self.cancelClicked
             
             self.message = Label()
             self.message.Text = ""
-            self.message.Location = Point(125, 13)
+            self.message.Location = Point(125, 2)
             self.message.Font = Font("Arial", 11, FontStyle.Bold)
             self.message.AutoSize = True      
             
@@ -1635,22 +1661,22 @@ def tool_window():
     try:
         patient = lib.get_current_patient()
     except:
-        debug_window('Aucun patient sélectionné')
+        message.message_window('Aucun patient sélectionné')
         return                
     try:
         plan = lib.get_current_plan()
     except:
-        debug_window('Aucun plan sélectionné')
+        message.message_window('Aucun plan sélectionné')
         return
     try:
         beamset = lib.get_current_beamset()
     except:
-        debug_window('Aucun beamset sélectionné')
+        message.message_window('Aucun beamset sélectionné')
         return        
     try:
         exam = lib.get_current_examination()
     except:
-        debug_window('Aucun examination trouvé')
+        message.message_window('Aucun examination trouvé')
         return
         
     form = ToolWindow()
