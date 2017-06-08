@@ -86,8 +86,10 @@ def show_all_poi_coordinates():
     msg = ''
     for poi_name in poi_names:
         coords = get_poi_coordinates(poi_name)
-        msg += 'Les coordonnées DICOM du point "%s" sont : [x = %.2f cm, y = %.2f cm, z = %.2f cm]\n' % (poi_name, coords.x, coords.y, coords.z)
-    gui.show_log_window(msg)
+        #msg += 'Les coordonnées DICOM du point "%s" sont : [x = %.2f cm, y = %.2f cm, z = %.2f cm]\n' % (poi_name, coords.x, coords.y, coords.z)
+        msg += '%s: [x = %.2f cm, y = %.2f cm, z = %.2f cm]\n' % (poi_name, coords.x, coords.y, coords.z)
+    #gui.show_log_window(msg)
+    return msg
 
 
 def identify_isocenter_poi():
