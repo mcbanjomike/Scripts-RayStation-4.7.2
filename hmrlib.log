@@ -3927,3 +3927,1005 @@ ValueError: An entry with the same key already exists.
 2017-06-08 16:09:54,417 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 IMRT/A1 IMRT] Max arc delivery time set to 350.0 s for arc "A1.1".
 2017-06-08 16:09:54,600 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 IMRT/A1 IMRT] Arc gantry spacing set to 4 degrees for arc "A1.2".
 2017-06-08 16:09:54,788 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 IMRT/A1 IMRT] Max arc delivery time set to 350.0 s for arc "A1.2".
+2017-06-15 12:02:55,114 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-06-15 12:02:55,286 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] Starting script ORL_launcher.py
+2017-06-15 12:02:55,329 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-06-15 12:02:56,056 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI BODY Pinnacle is NOT approved.
+2017-06-15 12:03:00,546 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI Table is NOT approved.
+2017-06-15 12:03:01,056 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI MOELLE is NOT approved.
+2017-06-15 12:03:01,240 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI TR CEREBRAL is NOT approved.
+2017-06-15 12:03:01,427 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI PARO DRT is NOT approved.
+2017-06-15 12:03:01,618 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI PARO GCHE is NOT approved.
+2017-06-15 12:03:01,813 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI LARYNX is NOT approved.
+2017-06-15 12:03:02,023 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI MANDIBULE is NOT approved.
+2017-06-15 12:03:02,209 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI CAVITE ORALE is NOT approved.
+2017-06-15 12:03:02,393 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI CERVEAU is NOT approved.
+2017-06-15 12:03:02,708 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OESOPHAGE is NOT approved.
+2017-06-15 12:03:02,883 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OEIL DRT is NOT approved.
+2017-06-15 12:03:03,042 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OEIL GCHE is NOT approved.
+2017-06-15 12:03:03,201 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OREILLE DRT is NOT approved.
+2017-06-15 12:03:03,361 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OREILLE GCHE is NOT approved.
+2017-06-15 12:03:03,525 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI PL BRACHIAL DRT is NOT approved.
+2017-06-15 12:03:03,696 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI PL BRACHIAL GCHE is NOT approved.
+2017-06-15 12:03:03,875 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI GTVpreop is NOT approved.
+2017-06-15 12:03:04,043 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI GTVn preop is NOT approved.
+2017-06-15 12:03:04,200 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI CTV70 is NOT approved.
+2017-06-15 12:03:04,377 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI CTV66 is NOT approved.
+2017-06-15 12:03:04,570 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI GTVrecidive is NOT approved.
+2017-06-15 12:03:04,735 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI CTV60 is NOT approved.
+2017-06-15 12:03:04,997 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI CTV54 is NOT approved.
+2017-06-15 12:03:05,346 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI PTV66 is NOT approved.
+2017-06-15 12:03:05,562 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI PTV70 is NOT approved.
+2017-06-15 12:03:05,751 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI PTV59.4 is NOT approved.
+2017-06-15 12:03:06,032 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI PTV54 is NOT approved.
+2017-06-15 12:03:06,409 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI CRISTALLIN DRT is NOT approved.
+2017-06-15 12:03:06,563 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI CRISTALLIN GCHE is NOT approved.
+2017-06-15 12:03:06,717 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI N OPT DRT is NOT approved.
+2017-06-15 12:03:06,884 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI N OPT GCHE is NOT approved.
+2017-06-15 12:03:07,037 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI CHIASMA is NOT approved.
+2017-06-15 12:03:07,189 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI BodyRS is NOT approved.
+2017-06-15 12:03:08,894 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI BodyRS+Table is NOT approved.
+2017-06-15 12:03:10,625 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI BodyRS-5mm is NOT approved.
+2017-06-15 12:03:10,895 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI modPTV70 is NOT approved.
+2017-06-15 12:03:11,068 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI modPTV66 is NOT approved.
+2017-06-15 12:03:11,271 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI modPTV59.4 is NOT approved.
+2017-06-15 12:03:11,530 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI modPTV54 is NOT approved.
+2017-06-15 12:03:11,815 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OPTPTV66 is NOT approved.
+2017-06-15 12:03:12,009 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OPTPTV59.4 is NOT approved.
+2017-06-15 12:03:12,236 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OPTPTV54 is NOT approved.
+2017-06-15 12:03:12,453 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI Ring is NOT approved.
+2017-06-15 12:03:12,945 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI prv5mmMOELLE is NOT approved.
+2017-06-15 12:03:13,101 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI prv5mm TRONC is NOT approved.
+2017-06-15 12:03:13,265 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI prv5mmNOD is NOT approved.
+2017-06-15 12:03:13,415 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI prv5mmNOG is NOT approved.
+2017-06-15 12:03:13,571 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI prv5mmCHIASMA is NOT approved.
+2017-06-15 12:03:13,723 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OPT CAVITE ORALE is NOT approved.
+2017-06-15 12:03:13,903 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OPT LARYNX is NOT approved.
+2017-06-15 12:03:14,077 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OPT OESOPHAGE is NOT approved.
+2017-06-15 12:03:14,241 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OPT PARO DRT is NOT approved.
+2017-06-15 12:03:14,415 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OPT PARO GCHE is NOT approved.
+2017-06-15 12:03:14,582 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI OPT CERVEAU is NOT approved.
+2017-06-15 12:03:14,744 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI BLOC MOELLE is NOT approved.
+2017-06-15 12:03:14,910 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI MAND ds PTV70+5mm is NOT approved.
+2017-06-15 12:03:15,068 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI MAND-PTV70-5mm is NOT approved.
+2017-06-15 12:03:15,241 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI PBG ds PTV70 is NOT approved.
+2017-06-15 12:03:15,391 - hmrlib.roi - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ROI PBG ds PTV66 is NOT approved.
+2017-06-15 12:03:19,552 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-06-15 12:03:19,594 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] End of script ORL_launcher.py [execution time = 0:00:24.663000]
+2017-06-15 12:03:19,639 - hmrlib - INFO - [hmr30489 - PHARAND_1^LUCILLE (1861006) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-06-20 08:55:27,581 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 08:55:27,721 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Starting script crane_launcher.py
+2017-06-20 08:55:27,766 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 08:56:14,735 - hmrlib.roi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ROI PTV21 is NOT approved.
+2017-06-20 08:56:14,873 - hmrlib.roi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Type of ROI "PTV21" set as Ptv
+2017-06-20 08:56:15,005 - hmrlib.roi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] OrganType of ROI "PTV21" set as Target
+2017-06-20 08:56:15,887 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 08:56:16,193 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 08:56:16,460 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 08:56:16,742 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 08:56:17,006 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 08:56:17,269 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 08:56:17,532 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 08:56:17,797 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 08:56:18,073 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 08:56:22,053 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MinDose for ROI "PTV21" added.
+2017-06-20 08:56:22,349 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-20 08:56:22,792 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-20 08:56:23,144 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_B1" added.
+2017-06-20 08:56:23,513 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_B1" added.
+2017-06-20 08:56:23,863 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_B1" added.
+2017-06-20 08:56:24,204 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-06-20 08:56:24,430 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-20 08:56:24,474 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-20 08:56:24,593 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Fluence iterations set to 30.
+2017-06-20 08:56:24,706 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Max iterations set to 90.
+2017-06-20 08:56:24,822 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-20 08:56:24,931 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute intermediate dose set to False.
+2017-06-20 08:56:25,040 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute final dose set to True.
+2017-06-20 08:57:01,110 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-20 08:57:01,165 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-20 08:57:01,276 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Fluence iterations set to 30.
+2017-06-20 08:57:01,383 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Max iterations set to 30.
+2017-06-20 08:57:01,508 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-20 08:57:01,635 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute intermediate dose set to False.
+2017-06-20 08:57:01,754 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute final dose set to True.
+2017-06-20 08:57:35,487 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MinDose for ROI "PTV21" added.
+2017-06-20 08:57:35,770 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-20 08:57:36,190 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-20 08:57:36,535 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_B1" added.
+2017-06-20 08:57:36,880 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_B1" added.
+2017-06-20 08:57:37,241 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_B1" added.
+2017-06-20 08:57:37,600 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-06-20 08:57:37,947 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-20 08:57:37,990 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-20 08:57:38,106 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Fluence iterations set to 30.
+2017-06-20 08:57:38,225 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Max iterations set to 90.
+2017-06-20 08:57:38,333 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-20 08:57:38,440 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute intermediate dose set to False.
+2017-06-20 08:57:38,550 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute final dose set to True.
+2017-06-20 08:58:01,520 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-20 08:58:01,579 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-20 08:58:01,691 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Fluence iterations set to 30.
+2017-06-20 08:58:01,796 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Max iterations set to 30.
+2017-06-20 08:58:01,911 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-20 08:58:02,017 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute intermediate dose set to False.
+2017-06-20 08:58:02,125 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute final dose set to True.
+2017-06-20 09:15:21,065 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 09:15:21,107 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] End of script crane_launcher.py [execution time = 0:19:53.737000]
+2017-06-20 09:15:21,149 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 09:16:56,777 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 09:16:56,927 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Starting script crane_launcher.py
+2017-06-20 09:16:56,975 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 09:22:25,284 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 09:22:25,329 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] End of script crane_launcher.py [execution time = 0:05:28.583000]
+2017-06-20 09:22:25,373 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 09:22:31,080 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 09:22:31,227 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Starting script crane_launcher.py
+2017-06-20 09:22:31,277 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 09:23:19,305 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 09:23:19,349 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] End of script crane_launcher.py [execution time = 0:00:48.324000]
+2017-06-20 09:23:19,396 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 13:58:16,807 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 13:58:16,961 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Starting script crane_launcher.py
+2017-06-20 13:58:17,005 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 13:58:47,869 - hmrlib.roi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ROI PTV21 is NOT approved.
+2017-06-20 13:58:48,013 - hmrlib.roi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Type of ROI "PTV21" set as Ptv
+2017-06-20 13:58:48,137 - hmrlib.roi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] OrganType of ROI "PTV21" set as Target
+2017-06-20 13:58:48,788 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 13:58:49,069 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 13:58:49,363 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 13:58:49,627 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 13:58:49,891 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 13:58:50,158 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 13:58:50,431 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 13:58:50,706 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 13:58:50,970 - hmrlib.poi - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] POI REF SCAN: (x, y, z) = (-0.91595916748, 4.01501007080, 0.0)
+2017-06-20 13:58:54,926 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MinDose for ROI "PTV21" added.
+2017-06-20 13:58:55,207 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-20 13:58:55,650 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-20 13:58:56,003 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-20 13:58:56,362 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-20 13:58:56,707 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-20 13:58:57,065 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-06-20 13:58:57,299 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-20 13:58:57,344 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-20 13:58:57,465 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Fluence iterations set to 30.
+2017-06-20 13:58:57,586 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Max iterations set to 90.
+2017-06-20 13:58:57,704 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-20 13:58:57,812 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute intermediate dose set to False.
+2017-06-20 13:58:57,918 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute final dose set to True.
+2017-06-20 13:59:21,187 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-20 13:59:21,240 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-20 13:59:21,353 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Fluence iterations set to 30.
+2017-06-20 13:59:21,464 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Max iterations set to 30.
+2017-06-20 13:59:21,580 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-20 13:59:21,698 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute intermediate dose set to False.
+2017-06-20 13:59:21,806 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute final dose set to True.
+2017-06-20 13:59:55,461 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MinDose for ROI "PTV21" added.
+2017-06-20 13:59:55,747 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-20 13:59:56,160 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-06-20 13:59:56,500 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-20 13:59:56,844 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-20 13:59:57,196 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDvh for ROI "OPT CERVEAU_C1" added.
+2017-06-20 13:59:57,549 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-06-20 13:59:57,892 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-20 13:59:57,934 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-20 13:59:58,047 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Fluence iterations set to 30.
+2017-06-20 13:59:58,159 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Max iterations set to 90.
+2017-06-20 13:59:58,268 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-20 13:59:58,375 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute intermediate dose set to False.
+2017-06-20 13:59:58,483 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute final dose set to True.
+2017-06-20 14:00:20,601 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] No beamset specified.  All beamsets will be modified.
+2017-06-20 14:00:20,659 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] PlanOptimizations[0] selected.
+2017-06-20 14:00:20,772 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Fluence iterations set to 30.
+2017-06-20 14:00:20,879 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Max iterations set to 30.
+2017-06-20 14:00:20,986 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Optimality tolerance set to 1e-09.
+2017-06-20 14:00:21,095 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute intermediate dose set to False.
+2017-06-20 14:00:21,205 - hmrlib.optim - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] Compute final dose set to True.
+2017-06-20 14:08:36,542 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 14:08:36,585 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] End of script crane_launcher.py [execution time = 0:10:19.900000]
+2017-06-20 14:08:36,627 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - A1 3DC optimised/A1 3DC optimised] ================================================================================
+2017-06-20 14:30:40,054 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - C1 IMRT/C1 IMRT] ================================================================================
+2017-06-20 14:30:40,217 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - C1 IMRT/C1 IMRT] Starting script crane_launcher.py
+2017-06-20 14:30:40,262 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - C1 IMRT/C1 IMRT] ================================================================================
+2017-06-20 14:31:21,929 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - C1 IMRT/C1 IMRT] ================================================================================
+2017-06-20 14:31:21,974 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - C1 IMRT/C1 IMRT] End of script crane_launcher.py [execution time = 0:00:41.966000]
+2017-06-20 14:31:22,017 - hmrlib - INFO - [hmr30489 - LAVIGUEUR_4^JOSEE (636803) - CT 1 - C1 IMRT/C1 IMRT] ================================================================================
+2017-07-11 14:45:34,415 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 14:45:34,558 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-07-11 14:45:34,583 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 14:45:35,195 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-07-11 14:45:35,694 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-07-11 14:45:36,190 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-07-11 14:45:36,709 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-07-11 14:45:37,247 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-07-11 14:45:37,416 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-07-11 14:45:37,581 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV48 is NOT approved.
+2017-07-11 14:45:37,747 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV48 is NOT approved.
+2017-07-11 14:45:37,922 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-07-11 14:45:38,088 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-07-11 14:45:38,256 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-07-11 14:45:38,428 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-07-11 14:45:38,601 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-07-11 14:45:38,905 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-07-11 14:45:39,173 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-07-11 14:45:39,341 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-07-11 14:45:39,531 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-07-11 14:45:39,773 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI bs opp is NOT approved.
+2017-07-11 14:45:39,943 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI mg pmn is NOT approved.
+2017-07-11 14:45:40,229 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI boite is NOT approved.
+2017-07-11 14:45:40,633 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI lim inf is NOT approved.
+2017-07-11 14:45:40,806 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLUNG is NOT approved.
+2017-07-11 14:54:32,188 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (10.4, 10.9, -0.599914550781)
+2017-07-11 14:54:32,724 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-07-11 14:54:32,783 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-07-11 14:54:33,135 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-07-11 14:54:33,270 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-07-11 14:54:33,546 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-07-11 14:54:33,792 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-07-11 14:54:33,883 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-07-11 14:54:33,975 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-07-11 14:54:34,063 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-07-11 14:54:34,130 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-07-11 14:54:34,253 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-07-11 14:54:34,337 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-07-11 14:54:34,433 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-07-11 14:54:34,510 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY-5mm" set as Organ
+2017-07-11 14:54:34,578 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY-5mm" set as OrganAtRisk
+2017-07-11 14:54:34,679 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-07-11 14:54:34,760 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV expi" set as Gtv
+2017-07-11 14:54:34,831 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV expi" set as Target
+2017-07-11 14:54:34,927 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-07-11 14:54:35,006 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV inspi" set as Gtv
+2017-07-11 14:54:35,077 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV inspi" set as Target
+2017-07-11 14:54:35,176 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV48 is NOT approved.
+2017-07-11 14:54:35,255 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ITV48" set as TreatedVolume
+2017-07-11 14:54:35,331 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ITV48" set as Target
+2017-07-11 14:54:35,428 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV48 is NOT approved.
+2017-07-11 14:54:35,514 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV48" set as Ptv
+2017-07-11 14:54:35,586 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV48" set as Target
+2017-07-11 14:54:35,676 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-07-11 14:54:35,752 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BR SOUCHE" set as Organ
+2017-07-11 14:54:35,821 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BR SOUCHE" set as OrganAtRisk
+2017-07-11 14:54:35,917 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-07-11 14:54:35,996 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TRACHEE" set as Organ
+2017-07-11 14:54:36,062 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TRACHEE" set as OrganAtRisk
+2017-07-11 14:54:36,162 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-07-11 14:54:36,239 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-07-11 14:54:36,308 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-07-11 14:54:36,417 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-07-11 14:54:36,497 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-07-11 14:54:36,564 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-07-11 14:54:36,664 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-07-11 14:54:36,744 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON DRT" set as Organ
+2017-07-11 14:54:36,810 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON DRT" set as OrganAtRisk
+2017-07-11 14:54:36,914 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-07-11 14:54:36,993 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON GCHE" set as Organ
+2017-07-11 14:54:37,062 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON GCHE" set as OrganAtRisk
+2017-07-11 14:54:37,162 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-07-11 14:54:37,242 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-07-11 14:54:37,309 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-07-11 14:54:37,414 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-07-11 14:54:37,493 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-07-11 14:54:37,563 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-07-11 14:54:37,663 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-07-11 14:54:37,743 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-07-11 14:54:37,811 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-07-11 14:54:37,914 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI bs opp is NOT approved.
+2017-07-11 14:54:37,992 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "bs opp" set as Organ
+2017-07-11 14:54:38,062 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "bs opp" set as OrganAtRisk
+2017-07-11 14:54:38,164 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI mg pmn is NOT approved.
+2017-07-11 14:54:38,244 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "mg pmn" set as Organ
+2017-07-11 14:54:38,315 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "mg pmn" set as OrganAtRisk
+2017-07-11 14:54:38,410 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI boite is NOT approved.
+2017-07-11 14:54:38,492 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "boite" set as Organ
+2017-07-11 14:54:38,560 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "boite" set as OrganAtRisk
+2017-07-11 14:54:38,675 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI lim inf is NOT approved.
+2017-07-11 14:54:38,754 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "lim inf" set as Organ
+2017-07-11 14:54:38,824 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "lim inf" set as OrganAtRisk
+2017-07-11 14:54:38,930 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLUNG is NOT approved.
+2017-07-11 14:54:39,013 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BLUNG" set as Organ
+2017-07-11 14:54:39,081 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BLUNG" set as OrganAtRisk
+2017-07-11 14:55:05,763 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 14:55:06,026 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 14:55:06,076 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 14:55:06,125 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 14:55:06,258 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 14:55:06,407 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-07-11 14:55:07,437 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=f0978cc2-9d42-4cbd-b183-0877987bc99a, 'A1'>
+2017-07-11 14:55:07,467 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-07-11 14:55:07,535 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (10.4, 10.9, -0.599914550781)
+2017-07-11 14:55:07,687 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 330 in direction CCW with isocenter ISO.  Energy = 6, collimator = 5, couch = 0.0.
+2017-07-11 14:55:07,729 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-07-11 14:55:07,761 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-07-11 14:55:07,837 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-07-11 14:55:07,902 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-07-11 14:55:07,963 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-07-11 14:55:08,021 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-07-11 14:55:08,084 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-07-11 14:55:08,111 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-07-11 14:55:08,152 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-07-11 14:55:08,230 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.1 cm/deg.
+2017-07-11 14:55:08,306 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2017-07-11 14:55:08,414 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-07-11 14:55:08,494 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 80 s for arc "A1.1".
+2017-07-11 14:55:08,663 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV A1 60Gy" added.
+2017-07-11 14:55:08,873 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV A1 60Gy" added.
+2017-07-11 14:55:09,030 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1" added.
+2017-07-11 14:55:09,186 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2" added.
+2017-07-11 14:55:09,324 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3" added.
+2017-07-11 14:59:21,095 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 14:59:21,219 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-07-11 14:59:21,248 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 14:59:21,860 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-07-11 14:59:22,334 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-07-11 14:59:22,824 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-07-11 14:59:23,337 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-07-11 14:59:23,859 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-07-11 14:59:24,023 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-07-11 14:59:24,185 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV48 is NOT approved.
+2017-07-11 14:59:24,346 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV48 is NOT approved.
+2017-07-11 14:59:24,516 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-07-11 14:59:24,678 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-07-11 14:59:24,843 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-07-11 14:59:25,012 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-07-11 14:59:25,180 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-07-11 14:59:25,475 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-07-11 14:59:25,735 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-07-11 14:59:25,898 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-07-11 14:59:26,084 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-07-11 14:59:26,319 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI bs opp is NOT approved.
+2017-07-11 14:59:26,486 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI mg pmn is NOT approved.
+2017-07-11 14:59:26,764 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI boite is NOT approved.
+2017-07-11 14:59:27,158 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI lim inf is NOT approved.
+2017-07-11 14:59:27,325 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLUNG is NOT approved.
+2017-07-11 14:59:45,244 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (10.4, 10.9, -0.599914550781)
+2017-07-11 14:59:45,684 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-07-11 14:59:45,741 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-07-11 14:59:46,076 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-07-11 14:59:46,166 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-07-11 14:59:46,511 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-07-11 14:59:46,761 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-07-11 14:59:46,857 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-07-11 14:59:46,957 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-07-11 14:59:47,047 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-07-11 14:59:47,115 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-07-11 14:59:47,235 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-07-11 14:59:47,326 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-07-11 14:59:47,419 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-07-11 14:59:47,500 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY-5mm" set as Organ
+2017-07-11 14:59:47,568 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY-5mm" set as OrganAtRisk
+2017-07-11 14:59:47,680 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-07-11 14:59:47,763 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV expi" set as Gtv
+2017-07-11 14:59:47,832 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV expi" set as Target
+2017-07-11 14:59:47,931 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-07-11 14:59:48,012 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV inspi" set as Gtv
+2017-07-11 14:59:48,084 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV inspi" set as Target
+2017-07-11 14:59:48,194 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV48 is NOT approved.
+2017-07-11 14:59:48,277 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ITV48" set as TreatedVolume
+2017-07-11 14:59:48,350 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ITV48" set as Target
+2017-07-11 14:59:48,465 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV48 is NOT approved.
+2017-07-11 14:59:48,555 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV48" set as Ptv
+2017-07-11 14:59:48,629 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV48" set as Target
+2017-07-11 14:59:48,737 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-07-11 14:59:48,818 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BR SOUCHE" set as Organ
+2017-07-11 14:59:48,887 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BR SOUCHE" set as OrganAtRisk
+2017-07-11 14:59:49,006 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-07-11 14:59:49,088 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TRACHEE" set as Organ
+2017-07-11 14:59:49,156 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TRACHEE" set as OrganAtRisk
+2017-07-11 14:59:49,253 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-07-11 14:59:49,331 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-07-11 14:59:49,403 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-07-11 14:59:49,522 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-07-11 14:59:49,604 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-07-11 14:59:49,672 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-07-11 14:59:49,774 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-07-11 14:59:49,854 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON DRT" set as Organ
+2017-07-11 14:59:49,924 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON DRT" set as OrganAtRisk
+2017-07-11 14:59:50,025 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-07-11 14:59:50,106 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON GCHE" set as Organ
+2017-07-11 14:59:50,174 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON GCHE" set as OrganAtRisk
+2017-07-11 14:59:50,269 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-07-11 14:59:50,353 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-07-11 14:59:50,449 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-07-11 14:59:50,553 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-07-11 14:59:50,642 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-07-11 14:59:50,714 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-07-11 14:59:50,833 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-07-11 14:59:50,914 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-07-11 14:59:50,985 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-07-11 14:59:51,078 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI bs opp is NOT approved.
+2017-07-11 14:59:51,161 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "bs opp" set as Organ
+2017-07-11 14:59:51,230 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "bs opp" set as OrganAtRisk
+2017-07-11 14:59:51,350 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI mg pmn is NOT approved.
+2017-07-11 14:59:51,432 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "mg pmn" set as Organ
+2017-07-11 14:59:51,501 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "mg pmn" set as OrganAtRisk
+2017-07-11 14:59:51,601 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI boite is NOT approved.
+2017-07-11 14:59:51,681 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "boite" set as Organ
+2017-07-11 14:59:51,752 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "boite" set as OrganAtRisk
+2017-07-11 14:59:51,853 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI lim inf is NOT approved.
+2017-07-11 14:59:51,936 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "lim inf" set as Organ
+2017-07-11 14:59:52,003 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "lim inf" set as OrganAtRisk
+2017-07-11 14:59:52,103 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLUNG is NOT approved.
+2017-07-11 14:59:52,182 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BLUNG" set as Organ
+2017-07-11 14:59:52,252 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BLUNG" set as OrganAtRisk
+2017-07-11 15:00:18,154 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:00:18,382 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:00:18,449 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:00:18,503 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:00:18,669 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:00:18,834 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-07-11 15:00:19,908 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=7d6a1fc2-ff5b-474a-8dc0-3f205911709c, 'A1'>
+2017-07-11 15:00:19,937 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-07-11 15:00:20,008 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (10.4, 10.9, -0.599914550781)
+2017-07-11 15:00:20,136 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 330 in direction CCW with isocenter ISO.  Energy = 6, collimator = 5, couch = 0.0.
+2017-07-11 15:00:20,176 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-07-11 15:00:20,208 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-07-11 15:00:20,281 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-07-11 15:00:20,345 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-07-11 15:00:20,406 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-07-11 15:00:20,465 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-07-11 15:00:20,526 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-07-11 15:00:20,554 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-07-11 15:00:20,600 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-07-11 15:00:20,679 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.1 cm/deg.
+2017-07-11 15:00:20,756 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2017-07-11 15:00:20,857 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-07-11 15:00:20,935 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 80 s for arc "A1.1".
+2017-07-11 15:00:21,098 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV A1 60Gy" added.
+2017-07-11 15:00:21,300 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV A1 60Gy" added.
+2017-07-11 15:00:21,446 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1" added.
+2017-07-11 15:00:21,592 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2" added.
+2017-07-11 15:00:21,742 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3" added.
+2017-07-11 15:36:20,767 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 15:36:20,885 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-07-11 15:36:20,909 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 15:36:21,501 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-07-11 15:36:21,989 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-07-11 15:36:22,540 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-07-11 15:36:23,058 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-07-11 15:36:23,594 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-07-11 15:36:23,760 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-07-11 15:36:23,960 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV48 is NOT approved.
+2017-07-11 15:36:24,156 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV48 is NOT approved.
+2017-07-11 15:36:24,328 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-07-11 15:36:24,491 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-07-11 15:36:24,654 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-07-11 15:36:24,822 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-07-11 15:36:24,990 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-07-11 15:36:25,293 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-07-11 15:36:25,559 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-07-11 15:36:25,725 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-07-11 15:36:25,933 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-07-11 15:36:26,177 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI bs opp is NOT approved.
+2017-07-11 15:36:26,348 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI mg pmn is NOT approved.
+2017-07-11 15:36:26,635 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI boite is NOT approved.
+2017-07-11 15:36:27,040 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI lim inf is NOT approved.
+2017-07-11 15:36:27,210 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLUNG is NOT approved.
+2017-07-11 15:36:35,231 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (10.4, 10.9, -0.599914550781)
+2017-07-11 15:36:35,637 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-07-11 15:36:35,693 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-07-11 15:36:36,133 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-07-11 15:36:36,221 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-07-11 15:36:36,600 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-07-11 15:36:36,843 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-07-11 15:36:36,931 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-07-11 15:36:37,033 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-07-11 15:36:37,118 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-07-11 15:36:37,187 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-07-11 15:36:37,286 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-07-11 15:36:37,375 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-07-11 15:36:37,477 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-07-11 15:36:37,554 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY-5mm" set as Organ
+2017-07-11 15:36:37,623 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY-5mm" set as OrganAtRisk
+2017-07-11 15:36:37,736 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-07-11 15:36:37,818 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV expi" set as Gtv
+2017-07-11 15:36:37,889 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV expi" set as Target
+2017-07-11 15:36:37,985 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-07-11 15:36:38,065 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV inspi" set as Gtv
+2017-07-11 15:36:38,136 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV inspi" set as Target
+2017-07-11 15:36:38,237 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV48 is NOT approved.
+2017-07-11 15:36:38,315 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ITV48" set as TreatedVolume
+2017-07-11 15:36:38,386 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ITV48" set as Target
+2017-07-11 15:36:38,488 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV48 is NOT approved.
+2017-07-11 15:36:38,578 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV48" set as Ptv
+2017-07-11 15:36:38,650 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV48" set as Target
+2017-07-11 15:36:38,755 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-07-11 15:36:38,831 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BR SOUCHE" set as Organ
+2017-07-11 15:36:38,899 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BR SOUCHE" set as OrganAtRisk
+2017-07-11 15:36:39,006 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-07-11 15:36:39,086 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TRACHEE" set as Organ
+2017-07-11 15:36:39,152 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TRACHEE" set as OrganAtRisk
+2017-07-11 15:36:39,256 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-07-11 15:36:39,336 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-07-11 15:36:39,402 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-07-11 15:36:39,508 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-07-11 15:36:39,587 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-07-11 15:36:39,657 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-07-11 15:36:39,748 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-07-11 15:36:39,828 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON DRT" set as Organ
+2017-07-11 15:36:39,895 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON DRT" set as OrganAtRisk
+2017-07-11 15:36:40,001 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-07-11 15:36:40,080 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON GCHE" set as Organ
+2017-07-11 15:36:40,148 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON GCHE" set as OrganAtRisk
+2017-07-11 15:36:40,255 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-07-11 15:36:40,334 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-07-11 15:36:40,400 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-07-11 15:36:40,504 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-07-11 15:36:40,579 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-07-11 15:36:40,649 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-07-11 15:36:40,771 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-07-11 15:36:40,847 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-07-11 15:36:40,916 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-07-11 15:36:41,021 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI bs opp is NOT approved.
+2017-07-11 15:36:41,101 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "bs opp" set as Organ
+2017-07-11 15:36:41,168 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "bs opp" set as OrganAtRisk
+2017-07-11 15:36:41,274 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI mg pmn is NOT approved.
+2017-07-11 15:36:41,352 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "mg pmn" set as Organ
+2017-07-11 15:36:41,421 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "mg pmn" set as OrganAtRisk
+2017-07-11 15:36:41,517 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI boite is NOT approved.
+2017-07-11 15:36:41,598 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "boite" set as Organ
+2017-07-11 15:36:41,665 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "boite" set as OrganAtRisk
+2017-07-11 15:36:41,782 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI lim inf is NOT approved.
+2017-07-11 15:36:41,864 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "lim inf" set as Organ
+2017-07-11 15:36:41,931 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "lim inf" set as OrganAtRisk
+2017-07-11 15:36:42,038 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLUNG is NOT approved.
+2017-07-11 15:36:42,116 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BLUNG" set as Organ
+2017-07-11 15:36:42,185 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BLUNG" set as OrganAtRisk
+2017-07-11 15:37:07,782 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:37:08,046 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:37:08,109 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:37:08,178 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:37:08,322 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:37:08,619 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-07-11 15:37:09,633 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=6ff568b7-ab3b-4553-817a-8b9bf7c1fe33, 'A1'>
+2017-07-11 15:37:09,689 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-07-11 15:37:09,761 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (10.4, 10.9, -0.599914550781)
+2017-07-11 15:37:09,880 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 330 in direction CCW with isocenter ISO.  Energy = 6, collimator = 5, couch = 0.0.
+2017-07-11 15:37:09,921 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-07-11 15:37:09,953 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-07-11 15:37:10,027 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-07-11 15:37:10,087 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-07-11 15:37:10,148 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-07-11 15:37:10,209 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-07-11 15:37:10,269 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-07-11 15:37:10,293 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-07-11 15:37:10,336 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-07-11 15:37:10,412 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.1 cm/deg.
+2017-07-11 15:37:10,487 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2017-07-11 15:37:10,587 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-07-11 15:37:10,663 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 80 s for arc "A1.1".
+2017-07-11 15:37:14,629 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 15:37:14,652 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:00:54.077000]
+2017-07-11 15:37:14,675 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 15:39:48,243 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 15:39:48,376 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-07-11 15:39:48,405 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 15:39:48,938 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY Pinnacle is NOT approved.
+2017-07-11 15:39:49,124 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-07-11 15:39:49,288 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-07-11 15:39:49,452 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-07-11 15:39:49,625 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-07-11 15:39:49,793 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV A1 60Gy is NOT approved.
+2017-07-11 15:39:49,961 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV A1 60Gy is NOT approved.
+2017-07-11 15:39:50,130 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-07-11 15:39:50,308 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-07-11 15:39:50,477 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-07-11 15:39:50,645 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-07-11 15:39:50,809 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-07-11 15:39:50,978 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-07-11 15:39:51,384 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-07-11 15:39:51,552 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-07-11 15:39:51,715 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-07-11 15:39:51,879 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI bs opp is NOT approved.
+2017-07-11 15:39:52,051 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI mg pmn is NOT approved.
+2017-07-11 15:39:52,216 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI boite is NOT approved.
+2017-07-11 15:39:52,380 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI lim inf is NOT approved.
+2017-07-11 15:39:52,544 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLUNG is NOT approved.
+2017-07-11 15:40:11,266 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 15:40:11,292 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:00:23.114000]
+2017-07-11 15:40:11,318 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 15:40:31,420 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 15:40:31,547 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-07-11 15:40:31,572 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 15:40:32,085 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY Pinnacle is NOT approved.
+2017-07-11 15:40:32,293 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-07-11 15:40:32,454 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-07-11 15:40:32,617 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-07-11 15:40:32,783 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-07-11 15:40:32,948 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV60 is NOT approved.
+2017-07-11 15:40:33,108 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV60 is NOT approved.
+2017-07-11 15:40:33,271 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-07-11 15:40:33,437 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-07-11 15:40:33,600 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-07-11 15:40:33,763 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-07-11 15:40:33,927 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-07-11 15:40:34,093 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-07-11 15:40:34,256 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-07-11 15:40:34,417 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-07-11 15:40:34,613 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-07-11 15:40:34,851 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI bs opp is NOT approved.
+2017-07-11 15:40:35,012 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI mg pmn is NOT approved.
+2017-07-11 15:40:35,172 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI boite is NOT approved.
+2017-07-11 15:40:35,333 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI lim inf is NOT approved.
+2017-07-11 15:40:35,494 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLUNG is NOT approved.
+2017-07-11 15:40:49,270 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-07-11 15:40:49,326 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-07-11 15:40:49,655 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-07-11 15:40:49,745 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-07-11 15:40:50,034 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-07-11 15:40:50,262 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY Pinnacle is NOT approved.
+2017-07-11 15:40:50,351 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY Pinnacle" set as Organ
+2017-07-11 15:40:50,423 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY Pinnacle" set as OrganAtRisk
+2017-07-11 15:40:50,544 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-07-11 15:40:50,636 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-07-11 15:40:50,713 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-07-11 15:40:50,812 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-07-11 15:40:50,894 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY-5mm" set as Organ
+2017-07-11 15:40:50,959 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY-5mm" set as OrganAtRisk
+2017-07-11 15:40:51,077 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-07-11 15:40:51,160 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV expi" set as Gtv
+2017-07-11 15:40:51,231 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV expi" set as Target
+2017-07-11 15:40:51,354 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-07-11 15:40:51,438 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV inspi" set as Gtv
+2017-07-11 15:40:51,506 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV inspi" set as Target
+2017-07-11 15:40:51,609 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV60 is NOT approved.
+2017-07-11 15:40:51,693 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ITV60" set as TreatedVolume
+2017-07-11 15:40:51,758 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ITV60" set as Target
+2017-07-11 15:40:51,858 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV60 is NOT approved.
+2017-07-11 15:40:51,946 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV60" set as Ptv
+2017-07-11 15:40:52,014 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV60" set as Target
+2017-07-11 15:40:52,141 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-07-11 15:40:52,236 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BR SOUCHE" set as Organ
+2017-07-11 15:40:52,300 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BR SOUCHE" set as OrganAtRisk
+2017-07-11 15:40:52,424 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-07-11 15:40:52,506 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TRACHEE" set as Organ
+2017-07-11 15:40:52,572 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TRACHEE" set as OrganAtRisk
+2017-07-11 15:40:52,670 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-07-11 15:40:52,754 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-07-11 15:40:52,819 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-07-11 15:40:52,948 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-07-11 15:40:53,031 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-07-11 15:40:53,095 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-07-11 15:40:53,218 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-07-11 15:40:53,301 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON DRT" set as Organ
+2017-07-11 15:40:53,367 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON DRT" set as OrganAtRisk
+2017-07-11 15:40:53,472 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-07-11 15:40:53,557 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON GCHE" set as Organ
+2017-07-11 15:40:53,623 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON GCHE" set as OrganAtRisk
+2017-07-11 15:40:53,749 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-07-11 15:40:53,834 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-07-11 15:40:53,899 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-07-11 15:40:53,999 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-07-11 15:40:54,084 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-07-11 15:40:54,149 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-07-11 15:40:54,250 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-07-11 15:40:54,332 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-07-11 15:40:54,397 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-07-11 15:40:54,495 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI bs opp is NOT approved.
+2017-07-11 15:40:54,578 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "bs opp" set as Organ
+2017-07-11 15:40:54,645 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "bs opp" set as OrganAtRisk
+2017-07-11 15:40:54,752 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI mg pmn is NOT approved.
+2017-07-11 15:40:54,835 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "mg pmn" set as Organ
+2017-07-11 15:40:54,900 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "mg pmn" set as OrganAtRisk
+2017-07-11 15:40:55,015 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI boite is NOT approved.
+2017-07-11 15:40:55,097 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "boite" set as Organ
+2017-07-11 15:40:55,163 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "boite" set as OrganAtRisk
+2017-07-11 15:40:55,281 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI lim inf is NOT approved.
+2017-07-11 15:40:55,365 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "lim inf" set as Organ
+2017-07-11 15:40:55,433 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "lim inf" set as OrganAtRisk
+2017-07-11 15:40:55,526 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLUNG is NOT approved.
+2017-07-11 15:40:55,609 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BLUNG" set as Organ
+2017-07-11 15:40:55,676 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BLUNG" set as OrganAtRisk
+2017-07-11 15:41:22,882 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:41:22,991 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:41:23,061 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:41:23,131 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:41:23,200 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:41:23,269 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:41:23,338 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 15:41:23,521 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Isocenter POI identified as "ISO"
+2017-07-11 15:41:25,391 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Beam Set = <ScriptObject id=f8d19d12-668d-4a05-b6ab-3834f2e46a00, 'A1'>
+2017-07-11 15:41:25,478 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Exam = CT 1
+2017-07-11 15:41:25,573 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] POI ISO: (x, y, z) = (10.4, 10.9, -0.599914550781)
+2017-07-11 15:41:25,776 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Added arc "A1.1" from 180 to 330 in direction CCW with isocenter ISO.  Energy = 6, collimator = 5, couch = 0.0.
+2017-07-11 15:41:25,902 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] No beamset specified.  All beamsets will be modified.
+2017-07-11 15:41:25,957 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] PlanOptimizations[0] selected.
+2017-07-11 15:41:26,082 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Fluence iterations set to 60.
+2017-07-11 15:41:26,200 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Max iterations set to 100.
+2017-07-11 15:41:26,313 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Optimality tolerance set to 1e-09.
+2017-07-11 15:41:26,419 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Compute intermediate dose set to True.
+2017-07-11 15:41:26,522 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Compute final dose set to True.
+2017-07-11 15:41:26,569 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] No beamset specified.  All beamsets will be modified.
+2017-07-11 15:41:26,633 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] PlanOptimizations[0] selected.
+2017-07-11 15:41:26,750 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Max leaf travel per degree set to 0.1 cm/deg.
+2017-07-11 15:41:26,868 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Constrain leaf motion set to True.
+2017-07-11 15:41:27,005 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-07-11 15:41:27,124 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Max arc delivery time set to 80 s for arc "A1.1".
+2017-07-11 15:41:27,353 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MinDose for ROI "PTV A1 60Gy" added.
+2017-07-11 15:41:27,687 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "PTV A1 60Gy" added.
+2017-07-11 15:41:27,948 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "RING_1" added.
+2017-07-11 15:41:28,206 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "RING_2" added.
+2017-07-11 15:41:28,454 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "RING_3" added.
+2017-07-11 15:41:55,312 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "BR SOUCHE" added.
+2017-07-11 15:41:55,949 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "COEUR" added.
+2017-07-11 15:41:57,901 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "COTES dans PTV+0.5cm" added.
+2017-07-11 15:41:59,068 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "OESOPHAGE" added.
+2017-07-11 15:41:59,684 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "MOELLE" added.
+2017-07-11 15:42:03,441 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "PEAU" added.
+2017-07-11 15:42:06,674 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "POUMON DRT" added.
+2017-07-11 15:42:07,345 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "TRACHEE" added.
+2017-07-11 15:42:36,322 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-07-11 15:42:36,364 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] End of script plan_launcher.py [execution time = 0:02:04.969000]
+2017-07-11 15:42:36,406 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-07-11 16:14:46,503 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 16:14:46,632 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-07-11 16:14:46,656 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 16:14:47,253 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY Pinnacle is NOT approved.
+2017-07-11 16:14:47,438 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-07-11 16:14:47,605 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-07-11 16:14:47,796 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-07-11 16:14:47,975 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-07-11 16:14:48,155 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV A1 60Gy is NOT approved.
+2017-07-11 16:14:48,326 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV A1 60Gy is NOT approved.
+2017-07-11 16:14:48,496 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-07-11 16:14:48,668 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-07-11 16:14:48,839 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-07-11 16:14:49,041 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-07-11 16:14:49,215 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-07-11 16:14:49,392 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-07-11 16:14:49,563 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-07-11 16:14:49,732 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-07-11 16:14:49,901 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-07-11 16:14:50,072 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI bs opp is NOT approved.
+2017-07-11 16:14:50,242 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI mg pmn is NOT approved.
+2017-07-11 16:14:50,414 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI boite is NOT approved.
+2017-07-11 16:14:50,583 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI lim inf is NOT approved.
+2017-07-11 16:14:50,754 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLUNG is NOT approved.
+2017-07-11 16:14:57,023 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 16:14:57,050 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:00:10.716000]
+2017-07-11 16:14:57,077 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 16:15:16,341 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 16:15:16,465 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-07-11 16:15:16,490 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-07-11 16:15:17,013 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY Pinnacle is NOT approved.
+2017-07-11 16:15:17,194 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-07-11 16:15:17,362 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-07-11 16:15:17,530 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-07-11 16:15:17,701 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-07-11 16:15:17,870 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV48 is NOT approved.
+2017-07-11 16:15:18,036 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV48 is NOT approved.
+2017-07-11 16:15:18,204 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-07-11 16:15:18,372 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-07-11 16:15:18,541 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-07-11 16:15:18,710 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-07-11 16:15:18,877 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-07-11 16:15:19,046 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-07-11 16:15:19,214 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-07-11 16:15:19,380 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-07-11 16:15:19,548 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-07-11 16:15:19,713 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI bs opp is NOT approved.
+2017-07-11 16:15:19,882 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI mg pmn is NOT approved.
+2017-07-11 16:15:20,048 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI boite is NOT approved.
+2017-07-11 16:15:20,213 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI lim inf is NOT approved.
+2017-07-11 16:15:20,378 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLUNG is NOT approved.
+2017-07-11 16:15:32,207 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-07-11 16:15:32,262 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-07-11 16:15:32,661 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-07-11 16:15:32,751 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-07-11 16:15:33,088 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-07-11 16:15:33,347 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY Pinnacle is NOT approved.
+2017-07-11 16:15:33,447 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY Pinnacle" set as Organ
+2017-07-11 16:15:33,524 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY Pinnacle" set as OrganAtRisk
+2017-07-11 16:15:33,648 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-07-11 16:15:33,750 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-07-11 16:15:33,831 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-07-11 16:15:33,939 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-07-11 16:15:34,029 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY-5mm" set as Organ
+2017-07-11 16:15:34,102 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY-5mm" set as OrganAtRisk
+2017-07-11 16:15:34,206 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-07-11 16:15:34,296 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV expi" set as Gtv
+2017-07-11 16:15:34,370 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV expi" set as Target
+2017-07-11 16:15:34,491 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-07-11 16:15:34,583 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV inspi" set as Gtv
+2017-07-11 16:15:34,664 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV inspi" set as Target
+2017-07-11 16:15:34,769 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV48 is NOT approved.
+2017-07-11 16:15:34,861 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ITV48" set as TreatedVolume
+2017-07-11 16:15:34,933 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ITV48" set as Target
+2017-07-11 16:15:35,052 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV48 is NOT approved.
+2017-07-11 16:15:35,145 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV48" set as Ptv
+2017-07-11 16:15:35,217 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV48" set as Target
+2017-07-11 16:15:35,351 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-07-11 16:15:35,452 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BR SOUCHE" set as Organ
+2017-07-11 16:15:35,525 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BR SOUCHE" set as OrganAtRisk
+2017-07-11 16:15:35,641 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-07-11 16:15:35,732 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TRACHEE" set as Organ
+2017-07-11 16:15:35,809 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TRACHEE" set as OrganAtRisk
+2017-07-11 16:15:35,928 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-07-11 16:15:36,023 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-07-11 16:15:36,101 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-07-11 16:15:36,221 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-07-11 16:15:36,317 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-07-11 16:15:36,390 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-07-11 16:15:36,525 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-07-11 16:15:36,619 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON DRT" set as Organ
+2017-07-11 16:15:36,693 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON DRT" set as OrganAtRisk
+2017-07-11 16:15:36,839 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-07-11 16:15:36,936 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON GCHE" set as Organ
+2017-07-11 16:15:37,010 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON GCHE" set as OrganAtRisk
+2017-07-11 16:15:37,122 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-07-11 16:15:37,214 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-07-11 16:15:37,292 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-07-11 16:15:37,417 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-07-11 16:15:37,510 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-07-11 16:15:37,588 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-07-11 16:15:37,708 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-07-11 16:15:37,805 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-07-11 16:15:37,880 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-07-11 16:15:37,993 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI bs opp is NOT approved.
+2017-07-11 16:15:38,090 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "bs opp" set as Organ
+2017-07-11 16:15:38,164 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "bs opp" set as OrganAtRisk
+2017-07-11 16:15:38,277 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI mg pmn is NOT approved.
+2017-07-11 16:15:38,373 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "mg pmn" set as Organ
+2017-07-11 16:15:38,447 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "mg pmn" set as OrganAtRisk
+2017-07-11 16:15:38,558 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI boite is NOT approved.
+2017-07-11 16:15:38,650 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "boite" set as Organ
+2017-07-11 16:15:38,727 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "boite" set as OrganAtRisk
+2017-07-11 16:15:38,835 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI lim inf is NOT approved.
+2017-07-11 16:15:38,930 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "lim inf" set as Organ
+2017-07-11 16:15:39,008 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "lim inf" set as OrganAtRisk
+2017-07-11 16:15:39,120 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] ROI BLUNG is NOT approved.
+2017-07-11 16:15:39,217 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BLUNG" set as Organ
+2017-07-11 16:15:39,291 - hmrlib.roi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BLUNG" set as OrganAtRisk
+2017-07-11 16:16:07,519 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 16:16:07,844 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 16:16:07,927 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 16:16:08,008 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 16:16:08,089 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 16:16:08,170 - hmrlib.eval - ERROR - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-07-11 16:16:08,360 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Isocenter POI identified as "ISO"
+2017-07-11 16:16:10,649 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Beam Set = <ScriptObject id=d1b375d5-3ca9-4556-973f-9039dff660fe, 'A1'>
+2017-07-11 16:16:10,700 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Exam = CT 1
+2017-07-11 16:16:10,831 - hmrlib.poi - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] POI ISO: (x, y, z) = (10.4, 10.9, -0.599914550781)
+2017-07-11 16:16:11,139 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Added arc "A1.1" from 180 to 330 in direction CCW with isocenter ISO.  Energy = 6, collimator = 5, couch = 0.0.
+2017-07-11 16:16:11,199 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] No beamset specified.  All beamsets will be modified.
+2017-07-11 16:16:11,251 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] PlanOptimizations[0] selected.
+2017-07-11 16:16:11,373 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Fluence iterations set to 60.
+2017-07-11 16:16:11,500 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Max iterations set to 100.
+2017-07-11 16:16:11,614 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Optimality tolerance set to 1e-09.
+2017-07-11 16:16:11,727 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Compute intermediate dose set to True.
+2017-07-11 16:16:11,837 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Compute final dose set to True.
+2017-07-11 16:16:11,891 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] No beamset specified.  All beamsets will be modified.
+2017-07-11 16:16:11,961 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] PlanOptimizations[0] selected.
+2017-07-11 16:16:12,092 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Max leaf travel per degree set to 0.1 cm/deg.
+2017-07-11 16:16:12,225 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Constrain leaf motion set to True.
+2017-07-11 16:16:12,378 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-07-11 16:16:12,512 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Max arc delivery time set to 240 s for arc "A1.1".
+2017-07-11 16:16:12,735 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MinDose for ROI "PTV A1 48Gy" added.
+2017-07-11 16:16:13,062 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "PTV A1 48Gy" added.
+2017-07-11 16:16:13,296 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "RING_1" added.
+2017-07-11 16:16:13,512 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "RING_2" added.
+2017-07-11 16:16:13,749 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "RING_3" added.
+2017-07-11 16:16:42,714 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "BR SOUCHE" added.
+2017-07-11 16:16:43,441 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "COEUR" added.
+2017-07-11 16:16:45,718 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "COTES dans PTV+0.5cm" added.
+2017-07-11 16:16:47,062 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "OESOPHAGE" added.
+2017-07-11 16:16:47,721 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "MOELLE" added.
+2017-07-11 16:16:52,066 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "PEAU" added.
+2017-07-11 16:16:55,869 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "POUMON DRT" added.
+2017-07-11 16:16:56,556 - hmrlib.optim - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] Objective of type MaxDose for ROI "TRACHEE" added.
+2017-07-11 16:17:36,414 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] ================================================================================
+2017-07-11 16:17:36,457 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] End of script plan_launcher.py [execution time = 0:02:20.137000]
+2017-07-11 16:17:36,499 - hmrlib - INFO - [hmr30489 - GINGRAS^GINETTE (1897215) - CT 1 - Stereo Poumon/A1] ================================================================================

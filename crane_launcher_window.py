@@ -342,6 +342,14 @@ def crane_launcher():
             self.stepcombo.Items.Add('Multi-PTV: Reprendre après optimization collimateur')                   
             
             
+            eraseROIButton = Button()
+            eraseROIButton.Text = "Effacer les ROIs de prédiction"
+            eraseROIButton.Location = Point(25, offset + 21.5 * vert_spacer)
+            eraseROIButton.Width = 200
+            eraseROIButton.Click += self.eraseROIClicked   
+            
+            
+            
             self.MainWindow.Controls.Add(self.toplabel)
             
             self.MainWindow.Controls.Add(self.PTV1combo)
@@ -390,6 +398,8 @@ def crane_launcher():
             self.MainWindow.Controls.Add(addplanButton)            
             
             self.MainWindow.Controls.Add(self.stepcombo) 
+            
+            self.MainWindow.Controls.Add(eraseROIButton) 
 
             
         def compile_plan_data(self):            
@@ -699,6 +709,8 @@ def crane_launcher():
                 clinical_goals.add_dictionary_cg('Crane Stereo', 15, 1, plan = plan)
                 eval.add_clinical_goal("CERVEAU-PTV_"+d['site_name'], 1000, 'AtMost', 'AbsoluteVolumeAtDose', 10, plan=plan)
                 eval.add_clinical_goal("CERVEAU-PTV_"+d['site_name'], 1200, 'AtMost', 'AbsoluteVolumeAtDose', 8, plan=plan)
+                if max(rx) >= 2000:
+                    eval.add_clinical_goal(d['oar_list'][0], 2000, 'AtMost', 'AbsoluteVolumeAtDose', 20, plan=plan)
                 for i,ptv in enumerate(ptv_names):
                     eval.add_clinical_goal(ptv, rx[i], 'AtLeast', 'VolumeAtDose', 99, plan=plan)
                     eval.add_clinical_goal(ptv, 1.5 * rx[i], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
@@ -778,9 +790,23 @@ def crane_launcher():
         
     
     
+        def eraseROIClicked(self, sender, args):
+
+            self.status.ForeColor = Color.Black
+            self.status.Text = "En cours, veuillez patienter"        
+            
+            erased_rois = 0
+            
+            for roi in patient.PatientModel.RegionsOfInterest:
+                if 'predicted_r' in roi.Name or 'ptvs_smooth' in roi.Name:
+                    try:
+                        patient.PatientModel.RegionsOfInterest[roi.Name].DeleteRoi()
+                        erased_rois += 1
+                    except:
+                        pass
     
-    
-    
+            self.status.ForeColor = Color.Green
+            self.status.Text = "%d ROIs effacés" % erased_rois
     
     
     #Check for common errors while importing patient, plan, beamset and examination

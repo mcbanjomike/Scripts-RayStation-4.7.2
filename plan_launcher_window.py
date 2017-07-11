@@ -691,6 +691,7 @@ def plan_launcher():
             
             #Determine prescription dose (in cGy) and number of fractions
             pace = False
+            lustre = False
             temp_string = self.comboBoxRx.Text
             if temp_string[:5] == 'PACE ':
                 temp_string = temp_string[5:]
@@ -971,11 +972,12 @@ def plan_launcher():
                         
                     self.Status.Text = "En cours: Reglage des paramètres d'optimisation"
                     poumon.poumon_stereo_opt_settings(plan_data = d)
-                        
+                    
                     self.Status.Text = "En cours: Ajout des objectifs d'optimisation et les clinical goals"
                     clinical_goals.smart_cg_lung_stereo(plan=patient.TreatmentPlans[d['plan_name']], examination=d['exam'], nb_fx=nb_fx, rx_dose=rx_dose, ptv=d['ptv'], beamset=patient.TreatmentPlans[d['plan_name']].BeamSets[d['beamset_name']])              
                             
-                    
+                    if lustre:
+                        clinical_goals.add_dictionary_cg('POUMON_LUSTRE', rx_dose/100, nb_fx, plan=patient.TreatmentPlans[d['plan_name']])
                     
                     # Double optimization if requested by user                 
                     if self.check1.Checked:

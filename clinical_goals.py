@@ -713,7 +713,7 @@ def smart_cg_lung_stereo(plan=None, examination=None, nb_fx=None, rx_dose=None, 
         Rx = 0
     elif nb_fx == 4: #48Gy-4fx or 56Gy-4fx
         Rx = 1
-    elif nb_fx == 8: #60Gy-8fx
+    elif nb_fx == 8 or nb_fx == 15: #60Gy-8fx AND ALSO LUSTRE 60-15 BECAUSE I DON'T KNOW WHAT ELSE TO DO WITH THOSE YET
         Rx = 2
     elif nb_fx == 5: #60Gy-5fx
         Rx = 3
