@@ -282,10 +282,10 @@ def ORL_launcher():
             self.check3.Checked = False
 
             self.check2 = CheckBox()
-            self.check2.Text = "Adapter dose color table? -non recommandé-"
+            self.check2.Text = "Adapter dose color table?"
             self.check2.Location = Point(40, 390)
             self.check2.Width = 300
-            self.check2.Checked = False
+            self.check2.Checked = True
             
             self.Entete = Label()
             self.Entete.Text = ""

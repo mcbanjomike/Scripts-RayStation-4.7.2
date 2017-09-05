@@ -70,6 +70,9 @@ def orl_rois(plan_data):
     if not roi.roi_exists("BodyRS"): #If BodyRS already exists, then reassigning ROI types will remove its External status
         roi.auto_assign_roi_types_v2()
 
+    #Simplify table to prevent holes in finished BodyRS+Table contour
+    patient.PatientModel.StructureSets[exam.Name].SimplifyContours(RoiNames=["Table"], RemoveSmallContours=True, AreaThreshold=3)
+        
     # Create BodyRS, erase Body+table from Pinnacle, rename BODY to BODY Pinnacle
     roi.generate_BodyRS_plus_Table(struct=0)
     
@@ -383,7 +386,7 @@ def orl_create_isodose_lines(plan_data):
     patient = plan_data['patient']
     rx_dose = plan_data['rx_dose']
 
-    eval.remove_all_isodose_lines()
+    #eval.remove_all_isodose_lines()
     patient.CaseSettings.DoseColorMap.ReferenceValue = rx_dose[0]
 
     patient.CaseSettings.DoseColorMap.ColorMapReferenceType = "ReferenceValue"
@@ -395,17 +398,20 @@ def orl_create_isodose_lines(plan_data):
     try:
         eval.add_isodose_line_rgb(dose=(95*rx_dose[1]/rx_dose[0]), r=255, g=128, b=64, alpha=255)
         eval.add_isodose_line_rgb(dose=(100*rx_dose[1]/rx_dose[0]), r=128, g=64, b=0, alpha=255)
-    except ValueError:
+    #except ValueError:
+    except:
         pass
     try:
         eval.add_isodose_line_rgb(dose=(95*rx_dose[2]/rx_dose[0]), r=128, g=255, b=0, alpha=255)
         eval.add_isodose_line_rgb(dose=(100*rx_dose[2]/rx_dose[0]), r=0, g=64, b=0, alpha=255)
-    except ValueError:
+    #except ValueError:
+    except:
         pass
     try:
         eval.add_isodose_line_rgb(dose=(95*rx_dose[3]/rx_dose[0]), r=0, g=255, b=255, alpha=255)
         eval.add_isodose_line_rgb(dose=(100*rx_dose[3]/rx_dose[0]), r=0, g=0, b=255, alpha=255)
-    except ValueError:
+    #except ValueError:
+    except:
         pass
     patient.CaseSettings.DoseColorMap.PresentationType = 'Absolute'
 

@@ -38,6 +38,7 @@ import foie
 import message
 import verification
 import statistics
+import time
 
 import crane2ptv
 
@@ -74,28 +75,50 @@ except Exception as e:
 def test_MA():
     #plan = lib.get_current_plan()
     #beamset = lib.get_current_beamset()
-    #exam = lib.get_current_examination()
+    exam = lib.get_current_examination()
     patient = lib.get_current_patient()
+    ui = get_current("ui")
     
     #uis.ui_statetree()
-    #uis.set_dual_arc()
     
     #statistics.auto_collect_crane_stats(startpoint=60,endpoint=999,min_vol=3.999)
     #statistics.batch_autoplan_crane(startpoint=1,endpoint=11,min_vol=1.0)
     #statistics.single_autoplan_crane()
-    rx_dose = 2100
-    patient.CaseSettings.DoseColorMap.ReferenceValue = rx_dose
+    try:
+        plan = patient.CopyPlan(PlanName="Pinnacle", NewPlanName="TestSyn")
+    except:
+        pass
+        
+    patient.Save() #Might not be necessary a second time, I'm not sure
+    time.sleep(5) 
+    
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
+    ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.Popup.ComboBoxItem['TestSyn'].Select()    
 
-    patient.CaseSettings.DoseColorMap.ColorMapReferenceType = "ReferenceValue"
-    eval.add_isodose_line_rgb(dose=0, r=0, g=0, b=0, alpha=0)
-    eval.add_isodose_line_rgb(dose=(350.0/rx_dose)*100, r=255, g=255, b=128, alpha=128)
-    eval.add_isodose_line_rgb(dose=(550.0/rx_dose)*100, r=0, g=128, b=0, alpha=128)
-    eval.add_isodose_line_rgb(dose=(1100.0/rx_dose)*100, r=0, g=0, b=160, alpha=255)
-    eval.add_isodose_line_rgb(dose=(1300.0/rx_dose)*100, r=128, g=128, b=255, alpha=255)
-    eval.add_isodose_line_rgb(dose=97, r=0, g=255, b=255, alpha=255)
-    eval.add_isodose_line_rgb(dose=105, r=255, g=0, b=0, alpha=255)
-    eval.add_isodose_line_rgb(dose=110, r=255, g=255, b=0, alpha=255)
-    patient.CaseSettings.DoseColorMap.PresentationType = 'Absolute'
+    ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
+    ui.TabControl_Modules.TabItem['Plan Setup'].Select()
+    
+    for rois in patient.PatientModel.RegionsOfInterest:
+        rois.SetRoiMaterial(Material=None)
+
+    roi.generate_BodyRS_plus_Table()     
+    
+    ui.TabControl_ToolBar.ToolBarGroup['DOSE GRID'].Button_SetDefaultGrid.Click()
+
+    ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
+    ui.TabControl_Modules.TabItem['Plan Setup'].Select()
+    ui.TabControl_ToolBar.ToolBarGroup['PLAN PREPARATION'].Button_EditPlan.Click()
+    ui.TabControl.TreatmentSetup.TreatmentSetup2.ComboBox_AvailableTreatmentUnits.ToggleButton.Click()
+    ui.TabControl.TreatmentSetup.TreatmentSetup2.ComboBox_AvailableTreatmentUnits.Popup.ComboBoxItem["Synergy_Temp [31 Aug 2017, 11:23:51 (hr:min:sec)]"].Select()
+    ui.TabControl.TreatmentSetup.TreatmentSetup2.ComboBox_AvailableTreatmentUnits.ToggleButton.Click()
+    ui.Button_OK.Click()
+    try:
+        ui.MessageBoxWindowContent.Button['Yes'].Click()
+    except:
+        pass
+    ui.TabControl_ToolBar.ToolBarGroup['FINAL DOSE'].Button_FinalDose.Click()
+    time.sleep(6)     
+    
     
     #launcher.crane_launcher()
     #launcher.foie_calculer_ntcp()

@@ -274,9 +274,7 @@ def crane_3DC_add_beams(subptv_name = 'PTV1'):
     # Optimize plan twice
     plan.PlanOptimizations[beamset.Number-1].RunOptimization()
     plan.PlanOptimizations[beamset.Number-1].RunOptimization()
-    
-    
-    
+     
  
 #Somewhat experimental scripts for optimizing collimator angles in 3DC cases 
 def optimize_collimator_angles():
