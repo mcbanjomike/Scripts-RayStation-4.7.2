@@ -391,25 +391,25 @@ def orl_create_isodose_lines(plan_data):
 
     patient.CaseSettings.DoseColorMap.ColorMapReferenceType = "ReferenceValue"
     eval.add_isodose_line_rgb(dose=0, r=0, g=0, b=0, alpha=0)
-    eval.add_isodose_line_rgb(dose=95, r=255, g=0, b=255, alpha=255)
-    eval.add_isodose_line_rgb(dose=100, r=255, g=0, b=0, alpha=255)
-    eval.add_isodose_line_rgb(dose=105, r=255, g=255, b=0, alpha=255)
-    eval.add_isodose_line_rgb(dose=(4500*100/rx_dose[0]), r=128, g=128, b=255, alpha=255)
+    eval.add_isodose_line_rgb(dose=95, r=255, g=0, b=255, alpha=128)
+    eval.add_isodose_line_rgb(dose=100, r=255, g=0, b=0, alpha=128)
+    eval.add_isodose_line_rgb(dose=105, r=255, g=255, b=0, alpha=128)
+    eval.add_isodose_line_rgb(dose=(4500*100/rx_dose[0]), r=128, g=128, b=255, alpha=128)
     try:
-        eval.add_isodose_line_rgb(dose=(95*rx_dose[1]/rx_dose[0]), r=255, g=128, b=64, alpha=255)
-        eval.add_isodose_line_rgb(dose=(100*rx_dose[1]/rx_dose[0]), r=128, g=64, b=0, alpha=255)
+        eval.add_isodose_line_rgb(dose=(95*rx_dose[1]/rx_dose[0]), r=255, g=128, b=64, alpha=128)
+        eval.add_isodose_line_rgb(dose=(100*rx_dose[1]/rx_dose[0]), r=128, g=64, b=0, alpha=128)
     #except ValueError:
     except:
         pass
     try:
-        eval.add_isodose_line_rgb(dose=(95*rx_dose[2]/rx_dose[0]), r=128, g=255, b=0, alpha=255)
-        eval.add_isodose_line_rgb(dose=(100*rx_dose[2]/rx_dose[0]), r=0, g=64, b=0, alpha=255)
+        eval.add_isodose_line_rgb(dose=(95*rx_dose[2]/rx_dose[0]), r=128, g=255, b=0, alpha=128)
+        eval.add_isodose_line_rgb(dose=(100*rx_dose[2]/rx_dose[0]), r=0, g=64, b=0, alpha=128)
     #except ValueError:
     except:
         pass
     try:
-        eval.add_isodose_line_rgb(dose=(95*rx_dose[3]/rx_dose[0]), r=0, g=255, b=255, alpha=255)
-        eval.add_isodose_line_rgb(dose=(100*rx_dose[3]/rx_dose[0]), r=0, g=0, b=255, alpha=255)
+        eval.add_isodose_line_rgb(dose=(95*rx_dose[3]/rx_dose[0]), r=0, g=255, b=255, alpha=128)
+        eval.add_isodose_line_rgb(dose=(100*rx_dose[3]/rx_dose[0]), r=0, g=0, b=255, alpha=128)
     #except ValueError:
     except:
         pass

@@ -200,8 +200,10 @@ def crane_launcher():
             self.isocombo.Size = Size(90,40)
             self.isocombo.Location = Point(150, offset + 6.5*vert_spacer)
             for poi in patient.PatientModel.PointsOfInterest:
-                self.isocombo.Items.Add(poi.Name)   
-                if poi.Name == 'REF SCAN':
+                self.isocombo.Items.Add(poi.Name)
+                if poi.Name == 'ISO':
+                    self.isocombo.Text = 'ISO'
+                elif self.isocombo.Text != 'ISO' and poi.Name == 'REF SCAN':
                     self.isocombo.Text = 'REF SCAN'
             
             
@@ -726,6 +728,9 @@ def crane_launcher():
                     self.status.Text = "Ajout des objectifs d'optimisation"
                     crane.crane_stereo_kbp_initial_optimization_objectives(plan_data=d,plan=plan,predicted_vol=predicted_vol,tronc_max=tronc_max)
                     
+                    #Make a copy of plan before optimizing for dosimetrists
+                    patient.CopyPlan(PlanName=plan.Name, NewPlanName=plan.Name + ' non-optimisé')
+                    
                     self.status.Text = "Optimization du plan initial"
                     plan.PlanOptimizations[beamset.Number-1].ResetOptimization() 
                     if len(ptv_names) == 1:
@@ -783,6 +788,21 @@ def crane_launcher():
                     crane.crane_kbp_write_results_to_file(plan_data=d,plan=plan,beamset=beamset,predicted_vol=predicted_vol,initial_ptv_cov=initial_ptv_cov,obtained_vol=obtained_vol)
                 except:
                     pass
+                
+                #If the plan is VMAT or IMRT, copy it and set it up using the old technique for comparison
+                if technique != '3DC':
+                    kbp_plan_name = site + ' ' + technique
+                    old_style_plan_name = site + ' ' + technique + ' RINGS'
+                    self.status.Text = "Ajout du plan RINGS"
+                    patient.CopyPlan(PlanName=kbp_plan_name, NewPlanName=old_style_plan_name)
+                    plan = patient.TreatmentPlans[old_style_plan_name]
+                    self.status.Text = "Nom du nouveau plan: " + plan.Name
+                    beamset = plan.BeamSets[old_style_plan_name]
+                    self.status.Text = "Préparation des ROIs et objectifs pour plan RINGS"
+                    crane.crane_add_old_plan(plan_data=d,plan=plan,beamset=beamset)
+                    plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
+                    self.status.Text = "Optimization du plan RINGS"
+                    optim.optimization_90_30(plan=plan,beamset=beamset)
                 
             self.isodosecombo.Text = 'Ne pas créer'
             self.status.Text = "Terminé avec succès!"

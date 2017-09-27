@@ -92,8 +92,8 @@ def plan_launcher():
             self.sitecombo.Location = Point(25, 50)
             self.sitecombo.Items.Add("Prostate")
             self.sitecombo.Items.Add("Poumon")     
-            self.sitecombo.Items.Add("Crâne")
-            self.sitecombo.Items.Add("Crâne 2 niveaux")
+            #self.sitecombo.Items.Add("Crâne")
+            #self.sitecombo.Items.Add("Crâne 2 niveaux")
             self.sitecombo.Items.Add("Foie")                 
             self.sitecombo.Items.Add("Vertebre")              
             self.sitecombo.Text = "Choisissez site"
@@ -1191,9 +1191,9 @@ def plan_launcher():
             self.OKbuttonPanel.Controls.Add(cancelButton)
             self.OKbuttonPanel.Controls.Add(self.Status)
             
-            if roi.roi_exists('CERVEAU'):
-                self.sitecombo.Text = 'Crâne'
-            elif roi.roi_exists('PROSTATE'):
+            #if roi.roi_exists('CERVEAU'):
+            #    self.sitecombo.Text = 'Crâne'
+            if roi.roi_exists('PROSTATE'):
                 self.sitecombo.Text = 'Prostate'   
             elif roi.roi_exists('ITV48') or roi.roi_exists('ITV54') or roi.roi_exists('ITV56') or roi.roi_exists('ITV60'):
                 self.sitecombo.Text = 'Poumon'
