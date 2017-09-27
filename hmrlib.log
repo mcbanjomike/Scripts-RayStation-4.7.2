@@ -6347,3 +6347,935 @@ ValueError: An entry with the same key already exists.
 2017-09-05 15:58:50,926 - hmrlib - INFO - [hmr30489 - GUILBEAULT_2^GUY (1882128) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
 2017-09-05 15:58:50,979 - hmrlib - INFO - [hmr30489 - GUILBEAULT_2^GUY (1882128) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 2.py [execution time = 0:00:56.613000]
 2017-09-05 15:58:51,041 - hmrlib - INFO - [hmr30489 - GUILBEAULT_2^GUY (1882128) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-09-07 15:45:36,821 - hmrlib - INFO - [hmr30489 - Validation^Synergy^CLOUTIER (580894) - CT 1 - Pinnacle/Pinnacle] ================================================================================
+2017-09-07 15:45:37,232 - hmrlib - INFO - [hmr30489 - Validation^Synergy^CLOUTIER (580894) - CT 1 - Pinnacle/Pinnacle] Starting script test_NePasUtiliser.py
+2017-09-07 15:45:37,367 - hmrlib - INFO - [hmr30489 - Validation^Synergy^CLOUTIER (580894) - CT 1 - Pinnacle/Pinnacle] ================================================================================
+2017-09-07 15:47:15,181 - hmrlib - INFO - [hmr30489 - Validation^Synergy^CLOUTIER (580894) - CT 1 - TestSyn/TestSyn] ================================================================================
+2017-09-07 15:47:15,312 - hmrlib - INFO - [hmr30489 - Validation^Synergy^CLOUTIER (580894) - CT 1 - TestSyn/TestSyn] End of script test_NePasUtiliser.py [execution time = 0:01:38.926000]
+2017-09-07 15:47:15,441 - hmrlib - INFO - [hmr30489 - Validation^Synergy^CLOUTIER (580894) - CT 1 - TestSyn/TestSyn] ================================================================================
+2017-09-07 16:01:54,233 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] ================================================================================
+2017-09-07 16:01:54,658 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] Starting script test_NePasUtiliser.py
+2017-09-07 16:01:54,837 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] ================================================================================
+2017-09-07 16:02:06,559 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] ================================================================================
+2017-09-07 16:02:06,695 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] End of script test_NePasUtiliser.py [execution time = 0:00:12.518000]
+2017-09-07 16:02:06,831 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] ================================================================================
+2017-09-07 16:02:22,625 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] ================================================================================
+2017-09-07 16:02:22,948 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] Starting script test_NePasUtiliser.py
+2017-09-07 16:02:23,117 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] ================================================================================
+2017-09-07 16:02:31,961 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] ================================================================================
+2017-09-07 16:02:32,095 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] End of script test_NePasUtiliser.py [execution time = 0:00:09.368000]
+2017-09-07 16:02:32,231 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] ================================================================================
+2017-09-07 16:02:48,176 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] ================================================================================
+2017-09-07 16:02:48,540 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] Starting script test_NePasUtiliser.py
+2017-09-07 16:02:48,716 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - Pinnacle/PRE AURIC G.0] ================================================================================
+2017-09-07 16:04:41,125 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - TestSyn/TestSyn] ================================================================================
+2017-09-07 16:04:41,284 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - TestSyn/TestSyn] End of script test_NePasUtiliser.py [execution time = 0:01:52.927000]
+2017-09-07 16:04:41,438 - hmrlib - INFO - [hmr30489 - Validation^Synergy^BROUILLETTE (1247260) - CT 1 - TestSyn/TestSyn] ================================================================================
+2017-09-07 16:33:02,229 - hmrlib - INFO - [hmr30489 - Validation^Synergy^CHENIER (1220499) - CT 1 - Pinnacle/COU THYROIDE.0] ================================================================================
+2017-09-07 16:33:02,640 - hmrlib - INFO - [hmr30489 - Validation^Synergy^CHENIER (1220499) - CT 1 - Pinnacle/COU THYROIDE.0] Starting script test_NePasUtiliser.py
+2017-09-07 16:33:02,810 - hmrlib - INFO - [hmr30489 - Validation^Synergy^CHENIER (1220499) - CT 1 - Pinnacle/COU THYROIDE.0] ================================================================================
+2017-09-07 16:34:36,758 - hmrlib - INFO - [hmr30489 - Validation^Synergy^CHENIER (1220499) - CT 1 - TestSyn/TestSyn] ================================================================================
+2017-09-07 16:34:36,922 - hmrlib - INFO - [hmr30489 - Validation^Synergy^CHENIER (1220499) - CT 1 - TestSyn/TestSyn] End of script test_NePasUtiliser.py [execution time = 0:01:34.950000]
+2017-09-07 16:34:37,084 - hmrlib - INFO - [hmr30489 - Validation^Synergy^CHENIER (1220499) - CT 1 - TestSyn/TestSyn] ================================================================================
+2017-09-08 14:14:07,559 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 14:14:07,717 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Starting script crane_launcher.py
+2017-09-08 14:14:07,777 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 14:21:06,656 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 14:21:07,036 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 14:21:07,093 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 14:21:07,215 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 14:21:07,435 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-09-08 14:21:07,496 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-09-08 14:21:07,860 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-09-08 14:21:07,946 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-09-08 14:21:08,027 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-09-08 14:21:34,130 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV15 is NOT approved.
+2017-09-08 14:21:34,230 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV15" set as Ptv
+2017-09-08 14:21:34,348 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV15" set as Target
+2017-09-08 14:21:35,995 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=40693c6b-380f-44e6-8f8a-b255558fcaf1, 'A1 VMAT'>
+2017-09-08 14:21:36,028 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-09-08 14:21:36,125 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (-0.626348876953, 2.80811080933, 6.103515625e-05)
+2017-09-08 14:21:36,288 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 181 in direction CCW with isocenter REF SCAN.  Energy = 6, collimator = 2, couch = 0.0.
+2017-09-08 14:21:36,317 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:21:36,352 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:21:36,436 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-09-08 14:21:36,507 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-09-08 14:21:36,574 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:21:36,638 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-09-08 14:21:36,705 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:21:36,733 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:21:36,781 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:21:36,865 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.1 cm/deg.
+2017-09-08 14:21:36,946 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2017-09-08 14:21:37,220 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-09-08 14:21:37,321 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 350.0 s for arc "A1.1".
+2017-09-08 14:21:39,883 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 14:21:40,119 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 14:21:40,508 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 14:21:40,818 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:21:41,113 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:21:41,398 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:21:41,692 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 14:21:41,887 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:21:41,918 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:21:42,022 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 14:21:42,142 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 14:21:42,213 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:21:42,288 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 14:21:42,361 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:23:31,206 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:23:31,249 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:23:31,317 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 14:23:31,377 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 14:23:31,430 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:23:31,497 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 14:23:31,556 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:25:08,549 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 14:25:08,766 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 14:25:09,036 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 14:25:09,285 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:25:09,503 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:25:09,735 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:25:09,969 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 14:25:10,168 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:25:10,193 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:25:10,259 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 14:25:10,321 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 14:25:10,376 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:25:10,440 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 14:25:10,496 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:26:34,522 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:26:34,559 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:26:34,625 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 14:26:34,685 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 14:26:34,738 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:26:34,805 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 14:26:34,882 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:31:08,088 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 14:31:08,258 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Starting script crane_launcher.py
+2017-09-08 14:31:08,308 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 14:31:44,767 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 14:31:45,071 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 14:31:45,149 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 14:31:45,281 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 14:31:45,725 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-09-08 14:31:45,840 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-09-08 14:31:46,463 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-09-08 14:31:46,635 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-09-08 14:31:47,204 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-09-08 14:32:19,501 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV15 is NOT approved.
+2017-09-08 14:32:19,669 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV15" set as Ptv
+2017-09-08 14:32:19,760 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV15" set as Target
+2017-09-08 14:32:20,499 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=40c4b198-9cc6-4368-bc05-171027255496, 'A1 VMAT'>
+2017-09-08 14:32:20,533 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-09-08 14:32:20,635 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (-0.626348876953, 2.80811080933, 6.103515625e-05)
+2017-09-08 14:32:20,776 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 181 in direction CCW with isocenter REF SCAN.  Energy = 6, collimator = 2, couch = 0.0.
+2017-09-08 14:32:20,806 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:32:20,843 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:32:20,926 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-09-08 14:32:20,998 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-09-08 14:32:21,064 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:32:21,178 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-09-08 14:32:21,295 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:32:21,351 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:32:21,449 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:32:21,603 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.1 cm/deg.
+2017-09-08 14:32:21,770 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2017-09-08 14:32:21,886 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-09-08 14:32:21,981 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 350.0 s for arc "A1.1".
+2017-09-08 14:32:25,491 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 14:32:25,747 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 14:32:26,174 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 14:32:26,524 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:32:26,923 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:32:27,388 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:32:27,754 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 14:32:28,080 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:32:28,123 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:32:28,284 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 14:32:28,411 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 14:32:28,554 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:32:28,737 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 14:32:28,859 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:34:24,487 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:34:24,542 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:34:24,623 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 14:34:24,698 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 14:34:24,760 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:34:24,829 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 14:34:24,900 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:36:25,807 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 14:36:26,137 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 14:36:26,602 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 14:36:26,996 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:36:27,443 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:36:27,729 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:36:28,023 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 14:36:28,218 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:36:28,243 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:36:28,321 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 14:36:28,390 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 14:36:28,449 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:36:28,512 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 14:36:28,574 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:38:05,820 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:38:05,852 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:38:05,921 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 14:38:05,984 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 14:38:06,043 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:38:06,104 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 14:38:06,166 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:44:15,854 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 14:44:15,981 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Starting script crane_launcher.py
+2017-09-08 14:44:16,008 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 14:47:19,307 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 14:47:19,784 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 14:47:19,917 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 14:47:20,155 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 14:47:20,477 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-09-08 14:47:20,550 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-09-08 14:47:21,335 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-09-08 14:47:21,441 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-09-08 14:47:22,278 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-09-08 14:47:57,100 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV15 is NOT approved.
+2017-09-08 14:47:57,250 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV15" set as Ptv
+2017-09-08 14:47:57,731 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV15" set as Target
+2017-09-08 14:47:58,453 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=e49f1248-c8e9-47b7-9235-1194b7f4432f, 'A1 VMAT'>
+2017-09-08 14:47:58,492 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-09-08 14:47:58,600 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (-0.626348876953, 2.80811080933, 6.103515625e-05)
+2017-09-08 14:47:58,749 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 181 in direction CCW with isocenter REF SCAN.  Energy = 6, collimator = 2, couch = 0.0.
+2017-09-08 14:47:58,785 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:47:58,854 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:47:58,998 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-09-08 14:47:59,113 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-09-08 14:47:59,278 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:47:59,350 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-09-08 14:47:59,427 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:47:59,464 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:47:59,538 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:47:59,703 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.1 cm/deg.
+2017-09-08 14:47:59,893 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2017-09-08 14:48:00,022 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-09-08 14:48:00,130 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 350.0 s for arc "A1.1".
+2017-09-08 14:48:03,745 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 14:48:04,081 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 14:48:04,469 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 14:48:04,755 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:48:05,208 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:48:05,693 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:48:06,123 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 14:48:06,320 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:48:06,351 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:48:06,459 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 14:48:06,544 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 14:48:06,621 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:48:06,752 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 14:48:07,122 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:49:58,176 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:49:58,219 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:49:58,287 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 14:49:58,347 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 14:49:58,406 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:49:58,469 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 14:49:58,535 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:51:40,236 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 14:51:40,456 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 14:51:40,820 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 14:51:41,329 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:51:41,862 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:51:42,223 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 14:51:42,695 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 14:51:43,107 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:51:43,156 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:51:43,325 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 14:51:43,549 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 14:51:43,688 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:51:43,848 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 14:51:43,972 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 14:53:40,387 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 14:53:40,445 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 14:53:40,647 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 14:53:40,808 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 14:53:40,884 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 14:53:40,954 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 14:53:41,032 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:03:07,171 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 15:03:07,322 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Starting script crane_launcher.py
+2017-09-08 15:03:07,352 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 15:03:30,762 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 15:03:31,080 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 15:03:31,163 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 15:03:31,294 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 15:03:31,529 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-09-08 15:03:31,591 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-09-08 15:03:31,968 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-09-08 15:03:32,069 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-09-08 15:03:32,461 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-09-08 15:03:59,357 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV15 is NOT approved.
+2017-09-08 15:03:59,453 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV15" set as Ptv
+2017-09-08 15:03:59,540 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV15" set as Target
+2017-09-08 15:04:00,252 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=6b103112-daed-4c69-a157-a3a3de3b78fd, 'A1 VMAT'>
+2017-09-08 15:04:00,285 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-09-08 15:04:00,392 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (-0.626348876953, 2.80811080933, 6.103515625e-05)
+2017-09-08 15:04:00,531 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 181 in direction CCW with isocenter REF SCAN.  Energy = 6, collimator = 2, couch = 0.0.
+2017-09-08 15:04:00,562 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:04:00,599 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:04:00,682 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-09-08 15:04:00,753 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-09-08 15:04:00,822 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:04:00,891 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-09-08 15:04:00,967 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:04:01,000 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:04:01,048 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:04:01,136 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.1 cm/deg.
+2017-09-08 15:04:01,222 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2017-09-08 15:04:01,332 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-09-08 15:04:01,421 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 350.0 s for arc "A1.1".
+2017-09-08 15:04:04,101 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 15:04:04,356 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:04:04,735 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:04:05,054 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:04:05,371 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:04:05,645 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:04:05,930 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 15:04:06,131 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:04:06,160 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:04:06,255 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:04:06,392 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 15:04:06,459 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:04:06,541 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:04:06,613 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:05:57,756 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:05:57,800 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:05:57,871 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:05:57,933 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 15:05:57,993 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:05:58,054 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:05:58,113 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:07:58,138 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 15:07:58,438 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:07:58,890 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:07:59,324 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:07:59,688 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:07:59,950 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:08:00,316 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 15:08:00,648 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:08:00,689 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:08:00,934 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:08:01,098 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 15:08:01,171 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:08:01,253 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:08:01,371 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:09:53,541 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:09:53,577 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:09:53,684 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:09:53,932 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 15:09:54,012 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:09:54,077 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:09:54,138 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:13:33,470 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 15:13:33,596 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Starting script crane_launcher.py
+2017-09-08 15:13:33,621 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 15:14:04,386 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 15:14:04,675 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 15:14:04,736 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 15:14:04,858 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 15:14:05,078 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-09-08 15:14:05,137 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-09-08 15:14:05,502 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-09-08 15:14:05,594 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-09-08 15:14:05,961 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-09-08 15:14:31,950 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV15 is NOT approved.
+2017-09-08 15:14:32,048 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV15" set as Ptv
+2017-09-08 15:14:32,136 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV15" set as Target
+2017-09-08 15:14:32,895 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=7ca6eb22-2730-482a-873b-dc59a85c587b, 'A1 VMAT'>
+2017-09-08 15:14:32,933 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-09-08 15:14:33,035 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (-0.626348876953, 2.80811080933, 6.103515625e-05)
+2017-09-08 15:14:33,210 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 181 in direction CCW with isocenter REF SCAN.  Energy = 6, collimator = 2, couch = 0.0.
+2017-09-08 15:14:33,239 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:14:33,278 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:14:33,361 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-09-08 15:14:33,432 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-09-08 15:14:33,496 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:14:33,560 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-09-08 15:14:33,625 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:14:33,654 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:14:33,700 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:14:33,785 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.1 cm/deg.
+2017-09-08 15:14:33,869 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2017-09-08 15:14:33,973 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-09-08 15:14:34,058 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 350.0 s for arc "A1.1".
+2017-09-08 15:14:36,642 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 15:14:36,879 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:14:37,229 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:14:37,510 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:14:37,863 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:14:38,135 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:14:38,407 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 15:14:38,595 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:14:38,622 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:14:38,714 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:14:38,790 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 15:14:38,910 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:14:38,986 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:14:39,059 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:16:28,257 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:16:28,293 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:16:28,358 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:16:28,415 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 15:16:28,472 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:16:28,530 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:16:28,585 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:18:08,694 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 15:18:08,886 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:18:09,180 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:18:09,413 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:18:09,654 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:18:09,897 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:18:10,134 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 15:18:10,332 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:18:10,355 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:18:10,423 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:18:10,486 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 15:18:10,542 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:18:10,600 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:18:10,656 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:20:06,102 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:20:06,180 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:20:06,310 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:20:06,541 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 15:20:06,688 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:20:06,909 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:20:07,020 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:22:39,812 - hmrlib.optim - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] The combination of function type and organ type is not allowed. ROI: sum_ptvs_A1
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\optim.py", line 54, in _add_objective
+    retval_1 = plan.PlanOptimizations[plan_opt].AddOptimizationFunction(FunctionType=obj_type, RoiName=roi_name, IsConstraint=is_constraint,
+SystemError: The combination of function type and organ type is not allowed. ROI: sum_ptvs_A1
+2017-09-08 15:27:36,174 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 15:27:36,334 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Starting script crane_launcher.py
+2017-09-08 15:27:36,364 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 15:28:00,746 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 15:28:01,131 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 15:28:01,198 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 15:28:01,324 - hmrlib.eval - ERROR - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-08 15:28:01,544 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-09-08 15:28:01,601 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-09-08 15:28:01,978 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-09-08 15:28:02,071 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-09-08 15:28:02,431 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-09-08 15:28:28,284 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV15 is NOT approved.
+2017-09-08 15:28:28,378 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV15" set as Ptv
+2017-09-08 15:28:28,465 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV15" set as Target
+2017-09-08 15:28:29,271 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=d19ad7b4-de6c-42f5-b26f-70e921d0a064, 'A1 VMAT'>
+2017-09-08 15:28:29,308 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-09-08 15:28:29,408 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (-0.626348876953, 2.80811080933, 6.103515625e-05)
+2017-09-08 15:28:29,556 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 181 in direction CCW with isocenter REF SCAN.  Energy = 6, collimator = 2, couch = 0.0.
+2017-09-08 15:28:29,586 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:28:29,621 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:28:29,699 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-09-08 15:28:29,767 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-09-08 15:28:29,836 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:28:29,901 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-09-08 15:28:29,971 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:28:30,001 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:28:30,048 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:28:30,133 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.1 cm/deg.
+2017-09-08 15:28:30,217 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2017-09-08 15:28:30,325 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-09-08 15:28:30,413 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 350.0 s for arc "A1.1".
+2017-09-08 15:28:33,060 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 15:28:33,331 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:28:33,689 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:28:34,008 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:28:34,285 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:28:34,564 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:28:34,845 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 15:28:35,079 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:28:35,126 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:28:35,225 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:28:35,301 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 15:28:35,390 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:28:35,468 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:28:35,543 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:30:24,168 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:30:24,212 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:30:24,281 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:30:24,343 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 15:30:24,400 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:30:24,463 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:30:24,522 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:32:04,735 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 15:32:04,921 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:32:05,204 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:32:05,450 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:32:05,691 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:32:05,939 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:32:06,192 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 15:32:06,388 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:32:06,413 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:32:06,480 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:32:06,540 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 15:32:06,596 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:32:06,655 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:32:06,713 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:33:30,952 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:33:30,988 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:33:31,056 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:33:31,115 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 15:33:31,172 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:33:31,231 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:33:31,289 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:35:20,152 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ROI sum_ptvs_A1 is NOT approved.
+2017-09-08 15:35:20,249 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "sum_ptvs_A1" set as Ptv
+2017-09-08 15:35:20,339 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "sum_ptvs_A1" set as Target
+2017-09-08 15:35:20,487 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "sum_ptvs_A1" added.
+2017-09-08 15:35:20,709 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "sum_ptvs_A1" added.
+2017-09-08 15:35:20,871 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1_3mm_A1" added.
+2017-09-08 15:35:21,077 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2_8mm_A1" added.
+2017-09-08 15:35:21,253 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3_1cm_A1" added.
+2017-09-08 15:35:21,412 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TISSUS SAINS_A1" added.
+2017-09-08 15:35:21,609 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:35:21,634 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:35:21,723 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:35:21,792 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-08 15:35:21,855 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:35:21,923 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:35:21,989 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:36:44,896 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:36:44,932 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-08 15:36:44,997 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-08 15:36:45,054 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-08 15:36:45,106 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-08 15:36:45,163 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-08 15:36:45,217 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-08 15:42:15,456 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 15:42:15,479 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] End of script crane_launcher.py [execution time = 0:14:39.377000]
+2017-09-08 15:42:15,499 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-08 15:46:04,430 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-08 15:46:04,597 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Starting script crane_launcher.py
+2017-09-08 15:46:04,643 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-08 15:46:34,392 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] ROI PTV15 is NOT approved.
+2017-09-08 15:46:34,544 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Type of ROI "PTV15" set as Ptv
+2017-09-08 15:46:34,673 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] OrganType of ROI "PTV15" set as Target
+2017-09-08 15:46:35,512 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 15:46:35,752 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 15:46:35,996 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 15:46:36,225 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 15:46:36,479 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 15:46:36,711 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 15:46:36,939 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 15:46:37,171 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 15:46:37,400 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 15:46:40,990 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 15:46:41,256 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:46:41,654 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:46:41,990 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:46:42,341 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:46:42,667 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:46:42,980 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 15:46:43,204 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:46:43,256 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] PlanOptimizations[0] selected.
+2017-09-08 15:46:43,377 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Fluence iterations set to 30.
+2017-09-08 15:46:43,487 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Max iterations set to 90.
+2017-09-08 15:46:43,600 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Optimality tolerance set to 1e-09.
+2017-09-08 15:46:43,706 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute intermediate dose set to False.
+2017-09-08 15:46:43,814 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute final dose set to True.
+2017-09-08 15:47:02,592 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:47:02,645 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] PlanOptimizations[0] selected.
+2017-09-08 15:47:02,752 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Fluence iterations set to 30.
+2017-09-08 15:47:02,850 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Max iterations set to 30.
+2017-09-08 15:47:02,955 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Optimality tolerance set to 1e-09.
+2017-09-08 15:47:03,059 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute intermediate dose set to False.
+2017-09-08 15:47:03,158 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute final dose set to True.
+2017-09-08 15:47:33,233 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 15:47:33,502 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:47:33,898 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 15:47:34,217 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:47:34,574 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:47:34,902 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 15:47:35,232 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 15:47:35,558 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:47:35,612 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] PlanOptimizations[0] selected.
+2017-09-08 15:47:35,723 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Fluence iterations set to 30.
+2017-09-08 15:47:35,832 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Max iterations set to 90.
+2017-09-08 15:47:35,940 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Optimality tolerance set to 1e-09.
+2017-09-08 15:47:36,041 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute intermediate dose set to False.
+2017-09-08 15:47:36,145 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute final dose set to True.
+2017-09-08 15:47:55,232 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-09-08 15:47:55,294 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] PlanOptimizations[0] selected.
+2017-09-08 15:47:55,512 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Fluence iterations set to 30.
+2017-09-08 15:47:55,860 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Max iterations set to 30.
+2017-09-08 15:47:55,964 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Optimality tolerance set to 1e-09.
+2017-09-08 15:47:56,070 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute intermediate dose set to False.
+2017-09-08 15:47:56,175 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute final dose set to True.
+2017-09-08 15:58:14,027 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-08 15:58:14,174 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Starting script crane_launcher.py
+2017-09-08 15:58:14,221 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-08 16:03:53,077 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] ROI PTV15 is NOT approved.
+2017-09-08 16:03:53,220 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Type of ROI "PTV15" set as Ptv
+2017-09-08 16:03:53,340 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] OrganType of ROI "PTV15" set as Target
+2017-09-08 16:03:54,080 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 16:03:54,338 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 16:03:54,607 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 16:03:54,873 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 16:03:55,155 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 16:03:55,381 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 16:03:55,609 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 16:03:55,840 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 16:03:56,085 - hmrlib.poi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] POI ISO: (x, y, z) = (1.87365112305, 8.30811157227, -6.49993896484)
+2017-09-08 16:03:59,752 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 16:04:00,011 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 16:04:00,425 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 16:04:00,760 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 16:04:01,083 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 16:04:01,392 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 16:04:01,712 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 16:04:01,942 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-09-08 16:04:01,995 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] PlanOptimizations[0] selected.
+2017-09-08 16:04:02,119 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Fluence iterations set to 30.
+2017-09-08 16:04:02,233 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Max iterations set to 90.
+2017-09-08 16:04:02,348 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Optimality tolerance set to 1e-09.
+2017-09-08 16:04:02,457 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute intermediate dose set to False.
+2017-09-08 16:04:02,565 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute final dose set to True.
+2017-09-08 16:04:21,913 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-09-08 16:04:21,967 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] PlanOptimizations[0] selected.
+2017-09-08 16:04:22,079 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Fluence iterations set to 30.
+2017-09-08 16:04:22,184 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Max iterations set to 30.
+2017-09-08 16:04:22,297 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Optimality tolerance set to 1e-09.
+2017-09-08 16:04:22,405 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute intermediate dose set to False.
+2017-09-08 16:04:22,511 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute final dose set to True.
+2017-09-08 16:04:52,575 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MinDose for ROI "PTV15" added.
+2017-09-08 16:04:52,856 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 16:04:53,252 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-08 16:04:53,592 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 16:04:53,956 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 16:04:54,333 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-08 16:04:54,689 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-08 16:04:55,026 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-09-08 16:04:55,072 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] PlanOptimizations[0] selected.
+2017-09-08 16:04:55,179 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Fluence iterations set to 30.
+2017-09-08 16:04:55,281 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Max iterations set to 90.
+2017-09-08 16:04:55,375 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Optimality tolerance set to 1e-09.
+2017-09-08 16:04:55,473 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute intermediate dose set to False.
+2017-09-08 16:04:55,568 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute final dose set to True.
+2017-09-08 16:05:15,309 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-09-08 16:05:15,372 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] PlanOptimizations[0] selected.
+2017-09-08 16:05:15,480 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Fluence iterations set to 30.
+2017-09-08 16:05:15,578 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Max iterations set to 30.
+2017-09-08 16:05:15,678 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Optimality tolerance set to 1e-09.
+2017-09-08 16:05:15,776 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute intermediate dose set to False.
+2017-09-08 16:05:15,878 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute final dose set to True.
+2017-09-08 16:05:47,989 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] ROI sum_ptvs_A1 is NOT approved.
+2017-09-08 16:05:48,143 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Type of ROI "sum_ptvs_A1" set as Ptv
+2017-09-08 16:05:48,267 - hmrlib.roi - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] OrganType of ROI "sum_ptvs_A1" set as Target
+2017-09-08 16:05:48,511 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MinDose for ROI "sum_ptvs_A1" added.
+2017-09-08 16:05:48,808 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDose for ROI "sum_ptvs_A1" added.
+2017-09-08 16:05:49,031 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDose for ROI "RING_1_3mm_A1" added.
+2017-09-08 16:05:49,482 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDose for ROI "RING_2_8mm_A1" added.
+2017-09-08 16:05:49,697 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDose for ROI "RING_3_1cm_A1" added.
+2017-09-08 16:05:49,917 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Objective of type MaxDose for ROI "TISSUS SAINS_A1" added.
+2017-09-08 16:05:50,257 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-09-08 16:05:50,309 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] PlanOptimizations[0] selected.
+2017-09-08 16:05:50,423 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Fluence iterations set to 30.
+2017-09-08 16:05:50,531 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Max iterations set to 90.
+2017-09-08 16:05:50,649 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Optimality tolerance set to 1e-09.
+2017-09-08 16:05:50,756 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute intermediate dose set to False.
+2017-09-08 16:05:50,858 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute final dose set to True.
+2017-09-08 16:06:08,919 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] No beamset specified.  All beamsets will be modified.
+2017-09-08 16:06:09,044 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] PlanOptimizations[0] selected.
+2017-09-08 16:06:09,343 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Fluence iterations set to 30.
+2017-09-08 16:06:09,445 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Max iterations set to 30.
+2017-09-08 16:06:09,540 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Optimality tolerance set to 1e-09.
+2017-09-08 16:06:09,693 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute intermediate dose set to False.
+2017-09-08 16:06:09,871 - hmrlib.optim - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] Compute final dose set to True.
+2017-09-08 16:16:20,587 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-08 16:16:20,680 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] End of script crane_launcher.py [execution time = 0:18:06.878000]
+2017-09-08 16:16:20,792 - hmrlib - INFO - [hmr30489 - BONNETTE^FRANCINE (1044976) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-26 17:08:33,965 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-26 17:08:34,326 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Starting script crane_launcher.py
+2017-09-26 17:08:34,396 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-26 17:10:12,252 - hmrlib.eval - ERROR - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-26 17:10:13,293 - hmrlib.eval - ERROR - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-26 17:10:13,442 - hmrlib.eval - ERROR - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-26 17:10:13,749 - hmrlib.eval - ERROR - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-09-26 17:10:14,141 - hmrlib.poi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-09-26 17:10:14,279 - hmrlib.poi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-09-26 17:10:15,208 - hmrlib.poi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-09-26 17:10:15,485 - hmrlib.poi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-09-26 17:10:16,468 - hmrlib.poi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-09-26 17:10:52,699 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV1 is NOT approved.
+2017-09-26 17:10:52,844 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV1" set as Ptv
+2017-09-26 17:10:52,962 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV1" set as Target
+2017-09-26 17:10:55,130 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=aa52cbc8-c6f7-4489-be2e-87da26f56b3b, 'A1 VMAT'>
+2017-09-26 17:10:55,358 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-09-26 17:10:55,561 - hmrlib.poi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-2.73999938965, 4.62663116455, -5.99992065430)
+2017-09-26 17:10:55,806 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 181 in direction CCW with isocenter ISO.  Energy = 6, collimator = 2, couch = 0.0.
+2017-09-26 17:10:55,849 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-26 17:10:55,902 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-26 17:10:56,020 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-09-26 17:10:56,113 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-09-26 17:10:56,201 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-26 17:10:56,288 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-09-26 17:10:56,378 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-26 17:10:56,429 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-26 17:10:56,495 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-26 17:10:56,611 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.1 cm/deg.
+2017-09-26 17:10:56,722 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2017-09-26 17:10:56,873 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-09-26 17:10:56,985 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 350.0 s for arc "A1.1".
+2017-09-26 17:11:00,702 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV1" added.
+2017-09-26 17:11:01,081 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-26 17:11:01,712 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-26 17:11:02,342 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-26 17:11:02,608 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-26 17:11:02,897 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-26 17:11:03,183 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-26 17:11:03,429 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MOELLE" added.
+2017-09-26 17:11:04,424 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-26 17:11:04,492 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-26 17:11:04,595 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-26 17:11:04,670 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-26 17:11:04,747 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-26 17:11:04,825 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-26 17:11:04,911 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-26 17:13:53,685 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-26 17:13:53,769 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-26 17:13:53,929 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-26 17:13:54,099 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-26 17:13:54,254 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-26 17:13:54,414 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-26 17:13:54,560 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-26 17:16:34,802 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV1" added.
+2017-09-26 17:16:35,149 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-26 17:16:35,704 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-09-26 17:16:36,104 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-26 17:16:36,495 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-26 17:16:36,976 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "OPT CERVEAU_A1" added.
+2017-09-26 17:16:37,485 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TR CEREBRAL" added.
+2017-09-26 17:16:37,665 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MOELLE" added.
+2017-09-26 17:16:37,862 - hmrlib.eval - WARNING - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Identical clinical goal already exists
+2017-09-26 17:16:38,013 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-26 17:16:38,042 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-26 17:16:38,121 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-26 17:16:38,187 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-26 17:16:38,250 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-26 17:16:38,312 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-26 17:16:38,375 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-26 17:18:54,676 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-26 17:18:54,784 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-26 17:18:54,966 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-26 17:18:55,127 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-26 17:18:55,276 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-26 17:18:55,432 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-26 17:18:55,570 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-26 17:21:59,042 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] ROI sum_ptvs_A1 is NOT approved.
+2017-09-26 17:21:59,159 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "sum_ptvs_A1" set as Ptv
+2017-09-26 17:21:59,267 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "sum_ptvs_A1" set as Target
+2017-09-26 17:21:59,452 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "sum_ptvs_A1" added.
+2017-09-26 17:21:59,667 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "sum_ptvs_A1" added.
+2017-09-26 17:21:59,826 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1_3mm_A1" added.
+2017-09-26 17:22:00,037 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2_8mm_A1" added.
+2017-09-26 17:22:00,200 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3_1cm_A1" added.
+2017-09-26 17:22:00,355 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TISSUS SAINS_A1" added.
+2017-09-26 17:22:00,557 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-26 17:22:00,589 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-26 17:22:00,664 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-26 17:22:00,736 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-09-26 17:22:00,800 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-26 17:22:00,866 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-26 17:22:00,930 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-26 17:24:29,233 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-09-26 17:24:29,323 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-09-26 17:24:29,507 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-09-26 17:24:29,675 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-09-26 17:24:29,824 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-09-26 17:24:29,982 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-09-26 17:24:30,112 - hmrlib.optim - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-09-26 17:26:14,771 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-26 17:26:14,937 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] End of script crane_launcher.py [execution time = 0:17:41.444000]
+2017-09-26 17:26:15,001 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-09-27 09:28:38,806 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:28:39,226 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] Starting script plan_launcher.py
+2017-09-27 09:28:39,363 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:28:41,284 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI BODY is NOT approved.
+2017-09-27 09:28:42,517 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI GTV1 is NOT approved.
+2017-09-27 09:28:43,092 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI PTV1 is NOT approved.
+2017-09-27 09:28:43,670 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI CERVEAU is NOT approved.
+2017-09-27 09:28:44,393 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI MOELLE is NOT approved.
+2017-09-27 09:28:44,964 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI OEIL DRT is NOT approved.
+2017-09-27 09:28:45,529 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI OEIL GCHE is NOT approved.
+2017-09-27 09:28:46,079 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI TR CEREBRAL is NOT approved.
+2017-09-27 09:28:46,648 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI CHIASMA is NOT approved.
+2017-09-27 09:28:47,202 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI NERF OPT DRT is NOT approved.
+2017-09-27 09:28:47,726 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI NERF OPT GCHE is NOT approved.
+2017-09-27 09:28:48,268 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI OREILLE DRTE is NOT approved.
+2017-09-27 09:28:48,815 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI predicted_r100_A1 is NOT approved.
+2017-09-27 09:28:49,366 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI predicted_r90_A1 is NOT approved.
+2017-09-27 09:28:49,920 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI predicted_r80_A1 is NOT approved.
+2017-09-27 09:28:50,471 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI predicted_r70_A1 is NOT approved.
+2017-09-27 09:28:51,021 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI predicted_r60_A1 is NOT approved.
+2017-09-27 09:28:51,574 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI predicted_r50_A1 is NOT approved.
+2017-09-27 09:28:52,114 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI predicted_r40_A1 is NOT approved.
+2017-09-27 09:28:52,666 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI sum_ptvs_smooth_A1 is NOT approved.
+2017-09-27 09:28:53,077 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI sum_ptvs_A1 is NOT approved.
+2017-09-27 09:28:53,393 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI CERVEAU-PTV_A1 is NOT approved.
+2017-09-27 09:28:54,090 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI OPT CERVEAU_A1 is NOT approved.
+2017-09-27 09:28:54,638 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI BodyRS is NOT approved.
+2017-09-27 09:28:55,630 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI TISSU SAIN 1cm A1 is NOT approved.
+2017-09-27 09:28:56,469 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI RING_0_2mm_A1 is NOT approved.
+2017-09-27 09:28:57,041 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI RING_1_3mm_A1 is NOT approved.
+2017-09-27 09:28:57,596 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI RING_2_8mm_A1 is NOT approved.
+2017-09-27 09:28:58,171 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI RING_3_1cm_A1 is NOT approved.
+2017-09-27 09:28:58,737 - hmrlib.roi - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ROI TISSUS SAINS_A1 is NOT approved.
+2017-09-27 09:30:20,995 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:30:21,173 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] End of script plan_launcher.py [execution time = 0:01:42.539000]
+2017-09-27 09:30:21,313 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:30:29,997 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:30:30,414 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] Starting script crane_launcher.py
+2017-09-27 09:30:30,542 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:30:42,930 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:30:43,096 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] End of script crane_launcher.py [execution time = 0:00:13.174000]
+2017-09-27 09:30:43,254 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:31:16,051 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:31:16,454 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] Starting script crane_launcher.py
+2017-09-27 09:31:16,589 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:31:28,035 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:31:28,240 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] End of script crane_launcher.py [execution time = 0:00:12.096000]
+2017-09-27 09:31:28,391 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:32:29,955 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:32:30,372 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] Starting script crane_launcher.py
+2017-09-27 09:32:30,514 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:32:44,821 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:32:44,961 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] End of script crane_launcher.py [execution time = 0:00:15.022000]
+2017-09-27 09:32:45,121 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:33:01,937 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:33:02,363 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] Starting script crane_launcher.py
+2017-09-27 09:33:02,507 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:33:15,451 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:33:15,675 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] End of script crane_launcher.py [execution time = 0:00:13.613000]
+2017-09-27 09:33:15,838 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:34:48,128 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:34:48,554 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] Starting script crane_launcher.py
+2017-09-27 09:34:48,717 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:34:52,969 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:34:53,062 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] End of script crane_launcher.py [execution time = 0:00:04.956000]
+2017-09-27 09:34:53,150 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:35:08,625 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:35:09,062 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] Starting script crane_launcher.py
+2017-09-27 09:35:09,223 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:35:13,564 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-27 09:35:13,718 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] End of script crane_launcher.py [execution time = 0:00:05.116000]
+2017-09-27 09:35:13,856 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
