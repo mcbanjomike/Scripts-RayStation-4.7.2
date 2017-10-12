@@ -138,6 +138,7 @@ def final_launcher():
             self.site1combo.Items.Add("Crâne")
             self.site1combo.Items.Add("Foie")                 
             self.site1combo.Items.Add("Vertebre")              
+            self.site1combo.Items.Add("ORL")
             self.site1combo.Text = "Choisissez site"
             self.site1combo.TextChanged += self.site1selectionChanged
             
@@ -379,6 +380,8 @@ def final_launcher():
             if roi.roi_exists("PROSTATE"):
                 self.site1combo.Text = "Prostate"
                 dose_scale = 95.0
+            elif roi.roi_exists("CAVITE ORALE"):
+                self.site1combo.Text = "ORL"
             elif roi.roi_exists("CERVEAU"):
                 self.site1combo.Text = "Crâne"                
             elif roi.roi_exists("BR SOUCHE"):
@@ -495,7 +498,7 @@ def final_launcher():
                     
                     
         def site1selectionChanged(self, sender, args):
-            site_list = ["Prostate","Poumon","Crâne","Foie","Vertebre"]
+            site_list = ["Prostate","Poumon","Crâne","Foie","Vertebre","ORL"]
             if self.site1combo.Text in site_list:
                 roi_list = check_rois(self.site1combo.Text)     
             else:
@@ -518,7 +521,7 @@ def final_launcher():
             
         def okClicked(self, sender, args):
             #Check for errors
-            site_list = ["Prostate","Poumon","Crâne","Foie","Vertebre"]                
+            site_list = ["Prostate","Poumon","Crâne","Foie","Vertebre","ORL"]                
             self.message.ForeColor = Color.Black
             error_text = None
             
@@ -723,6 +726,8 @@ def check_rois(site = None):
         roi_list = ["GTV EXPI", "FOIE INSPI", "FOIE EXPI", "MOELLE", "REINS", "OESOPHAGE", "ESTOMAC", "DUODENUM", "COLON", "GRELE"]
     elif site == "Vertebre":            
         roi_list = []
+    elif site == "ORL":
+        roi_list = ["GTV","GTVgg","PTV70","PTV66","PTV60","PTV56","PTV54","MOELLE","BOLUS","OEIL DRT","OEIL GCHE"]
     else:
         return
     
@@ -810,12 +815,16 @@ def finalize_beamset(original_beamset_name, rx_dose, nb_fx, site, ptv_name, colo
     
     # Rename isodose ROI and add * to it and PTV
     isodose_roi = patient.PatientModel.RegionsOfInterest["isodose " + beamset_name]       
-    if site == "Prostate":
+    if site == "Prostate" or site == "ORL":
         isodose_roi.Name = "ISO %s %.2fGy*" % (beamset_name, rx_dose*0.95)    
     else:
         isodose_roi.Name = "ISO %s %.2fGy*" % (beamset_name, rx_dose)
     isodose_roi.Name = isodose_roi.Name.replace('.00Gy','Gy')
     ptv.Name += '*'     
+    
+    # Rename ISO MOELLE 48Gy (ORL only)
+    if roi.roi_exists("isodose moelle"):
+        patient.PatientModel.RegionsOfInterest['isodose moelle'].Name = "ISO MOELLE 48Gy*"
     
     # Copy PTV and isodose ROIs to second beamset for patient positioning at treatment room (lung cases only)
     if site == "Poumon":

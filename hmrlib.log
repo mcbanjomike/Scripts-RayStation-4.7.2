@@ -7279,3 +7279,81 @@ ValueError: An entry with the same key already exists.
 2017-09-27 09:35:13,564 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
 2017-09-27 09:35:13,718 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] End of script crane_launcher.py [execution time = 0:00:05.116000]
 2017-09-27 09:35:13,856 - hmrlib - INFO - [hmr30489 - BRUNET^DENIS (1902837) - CT 1 - A1 VMAT/A1 VMAT] ================================================================================
+2017-09-29 11:11:03,923 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - A1+A2 Split v2/A1] ================================================================================
+2017-09-29 11:11:04,069 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - A1+A2 Split v2/A1] Starting script finalisation.py
+2017-09-29 11:11:04,115 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - A1+A2 Split v2/A1] ================================================================================
+2017-09-29 11:11:20,758 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - A1+A2 Split v2/A1] ================================================================================
+2017-09-29 11:11:20,813 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - A1+A2 Split v2/A1] End of script finalisation.py [execution time = 0:00:17.075000]
+2017-09-29 11:11:20,859 - hmrlib - INFO - [hmr30489 - AMORMINO^VITTORIO (1424964) - CT 1 - A1+A2 Split v2/A1] ================================================================================
+2017-10-12 15:03:46,426 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 15:03:47,093 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] Starting script vérif 1.py
+2017-10-12 15:03:47,803 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 15:05:56,946 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 15:05:57,018 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 1.py [execution time = 0:02:10.886000]
+2017-10-12 15:05:57,099 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 15:54:40,948 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 15:54:41,388 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] Starting script vérif 1.py
+2017-10-12 15:54:41,976 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 15:54:52,817 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 15:54:52,962 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 1.py [execution time = 0:00:12.282000]
+2017-10-12 15:54:53,115 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 15:55:33,350 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 15:55:33,752 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] Starting script vérif 1.py
+2017-10-12 15:55:34,027 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 15:55:47,151 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 15:55:47,274 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 1.py [execution time = 0:00:13.851000]
+2017-10-12 15:55:47,420 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:00:29,451 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:00:29,844 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] Starting script vérif 1.py
+2017-10-12 16:00:30,088 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:00:47,786 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:00:47,916 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 1.py [execution time = 0:00:18.460000]
+2017-10-12 16:00:48,051 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:00:53,799 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:00:54,195 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] Starting script vérif 2.py
+2017-10-12 16:00:54,434 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:01:42,471 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:01:42,595 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 2.py [execution time = 0:00:48.915000]
+2017-10-12 16:01:42,730 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:01:57,643 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:01:58,031 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] Starting script vérif 1.py
+2017-10-12 16:01:58,275 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:02:09,796 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:02:09,937 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 1.py [execution time = 0:00:12.370000]
+2017-10-12 16:02:10,077 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:05:38,340 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:05:38,706 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] Starting script vérif 1.py
+2017-10-12 16:05:38,951 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:06:19,812 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:06:19,951 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 1.py [execution time = 0:00:41.554000]
+2017-10-12 16:06:20,099 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:06:25,892 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:06:26,271 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] Starting script vérif 2.py
+2017-10-12 16:06:26,514 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:06:47,131 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:06:47,265 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 2.py [execution time = 0:00:21.398000]
+2017-10-12 16:06:47,404 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:12:45,474 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:12:45,881 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] Starting script vérif 1.py
+2017-10-12 16:12:46,123 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:13:53,538 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:13:53,656 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 1.py [execution time = 0:01:08.296000]
+2017-10-12 16:13:53,843 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:17:04,230 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:17:04,627 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] Starting script vérif 1.py
+2017-10-12 16:17:04,865 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:17:27,969 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:17:28,117 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 1.py [execution time = 0:00:23.934000]
+2017-10-12 16:17:28,259 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:17:54,701 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:17:55,152 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] Starting script vérif 2.py
+2017-10-12 16:17:55,739 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:18:13,591 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:18:13,715 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 2.py [execution time = 0:00:19.259000]
+2017-10-12 16:18:13,849 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:25:28,716 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:25:29,101 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] Starting script vérif 1.py
+2017-10-12 16:25:29,346 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:25:53,093 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
+2017-10-12 16:25:53,220 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] End of script vérif 1.py [execution time = 0:00:24.606000]
+2017-10-12 16:25:53,362 - hmrlib - INFO - [hmr30489 - LADOUCEUR_1^ALAIN (1871754) - CT 1 - ORL IMRT/ORL IMRT] ================================================================================
