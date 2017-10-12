@@ -440,6 +440,21 @@ def optimization_90_30(plan=None, beamset=None):
     opt.RunOptimization()  
     
     
+def optimization_90_30_30(plan=None, beamset=None):
+    patient = lib.get_current_patient()
+    if plan is None:
+        plan = lib.get_current_plan()
+    if beamset is None:
+        beamset = lib.get_current_beamset()
+       
+    opt = plan.PlanOptimizations[beamset.Number - 1]
+    set_optimization_parameters(plan=plan,fluence_iterations=30, max_iterations=90, compute_intermediate_dose=False)
+    opt.RunOptimization()
+    set_optimization_parameters(plan=plan,fluence_iterations=30, max_iterations=30, compute_intermediate_dose=False)
+    opt.RunOptimization()   
+    opt.RunOptimization()      
+    
+    
 def double_opt_save(plan=None, beamset=None):
     # Function which runs two consecutive optimizations and saves the plan afterwards (NB this removes the ability to undo the optimizations).
     patient = lib.get_current_patient()

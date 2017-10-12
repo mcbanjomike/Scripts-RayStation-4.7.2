@@ -231,12 +231,18 @@ def verify_beams():
                         if machine_type == "BeamMod":
                             if seg.LeafPositions[0][0] != seg.LeafPositions[1][0]:
                                 first_leaf_open = True
+                        elif machine_type == "Infinity":
+                            if abs(seg.LeafPositions[0][0] - seg.LeafPositions[1][0]) > 0.4: #4mm is the minimum leaf gap for Infinity machines as of October 2017
+                                first_leaf_open = True
                                 #first_leaf_open_seg = seg.SegmentNumber
                                 #first_leaf_open_name = beam.Name                              
                     if last_leaf_open == False:
                         if machine_type == "BeamMod":
                             if seg.LeafPositions[0][39] != seg.LeafPositions[1][39]:
                                 last_leaf_open = True
+                        elif machine_type == "Infinity":
+                            if abs(seg.LeafPositions[0][79] - seg.LeafPositions[1][79]) > 0.4:
+                                last_leaf_open = True                                
                                 #last_leaf_open_seg = seg.SegmentNumber
                                 #last_leaf_open_name = beam.Name
             except:             
@@ -244,8 +250,8 @@ def verify_beams():
                 skip_leaf_check = True
                                 
         if not skip_leaf_check:
-            if machine_type != 'BeamMod': 
-                leaf_open_text += "Vérification des lames SUP/INF seulement possible sur Beam Modulator"
+            if machine_type not in ['BeamMod','Infinity']: 
+                leaf_open_text += "Vérification des lames SUP/INF pas possible sur l'appareil " + machine_type
             elif first_leaf_open and last_leaf_open:
                 leaf_open_text += "Première et dernère paire de lames ouvertes dans au moins\nun segment, PTV potentiellement trop large pour collimateur"
             elif first_leaf_open and not last_leaf_open:
