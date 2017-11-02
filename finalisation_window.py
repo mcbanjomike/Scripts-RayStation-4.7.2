@@ -28,7 +28,7 @@ import clr
 import System.Array
 
 
-
+import crane
 import verification
 import report
 import statistics
@@ -708,6 +708,13 @@ def final_launcher():
     except:
         message.message_window('Aucun examination trouvé')
         return
+    try:
+        beamset = lib.get_current_beamset()
+        ptv_name = beamset.Prescription.PrimaryDosePrescription.OnStructure.Name
+        new_beamset_name = ptv_name.split()[1]        
+    except:
+        message.message_window("Le nom du PTV n'est pas dans le format PTV A1 15Gy. Renommez le PTV avant de lancer le script de finalisation.")
+        return
                 
     form = FinalisationWindow()
     Application.Run(form)   
@@ -746,9 +753,11 @@ def finalize_beamset(original_beamset_name, rx_dose, nb_fx, site, ptv_name, colo
 
     if site == 'Crâne':
         try:
-            statistics.stereo_brain_statistics()
+            #statistics.stereo_brain_statistics()
+            crane.crane_kbp_write_final_results_to_file(rx_dose,nb_fx,ptv_name)
         except:
-            file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\crane.txt'
+            #file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\crane.txt'
+            file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\Crane KBP Plan Failure.txt' #Dump to a separate file in case exception was caused by main stats file being open elsewhere
             output = patient.PatientName + ',' + patient.PatientID + ',' + plan.Name + ',' + bs.DicomPlanLabel + ',' + 'Collecte de statistiques échouée'
             with open(file_path, 'a') as stat_file:
                 stat_file.write(output + '\n')
