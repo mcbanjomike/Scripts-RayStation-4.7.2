@@ -3027,7 +3027,7 @@ def crane_kbp_write_results_to_file(plan_data,plan,beamset,predicted_vol,initial
     
     
     #Print
-    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\Crane KBP Clinique.txt'
+    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\Crane KBP Plan Initial.txt'
     file_exists = os.path.exists(output_file_path)
     with open(output_file_path, 'a') as output_file:
         if not file_exists:
@@ -3035,6 +3035,92 @@ def crane_kbp_write_results_to_file(plan_data,plan,beamset,predicted_vol,initial
         output_file.write(result_text)
  
  
+ 
+  
+def crane_kbp_write_final_results_to_file(rx,nb_fx,ptv_name):
+    #Three elements to write to file:
+    #   - demographic information (patient name, plan, beamset, PTV names, doses, technique used, nb beams, nb segments...)
+    #   - predicted results (skipped since we have those in the other file)
+    #   - obtained results
+    patient = lib.get_current_patient()
+    exam = lib.get_current_examination()
+    plan = lib.get_current_plan()
+    beamset = lib.get_current_beamset() 
+    
+    result_text = ""    
+    site = ptv_name.split()[1]
+    rx = rx*100 #Convert to cGy
+    
+    #Get PTV coverage
+    cov = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=ptv_name, DoseValues=[rx/nb_fx])
+    ptv_coverage = [cov[0],'NA','NA']
+    
+    #Pad out arrays if necessary (to prevent crashes during printing)
+    ptv_names = [ptv_name,'NA','NA']     
+    
+    #Demographic information
+    header = 'Nom du patient,No. HMR,Nom plan,Nom beamset,'
+    result_text += patient.PatientName + ',' + patient.PatientID + ',' + plan.Name + ',' + beamset.DicomPlanLabel + ','
+    header += 'Nom PTV 1,Rx PTV1 (cGy),Nom PTV 2,Rx PTV2 (cGy),Nom PTV 3,Rx PTV3 (cGy),'
+    result_text += "%s,%d,%s,%s,%s,%s," % (ptv_names[0],rx,ptv_names[1],'NA',ptv_names[2],'NA')
+    header += 'Technique,'
+    result_text += 'NA' + ','
+    
+    #Predicted volumes
+    header += 'Cerv-PTV V100 prédit (cc),Cerv-PTV V90 prédit (cc),Cerv-PTV V80 prédit (cc),Cerv-PTV V70 prédit (cc),Cerv-PTV V60 prédit (cc),Cerv-PTV V50 prédit (cc),Cerv-PTV V40 prédit (cc),'
+    result_text += "NA,NA,NA,NA,NA,NA,NA,"
+    #result_text += "%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f," % (predicted_vol[0],predicted_vol[1],predicted_vol[2],predicted_vol[3],predicted_vol[4],predicted_vol[5],predicted_vol[6])
+    
+    #Evaluate plan
+    ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_name].GetRoiVolume() 
+    body_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries["BodyRS"].GetRoiVolume() 
+    brain_minus_ptv_vol = patient.PatientModel.StructureSets[exam.Name].RoiGeometries["CERVEAU-PTV_"+site].GetRoiVolume() 
+    
+    dose_in_brain = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName="CERVEAU-PTV_"+site, DoseValues=[rx/nb_fx,rx*0.9/nb_fx,rx*0.8/nb_fx,rx*0.7/nb_fx,rx*0.6/nb_fx,rx*0.5/nb_fx,rx*0.4/nb_fx,1000/nb_fx,1200/nb_fx])
+    dose_in_body = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName="BodyRS", DoseValues=[rx/nb_fx])
+    dmax = beamset.FractionDose.GetDoseAtRelativeVolumes(RoiName="BodyRS",RelativeVolumes = [0.03/body_vol])
+    max_in_body = dmax[0] * nb_fx / 100.0
+    
+    num_segments = 0
+    num_beams = 0
+    total_mu = 0
+    for beam in beamset.Beams:
+        num_beams += 1
+        total_mu += beam.BeamMU
+        for segment in beam.Segments:         
+            num_segments += 1
+    
+    #CERVEAU-PTV v100/V90...V40 in cc
+    header += 'Cerv-PTV V100 obtenu (cc),Cerv-PTV V90 obtenu (cc),Cerv-PTV V80 obtenu (cc),Cerv-PTV V70 obtenu (cc),Cerv-PTV V60 obtenu (cc),Cerv-PTV V50 obtenu (cc),Cerv-PTV V40 obtenu (cc),'
+    result_text += '%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,' % (dose_in_brain[0]*brain_minus_ptv_vol,dose_in_brain[1]*brain_minus_ptv_vol,dose_in_brain[2]*brain_minus_ptv_vol,dose_in_brain[3]*brain_minus_ptv_vol,dose_in_brain[4]*brain_minus_ptv_vol,dose_in_brain[5]*brain_minus_ptv_vol,dose_in_brain[6]*brain_minus_ptv_vol)
+    
+    #V10 and V12 in cc
+    header += 'V10 obtenu (cc),V12 obtenu (cc),'
+    result_text += '%.2f,%.2f,' % (dose_in_brain[7]*brain_minus_ptv_vol,dose_in_brain[8]*brain_minus_ptv_vol)
+    
+    #PTV coverage before and after scaling
+    header += 'Couverture PTV1,Couverture PTV2,Couverture PTV3,Couv PTV1 avant scaling,Couv PTV2 avant scaling,Couv PTV3 avant scaling,'
+    result_text += "NA,NA,NA,NA,NA,NA,"
+    #result_text += '%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,' % (ptv_coverage[0]*100,ptv_coverage[1]*100,ptv_coverage[2]*100,initial_ptv_cov[0]*100,initial_ptv_cov[1]*100,initial_ptv_cov[2]*100)             
+    
+    #Max dose and conformity index
+    header += 'Max dans BodyRS,Indice de conformité,'
+    result_text += '%.2f,%.2f,' % (max_in_body,(dose_in_body[0]*body_vol)/ptv_vol)
+    
+    #Number of segments   
+    header += 'Nb de faisceaux,Nb de segments,Nb de UM\n'
+    result_text += '%d,%d,%.2f\n' % (num_beams,num_segments,total_mu)
+    
+    
+    #Print
+    output_file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\Statistiques\Crane KBP Plan Final.txt'
+    file_exists = os.path.exists(output_file_path)
+    with open(output_file_path, 'a') as output_file:
+        if not file_exists:
+            output_file.write(header) #Only want to write the header if we're starting a new file
+        output_file.write(result_text)
+ 
+  
 def add_custom_max_doses(custom_max,plan,plan_opt=0):
     if len(custom_max) > 0:
         for set in custom_max:

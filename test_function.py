@@ -39,6 +39,7 @@ import message
 import verification
 import statistics
 import time
+import finalisation_window
 
 import crane2ptv
 
@@ -84,6 +85,23 @@ def test_MA():
     #statistics.auto_collect_crane_stats(startpoint=60,endpoint=999,min_vol=3.999)
     #statistics.batch_autoplan_crane(startpoint=1,endpoint=11,min_vol=1.0)
     #statistics.single_autoplan_crane()
+    
+    original_beamset_name = 'A1 IMRT'
+    site = 'Crâne'
+    rx_dose = 1800
+    nb_fx = 1
+    ptv_name = 'PTV A1 18Gy'
+    color = "Red"
+    
+    
+    
+    finalisation_window.finalize_beamset(original_beamset_name, rx_dose, nb_fx, site, ptv_name, color, skip_oars = False)
+    
+    
+    
+    
+    #Code for switching to a new machine and recalculating dose
+    """
     try:
         plan = patient.CopyPlan(PlanName="Pinnacle", NewPlanName="TestSyn")
     except:
@@ -118,6 +136,7 @@ def test_MA():
         pass
     ui.TabControl_ToolBar.ToolBarGroup['FINAL DOSE'].Button_FinalDose.Click()
     time.sleep(6)     
+    """
     
     
     #launcher.crane_launcher()
