@@ -496,7 +496,10 @@ def auto_opt_prostate():
     plan.PlanOptimizations[beamset.Number-1].RunOptimization()
   
     #Get DVH values for chosen ROI
-    roi_name = "RECTUM"
+    if roi.roi_exists("RECTUM"):
+        roi_name = "RECTUM"
+    else:
+        roi_name = "Rectum"
 
     #Adjust opitimization objectives to reflect obtained DVH values
     for objective in plan.PlanOptimizations[beamset.Number-1].Objective.ConstituentFunctions:
@@ -614,7 +617,9 @@ def prostate_A1_rois(plan_data):
         if roi.roi_exists('PTV_7800'):
             roi.set_roi_type('PTV_7800', 'Ptv', 'Target')
         if roi.roi_exists('PTV_3625'):
-            roi.set_roi_type('PTV_3625', 'Ptv', 'Target')            
+            roi.set_roi_type('PTV_3625', 'Ptv', 'Target')          
+        if roi.roi_exists('PTV_6200'):
+            roi.set_roi_type('PTV_6200', 'Ptv', 'Target')                    
     
     
     # Create RECTUM+3mm
@@ -656,8 +661,10 @@ def prostate_A1_add_plan_and_beamset(plan_data):
     if plan_data['plan_type'] == 'Prostate PACE':
         if plan_data['rx_dose'] == 7800:
             ptv_name = 'PTV_7800'
-        else:
+        elif plan_data['rx_dose'] == 3625:
             ptv_name = 'PTV_3625'
+        else:
+            ptv_name = 'PTV_6200'
     else:
         ptv_name = 'PTV A1'
 

@@ -781,11 +781,11 @@ def generate_BodyRS_plus_Table(threshold=-750, struct=0, planche_seulement=False
             retval_0.SetAsExternal()
 
     # Remove holes from external contour prior to optimization (not possible in RayStation 4.0)
-    if lib.check_version(4.7):
-        if planche_seulement is False:
-            patient.PatientModel.StructureSets[struct].SimplifyContours(RoiNames=["BodyRS+Table"], RemoveHoles3D=True)
-        else:
-            patient.PatientModel.StructureSets[struct].SimplifyContours(RoiNames=["BodyRS"], RemoveHoles3D=True)
+    #if lib.check_version(4.7):
+    if planche_seulement is False:
+        patient.PatientModel.StructureSets[struct].SimplifyContours(RoiNames=["BodyRS+Table"], RemoveHoles3D=True)
+    else:
+        patient.PatientModel.StructureSets[struct].SimplifyContours(RoiNames=["BodyRS"], RemoveHoles3D=True)
 
 
 def generate_BodyRS_using_threshold():

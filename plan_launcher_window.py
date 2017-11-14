@@ -325,6 +325,7 @@ def plan_launcher():
                 self.comboBoxRx.Items.Add("37.5Gy-15")
                 self.comboBoxRx.Items.Add("PACE 78Gy-39")
                 self.comboBoxRx.Items.Add("PACE 36.25Gy-5")
+                self.comboBoxRx.Items.Add("PACE 62Gy-20")
                 self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("80Gy-40")
                 self.Reminder.Text = "Pour les plans de prostate, le nom du site est\nchoisi de façon automatique (donc la boîte\nNom du site sera ignorée.)"
                 self.check1.Text = "Auto-optimisation initial"
@@ -358,6 +359,10 @@ def plan_launcher():
                     self.Label2.Text = "Source pour PTV A1: PTV_3625"  
                     self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("PACE 36.25Gy-5")
                     PACE = True
+                elif 'PTV_6200' in roi_names:
+                    self.Label2.Text = "Source pour PTV A1: PTV_6200"  
+                    self.comboBoxRx.SelectedIndex = self.comboBoxRx.FindStringExact("PACE 62Gy-20")
+                    PACE = True                
                 else:
                     self.Label2.Text = "Attention: Aucun ROI source trouvé pour le PTV A1!"     
                     self.Label2.ForeColor = Color.Red     
@@ -445,7 +450,8 @@ def plan_launcher():
                 else:
                     self.Label4.Text = "Aucun POI trouvé pour l'isocentre"
                     self.Label4.ForeColor = Color.Red    
-                    
+ 
+ 
             elif self.sitecombo.Text == "Crâne 2 niveaux":     
                 self.check1.Checked = True  #Double optimization
                 #Identify the PTV
@@ -784,7 +790,9 @@ def plan_launcher():
                     if roi.roi_exists("PTV_7800"):
                         patient.PatientModel.RegionsOfInterest["PTV_7800"].Name = "PTV A1 78Gy"
                     if roi.roi_exists("PTV_3625"):
-                        patient.PatientModel.RegionsOfInterest["PTV_3625"].Name = "PTV A1 36.25Gy"                        
+                        patient.PatientModel.RegionsOfInterest["PTV_3625"].Name = "PTV A1 36.25Gy"      
+                    if roi.roi_exists("PTV_6200"):
+                        patient.PatientModel.RegionsOfInterest["PTV_6200"].Name = "PTV A1 62Gy"                         
                     
                 # Auto optimization if requested by user    
                 if self.check1.Checked:

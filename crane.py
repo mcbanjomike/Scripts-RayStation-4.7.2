@@ -288,7 +288,10 @@ def optimize_collimator_angles():
     ui = get_current("ui")
     beamset = lib.get_current_beamset() 
     
-    ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
+    if lib.check_version(4.7): 
+        ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
+    elif lib.check_version(4.6): 
+        ui.MenuItem[4].Button_PlanDesign.Click() #Select Plan Design tab
     ui.TabControl_Modules.TabItem['3D-CRT Beam Design'].Select()
     #ui.TabControl_ToolBar.ToolBarGroup['TREAT AND PROTECT'].Button_ConformBeamMLC.Click()
     ui.Workspace.TabControl['Beams'].TabItem['Beams'].Select()
@@ -2637,7 +2640,10 @@ def crane_stereo_kbp_add_3DC_plan(plan_data):
     ui = get_current("ui")
     # We have to save before selecting the plan
     patient.Save()
-    ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
+    if lib.check_version(4.7): 
+        ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
+    elif lib.check_version(4.6): 
+        ui.MenuItem[4].Button_PlanDesign.Click() #Select Plan Design tab
     ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
     ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.Popup.ComboBoxItem[name].Select()  
     ui.SelectionBar.ComboBox_TreatmentPlanCollectionView.ToggleButton.Click()
@@ -2685,7 +2691,10 @@ def crane_stereo_kbp_add_3DC_plan(plan_data):
     
 def crane_stereo_convert_3DC_IMRT(plan,beamset):
     ui = get_current("ui")
-    ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
+    if lib.check_version(4.7): 
+        ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
+    elif lib.check_version(4.6): 
+        ui.MenuItem[4].Button_PlanDesign.Click() #Select Plan Design tab
     ui.TabControl_Modules.TabItem['Plan Setup'].Select()
     ui.TabControl_ToolBar.ToolBarGroup['PLAN PREPARATION'].Button_EditPlan.Click()
     ui.TabControl.TreatmentSetup.TreatmentSetup2.ComboBox_AvailableTreatmentTechniques.ToggleButton.Click()
