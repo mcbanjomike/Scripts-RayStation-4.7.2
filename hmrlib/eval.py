@@ -44,33 +44,34 @@ def add_clinical_goal(RoiName, GoalValue, GoalCriteria, GoalType, Volume, IsComp
 
     """
 
-    if lib.check_version(4.7):
+    #if lib.check_version(4.7):
         # Convert old-style arguments into args compatible with RayStation 4.7.2
-        if GoalType == 'DoseAtVolume':
-            AcceptanceLevel = GoalValue
-            ParameterValue = Volume / 100.0
-        elif GoalType == 'DoseAtAbsoluteVolume':
-            AcceptanceLevel = GoalValue
-            ParameterValue = Volume
-        if GoalType == 'VolumeAtDose':
-            ParameterValue = GoalValue
-            AcceptanceLevel = Volume / 100.0
-        elif GoalType == 'AbsoluteVolumeAtDose':
-            ParameterValue = GoalValue
-            AcceptanceLevel = Volume
-        elif GoalType == 'AverageDose':
-            ParameterValue = Volume
-            AcceptanceLevel = GoalValue
+    if GoalType == 'DoseAtVolume':
+        AcceptanceLevel = GoalValue
+        ParameterValue = Volume / 100.0
+    elif GoalType == 'DoseAtAbsoluteVolume':
+        AcceptanceLevel = GoalValue
+        ParameterValue = Volume
+    if GoalType == 'VolumeAtDose':
+        ParameterValue = GoalValue
+        AcceptanceLevel = Volume / 100.0
+    elif GoalType == 'AbsoluteVolumeAtDose':
+        ParameterValue = GoalValue
+        AcceptanceLevel = Volume
+    elif GoalType == 'AverageDose':
+        ParameterValue = Volume
+        AcceptanceLevel = GoalValue
 
-        if plan is None:
-            plan = lib.get_current_plan()
+    if plan is None:
+        plan = lib.get_current_plan()
 
-        if roi.roi_exists(RoiName):
-            try:  # In case an identical clinical goal already exists
-                plan.TreatmentCourse.EvaluationSetup.AddClinicalGoal(RoiName=RoiName, GoalCriteria=GoalCriteria, GoalType=GoalType, AcceptanceLevel=AcceptanceLevel,
-                                                                     ParameterValue=ParameterValue, IsComparativeGoal=IsComparativeGoal)
-            except:
-                logger.warning('Identical clinical goal already exists')
+    if roi.roi_exists(RoiName):
+        try:  # In case an identical clinical goal already exists
+            plan.TreatmentCourse.EvaluationSetup.AddClinicalGoal(RoiName=RoiName, GoalCriteria=GoalCriteria, GoalType=GoalType, AcceptanceLevel=AcceptanceLevel,
+                                                                 ParameterValue=ParameterValue, IsComparativeGoal=IsComparativeGoal)
+        except:
+            logger.warning('Identical clinical goal already exists')
+    """
     else:  # RayStation 4.0
         if 'Absolute' in GoalType:
             AbsoluteGoalVolume = Volume
@@ -94,6 +95,7 @@ def add_clinical_goal(RoiName, GoalValue, GoalCriteria, GoalType, Volume, IsComp
             else:
                 logger.exception(e)
                 raise
+    """
 
 
 def _add_isodose_line(dose, color):

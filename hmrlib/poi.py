@@ -239,23 +239,23 @@ def place_prescription_point(target_fraction_dose, ptv_name, poi_name, beamset=N
         initial_point = None
         # Find contour point on a slice close to PTV center
         for c in patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_name].PrimaryShape.Contours:
-            if lib.check_version(4.7):
-                if c[0].z < ptv_center.z + slice_width and c[0].z > ptv_center.z - slice_width:
-                    initial_point = lib.RSPoint(c[0].x, c[0].y, c[0].z)
-                    break
-            else:
-                if c.ContourData[0].z < ptv_center.z + slice_width and c.ContourData[0].z > ptv_center.z - slice_width:
-                    initial_point = lib.RSPoint(c.ContourData[0].x, c.ContourData[0].y, c.ContourData[0].z)
-                    break
+            #if lib.check_version(4.7):
+            if c[0].z < ptv_center.z + slice_width and c[0].z > ptv_center.z - slice_width:
+                initial_point = lib.RSPoint(c[0].x, c[0].y, c[0].z)
+                break
+            #else:
+            #    if c.ContourData[0].z < ptv_center.z + slice_width and c.ContourData[0].z > ptv_center.z - slice_width:
+            #        initial_point = lib.RSPoint(c.ContourData[0].x, c.ContourData[0].y, c.ContourData[0].z)
+            #        break
 
         if initial_point is None:
             logger.info('Could not find a point on the same slice as the ROi center. Disjoint/noncoplanar PTV?')
             logger.info('Trying with first point in contour shape.')
             c = patient.PatientModel.StructureSets[exam.Name].RoiGeometries[ptv_name].PrimaryShape.Contours[0]
-            if lib.check_version(4.7):
-                initial_point = lib.RSPoint(c[0].x, c[0].y, c[0].z)
-            else:
-                initial_point = lib.RSPoint(c.ContourData[0].x, c.ContourData[0].y, c.ContourData[0].z)
+            #if lib.check_version(4.7):
+            initial_point = lib.RSPoint(c[0].x, c[0].y, c[0].z)
+            #else:
+            #    initial_point = lib.RSPoint(c.ContourData[0].x, c.ContourData[0].y, c.ContourData[0].z)
 
         logger.info('Initial point = %s cm', initial_point)
 

@@ -8078,3 +8078,985 @@ SystemError: Invalid objectHandle.
 2017-11-02 09:27:16,883 - hmrlib - INFO - [hmr30489 - ALLARD^GINETTE (1720511) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
 2017-11-02 09:27:16,910 - hmrlib - INFO - [hmr30489 - ALLARD^GINETTE (1720511) - CT 1 - <No plan selected>/<No beamset selected>] End of script outils_planificateur.py [execution time = 0:00:03.487000]
 2017-11-02 09:27:16,943 - hmrlib - INFO - [hmr30489 - ALLARD^GINETTE (1720511) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:20:30,898 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:20:31,059 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-11-09 14:20:31,086 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:20:31,617 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-11-09 14:20:32,091 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-11-09 14:20:32,614 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-11-09 14:20:33,106 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-11-09 14:20:33,553 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV V 60 is NOT approved.
+2017-11-09 14:20:33,693 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV I 60 is NOT approved.
+2017-11-09 14:20:33,832 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVA 45 is NOT approved.
+2017-11-09 14:20:33,966 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-11-09 14:20:34,129 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COLON is NOT approved.
+2017-11-09 14:20:34,281 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-11-09 14:20:34,419 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI DUODENUM is NOT approved.
+2017-11-09 14:20:34,545 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI ESTOMAC is NOT approved.
+2017-11-09 14:20:34,678 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE EXPI is NOT approved.
+2017-11-09 14:20:34,869 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE INSPI is NOT approved.
+2017-11-09 14:20:35,060 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GRELE is NOT approved.
+2017-11-09 14:20:35,193 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-11-09 14:20:35,316 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-11-09 14:20:35,441 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-11-09 14:20:35,676 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PEAU is NOT approved.
+2017-11-09 14:20:35,867 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN GCHE is NOT approved.
+2017-11-09 14:20:36,002 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN DRT is NOT approved.
+2017-11-09 14:20:36,133 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv II prechimio is NOT approved.
+2017-11-09 14:20:36,269 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv I prechimio is NOT approved.
+2017-11-09 14:20:36,419 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv V prechimio is NOT approved.
+2017-11-09 14:20:36,585 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVA prechimio is NOT approved.
+2017-11-09 14:20:36,719 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVB prechimio is NOT approved.
+2017-11-09 14:20:36,847 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv II is NOT approved.
+2017-11-09 14:20:36,974 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv V is NOT approved.
+2017-11-09 14:20:37,101 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv I is NOT approved.
+2017-11-09 14:20:37,231 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVA is NOT approved.
+2017-11-09 14:20:37,362 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVB is NOT approved.
+2017-11-09 14:20:37,495 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVB 30 is NOT approved.
+2017-11-09 14:20:37,632 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV II 60 is NOT approved.
+2017-11-09 14:20:37,772 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV60 is NOT approved.
+2017-11-09 14:20:37,914 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV60 is NOT approved.
+2017-11-09 14:20:56,395 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:20:56,422 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:00:25.655000]
+2017-11-09 14:20:56,444 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:21:52,450 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:21:52,575 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-11-09 14:21:52,599 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:21:53,140 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-11-09 14:21:53,277 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-11-09 14:21:53,396 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-11-09 14:21:53,514 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-11-09 14:21:53,633 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV V 60 is NOT approved.
+2017-11-09 14:21:53,757 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV I 60 is NOT approved.
+2017-11-09 14:21:53,876 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVA 45 is NOT approved.
+2017-11-09 14:21:53,993 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-11-09 14:21:54,110 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COLON is NOT approved.
+2017-11-09 14:21:54,232 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-11-09 14:21:54,353 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI DUODENUM is NOT approved.
+2017-11-09 14:21:54,468 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI ESTOMAC is NOT approved.
+2017-11-09 14:21:54,585 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE EXPI is NOT approved.
+2017-11-09 14:21:54,707 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE INSPI is NOT approved.
+2017-11-09 14:21:54,829 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GRELE is NOT approved.
+2017-11-09 14:21:54,945 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-11-09 14:21:55,068 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-11-09 14:21:55,188 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-11-09 14:21:55,307 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI vide_PEAU is NOT approved.
+2017-11-09 14:21:55,476 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN GCHE is NOT approved.
+2017-11-09 14:21:55,596 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN DRT is NOT approved.
+2017-11-09 14:21:55,719 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv II prechimio is NOT approved.
+2017-11-09 14:21:55,844 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv I prechimio is NOT approved.
+2017-11-09 14:21:55,976 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv V prechimio is NOT approved.
+2017-11-09 14:21:56,121 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVA prechimio is NOT approved.
+2017-11-09 14:21:56,246 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVB prechimio is NOT approved.
+2017-11-09 14:21:56,371 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv II is NOT approved.
+2017-11-09 14:21:56,497 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv V is NOT approved.
+2017-11-09 14:21:56,638 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv I is NOT approved.
+2017-11-09 14:21:56,762 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVA is NOT approved.
+2017-11-09 14:21:56,892 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVB is NOT approved.
+2017-11-09 14:21:57,022 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVB 30 is NOT approved.
+2017-11-09 14:21:57,143 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV II 60 is NOT approved.
+2017-11-09 14:21:57,270 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV60 is NOT approved.
+2017-11-09 14:21:57,391 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV is NOT approved.
+2017-11-09 14:22:08,739 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-11-09 14:22:08,797 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-11-09 14:22:09,136 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-11-09 14:22:09,222 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-11-09 14:22:09,299 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-11-09 14:22:09,608 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-11-09 14:22:09,704 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-11-09 14:22:09,817 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-11-09 14:22:09,905 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-11-09 14:22:09,977 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-11-09 14:22:10,084 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-11-09 14:22:10,172 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-11-09 14:22:10,266 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-11-09 14:22:10,356 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY-5mm" set as Organ
+2017-11-09 14:22:10,430 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY-5mm" set as OrganAtRisk
+2017-11-09 14:22:10,529 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV V 60 is NOT approved.
+2017-11-09 14:22:10,613 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV V 60" set as Ptv
+2017-11-09 14:22:10,688 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV V 60" set as Target
+2017-11-09 14:22:10,783 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV I 60 is NOT approved.
+2017-11-09 14:22:10,871 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV I 60" set as Ptv
+2017-11-09 14:22:10,947 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV I 60" set as Target
+2017-11-09 14:22:11,055 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVA 45 is NOT approved.
+2017-11-09 14:22:11,144 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV IVA 45" set as Ptv
+2017-11-09 14:22:11,221 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV IVA 45" set as Target
+2017-11-09 14:22:11,310 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-11-09 14:22:11,395 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-11-09 14:22:11,470 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-11-09 14:22:11,565 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COLON is NOT approved.
+2017-11-09 14:22:11,650 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COLON" set as Organ
+2017-11-09 14:22:11,723 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COLON" set as OrganAtRisk
+2017-11-09 14:22:11,841 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-11-09 14:22:11,924 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-11-09 14:22:11,999 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-11-09 14:22:12,092 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI DUODENUM is NOT approved.
+2017-11-09 14:22:12,176 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "DUODENUM" set as Organ
+2017-11-09 14:22:12,250 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "DUODENUM" set as OrganAtRisk
+2017-11-09 14:22:12,350 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI ESTOMAC is NOT approved.
+2017-11-09 14:22:12,437 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ESTOMAC" set as Organ
+2017-11-09 14:22:12,511 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ESTOMAC" set as OrganAtRisk
+2017-11-09 14:22:12,609 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE EXPI is NOT approved.
+2017-11-09 14:22:12,693 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "FOIE EXPI" set as Organ
+2017-11-09 14:22:12,770 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "FOIE EXPI" set as OrganAtRisk
+2017-11-09 14:22:12,871 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE INSPI is NOT approved.
+2017-11-09 14:22:12,955 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "FOIE INSPI" set as Organ
+2017-11-09 14:22:13,032 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "FOIE INSPI" set as OrganAtRisk
+2017-11-09 14:22:13,128 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GRELE is NOT approved.
+2017-11-09 14:22:13,213 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GRELE" set as Organ
+2017-11-09 14:22:13,288 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GRELE" set as OrganAtRisk
+2017-11-09 14:22:13,373 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-11-09 14:22:13,457 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-11-09 14:22:13,529 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-11-09 14:22:13,634 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-11-09 14:22:13,717 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-11-09 14:22:13,791 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-11-09 14:22:13,897 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-11-09 14:22:13,979 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-11-09 14:22:14,052 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-11-09 14:22:14,150 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI vide_vide_PEAU is NOT approved.
+2017-11-09 14:22:14,236 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "vide_vide_PEAU" set as Organ
+2017-11-09 14:22:14,309 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "vide_vide_PEAU" set as OrganAtRisk
+2017-11-09 14:22:14,406 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN GCHE is NOT approved.
+2017-11-09 14:22:14,494 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "REIN GCHE" set as Organ
+2017-11-09 14:22:14,583 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "REIN GCHE" set as OrganAtRisk
+2017-11-09 14:22:14,723 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN DRT is NOT approved.
+2017-11-09 14:22:14,807 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "REIN DRT" set as Organ
+2017-11-09 14:22:14,884 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "REIN DRT" set as OrganAtRisk
+2017-11-09 14:22:14,989 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv II prechimio is NOT approved.
+2017-11-09 14:22:15,074 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv II prechimio" set as Organ
+2017-11-09 14:22:15,150 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv II prechimio" set as OrganAtRisk
+2017-11-09 14:22:15,261 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv I prechimio is NOT approved.
+2017-11-09 14:22:15,347 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv I prechimio" set as Organ
+2017-11-09 14:22:15,421 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv I prechimio" set as OrganAtRisk
+2017-11-09 14:22:15,524 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv V prechimio is NOT approved.
+2017-11-09 14:22:15,609 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv V prechimio" set as Organ
+2017-11-09 14:22:15,684 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv V prechimio" set as OrganAtRisk
+2017-11-09 14:22:15,782 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVA prechimio is NOT approved.
+2017-11-09 14:22:15,865 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv IVA prechimio" set as Organ
+2017-11-09 14:22:15,941 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv IVA prechimio" set as OrganAtRisk
+2017-11-09 14:22:16,038 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVB prechimio is NOT approved.
+2017-11-09 14:22:16,121 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv IVB prechimio" set as Organ
+2017-11-09 14:22:16,196 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv IVB prechimio" set as OrganAtRisk
+2017-11-09 14:22:16,294 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv II is NOT approved.
+2017-11-09 14:22:16,381 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv II" set as Gtv
+2017-11-09 14:22:16,460 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv II" set as Target
+2017-11-09 14:22:16,547 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv V is NOT approved.
+2017-11-09 14:22:16,635 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv V" set as Gtv
+2017-11-09 14:22:16,712 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv V" set as Target
+2017-11-09 14:22:16,821 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv I is NOT approved.
+2017-11-09 14:22:16,907 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv I" set as Gtv
+2017-11-09 14:22:16,984 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv I" set as Target
+2017-11-09 14:22:17,084 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVA is NOT approved.
+2017-11-09 14:22:17,172 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv IVA" set as Gtv
+2017-11-09 14:22:17,247 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv IVA" set as Target
+2017-11-09 14:22:17,352 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVB is NOT approved.
+2017-11-09 14:22:17,440 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv IVB" set as Gtv
+2017-11-09 14:22:17,520 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv IVB" set as Target
+2017-11-09 14:22:17,615 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVB 30 is NOT approved.
+2017-11-09 14:22:17,704 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV IVB 30" set as Ptv
+2017-11-09 14:22:17,783 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV IVB 30" set as Target
+2017-11-09 14:22:17,882 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV II 60 is NOT approved.
+2017-11-09 14:22:17,967 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV II 60" set as Ptv
+2017-11-09 14:22:18,044 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV II 60" set as Target
+2017-11-09 14:22:18,142 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV60 is NOT approved.
+2017-11-09 14:22:18,228 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV60" set as Ptv
+2017-11-09 14:22:18,303 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV60" set as Target
+2017-11-09 14:22:18,399 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV is NOT approved.
+2017-11-09 14:22:18,487 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV" set as Gtv
+2017-11-09 14:22:18,564 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV" set as Target
+2017-11-09 14:22:55,771 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:22:55,928 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:22:55,982 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:22:56,035 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:22:56,091 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:22:56,145 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:22:56,348 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 111, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:22:56,529 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:22:56,793 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:22:56,996 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:22:57,188 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:22:57,407 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:22:57,636 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:22:57,846 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:22:58,060 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:22:58,266 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:22:58,420 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-11-09 14:22:58,452 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-11-09 14:22:58,531 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-11-09 14:22:58,596 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-11-09 14:22:58,658 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-11-09 14:22:58,715 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-11-09 14:22:58,778 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-11-09 14:22:59,547 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Method 'AddClinicalGoal' was invoked with incorrect argument list.
+Please check the parameter(s): GoalValue, GoalVolume, AbsoluteGoalVolume. See help for description.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 86, in add_clinical_goal
+    plan.TreatmentCourse.EvaluationSetup.AddClinicalGoal(RoiName=RoiName, GoalValue=GoalValue, GoalCriteria=GoalCriteria, GoalType=GoalType,
+SystemError: Method 'AddClinicalGoal' was invoked with incorrect argument list.
+Please check the parameter(s): GoalValue, GoalVolume, AbsoluteGoalVolume. See help for description.
+2017-11-09 14:29:10,113 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:29:10,239 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-11-09 14:29:10,265 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:29:10,794 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-11-09 14:29:11,255 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-11-09 14:29:11,699 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-11-09 14:29:12,181 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-11-09 14:29:12,626 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV V 60 is NOT approved.
+2017-11-09 14:29:12,767 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV I 60 is NOT approved.
+2017-11-09 14:29:12,904 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVA 45 is NOT approved.
+2017-11-09 14:29:13,038 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-11-09 14:29:13,201 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COLON is NOT approved.
+2017-11-09 14:29:13,347 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-11-09 14:29:13,483 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI DUODENUM is NOT approved.
+2017-11-09 14:29:13,602 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI ESTOMAC is NOT approved.
+2017-11-09 14:29:13,731 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE EXPI is NOT approved.
+2017-11-09 14:29:13,927 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE INSPI is NOT approved.
+2017-11-09 14:29:14,126 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GRELE is NOT approved.
+2017-11-09 14:29:14,262 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-11-09 14:29:14,384 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-11-09 14:29:14,508 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-11-09 14:29:14,737 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PEAU is NOT approved.
+2017-11-09 14:29:14,974 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN GCHE is NOT approved.
+2017-11-09 14:29:15,101 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN DRT is NOT approved.
+2017-11-09 14:29:15,226 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv II prechimio is NOT approved.
+2017-11-09 14:29:15,350 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv I prechimio is NOT approved.
+2017-11-09 14:29:15,491 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv V prechimio is NOT approved.
+2017-11-09 14:29:15,613 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVA prechimio is NOT approved.
+2017-11-09 14:29:15,732 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVB prechimio is NOT approved.
+2017-11-09 14:29:15,848 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv II is NOT approved.
+2017-11-09 14:29:15,966 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv V is NOT approved.
+2017-11-09 14:29:16,083 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv I is NOT approved.
+2017-11-09 14:29:16,204 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVA is NOT approved.
+2017-11-09 14:29:16,333 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVB is NOT approved.
+2017-11-09 14:29:16,460 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVB 30 is NOT approved.
+2017-11-09 14:29:16,595 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV II 60 is NOT approved.
+2017-11-09 14:29:16,734 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV60 is NOT approved.
+2017-11-09 14:29:16,867 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV60 is NOT approved.
+2017-11-09 14:29:23,987 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:29:24,010 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:00:13.959000]
+2017-11-09 14:29:24,032 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:29:39,334 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:29:39,469 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-11-09 14:29:39,493 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:29:40,015 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-11-09 14:29:40,147 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-11-09 14:29:40,264 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-11-09 14:29:40,382 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-11-09 14:29:40,499 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV V 60 is NOT approved.
+2017-11-09 14:29:40,623 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV I 60 is NOT approved.
+2017-11-09 14:29:40,740 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVA 45 is NOT approved.
+2017-11-09 14:29:40,856 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-11-09 14:29:40,975 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COLON is NOT approved.
+2017-11-09 14:29:41,091 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-11-09 14:29:41,211 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI DUODENUM is NOT approved.
+2017-11-09 14:29:41,327 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI ESTOMAC is NOT approved.
+2017-11-09 14:29:41,444 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE EXPI is NOT approved.
+2017-11-09 14:29:41,560 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE INSPI is NOT approved.
+2017-11-09 14:29:41,679 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GRELE is NOT approved.
+2017-11-09 14:29:41,794 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-11-09 14:29:41,909 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-11-09 14:29:42,024 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-11-09 14:29:42,138 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI vide_PEAU is NOT approved.
+2017-11-09 14:29:42,313 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN GCHE is NOT approved.
+2017-11-09 14:29:42,434 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN DRT is NOT approved.
+2017-11-09 14:29:42,555 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv II prechimio is NOT approved.
+2017-11-09 14:29:42,674 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv I prechimio is NOT approved.
+2017-11-09 14:29:42,798 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv V prechimio is NOT approved.
+2017-11-09 14:29:42,918 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVA prechimio is NOT approved.
+2017-11-09 14:29:43,038 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVB prechimio is NOT approved.
+2017-11-09 14:29:43,156 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv II is NOT approved.
+2017-11-09 14:29:43,277 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv V is NOT approved.
+2017-11-09 14:29:43,394 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv I is NOT approved.
+2017-11-09 14:29:43,514 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVA is NOT approved.
+2017-11-09 14:29:43,641 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVB is NOT approved.
+2017-11-09 14:29:43,767 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVB 30 is NOT approved.
+2017-11-09 14:29:43,886 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV II 60 is NOT approved.
+2017-11-09 14:29:44,011 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV60 is NOT approved.
+2017-11-09 14:29:44,130 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV is NOT approved.
+2017-11-09 14:29:56,113 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-11-09 14:29:56,170 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-11-09 14:29:56,487 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-11-09 14:29:56,575 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-11-09 14:29:56,881 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-11-09 14:29:57,193 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-11-09 14:29:57,293 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-11-09 14:29:57,398 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-11-09 14:29:57,492 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-11-09 14:29:57,569 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-11-09 14:29:57,669 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-11-09 14:29:57,762 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-11-09 14:29:57,866 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-11-09 14:29:57,963 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY-5mm" set as Organ
+2017-11-09 14:29:58,040 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY-5mm" set as OrganAtRisk
+2017-11-09 14:29:58,145 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV V 60 is NOT approved.
+2017-11-09 14:29:58,235 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV V 60" set as Ptv
+2017-11-09 14:29:58,319 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV V 60" set as Target
+2017-11-09 14:29:58,422 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV I 60 is NOT approved.
+2017-11-09 14:29:58,518 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV I 60" set as Ptv
+2017-11-09 14:29:58,600 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV I 60" set as Target
+2017-11-09 14:29:58,722 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVA 45 is NOT approved.
+2017-11-09 14:29:58,818 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV IVA 45" set as Ptv
+2017-11-09 14:29:58,899 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV IVA 45" set as Target
+2017-11-09 14:29:59,010 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-11-09 14:29:59,103 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-11-09 14:29:59,179 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-11-09 14:29:59,299 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COLON is NOT approved.
+2017-11-09 14:29:59,388 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COLON" set as Organ
+2017-11-09 14:29:59,466 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COLON" set as OrganAtRisk
+2017-11-09 14:29:59,569 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-11-09 14:29:59,656 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-11-09 14:29:59,736 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-11-09 14:29:59,851 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI DUODENUM is NOT approved.
+2017-11-09 14:29:59,942 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "DUODENUM" set as Organ
+2017-11-09 14:30:00,021 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "DUODENUM" set as OrganAtRisk
+2017-11-09 14:30:00,126 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI ESTOMAC is NOT approved.
+2017-11-09 14:30:00,217 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ESTOMAC" set as Organ
+2017-11-09 14:30:00,295 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ESTOMAC" set as OrganAtRisk
+2017-11-09 14:30:00,406 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE EXPI is NOT approved.
+2017-11-09 14:30:00,500 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "FOIE EXPI" set as Organ
+2017-11-09 14:30:00,579 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "FOIE EXPI" set as OrganAtRisk
+2017-11-09 14:30:00,687 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE INSPI is NOT approved.
+2017-11-09 14:30:00,777 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "FOIE INSPI" set as Organ
+2017-11-09 14:30:00,859 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "FOIE INSPI" set as OrganAtRisk
+2017-11-09 14:30:00,973 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GRELE is NOT approved.
+2017-11-09 14:30:01,063 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GRELE" set as Organ
+2017-11-09 14:30:01,147 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GRELE" set as OrganAtRisk
+2017-11-09 14:30:01,257 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-11-09 14:30:01,349 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-11-09 14:30:01,429 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-11-09 14:30:01,538 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-11-09 14:30:01,630 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-11-09 14:30:01,711 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-11-09 14:30:01,819 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-11-09 14:30:01,909 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-11-09 14:30:01,989 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-11-09 14:30:02,140 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI vide_vide_PEAU is NOT approved.
+2017-11-09 14:30:02,233 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "vide_vide_PEAU" set as Organ
+2017-11-09 14:30:02,317 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "vide_vide_PEAU" set as OrganAtRisk
+2017-11-09 14:30:02,488 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN GCHE is NOT approved.
+2017-11-09 14:30:02,585 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "REIN GCHE" set as Organ
+2017-11-09 14:30:02,880 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "REIN GCHE" set as OrganAtRisk
+2017-11-09 14:30:03,025 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN DRT is NOT approved.
+2017-11-09 14:30:03,119 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "REIN DRT" set as Organ
+2017-11-09 14:30:03,209 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "REIN DRT" set as OrganAtRisk
+2017-11-09 14:30:03,315 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv II prechimio is NOT approved.
+2017-11-09 14:30:03,413 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv II prechimio" set as Organ
+2017-11-09 14:30:03,494 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv II prechimio" set as OrganAtRisk
+2017-11-09 14:30:03,617 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv I prechimio is NOT approved.
+2017-11-09 14:30:03,712 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv I prechimio" set as Organ
+2017-11-09 14:30:03,791 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv I prechimio" set as OrganAtRisk
+2017-11-09 14:30:03,900 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv V prechimio is NOT approved.
+2017-11-09 14:30:03,993 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv V prechimio" set as Organ
+2017-11-09 14:30:04,081 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv V prechimio" set as OrganAtRisk
+2017-11-09 14:30:04,198 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVA prechimio is NOT approved.
+2017-11-09 14:30:05,041 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv IVA prechimio" set as Organ
+2017-11-09 14:30:05,125 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv IVA prechimio" set as OrganAtRisk
+2017-11-09 14:30:05,243 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVB prechimio is NOT approved.
+2017-11-09 14:30:05,377 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv IVB prechimio" set as Organ
+2017-11-09 14:30:05,464 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv IVB prechimio" set as OrganAtRisk
+2017-11-09 14:30:05,568 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv II is NOT approved.
+2017-11-09 14:30:05,669 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv II" set as Gtv
+2017-11-09 14:30:05,755 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv II" set as Target
+2017-11-09 14:30:05,871 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv V is NOT approved.
+2017-11-09 14:30:05,969 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv V" set as Gtv
+2017-11-09 14:30:06,056 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv V" set as Target
+2017-11-09 14:30:06,167 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv I is NOT approved.
+2017-11-09 14:30:06,266 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv I" set as Gtv
+2017-11-09 14:30:06,352 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv I" set as Target
+2017-11-09 14:30:06,486 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVA is NOT approved.
+2017-11-09 14:30:06,587 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv IVA" set as Gtv
+2017-11-09 14:30:06,675 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv IVA" set as Target
+2017-11-09 14:30:06,810 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVB is NOT approved.
+2017-11-09 14:30:06,902 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv IVB" set as Gtv
+2017-11-09 14:30:06,984 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv IVB" set as Target
+2017-11-09 14:30:07,076 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVB 30 is NOT approved.
+2017-11-09 14:30:07,169 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV IVB 30" set as Ptv
+2017-11-09 14:30:07,250 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV IVB 30" set as Target
+2017-11-09 14:30:07,348 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV II 60 is NOT approved.
+2017-11-09 14:30:07,437 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV II 60" set as Ptv
+2017-11-09 14:30:07,515 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV II 60" set as Target
+2017-11-09 14:30:07,614 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV60 is NOT approved.
+2017-11-09 14:30:07,703 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV60" set as Ptv
+2017-11-09 14:30:07,780 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV60" set as Target
+2017-11-09 14:30:07,878 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV is NOT approved.
+2017-11-09 14:30:07,968 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV" set as Gtv
+2017-11-09 14:30:08,048 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV" set as Target
+2017-11-09 14:30:40,451 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:30:40,532 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:30:40,588 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:30:40,641 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:30:40,693 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:30:40,745 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:30:40,928 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:30:41,109 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:30:41,363 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:30:41,613 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:30:41,876 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:30:42,087 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:30:42,299 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:30:42,518 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:30:42,743 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:30:42,956 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:30:43,173 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-11-09 14:30:43,216 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-11-09 14:30:43,293 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-11-09 14:30:43,356 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-11-09 14:30:43,418 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-11-09 14:30:43,477 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-11-09 14:30:43,541 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-11-09 14:30:44,756 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV A1 60Gy" added.
+2017-11-09 14:30:44,971 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV A1 60Gy" added.
+2017-11-09 14:30:45,123 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV-GTV" added.
+2017-11-09 14:30:45,282 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "Ring_1_0mm" added.
+2017-11-09 14:30:45,439 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "Ring_2_2mm" added.
+2017-11-09 14:30:45,599 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "Ring_3_5mm" added.
+2017-11-09 14:30:45,795 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "Ring_4_20mm" added.
+2017-11-09 14:30:45,964 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-11-09 14:30:46,380 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MOELLE" added.
+2017-11-09 14:30:46,711 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "prv5mmMOELLE" added.
+2017-11-09 14:30:48,283 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COEUR" added.
+2017-11-09 14:30:48,456 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "COEUR" added.
+2017-11-09 14:30:51,887 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OESOPHAGE" added.
+2017-11-09 14:30:53,094 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "ESTOMAC" added.
+2017-11-09 14:30:53,239 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "ESTOMAC" added.
+2017-11-09 14:30:56,035 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "ESTOMAC hors PTV+2cm" added.
+2017-11-09 14:30:57,029 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "DUODENUM" added.
+2017-11-09 14:30:57,175 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "DUODENUM" added.
+2017-11-09 14:30:59,852 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "DUODENUM hors PTV+2cm" added.
+2017-11-09 14:31:03,279 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "GRELE" added.
+2017-11-09 14:31:06,078 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "GRELE hors PTV+2cm" added.
+2017-11-09 14:31:07,231 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COLON" added.
+2017-11-09 14:31:07,378 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "COLON" added.
+2017-11-09 14:31:10,338 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COLON hors PTV+2cm" added.
+2017-11-09 14:31:10,706 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PEAU" added.
+2017-11-09 14:31:13,126 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COTES" added.
+2017-11-09 14:31:13,285 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "COTES hors PTV" added.
+2017-11-09 14:31:16,504 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PAROI hors PTV" added.
+2017-11-09 14:31:17,379 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "OPT FOIE EXPI" added.
+2017-11-09 14:31:17,762 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "REIN DRT" added.
+2017-11-09 14:31:17,945 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "REIN GCHE" added.
+2017-11-09 14:35:25,346 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:35:25,370 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:05:46.105000]
+2017-11-09 14:35:25,391 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:42:03,899 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:42:04,037 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-11-09 14:42:04,063 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:42:04,645 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-11-09 14:42:05,112 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-11-09 14:42:05,578 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-11-09 14:42:06,072 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-11-09 14:42:06,522 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV V 60 is NOT approved.
+2017-11-09 14:42:06,666 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV I 60 is NOT approved.
+2017-11-09 14:42:06,806 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVA 45 is NOT approved.
+2017-11-09 14:42:06,941 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-11-09 14:42:07,118 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COLON is NOT approved.
+2017-11-09 14:42:07,269 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-11-09 14:42:07,406 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI DUODENUM is NOT approved.
+2017-11-09 14:42:07,542 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI ESTOMAC is NOT approved.
+2017-11-09 14:42:07,706 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE EXPI is NOT approved.
+2017-11-09 14:42:07,912 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE INSPI is NOT approved.
+2017-11-09 14:42:08,107 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GRELE is NOT approved.
+2017-11-09 14:42:08,241 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-11-09 14:42:08,368 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-11-09 14:42:08,496 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-11-09 14:42:08,727 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI vide_PEAU is NOT approved.
+2017-11-09 14:42:08,925 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN GCHE is NOT approved.
+2017-11-09 14:42:09,057 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN DRT is NOT approved.
+2017-11-09 14:42:09,188 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv II prechimio is NOT approved.
+2017-11-09 14:42:09,350 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv I prechimio is NOT approved.
+2017-11-09 14:42:09,539 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv V prechimio is NOT approved.
+2017-11-09 14:42:09,670 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVA prechimio is NOT approved.
+2017-11-09 14:42:09,796 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVB prechimio is NOT approved.
+2017-11-09 14:42:09,921 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv II is NOT approved.
+2017-11-09 14:42:10,044 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv V is NOT approved.
+2017-11-09 14:42:10,169 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv I is NOT approved.
+2017-11-09 14:42:10,297 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVA is NOT approved.
+2017-11-09 14:42:10,428 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVB is NOT approved.
+2017-11-09 14:42:10,561 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVB 30 is NOT approved.
+2017-11-09 14:42:10,698 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV II 60 is NOT approved.
+2017-11-09 14:42:10,839 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV60 is NOT approved.
+2017-11-09 14:42:10,974 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV is NOT approved.
+2017-11-09 14:42:20,027 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-11-09 14:42:20,087 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-11-09 14:42:20,594 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-11-09 14:42:20,802 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-11-09 14:42:20,889 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-11-09 14:42:21,215 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-11-09 14:42:21,366 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-11-09 14:42:21,505 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-11-09 14:42:21,629 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-11-09 14:42:21,709 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-11-09 14:42:21,809 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-11-09 14:42:21,906 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-11-09 14:42:22,003 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-11-09 14:42:22,102 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY-5mm" set as Organ
+2017-11-09 14:42:22,184 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY-5mm" set as OrganAtRisk
+2017-11-09 14:42:22,282 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV V 60 is NOT approved.
+2017-11-09 14:42:22,394 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV V 60" set as Ptv
+2017-11-09 14:42:22,476 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV V 60" set as Target
+2017-11-09 14:42:22,578 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV I 60 is NOT approved.
+2017-11-09 14:42:22,671 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV I 60" set as Ptv
+2017-11-09 14:42:22,755 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV I 60" set as Target
+2017-11-09 14:42:22,863 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVA 45 is NOT approved.
+2017-11-09 14:42:22,957 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV IVA 45" set as Ptv
+2017-11-09 14:42:23,038 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV IVA 45" set as Target
+2017-11-09 14:42:23,159 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-11-09 14:42:23,251 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-11-09 14:42:23,324 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-11-09 14:42:23,427 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COLON is NOT approved.
+2017-11-09 14:42:23,513 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COLON" set as Organ
+2017-11-09 14:42:23,595 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COLON" set as OrganAtRisk
+2017-11-09 14:42:23,707 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-11-09 14:42:23,800 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-11-09 14:42:23,880 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-11-09 14:42:23,981 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI DUODENUM is NOT approved.
+2017-11-09 14:42:24,072 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "DUODENUM" set as Organ
+2017-11-09 14:42:24,151 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "DUODENUM" set as OrganAtRisk
+2017-11-09 14:42:24,255 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI ESTOMAC is NOT approved.
+2017-11-09 14:42:24,343 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ESTOMAC" set as Organ
+2017-11-09 14:42:24,424 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ESTOMAC" set as OrganAtRisk
+2017-11-09 14:42:24,544 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE EXPI is NOT approved.
+2017-11-09 14:42:24,634 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "FOIE EXPI" set as Organ
+2017-11-09 14:42:24,717 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "FOIE EXPI" set as OrganAtRisk
+2017-11-09 14:42:24,818 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI FOIE INSPI is NOT approved.
+2017-11-09 14:42:24,910 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "FOIE INSPI" set as Organ
+2017-11-09 14:42:24,990 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "FOIE INSPI" set as OrganAtRisk
+2017-11-09 14:42:25,092 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GRELE is NOT approved.
+2017-11-09 14:42:25,182 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GRELE" set as Organ
+2017-11-09 14:42:25,259 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GRELE" set as OrganAtRisk
+2017-11-09 14:42:25,364 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-11-09 14:42:25,453 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-11-09 14:42:25,530 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-11-09 14:42:25,622 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-11-09 14:42:25,709 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-11-09 14:42:25,788 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-11-09 14:42:25,904 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-11-09 14:42:25,994 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-11-09 14:42:26,070 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-11-09 14:42:26,182 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI vide_vide_PEAU is NOT approved.
+2017-11-09 14:42:26,272 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "vide_vide_PEAU" set as Organ
+2017-11-09 14:42:26,348 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "vide_vide_PEAU" set as OrganAtRisk
+2017-11-09 14:42:26,472 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN GCHE is NOT approved.
+2017-11-09 14:42:26,563 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "REIN GCHE" set as Organ
+2017-11-09 14:42:26,657 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "REIN GCHE" set as OrganAtRisk
+2017-11-09 14:42:26,803 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI REIN DRT is NOT approved.
+2017-11-09 14:42:27,014 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "REIN DRT" set as Organ
+2017-11-09 14:42:27,097 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "REIN DRT" set as OrganAtRisk
+2017-11-09 14:42:27,205 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv II prechimio is NOT approved.
+2017-11-09 14:42:27,303 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv II prechimio" set as Organ
+2017-11-09 14:42:27,428 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv II prechimio" set as OrganAtRisk
+2017-11-09 14:42:27,590 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv I prechimio is NOT approved.
+2017-11-09 14:42:27,685 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv I prechimio" set as Organ
+2017-11-09 14:42:27,766 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv I prechimio" set as OrganAtRisk
+2017-11-09 14:42:27,875 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv V prechimio is NOT approved.
+2017-11-09 14:42:27,974 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv V prechimio" set as Organ
+2017-11-09 14:42:28,059 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv V prechimio" set as OrganAtRisk
+2017-11-09 14:42:28,160 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVA prechimio is NOT approved.
+2017-11-09 14:42:28,310 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv IVA prechimio" set as Organ
+2017-11-09 14:42:28,399 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv IVA prechimio" set as OrganAtRisk
+2017-11-09 14:42:28,501 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI 1-gtv IVB prechimio is NOT approved.
+2017-11-09 14:42:28,600 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "1-gtv IVB prechimio" set as Organ
+2017-11-09 14:42:28,681 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "1-gtv IVB prechimio" set as OrganAtRisk
+2017-11-09 14:42:28,787 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv II is NOT approved.
+2017-11-09 14:42:28,932 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv II" set as Gtv
+2017-11-09 14:42:29,013 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv II" set as Target
+2017-11-09 14:42:29,200 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv V is NOT approved.
+2017-11-09 14:42:29,296 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv V" set as Gtv
+2017-11-09 14:42:29,724 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv V" set as Target
+2017-11-09 14:42:29,828 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv I is NOT approved.
+2017-11-09 14:42:29,927 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv I" set as Gtv
+2017-11-09 14:42:30,012 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv I" set as Target
+2017-11-09 14:42:30,112 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVA is NOT approved.
+2017-11-09 14:42:30,206 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv IVA" set as Gtv
+2017-11-09 14:42:30,288 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv IVA" set as Target
+2017-11-09 14:42:30,416 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI gtv IVB is NOT approved.
+2017-11-09 14:42:30,511 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gtv IVB" set as Gtv
+2017-11-09 14:42:30,595 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gtv IVB" set as Target
+2017-11-09 14:42:30,702 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV IVB 30 is NOT approved.
+2017-11-09 14:42:30,796 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV IVB 30" set as Ptv
+2017-11-09 14:42:30,877 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV IVB 30" set as Target
+2017-11-09 14:42:30,980 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV II 60 is NOT approved.
+2017-11-09 14:42:31,071 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV II 60" set as Ptv
+2017-11-09 14:42:31,169 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV II 60" set as Target
+2017-11-09 14:42:31,261 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV60 is NOT approved.
+2017-11-09 14:42:31,350 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV60" set as Ptv
+2017-11-09 14:42:31,430 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV60" set as Target
+2017-11-09 14:42:31,535 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV is NOT approved.
+2017-11-09 14:42:31,625 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV" set as Gtv
+2017-11-09 14:42:31,701 - hmrlib.roi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV" set as Target
+2017-11-09 14:43:04,916 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:43:05,083 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:43:05,141 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:43:05,199 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:43:05,260 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:43:05,319 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:43:05,465 - hmrlib.eval - ERROR - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-11-09 14:43:05,646 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:43:05,906 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:43:06,112 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:43:06,337 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:43:06,552 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:43:06,768 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:43:07,016 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:43:07,235 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:43:07,487 - hmrlib.poi - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-5.99997863770, 5.29998779297, -4.99994201660)
+2017-11-09 14:43:07,697 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-11-09 14:43:07,731 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-11-09 14:43:07,810 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 60.
+2017-11-09 14:43:07,874 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 100.
+2017-11-09 14:43:07,937 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-11-09 14:43:07,999 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-11-09 14:43:08,064 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-11-09 14:43:09,278 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV A1 60Gy" added.
+2017-11-09 14:43:09,487 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV A1 60Gy" added.
+2017-11-09 14:43:09,640 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV-GTV" added.
+2017-11-09 14:43:09,800 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "Ring_1_0mm" added.
+2017-11-09 14:43:09,959 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "Ring_2_2mm" added.
+2017-11-09 14:43:10,114 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "Ring_3_5mm" added.
+2017-11-09 14:43:10,267 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "Ring_4_20mm" added.
+2017-11-09 14:43:10,423 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-11-09 14:43:10,859 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MOELLE" added.
+2017-11-09 14:43:11,192 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "prv5mmMOELLE" added.
+2017-11-09 14:43:12,835 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COEUR" added.
+2017-11-09 14:43:13,025 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "COEUR" added.
+2017-11-09 14:43:16,549 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OESOPHAGE" added.
+2017-11-09 14:43:17,800 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "ESTOMAC" added.
+2017-11-09 14:43:17,949 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "ESTOMAC" added.
+2017-11-09 14:43:20,861 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "ESTOMAC hors PTV+2cm" added.
+2017-11-09 14:43:21,939 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "DUODENUM" added.
+2017-11-09 14:43:22,129 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "DUODENUM" added.
+2017-11-09 14:43:24,901 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "DUODENUM hors PTV+2cm" added.
+2017-11-09 14:43:28,472 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "GRELE" added.
+2017-11-09 14:43:31,344 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "GRELE hors PTV+2cm" added.
+2017-11-09 14:43:32,551 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COLON" added.
+2017-11-09 14:43:32,709 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "COLON" added.
+2017-11-09 14:43:35,837 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COLON hors PTV+2cm" added.
+2017-11-09 14:43:36,206 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PEAU" added.
+2017-11-09 14:43:38,716 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COTES" added.
+2017-11-09 14:43:38,891 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "COTES hors PTV" added.
+2017-11-09 14:43:42,202 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PAROI hors PTV" added.
+2017-11-09 14:43:43,136 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "OPT FOIE EXPI" added.
+2017-11-09 14:43:43,551 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "REIN DRT" added.
+2017-11-09 14:43:43,758 - hmrlib.optim - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxEud for ROI "REIN GCHE" added.
+2017-11-09 14:48:58,430 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:48:58,452 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:06:54.625000]
+2017-11-09 14:48:58,477 - hmrlib - INFO - [hmr30489 - NICOLO^ALFREDO (1379819) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 14:55:22,432 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-11-09 14:55:22,573 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Starting script crane_launcher.py
+2017-11-09 14:55:22,621 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-11-09 14:56:37,624 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ROI PTV15 is NOT approved.
+2017-11-09 14:56:37,774 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Type of ROI "PTV15" set as Ptv
+2017-11-09 14:56:37,915 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] OrganType of ROI "PTV15" set as Target
+2017-11-09 14:56:38,114 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ROI PTV2 is NOT approved.
+2017-11-09 14:56:38,281 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Type of ROI "PTV2" set as Ptv
+2017-11-09 14:56:38,426 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] OrganType of ROI "PTV2" set as Target
+2017-11-09 14:56:39,234 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 14:56:39,499 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 14:56:39,728 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 14:56:39,985 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 14:56:40,229 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 14:56:40,444 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 14:56:40,687 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 14:56:40,936 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 14:56:41,197 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:51:04,644 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-11-09 15:51:04,805 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Starting script crane_launcher.py
+2017-11-09 15:51:04,863 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-11-09 15:54:35,325 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ROI PTV15 is NOT approved.
+2017-11-09 15:54:35,465 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Type of ROI "PTV15" set as Ptv
+2017-11-09 15:54:35,588 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] OrganType of ROI "PTV15" set as Target
+2017-11-09 15:54:35,764 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ROI PTV2 is NOT approved.
+2017-11-09 15:54:35,934 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Type of ROI "PTV2" set as Ptv
+2017-11-09 15:54:36,049 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] OrganType of ROI "PTV2" set as Target
+2017-11-09 15:54:36,711 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:54:36,958 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:54:37,164 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:54:37,384 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:54:37,626 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:54:37,849 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:54:38,063 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:54:38,282 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:54:38,500 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:55:56,103 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 15:55:56,258 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] Starting script crane_launcher.py
+2017-11-09 15:55:56,290 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 15:57:16,648 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV15 is NOT approved.
+2017-11-09 15:57:16,756 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV15" set as Ptv
+2017-11-09 15:57:16,849 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV15" set as Target
+2017-11-09 15:57:16,970 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV2 is NOT approved.
+2017-11-09 15:57:17,076 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV2" set as Ptv
+2017-11-09 15:57:17,167 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV2" set as Target
+2017-11-09 15:57:20,001 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:57:20,252 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:57:20,501 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:57:20,746 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:57:20,959 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:57:21,199 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:57:21,464 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:57:21,733 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:57:21,994 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 15:59:00,332 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 15:59:00,490 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] Starting script test_NePasUtiliser.py
+2017-11-09 15:59:00,543 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 15:59:47,887 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 15:59:47,935 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] End of script test_NePasUtiliser.py [execution time = 0:00:47.617000]
+2017-11-09 15:59:48,004 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 16:00:21,266 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:00:21,443 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Starting script test_NePasUtiliser.py
+2017-11-09 16:00:21,495 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:03:31,686 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:03:31,763 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:03:10.514000]
+2017-11-09 16:03:31,872 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:04:32,028 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:04:32,187 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Starting script test_NePasUtiliser.py
+2017-11-09 16:04:32,240 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:04:34,264 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:04:34,313 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:00:02.310000]
+2017-11-09 16:04:34,361 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:04:43,628 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:04:43,788 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Starting script test_NePasUtiliser.py
+2017-11-09 16:04:43,842 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:04:43,946 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:04:43,994 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:00:00.412000]
+2017-11-09 16:04:44,041 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:06:08,793 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:06:08,967 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Starting script test_NePasUtiliser.py
+2017-11-09 16:06:09,018 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:06:17,133 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:06:17,188 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:00:08.401000]
+2017-11-09 16:06:17,276 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:06:35,789 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:06:35,933 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Starting script crane_launcher.py
+2017-11-09 16:06:35,980 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:07:53,958 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ROI PTV INITIAL is NOT approved.
+2017-11-09 16:07:54,108 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Type of ROI "PTV INITIAL" set as Ptv
+2017-11-09 16:07:54,239 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] OrganType of ROI "PTV INITIAL" set as Target
+2017-11-09 16:07:54,415 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ROI PTV2 is NOT approved.
+2017-11-09 16:07:54,576 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Type of ROI "PTV2" set as Ptv
+2017-11-09 16:07:54,707 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] OrganType of ROI "PTV2" set as Target
+2017-11-09 16:07:55,364 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:07:55,623 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:07:55,907 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:07:56,149 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:07:56,368 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:07:56,570 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:07:56,840 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:07:57,079 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:07:57,334 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:08:24,684 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:08:24,847 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Starting script test_NePasUtiliser.py
+2017-11-09 16:08:24,893 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:08:51,862 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:08:51,911 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] End of script test_NePasUtiliser.py [execution time = 0:00:27.277000]
+2017-11-09 16:08:51,957 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:09:20,327 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 16:09:20,460 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] Starting script crane_launcher.py
+2017-11-09 16:09:20,487 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-11-09 16:09:40,091 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV15 is NOT approved.
+2017-11-09 16:09:40,211 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV15" set as Ptv
+2017-11-09 16:09:40,305 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV15" set as Target
+2017-11-09 16:09:40,404 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV2 is NOT approved.
+2017-11-09 16:09:40,518 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV2" set as Ptv
+2017-11-09 16:09:40,614 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV2" set as Target
+2017-11-09 16:09:42,930 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:09:43,189 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:09:43,436 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:09:43,695 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:09:43,981 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:09:44,204 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:09:44,455 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:09:44,706 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:09:44,954 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:12:23,933 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 16:12:24,082 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] Starting script crane_launcher.py
+2017-11-09 16:12:24,128 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 16:12:48,424 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ROI PTV15 is NOT approved.
+2017-11-09 16:12:48,572 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] Type of ROI "PTV15" set as Ptv
+2017-11-09 16:12:48,698 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] OrganType of ROI "PTV15" set as Target
+2017-11-09 16:12:48,822 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ROI PTV2 is NOT approved.
+2017-11-09 16:12:48,974 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] Type of ROI "PTV2" set as Ptv
+2017-11-09 16:12:49,102 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] OrganType of ROI "PTV2" set as Target
+2017-11-09 16:12:49,696 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:12:49,986 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:12:50,229 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:12:50,435 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:12:50,683 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:12:50,928 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:12:51,180 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:12:51,430 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:12:51,704 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:13:31,979 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 16:13:32,148 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] Starting script test_NePasUtiliser.py
+2017-11-09 16:13:32,194 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 16:13:33,362 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 16:13:33,408 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] End of script test_NePasUtiliser.py [execution time = 0:00:01.442000]
+2017-11-09 16:13:33,454 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 16:13:56,744 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 16:13:56,889 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] Starting script crane_launcher.py
+2017-11-09 16:13:56,934 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 16:14:53,120 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ROI PTV15 is NOT approved.
+2017-11-09 16:14:53,264 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] Type of ROI "PTV15" set as Ptv
+2017-11-09 16:14:53,389 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] OrganType of ROI "PTV15" set as Target
+2017-11-09 16:14:53,531 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ROI PTV2 is NOT approved.
+2017-11-09 16:14:53,673 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] Type of ROI "PTV2" set as Ptv
+2017-11-09 16:14:53,800 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] OrganType of ROI "PTV2" set as Target
+2017-11-09 16:14:54,439 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:14:54,645 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:14:54,849 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:14:55,050 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:14:55,267 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:14:55,451 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:14:55,638 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:14:55,822 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:14:56,010 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:16:47,405 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 16:16:47,557 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] Starting script crane_launcher.py
+2017-11-09 16:16:47,606 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ================================================================================
+2017-11-09 16:17:10,764 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ROI PTV15 is NOT approved.
+2017-11-09 16:17:10,908 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] Type of ROI "PTV15" set as Ptv
+2017-11-09 16:17:11,028 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] OrganType of ROI "PTV15" set as Target
+2017-11-09 16:17:11,157 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] ROI PTV2 is NOT approved.
+2017-11-09 16:17:11,297 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] Type of ROI "PTV2" set as Ptv
+2017-11-09 16:17:11,420 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] OrganType of ROI "PTV2" set as Target
+2017-11-09 16:17:12,020 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:17:12,229 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:17:12,408 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:17:12,587 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:17:12,778 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:17:12,999 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:17:13,177 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:17:13,364 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:17:13,548 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - vmat_mbb2_v2/vmat_mbb2_v2] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-11-09 16:19:40,378 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type MinDose for ROI "PTV15" added.
+2017-11-09 16:19:40,948 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type MinDose for ROI "PTV2" added.
+2017-11-09 16:19:41,468 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-11-09 16:19:42,284 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-11-09 16:19:43,068 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_X1" added.
+2017-11-09 16:19:43,762 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_X1" added.
+2017-11-09 16:19:44,431 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type MaxDvh for ROI "OPT CERVEAU_X1" added.
+2017-11-09 16:19:45,126 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type MaxDose for ROI "TRONC" added.
+2017-11-09 16:19:45,857 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-11-09 16:19:45,909 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] PlanOptimizations[0] selected.
+2017-11-09 16:19:46,122 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Fluence iterations set to 30.
+2017-11-09 16:19:46,321 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Max iterations set to 90.
+2017-11-09 16:19:46,524 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Optimality tolerance set to 1e-09.
+2017-11-09 16:19:46,728 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Compute intermediate dose set to False.
+2017-11-09 16:19:46,928 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Compute final dose set to True.
+2017-11-09 16:20:12,831 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-11-09 16:20:12,899 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] PlanOptimizations[0] selected.
+2017-11-09 16:20:13,115 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Fluence iterations set to 30.
+2017-11-09 16:20:13,329 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Max iterations set to 30.
+2017-11-09 16:20:13,537 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Optimality tolerance set to 1e-09.
+2017-11-09 16:20:13,740 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Compute intermediate dose set to False.
+2017-11-09 16:20:13,952 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Compute final dose set to True.
+2017-11-09 16:21:06,667 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ROI sum_ptvs_X1 is NOT approved.
+2017-11-09 16:21:06,979 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Type of ROI "sum_ptvs_X1" set as Ptv
+2017-11-09 16:21:07,186 - hmrlib.roi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] OrganType of ROI "sum_ptvs_X1" set as Target
+2017-11-09 16:21:07,651 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type MinDose for ROI "sum_ptvs_X1" added.
+2017-11-09 16:21:08,264 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type MaxDose for ROI "sum_ptvs_X1" added.
+2017-11-09 16:21:08,692 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type MaxDose for ROI "RING_1_3mm_X1" added.
+2017-11-09 16:21:09,106 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type MaxDose for ROI "RING_2_8mm_X1" added.
+2017-11-09 16:21:09,530 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type MaxDose for ROI "RING_3_1cm_X1" added.
+2017-11-09 16:21:09,949 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Objective of type MaxDose for ROI "TISSUS SAINS_X1" added.
+2017-11-09 16:21:10,485 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-11-09 16:21:10,537 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] PlanOptimizations[0] selected.
+2017-11-09 16:21:10,749 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Fluence iterations set to 30.
+2017-11-09 16:21:10,956 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Max iterations set to 90.
+2017-11-09 16:21:11,157 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Optimality tolerance set to 1e-09.
+2017-11-09 16:21:11,353 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Compute intermediate dose set to False.
+2017-11-09 16:21:11,548 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Compute final dose set to True.
+2017-11-09 16:21:29,263 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] No beamset specified.  All beamsets will be modified.
+2017-11-09 16:21:29,322 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] PlanOptimizations[0] selected.
+2017-11-09 16:21:29,537 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Fluence iterations set to 30.
+2017-11-09 16:21:29,749 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Max iterations set to 30.
+2017-11-09 16:21:29,962 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Optimality tolerance set to 1e-09.
+2017-11-09 16:21:30,162 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Compute intermediate dose set to False.
+2017-11-09 16:21:30,371 - hmrlib.optim - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Compute final dose set to True.
+2017-11-09 16:26:01,361 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-11-09 16:26:01,411 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] End of script crane_launcher.py [execution time = 0:09:14.003000]
+2017-11-09 16:26:01,460 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
