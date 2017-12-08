@@ -40,7 +40,7 @@ def crane_launcher():
 
     class CraneLauncher(Form):
         def __init__(self):
-            self.Text = "Statistiques"
+            self.Text = "Plan de crâne stéréo"
 
             self.Width = 700
             self.Height = 900
@@ -403,6 +403,23 @@ def crane_launcher():
             
             self.MainWindow.Controls.Add(eraseROIButton) 
 
+            
+            #Label empty contours
+            exam_list = []
+            for CT in patient.Examinations:
+                exam_list.append(CT.Name)
+                
+            for contour in patient.PatientModel.RegionsOfInterest:
+                VolCT1 = roi.get_roi_volume(contour.Name, exam=patient.Examinations["CT 1"])
+                if "CT 2" in exam_list:
+                    VolCT2 = roi.get_roi_volume(contour.Name, exam=patient.Examinations["CT 2"])
+                else:
+                    VolCT2 = 0
+
+                if VolCT1 == 0 and VolCT2 == 0:
+                    contour.Name = ("vide_" + contour.Name)               
+            
+            
             
         def compile_plan_data(self):            
                                

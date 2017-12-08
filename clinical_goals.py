@@ -1951,3 +1951,413 @@ def cg_orl(plan_data):
         eval.add_clinical_goal(("mod" + ptv[0]), rx_dose[0], 'AtLeast', 'VolumeAtDose', 95, plan=plan)
         eval.add_clinical_goal(("mod" + ptv[0]), rx_dose[0]*95/100, 'AtLeast', 'VolumeAtDose', 99.5, plan=plan)
     
+    
+    
+    
+def smart_cg_lung_stereo_v2(plan_data,plan,beamset,index,num_plans):
+    """
+    This function adds both clinical goals and optimization objectives for SBRT lung cases. In many cases, the proximity
+    of an OAR to the PTV is evaluated to determine which objective/clinical goal is used and to which ROI it is applied.
+    """
+    
+    patient = plan_data['patient']
+    exam = plan_data['exam']
+    site_name = plan_data['site_names'][index]
+    ptv_name = plan_data['ptv_names'][index]
+    rx_dose = plan_data['rx_dose']
+    nb_fx = plan_data['nb_fx']
+       
+    # Set PTV name and prescription type
+    if nb_fx == 3: #54Gy-3fx
+        Rx = 0
+    elif nb_fx == 4: #48Gy-4fx or 56Gy-4fx
+        Rx = 1
+    elif nb_fx == 8: #60Gy-8fx
+        Rx = 2
+    elif nb_fx == 5: #60Gy-5fx
+        Rx = 3
+        
+    output_name = 'PTV ' + site_name
+
+    # Determine PlanOptimization number to use (so that objectives are added to the correct beamset)
+    plan_opt = beamset.Number-1
+        
+    # Objectives for target coverage and rings
+    optim.add_mindose_objective(ptv_name, rx_dose, weight=50, plan=plan, plan_opt=plan_opt)
+    optim.add_maxdose_objective(ptv_name, rx_dose*1.5, weight=1, plan=plan, plan_opt=plan_opt)
+
+    optim.add_maxdose_objective('RING_1_'+site_name, rx_dose*1.01, plan=plan, plan_opt=plan_opt)
+    optim.add_maxdose_objective('RING_2_'+site_name, rx_dose*0.87, plan=plan, plan_opt=plan_opt)
+    optim.add_maxdose_objective('RING_3_'+site_name, rx_dose*0.59, plan=plan, plan_opt=plan_opt)
+    
+    if roi.roi_exists("TS "+site_name,exam):
+        optim.add_maxdose_objective("TS "+site_name, rx_dose*0.5, plan=plan, plan_opt=plan_opt)
+
+    # Clinical Goals
+    # Compute what is 0.1 cc in percentage of the volume
+    ptone_cc_percentage = roi.convert_absolute_volume_to_percentage(ptv_name, volume_cc=0.1, examination=exam)
+    # We want to know if 100 % - 0.1 cc of volume is covered by 95 % prescription
+    eval.add_clinical_goal(ptv_name, rx_dose*0.95, 'AtLeast', 'VolumeAtDose', 100.00 - ptone_cc_percentage, plan=plan)
+    eval.add_clinical_goal(ptv_name, rx_dose, 'AtLeast', 'VolumeAtDose', 95, plan=plan)
+    eval.add_clinical_goal(ptv_name, rx_dose*1.5, "AtMost", "DoseAtAbsoluteVolume", 0.1, plan=plan)
+
+
+    # Objectives and Clinical Goals for OARs, chosen based on proximity to the PTV
+    # First step is to determine whether the OAR is within 2cm/5mm of the PTV and create corresponding optimization ROIs
+    roi_list = ['BR SOUCHE','COEUR','COTES','ESTOMAC','GROS VAISSEAUX','INTESTINS','OESOPHAGE','PAROI','TRACHEE','PLEXUS BRACHIAL','PRV PLEXUS','MOELLE','PRV MOELLE','PAROI OPP OESO','PAROI OPP BRONCHE','PAROI OPP TRACHEE']
+    color_list = ['Red','Blue','Yellow','Green','Orange','skyblue','khaki','teal','steelblue','olive','tomato','brown','purple','pink','slateblue','yellowgreen','white']
+    for i, roi_name in enumerate(roi_list):
+        if roi.roi_exists(roi_name, exam):
+            if not roi.roi_exists(roi_name+" dans "+output_name+"+2cm",exam):
+                dans2cm = roi.intersect_roi_ptv(roi_name=roi_name, ptv_name=ptv_name, color=color_list[i], examination=exam, margeptv=2, output_name=output_name)
+                Vol2cm = roi.get_roi_volume(dans2cm.Name, exam=exam)
+                if Vol2cm == 0:
+                    patient.PatientModel.RegionsOfInterest[dans2cm.Name].DeleteRoi()
+                else:
+                    dans5mm = roi.intersect_roi_ptv(roi_name=roi_name, ptv_name=ptv_name, color=color_list[i], examination=exam, margeptv=0.5, output_name=output_name)
+                    Vol5mm = roi.get_roi_volume(dans5mm.Name, exam=exam)
+                    if Vol5mm == 0:
+                        patient.PatientModel.RegionsOfInterest[dans5mm.Name].DeleteRoi()
+    # For some ROIs, determine if there is a volume inside the PTV for clinical goals
+    roi_list = ['BR SOUCHES','COEUR','COTES','ESTOMAC','GROS VAISSEAUX','INTESTINS','OESOPHAGE']
+    for i, roi_name in enumerate(roi_list):
+        if roi.roi_exists(roi_name, exam):
+            if not roi.roi_exists(roi_name+" dans "+output_name,exam):
+                dans = roi.intersect_roi_ptv(roi_name=roi_name, ptv_name=ptv_name, color=color_list[i], examination=exam, margeptv=0, output_name=output_name)
+                Vol = roi.get_roi_volume(dans.Name, exam=exam)
+                if Vol == 0:
+                    patient.PatientModel.RegionsOfInterest[dans.Name].DeleteRoi()    
+        
+    
+    # BR SOUCHE
+    if roi.roi_exists("BR SOUCHE", exam):
+        roi_name = "BR SOUCHE"
+        dose_level1 = [3000, 3390, 4510, 3730]  # 0.1cc hors PTV
+        dose_level2 = [0, 0, 6100, 6100]  # 0.1cc dans PTV
+
+        if roi.roi_exists((roi_name + " dans " + output_name),exam): # OAR overlaps PTV
+            # CG for ROI in PTV
+            if Rx > 1:  # Only for prescriptions of 60Gy in 5 or 8 fx
+                eval.add_clinical_goal(roi_name, dose_level2[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            # objective on roi_name dans PTV + 5mm
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "+0.5cm"), rx_dose, plan=plan, plan_opt=plan_opt)
+            # Create ROI hors PTV (potentially useful for optimization)
+            if not roi.roi_exists(roi_name+" hors "+output_name,exam):
+                hors = roi.subtract_roi_ptv(roi_name=roi_name, ptv_name=ptv_name, color="Yellow", examination=exam, output_name=output_name)
+            patient.PatientModel.RegionsOfInterest[(roi_name + " dans " + output_name)].DeleteRoi()
+        else:
+            # CG for ROI outside of PTV
+            eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            if roi.roi_exists((roi_name + " dans " + output_name + "+0.5cm"),exam): # OAR outside of PTV, but within 5mm
+                # objective on roi_name dans PTV + 5mm
+                optim.add_maxdose_objective((roi_name + " dans " + output_name + "+0.5cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+            elif roi.roi_exists((roi_name + " dans " + output_name + "+2cm"),exam): # OAR outside of PTV, but within 2cm
+                # objective on roi_name dans PTV + 2cm
+                optim.add_maxdose_objective((roi_name + " dans " + output_name + "+2cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+            else: #OAR > 2cm from PTV
+                # objective on roi_name
+                optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+        
+    # COEUR
+    if roi.roi_exists("COEUR", exam):
+        roi_name = "COEUR"
+        dose_level1 = [3000, 3390, 4510, 3730]  # 0.1cc hors PTV
+        dose_level2 = [0, 0, 6100, 6100]  # 0.1cc dans PTV
+        dose_level3 = [0, 0, 3850, 3200]  # 15cc dans PTV
+
+        if roi.roi_exists((roi_name + " dans " + output_name),exam): # OAR overlaps PTV
+            if Rx > 1:  # Only for prescriptions of 60Gy in 5 or 8 fx
+                eval.add_clinical_goal(roi_name, dose_level2[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+                eval.add_clinical_goal(roi_name, dose_level3[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 15, plan=plan)
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "+0.5cm"), rx_dose, plan=plan, plan_opt=plan_opt)
+            if not roi.roi_exists(roi_name+" hors "+output_name,exam):
+                hors = roi.subtract_roi_ptv(roi_name=roi_name, ptv_name=ptv_name, color="Yellow", examination=exam, output_name=output_name)
+            patient.PatientModel.RegionsOfInterest[(roi_name + " dans " + output_name)].DeleteRoi()
+        else:
+            eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            if roi.roi_exists((roi_name + " dans " + output_name + "+0.5cm"),exam): # OAR outside of PTV, but within 5mm
+                optim.add_maxdose_objective((roi_name + " dans " + output_name + "0.5cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+            elif roi.roi_exists((roi_name + " dans " + output_name + "+2cm"),exam): # OAR outside of PTV, but within 2cm
+                optim.add_maxdose_objective((roi_name + " dans " + output_name + "2cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+            else: #OAR > 2cm from PTV
+                optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+
+    # COTES
+    if roi.roi_exists("COTES", exam):
+        roi_name = "COTES"
+        dose_level1 = [3700, 4200, 5640, 4630]  # 0.1cc hors PTV
+        dose_level2 = [3530, 4000, 5360, 4400]  # 0.3cc hors PTV
+        dose_level3 = [2660, 3000, 3960, 3290]  # 1.4cc hors PTV
+        dose_level4 = [1790, 2000, 2570, 2180]  # 3.6cc hors PTV
+        dose_level5 = [910, 1000, 1220, 1070]  # 5cc hors PTV
+        dose_level6 = [5400, 4800, 6000, 6000]  # 0.1cc dans PTV - REPLACED BY rx_dose
+
+        if roi.roi_exists((roi_name + " dans " + output_name),exam): # OAR overlaps PTV
+            if not roi.roi_exists(roi_name+" hors "+output_name,exam):
+                hors = roi.subtract_roi_ptv(roi_name=roi_name, ptv_name=ptv_name, color="Brown", examination=exam, output_name=output_name)
+            else:
+                hors = patient.PatientModel.RegionsOfInterest[roi_name+" hors "+output_name]                
+            eval.add_clinical_goal(hors.Name, dose_level2[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.3, plan=plan)
+            eval.add_clinical_goal(hors.Name, dose_level3[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 1.4, plan=plan)
+            eval.add_clinical_goal(hors.Name, dose_level4[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 3.6, plan=plan)
+            eval.add_clinical_goal(hors.Name, dose_level5[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 5, plan=plan)
+            eval.add_clinical_goal(roi_name, rx_dose, 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "+0.5cm"), rx_dose, plan=plan, plan_opt=plan_opt)
+            patient.PatientModel.RegionsOfInterest[(roi_name + " dans " + output_name)].DeleteRoi()
+        else:
+            # CG for ROI outside of PTV
+            eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            eval.add_clinical_goal(roi_name, dose_level2[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.3, plan=plan)
+            eval.add_clinical_goal(roi_name, dose_level3[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 1.4, plan=plan)
+            eval.add_clinical_goal(roi_name, dose_level4[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 3.6, plan=plan)
+            eval.add_clinical_goal(roi_name, dose_level5[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 5, plan=plan)
+            if roi.roi_exists((roi_name + " dans " + output_name + "+0.5cm"),exam): # OAR outside of PTV, but within 5mm
+                optim.add_maxdose_objective((roi_name + " dans " + output_name + "+0.5cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+            elif roi.roi_exists((roi_name + " dans " + output_name + "+2cm"),exam): # OAR outside of PTV, but within 2cm
+                optim.add_maxdose_objective((roi_name + " dans " + output_name + "+2cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+            else: #OAR > 2cm from PTV
+                optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+
+    # ESTOMAC
+    if roi.roi_exists("ESTOMAC", exam):
+        roi_name = "ESTOMAC"
+        dose_level1 = [3000, 3390, 4510, 3730]  # 0.1cc hors PTV
+        dose_level2 = [0, 0, 6100, 6100]  # 0.1cc dans PTV
+        dose_level3 = [0, 0, 3290, 2750]  # 5cc dans PTV
+
+        if roi.roi_exists((roi_name + " dans " + output_name),exam): # OAR overlaps PTV
+            if Rx > 1:  # Only for prescriptions of 60Gy in 5 or 8 fx
+                eval.add_clinical_goal(roi_name, dose_level2[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+                eval.add_clinical_goal(roi_name, dose_level3[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 5, plan=plan)
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "+0.5cm"), rx_dose, plan=plan, plan_opt=plan_opt)
+            if not roi.roi_exists(roi_name+" hors "+output_name,exam):
+                hors = roi.subtract_roi_ptv(roi_name=roi_name, ptv_name=ptv_name, color="Yellow", examination=exam, output_name=output_name)
+            patient.PatientModel.RegionsOfInterest[(roi_name + " dans " + output_name)].DeleteRoi()
+        else:
+            eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            if roi.roi_exists((roi_name + " dans " + output_name + "0.5cm"),exam): # OAR outside of PTV, but within 5mm
+                optim.add_maxdose_objective((roi_name + " dans " + output_name + "0.5cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+            elif roi.roi_exists((roi_name + " dans " + output_name + "2cm"),exam): # OAR outside of PTV, but within 2cm
+                optim.add_maxdose_objective((roi_name + " dans " + output_name + "2cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+            else: #OAR > 2cm from PTV
+                optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+
+    # GROS VAISSEAUX
+    if roi.roi_exists("GROS VAISSEAUX", exam):
+        roi_name = "GROS VAISSEAUX"
+        dose_level1 = [3000, 3390, 4510, 3730]  # 0.1cc hors PTV
+        dose_level2 = [0, 0, 6100, 6100]  # 0.1cc dans PTV
+        dose_level3 = [0, 0, 4860, 4010]  # 10cc dans PTV
+
+        if roi.roi_exists((roi_name + " dans " + output_name),exam): # OAR overlaps PTV
+            if Rx > 1:  # Only for prescriptions of 60Gy in 5 or 8 fx
+                eval.add_clinical_goal(roi_name, dose_level2[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+                eval.add_clinical_goal(roi_name, dose_level3[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 10, plan=plan)
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "0.5cm"), rx_dose, plan=plan, plan_opt=plan_opt)
+            if not roi.roi_exists(roi_name+" hors "+output_name,exam):
+                hors = roi.subtract_roi_ptv(roi_name=roi_name, ptv_name=ptv_name, color="Yellow", examination=exam, output_name=output_name)
+            patient.PatientModel.RegionsOfInterest[(roi_name + " dans " + output_name)].DeleteRoi()
+        else:
+            eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            if roi.roi_exists((roi_name + " dans " + output_name + "0.5cm"),exam): # OAR outside of PTV, but within 5mm
+                optim.add_maxdose_objective((roi_name + " dans " + output_name + "0.5cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+            elif roi.roi_exists((roi_name + " dans " + output_name + "2cm"),exam): # OAR outside of PTV, but within 2cm
+                optim.add_maxdose_objective((roi_name + " dans " + output_name + "2cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+            else: #OAR > 2cm from PTV
+                optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+
+    # INTESTINS
+    if roi.roi_exists("INTESTINS", exam):
+        roi_name = "INTESTINS"
+        dose_level1 = [3000, 3390, 4510, 3730]  # 0.1cc hors PTV
+        dose_level2 = [0, 0, 6100, 6100]  # 0.1cc dans PTV
+        dose_level3 = [0, 0, 3290, 2750]  # 5cc dans PTV
+
+        if roi.roi_exists((roi_name + " dans " + output_name),exam): # OAR overlaps PTV
+            if Rx > 1:  # Only for prescriptions of 60Gy in 5 or 8 fx
+                eval.add_clinical_goal(roi_name, dose_level2[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+                eval.add_clinical_goal(roi_name, dose_level3[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 5, plan=plan)
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "0.5cm"), rx_dose, plan=plan, plan_opt=plan_opt)
+            if not roi.roi_exists(roi_name+" hors "+output_name,exam):
+                hors = roi.subtract_roi_ptv(roi_name=roi_name, ptv_name=ptv_name, color="Yellow", examination=exam, output_name=output_name)
+            patient.PatientModel.RegionsOfInterest[(roi_name + " dans " + output_name)].DeleteRoi()
+        else:
+            eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            if roi.roi_exists((roi_name + " dans " + output_name + "0.5cm"),exam): # OAR outside of PTV, but within 5mm
+                optim.add_maxdose_objective((roi_name + " dans " + output_name + "0.5cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+            elif roi.roi_exists((roi_name + " dans " + output_name + "2cm"),exam): # OAR outside of PTV, but within 2cm
+                optim.add_maxdose_objective((roi_name + " dans " + output_name + "2cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+            else: #OAR > 2cm from PTV
+                optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+
+    # OESOPHAGE
+    if roi.roi_exists("OESOPHAGE", exam):
+        roi_name = "OESOPHAGE"
+        dose_level1 = [1000, 1100, 1350, 1180]  # 0.1cc >2cm PTV
+        dose_level2 = [2700, 3050, 4030, 3340]  # 0.1cc <=2cm PTV
+        dose_level3 = [0, 0, 6100, 6100]  # 0.1cc dans PTV
+
+        if roi.roi_exists((roi_name + " dans " + output_name),exam): # OAR overlaps PTV
+            if Rx > 1:  # Only for prescriptions of 60Gy in 5 or 8 fx
+                eval.add_clinical_goal(roi_name, dose_level3[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "0.5cm"), rx_dose, plan=plan, plan_opt=plan_opt)
+            if not roi.roi_exists(roi_name+" hors "+output_name,exam):
+                hors = roi.subtract_roi_ptv(roi_name=roi_name, ptv_name=ptv_name, color="Yellow", examination=exam, output_name=output_name)
+            patient.PatientModel.RegionsOfInterest[(roi_name + " dans " + output_name)].DeleteRoi()
+        elif roi.roi_exists((roi_name + " dans " + output_name + "2cm"),exam): # OAR within 2cm of PTV
+            eval.add_clinical_goal(roi_name, dose_level2[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "2cm"), dose_level2[Rx], plan=plan, plan_opt=plan_opt)
+        else: # OAR >2cm from PTV
+            eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+                                    
+    # MOELLE
+    if roi.roi_exists("MOELLE", exam):
+        roi_name = "MOELLE"
+        dose_level1 = [1800, 2020, 2590, 2620]  # 0.1cc
+        eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+        if roi.roi_exists((roi_name + " dans " + output_name + "0.5cm"),exam): # OAR outside of PTV, but within 5mm
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "0.5cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+        elif roi.roi_exists((roi_name + " dans " + output_name + "2cm"),exam): # OAR outside of PTV, but within 2cm
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "2cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+        else: #OAR > 2cm from PTV
+            optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+
+    # PRV MOELLE
+    if roi.roi_exists("PRV MOELLE", exam):
+        roi_name = "PRV MOELLE"
+        dose_level1 = [2000, 2240, 2910, 2930]  # 0.1cc
+        eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+        if roi.roi_exists((roi_name + " dans " + output_name + "0.5cm"),exam): # OAR outside of PTV, but within 5mm
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "0.5cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+        elif roi.roi_exists((roi_name + " dans " + output_name + "2cm"),exam): # OAR outside of PTV, but within 2cm
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "2cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+        else: #OAR > 2cm from PTV
+            optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+
+    # Paroi oesophagienne opposée
+    if roi.roi_exists("OESO PAROI OPP", exam):
+        roi_name = "OESO PAROI OPP"
+        if Rx > 1:  # Only for prescriptions of 60Gy in 5 or 8 fx
+            dose_level1 = [0, 0, 6000, 6100]  # 0.1cc
+            dose_level2 = [0, 0, 3290, 2750]  # 4cc
+            eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            eval.add_clinical_goal(roi_name, dose_level2[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 5, plan=plan)
+            
+    # Paroi trachée/bronches opposées
+    if roi.roi_exists("BR SOUCHE PAROI OPP", exam):
+        roi_name = "BR SOUCHE PAROI OPP"
+        if Rx > 1:  # Only for prescriptions of 60Gy in 5 or 8 fx
+            dose_level1 = [0, 0, 6000, 6100]  # 0.1cc
+            dose_level2 = [0, 0, 2110, 1800]  # 4cc
+            eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+            eval.add_clinical_goal(roi_name, dose_level2[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 4, plan=plan)        
+
+    # PAROI
+    paroi_name = 'PAROI ' + plan_data['laterality'][index]
+    if roi.roi_exists(paroi_name, exam):
+        roi_name = paroi_name
+        dose_level1 = [6000, 6850, 9380, 7590]  # 3cc hors PTV
+        dose_level2 = [3000, 3390, 4510, 3730]  # 30cc dans PTV
+        dose_level3 = [4000, 4550, 6130, 5010]  # 0.2% dans PTV
+
+        # Create intersecting volume
+        dans = roi.intersect_roi_ptv(roi_name=roi_name, ptv_name=ptv_name, color="Purple", examination=exam, output_name=output_name)
+        Vol = roi.get_roi_volume(dans.Name, exam=exam)
+
+        if Vol == 0:  # No overlap between ROI and PTV
+            eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 3, plan=plan)
+            eval.add_clinical_goal(roi_name, dose_level2[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 30, plan=plan)
+            eval.add_clinical_goal(roi_name, dose_level3[Rx], 'AtMost', 'DoseAtVolume', 0.2, plan=plan)
+        else:  # ROI overlaps PTV
+            # Create ROI hors PTV
+            if not roi.roi_exists(roi_name+" hors "+output_name,exam):
+                hors = roi.subtract_roi_ptv(roi_name=roi_name, ptv_name=ptv_name, color="Yellow", examination=exam, output_name=output_name)
+            else:
+                hors = patient.PatientModel.RegionsOfInterest[roi_name+" hors "+output_name]
+            eval.add_clinical_goal(hors.Name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 3, plan=plan)
+            eval.add_clinical_goal(hors.Name, dose_level2[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 30, plan=plan)
+            eval.add_clinical_goal(hors.Name, dose_level3[Rx], 'AtMost', 'DoseAtVolume', 0.2, plan=plan)
+        patient.PatientModel.RegionsOfInterest[dans.Name].DeleteRoi()
+
+    # PEAU
+    if roi.roi_exists("PEAU", exam):
+        roi_name = "PEAU"
+        dose_level1 = [2400, 2700, 3550, 2960]  # 0.1cc
+        eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+        optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+
+    # PLEXUS BRACHIAL
+    if roi.roi_exists("PLEXUS BRACHIAL", exam):
+        roi_name = "PLEXUS BRACHIAL"
+        dose_level1 = [2400, 2700, 3550, 2960]  # 0.1cc
+        eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+        if roi.roi_exists((roi_name + " dans " + output_name + "0.5cm"),exam): # OAR outside of PTV, but within 5mm
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "0.5cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+        elif roi.roi_exists((roi_name + " dans " + output_name + "2cm"),exam): # OAR outside of PTV, but within 2cm
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "2cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+        else: #OAR > 2cm from PTV
+            optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+
+    # PRV PLEXUS
+    if roi.roi_exists("PRV PLEXUS", exam):
+        roi_name = "PRV PLEXUS"
+        dose_level1 = [2700, 3050, 4030, 3340]  # 0.1cc
+        eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+        if roi.roi_exists((roi_name + " dans " + output_name + "0.5cm"),exam): # OAR outside of PTV, but within 5mm
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "0.5cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+        elif roi.roi_exists((roi_name + " dans " + output_name + "2cm"),exam): # OAR outside of PTV, but within 2cm
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "2cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+        else: #OAR > 2cm from PTV
+            optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+
+    # COMBI PMN-ITV-BR
+    if num_plans == 1:
+        roi_name = 'COMBI PMN-ITV-BR_' + site_name
+    elif num_plans == 2:
+        roi_name = 'COMBI PMN-ITV-BR_' + plan_data['site_names'][0] + '+' + plan_data['site_names'][1]
+    
+    if roi.roi_exists(roi_name, exam):
+        eval.add_clinical_goal(roi_name, 500, 'AtMost', 'VolumeAtDose', 20, plan=plan)
+        eval.add_clinical_goal(roi_name, 1000, 'AtMost', 'VolumeAtDose', 15, plan=plan)
+        eval.add_clinical_goal(roi_name, 1500, 'AtMost', 'VolumeAtDose', 10, plan=plan)
+        eval.add_clinical_goal(roi_name, 2000, 'AtMost', 'VolumeAtDose', 5, plan=plan)
+        eval.add_clinical_goal(roi_name, 500, 'AtMost', 'AverageDose', 0, plan=plan)
+
+    # CONTRALATERAL LUNG
+    if plan_data['laterality'][index] == 'GCHE':
+        contralateral_lung = 'POUMON DRT'
+    else:
+        contralateral_lung = 'POUMON GCHE'
+
+    eval.add_clinical_goal(contralateral_lung, 500, 'AtMost', 'VolumeAtDose', 25, plan=plan)
+    optim.add_maxdose_objective(contralateral_lung, 500, plan=plan, plan_opt=plan_opt)
+
+    # TRACHEE
+    if roi.roi_exists("TRACHEE", exam):
+        roi_name = "TRACHEE"
+        dose_level1 = [3000, 3390, 4510, 3730]  # 0.1cc
+        eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+        if roi.roi_exists((roi_name + " dans " + output_name + "0.5cm"),exam): # OAR outside of PTV, but within 5mm
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "0.5cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+        elif roi.roi_exists((roi_name + " dans " + output_name + "2cm"),exam): # OAR outside of PTV, but within 2cm
+            optim.add_maxdose_objective((roi_name + " dans " + output_name + "2cm"), dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+        else: #OAR > 2cm from PTV
+            optim.add_maxdose_objective(roi_name, dose_level1[Rx], plan=plan, plan_opt=plan_opt)
+
+    # TISSU SAIN A 2cm
+    if num_plans == 1:
+        roi_name = 'TISSU SAIN A 2cm_' + site_name
+    elif num_plans == 2:
+        roi_name = 'TISSU SAIN A 2cm_' + plan_data['site_names'][0] + '+' + plan_data['site_names'][1]
+ 
+    if roi.roi_exists(roi_name, exam):
+        dose_level1 = [2700, 2400, 3000, 3000]  # 0.1cc
+        eval.add_clinical_goal(roi_name, dose_level1[Rx], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
+        
+    # PACEMAKER
+    if roi.roi_exists("PACEMAKER", exam):
+        roi_name = "PACEMAKER"
+        eval.add_clinical_goal(roi_name, 200, 'AtMost', 'DoseAtAbsoluteVolume', 0, plan=plan)     
+        optim.add_maxdose_objective(roi_name, 100, plan=plan, plan_opt=plan_opt)        
+

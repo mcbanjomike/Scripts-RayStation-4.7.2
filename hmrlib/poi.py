@@ -8,6 +8,8 @@ import math
 import lib
 import roi
 
+import numpy as np
+
 import logging
 from HMR_RS_LoggerAdapter import HMR_RS_LoggerAdapter
 
@@ -577,3 +579,37 @@ def erase_pois_not_in_list(poi_list=None):
     for poi in patient.PatientModel.PointsOfInterest:
         if not poi.Name.upper() in poi_list:
             poi.DeleteRoi()
+
+            
+            
+def get_max_dose_coordinates(dose,grid):
+    
+    #Convert the 3D dose into a one-dimensional list and determine the index for the voxel that receives the highest dose
+    
+    dose_list = list(dose.DoseValues.DoseData)
+    
+    max_dose = 0
+    max_dose_index = 0
+    for i,d in enumerate(dose_list):
+        if d > max_dose:
+            max_dose = d
+            max_dose_index = i
+            
+    #Convert that index into DICOM coordinates
+    nb_vox = [grid.NrVoxels.x,grid.NrVoxels.y,grid.NrVoxels.z]
+    res = [grid.VoxelSize.x,grid.VoxelSize.y,grid.VoxelSize.z]
+    corner = [grid.Corner.x,grid.Corner.y,grid.Corner.z]
+    
+    #NOTE that unravel_index takes coordinates in slowest-changing to fastest-changing order, which in our case means z-y-x
+    coords = np.unravel_index(np.array(max_dose_index),(grid.NrVoxels.z,grid.NrVoxels.y,grid.NrVoxels.x))
+    
+    x_coord = grid.Corner.x + grid.VoxelSize.x*coords[2]
+    y_coord = grid.Corner.y + grid.VoxelSize.y*coords[1]
+    z_coord = grid.Corner.z + grid.VoxelSize.z*coords[0]
+    
+    #Package the coorindates as a RSPoint object
+    max_coords = lib.RSPoint(x_coord,y_coord,z_coord)
+    
+    #Note that the dose returned is in cGy and the coordinates are in the DICOM system
+    return max_dose,max_coords
+    
