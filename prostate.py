@@ -616,10 +616,20 @@ def prostate_A1_rois(plan_data):
     if plan_data['plan_type'] == 'Prostate PACE':
         if roi.roi_exists('PTV_7800'):
             roi.set_roi_type('PTV_7800', 'Ptv', 'Target')
+            ptv_name = 'PTV_7800'
         if roi.roi_exists('PTV_3625'):
-            roi.set_roi_type('PTV_3625', 'Ptv', 'Target')          
+            roi.set_roi_type('PTV_3625', 'Ptv', 'Target')   
+            ptv_name = 'PTV_3625'
         if roi.roi_exists('PTV_6200'):
-            roi.set_roi_type('PTV_6200', 'Ptv', 'Target')                    
+            roi.set_roi_type('PTV_6200', 'Ptv', 'Target')  
+            ptv_name = 'PTV_6200'            
+        patient.PatientModel.CreateRoi(Name="PTV+3mm", Color="skyblue", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest["PTV+3mm"].SetMarginExpression(SourceRoiName=ptv_name, MarginSettings={'Type': "Expand", 'Superior': 0.3, 'Inferior': 0.3, 'Anterior': 0.3, 'Posterior': 0.3, 'Right': 0.3, 'Left': 0.3})
+        patient.PatientModel.RegionsOfInterest["PTV+3mm"].UpdateDerivedGeometry(Examination=exam)    
+        patient.PatientModel.CreateRoi(Name="Ring3-8mm", Color="Blue", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest["Ring3-8mm"].SetWallExpression(SourceRoiName="PTV+3mm", OutwardDistance=0.5, InwardDistance=0)
+        patient.PatientModel.RegionsOfInterest["Ring3-8mm"].UpdateDerivedGeometry(Examination=exam)  
+        patient.PatientModel.RegionsOfInterest["PTV+3mm"].DeleteRoi()          
     
     
     # Create RECTUM+3mm

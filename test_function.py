@@ -78,16 +78,18 @@ def test_MA():
     #beamset = lib.get_current_beamset()
     #exam = lib.get_current_examination()
     #patient = lib.get_current_patient()
-    #ui = get_current("ui")
-    
+    #ui = get_current("ui")    
     #uis.ui_statetree()
+
+    #ui = get_current("ui")
+    #if lib.check_version(4.7): 
+    #    ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
+    #elif lib.check_version(4.6): 
+    #    ui.MenuItem[4].Button_PlanDesign.Click() #Select Plan Design tab    
     
+    qa.preparation_qa()
     
-    ui = get_current("ui")
-    if lib.check_version(4.7): 
-        ui.MenuItem[2].Button_PlanDesign.Click() #Select Plan Design tab
-    elif lib.check_version(4.6): 
-        ui.MenuItem[4].Button_PlanDesign.Click() #Select Plan Design tab    
+    #message.message_window('Hi!')
     
     #statistics.auto_collect_crane_stats(startpoint=60,endpoint=999,min_vol=3.999)
     #statistics.batch_autoplan_crane(startpoint=1,endpoint=11,min_vol=1.0)

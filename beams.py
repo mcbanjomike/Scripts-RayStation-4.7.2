@@ -62,7 +62,6 @@ def add_beams_brain_stereo_kbp(beamset=None, site_name='KBP1',iso_name=None):
         iso_name = poi.identify_isocenter_poi()
     lib.add_arc((site_name+'.1'), iso_name, 180, 181, 'CCW', description='ARC 180-181', collimator=2, beamset=beamset)
 
-
     
 def add_beams_brain_static(beamset=None,site_name='A1',iso_name='ISO', exam=None, nb_beams = 13):    
     """
@@ -201,10 +200,7 @@ def add_beams_lung_stereo_test(laterality=None, beamset=None, examination=None, 
         lib.add_arc(beam_name, iso, 180, 320, 'CCW', description='ARC 180-330', collimator=5, beamset=beamset, exam=examination)
         if two_arcs:
             lib.add_arc(beam_name_2, iso, 320, 180, 'CW', description='ARC 330-180', collimator=355, beamset=beamset, exam=examination)        
-
-
-          
-        
+       
         
 def add_beams_imrt_lung_stereo(contralateral_lung=None, beamset=None, examination=None, ptv_name=None, two_arcs=False):
     """
@@ -281,7 +277,68 @@ def add_beams_imrt_lung_stereo(contralateral_lung=None, beamset=None, examinatio
         beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates('ISO', examination=examination).value, Name=beamset.DicomPlanLabel+".7", Description="OAG 330", GantryAngle=330, CouchAngle=0, CollimatorAngle=90, ApertureBlock=None)
     else:
         lib.error('Contralateral lung ROI name not recognized.')  
-        
+ 
+ 
+def add_arcs_lung_stereo_v2(plan_data, beamset, index, two_arcs=False, colli1=5, colli2=355):
+    
+    patient = plan_data['patient']  
+    exam = plan_data['exam'] 
+    laterality = plan_data['laterality'][index]
+    site_name = plan_data['site_names'][index]
+    iso_name = plan_data['iso_names'][index]
+    rx_dose = plan_data['rx_dose']
+                  
+    if rx_dose >= 5600:
+        two_arcs = True
+                  
+    if laterality == 'DRT':
+        lib.add_arc(site_name+".1", iso_name, 40, 181, 'CCW', description='ARC 30-181', collimator=colli1, beamset=beamset, exam=exam)
+        if two_arcs:
+            lib.add_arc(site_name+".2", iso_name, 181, 40, 'CW', description='ARC 181-30', collimator=colli2, beamset=beamset, exam=exam)
+    elif laterality == 'GCHE':
+        lib.add_arc(site_name+".1", iso_name, 180, 320, 'CCW', description='ARC 180-330', collimator=colli1, beamset=beamset, exam=exam)
+        if two_arcs:
+            lib.add_arc(site_name+".2", iso_name, 320, 180, 'CW', description='ARC 330-180', collimator=colli2, beamset=beamset, exam=exam)        
+
+  
+def add_beams_imrt_lung_stereo_v2(plan_data, beamset, index):
+    """
+        Ajoute les champs IMRT utilisés en stéréo de poumon.
+
+        Par défaut, des champs allant de :
+
+        - 7 champs couvrant 181 a 30 pour les traitements du poumon droit;
+        - 7 champs couvrant 30 a 180  pour les traitements du poumon gauche;
+
+        seront ajoutés, avec un collimateur de 0 et 80 degrés
+    """
+    
+    patient = plan_data['patient']  
+    exam = plan_data['exam'] 
+    laterality = plan_data['laterality'][index]
+    site_name = plan_data['site_names'][index]
+    iso_name = plan_data['iso_names'][index]
+                  
+    if laterality == 'DRT':
+        # Poumon D treated
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".1", Description="OAD 30", GantryAngle=30, CouchAngle=0, CollimatorAngle=0, ApertureBlock=None)
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".2", Description="OAG 355", GantryAngle=355, CouchAngle=0, CollimatorAngle=15, ApertureBlock=None)
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".3", Description="OAG 320", GantryAngle=320, CouchAngle=0, CollimatorAngle=30, ApertureBlock=None)
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".4", Description="OAG 285", GantryAngle=285, CouchAngle=0, CollimatorAngle=45, ApertureBlock=None)
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".5", Description="OPG 250", GantryAngle=250, CouchAngle=0, CollimatorAngle=60, ApertureBlock=None)
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".6", Description="OPG 215", GantryAngle=215, CouchAngle=0, CollimatorAngle=75, ApertureBlock=None)
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".7", Description="POST 181", GantryAngle=181, CouchAngle=0, CollimatorAngle=90, ApertureBlock=None)
+    elif laterality == 'GCHE':
+        # Poumon G treated
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".1", Description="POST 180", GantryAngle=180, CouchAngle=0, CollimatorAngle=0, ApertureBlock=None)
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".2", Description="OPD 145", GantryAngle=145, CouchAngle=0, CollimatorAngle=15, ApertureBlock=None)
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".3", Description="OPD 110", GantryAngle=110, CouchAngle=0, CollimatorAngle=30, ApertureBlock=None)
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".4", Description="OAD 75", GantryAngle=75, CouchAngle=0, CollimatorAngle=45, ApertureBlock=None)
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".5", Description="OAD 40", GantryAngle=40, CouchAngle=0, CollimatorAngle=60, ApertureBlock=None)
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".6", Description="OAD 5", GantryAngle=5, CouchAngle=0, CollimatorAngle=75, ApertureBlock=None)
+        beamset.CreatePhotonBeam(Energy=6, BlockTray=None, Cone=None, MachineCone=None, Wedge=None, Isocenter=poi.get_poi_coordinates(iso_name, examination=exam).value, Name=site_name+".7", Description="OAG 330", GantryAngle=330, CouchAngle=0, CollimatorAngle=90, ApertureBlock=None)
+  
+ 
 # Ajouté par MA	
 def add_beams_prostate_A1(beamset, site_name='A1'):
     """

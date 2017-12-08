@@ -724,13 +724,17 @@ def check_rois(site = None):
     patient = lib.get_current_patient()
 
     if site == "Prostate":
-        roi_list = ["RECTUM", "VESSIE", "INTESTINS", "RECTO-SIGMOIDE", "PROSTATE","Bladder","Rectum","Bowel"]
+        roi_list = ["RECTUM", "VESSIE", "INTESTINS", "RECTO-SIGMOIDE", "PROSTATE","Bladder","Rectum","Bowel","VESICULE SEMINALE"]
     elif site == "Crâne":
         roi_list = ["MOELLE", "TR CEREBRAL", "OEIL DRT", "OEIL GCHE"]
     elif site == "Poumon":
         roi_list = ["GTV EXPI", "GTV expi", "GTV EXPI A1", "GTV expi A1", "GTV EXPI B1", "GTV expi B1", "MOELLE"]
     elif site == "Foie":            
-        roi_list = ["GTV EXPI", "FOIE INSPI", "FOIE EXPI", "MOELLE", "REINS", "OESOPHAGE", "ESTOMAC", "DUODENUM", "COLON", "GRELE"]
+        roi_list = ["FOIE INSPI", "FOIE EXPI", "MOELLE", "REINS", "OESOPHAGE", "ESTOMAC", "DUODENUM", "COLON", "GRELE"]
+        #Also need to add every ROI that starts with GTV
+        for roi in patient.PatientModel.RegionsOfInterest:
+            if roi.Name[:3].upper() == 'GTV':
+                roi_list.append(roi.Name)
     elif site == "Vertebre":            
         roi_list = []
     elif site == "ORL":

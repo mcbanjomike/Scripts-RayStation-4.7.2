@@ -20,7 +20,7 @@ def message_window(input = "Everything's fine"):
             self.Text = "Message"
 
             self.Width = 750
-            self.Height = 750
+            self.Height = 850
 
             self.setupMessageWindow()
             self.setupOKButtons()
@@ -31,7 +31,7 @@ def message_window(input = "Everything's fine"):
         def bigPanel(self, x, y):
             panel = Panel()
             panel.Width = 750
-            panel.Height = 600
+            panel.Height = 700
             panel.Location = Point(x, y)
             panel.BorderStyle = BorderStyle.None
             return panel
@@ -59,7 +59,7 @@ def message_window(input = "Everything's fine"):
             self.Close()
 
         def setupOKButtons(self):
-            self.OKbuttonPanel = self.miniPanel(0, 600)
+            self.OKbuttonPanel = self.miniPanel(0, 750)
             
             cancelButton = Button()
             cancelButton.Text = "Cancel"
