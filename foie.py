@@ -292,9 +292,18 @@ def foie_stereo_add_plan_and_beamset(plan_data):
     plan = plan_data['patient'].AddNewPlan(PlanName=plan_data['plan_name'], PlannedBy=planner_name, Comment="", ExaminationName=plan_data['exam'].Name, AllowDuplicateNames=False)
     plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
 
-    # Add beamset (assumes 5 fractions)
+    # Add beamset
+    if plan_data['exam'].PatientPosition == "HFS":
+        position = "HeadFirstSupine"
+    elif plan_data['exam'].PatientPosition == "FFS":
+        position = "FeetFirstSupine"
+    elif plan_data['exam'].PatientPosition == "HFP":
+        position = "HeadFirstProne"        
+    else:
+        position = "FeetFirstProne"    
+    
     beamset = plan.AddNewBeamSet(Name=plan_data['beamset_name'], ExaminationName=plan_data['exam'].Name, MachineName=plan_data['machine'], NominalEnergy=None,
-                                      Modality="Photons", TreatmentTechnique=plan_data['treatment_technique'], PatientPosition="HeadFirstSupine", NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment=plan_data['treatment_technique'])
+                                      Modality="Photons", TreatmentTechnique=plan_data['treatment_technique'], PatientPosition=position, NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment=plan_data['treatment_technique'])
     beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv'].Name, DoseVolume=95, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)
 
     

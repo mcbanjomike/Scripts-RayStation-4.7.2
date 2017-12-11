@@ -240,8 +240,17 @@ def poumon_stereo_add_plan_and_beamset(plan_data):
             temp7 = True
 
     # Add beamset
+    if plan_data['exam'].PatientPosition == "HFS":
+        position = "HeadFirstSupine"
+    elif plan_data['exam'].PatientPosition == "FFS":
+        position = "FeetFirstSupine"
+    elif plan_data['exam'].PatientPosition == "HFP":
+        position = "HeadFirstProne"        
+    else:
+        position = "FeetFirstProne"    
+        
     beamset = plan.AddNewBeamSet(Name=plan_data['beamset_name'], ExaminationName=plan_data['exam'].Name, MachineName=plan_data['machine'], NominalEnergy=None,
-                                      Modality="Photons", TreatmentTechnique=plan_data['treatment_technique'], PatientPosition="HeadFirstSupine", NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment="VMAT")
+                                      Modality="Photons", TreatmentTechnique=plan_data['treatment_technique'], PatientPosition=position, NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment="VMAT")
     beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv'].Name, DoseVolume=95, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)
     
     return plan.Name
@@ -446,12 +455,21 @@ def poumon_stereo_v2_add_plan(plan_data,num_plans):
     return plan
 
     
-def poumon_stereo_v2_add_beamset(plan_data,index,plan):
+def poumon_stereo_v2_add_beamset(plan_data,index,plan,coverage=95):
                            
     # Add beamset
+    if plan_data['exam'].PatientPosition == "HFS":
+        position = "HeadFirstSupine"
+    elif plan_data['exam'].PatientPosition == "FFS":
+        position = "FeetFirstSupine"
+    elif plan_data['exam'].PatientPosition == "HFP":
+        position = "HeadFirstProne"        
+    else:
+        position = "FeetFirstProne"
+        
     beamset = plan.AddNewBeamSet(Name=plan_data['site_names'][index], ExaminationName=plan_data['exam'].Name, MachineName=plan_data['machine'], NominalEnergy=None,
-                                      Modality="Photons", TreatmentTechnique=plan_data['techniques'][index], PatientPosition="HeadFirstSupine", NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment="VMAT")
-    beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv_names'][index], DoseVolume=95, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)
+                                      Modality="Photons", TreatmentTechnique=plan_data['techniques'][index], PatientPosition=position, NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment="VMAT")
+    beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv_names'][index], DoseVolume=coverage, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)
     
     return beamset  
     
@@ -900,8 +918,17 @@ def poumon_stereo_kbp_add_plan_and_beamset(plan_data,laterality):
     plan.SetDefaultDoseGrid(VoxelSize={'x': 0.2, 'y': 0.2, 'z': 0.2})
 
     # Add beamset and beams (unless it/they already exists)
+    if plan_data['exam'].PatientPosition == "HFS":
+        position = "HeadFirstSupine"
+    elif plan_data['exam'].PatientPosition == "FFS":
+        position = "FeetFirstSupine"
+    elif plan_data['exam'].PatientPosition == "HFP":
+        position = "HeadFirstProne"        
+    else:
+        position = "FeetFirstProne"    
+    
     beamset = plan.AddNewBeamSet(Name=plan_data['site_name']+' test', ExaminationName=exam.Name, MachineName=plan_data['machine'], NominalEnergy=None,
-                                      Modality="Photons", TreatmentTechnique=plan_data['treatment_technique'], PatientPosition="HeadFirstSupine", NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment='VMAT')
+                                      Modality="Photons", TreatmentTechnique=plan_data['treatment_technique'], PatientPosition=position, NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment='VMAT')
     beamset.AddDosePrescriptionToRoi(RoiName=plan_data['ptv'].Name, DoseVolume=95, PrescriptionType="DoseAtVolume", DoseValue=plan_data['rx_dose'], RelativePrescriptionLevel=1)
 
     #Add beams
@@ -938,7 +965,7 @@ def poumon_stereo_kbp_opt_settings(plan_data):
         plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MaxNumberOfSegments = 40        
         
         
-def poumon_stereo_kbp_initial_plan(plan_data,oar_list):
+def poumon_stereo_kbp_initial_plan(plan_data,oar_list,plan_opt=0):
     patient = plan_data['patient']
     exam = plan_data['exam']
     plan = patient.TreatmentPlans['Plan Test']
@@ -1001,10 +1028,10 @@ def poumon_stereo_kbp_initial_plan(plan_data,oar_list):
     patient.PatientModel.RegionsOfInterest['temp KBP2'].DeleteRoi()          
 
     #Initial set of optimization objectives
-    optim.add_mindose_objective(ptv_name, rx, weight=ptv_weight, plan=plan, plan_opt=0)
-    optim.add_dosefalloff_objective(body_name, rx*1.00, rx*0.25, falloff_range, weight=25, plan=plan, plan_opt=0)
-    optim.add_maxdose_objective(r50_name, rx*r50_max_dose, weight=r50_weight, plan=plan, plan_opt=0) 
-    optim.add_maxdose_objective(ring1_name, rx*1.02, weight=1, plan=plan, plan_opt=0) 
+    optim.add_mindose_objective(ptv_name, rx, weight=ptv_weight, plan=plan, plan_opt=plan_opt)
+    optim.add_dosefalloff_objective(body_name, rx*1.00, rx*0.25, falloff_range, weight=25, plan=plan, plan_opt=plan_opt)
+    optim.add_maxdose_objective(r50_name, rx*r50_max_dose, weight=r50_weight, plan=plan, plan_opt=plan_opt) 
+    optim.add_maxdose_objective(ring1_name, rx*1.02, weight=1, plan=plan, plan_opt=plan_opt) 
 
     #Copy clinical goals from old-style plan
     #optim.copy_clinical_goals(old_plan = patient.TreatmentPlans[plan_data['plan_name']],new_plan = plan)
@@ -1015,7 +1042,7 @@ def poumon_stereo_kbp_initial_plan(plan_data,oar_list):
     optim.optimization_90_30(plan=plan,beamset=beamset)
        
     
-def poumon_stereo_kbp_modify_plan(plan_data,oar_list):    
+def poumon_stereo_kbp_modify_plan(plan_data,oar_list, plan_opt=0):    
     patient = plan_data['patient']
     exam = plan_data['exam']
     plan = patient.TreatmentPlans['Plan Test']
@@ -1061,14 +1088,14 @@ def poumon_stereo_kbp_modify_plan(plan_data,oar_list):
             objective.DoseFunctionParameters.Weight = 2*objective.DoseFunctionParameters.Weight    
 
     #Add optimization objectives for OARs
-    optim.add_maxdvh_objective(pmn_kbp_name, 2000, round(dose_in_pmn_kbp[0]*80,2), weight=5, plan=plan, plan_opt=0)
-    optim.add_maxdvh_objective(pmn_kbp_name, 1000, round(dose_in_pmn_kbp[1]*80,2), weight=5, plan=plan, plan_opt=0)
-    optim.add_maxdvh_objective(pmn_kbp_name, 500,  round(dose_in_pmn_kbp[2]*80,2), weight=5, plan=plan, plan_opt=0) 
+    optim.add_maxdvh_objective(pmn_kbp_name, 2000, round(dose_in_pmn_kbp[0]*80,2), weight=5, plan=plan, plan_opt=plan_opt)
+    optim.add_maxdvh_objective(pmn_kbp_name, 1000, round(dose_in_pmn_kbp[1]*80,2), weight=5, plan=plan, plan_opt=plan_opt)
+    optim.add_maxdvh_objective(pmn_kbp_name, 500,  round(dose_in_pmn_kbp[2]*80,2), weight=5, plan=plan, plan_opt=plan_opt) 
     
     if 25*v5_contra[0] > 1:
-        optim.add_maxdvh_objective(pmn_contra_name, 500, round(25*v5_contra[0],2), weight=10, plan=plan, plan_opt=0) 
+        optim.add_maxdvh_objective(pmn_contra_name, 500, round(25*v5_contra[0],2), weight=10, plan=plan, plan_opt=plan_opt) 
     else:
-        optim.add_maxdose_objective(pmn_contra_name, 500, weight=10, plan=plan, plan_opt=0) 
+        optim.add_maxdose_objective(pmn_contra_name, 500, weight=10, plan=plan, plan_opt=plan_opt) 
 
     #We don't want to compromise on the MOELLE and PLEXUS, so they are treated separately
     if nb_fx == 8:
@@ -1099,36 +1126,36 @@ def poumon_stereo_kbp_modify_plan(plan_data,oar_list):
 
     #REMINDER: oar_list = [pmn_ipsi_name,pmn_contra_name,coeur_name,bronches_name,trachee_name,oesophage_name,cotes_name,moelle_name,prvmoelle_name,plexus_name,prvplexus_name,'r50',body_name,opt_pmns_name]        
     if moelle_tolerance_dose-200 < 100*oar_max_dose[7]: #If obtained dose is higher than tolerance-2Gy, use tolerance value-2Gy instead of obtained dose value
-        optim.add_maxdose_objective(oar_list[7], moelle_tolerance_dose-200, weight=500, plan=plan, plan_opt=0) 
+        optim.add_maxdose_objective(oar_list[7], moelle_tolerance_dose-200, weight=500, plan=plan, plan_opt=plan_opt) 
     else:
         if 80*oar_max_dose[7] > 1000:
-            optim.add_maxdose_objective(oar_list[7], 80*oar_max_dose[7], weight=1, plan=plan, plan_opt=0) 
+            optim.add_maxdose_objective(oar_list[7], 80*oar_max_dose[7], weight=1, plan=plan, plan_opt=plan_opt) 
         elif 100*oar_max_dose[7] > 500:
-            optim.add_maxdose_objective(oar_list[7], 100*oar_max_dose[7], weight=1, plan=plan, plan_opt=0) 
+            optim.add_maxdose_objective(oar_list[7], 100*oar_max_dose[7], weight=1, plan=plan, plan_opt=plan_opt) 
     
     if prvmoelle_tolerance_dose-200 < 100*oar_max_dose[8]: #If 80% of obtained dose is higher than tolerance, use tolerance value instead of obtained dose value
-        optim.add_maxdose_objective(oar_list[8], prvmoelle_tolerance_dose-200, weight=500, plan=plan, plan_opt=0) 
+        optim.add_maxdose_objective(oar_list[8], prvmoelle_tolerance_dose-200, weight=500, plan=plan, plan_opt=plan_opt) 
     else:
         if 80*oar_max_dose[8] > 1000:
-            optim.add_maxdose_objective(oar_list[8], 80*oar_max_dose[8], weight=1, plan=plan, plan_opt=0) 
+            optim.add_maxdose_objective(oar_list[8], 80*oar_max_dose[8], weight=1, plan=plan, plan_opt=plan_opt) 
         elif 100*oar_max_dose[8] > 500:
-            optim.add_maxdose_objective(oar_list[8], 100*oar_max_dose[8], weight=1, plan=plan, plan_opt=0)             
+            optim.add_maxdose_objective(oar_list[8], 100*oar_max_dose[8], weight=1, plan=plan, plan_opt=plan_opt)             
             
     if plexus_tolerance_dose-200 < 100*oar_max_dose[9]: #If 80% of obtained dose is higher than tolerance, use tolerance value instead of obtained dose value
-        optim.add_maxdose_objective(oar_list[9], plexus_tolerance_dose-200, weight=500, plan=plan, plan_opt=0) 
+        optim.add_maxdose_objective(oar_list[9], plexus_tolerance_dose-200, weight=500, plan=plan, plan_opt=plan_opt) 
     else:
         if 80*oar_max_dose[9] > 1000:
-            optim.add_maxdose_objective(oar_list[9], 80*oar_max_dose[9], weight=1, plan=plan, plan_opt=0) 
+            optim.add_maxdose_objective(oar_list[9], 80*oar_max_dose[9], weight=1, plan=plan, plan_opt=plan_opt) 
         elif 100*oar_max_dose[9] > 500:
-            optim.add_maxdose_objective(oar_list[9], 100*oar_max_dose[9], weight=1, plan=plan, plan_opt=0) 
+            optim.add_maxdose_objective(oar_list[9], 100*oar_max_dose[9], weight=1, plan=plan, plan_opt=plan_opt) 
     
     if prvplexus_tolerance_dose-200 < 100*oar_max_dose[10]: #If 80% of obtained dose is higher than tolerance, use tolerance value instead of obtained dose value
-        optim.add_maxdose_objective(oar_list[10], prvplexus_tolerance_dose-200, weight=500, plan=plan, plan_opt=0) 
+        optim.add_maxdose_objective(oar_list[10], prvplexus_tolerance_dose-200, weight=500, plan=plan, plan_opt=plan_opt) 
     else:
         if 80*oar_max_dose[10] > 1000:
-            optim.add_maxdose_objective(oar_list[10], 80*oar_max_dose[10], weight=1, plan=plan, plan_opt=0) 
+            optim.add_maxdose_objective(oar_list[10], 80*oar_max_dose[10], weight=1, plan=plan, plan_opt=plan_opt) 
         elif 100*oar_max_dose[10] > 500:
-            optim.add_maxdose_objective(oar_list[10], 100*oar_max_dose[10], weight=1, plan=plan, plan_opt=0)              
+            optim.add_maxdose_objective(oar_list[10], 100*oar_max_dose[10], weight=1, plan=plan, plan_opt=plan_opt)              
     
     for i,oar in enumerate(oar_list):
         if i in [2,3,4,5,6]: #Apply to coeur, bronches, trachee, oesophage and cotes
@@ -1136,15 +1163,15 @@ def poumon_stereo_kbp_modify_plan(plan_data,oar_list):
                 volume_intersect = roi.get_intersecting_volume('PTV+3mm', oar, examination=exam)
                 if volume_intersect == 0: #OAR far from PTV
                     if 80*oar_max_dose[i] > 1000: #Don't reduce dose value if below 10Gy
-                        optim.add_maxdose_objective(oar, 80*oar_max_dose[i], weight=1, plan=plan, plan_opt=0) 
+                        optim.add_maxdose_objective(oar, 80*oar_max_dose[i], weight=1, plan=plan, plan_opt=plan_opt) 
                     elif 100*oar_max_dose[i] > 500:
-                        optim.add_maxdose_objective(oar, 100*oar_max_dose[i], weight=1, plan=plan, plan_opt=0)
+                        optim.add_maxdose_objective(oar, 100*oar_max_dose[i], weight=1, plan=plan, plan_opt=plan_opt)
                 else: #OAR close to or inside PTV
                     newvol = roi.intersect_roi_ptv(oar, ptv3mm_name, color="Blue", examination=exam, margeptv=0, output_name="PTV "+plan_data['site_name']+' test')
                     if 100*oar_max_dose[i] > rx:
-                        optim.add_maxdose_objective(newvol.Name, rx, weight=25, plan=plan, plan_opt=0) 
+                        optim.add_maxdose_objective(newvol.Name, rx, weight=25, plan=plan, plan_opt=plan_opt) 
                     else:
-                        optim.add_maxdose_objective(newvol.Name, 90*oar_max_dose[i], weight=25, plan=plan, plan_opt=0) 
+                        optim.add_maxdose_objective(newvol.Name, 90*oar_max_dose[i], weight=25, plan=plan, plan_opt=plan_opt) 
             except:
                 pass        
       

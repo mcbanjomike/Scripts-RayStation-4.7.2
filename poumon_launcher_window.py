@@ -898,7 +898,7 @@ def poumon_launcher():
                         poumon.poumon_stereo_v2_create_isodose_lines(plan_data=d)
                         
                     self.status.Text = "Plan %d/%d: Ajout du beamset" % (i+1,num_plans)
-                    beamset = poumon.poumon_stereo_v2_add_beamset(plan_data=d, index=i, plan=plan)
+                    beamset = poumon.poumon_stereo_v2_add_beamset(plan_data=d, index=i, plan=plan, coverage=95)
                     
                     self.status.Text = "Plan %d/%d: Ajout des faisceaux" % (i+1,num_plans) 
                     if techniques[i] == 'VMAT':
@@ -940,7 +940,7 @@ def poumon_launcher():
                         poumon.poumon_stereo_v2_create_isodose_lines(plan_data=d)
                         
                     self.status.Text = "Plan %d/%d: Ajout du beamset" % (i+1,num_plans)          
-                    beamset = poumon.poumon_stereo_v2_add_beamset(plan_data=d, index=i, plan=plan)
+                    beamset = poumon.poumon_stereo_v2_add_beamset(plan_data=d, index=i, plan=plan, coverage=98)
                     
                     self.status.Text = "Plan %d/%d: Ajout des faisceaux" % (i+1,num_plans) 
                     if techniques[i] == 'VMAT':
@@ -1030,9 +1030,9 @@ def poumon_launcher():
             self.status.Text = "Test: Configuration des paramêtres d'optimisation"
             poumon.poumon_stereo_kbp_opt_settings(plan_data=d)
             self.status.Text = "Test: Création et optimisation du plan inital"
-            poumon.poumon_stereo_kbp_initial_plan(plan_data=d,oar_list=oar_list)
+            poumon.poumon_stereo_kbp_initial_plan(plan_data=d,oar_list=oar_list,plan_opt=0)
             self.status.Text = "Test: Modification des objectifs d'optimisation"
-            poumon.poumon_stereo_kbp_modify_plan(plan_data=d,oar_list=oar_list)
+            poumon.poumon_stereo_kbp_modify_plan(plan_data=d,oar_list=oar_list,plan_opt=0)
             self.status.Text = "Test: Optimisation du plan modifié"
             poumon.poumon_stereo_kbp_iterate_plan(plan_data=d,oar_list=oar_list)
             #self.Status.Text = "Test: Impression des resultats"
