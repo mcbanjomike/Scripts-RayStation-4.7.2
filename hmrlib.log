@@ -5708,3 +5708,325 @@ ValueError: An entry with the same key already exists.
 2017-12-07 17:30:37,816 - hmrlib - INFO - [hmr30489 - CHAMAILLARD_3^MADELEINE (611111) - CT 1 - A1 Rings/A1] ================================================================================
 2017-12-07 17:30:37,862 - hmrlib - INFO - [hmr30489 - CHAMAILLARD_3^MADELEINE (611111) - CT 1 - A1 Rings/A1] End of script test_NePasUtiliser.py [execution time = 0:21:12.276000]
 2017-12-07 17:30:37,908 - hmrlib - INFO - [hmr30489 - CHAMAILLARD_3^MADELEINE (611111) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 10:21:06,712 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-12-08 10:21:06,844 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Starting script preparation_qa.py
+2017-12-08 10:21:06,887 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-12-08 10:23:16,983 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-12-08 10:23:17,029 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] End of script preparation_qa.py [execution time = 0:02:10.450000]
+2017-12-08 10:23:17,073 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-12-08 10:33:35,849 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-12-08 10:33:36,000 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Starting script preparation_qa.py
+2017-12-08 10:33:36,045 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-12-08 10:35:30,902 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-12-08 10:35:30,952 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] End of script preparation_qa.py [execution time = 0:01:55.151000]
+2017-12-08 10:35:30,999 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-12-08 16:57:00,082 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-08 16:57:00,233 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Starting script poumon_launcher.py
+2017-12-08 16:57:00,287 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-08 16:58:03,921 - hmrlib.poi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (5.91759033203, 10.1505996704, 8.79999923706)
+2017-12-08 16:58:04,577 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-12-08 16:58:04,699 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-12-08 16:58:04,864 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-12-08 16:58:04,972 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-12-08 16:58:05,073 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-12-08 16:58:05,190 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-12-08 16:58:05,306 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-12-08 16:58:05,499 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-12-08 16:58:05,610 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY-5mm" set as Organ
+2017-12-08 16:58:05,711 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY-5mm" set as OrganAtRisk
+2017-12-08 16:58:05,800 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV expi is NOT approved.
+2017-12-08 16:58:05,912 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV expi" set as Gtv
+2017-12-08 16:58:06,021 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV expi" set as Target
+2017-12-08 16:58:06,118 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV inspi is NOT approved.
+2017-12-08 16:58:06,234 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV inspi" set as Gtv
+2017-12-08 16:58:06,340 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV inspi" set as Target
+2017-12-08 16:58:06,438 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV48 is NOT approved.
+2017-12-08 16:58:06,551 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ITV48" set as TreatedVolume
+2017-12-08 16:58:06,656 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ITV48" set as Target
+2017-12-08 16:58:06,776 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV48 is NOT approved.
+2017-12-08 16:58:06,887 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV48" set as Ptv
+2017-12-08 16:58:06,993 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV48" set as Target
+2017-12-08 16:58:07,115 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI BR SOUCHE is NOT approved.
+2017-12-08 16:58:07,225 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BR SOUCHE" set as Organ
+2017-12-08 16:58:07,326 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BR SOUCHE" set as OrganAtRisk
+2017-12-08 16:58:07,414 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI TRACHEE is NOT approved.
+2017-12-08 16:58:07,517 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TRACHEE" set as Organ
+2017-12-08 16:58:07,618 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TRACHEE" set as OrganAtRisk
+2017-12-08 16:58:07,713 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI COTES is NOT approved.
+2017-12-08 16:58:07,839 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COTES" set as Organ
+2017-12-08 16:58:07,944 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COTES" set as OrganAtRisk
+2017-12-08 16:58:08,028 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI vide_PLEXUS BRACHIAL is NOT approved.
+2017-12-08 16:58:08,135 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "vide_PLEXUS BRACHIAL" set as Organ
+2017-12-08 16:58:08,235 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "vide_PLEXUS BRACHIAL" set as OrganAtRisk
+2017-12-08 16:58:08,330 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI MOELLE is NOT approved.
+2017-12-08 16:58:08,435 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "MOELLE" set as Organ
+2017-12-08 16:58:08,540 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "MOELLE" set as OrganAtRisk
+2017-12-08 16:58:08,645 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON DRT is NOT approved.
+2017-12-08 16:58:08,749 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON DRT" set as Organ
+2017-12-08 16:58:08,849 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON DRT" set as OrganAtRisk
+2017-12-08 16:58:08,935 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI POUMON GCHE is NOT approved.
+2017-12-08 16:58:09,042 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "POUMON GCHE" set as Organ
+2017-12-08 16:58:09,143 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "POUMON GCHE" set as OrganAtRisk
+2017-12-08 16:58:09,349 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI OESOPHAGE is NOT approved.
+2017-12-08 16:58:09,457 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "OESOPHAGE" set as Organ
+2017-12-08 16:58:09,556 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "OESOPHAGE" set as OrganAtRisk
+2017-12-08 16:58:09,641 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI COEUR is NOT approved.
+2017-12-08 16:58:09,758 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "COEUR" set as Organ
+2017-12-08 16:58:09,859 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "COEUR" set as OrganAtRisk
+2017-12-08 16:58:09,952 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI GROS VAISSEAUX is NOT approved.
+2017-12-08 16:58:10,056 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GROS VAISSEAUX" set as Organ
+2017-12-08 16:58:10,158 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GROS VAISSEAUX" set as OrganAtRisk
+2017-12-08 16:58:10,252 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI PAROI is NOT approved.
+2017-12-08 16:58:10,358 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PAROI" set as Organ
+2017-12-08 16:58:10,455 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PAROI" set as OrganAtRisk
+2017-12-08 16:58:10,543 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV+2 is NOT approved.
+2017-12-08 16:58:10,649 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV+2" set as Ptv
+2017-12-08 16:58:10,750 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV+2" set as Target
+2017-12-08 16:58:10,842 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI paroi T is NOT approved.
+2017-12-08 16:58:10,948 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "paroi T" set as Organ
+2017-12-08 16:58:11,047 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "paroi T" set as OrganAtRisk
+2017-12-08 16:58:11,207 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI médiastin is NOT approved.
+2017-12-08 16:58:11,342 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "médiastin" set as Organ
+2017-12-08 16:58:11,445 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "médiastin" set as OrganAtRisk
+2017-12-08 16:58:11,556 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI sein D 2010 is NOT approved.
+2017-12-08 16:58:11,661 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "sein D 2010" set as Organ
+2017-12-08 16:58:11,767 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "sein D 2010" set as OrganAtRisk
+2017-12-08 16:58:11,865 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI zone d'exclusion 2015 is NOT approved.
+2017-12-08 16:58:11,972 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "zone d'exclusion 2015" set as Organ
+2017-12-08 16:58:12,070 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "zone d'exclusion 2015" set as OrganAtRisk
+2017-12-08 16:58:12,155 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI cotes travail is NOT approved.
+2017-12-08 16:58:12,260 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "cotes travail" set as Organ
+2017-12-08 16:58:12,358 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "cotes travail" set as OrganAtRisk
+2017-12-08 16:58:12,457 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI PRV MOELLE is NOT approved.
+2017-12-08 16:58:12,560 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PRV MOELLE" set as Organ
+2017-12-08 16:58:12,660 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PRV MOELLE" set as OrganAtRisk
+2017-12-08 16:58:12,766 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI vide_ROI_1 is NOT approved.
+2017-12-08 16:58:12,872 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "vide_ROI_1" set as Organ
+2017-12-08 16:58:12,976 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "vide_ROI_1" set as OrganAtRisk
+2017-12-08 16:58:13,161 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI bronches dans zone is NOT approved.
+2017-12-08 16:58:13,265 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "bronches dans zone" set as Organ
+2017-12-08 16:58:13,363 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "bronches dans zone" set as OrganAtRisk
+2017-12-08 16:58:13,495 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI gros vaisseaux dans zone is NOT approved.
+2017-12-08 16:58:13,599 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "gros vaisseaux dans zone" set as Organ
+2017-12-08 16:58:13,699 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "gros vaisseaux dans zone" set as OrganAtRisk
+2017-12-08 16:58:13,794 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI oesophage dans zone is NOT approved.
+2017-12-08 16:58:13,898 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "oesophage dans zone" set as Organ
+2017-12-08 16:58:13,995 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "oesophage dans zone" set as OrganAtRisk
+2017-12-08 16:58:14,099 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI trachée dans zone is NOT approved.
+2017-12-08 16:58:14,218 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "trachée dans zone" set as Organ
+2017-12-08 16:58:14,321 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "trachée dans zone" set as OrganAtRisk
+2017-12-08 16:58:23,846 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV48 is NOT approved.
+2017-12-08 16:58:23,952 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV48" set as Ptv
+2017-12-08 16:58:24,052 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV48" set as Target
+2017-12-08 16:58:24,152 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ROI ITV48 is NOT approved.
+2017-12-08 16:58:24,257 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "ITV48" set as TreatedVolume
+2017-12-08 16:58:24,366 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "ITV48" set as Target
+2017-12-08 16:58:36,877 - hmrlib.eval - ERROR - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-12-08 16:58:37,130 - hmrlib.eval - ERROR - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-12-08 16:58:37,188 - hmrlib.eval - ERROR - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-12-08 16:58:37,247 - hmrlib.eval - ERROR - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-12-08 16:58:37,393 - hmrlib.eval - ERROR - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-12-08 16:58:39,337 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=577fd234-3b60-43b6-9cd0-ba35c3c63568, 'A1'>
+2017-12-08 16:58:39,369 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-12-08 16:58:39,459 - hmrlib.poi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN: (x, y, z) = (5.91759033203, 10.1505996704, 8.79999923706)
+2017-12-08 16:58:39,628 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 320 in direction CCW with isocenter REF SCAN.  Energy = 6, collimator = 5, couch = 0.0.
+2017-12-08 16:58:40,445 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV48" added.
+2017-12-08 16:58:40,692 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV48" added.
+2017-12-08 16:58:40,880 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_1 A1" added.
+2017-12-08 16:58:41,064 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_2 A1" added.
+2017-12-08 16:58:41,250 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RING_3 A1" added.
+2017-12-08 16:59:01,896 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "BR SOUCHE" added.
+2017-12-08 16:59:02,447 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COEUR" added.
+2017-12-08 16:59:03,443 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COTES dans PTV A1+0.5cm" added.
+2017-12-08 16:59:04,033 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "GROS VAISSEAUX" added.
+2017-12-08 16:59:04,562 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "OESOPHAGE" added.
+2017-12-08 16:59:05,031 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "MOELLE" added.
+2017-12-08 16:59:05,501 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PRV MOELLE" added.
+2017-12-08 16:59:07,941 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PEAU" added.
+2017-12-08 16:59:09,105 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "POUMON DRT" added.
+2017-12-08 16:59:09,580 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "TRACHEE" added.
+2017-12-08 16:59:10,017 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "COEUR" added.
+2017-12-08 16:59:10,310 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-12-08 16:59:10,337 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-12-08 16:59:10,434 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-12-08 16:59:10,516 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 90.
+2017-12-08 16:59:10,593 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-12-08 16:59:10,673 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-12-08 16:59:10,748 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-12-08 17:01:01,668 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-12-08 17:01:01,705 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-12-08 17:01:01,791 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 30.
+2017-12-08 17:01:01,872 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 30.
+2017-12-08 17:01:01,956 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-12-08 17:01:02,033 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to False.
+2017-12-08 17:01:02,113 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-12-08 17:09:45,016 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-08 17:09:45,038 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] End of script poumon_launcher.py [execution time = 0:12:45.142000]
+2017-12-08 17:09:45,061 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-08 17:10:12,539 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:10:12,735 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Starting script poumon_launcher.py
+2017-12-08 17:10:12,779 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:11:28,692 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:11:28,855 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Starting script poumon_launcher.py
+2017-12-08 17:11:28,905 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:12:18,425 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:12:18,473 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] End of script poumon_launcher.py [execution time = 0:00:49.795000]
+2017-12-08 17:12:18,517 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:14:06,823 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:14:07,003 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Starting script poumon_launcher.py
+2017-12-08 17:14:07,052 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:14:35,450 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:14:35,499 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] End of script poumon_launcher.py [execution time = 0:00:28.674000]
+2017-12-08 17:14:35,545 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:15:37,135 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:15:37,316 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Starting script poumon_launcher.py
+2017-12-08 17:15:37,361 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:15:59,682 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:15:59,731 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] End of script poumon_launcher.py [execution time = 0:00:22.597000]
+2017-12-08 17:15:59,778 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:16:16,512 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:16:16,698 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Starting script poumon_launcher.py
+2017-12-08 17:16:16,743 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:16:48,998 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:16:49,046 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] End of script poumon_launcher.py [execution time = 0:00:32.545000]
+2017-12-08 17:16:49,093 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:16:54,407 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:16:54,585 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Starting script poumon_launcher.py
+2017-12-08 17:16:54,635 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:17:15,767 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:17:15,815 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] End of script poumon_launcher.py [execution time = 0:00:21.413000]
+2017-12-08 17:17:15,859 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:18:00,462 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:18:00,645 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Starting script poumon_launcher.py
+2017-12-08 17:18:00,690 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:18:19,055 - hmrlib.poi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Isocenter POI identified as "ISO"
+2017-12-08 17:18:19,116 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Beam Set = <ScriptObject id=823b6c53-2f2e-4ab9-8fa8-c5a74ba4d202, 'A1 test'>
+2017-12-08 17:18:19,164 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Exam = CT 1
+2017-12-08 17:18:19,262 - hmrlib.poi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] POI ISO: (x, y, z) = (5.91759033203, 10.1505996704, 8.79999923706)
+2017-12-08 17:18:19,450 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Added arc "A1.1" from 180 to 320 in direction CCW with isocenter ISO.  Energy = 6, collimator = 5, couch = 0.0.
+2017-12-08 17:18:19,513 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] No beamset specified.  All beamsets will be modified.
+2017-12-08 17:18:19,566 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] PlanOptimizations[0] selected.
+2017-12-08 17:18:19,680 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Fluence iterations set to 60.
+2017-12-08 17:18:19,785 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Max iterations set to 100.
+2017-12-08 17:18:19,895 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Optimality tolerance set to 1e-09.
+2017-12-08 17:18:19,998 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Compute intermediate dose set to True.
+2017-12-08 17:18:20,105 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Compute final dose set to True.
+2017-12-08 17:18:20,153 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] No beamset specified.  All beamsets will be modified.
+2017-12-08 17:18:20,226 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] PlanOptimizations[0] selected.
+2017-12-08 17:18:20,352 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Max leaf travel per degree set to 0.1 cm/deg.
+2017-12-08 17:18:20,475 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Constrain leaf motion set to True.
+2017-12-08 17:18:20,619 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-12-08 17:18:20,738 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Max arc delivery time set to 240 s for arc "A1.1".
+2017-12-08 17:18:21,074 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ROI PTV48 is NOT approved.
+2017-12-08 17:18:21,215 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Type of ROI "PTV48" set as Ptv
+2017-12-08 17:18:21,349 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] OrganType of ROI "PTV48" set as Target
+2017-12-08 17:18:36,241 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:18:36,290 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] End of script poumon_launcher.py [execution time = 0:00:35.849000]
+2017-12-08 17:18:36,343 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:19:41,390 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:19:41,577 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Starting script poumon_launcher.py
+2017-12-08 17:19:41,622 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:20:14,210 - hmrlib.poi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Isocenter POI identified as "ISO"
+2017-12-08 17:20:14,267 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Beam Set = <ScriptObject id=974641e7-c7c6-448b-8a4f-488b794da747, 'A1 test'>
+2017-12-08 17:20:14,315 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Exam = CT 1
+2017-12-08 17:20:14,408 - hmrlib.poi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] POI ISO: (x, y, z) = (5.91759033203, 10.1505996704, 8.79999923706)
+2017-12-08 17:20:14,588 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Added arc "A1.1" from 180 to 320 in direction CCW with isocenter ISO.  Energy = 6, collimator = 5, couch = 0.0.
+2017-12-08 17:20:14,655 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] No beamset specified.  All beamsets will be modified.
+2017-12-08 17:20:14,712 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] PlanOptimizations[0] selected.
+2017-12-08 17:20:14,831 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Fluence iterations set to 60.
+2017-12-08 17:20:14,929 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Max iterations set to 100.
+2017-12-08 17:20:15,033 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Optimality tolerance set to 1e-09.
+2017-12-08 17:20:15,135 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Compute intermediate dose set to True.
+2017-12-08 17:20:15,236 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Compute final dose set to True.
+2017-12-08 17:20:15,283 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] No beamset specified.  All beamsets will be modified.
+2017-12-08 17:20:15,353 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] PlanOptimizations[0] selected.
+2017-12-08 17:20:15,475 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Max leaf travel per degree set to 0.1 cm/deg.
+2017-12-08 17:20:15,593 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Constrain leaf motion set to True.
+2017-12-08 17:20:15,729 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-12-08 17:20:15,848 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Max arc delivery time set to 240 s for arc "A1.1".
+2017-12-08 17:20:16,184 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ROI PTV48 is NOT approved.
+2017-12-08 17:20:16,318 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Type of ROI "PTV48" set as Ptv
+2017-12-08 17:20:16,443 - hmrlib.roi - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] OrganType of ROI "PTV48" set as Target
+2017-12-08 17:20:35,518 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Objective of type MinDose for ROI "PTV48" added.
+2017-12-08 17:20:35,781 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-12-08 17:20:36,173 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Objective of type MaxDose for ROI "r50 A1" added.
+2017-12-08 17:20:36,438 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Objective of type MaxDose for ROI "RING_1 A1" added.
+2017-12-08 17:20:39,472 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] No beamset specified.  All beamsets will be modified.
+2017-12-08 17:20:39,516 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] PlanOptimizations[0] selected.
+2017-12-08 17:20:39,630 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Fluence iterations set to 30.
+2017-12-08 17:20:39,738 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Max iterations set to 90.
+2017-12-08 17:20:39,840 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Optimality tolerance set to 1e-09.
+2017-12-08 17:20:39,953 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Compute intermediate dose set to False.
+2017-12-08 17:20:40,060 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Compute final dose set to True.
+2017-12-08 17:22:07,291 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] No beamset specified.  All beamsets will be modified.
+2017-12-08 17:22:07,341 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] PlanOptimizations[0] selected.
+2017-12-08 17:22:07,446 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Fluence iterations set to 30.
+2017-12-08 17:22:07,550 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Max iterations set to 30.
+2017-12-08 17:22:07,647 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Optimality tolerance set to 1e-09.
+2017-12-08 17:22:07,747 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Compute intermediate dose set to False.
+2017-12-08 17:22:07,848 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Compute final dose set to True.
+2017-12-08 17:23:01,225 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Objective of type MaxDvh for ROI "OPT PMNS A1" added.
+2017-12-08 17:23:01,548 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Objective of type MaxDvh for ROI "OPT PMNS A1" added.
+2017-12-08 17:23:01,878 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Objective of type MaxDvh for ROI "OPT PMNS A1" added.
+2017-12-08 17:23:02,195 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Objective of type MaxDose for ROI "POUMON DRT" added.
+2017-12-08 17:23:02,466 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Objective of type MaxDose for ROI "MOELLE" added.
+2017-12-08 17:23:02,659 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Objective of type MaxDose for ROI "PRV MOELLE" added.
+2017-12-08 17:23:07,588 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] No beamset specified.  All beamsets will be modified.
+2017-12-08 17:23:07,644 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] PlanOptimizations[0] selected.
+2017-12-08 17:23:07,832 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Fluence iterations set to 30.
+2017-12-08 17:23:08,015 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Max iterations set to 90.
+2017-12-08 17:23:08,191 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Optimality tolerance set to 1e-09.
+2017-12-08 17:23:08,365 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Compute intermediate dose set to False.
+2017-12-08 17:23:08,531 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Compute final dose set to True.
+2017-12-08 17:24:33,340 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] No beamset specified.  All beamsets will be modified.
+2017-12-08 17:24:33,391 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] PlanOptimizations[0] selected.
+2017-12-08 17:24:33,499 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Fluence iterations set to 30.
+2017-12-08 17:24:33,604 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Max iterations set to 30.
+2017-12-08 17:24:33,699 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Optimality tolerance set to 1e-09.
+2017-12-08 17:24:33,802 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Compute intermediate dose set to False.
+2017-12-08 17:24:33,903 - hmrlib.optim - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] Compute final dose set to True.
+2017-12-08 17:31:09,181 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-08 17:31:09,225 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] End of script poumon_launcher.py [execution time = 0:11:27.850000]
+2017-12-08 17:31:09,268 - hmrlib - INFO - [hmr30489 - CANTIN^GINETTE (1644623) - CT 1 - A1 Rings/A1] ================================================================================
+2017-12-11 09:29:58,712 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 Rings/A1] ================================================================================
+2017-12-11 09:29:59,029 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 Rings/A1] Starting script poumon_launcher.py
+2017-12-11 09:29:59,158 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 Rings/A1] ================================================================================
+2017-12-11 09:35:18,197 - hmrlib.poi - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 Rings/A1] POI ISO: (x, y, z) = (-8.28406982422, 9.31999816895, 2.79993972778)
+2017-12-11 09:46:55,784 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 Rings/A1] ================================================================================
+2017-12-11 09:46:55,907 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 Rings/A1] End of script poumon_launcher.py [execution time = 0:16:57.577000]
+2017-12-11 09:46:56,029 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 Rings/A1] ================================================================================
+2017-12-11 09:57:22,533 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 LUSTRE/A1] ================================================================================
+2017-12-11 09:57:22,820 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 LUSTRE/A1] Starting script poumon_launcher.py
+2017-12-11 09:57:22,949 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 LUSTRE/A1] ================================================================================
+2017-12-11 10:09:42,587 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 LUSTRE/A1] ================================================================================
+2017-12-11 10:09:42,724 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 LUSTRE/A1] End of script poumon_launcher.py [execution time = 0:12:20.009000]
+2017-12-11 10:09:42,853 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 LUSTRE/A1] ================================================================================
+2017-12-11 12:01:06,884 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 LUSTRE/A1] ================================================================================
+2017-12-11 12:01:07,413 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 LUSTRE/A1] Starting script poumon_launcher.py
+2017-12-11 12:01:07,615 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 LUSTRE/A1] ================================================================================
+2017-12-11 12:01:25,966 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-11 12:01:25,986 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script poumon_launcher.py [execution time = 0:00:20.316000]
+2017-12-11 12:01:26,003 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-11 12:01:57,609 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 LUSTRE/A1] ================================================================================
+2017-12-11 12:01:58,035 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 LUSTRE/A1] Starting script poumon_launcher.py
+2017-12-11 12:01:58,158 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - A1+B1 LUSTRE/A1] ================================================================================

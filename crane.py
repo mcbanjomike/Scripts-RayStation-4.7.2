@@ -173,7 +173,7 @@ def plan_crane_3DC(site_name='A1', presc_dose=1500, nb_fx=1, isodose_creation = 
     
     plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
     plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 30
-    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 6
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 20
     plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.ComputeFinalDose = True    
     
     # Uncheck Segment Shape optimization for all beams
@@ -2743,7 +2743,7 @@ def crane_stereo_kbp_optimize_3DC_plan(plan_data,plan,beamset):
     
     plan.PlanOptimizations[0].OptimizationParameters.Algorithm.OptimalityTolerance = 1E-10
     plan.PlanOptimizations[0].OptimizationParameters.Algorithm.MaxNumberOfIterations = 30
-    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 6
+    plan.PlanOptimizations[0].OptimizationParameters.SegmentConversion.MinSegmentMUPerFraction = 20
     plan.PlanOptimizations[0].OptimizationParameters.DoseCalculation.ComputeFinalDose = True    
     
     # Uncheck Segment Shape optimization for all beams

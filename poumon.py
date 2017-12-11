@@ -352,63 +352,63 @@ def poumon_stereo_v2_rois(plan_data,index,num_plans,fat_r50=False):
     # Generate optimization contours (unless they already exist for this site)  
     # These ROIs change if two sites are being treated
     if num_plans == 1:
-        if not roi.roi_exists("TISSU SAIN A 2cm_"+site_name, exam):
+        if not roi.roi_exists("TISSU SAIN A 2cm "+site_name, exam):
             # Create TISSU SAIN A 2cm
-            patient.PatientModel.CreateRoi(Name="TISSU SAIN A 2cm_"+site_name, Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
-            patient.PatientModel.RegionsOfInterest["TISSU SAIN A 2cm_"+site_name].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv_name], 'MarginSettings': {'Type': "Expand", 'Superior': 2, 'Inferior': 2, 'Anterior': 2, 'Posterior': 2, 'Right': 2, 'Left': 2}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-            patient.PatientModel.RegionsOfInterest["TISSU SAIN A 2cm_"+site_name].UpdateDerivedGeometry(Examination=exam)
+            patient.PatientModel.CreateRoi(Name="TISSU SAIN A 2cm "+site_name, Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest["TISSU SAIN A 2cm "+site_name].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv_name], 'MarginSettings': {'Type': "Expand", 'Superior': 2, 'Inferior': 2, 'Anterior': 2, 'Posterior': 2, 'Right': 2, 'Left': 2}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest["TISSU SAIN A 2cm "+site_name].UpdateDerivedGeometry(Examination=exam)
             # Create COMBI PMN-ITV-BR
-            patient.PatientModel.CreateRoi(Name="COMBI PMN-ITV-BR_"+site_name, Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
-            patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR_"+site_name].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["POUMON DRT", "POUMON GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [itv_name, "BR SOUCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-            patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR_"+site_name].UpdateDerivedGeometry(Examination=exam)
+            patient.PatientModel.CreateRoi(Name="COMBI PMN-ITV-BR "+site_name, Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR "+site_name].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["POUMON DRT", "POUMON GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [itv_name, "BR SOUCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR "+site_name].UpdateDerivedGeometry(Examination=exam)
             #Creat OPT COMBI PMN
-            patient.PatientModel.CreateRoi(Name="OPT COMBI PMN_"+site_name, Color="Blue", Type="Organ", TissueName=None, RoiMaterial=None)
-            patient.PatientModel.RegionsOfInterest["OPT COMBI PMN_"+site_name].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["POUMON DRT", "POUMON GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-            patient.PatientModel.RegionsOfInterest["OPT COMBI PMN_"+site_name].UpdateDerivedGeometry(Examination=exam)
+            patient.PatientModel.CreateRoi(Name="OPT COMBI PMN "+site_name, Color="Blue", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest["OPT COMBI PMN "+site_name].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["POUMON DRT", "POUMON GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [ptv_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest["OPT COMBI PMN "+site_name].UpdateDerivedGeometry(Examination=exam)
     elif num_plans == 2 and index == 0:
         combi_site = plan_data['site_names'][0] + '+' + plan_data['site_names'][1]
-        if not roi.roi_exists("TISSU SAIN A 2cm_"+combi_site, exam):
+        if not roi.roi_exists("TISSU SAIN A 2cm "+combi_site, exam):
             # Create TISSU SAIN A 2cm
-            patient.PatientModel.CreateRoi(Name="TISSU SAIN A 2cm_"+combi_site, Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
-            patient.PatientModel.RegionsOfInterest["TISSU SAIN A 2cm_"+combi_site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [plan_data['ptv_names'][0],plan_data['ptv_names'][1]], 'MarginSettings': {'Type': "Expand", 'Superior': 2, 'Inferior': 2, 'Anterior': 2, 'Posterior': 2, 'Right': 2, 'Left': 2}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-            patient.PatientModel.RegionsOfInterest["TISSU SAIN A 2cm_"+combi_site].UpdateDerivedGeometry(Examination=exam)
+            patient.PatientModel.CreateRoi(Name="TISSU SAIN A 2cm "+combi_site, Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest["TISSU SAIN A 2cm "+combi_site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [plan_data['ptv_names'][0],plan_data['ptv_names'][1]], 'MarginSettings': {'Type': "Expand", 'Superior': 2, 'Inferior': 2, 'Anterior': 2, 'Posterior': 2, 'Right': 2, 'Left': 2}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest["TISSU SAIN A 2cm "+combi_site].UpdateDerivedGeometry(Examination=exam)
             # Create COMBI PMN-ITV-BR
-            patient.PatientModel.CreateRoi(Name="COMBI PMN-ITV-BR_"+combi_site, Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
-            patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR_"+combi_site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["POUMON DRT", "POUMON GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [plan_data['itv_names'][0],plan_data['itv_names'][1], "BR SOUCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-            patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR_"+combi_site].UpdateDerivedGeometry(Examination=exam)
+            patient.PatientModel.CreateRoi(Name="COMBI PMN-ITV-BR "+combi_site, Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR "+combi_site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["POUMON DRT", "POUMON GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [plan_data['itv_names'][0],plan_data['itv_names'][1], "BR SOUCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR "+combi_site].UpdateDerivedGeometry(Examination=exam)
             #Creat OPT COMBI PMN
-            patient.PatientModel.CreateRoi(Name="OPT COMBI PMN_"+combi_site, Color="Blue", Type="Organ", TissueName=None, RoiMaterial=None)
-            patient.PatientModel.RegionsOfInterest["OPT COMBI PMN_"+combi_site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["POUMON DRT", "POUMON GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [plan_data['ptv_names'][0],plan_data['ptv_names'][1]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-            patient.PatientModel.RegionsOfInterest["OPT COMBI PMN_"+combi_site].UpdateDerivedGeometry(Examination=exam)        
+            patient.PatientModel.CreateRoi(Name="OPT COMBI PMN "+combi_site, Color="Blue", Type="Organ", TissueName=None, RoiMaterial=None)
+            patient.PatientModel.RegionsOfInterest["OPT COMBI PMN "+combi_site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["POUMON DRT", "POUMON GCHE"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [plan_data['ptv_names'][0],plan_data['ptv_names'][1]], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+            patient.PatientModel.RegionsOfInterest["OPT COMBI PMN "+combi_site].UpdateDerivedGeometry(Examination=exam)        
     
     #This batch has to be created for each PTV (unless they already exist)
-    if not roi.roi_exists("r50_"+site_name):
+    if not roi.roi_exists("r50 "+site_name):
         # Create PTV+3mm, PTV+1.3cm and PTV+2cm
-        patient.PatientModel.CreateRoi(Name="PTV+3mm_"+site_name, Color="Pink", Type="Organ", TissueName=None, RoiMaterial=None)
-        patient.PatientModel.RegionsOfInterest["PTV+3mm_"+site_name].SetMarginExpression(SourceRoiName=ptv_name, MarginSettings={'Type': "Expand", 'Superior': 0.3, 'Inferior': 0.3, 'Anterior': 0.3, 'Posterior': 0.3, 'Right': 0.3, 'Left': 0.3})
-        patient.PatientModel.RegionsOfInterest["PTV+3mm_"+site_name].UpdateDerivedGeometry(Examination=exam)
-        patient.PatientModel.CreateRoi(Name="PTV+1.3cm_"+site_name, Color="Orange", Type="Organ", TissueName=None, RoiMaterial=None)
-        patient.PatientModel.RegionsOfInterest["PTV+1.3cm_"+site_name].SetMarginExpression(SourceRoiName=ptv_name, MarginSettings={'Type': "Expand", 'Superior': 1.3, 'Inferior': 1.3, 'Anterior': 1.3, 'Posterior': 1.3, 'Right': 1.3, 'Left': 1.3})
-        patient.PatientModel.RegionsOfInterest["PTV+1.3cm_"+site_name].UpdateDerivedGeometry(Examination=exam)
-        patient.PatientModel.CreateRoi(Name="PTV+2cm_"+site_name, Color="Blue", Type="Organ", TissueName=None, RoiMaterial=None)
-        patient.PatientModel.RegionsOfInterest["PTV+2cm_"+site_name].SetMarginExpression(SourceRoiName=ptv_name, MarginSettings={'Type': "Expand", 'Superior': 2, 'Inferior': 2, 'Anterior': 2, 'Posterior': 2, 'Right': 2, 'Left': 2})
-        patient.PatientModel.RegionsOfInterest["PTV+2cm_"+site_name].UpdateDerivedGeometry(Examination=exam)
+        patient.PatientModel.CreateRoi(Name="PTV+3mm "+site_name, Color="Pink", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest["PTV+3mm "+site_name].SetMarginExpression(SourceRoiName=ptv_name, MarginSettings={'Type': "Expand", 'Superior': 0.3, 'Inferior': 0.3, 'Anterior': 0.3, 'Posterior': 0.3, 'Right': 0.3, 'Left': 0.3})
+        patient.PatientModel.RegionsOfInterest["PTV+3mm "+site_name].UpdateDerivedGeometry(Examination=exam)
+        patient.PatientModel.CreateRoi(Name="PTV+1.3cm "+site_name, Color="Orange", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest["PTV+1.3cm "+site_name].SetMarginExpression(SourceRoiName=ptv_name, MarginSettings={'Type': "Expand", 'Superior': 1.3, 'Inferior': 1.3, 'Anterior': 1.3, 'Posterior': 1.3, 'Right': 1.3, 'Left': 1.3})
+        patient.PatientModel.RegionsOfInterest["PTV+1.3cm "+site_name].UpdateDerivedGeometry(Examination=exam)
+        patient.PatientModel.CreateRoi(Name="PTV+2cm "+site_name, Color="Blue", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest["PTV+2cm "+site_name].SetMarginExpression(SourceRoiName=ptv_name, MarginSettings={'Type': "Expand", 'Superior': 2, 'Inferior': 2, 'Anterior': 2, 'Posterior': 2, 'Right': 2, 'Left': 2})
+        patient.PatientModel.RegionsOfInterest["PTV+2cm "+site_name].UpdateDerivedGeometry(Examination=exam)
         # Create RINGs
-        patient.PatientModel.CreateRoi(Name="RING_1_"+site_name, Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
-        patient.PatientModel.RegionsOfInterest['RING_1_'+site_name].SetWallExpression(SourceRoiName=ptv_name, OutwardDistance=0.3, InwardDistance=0)
-        patient.PatientModel.RegionsOfInterest['RING_1_'+site_name].UpdateDerivedGeometry(Examination=exam)
-        patient.PatientModel.CreateRoi(Name="RING_2_"+site_name, Color="Orange", Type="Organ", TissueName=None, RoiMaterial=None)
-        patient.PatientModel.RegionsOfInterest['RING_2_'+site_name].SetWallExpression(SourceRoiName="PTV+3mm_"+site_name, OutwardDistance=1, InwardDistance=0)
-        patient.PatientModel.RegionsOfInterest['RING_2_'+site_name].UpdateDerivedGeometry(Examination=exam)
-        patient.PatientModel.CreateRoi(Name="RING_3_"+site_name, Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
-        patient.PatientModel.RegionsOfInterest['RING_3_'+site_name].SetWallExpression(SourceRoiName="PTV+1.3cm_"+site_name, OutwardDistance=1.5, InwardDistance=0)
-        patient.PatientModel.RegionsOfInterest['RING_3_'+site_name].UpdateDerivedGeometry(Examination=exam)
-        patient.PatientModel.CreateRoi(Name="r50_"+site_name, Color="White", Type="Organ", TissueName=None, RoiMaterial=None)
-        patient.PatientModel.RegionsOfInterest['r50_'+site_name].SetWallExpression(SourceRoiName="PTV+2cm_"+site_name, OutwardDistance=1, InwardDistance=0)
-        patient.PatientModel.RegionsOfInterest['r50_'+site_name].UpdateDerivedGeometry(Examination=exam)    
+        patient.PatientModel.CreateRoi(Name="RING_1 "+site_name, Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest['RING_1 '+site_name].SetWallExpression(SourceRoiName=ptv_name, OutwardDistance=0.3, InwardDistance=0)
+        patient.PatientModel.RegionsOfInterest['RING_1 '+site_name].UpdateDerivedGeometry(Examination=exam)
+        patient.PatientModel.CreateRoi(Name="RING_2 "+site_name, Color="Orange", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest['RING_2 '+site_name].SetWallExpression(SourceRoiName="PTV+3mm "+site_name, OutwardDistance=1, InwardDistance=0)
+        patient.PatientModel.RegionsOfInterest['RING_2 '+site_name].UpdateDerivedGeometry(Examination=exam)
+        patient.PatientModel.CreateRoi(Name="RING_3 "+site_name, Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest['RING_3 '+site_name].SetWallExpression(SourceRoiName="PTV+1.3cm "+site_name, OutwardDistance=1.5, InwardDistance=0)
+        patient.PatientModel.RegionsOfInterest['RING_3 '+site_name].UpdateDerivedGeometry(Examination=exam)
+        patient.PatientModel.CreateRoi(Name="r50 "+site_name, Color="White", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest['r50 '+site_name].SetWallExpression(SourceRoiName="PTV+2cm "+site_name, OutwardDistance=1, InwardDistance=0)
+        patient.PatientModel.RegionsOfInterest['r50 '+site_name].UpdateDerivedGeometry(Examination=exam)    
         if fat_r50:
             patient.PatientModel.CreateRoi(Name="TS "+site_name, Color="White", Type="Organ", TissueName=None, RoiMaterial=None)
-            patient.PatientModel.RegionsOfInterest['TS '+site_name].SetWallExpression(SourceRoiName="PTV+2cm_"+site_name, OutwardDistance=3, InwardDistance=0)
+            patient.PatientModel.RegionsOfInterest['TS '+site_name].SetWallExpression(SourceRoiName="PTV+2cm "+site_name, OutwardDistance=3, InwardDistance=0)
             patient.PatientModel.RegionsOfInterest['TS '+site_name].UpdateDerivedGeometry(Examination=exam)            
     
     # Rename PAROI if necessary
@@ -691,8 +691,7 @@ def poumon_lustre_add_clinical_goals(plan_data,index,plan,num_plans):
     eval.add_clinical_goal('POUMONS-PTV '+site_name, 715, 'AtMost', 'VolumeAtDose', 40, plan=plan)
     eval.add_clinical_goal('POUMONS-PTV '+site_name, 358, 'AtMost', 'VolumeAtDose', 65, plan=plan)
 
-   
-       
+
 def poumon_lustre_modify_plan(plan_data,index,plan,beamset,num_plans):
     
     patient = plan_data['patient']
@@ -761,6 +760,7 @@ def poumon_stereo_kbp_identify_rois(plan_data):
     patient = plan_data['patient']
     ptv_name = plan_data['ptv'].Name
     exam = plan_data['exam']
+    site_name = plan_data['site_name']
     
     roi_names = [x.Name for x in patient.PatientModel.RegionsOfInterest]
    
@@ -850,12 +850,18 @@ def poumon_stereo_kbp_identify_rois(plan_data):
         if name in roi_names:
             body_name = name
             break                
-            
-    name_list = ['COMBI PMN-ITV-BR','COMBI PMN-ITV-BR*']
+
+    if not roi.roi_exists('OPT COMBI PMN '+site_name,exam):
+        patient.PatientModel.CreateRoi(Name="COMBI PMN-ITV-BR "+site_name, Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
+        patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR "+site_name].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [poumon_d_name, poumon_g_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [plan_data['itv_names'][0], bronches_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+        patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR "+site_name].UpdateDerivedGeometry(Examination=exam)        
+    name_list = ['COMBI PMN-ITV-BR','COMBI PMN-ITV-BR*','OPT COMBI PMN '+site_name]
     for name in name_list:
         if name in roi_names:
             opt_pmns_name = name
             break                
+
+    
     
     #Determine laterality
     if poumon_d_name == "Not found": #Patient only has left lung
@@ -943,6 +949,16 @@ def poumon_stereo_kbp_initial_plan(plan_data,oar_list):
     body_name = oar_list[12]
     opt_pmns_name = oar_list[13]    
 
+    site_name = plan_data['site_name']
+    if roi.roi_exists('r50'):
+        r50_name = 'r50'
+    elif roi.roi_exists('r50 '+site_name):
+        r50_name = 'r50 '+site_name    
+    if roi.roi_exists('RING_1'):
+        ring1_name = 'RING_1'
+    elif roi.roi_exists('RING_1 '+site_name):
+        ring1_name = 'RING_1 '+site_name      
+    
     #Set PTV contour type
     try:
         roi.set_roi_type(ptv_name, 'Ptv', 'Target')
@@ -976,7 +992,7 @@ def poumon_stereo_kbp_initial_plan(plan_data,oar_list):
 
     #Create COMBI PMN KBP (need to do this now because you can't evaluate dose on a structure that didn't exist during dose calculation)
     pmn_kbp_name = 'OPT PMNS ' + plan_data['site_name']
-    roi.create_expanded_roi('r50', color="Yellow", examination=exam, marge_lat=5, marge_sup_inf = 0, output_name='temp KBP1')
+    roi.create_expanded_roi(r50_name, color="Yellow", examination=exam, marge_lat=5, marge_sup_inf = 0, output_name='temp KBP1')
     roi.create_expanded_roi('temp KBP1', color="Lightblue", examination=exam, marge_lat=5, marge_sup_inf = 0, output_name='temp KBP2')
     patient.PatientModel.CreateRoi(Name=pmn_kbp_name, Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
     patient.PatientModel.RegionsOfInterest[pmn_kbp_name].SetAlgebraExpression(ExpressionA={'Operation': "Intersection", 'SourceRoiNames': ["temp KBP2"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [opt_pmns_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Intersection", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
@@ -987,8 +1003,8 @@ def poumon_stereo_kbp_initial_plan(plan_data,oar_list):
     #Initial set of optimization objectives
     optim.add_mindose_objective(ptv_name, rx, weight=ptv_weight, plan=plan, plan_opt=0)
     optim.add_dosefalloff_objective(body_name, rx*1.00, rx*0.25, falloff_range, weight=25, plan=plan, plan_opt=0)
-    optim.add_maxdose_objective('r50', rx*r50_max_dose, weight=r50_weight, plan=plan, plan_opt=0) 
-    optim.add_maxdose_objective('RING_1', rx*1.02, weight=1, plan=plan, plan_opt=0) 
+    optim.add_maxdose_objective(r50_name, rx*r50_max_dose, weight=r50_weight, plan=plan, plan_opt=0) 
+    optim.add_maxdose_objective(ring1_name, rx*1.02, weight=1, plan=plan, plan_opt=0) 
 
     #Copy clinical goals from old-style plan
     #optim.copy_clinical_goals(old_plan = patient.TreatmentPlans[plan_data['plan_name']],new_plan = plan)
@@ -1010,6 +1026,12 @@ def poumon_stereo_kbp_modify_plan(plan_data,oar_list):
     ptv_name = plan_data['ptv'].Name
     pmn_contra_name = oar_list[1]
     pmn_kbp_name = 'OPT PMNS ' + plan_data['site_name']  
+    
+    site_name = plan_data['site_name']
+    if roi.roi_exists('PTV+3mm'):
+        ptv3mm_name = 'PTV+3mm'
+    elif roi.roi_exists('PTV+3mm '+site_name):
+        ptv3mm_name = 'PTV+3mm '+site_name
     
     #Evaluate lung DVH before scaling
     dose_in_pmn_kbp = beamset.FractionDose.GetRelativeVolumeAtDoseValues(RoiName=pmn_kbp_name, DoseValues=[2000/nb_fx,1000/nb_fx,500/nb_fx])             
@@ -1118,7 +1140,7 @@ def poumon_stereo_kbp_modify_plan(plan_data,oar_list):
                     elif 100*oar_max_dose[i] > 500:
                         optim.add_maxdose_objective(oar, 100*oar_max_dose[i], weight=1, plan=plan, plan_opt=0)
                 else: #OAR close to or inside PTV
-                    newvol = roi.intersect_roi_ptv(oar, 'PTV+3mm', color="Blue", examination=exam, margeptv=0, output_name="PTV "+plan_data['site_name']+' test')
+                    newvol = roi.intersect_roi_ptv(oar, ptv3mm_name, color="Blue", examination=exam, margeptv=0, output_name="PTV "+plan_data['site_name']+' test')
                     if 100*oar_max_dose[i] > rx:
                         optim.add_maxdose_objective(newvol.Name, rx, weight=25, plan=plan, plan_opt=0) 
                     else:

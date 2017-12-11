@@ -20,11 +20,12 @@ import beams
 import optimization_objectives
 import clinical_goals
 
-# To test GUI stuff
+#GUI stuff
 import clr
 import System.Array
 
 import poumon
+import crane #for the custom max dose function
 import verification
 import report
 import statistics
@@ -312,7 +313,7 @@ def poumon_launcher():
 
             
             self.message = Label()
-            self.message.Text = "Sélectionnez le(s) ROI(s) à traiter. Seulement les ROIs\navec PTV ou ITV dans leurs noms sont disponibles.\n\nSi vous planifiez pour un seul PTV, utilisez la colonne\nde gauche."
+            self.message.Text = "Sélectionnez le(s) ROI(s) à traiter. Seulement les ROIs\navec PTV ou ITV dans leurs noms sont disponibles.\n\nSi vous planifiez pour un seul PTV, utilisez la colonne\nde gauche.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeulement le PTV de gauche sera considéré pour un plan falloff"
             self.message.Location = Point(300, offset)
             self.message.Font = Font("Arial", 11, FontStyle.Italic)
             self.message.AutoSize = True                
@@ -363,14 +364,8 @@ def poumon_launcher():
             self.OAR3_value.Location = Point(160, offset + 16*vert_spacer)
             self.OAR3_value.Width = 50    
 
-                                 
-            
-            addplanButton = Button()
-            addplanButton.Text = "Ajouter plan"
-            addplanButton.Location = Point(25, offset + 20 * vert_spacer)
-            addplanButton.Width = 200
-            addplanButton.Click += self.addplanClicked   
 
+            
 
             self.stepcombo = ComboBox()
             self.stepcombo.Parent = self
@@ -381,6 +376,20 @@ def poumon_launcher():
             self.stepcombo.Items.Add('1 plan (colli 90)')             
             self.stepcombo.Items.Add('2 plans sur 1 isocentre')            
             self.stepcombo.Items.Add('2 plans sur 2 isocentres')                
+            
+            
+            addplanButton = Button()
+            addplanButton.Text = "Ajouter plan"
+            addplanButton.Location = Point(25, offset + 20 * vert_spacer)
+            addplanButton.Width = 200
+            addplanButton.Click += self.addplanClicked   
+
+            
+            addKBPplanButton = Button()
+            addKBPplanButton.Text = "Ajouter plan falloff (TEST)"
+            addKBPplanButton.Location = Point(25, offset + 22 * vert_spacer)
+            addKBPplanButton.Width = 200
+            addKBPplanButton.Click += self.addKBPplanClicked              
             
             
             
@@ -434,6 +443,7 @@ def poumon_launcher():
 
             self.MainWindow.Controls.Add(evalButton)
             self.MainWindow.Controls.Add(addplanButton)            
+            self.MainWindow.Controls.Add(addKBPplanButton) 
             
             self.MainWindow.Controls.Add(self.stepcombo) 
             
@@ -906,6 +916,7 @@ def poumon_launcher():
                     
                     self.status.Text = "Plan %d/%d: Objectifs d'optimisation et Clinical Goals" % (i+1,num_plans)
                     clinical_goals.smart_cg_lung_stereo_v2(plan_data=d, plan=plan, beamset=beamset, index=i, num_plans=num_plans)
+                    crane.add_custom_max_doses(custom_max=d['custom_max'], plan=plan, plan_opt=i)
                     
                     self.status.Text = "Plan %d/%d: Optimisation initiale" % (i+1,num_plans)
                     optim.optimization_90_30(plan=plan,beamset=beamset)
@@ -943,7 +954,7 @@ def poumon_launcher():
                         beams.add_beams_imrt_lung_stereo_v2(plan_data=d, beamset=beamset, index=i)
                     
                     self.status.Text = "Plan %d/%d: Reglage des paramètres d'optimisation" % (i+1,num_plans)
-                    poumon.poumon_stereo_v2_opt_settings(plan_data=d, plan=plan, index=i)                    
+                    poumon.poumon_stereo_v2_opt_settings(plan_data=d, plan=plan, index=i, plan_type=self.stepcombo.Text)                    
 
                     self.status.Text = "Plan %d/%d: Ajout des Clinical Goals" % (i+1,num_plans)
                     poumon.poumon_lustre_add_clinical_goals(plan_data=d, index=i, plan=plan, num_plans=num_plans)
@@ -962,6 +973,7 @@ def poumon_launcher():
                 while i < num_plans:
                     self.status.Text = "Plan %d/%d: Modification du plan" % (i+1,num_plans)
                     poumon.poumon_lustre_modify_plan(plan_data=d, index=i, plan=plan, beamset=plan.BeamSets[i], num_plans=num_plans)
+                    crane.add_custom_max_doses(custom_max=d['custom_max'], plan=plan, plan_opt=i)
                 
                     i += 1
                 
@@ -986,7 +998,47 @@ def poumon_launcher():
             self.status.ForeColor = Color.Green
          
    
+        def addKBPplanClicked(self, sender, args):
+            self.message.Text = ""        
+            self.status.ForeColor = Color.Black                     
+            self.status.Text = "Compilation des données du plan"
+            
+            d,error_message = self.compile_plan_data()                       
+            
+            if error_message != "": #If an error is noticed, cancel script execution
+                self.status.Text = error_message
+                self.status.ForeColor = Color.Red
+                return    
 
+            plan_name = "Plan Test"
+            try:
+                existing_plan = patient.TreatmentPlans[plan_name]
+                error_message = "Un plan avec le nom %s exist déjà" % plan_name
+            except:
+                pass                
+
+            #Add categories to plan data dictionary to make it compatible with old kbp scripts (THIS IS SUPER KLUDGY AND SHOULD BE IMPROVED LATER)
+            d['site_name'] = d['site_names'][0]
+            d['ptv'] = patient.PatientModel.RegionsOfInterest[d['ptv_names'][0]]
+            d['site_name'] = d['site_names'][0]
+            d['treatment_technique'] = d['techniques'][0]
+            
+            self.status.Text = "Test: Vérification des OARs"
+            oar_list,laterality = poumon.poumon_stereo_kbp_identify_rois(plan_data=d)
+            self.status.Text = "Test: Ajout du plan et beamset test"                    
+            poumon.poumon_stereo_kbp_add_plan_and_beamset(plan_data=d,laterality=laterality)
+            self.status.Text = "Test: Configuration des paramêtres d'optimisation"
+            poumon.poumon_stereo_kbp_opt_settings(plan_data=d)
+            self.status.Text = "Test: Création et optimisation du plan inital"
+            poumon.poumon_stereo_kbp_initial_plan(plan_data=d,oar_list=oar_list)
+            self.status.Text = "Test: Modification des objectifs d'optimisation"
+            poumon.poumon_stereo_kbp_modify_plan(plan_data=d,oar_list=oar_list)
+            self.status.Text = "Test: Optimisation du plan modifié"
+            poumon.poumon_stereo_kbp_iterate_plan(plan_data=d,oar_list=oar_list)
+            #self.Status.Text = "Test: Impression des resultats"
+            #poumon.poumon_stereo_kbp_evaluate_plan(plan_data=d,oar_list=oar_list)
+   
+   
     #Check for common errors while importing patient, plan, beamset and examination
     try:
         patient = lib.get_current_patient()
