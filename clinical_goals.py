@@ -1986,9 +1986,9 @@ def smart_cg_lung_stereo_v2(plan_data,plan,beamset,index,num_plans):
     optim.add_mindose_objective(ptv_name, rx_dose, weight=50, plan=plan, plan_opt=plan_opt)
     optim.add_maxdose_objective(ptv_name, rx_dose*1.5, weight=1, plan=plan, plan_opt=plan_opt)
 
-    optim.add_maxdose_objective('RING_1_'+site_name, rx_dose*1.01, plan=plan, plan_opt=plan_opt)
-    optim.add_maxdose_objective('RING_2_'+site_name, rx_dose*0.87, plan=plan, plan_opt=plan_opt)
-    optim.add_maxdose_objective('RING_3_'+site_name, rx_dose*0.59, plan=plan, plan_opt=plan_opt)
+    optim.add_maxdose_objective('RING_1 '+site_name, rx_dose*1.01, plan=plan, plan_opt=plan_opt)
+    optim.add_maxdose_objective('RING_2 '+site_name, rx_dose*0.87, plan=plan, plan_opt=plan_opt)
+    optim.add_maxdose_objective('RING_3 '+site_name, rx_dose*0.59, plan=plan, plan_opt=plan_opt)
     
     if roi.roi_exists("TS "+site_name,exam):
         optim.add_maxdose_objective("TS "+site_name, rx_dose*0.5, plan=plan, plan_opt=plan_opt)
@@ -2313,9 +2313,9 @@ def smart_cg_lung_stereo_v2(plan_data,plan,beamset,index,num_plans):
 
     # COMBI PMN-ITV-BR
     if num_plans == 1:
-        roi_name = 'COMBI PMN-ITV-BR_' + site_name
+        roi_name = 'COMBI PMN-ITV-BR ' + site_name
     elif num_plans == 2:
-        roi_name = 'COMBI PMN-ITV-BR_' + plan_data['site_names'][0] + '+' + plan_data['site_names'][1]
+        roi_name = 'COMBI PMN-ITV-BR ' + plan_data['site_names'][0] + '+' + plan_data['site_names'][1]
     
     if roi.roi_exists(roi_name, exam):
         eval.add_clinical_goal(roi_name, 500, 'AtMost', 'VolumeAtDose', 20, plan=plan)
@@ -2347,9 +2347,9 @@ def smart_cg_lung_stereo_v2(plan_data,plan,beamset,index,num_plans):
 
     # TISSU SAIN A 2cm
     if num_plans == 1:
-        roi_name = 'TISSU SAIN A 2cm_' + site_name
+        roi_name = 'TISSU SAIN A 2cm ' + site_name
     elif num_plans == 2:
-        roi_name = 'TISSU SAIN A 2cm_' + plan_data['site_names'][0] + '+' + plan_data['site_names'][1]
+        roi_name = 'TISSU SAIN A 2cm ' + plan_data['site_names'][0] + '+' + plan_data['site_names'][1]
  
     if roi.roi_exists(roi_name, exam):
         dose_level1 = [2700, 2400, 3000, 3000]  # 0.1cc
