@@ -686,8 +686,12 @@ def prostate_A1_add_plan_and_beamset(plan_data):
     # Add beamset
     if plan_data['exam'].PatientPosition == "HFS":
         position = "HeadFirstSupine"
+    elif plan_data['exam'].PatientPosition == "FFS":
+        position = "FeetFirstSupine"
+    elif plan_data['exam'].PatientPosition == "HFP":
+        position = "HeadFirstProne"        
     else:
-        position = "HeadFirstProne"
+        position = "FeetFirstProne"
         
     beamset = plan.AddNewBeamSet(Name="A1", ExaminationName=plan_data['exam'].Name, MachineName=plan_data['machine'], NominalEnergy=None,
                                       Modality="Photons", TreatmentTechnique=plan_data['treatment_technique'], PatientPosition=position, NumberOfFractions=plan_data['nb_fx'], CreateSetupBeams=False, Comment="")
