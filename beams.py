@@ -292,13 +292,13 @@ def add_arcs_lung_stereo_v2(plan_data, beamset, index, two_arcs=False, colli1=5,
         two_arcs = True
                   
     if laterality == 'DRT':
-        lib.add_arc(site_name+".1", iso_name, 40, 181, 'CCW', description='ARC 30-181', collimator=colli1, beamset=beamset, exam=exam)
+        lib.add_arc(site_name+".1", iso_name, 40, 181, 'CCW', description='ARC 40-181', collimator=colli1, beamset=beamset, exam=exam)
         if two_arcs:
-            lib.add_arc(site_name+".2", iso_name, 181, 40, 'CW', description='ARC 181-30', collimator=colli2, beamset=beamset, exam=exam)
+            lib.add_arc(site_name+".2", iso_name, 181, 40, 'CW', description='ARC 181-40', collimator=colli2, beamset=beamset, exam=exam)
     elif laterality == 'GCHE':
-        lib.add_arc(site_name+".1", iso_name, 180, 320, 'CCW', description='ARC 180-330', collimator=colli1, beamset=beamset, exam=exam)
+        lib.add_arc(site_name+".1", iso_name, 180, 320, 'CCW', description='ARC 180-320', collimator=colli1, beamset=beamset, exam=exam)
         if two_arcs:
-            lib.add_arc(site_name+".2", iso_name, 320, 180, 'CW', description='ARC 330-180', collimator=colli2, beamset=beamset, exam=exam)        
+            lib.add_arc(site_name+".2", iso_name, 320, 180, 'CW', description='ARC 320-180', collimator=colli2, beamset=beamset, exam=exam)        
 
   
 def add_beams_imrt_lung_stereo_v2(plan_data, beamset, index):

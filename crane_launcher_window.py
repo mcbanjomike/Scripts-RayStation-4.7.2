@@ -557,6 +557,9 @@ def crane_launcher():
             v10 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=1000)
             v12 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=1200)
             self.message.Text += '\n\nV10 Cerveau-PTV estimé: %s\nV12 Cerveau-PTV estimé: %s' % (v10,v12)
+            if max(rx) >= 2000:
+                v20 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=2000)
+                self.message.Text += '\nV20 Cerveau-PTV estimé: %s' % (v20)            
             
             self.status.Text = "Terminé"
             
@@ -620,6 +623,9 @@ def crane_launcher():
             v10 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=1000)
             v12 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=1200)
             self.message.Text += '\n\nV10 Cerveau-PTV estimé: %s\nV12 Cerveau-PTV estimé: %s' % (v10,v12)
+            if max(rx) >= 2000:
+                v20 = crane.estimate_vx(predicted_vol=predicted_vol,rx_dose=max(rx),dose_level=2000)
+                self.message.Text += '\nV20 Cerveau-PTV estimé: %s' % (v20)
             
             self.status.Text = "Estimation de la dose max au tronc cerebral"
             tronc_max = crane.crane_stereo_kbp_predict_oar_dose(plan_data = d)    
@@ -729,7 +735,7 @@ def crane_launcher():
                 eval.add_clinical_goal("CERVEAU-PTV_"+d['site_name'], 1000, 'AtMost', 'AbsoluteVolumeAtDose', 10, plan=plan)
                 eval.add_clinical_goal("CERVEAU-PTV_"+d['site_name'], 1200, 'AtMost', 'AbsoluteVolumeAtDose', 8, plan=plan)
                 if max(rx) >= 2000:
-                    eval.add_clinical_goal(d['oar_list'][0], 2000, 'AtMost', 'AbsoluteVolumeAtDose', 20, plan=plan)
+                    eval.add_clinical_goal("CERVEAU-PTV_"+d['site_name'], 2000, 'AtMost', 'AbsoluteVolumeAtDose', 20, plan=plan)
                 for i,ptv in enumerate(ptv_names):
                     eval.add_clinical_goal(ptv, rx[i], 'AtLeast', 'VolumeAtDose', 99, plan=plan)
                     eval.add_clinical_goal(ptv, 1.5 * rx[i], 'AtMost', 'DoseAtAbsoluteVolume', 0.1, plan=plan)
@@ -817,6 +823,11 @@ def crane_launcher():
                     beamset = plan.BeamSets[old_style_plan_name]
                     self.status.Text = "Préparation des ROIs et objectifs pour plan RINGS"
                     crane.crane_add_old_plan(plan_data=d,plan=plan,beamset=beamset)
+                    #Create TISSU SAINS à 1cm (because sometimes I guess this wasn't happening for some reason)
+                    if not roi.roi_exists("TISSU SAIN 1cm "+site):
+                        patient.PatientModel.CreateRoi(Name="TISSU SAIN 1cm "+site, Color="Magenta", Type="Organ", TissueName=None, RoiMaterial=None)
+                        patient.PatientModel.RegionsOfInterest["TISSU SAIN 1cm "+site].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': ["BodyRS"], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': ['sum_ptvs_'+site], 'MarginSettings': {'Type': "Expand", 'Superior': 1, 'Inferior': 1, 'Anterior': 1, 'Posterior': 1, 'Right': 1, 'Left': 1}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
+                        patient.PatientModel.RegionsOfInterest["TISSU SAIN 1cm "+site].UpdateDerivedGeometry(Examination=exam)     
                     plan.PlanOptimizations[beamset.Number-1].ResetOptimization()
                     self.status.Text = "Optimization du plan RINGS"
                     optim.optimization_90_30(plan=plan,beamset=beamset)

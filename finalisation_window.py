@@ -713,7 +713,7 @@ def final_launcher():
         ptv_name = beamset.Prescription.PrimaryDosePrescription.OnStructure.Name
         new_beamset_name = ptv_name.split()[1]        
     except:
-        message.message_window("Le nom du PTV n'est pas dans le format PTV A1 15Gy. Renommez le PTV avant de lancer le script de finalisation.")
+        message.message_window("Le nom du PTV (%s) n'est pas dans le format PTV A1 15Gy.\nRenommez le PTV ou changez la prescription avant de lancer le script de finalisation." % ptv_name)
         return
                 
     form = FinalisationWindow()

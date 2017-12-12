@@ -1292,7 +1292,7 @@ def tool_window():
             self.Text = "Outils de planification"
 
             self.Width = 600
-            self.Height = 500
+            self.Height = 700
 
             self.setupHeaderWindow()
             self.setupMainWindow()
@@ -1302,10 +1302,13 @@ def tool_window():
             self.Controls.Add(self.MainWindow)
             self.Controls.Add(self.OKbuttonPanel)
             
+            #Note window and level in case user checks eccentricity and doesn't want to leave their plan in Lung
+            self.lw_dict = dict(x=-exam.Series[0].LevelWindow.x,y=exam.Series[0].LevelWindow.y)
+            
         def Panel(self, x, y):
             panel = Panel()
             panel.Width = 600
-            panel.Height = 340
+            panel.Height = 540
             panel.Location = Point(x, y)
             panel.BorderStyle = BorderStyle.None
             return panel
@@ -1419,6 +1422,7 @@ def tool_window():
             self.CIHIButton.Click += self.CIHIClicked                 
             
             
+            
             #Rename beams group
             self.renamelabel = Label()
             self.renamelabel.Text = "Renommer les faisceaux"
@@ -1451,17 +1455,56 @@ def tool_window():
             self.renameButton.Click += self.renameClicked            
             
             
+              
+            #Eccentricity group
+            self.Eccentricitylabel = Label()
+            self.Eccentricitylabel.Text = "Vérification de l'eccentricité"
+            self.Eccentricitylabel.Location = Point(25, offset + vert_spacer * 8.2)
+            self.Eccentricitylabel.Font = Font("Arial", 11, FontStyle.Bold)
+            self.Eccentricitylabel.AutoSize = True              
+            
+            self.eccpoilabel = Label()
+            self.eccpoilabel.Text = "Isocentre à vérifier:"
+            self.eccpoilabel.Font = Font("Arial", 10, FontStyle.Bold)
+            self.eccpoilabel.Location = Point(25, offset + vert_spacer * 9.2)
+            self.eccpoilabel.AutoSize = True  
+                   
+            self.eccpoicombo = ComboBox()
+            self.eccpoicombo.Parent = self
+            self.eccpoicombo.Size = Size(100,40)
+            self.eccpoicombo.Location = Point(160, offset + vert_spacer * 9.2)
+            self.eccpoicombo.Text = "Choisissez POI"  
+            for poi in patient.PatientModel.PointsOfInterest:
+                self.eccpoicombo.Items.Add(poi.Name)              
+
+            self.EccentricityButton = Button()
+            self.EccentricityButton.Text = "Vérifier eccentricité"
+            self.EccentricityButton.Size = Size(135,20)
+            self.EccentricityButton.Location = Point(275, offset + vert_spacer * 9.2)
+            self.EccentricityButton.Click += self.EccentricityClicked    
+
+            self.RestoreLWButton = Button()
+            self.RestoreLWButton.Text = "Remettre Level/Window"
+            self.RestoreLWButton.Size = Size(135,20)
+            self.RestoreLWButton.Location = Point(425, offset + vert_spacer * 9.2)
+            self.RestoreLWButton.Click += self.RestoreLWClicked             
+            
+            
+            #Various other tools
             self.DICOMButton = Button()
             self.DICOMButton.Text = "Afficher coordonnées DICOM des POIs"
             self.DICOMButton.Size = Size(400,20)
-            self.DICOMButton.Location = Point(25,offset + vert_spacer * 8.2)
+            self.DICOMButton.Location = Point(25,offset + vert_spacer * 11)
             self.DICOMButton.Click += self.DICOMClicked               
             
             self.changertechButton = Button()
             self.changertechButton.Text = "Changer technique VMAT<->IMRT"
             self.changertechButton.Size = Size(400,20)
-            self.changertechButton.Location = Point(25,offset + vert_spacer * 9.2)
+            self.changertechButton.Location = Point(25,offset + vert_spacer * 12)
             self.changertechButton.Click += self.changertechClicked                
+            
+            
+            
             
             self.MainWindow.Controls.Add(self.NTCPlabel)
             self.MainWindow.Controls.Add(self.roilabel)
@@ -1484,12 +1527,19 @@ def tool_window():
             self.MainWindow.Controls.Add(self.sitebox)
             self.MainWindow.Controls.Add(self.renameButton)
             
+            self.MainWindow.Controls.Add(self.Eccentricitylabel)
+            self.MainWindow.Controls.Add(self.eccpoilabel)                      
+            self.MainWindow.Controls.Add(self.eccpoicombo)           
+            self.MainWindow.Controls.Add(self.EccentricityButton)                
+            self.MainWindow.Controls.Add(self.RestoreLWButton)
+            
             self.MainWindow.Controls.Add(self.DICOMButton)
             self.MainWindow.Controls.Add(self.changertechButton)
 
             
         def cancelClicked(self, sender, args):
             self.Close()          
+            
             
         def NTCPClicked(self, sender, args):     
 
@@ -1609,6 +1659,26 @@ def tool_window():
             self.message.ForeColor = Color.Green
             
 
+        def EccentricityClicked(self, sender, args):   
+            self.message.Text = ""        
+            self.message.ForeColor = Color.Black  
+            
+            if poi.poi_exists(self.eccpoicombo.Text):
+                self.message.Text = "Vérification de l'eccentricité en cours" 
+                poi.check_eccentricity(self.eccpoicombo.Text)
+                self.message.Text = "Vérifiez visuellement que le patient, la table et les accessoires\nne sortent pas du cercle rouge." 
+                self.message.ForeColor = Color.Blue
+            else:
+                self.message.Text = "POI pas trouvé" 
+                self.message.ForeColor = Color.Red       
+
+
+        def RestoreLWClicked(self, sender, args):   
+            exam.Series[0].LevelWindow = self.lw_dict
+            self.message.Text = "Level/Window remis comme avant"  
+            self.message.ForeColor = Color.Black                  
+            
+            
         def DICOMClicked(self, sender, args):     
 
             self.message.ForeColor = Color.Black
@@ -1623,7 +1693,7 @@ def tool_window():
             self.message.ForeColor = Color.Green
   
         def setupOKButtons(self):
-            self.OKbuttonPanel = self.miniPanel(0, 410)                  
+            self.OKbuttonPanel = self.miniPanel(0, 610)                  
             
             cancelButton = Button()
             cancelButton.Text = "Annuler"

@@ -313,7 +313,7 @@ def poumon_launcher():
 
             
             self.message = Label()
-            self.message.Text = "Sélectionnez le(s) ROI(s) à traiter. Seulement les ROIs\navec PTV ou ITV dans leurs noms sont disponibles.\n\nSi vous planifiez pour un seul PTV, utilisez la colonne\nde gauche.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeulement le PTV de gauche sera considéré pour un plan falloff"
+            self.message.Text = "Sélectionnez le(s) ROI(s) à traiter. Seulement les ROIs\navec PTV ou ITV dans leurs noms sont disponibles.\n\nSi vous planifiez pour un seul PTV, utilisez la colonne\nde gauche.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeulement la colonne de gauche sera considéré pour un\nplan falloff. Un plan falloff peut seulement être ajouté\naprès un plan SBRT standard."
             self.message.Location = Point(300, offset)
             self.message.Font = Font("Arial", 11, FontStyle.Italic)
             self.message.AutoSize = True                
@@ -384,13 +384,27 @@ def poumon_launcher():
             addplanButton.Width = 200
             addplanButton.Click += self.addplanClicked   
 
+            self.eccentricitycombo = ComboBox()
+            self.eccentricitycombo.Parent = self
+            self.eccentricitycombo.Size = Size(60,40)
+            self.eccentricitycombo.Location = Point(25, offset + 22*vert_spacer)
+            self.eccentricitycombo.Text = "Choissisez POI"
+            for poi in patient.PatientModel.PointsOfInterest:
+                self.eccentricitycombo.Items.Add(poi.Name)      
+            
+            EccentricityButton = Button()
+            EccentricityButton.Text = "Vérification de l'excentricité"
+            EccentricityButton.Location = Point(90, offset + 22 * vert_spacer)
+            EccentricityButton.Width = 150
+            EccentricityButton.Click += self.EccentricityClicked            
             
             addKBPplanButton = Button()
             addKBPplanButton.Text = "Ajouter plan falloff (TEST)"
-            addKBPplanButton.Location = Point(25, offset + 22 * vert_spacer)
+            addKBPplanButton.Location = Point(25, offset + 23 * vert_spacer)
             addKBPplanButton.Width = 200
-            addKBPplanButton.Click += self.addKBPplanClicked              
+            addKBPplanButton.Click += self.addKBPplanClicked          
             
+               
             
             
             
@@ -442,7 +456,9 @@ def poumon_launcher():
             self.MainWindow.Controls.Add(self.status)     
 
             self.MainWindow.Controls.Add(evalButton)
-            self.MainWindow.Controls.Add(addplanButton)            
+            self.MainWindow.Controls.Add(addplanButton)   
+            self.MainWindow.Controls.Add(self.eccentricitycombo)
+            self.MainWindow.Controls.Add(EccentricityButton)             
             self.MainWindow.Controls.Add(addKBPplanButton) 
             
             self.MainWindow.Controls.Add(self.stepcombo) 
@@ -494,6 +510,8 @@ def poumon_launcher():
                                
             self.status.Text = "Compilation des données du plan"      
             
+            d = [] #Send back and empty dictionary if an error is detected
+            
             ptv_names = []
             itv_names = []
             iso_names = []
@@ -510,6 +528,7 @@ def poumon_launcher():
                     itv_names.append(self.ITV1combo.Text)
                 else:
                     error_message = "ROI sélectionné pour ITV 1 introuvable"
+                    return d,error_message
                 try:
                     if roi.find_most_intersecting_roi(self.PTV1combo.Text, ['POUMON DRT', 'POUMON GCHE'], examination=exam) == 'POUMON DRT':
                         laterality.append('DRT')
@@ -517,6 +536,7 @@ def poumon_launcher():
                         laterality.append('GCHE')
                 except:
                     error_message = "Impossible de déterminer la latéralité du cible %s" % self.PTV1combo.Text
+                    return d,error_message
 
             if roi.roi_exists(self.PTV2combo.Text):       
                 ptv_names.append(self.PTV2combo.Text)
@@ -524,6 +544,7 @@ def poumon_launcher():
                     itv_names.append(self.ITV2combo.Text)
                 else:
                     error_message = "ROI sélectionné pour ITV 2 introuvable"   
+                    return d,error_message
                 try:
                     if roi.find_most_intersecting_roi(self.PTV2combo.Text, ['POUMON DRT', 'POUMON GCHE'], examination=exam) == 'POUMON DRT':
                         laterality.append('DRT')
@@ -531,21 +552,25 @@ def poumon_launcher():
                         laterality.append('GCHE')
                 except:
                     error_message = "Impossible de déterminer la latéralité du cible %s" % self.PTV2combo.Text     
+                    return d,error_message
             
             if len(ptv_names) == 0:
                 error_message = "Aucun PTV sélectionné"
+                return d,error_message
             
             self.message.Text += "Vérification des PTVs"
             
             try:
                 rx_dose = int(float(self.dose_value.Text) * 100)
             except:
-                error_message = "Dose de prescription illisible"                   
+                error_message = "Dose de prescription illisible"  
+                return d,error_message                
             
             try:
                 nb_fx = int(self.fxbox.Text)
             except:
                 error_message = "Nb de fractions illisible"
+                return d,error_message
 
             self.message.Text += "\nVérification de la prescription"
                 
@@ -564,19 +589,23 @@ def poumon_launcher():
                 iso_names.append(self.isocombo.Text)
             else:
                 error_message = "Isocentre pas trouvé pour le premier PTV"
+                return d,error_message
             if self.isocombo2.Text != '':
                 if poi.poi_exists(self.isocombo2.Text,exam):
                     iso_names.append(self.isocombo2.Text)   
                 else:
-                    error_message = "Isocentre pas trouvé pour le deuxième PTV"                    
+                    error_message = "Isocentre pas trouvé pour le deuxième PTV"     
+                    return d,error_message                    
             
             if len(iso_names) == 0:
                 error_message = "Choisissez un isocentre avant de continuer"
+                return d,error_message
               
             self.message.Text += "\nVérification des isocentres"
                 
             if self.scancombo.Text == '':
-                error_message = "Choisissez un scan avant de continuer"        
+                error_message = "Choisissez un scan avant de continuer"     
+                return d,error_message                
 
             self.message.Text += "\nVérification du scan de planification"                
             
@@ -586,21 +615,25 @@ def poumon_launcher():
                     custom_max.append((self.OAR1combo.Text,float(self.OAR1_value.Text))) #Yes, you need all those parentheses for this to work
                 except:
                     error_message = "Impossible de lire custom max dose 1"
+                    return d,error_message
             if roi.roi_exists(self.OAR2combo.Text):
                 try:
                     custom_max.append((self.OAR2combo.Text,float(self.OAR2_value.Text)))
                 except:
                     error_message = "Impossible de lire custom max dose 2"
+                    return d,error_message
             if roi.roi_exists(self.OAR3combo.Text):
                 try:
                     custom_max.append((self.OAR3combo.Text,float(self.OAR3_value.Text)))
                 except:
-                    error_message = "Impossible de lire custom max dose 3"         
+                    error_message = "Impossible de lire custom max dose 3"    
+                    return d,error_message                    
                 
 
             oar_message = poumon.poumon_verify_oars(exam)
             if oar_message != '':
                 error_message = 'OAR essentiel pas trouvé: ' + oar_message      
+                return d,error_message
 
             self.message.Text += "\nVérification des OARs"
                 
@@ -655,7 +688,9 @@ def poumon_launcher():
             #For single PTV, the choice is simple
             if len(ptv_names) == 1:                
                 self.message.Text += "Le VMAT devrait être utilisé pour ce plan"
-                self.techcombo.Text = 'VMAT'            
+                self.techcombo.Text = 'VMAT' 
+                if self.stepcombo.Text in ['2 plans sur 1 isocentre','2 plans sur 2 isocentres']:
+                    self.stepcombo.Text = '1 plan'
             
             #For multiple PTVs... 
             elif len(ptv_names) > 1:       
@@ -1010,7 +1045,7 @@ def poumon_launcher():
                 self.status.ForeColor = Color.Red
                 return    
 
-            plan_name = "Plan Test"
+            plan_name = d['site_names'][0] + ' falloff'
             try:
                 existing_plan = patient.TreatmentPlans[plan_name]
                 error_message = "Un plan avec le nom %s exist déjà" % plan_name
@@ -1018,13 +1053,17 @@ def poumon_launcher():
                 pass                
 
             #Add categories to plan data dictionary to make it compatible with old kbp scripts (THIS IS SUPER KLUDGY AND SHOULD BE IMPROVED LATER)
-            d['site_name'] = d['site_names'][0]
             d['ptv'] = patient.PatientModel.RegionsOfInterest[d['ptv_names'][0]]
             d['site_name'] = d['site_names'][0]
             d['treatment_technique'] = d['techniques'][0]
             
-            self.status.Text = "Test: Vérification des OARs"
+            self.status.Text = "Nom du PTV: %s\nNom du site: %s\nTechnique: %s\n\n" % (d['ptv'],d['site_name'],d['treatment_technique'])
+            
+            self.status.Text += "Test: Vérification des OARs"
             oar_list,laterality = poumon.poumon_stereo_kbp_identify_rois(plan_data=d)
+            self.message.Text = "OAR LIST:\n"
+            for oar in oar_list:
+                self.message.Text += '  ' + oar + '\n'
             self.status.Text = "Test: Ajout du plan et beamset test"                    
             poumon.poumon_stereo_kbp_add_plan_and_beamset(plan_data=d,laterality=laterality)
             self.status.Text = "Test: Configuration des paramêtres d'optimisation"
@@ -1035,9 +1074,24 @@ def poumon_launcher():
             poumon.poumon_stereo_kbp_modify_plan(plan_data=d,oar_list=oar_list,plan_opt=0)
             self.status.Text = "Test: Optimisation du plan modifié"
             poumon.poumon_stereo_kbp_iterate_plan(plan_data=d,oar_list=oar_list)
-            #self.Status.Text = "Test: Impression des resultats"
-            #poumon.poumon_stereo_kbp_evaluate_plan(plan_data=d,oar_list=oar_list)
+            self.status.Text = "Test: Impression des resultats"
+            poumon.poumon_stereo_kbp_evaluate_plan(plan_data=d,oar_list=oar_list)
+            patient.TreatmentPlans['Plan Test'].Name = d['site_name'] + ' falloff'
+            self.status.Text = "Terminé avec succès!"
+            self.status.ForeColor = Color.Green         
    
+        def EccentricityClicked(self, sender, args):   
+            self.status.Text = ""        
+            self.status.ForeColor = Color.Black  
+            
+            if poi.poi_exists(self.eccentricitycombo.Text):
+                self.status.Text = "Vérification de l'eccentricité en cours" 
+                poi.check_eccentricity(self.eccentricitycombo.Text)
+                self.status.Text = "Vérifiez visuellement que le patient, la table et les accessoires ne sortent pas du cercle." 
+                self.status.ForeColor = Color.Blue
+            else:
+                self.status.Text = "POI pas trouvé" 
+                self.status.ForeColor = Color.Red               
    
     #Check for common errors while importing patient, plan, beamset and examination
     try:

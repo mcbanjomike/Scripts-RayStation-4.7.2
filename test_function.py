@@ -76,8 +76,8 @@ except Exception as e:
 def test_MA():
     #plan = lib.get_current_plan()
     #beamset = lib.get_current_beamset()
-    #exam = lib.get_current_examination()
-    #patient = lib.get_current_patient()
+    exam = lib.get_current_examination()
+    patient = lib.get_current_patient()
     #ui = get_current("ui")    
     #uis.ui_statetree()
 
@@ -87,7 +87,30 @@ def test_MA():
     #elif lib.check_version(4.6): 
     #    ui.MenuItem[4].Button_PlanDesign.Click() #Select Plan Design tab    
     
-    qa.preparation_qa()
+    #qa.preparation_qa()
+    
+    poi_name = "ISO GCHE"
+    lung_dict = dict(x=-600,y=1600)
+    exam.Series[0].LevelWindow = lung_dict 
+    
+    if roi.roi_exists("verif_excentricite"):
+        patient.PatientModel.RegionsOfInterest["verif_excentricite"].DeleteRoi()        
+    
+    center = poi.get_poi_coordinates(poi_name,exam)
+    
+    patient.PatientModel.CreateRoi(Name="verif_ex_temp1", Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest["verif_ex_temp1"].CreateCylinderGeometry(Radius=30, Axis={ 'x': 0, 'y': 0, 'z': 1 }, Length=50, Examination=exam, Center={ 'x': center.x, 'y': center.y, 'z': center.z })
+    
+    patient.PatientModel.CreateRoi(Name="verif_ex_temp2", Color="Pink", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest["verif_ex_temp2"].SetMarginExpression(SourceRoiName="verif_ex_temp1", MarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 5, 'Posterior': 5, 'Right': 5, 'Left': 5})
+    patient.PatientModel.RegionsOfInterest["verif_ex_temp2"].UpdateDerivedGeometry(Examination=exam)    
+    
+    patient.PatientModel.CreateRoi(Name="verif_excentricite", Color="Red", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest["verif_excentricite"].SetMarginExpression(SourceRoiName="verif_ex_temp2", MarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 5, 'Posterior': 5, 'Right': 5, 'Left': 5})
+    patient.PatientModel.RegionsOfInterest["verif_excentricite"].UpdateDerivedGeometry(Examination=exam)        
+    
+    patient.PatientModel.RegionsOfInterest["verif_ex_temp1"].DeleteRoi() 
+    patient.PatientModel.RegionsOfInterest["verif_ex_temp2"].DeleteRoi() 
     
     #message.message_window('Hi!')
     
