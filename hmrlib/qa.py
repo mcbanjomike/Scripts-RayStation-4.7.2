@@ -554,7 +554,7 @@ def preparation_qa():
         
         if num_segments > num_beams: #If this is an IMRT plan and not a 3DC plan
             if lib.check_version(4.7):
-                phantom_name = '48x48x48 MAPCHECK'
+                phantom_name = '48x48x48 FANTOME'
             elif lib.check_version(4.6):
                 phantom_name = '48x48x48 FANTOME'
             create_ac_qa_plans(plan=None,phantom_name=phantom_name,iso_name='2cm EPID')

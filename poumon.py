@@ -869,15 +869,17 @@ def poumon_stereo_kbp_identify_rois(plan_data):
             body_name = name
             break                
 
-    if not roi.roi_exists('OPT COMBI PMN '+site_name,exam):
+    if not roi.roi_exists("COMBI PMN-ITV-BR "+site_name,exam):
         patient.PatientModel.CreateRoi(Name="COMBI PMN-ITV-BR "+site_name, Color="Yellow", Type="Organ", TissueName=None, RoiMaterial=None)
         patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR "+site_name].SetAlgebraExpression(ExpressionA={'Operation': "Union", 'SourceRoiNames': [poumon_d_name, poumon_g_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ExpressionB={'Operation': "Union", 'SourceRoiNames': [plan_data['itv_names'][0], bronches_name], 'MarginSettings': {'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0}}, ResultOperation="Subtraction", ResultMarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 0, 'Posterior': 0, 'Right': 0, 'Left': 0})
-        patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR "+site_name].UpdateDerivedGeometry(Examination=exam)        
-    name_list = ['COMBI PMN-ITV-BR','COMBI PMN-ITV-BR*','OPT COMBI PMN '+site_name]
-    for name in name_list:
-        if name in roi_names:
-            opt_pmns_name = name
-            break                
+        patient.PatientModel.RegionsOfInterest["COMBI PMN-ITV-BR "+site_name].UpdateDerivedGeometry(Examination=exam)      
+        opt_pmns_name = "COMBI PMN-ITV-BR "+site_name
+    else:
+        name_list = ["COMBI PMN-ITV-BR "+site_name,'COMBI PMN-ITV-BR','COMBI PMN-ITV-BR*']
+        for name in name_list:
+            if name in roi_names:
+                opt_pmns_name = name
+                break                
 
     
     
@@ -939,7 +941,12 @@ def poumon_stereo_kbp_add_plan_and_beamset(plan_data,laterality):
             two_arcs = True
         else:
             two_arcs = False            
-        beams.add_beams_lung_stereo_test(laterality=laterality, beamset=beamset, examination=exam, two_arcs=two_arcs)
+        
+        #REPLACED THIS TO WORK WITH NEW POUMON LAUNCHER. If I ever want to reuse old auto-planning scripts, I might have to put it back.
+        #beams.add_beams_lung_stereo_test(laterality=laterality, beamset=beamset, examination=exam, two_arcs=two_arcs)
+        
+        #This is kind of hacky and will only work if there's a single beamset in the plan. OK for poumon launcher in its current form.
+        beams.add_arcs_lung_stereo_v2(plan_data, beamset=beamset, index=0, two_arcs=False, colli1=5, colli2=355)
                   
             
 def poumon_stereo_kbp_opt_settings(plan_data):

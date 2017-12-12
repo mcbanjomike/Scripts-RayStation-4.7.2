@@ -613,3 +613,34 @@ def get_max_dose_coordinates(dose,grid):
     #Note that the dose returned is in cGy and the coordinates are in the DICOM system
     return max_dose,max_coords
     
+    
+def check_eccentricity(poi_name):
+
+    #Script to check if a current point can be used as an isocenter without a collision occurring between the gantry and the patient.
+    #Simply creates a large cylinder centered on the point and sets the window/level to Lung so the planner can confirm visually that the clearance is adequate.
+    #Currently assumes a safe radius of 40cm for all types of linac, this number may change if further measurements are made.
+
+    patient = lib.get_current_patient()
+    exam = lib.get_current_examination()    
+
+    lung_dict = dict(x=-600,y=1600)
+    exam.Series[0].LevelWindow = lung_dict 
+    
+    if roi.roi_exists("verif_excentricite",exam):
+        patient.PatientModel.RegionsOfInterest["verif_excentricite"].DeleteRoi()        
+    
+    center = get_poi_coordinates(poi_name,exam)
+    
+    patient.PatientModel.CreateRoi(Name="verif_ex_temp1", Color="Green", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest["verif_ex_temp1"].CreateCylinderGeometry(Radius=30, Axis={ 'x': 0, 'y': 0, 'z': 1 }, Length=50, Examination=exam, Center={ 'x': center.x, 'y': center.y, 'z': center.z })
+    
+    patient.PatientModel.CreateRoi(Name="verif_ex_temp2", Color="Pink", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest["verif_ex_temp2"].SetMarginExpression(SourceRoiName="verif_ex_temp1", MarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 5, 'Posterior': 5, 'Right': 5, 'Left': 5})
+    patient.PatientModel.RegionsOfInterest["verif_ex_temp2"].UpdateDerivedGeometry(Examination=exam)    
+    
+    patient.PatientModel.CreateRoi(Name="verif_excentricite", Color="Red", Type="Organ", TissueName=None, RoiMaterial=None)
+    patient.PatientModel.RegionsOfInterest["verif_excentricite"].SetMarginExpression(SourceRoiName="verif_ex_temp2", MarginSettings={'Type': "Expand", 'Superior': 0, 'Inferior': 0, 'Anterior': 5, 'Posterior': 5, 'Right': 5, 'Left': 5})
+    patient.PatientModel.RegionsOfInterest["verif_excentricite"].UpdateDerivedGeometry(Examination=exam)        
+    
+    patient.PatientModel.RegionsOfInterest["verif_ex_temp1"].DeleteRoi() 
+    patient.PatientModel.RegionsOfInterest["verif_ex_temp2"].DeleteRoi() 
