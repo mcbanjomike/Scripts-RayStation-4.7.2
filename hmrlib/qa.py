@@ -523,10 +523,10 @@ def preparation_qa():
         else:
             output += '          HAUTEUR: Aucun shift\n'
             
-        if shift_z > 0:
-            direction_z = 'OUT'
-        elif shift_z < 0:
+        if shift_z < 0:
             direction_z = 'IN'
+        else:
+            direction_z = 'OUT' #We have to account for 0 shift because I call on this variable later (which isn't true for the other axes)
         if shift_z != 0:
             output += '     LONGITUDINAL: ' + str(abs(shift_z)) + 'cm ' + direction_z + '\n'
         else:
@@ -564,11 +564,13 @@ def preparation_qa():
     
     #Print all results to text file
     try:
+        patient_ID = patient.PatientID
+        patient_name = patient.PatientName.replace("^", ", ")
         file_path = r'\\radonc.hmr\Departements\Physiciens\Clinique\IMRT\QA'
         file_path += '\\' + patient_name + '~' + patient_ID + '-TESTSUPERBRIDGE'    
         with open(file_path + '\\QA patient ' + vp.BeamSet.DicomPlanLabel + ".txt", 'w') as dvh_file:
             dvh_file.write(output)
-    except:
-        texte = 'Impossible de créer le fichier texte avec les résultats. SVP, notez les valeurs ci-dessous:\n\n'
+    except Exception as e:
+        texte = 'Impossible de créer le fichier texte avec les résultats.\n%s\nSVP, notez les valeurs ci-dessous:\n\n' % e
         message.message_window(texte + output)
     

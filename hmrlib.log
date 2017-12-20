@@ -8207,3 +8207,212 @@ SystemError: Invalid objectHandle.
 2017-12-12 16:47:31,561 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - B1 falloff/B1 test] ================================================================================
 2017-12-12 16:47:31,609 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - B1 falloff/B1 test] End of script outils_planificateur.py [execution time = 0:00:24.225000]
 2017-12-12 16:47:31,655 - hmrlib - INFO - [hmr30489 - GOYETTE^CELYNE (1814254) - CT 1 - B1 falloff/B1 test] ================================================================================
+2017-12-13 14:34:06,418 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-12-13 14:34:06,552 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] Starting script preparation_qa.py
+2017-12-13 14:34:06,599 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-12-13 14:41:42,209 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-12-13 14:41:42,261 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] End of script preparation_qa.py [execution time = 0:07:35.980000]
+2017-12-13 14:41:42,306 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - X1 IMRT/X1 IMRT] ================================================================================
+2017-12-19 09:41:19,302 - hmrlib - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-19 09:41:19,620 - hmrlib - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Starting script plan_launcher.py
+2017-12-19 09:41:19,690 - hmrlib - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-19 09:41:20,823 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-12-19 09:41:21,679 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-12-19 09:41:22,574 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-12-19 09:41:23,178 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-12-19 09:41:24,133 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV* is NOT approved.
+2017-12-19 09:41:24,264 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV45rectum* is NOT approved.
+2017-12-19 09:41:24,468 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV50rectum* is NOT approved.
+2017-12-19 09:41:24,887 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV45rectum* is NOT approved.
+2017-12-19 09:41:25,379 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV50rectum* is NOT approved.
+2017-12-19 09:41:25,843 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI RECTUM is NOT approved.
+2017-12-19 09:41:26,180 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI GRELE* is NOT approved.
+2017-12-19 09:41:26,507 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI VESSIE is NOT approved.
+2017-12-19 09:41:26,831 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI TETE FEMORALE DRT is NOT approved.
+2017-12-19 09:41:27,181 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI TETE FEMORALE GCHE is NOT approved.
+2017-12-19 09:41:27,523 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRETE ILIAQUE GCHE is NOT approved.
+2017-12-19 09:41:27,890 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRETE ILIAQUE DRT is NOT approved.
+2017-12-19 09:41:28,248 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI prostate is NOT approved.
+2017-12-19 09:41:28,621 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI VS is NOT approved.
+2017-12-19 09:41:28,956 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTVVS+0.5* is NOT approved.
+2017-12-19 09:41:29,301 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV 1cm is NOT approved.
+2017-12-19 09:41:29,619 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTVprostate+1.5-1post* is NOT approved.
+2017-12-19 09:41:29,964 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV+2 is NOT approved.
+2017-12-19 09:41:30,397 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI BULBE is NOT approved.
+2017-12-19 09:42:16,085 - hmrlib.poi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-12-19 09:42:16,238 - hmrlib.poi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO is NOT approved.
+2017-12-19 09:42:16,843 - hmrlib.poi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "ISO" set as Isocenter
+2017-12-19 09:42:17,096 - hmrlib.poi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] POI REF SCAN is NOT approved.
+2017-12-19 09:42:18,134 - hmrlib.poi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "REF SCAN" set as LocalizationPoint
+2017-12-19 09:42:18,290 - hmrlib.poi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] POI PT PRESC is NOT approved.
+2017-12-19 09:42:18,890 - hmrlib.poi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of POI "PT PRESC" set as Marker
+2017-12-19 09:42:19,751 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY is NOT approved.
+2017-12-19 09:42:20,034 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY" set as Other
+2017-12-19 09:42:20,247 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI Table is NOT approved.
+2017-12-19 09:42:20,482 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "Table" set as Organ
+2017-12-19 09:42:20,684 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Table" set as OrganAtRisk
+2017-12-19 09:42:20,894 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI Body+Table is NOT approved.
+2017-12-19 09:42:21,138 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "Body+Table" set as Other
+2017-12-19 09:42:21,350 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI BODY-5mm is NOT approved.
+2017-12-19 09:42:21,583 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BODY-5mm" set as Organ
+2017-12-19 09:42:21,798 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BODY-5mm" set as OrganAtRisk
+2017-12-19 09:42:22,019 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV* is NOT approved.
+2017-12-19 09:42:22,259 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV*" set as Gtv
+2017-12-19 09:42:22,468 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV*" set as Target
+2017-12-19 09:42:22,695 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV45rectum* is NOT approved.
+2017-12-19 09:42:22,930 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CTV45rectum*" set as Ctv
+2017-12-19 09:42:23,140 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CTV45rectum*" set as Target
+2017-12-19 09:42:23,368 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI CTV50rectum* is NOT approved.
+2017-12-19 09:42:23,600 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CTV50rectum*" set as Ctv
+2017-12-19 09:42:23,831 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CTV50rectum*" set as Target
+2017-12-19 09:42:24,058 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV45rectum* is NOT approved.
+2017-12-19 09:42:24,299 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV45rectum*" set as Ptv
+2017-12-19 09:42:24,493 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV45rectum*" set as Target
+2017-12-19 09:42:24,703 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV50rectum* is NOT approved.
+2017-12-19 09:42:24,928 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV50rectum*" set as Ptv
+2017-12-19 09:42:25,118 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV50rectum*" set as Target
+2017-12-19 09:42:25,310 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI RECTUM is NOT approved.
+2017-12-19 09:42:25,531 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "RECTUM" set as Organ
+2017-12-19 09:42:25,721 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "RECTUM" set as OrganAtRisk
+2017-12-19 09:42:25,945 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI GRELE* is NOT approved.
+2017-12-19 09:42:26,174 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GRELE*" set as Organ
+2017-12-19 09:42:26,365 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GRELE*" set as OrganAtRisk
+2017-12-19 09:42:26,580 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI VESSIE is NOT approved.
+2017-12-19 09:42:26,803 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "VESSIE" set as Organ
+2017-12-19 09:42:26,992 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "VESSIE" set as OrganAtRisk
+2017-12-19 09:42:27,190 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI TETE FEMORALE DRT is NOT approved.
+2017-12-19 09:42:27,395 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TETE FEMORALE DRT" set as Organ
+2017-12-19 09:42:27,566 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TETE FEMORALE DRT" set as OrganAtRisk
+2017-12-19 09:42:27,763 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI TETE FEMORALE GCHE is NOT approved.
+2017-12-19 09:42:27,971 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "TETE FEMORALE GCHE" set as Organ
+2017-12-19 09:42:28,144 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "TETE FEMORALE GCHE" set as OrganAtRisk
+2017-12-19 09:42:28,365 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRETE ILIAQUE GCHE is NOT approved.
+2017-12-19 09:42:28,588 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CRETE ILIAQUE GCHE" set as Organ
+2017-12-19 09:42:28,782 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CRETE ILIAQUE GCHE" set as OrganAtRisk
+2017-12-19 09:42:29,014 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI CRETE ILIAQUE DRT is NOT approved.
+2017-12-19 09:42:29,240 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "CRETE ILIAQUE DRT" set as Organ
+2017-12-19 09:42:29,434 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "CRETE ILIAQUE DRT" set as OrganAtRisk
+2017-12-19 09:42:29,636 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI prostate is NOT approved.
+2017-12-19 09:42:29,864 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "prostate" set as Organ
+2017-12-19 09:42:30,057 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "prostate" set as OrganAtRisk
+2017-12-19 09:42:30,267 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI VS is NOT approved.
+2017-12-19 09:42:30,487 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "VS" set as Organ
+2017-12-19 09:42:30,691 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "VS" set as OrganAtRisk
+2017-12-19 09:42:30,910 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTVVS+0.5* is NOT approved.
+2017-12-19 09:42:31,146 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTVVS+0.5*" set as Ptv
+2017-12-19 09:42:31,356 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTVVS+0.5*" set as Target
+2017-12-19 09:42:31,565 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTV 1cm is NOT approved.
+2017-12-19 09:42:31,796 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTV 1cm" set as Ptv
+2017-12-19 09:42:32,006 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTV 1cm" set as Target
+2017-12-19 09:42:32,222 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI PTVprostate+1.5-1post* is NOT approved.
+2017-12-19 09:42:32,447 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "PTVprostate+1.5-1post*" set as Organ
+2017-12-19 09:42:32,653 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "PTVprostate+1.5-1post*" set as OrganAtRisk
+2017-12-19 09:42:32,884 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI GTV+2 is NOT approved.
+2017-12-19 09:42:33,118 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "GTV+2" set as Gtv
+2017-12-19 09:42:33,329 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "GTV+2" set as Target
+2017-12-19 09:42:33,554 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ROI BULBE is NOT approved.
+2017-12-19 09:42:33,784 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Type of ROI "BULBE" set as Organ
+2017-12-19 09:42:33,987 - hmrlib.roi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] OrganType of ROI "BULBE" set as OrganAtRisk
+2017-12-19 09:42:57,000 - hmrlib.eval - ERROR - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-12-19 09:42:57,483 - hmrlib.eval - ERROR - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-12-19 09:42:57,624 - hmrlib.eval - ERROR - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-12-19 09:42:57,965 - hmrlib.eval - ERROR - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-12-19 09:42:58,296 - hmrlib.eval - ERROR - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] An entry with the same key already exists.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\eval.py", line 113, in _add_isodose_line
+    temp.Add(float(dose), color)
+ValueError: An entry with the same key already exists.
+2017-12-19 09:42:58,709 - hmrlib.poi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Isocenter POI identified as "ISO"
+2017-12-19 09:42:58,775 - hmrlib - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Beam Set = <ScriptObject id=258d7c79-caef-4d25-8e58-64d4a02c6491, 'A1'>
+2017-12-19 09:42:58,851 - hmrlib - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Exam = CT 1
+2017-12-19 09:42:59,088 - hmrlib.poi - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] POI ISO: (x, y, z) = (-0.416134643555, -0.592431640625, -3.89994964600)
+2017-12-19 09:42:59,419 - hmrlib - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Added arc "A1.1" from 180 to 181 in direction CCW with isocenter ISO.  Energy = 6, collimator = 5, couch = 0.0.
+2017-12-19 09:42:59,545 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-12-19 09:42:59,635 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-12-19 09:42:59,854 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Fluence iterations set to 20.
+2017-12-19 09:43:00,039 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Max iterations set to 80.
+2017-12-19 09:43:00,212 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Optimality tolerance set to 1e-09.
+2017-12-19 09:43:00,385 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Compute intermediate dose set to True.
+2017-12-19 09:43:00,558 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Compute final dose set to True.
+2017-12-19 09:43:00,672 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] No beamset specified.  All beamsets will be modified.
+2017-12-19 09:43:00,802 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] PlanOptimizations[0] selected.
+2017-12-19 09:43:01,027 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Max leaf travel per degree set to 0.3 cm/deg.
+2017-12-19 09:43:01,249 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Constrain leaf motion set to True.
+2017-12-19 09:43:01,551 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Arc gantry spacing set to 4 degrees for arc "A1.1".
+2017-12-19 09:43:01,789 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Max arc delivery time set to 150.0 s for arc "A1.1".
+2017-12-19 09:43:02,187 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MinDose for ROI "PTV A1" added.
+2017-12-19 09:43:02,691 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "PTV A1" added.
+2017-12-19 09:43:03,183 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "RECTUM" added.
+2017-12-19 09:43:03,762 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "RECTUM" added.
+2017-12-19 09:43:04,335 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "RECTUM" added.
+2017-12-19 09:43:04,811 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDvh for ROI "RECTUM" added.
+2017-12-19 09:43:05,285 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "RECTUM+3mm" added.
+2017-12-19 09:43:05,762 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type MaxDose for ROI "VESSIE" added.
+2017-12-19 09:43:06,125 - hmrlib.optim - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] Objective of type DoseFallOff for ROI "BodyRS" added.
+2017-12-19 09:43:49,925 - hmrlib - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-19 09:43:49,994 - hmrlib - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] End of script plan_launcher.py [execution time = 0:02:31.274000]
+2017-12-19 09:43:50,054 - hmrlib - INFO - [hmr30489 - BRIAND^RENE (1452559) - CT 1 - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-19 10:49:09,995 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-12-19 10:49:10,399 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Starting script vérif 1.py
+2017-12-19 10:49:11,103 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-12-19 10:51:56,869 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI REF SCAN: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-12-19 10:51:57,446 - hmrlib.poi - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] POI ISO: (x, y, z) = (3.03363952637, 6.96734924316, -5.2)
+2017-12-19 10:53:27,048 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-12-19 10:53:27,227 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] End of script vérif 1.py [execution time = 0:04:17.427000]
+2017-12-19 10:53:27,468 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-12-19 11:02:15,869 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-12-19 11:02:16,346 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Starting script crane_launcher.py
+2017-12-19 11:02:16,501 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-12-19 11:11:46,083 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-12-19 11:11:46,224 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] End of script crane_launcher.py [execution time = 0:09:30.400000]
+2017-12-19 11:11:46,360 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-12-19 11:12:25,998 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-12-19 11:12:26,446 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] Starting script outils_planificateur.py
+2017-12-19 11:12:26,586 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-12-19 11:13:14,094 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-12-19 11:13:14,236 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] End of script outils_planificateur.py [execution time = 0:00:47.980000]
+2017-12-19 11:13:14,394 - hmrlib - INFO - [hmr30489 - LEGRIS^LINE (619182) - CT 1 - A1 IMRT/A1 IMRT] ================================================================================
+2017-12-19 15:07:40,283 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-19 15:07:40,434 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-12-19 15:07:40,442 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-19 15:07:40,479 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Invalid objectHandle.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\lib.py", line 527, in get_current_examination
+    return get_current('Examination')
+  File "C:\Program Files\RaySearch Laboratories\RayStation 6 SP1\ScriptClient\connect.py", line 21, in get_current
+    return ScriptClient.ScriptObject(ScriptClient.RayScriptService.Instance, ScriptClient.RayScriptService.Instance.Client.GetCurrent(objectType))
+SystemError: Invalid objectHandle.
+2017-12-19 15:07:40,515 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Could not get current examination.
+2017-12-19 15:07:40,525 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-19 15:07:40,534 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:00.337000]
+2017-12-19 15:07:40,540 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-19 15:09:22,006 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-19 15:09:22,222 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Starting script test_NePasUtiliser.py
+2017-12-19 15:09:22,234 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-19 15:09:22,248 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Invalid objectHandle.
+Traceback (most recent call last):
+  File "\\radonc.hmr\Departements\Physiciens\TPS\RayStation\Scripts.GitHub_MA\Scripts-RayStation-4.7.2\hmrlib\lib.py", line 527, in get_current_examination
+    return get_current('Examination')
+  File "C:\Program Files\RaySearch Laboratories\RayStation 6 SP1\ScriptClient\connect.py", line 21, in get_current
+    return ScriptClient.ScriptObject(ScriptClient.RayScriptService.Instance, ScriptClient.RayScriptService.Instance.Client.GetCurrent(objectType))
+SystemError: Invalid objectHandle.
+2017-12-19 15:09:22,327 - hmrlib - ERROR - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] Could not get current examination.
+2017-12-19 15:09:22,342 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
+2017-12-19 15:09:22,354 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] End of script test_NePasUtiliser.py [execution time = 0:00:00.445000]
+2017-12-19 15:09:22,363 - hmrlib - INFO - [hmr30489 - <No patient selected> (<No patient ID>) - <No examination selected> - <No plan selected>/<No beamset selected>] ================================================================================
